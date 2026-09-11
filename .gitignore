@@ -10,10 +10,6 @@
 # Claude Code session worktrees and their local settings.
 .claude/
 
-# Showcase source images: the full-size renders Preview.png and ModIcon.png are cut from.
-# They weigh megabytes each and the cut-down copies are what ship.
-Art/
-
 # Showcase working note: PROMPT_ACERTAINSERIES.md, French, holding the Preview and ModIcon
 # prompts until both images exist. It lives at the monorepo root with every other mod's, which is
 # where they are written and where PUBLISHING.md expects them. This rule is a guard only, in case
