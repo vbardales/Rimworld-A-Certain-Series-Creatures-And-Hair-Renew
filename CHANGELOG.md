@@ -20,7 +20,7 @@ once the mod has been tried in a running game.
   - all 41 hairstyles.
 - English labels and descriptions on everything kept; the original Chinese preserved in
   `Languages/ChineseSimplified (简体中文)/DefInjected/`, 115 defs' worth.
-- `packageId` `nelim.acertainseriesrenew`. The original had none — RimWorld 1.0 did not require one —
+- `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.
 
 ### Changed

@@ -2,8 +2,8 @@
 <ModMetaData>
   <name>A Certain Series - Creatures and Hair Renew</name>
   <author>混沌の味方 - 1.6 extraction: nelim</author>
-  <packageId>nelim.acertainseriesrenew</packageId>
-  <url>https://github.com/vbardales/Rimworld-A-Certain-Series-Renew</url>
+  <packageId>nelim.acertainseriescreaturesandhairrenew</packageId>
+  <url>https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

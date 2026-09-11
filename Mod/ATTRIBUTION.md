@@ -30,7 +30,7 @@ The original declares no `packageId`. Every 1.6 mod needs one, and a mod that ha
 loads — so there is no loaded mod for a patch to trim. Removing what is out of scope had to be
 done by building a new mod out of what is kept.
 
-That new mod's `packageId` is `nelim.acertainseriesrenew`. It is fixed for good: changing it after
+That new mod's `packageId` is `nelim.acertainseriescreaturesandhairrenew`. It is fixed for good: changing it after
 publication disables the mod for every subscriber.
 
 ## What was taken
