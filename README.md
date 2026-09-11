@@ -53,7 +53,7 @@ Two things worth knowing before you install it:
 ## Layout
 
 ```
-ACertainSeries/
+ACertainSeriesRenew/
   Mod/          published — this is what the NTFS junction into RimWorld/Mods points at
     About/
     Defs/       123 defs, no C#
