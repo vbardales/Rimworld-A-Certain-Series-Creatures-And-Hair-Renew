@@ -13,3 +13,7 @@
 # Showcase source images: the full-size renders Preview.png and ModIcon.png are cut from.
 # They weigh megabytes each and the cut-down copies are what ship.
 Art/
+
+# Showcase working note: French, deleted once Preview.png and ModIcon.png exist. Ignored so it
+# never reaches this public repository while it does exist.
+PROMPT_*.md
