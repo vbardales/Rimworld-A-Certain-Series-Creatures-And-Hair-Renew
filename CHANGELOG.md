@@ -3,7 +3,10 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [1.0.0] — 2026-09-11
+
+First release. Not yet on the Steam Workshop: this tags the source, and the Workshop item follows
+once the mod has been tried in a running game.
 
 ### Added
 

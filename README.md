@@ -1,4 +1,4 @@
-# A Certain Series — Creatures and Hair 1.6
+# A Certain Series — Creatures and Hair Renew
 
 Two creatures and forty-one hairstyles, taken out of [某系列MOD](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729)
 by 混沌の味方 — a RimWorld 1.0 fan mod for *A Certain Magical Index* — and brought forward to 1.6.
@@ -59,6 +59,7 @@ ACertainSeries/
     Defs/       123 defs, no C#
     Languages/  the original Chinese
     Textures/   everything under an ACS/ root
+    LICENSE, ATTRIBUTION.md — copies of the two at the root, so they travel with the download
   Art/          preview sources, never published
 ```
 
