@@ -14,6 +14,8 @@
 # They weigh megabytes each and the cut-down copies are what ship.
 Art/
 
-# Showcase working note: French, deleted once Preview.png and ModIcon.png exist. Ignored so it
-# never reaches this public repository while it does exist.
+# Showcase working note: PROMPT_ACERTAINSERIES.md, French, holding the Preview and ModIcon
+# prompts until both images exist. It lives at the monorepo root with every other mod's, which is
+# where they are written and where PUBLISHING.md expects them. This rule is a guard only, in case
+# a copy is ever made here: it is working notes in French, and this repository is public.
 PROMPT_*.md
