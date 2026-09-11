@@ -1,0 +1,15 @@
+# This mod ships no assembly and has nothing to build. The entry that earns its place here is
+# .claude/: a session worktree is a full copy of the monorepo this folder came out of, hundreds
+# of megabytes, and a session creates it in whatever folder it is working in.
+#
+# Steam does not read .gitignore at all. SteamUGC.SetItemContent takes the junction's target
+# directory as it stands on disk, with no filtering, so anything sitting in the published folder
+# is published. That is what Mod/ is for: the junction points there, and everything else in this
+# folder - Art/, the docs, this file - stays out of reach by construction.
+
+# Claude Code session worktrees and their local settings.
+.claude/
+
+# Showcase source images: the full-size renders Preview.png and ModIcon.png are cut from.
+# They weigh megabytes each and the cut-down copies are what ship.
+Art/
