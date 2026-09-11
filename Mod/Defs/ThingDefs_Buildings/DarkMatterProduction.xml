@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The machine the whole chain hangs from. It is the only source of the beetle egg, and the
+     only source of dark matter beyond what the beetle itself leaves when butchered. -->
+<Defs>
+
+  <ThingDef ParentName="BenchBase">
+    <defName>ACS_DarkMatterProduction</defName>
+    <label>dark matter propagator</label>
+    <description>A refrigerator-shaped device that makes dark matter multiply. It runs on a preserved fragment of the second-ranked esper's brain, which goes on producing the substance it was built to produce long after the man it belonged to has stopped.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>80</pathCost>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <!-- Empty on purpose, overriding BenchBase: the propagator cannot be uninstalled and carried
+         away, which is what stops its brain fragment from being recovered and reused. The empty
+         thingCategories goes with it - a thing that never minifies needs no minified category. -->
+    <minifiedDef />
+    <thingCategories Inherit="false" />
+    <size>(1,2)</size>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>50</ComponentSpacer>
+      <ACS_KakineTeitokuBrain>1</ACS_KakineTeitokuBrain>
+    </costList>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MultiAnalyzer</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>5000</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <recipes>
+      <li>ACS_Make_DarkMatterByKakineTeitokuBrain</li>
+      <li>ACS_Make_KakineTeitokuBrain</li>
+      <li>ACS_Make_Volleyball</li>
+    </recipes>
+    <graphicData>
+      <texPath>ACS/Building/DarkMatterProduction</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <fillPercent>0.5</fillPercent>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Production</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ACS_DarkMatterTech</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>

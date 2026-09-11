@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Attack-tool groups for both creatures. -->
+<Defs>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleMouth</defName>
+    <label>mandibles</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleHornAttackTool</defName>
+    <label>horn cannon</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleFrontLeftLeg</defName>
+    <label>front left leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleFrontRightLeg</defName>
+    <label>front right leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleMiddleLeftLeg</defName>
+    <label>middle left leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleMiddleRightLeg</defName>
+    <label>middle right leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleRearLeftLeg</defName>
+    <label>rear left leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleRearRightLeg</defName>
+    <label>rear right leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleFrontLeftClaw</defName>
+    <label>front left claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleFrontRightClaw</defName>
+    <label>front right claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleMiddleLeftClaw</defName>
+    <label>middle left claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleMiddleRightClaw</defName>
+    <label>middle right claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleRearLeftClaw</defName>
+    <label>rear left claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_BeetleRearRightClaw</defName>
+    <label>rear right claw</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelCore</defName>
+    <label>angel core</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelSword</defName>
+    <label>sword</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_FirstWing</defName>
+    <label>first wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_SecondWing</defName>
+    <label>second wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_ThirdWing</defName>
+    <label>third wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_FourthWing</defName>
+    <label>fourth wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_FifthWing</defName>
+    <label>fifth wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_SixthWing</defName>
+    <label>sixth wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_SeventhWing</defName>
+    <label>seventh wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_EighthWing</defName>
+    <label>eighth wing</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelLeftLeg</defName>
+    <label>left leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelRightLeg</defName>
+    <label>right leg</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelLeftFoot</defName>
+    <label>left foot</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelRightFoot</defName>
+    <label>right foot</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelLeftShoulder</defName>
+    <label>left shoulder</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelRightShoulder</defName>
+    <label>right shoulder</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelLeftArm</defName>
+    <label>left arm</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelRightArm</defName>
+    <label>right arm</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelLeftHand</defName>
+    <label>left hand</label>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>ACS_AngelRightHand</defName>
+    <label>right hand</label>
+  </BodyPartGroupDef>
+
+</Defs>

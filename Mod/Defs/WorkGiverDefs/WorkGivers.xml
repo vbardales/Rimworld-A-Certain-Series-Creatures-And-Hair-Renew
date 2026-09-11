@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A new worktable needs its own work giver, or no pawn ever walks to it: vanilla's crafting
+     work givers each name their benches in fixedBillGiverDefs and will not pick up a stranger. -->
+<Defs>
+
+  <WorkGiverDef>
+    <defName>ACS_DoBillsUseDarkMatterProduction</defName>
+    <label>work at dark matter propagator</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <workTags>
+      <li>Intellectual</li>
+    </workTags>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>ACS_DarkMatterProduction</li>
+    </fixedBillGiverDefs>
+    <verb>craft</verb>
+    <gerund>crafting at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>

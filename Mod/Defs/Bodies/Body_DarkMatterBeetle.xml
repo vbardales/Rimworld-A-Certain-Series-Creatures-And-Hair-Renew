@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BodyDef>
+    <defName>ACS_DarkMatterBeetle</defName>
+    <label>white rhinoceros beetle</label>
+    <corePart>
+      <def>ACS_BeetleFirstRing</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Eye</def>
+          <customLabel>left eye</customLabel>
+          <coverage>0.005</coverage>
+        </li>
+        <li>
+          <def>Eye</def>
+          <customLabel>right eye</customLabel>
+          <coverage>0.005</coverage>
+        </li>
+        <li>
+          <def>Antenna</def>
+          <customLabel>left antenna</customLabel>
+          <coverage>0.005</coverage>
+        </li>
+        <li>
+          <def>Antenna</def>
+          <customLabel>right antenna</customLabel>
+          <coverage>0.005</coverage>
+        </li>
+        <li>
+          <def>ACS_BeetleMouth</def>
+          <coverage>0.01</coverage>
+          <groups>
+            <li>ACS_BeetleMouth</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_BeetleHorn</def>
+          <coverage>0.1</coverage>
+          <groups>
+            <li>ACS_BeetleHornAttackTool</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_BeetleSecondRing</def>
+          <coverage>0.1</coverage>
+          <parts>
+            <li>
+              <def>ACS_BeetleElytra</def>
+              <customLabel>left elytron</customLabel>
+              <coverage>0.01</coverage>
+            </li>
+            <li>
+              <def>ACS_BeetleElytra</def>
+              <customLabel>right elytron</customLabel>
+              <coverage>0.01</coverage>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>front left leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleFrontLeftLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>front left claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleFrontLeftClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>front right leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleFrontRightLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>front right claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleFrontRightClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>middle left leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleMiddleLeftLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>middle left claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleMiddleLeftClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>middle right leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleMiddleRightLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>middle right claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleMiddleRightClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>rear left leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleRearLeftLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>rear left claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleRearLeftClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleLeg</def>
+              <customLabel>rear right leg</customLabel>
+              <coverage>0.01</coverage>
+              <height>Bottom</height>
+              <groups>
+                <li>ACS_BeetleRearRightLeg</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_BeetleClaw</def>
+                  <customLabel>rear right claw</customLabel>
+                  <coverage>0.003</coverage>
+                  <groups>
+                    <li>ACS_BeetleRearRightClaw</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>ACS_BeetleThirdRing</def>
+              <coverage>0.3</coverage>
+              <parts>
+                <li>
+                  <def>ACS_DarkMatterCore</def>
+                  <coverage>0.012</coverage>
+                  <depth>Inside</depth>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

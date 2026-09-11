@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: dark matter propagator -->
+  <ACS_DarkMatterProduction.label>未元物质生产机</ACS_DarkMatterProduction.label>
+  <ACS_DarkMatterProduction.description>促使未元物质进行增殖的冰箱型器械</ACS_DarkMatterProduction.description>
+
+  <!-- EN: Kakine Teitoku's brain fragment -->
+  <ACS_KakineTeitokuBrain.label>垣根帝督的大脑碎块</ACS_KakineTeitokuBrain.label>
+  <ACS_KakineTeitokuBrain.description>被保存起来的垣根帝督的大脑碎块，有生产未元物质的能力</ACS_KakineTeitokuBrain.description>
+
+  <!-- EN: dark matter volleyball -->
+  <ACS_Volleyball.label>排球</ACS_Volleyball.label>
+  <ACS_Volleyball.description>将未元物质浓缩起来形成的白色球形物体</ACS_Volleyball.description>
+
+  <!-- EN: rhinoceros beetle egg -->
+  <ACS_EggBeetle.label>独角仙的卵</ACS_EggBeetle.label>
+  <ACS_EggBeetle.description>能孵化出白色独角仙的卵</ACS_EggBeetle.description>
+
+</LanguageData>

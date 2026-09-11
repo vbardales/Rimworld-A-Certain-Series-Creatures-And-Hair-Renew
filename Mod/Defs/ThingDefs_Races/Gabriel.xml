@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>ACS_Gabriel</defName>
+    <label>God's Power</label>
+    <description>A seraph of immense power, wearing eight wings of water and a sword of crystal. It does not eat, it does not age, and nothing on this world was built to tame it.</description>
+    <statBases>
+      <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
+      <ComfyTemperatureMax>1000</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount>
+      <ImmunityGainSpeed>10</ImmunityGainSpeed>
+      <LeatherAmount>100</LeatherAmount>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <!-- 1.0 wrote <ToxicSensitivity>0</ToxicSensitivity>; 1.6 states the same thing the other way round. -->
+      <ToxicResistance>1</ToxicResistance>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <PainShockThreshold>1</PainShockThreshold>
+      <Flammability>0</Flammability>
+      <MoveSpeed>80</MoveSpeed>
+      <!-- The original asked for wildness 100 on a 0-1 stat; 1 is that intent, expressed in range. -->
+      <Wildness>1</Wildness>
+      <MarketValue>1000000</MarketValue>
+      <Mass>100</Mass>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <accuracyTouch>0.8</accuracyTouch>
+        <accuracyShort>0.8</accuracyShort>
+        <accuracyMedium>0.6</accuracyMedium>
+        <accuracyLong>0.6</accuracyLong>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>ACS_Projectile_Sweep</defaultProjectile>
+        <warmupTime>10</warmupTime>
+        <range>80</range>
+        <forcedMissRadius>10</forcedMissRadius>
+        <burstShotCount>8</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+        <minRange>5</minRange>
+        <!-- The 1.0 sound FlameThrower is gone from 1.6; Shot_IncendiaryLauncher is its closest survivor. -->
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <muzzleFlashScale>10</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>crystal sword</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+          <li>Cut</li>
+        </capacities>
+        <power>150</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>ACS_AngelSword</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>25</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_FirstWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_SecondWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_ThirdWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_FourthWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_FifthWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_SixthWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_SeventhWing</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>water wing blade</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+        </capacities>
+        <power>75</power>
+        <cooldownTime>0.5</cooldownTime>
+        <linkedBodyPartsGroup>ACS_EighthWing</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <packAnimal>false</packAnimal>
+      <herdAnimal>false</herdAnimal>
+      <herdMigrationAllowed>false</herdMigrationAllowed>
+      <body>ACS_Seraphim</body>
+      <petness>0</petness>
+      <baseBodySize>1</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+      <leatherDef>ACS_HeavenCloth</leatherDef>
+      <nuzzleMtbHours>0</nuzzleMtbHours>
+      <foodType>OmnivoreAnimal</foodType>
+      <gestationPeriodDays>0</gestationPeriodDays>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+      <lifeExpectancy>10000</lifeExpectancy>
+      <trainability>Advanced</trainability>
+      <!-- 1.5 moved wildness out of <race> and into the Wildness stat; see statBases above. -->
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Thrumbo_Pain</soundWounded>
+          <soundDeath>Pawn_Thrumbo_Death</soundDeath>
+          <soundCall>Pawn_Thrumbo_Call</soundCall>
+          <soundAngry>Pawn_Thrumbo_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>ACS_Gabriel</defName>
+    <label>God's Power</label>
+    <race>ACS_Gabriel</race>
+    <!-- Kept out of the manhunter pack draw, as vanilla does with its two most dangerous animals:
+         Thrumbo at combatPower 500 and AlphaThrumbo at 800 both set this false, and 800 is the
+         highest combatPower any base-game animal has. This one is at 10000. The original set the
+         flag on the beetle, at 100, and left it off here. -->
+    <canArriveManhunter>false</canArriveManhunter>
+    <combatPower>10000</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <minGenerationAge>0</minGenerationAge>
+    <maxGenerationAge>0</maxGenerationAge>
+    <labelMale>God's Power</labelMale>
+    <labelFemale>God's Power</labelFemale>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>ACS/Animal/Gabriel</texPath>
+          <drawSize>8</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>ACS/Animal/Gabriel</texPath>
+          <drawSize>8</drawSize>
+        </dessicatedBodyGraphicData>
+        <butcherBodyPart>
+          <bodyPartGroup>ACS_AngelCore</bodyPartGroup>
+          <thing>ACS_AngelCore</thing>
+        </butcherBodyPart>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

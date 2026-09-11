@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Body parts of the seraph. The original named one of them simply "Sword"; prefixed here for
+     the same reason as the beetle's parts. -->
+<Defs>
+
+  <BodyPartDef>
+    <defName>ACS_AngelNeck</defName>
+    <label>neck</label>
+    <hitPoints>100</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelHead</defName>
+    <label>head</label>
+    <hitPoints>100</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelMouth</defName>
+    <label>mouth</label>
+    <hitPoints>100</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelEye</defName>
+    <label>eye</label>
+    <hitPoints>100</hitPoints>
+    <beautyRelated>true</beautyRelated>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelEar</defName>
+    <label>ear</label>
+    <hitPoints>100</hitPoints>
+    <beautyRelated>true</beautyRelated>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelNose</defName>
+    <label>nose</label>
+    <hitPoints>100</hitPoints>
+    <beautyRelated>true</beautyRelated>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelTorso</defName>
+    <label>torso</label>
+    <hitPoints>1000</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelWaist</defName>
+    <label>waist</label>
+    <conceptual>true</conceptual>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelCore</defName>
+    <label>angel core</label>
+    <hitPoints>1000</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0.01</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+      <li>ConsciousnessSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelWing</defName>
+    <label>angel wing</label>
+    <hitPoints>1000</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <solid>true</solid>
+    <tags>
+      <li>MovingLimbDigit</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelShoulders</defName>
+    <label>shoulder</label>
+    <hitPoints>500</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelLegs</defName>
+    <label>leg</label>
+    <hitPoints>500</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelFeet</defName>
+    <label>foot</label>
+    <hitPoints>100</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>MovingLimbDigit</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelArms</defName>
+    <label>arm</label>
+    <hitPoints>500</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelHands</defName>
+    <label>hand</label>
+    <hitPoints>100</hitPoints>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_AngelSword</defName>
+    <label>sword</label>
+    <hitPoints>1000</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <solid>true</solid>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+</Defs>

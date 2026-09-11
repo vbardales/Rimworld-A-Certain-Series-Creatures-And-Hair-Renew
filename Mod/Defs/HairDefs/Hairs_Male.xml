@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 18 hairstyles. Same tagging as the female set. -->
+<Defs>
+
+  <HairDef>
+    <defName>ACS_kamijo</defName>
+    <label>Kamijou Touma</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/kamijo</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Accelerator</defName>
+    <label>Accelerator</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Accelerator</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_hamazura</defName>
+    <label>Hamazura Shiage</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/hamazura</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_2</defName>
+    <label>Dark Matter</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/2</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_7</defName>
+    <label>Attack Crash</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/7</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Tsuchimikado</defName>
+    <label>Tsuchimikado Motoharu</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Tsuchimikado</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Fortis931</defName>
+    <label>Stiyl Magnus</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Fortis931</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_aqua</defName>
+    <label>Acqua of the Back</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/aqua</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_blue</defName>
+    <label>Blue Hair Piercing</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/blue</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Etzali</defName>
+    <label>Etzali</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Etzali</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_fiamma</defName>
+    <label>Fiamma of the Right</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/fiamma</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Kakeru</defName>
+    <label>Kamisato Kakeru</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Kakeru</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Knight</defName>
+    <label>Knight Leader</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Knight</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Ollerus</defName>
+    <label>Ollerus</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Ollerus</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Aleister</defName>
+    <label>Aleister Crowley</label>
+    <styleGender>Any</styleGender>
+    <texPath>ACS/Hair/Aleister</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Thor</defName>
+    <label>Thor</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Thor</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Terra</defName>
+    <label>Terra of the Left</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Terra</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Doctor</defName>
+    <label>Heaven Canceller</label>
+    <styleGender>Male</styleGender>
+    <texPath>ACS/Hair/Doctor</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+</Defs>

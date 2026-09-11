@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>ACS_DarkMatterBeetle</defName>
+    <label>white rhinoceros beetle</label>
+    <description>A rhinoceros beetle grown out of dark matter, white from horn to tail. It neither eats nor ages the way a living thing does, and the horn on its head is a cannon.</description>
+    <statBases>
+      <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+      <ComfyTemperatureMax>500</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount>
+      <LeatherAmount>50</LeatherAmount>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <!-- 1.0 wrote <ToxicSensitivity>0</ToxicSensitivity>; 1.6 states the same thing the other way round. -->
+      <ToxicResistance>1</ToxicResistance>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <Flammability>0</Flammability>
+      <MoveSpeed>20</MoveSpeed>
+      <Wildness>0</Wildness>
+      <MarketValue>5000</MarketValue>
+      <Mass>50</Mass>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <accuracyTouch>0.8</accuracyTouch>
+        <accuracyShort>0.8</accuracyShort>
+        <accuracyMedium>0.5</accuracyMedium>
+        <accuracyLong>0.5</accuracyLong>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>3</warmupTime>
+        <defaultProjectile>ACS_Projectile_Beetle</defaultProjectile>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>36</ticksBetweenBurstShots>
+        <range>50</range>
+        <forcedMissRadius>5</forcedMissRadius>
+        <!-- The 1.0 sound FlameThrower is gone from 1.6; Shot_IncendiaryLauncher is its closest survivor. -->
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <commonality>1</commonality>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>horn</label>
+        <capacities>
+          <li>Stab</li>
+          <li>Poke</li>
+          <li>Blunt</li>
+        </capacities>
+        <power>80</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>ACS_BeetleHornAttackTool</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>5</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <!-- The original swapped these two labels: 右爪 (right claw) was linked to the front LEFT claw
+           and 左爪 (left claw) to the front RIGHT one. Labels follow the body part now. -->
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>ACS_BeetleFrontLeftClaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1</cooldownTime>
+        <linkedBodyPartsGroup>ACS_BeetleFrontRightClaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>mandibles</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>ACS_BeetleMouth</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+      <hasGenders>false</hasGenders>
+      <packAnimal>true</packAnimal>
+      <herdMigrationAllowed>false</herdMigrationAllowed>
+      <body>ACS_DarkMatterBeetle</body>
+      <petness>0</petness>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+      <leatherDef>ACS_DarkMatter</leatherDef>
+      <nuzzleMtbHours>0</nuzzleMtbHours>
+      <foodType>OmnivoreAnimal</foodType>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <gestationPeriodDays>0</gestationPeriodDays>
+      <lifeExpectancy>5</lifeExpectancy>
+      <trainability>Advanced</trainability>
+      <!-- 1.5 moved wildness out of <race> and into the Wildness stat; see statBases above. -->
+      <!-- The 1.0 def carried a <wildBiomes> block whose five entries were all 0, so the beetle
+           never spawned wild. Dropped rather than translated: it said nothing. -->
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Thrumbo_Pain</soundWounded>
+          <soundDeath>Pawn_Thrumbo_Death</soundDeath>
+          <soundCall>Pawn_Thrumbo_Call</soundCall>
+          <soundAngry>Pawn_Thrumbo_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>ACS_DarkMatterBeetle</defName>
+    <label>white rhinoceros beetle</label>
+    <race>ACS_DarkMatterBeetle</race>
+    <canArriveManhunter>false</canArriveManhunter>
+    <combatPower>100</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <wildGroupSize>
+      <min>0</min>
+      <max>0</max>
+    </wildGroupSize>
+    <minGenerationAge>0</minGenerationAge>
+    <maxGenerationAge>0</maxGenerationAge>
+    <labelMale>white rhinoceros beetle</labelMale>
+    <labelFemale>white rhinoceros beetle</labelFemale>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>ACS/Animal/DarkMatterBeetle</texPath>
+          <drawSize>5</drawSize>
+        </bodyGraphicData>
+        <!-- The original pointed dessicatedBodyGraphicData at Animal/Dessicated_DarkMatterBeetle,
+             which only ever shipped an _east frame. Graphic_Multi needs north, east and south, so
+             that entry could not resolve. Dropped: with none set the game falls back to the live
+             body texture drawn rotten, which is what players actually saw. -->
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

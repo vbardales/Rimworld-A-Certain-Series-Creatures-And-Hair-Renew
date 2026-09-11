@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What the propagator consumes and makes. The chain runs brain fragment -> dark matter ->
+     volleyball -> egg, and the egg hatches a beetle. -->
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ACS_KakineTeitokuBrain</defName>
+    <label>Kakine Teitoku's brain fragment</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>A preserved fragment of Kakine Teitoku's brain, still able to produce dark matter. Building a propagator consumes one, and only a propagator can grow another - so the first has to be bought.</description>
+    <graphicData>
+      <texPath>ACS/Items/KakineTeitokuBrain</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>10000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.0</Mass>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <tradeability>All</tradeability>
+    <techLevel>Spacer</techLevel>
+    <!-- The original also carried thingSetMakerTag RewardSpecial, dead in 1.6; see Resources.xml.
+         ExoticMisc is what matters here: it is what puts the first fragment within reach, through
+         outlander and orbital exotic traders and the Empire. -->
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ACS_Volleyball</defName>
+    <label>dark matter volleyball</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>A white sphere formed by condensing dark matter. It is the last step before the substance is given life again.</description>
+    <graphicData>
+      <texPath>ACS/Items/Volleyball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>0</Beauty>
+    </statBases>
+    <tradeability>All</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- The author wrote their own egg bases rather than inheriting Core's EggBase and EggFertBase,
+       because almost every number differs: this egg does not rot in a hundred days, does not
+       burn, does not deteriorate, and survives from -100 to +100 degrees. Kept as they wrote it. -->
+  <ThingDef Abstract="True" Name="ACS_EggBeetleBase" ParentName="OrganicProductBase">
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggBirdSmall</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <statBases>
+      <Mass>1</Mass>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>100</daysToRotStart>
+        <rotDestroys>false</rotDestroys>
+        <disableIfHatcher>true</disableIfHatcher>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="ACS_EggBeetleFertBase" ParentName="ACS_EggBeetleBase">
+    <tickerType>Normal</tickerType>
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <foodType>AnimalProduct</foodType>
+    </ingestible>
+    <thingCategories>
+      <li>EggsFertilized</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_TemperatureRuinable">
+        <minSafeTemperature>-100</minSafeTemperature>
+        <maxSafeTemperature>100</maxSafeTemperature>
+        <progressPerDegreePerTick>1</progressPerDegreePerTick>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ACS_EggBeetleFertBase">
+    <defName>ACS_EggBeetle</defName>
+    <label>rhinoceros beetle egg</label>
+    <description>An egg that hatches into a white rhinoceros beetle. Like any egg not laid in the colony, it hatches wild - but the beetle's wildness is zero, so taming it takes one try.</description>
+    <graphicData>
+      <color>(233,233,233)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>1</hatcherDaystoHatch>
+        <hatcherPawn>ACS_DarkMatterBeetle</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

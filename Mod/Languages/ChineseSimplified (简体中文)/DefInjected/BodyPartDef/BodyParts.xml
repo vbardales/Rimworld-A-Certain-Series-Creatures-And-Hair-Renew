@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: first segment -->
+  <ACS_BeetleFirstRing.label>首节</ACS_BeetleFirstRing.label>
+  <!-- EN: thorax segment -->
+  <ACS_BeetleSecondRing.label>胸节</ACS_BeetleSecondRing.label>
+  <!-- EN: abdomen segment -->
+  <ACS_BeetleThirdRing.label>腹节</ACS_BeetleThirdRing.label>
+  <!-- EN: dark matter core -->
+  <ACS_DarkMatterCore.label>未元物质核</ACS_DarkMatterCore.label>
+  <!-- EN: mouthparts -->
+  <ACS_BeetleMouth.label>口器</ACS_BeetleMouth.label>
+  <!-- EN: elytron -->
+  <ACS_BeetleElytra.label>鞘翅</ACS_BeetleElytra.label>
+  <!-- EN: horn cannon -->
+  <ACS_BeetleHorn.label>角炮</ACS_BeetleHorn.label>
+  <!-- EN: leg -->
+  <ACS_BeetleLeg.label>腿</ACS_BeetleLeg.label>
+  <!-- EN: claw -->
+  <ACS_BeetleClaw.label>爪</ACS_BeetleClaw.label>
+  <!-- EN: neck -->
+  <ACS_AngelNeck.label>颈</ACS_AngelNeck.label>
+  <!-- EN: head -->
+  <ACS_AngelHead.label>头</ACS_AngelHead.label>
+  <!-- EN: mouth -->
+  <ACS_AngelMouth.label>口</ACS_AngelMouth.label>
+  <!-- EN: eye -->
+  <ACS_AngelEye.label>眼</ACS_AngelEye.label>
+  <!-- EN: ear -->
+  <ACS_AngelEar.label>耳</ACS_AngelEar.label>
+  <!-- EN: nose -->
+  <ACS_AngelNose.label>鼻</ACS_AngelNose.label>
+  <!-- EN: torso -->
+  <ACS_AngelTorso.label>躯干</ACS_AngelTorso.label>
+  <!-- EN: waist -->
+  <ACS_AngelWaist.label>腰</ACS_AngelWaist.label>
+  <!-- EN: angel core -->
+  <ACS_AngelCore.label>天使之核</ACS_AngelCore.label>
+  <!-- EN: angel wing -->
+  <ACS_AngelWing.label>天使之翼</ACS_AngelWing.label>
+  <!-- EN: shoulder -->
+  <ACS_AngelShoulders.label>肩</ACS_AngelShoulders.label>
+  <!-- EN: leg -->
+  <ACS_AngelLegs.label>腿</ACS_AngelLegs.label>
+  <!-- EN: foot -->
+  <ACS_AngelFeet.label>足</ACS_AngelFeet.label>
+  <!-- EN: arm -->
+  <ACS_AngelArms.label>臂</ACS_AngelArms.label>
+  <!-- EN: hand -->
+  <ACS_AngelHands.label>手</ACS_AngelHands.label>
+  <!-- EN: sword -->
+  <ACS_AngelSword.label>剑</ACS_AngelSword.label>
+
+</LanguageData>

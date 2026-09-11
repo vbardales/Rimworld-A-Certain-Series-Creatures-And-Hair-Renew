@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 23 hairstyles. The original tagged every one of them Urban, Rural and Punk, so any pawn
+     can be generated with any of them; kept as it was. 1.0 called these fields hairGender and
+     hairTags - 1.6 calls them styleGender and styleTags. -->
+<Defs>
+
+  <HairDef>
+    <defName>ACS_yuriko</defName>
+    <label>Suzushina Yuriko</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/yuriko</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_index</defName>
+    <label>Index</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/index</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_misaka</defName>
+    <label>Railgun</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/misaka</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_LO</defName>
+    <label>Last Order</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/LO</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_4</defName>
+    <label>Meltdowner</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/4</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_5</defName>
+    <label>Mental Out</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/5</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Salvare000</defName>
+    <label>Kanzaki Kaori</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Salvare000</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Kuruko</defName>
+    <label>Shirai Kuroko</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Kuroko</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Lessar</defName>
+    <label>Lessar</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Lessar</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_MovePoint</defName>
+    <label>Musujime Awaki</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/MovePoint</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Saiai</defName>
+    <label>Kinuhata Saiai</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Saiai</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Takitsubo</defName>
+    <label>Takitsubo Rikou</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Takitsubo</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Othinus</defName>
+    <label>Othinus</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Othinus</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Laura</defName>
+    <label>Laura Stuart</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Laura</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Yunko</defName>
+    <label>Hokaze Junko</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Yunko</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Vento</defName>
+    <label>Vento of the Front</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Vento</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Carissa</defName>
+    <label>Carissa</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Carissa</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Birdway</defName>
+    <label>Leivinia Birdway</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Birdway</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Kazakiri</defName>
+    <label>Kazakiri Hyouka</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Kazakiri</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Itsuwa</defName>
+    <label>Itsuwa</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Itsuwa</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Orsola</defName>
+    <label>Orsola Aquinas</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Orsola</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Uiharu</defName>
+    <label>Uiharu Kazari</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Uiharu</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+  <HairDef>
+    <defName>ACS_Ruiko</defName>
+    <label>Saten Ruiko</label>
+    <styleGender>Female</styleGender>
+    <texPath>ACS/Hair/Ruiko</texPath>
+    <category>Urban</category>
+    <styleTags>
+      <li>Urban</li>
+      <li>Rural</li>
+      <li>Punk</li>
+    </styleTags>
+  </HairDef>
+
+</Defs>

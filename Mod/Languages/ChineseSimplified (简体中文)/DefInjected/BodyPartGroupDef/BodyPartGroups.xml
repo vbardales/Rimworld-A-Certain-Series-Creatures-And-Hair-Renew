@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: mandibles -->
+  <ACS_BeetleMouth.label>颚</ACS_BeetleMouth.label>
+  <!-- EN: horn cannon -->
+  <ACS_BeetleHornAttackTool.label>角炮</ACS_BeetleHornAttackTool.label>
+  <!-- EN: front left leg -->
+  <ACS_BeetleFrontLeftLeg.label>左前腿</ACS_BeetleFrontLeftLeg.label>
+  <!-- EN: front right leg -->
+  <ACS_BeetleFrontRightLeg.label>右前腿</ACS_BeetleFrontRightLeg.label>
+  <!-- EN: middle left leg -->
+  <ACS_BeetleMiddleLeftLeg.label>左中腿</ACS_BeetleMiddleLeftLeg.label>
+  <!-- EN: middle right leg -->
+  <ACS_BeetleMiddleRightLeg.label>右中腿</ACS_BeetleMiddleRightLeg.label>
+  <!-- EN: rear left leg -->
+  <ACS_BeetleRearLeftLeg.label>左后腿</ACS_BeetleRearLeftLeg.label>
+  <!-- EN: rear right leg -->
+  <ACS_BeetleRearRightLeg.label>右后腿</ACS_BeetleRearRightLeg.label>
+  <!-- EN: front left claw -->
+  <ACS_BeetleFrontLeftClaw.label>左前爪</ACS_BeetleFrontLeftClaw.label>
+  <!-- EN: front right claw -->
+  <ACS_BeetleFrontRightClaw.label>右前爪</ACS_BeetleFrontRightClaw.label>
+  <!-- EN: middle left claw -->
+  <ACS_BeetleMiddleLeftClaw.label>左中爪</ACS_BeetleMiddleLeftClaw.label>
+  <!-- EN: middle right claw -->
+  <ACS_BeetleMiddleRightClaw.label>右中爪</ACS_BeetleMiddleRightClaw.label>
+  <!-- EN: rear left claw -->
+  <ACS_BeetleRearLeftClaw.label>左后爪</ACS_BeetleRearLeftClaw.label>
+  <!-- EN: rear right claw -->
+  <ACS_BeetleRearRightClaw.label>右后爪</ACS_BeetleRearRightClaw.label>
+  <!-- EN: angel core -->
+  <ACS_AngelCore.label>天使之核</ACS_AngelCore.label>
+  <!-- EN: sword -->
+  <ACS_AngelSword.label>剑</ACS_AngelSword.label>
+  <!-- EN: first wing -->
+  <ACS_FirstWing.label>天使之翼</ACS_FirstWing.label>
+  <!-- EN: second wing -->
+  <ACS_SecondWing.label>天使之翼</ACS_SecondWing.label>
+  <!-- EN: third wing -->
+  <ACS_ThirdWing.label>天使之翼</ACS_ThirdWing.label>
+  <!-- EN: fourth wing -->
+  <ACS_FourthWing.label>天使之翼</ACS_FourthWing.label>
+  <!-- EN: fifth wing -->
+  <ACS_FifthWing.label>天使之翼</ACS_FifthWing.label>
+  <!-- EN: sixth wing -->
+  <ACS_SixthWing.label>天使之翼</ACS_SixthWing.label>
+  <!-- EN: seventh wing -->
+  <ACS_SeventhWing.label>天使之翼</ACS_SeventhWing.label>
+  <!-- EN: eighth wing -->
+  <ACS_EighthWing.label>天使之翼</ACS_EighthWing.label>
+  <!-- EN: left leg -->
+  <ACS_AngelLeftLeg.label>左腿</ACS_AngelLeftLeg.label>
+  <!-- EN: right leg -->
+  <ACS_AngelRightLeg.label>右腿</ACS_AngelRightLeg.label>
+  <!-- EN: left foot -->
+  <ACS_AngelLeftFoot.label>左足</ACS_AngelLeftFoot.label>
+  <!-- EN: right foot -->
+  <ACS_AngelRightFoot.label>右足</ACS_AngelRightFoot.label>
+  <!-- EN: left shoulder -->
+  <ACS_AngelLeftShoulder.label>左肩</ACS_AngelLeftShoulder.label>
+  <!-- EN: right shoulder -->
+  <ACS_AngelRightShoulder.label>右肩</ACS_AngelRightShoulder.label>
+  <!-- EN: left arm -->
+  <ACS_AngelLeftArm.label>左臂</ACS_AngelLeftArm.label>
+  <!-- EN: right arm -->
+  <ACS_AngelRightArm.label>右臂</ACS_AngelRightArm.label>
+  <!-- EN: left hand -->
+  <ACS_AngelLeftHand.label>左手</ACS_AngelLeftHand.label>
+  <!-- EN: right hand -->
+  <ACS_AngelRightHand.label>右手</ACS_AngelRightHand.label>
+
+</LanguageData>

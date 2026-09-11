@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Every recipe here runs at the dark matter propagator and nowhere else.
+     1.0's UnskilledLaborSpeed stat is 1.6's GeneralLaborSpeed. -->
+<Defs>
+
+  <RecipeDef Name="ACS_MakeDarkMatterBase" Abstract="True">
+    <jobString>Copying dark matter.</jobString>
+    <workAmount>10000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <recipeUsers>
+      <li>ACS_DarkMatterProduction</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ACS_MakeDarkMatterBase">
+    <defName>ACS_Make_DarkMatter</defName>
+    <label>copy dark matter</label>
+    <description>Make dark matter multiply: one unit in, five out.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ACS_DarkMatter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ACS_DarkMatter</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ACS_DarkMatter>5</ACS_DarkMatter>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>ACS_Make_KakineTeitokuBrain</defName>
+    <label>grow a brain fragment</label>
+    <description>Grow a second fragment of Kakine Teitoku's brain, so that a second propagator can be built.</description>
+    <jobString>Growing a brain fragment.</jobString>
+    <workAmount>500000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ACS_DarkMatter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <ACS_KakineTeitokuBrain>1</ACS_KakineTeitokuBrain>
+    </products>
+    <researchPrerequisite>ACS_DarkMatterTech</researchPrerequisite>
+    <skillRequirements>
+      <Intellectual>12</Intellectual>
+    </skillRequirements>
+    <workSkill>Intellectual</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>ACS_Make_DarkMatterByKakineTeitokuBrain</defName>
+    <label>produce dark matter from a brain fragment</label>
+    <description>Spend a brain fragment to draw two hundred units of dark matter out of it at once.</description>
+    <jobString>Producing dark matter.</jobString>
+    <workAmount>1000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ACS_KakineTeitokuBrain</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <ACS_DarkMatter>200</ACS_DarkMatter>
+    </products>
+    <researchPrerequisite>ACS_DarkMatterTech</researchPrerequisite>
+    <workSkill>Intellectual</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>ACS_Make_Volleyball</defName>
+    <label>make a dark matter volleyball</label>
+    <description>Condense dark matter into a white sphere.</description>
+    <jobString>Condensing dark matter.</jobString>
+    <workAmount>50000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ACS_DarkMatter</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <ACS_Volleyball>1</ACS_Volleyball>
+    </products>
+    <researchPrerequisite>ACS_DarkMatterTech</researchPrerequisite>
+    <workSkill>Intellectual</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>ACS_Make_EggBeetle</defName>
+    <label>grow a rhinoceros beetle egg</label>
+    <description>Give dark matter life again. The egg hatches in a day.</description>
+    <jobString>Growing a beetle egg.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <workSkill>Intellectual</workSkill>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ACS_Volleyball</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <ACS_EggBeetle>1</ACS_EggBeetle>
+    </products>
+    <researchPrerequisite>ACS_DarkMatterTech</researchPrerequisite>
+    <recipeUsers>
+      <li>ACS_DarkMatterProduction</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>

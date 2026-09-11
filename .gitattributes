@@ -1,0 +1,49 @@
+# Normalise line endings, for this mod when it is split into its own repository.
+# The monorepo has its own copy; `git subtree split` does not carry it, so this one exists
+# for the published tree.
+
+* text=auto
+
+# ---------- Text ----------
+
+*.xml   text
+*.cs    text diff=csharp
+*.md    text
+*.svg   text
+*.csproj text
+*.props text
+*.json  text
+*.yml   text
+*.txt   text
+*.csv   text
+*.tsv   text
+*.js    text
+*.ps1   text
+*.editorconfig text
+*.manifest text
+
+# Shell scripts break if they are given CRLF; .bat files want it.
+*.sh    text eol=lf
+*.bat   text eol=crlf
+
+# ---------- Binaries: neither normalised nor diffed as text ----------
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.xcf binary
+*.psd binary
+*.ogg binary
+*.wav binary
+*.mp3 binary
+*.dll binary
+*.pdb binary
+*.zip binary
+
+# Unity asset bundle, tracked WITHOUT an extension. Left to `text=auto` it would depend on
+# git's NUL-byte sniffing to be spared normalisation, and this particular file cannot be
+# regenerated: no PNG can be extracted from it, recopying the bundle is the only way to
+# have it. Named explicitly rather than trusted to detection.
+resource_RW_TeaTimeRodent_textures_textures binary

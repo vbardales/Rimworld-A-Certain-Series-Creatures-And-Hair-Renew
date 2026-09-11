@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One project where the original had two. It gated the propagator behind
+     AcademyCityTechnologyBasic (3000) then DarkMatter (15000), on a research tab of its own that
+     also carried the six armoury projects. The armoury is not in this extraction, and a tab for a
+     single project is clutter - so the two are folded into one at 18000, their combined cost,
+     keeping the three vanilla prerequisites the first one had, on the main tab. -->
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>ACS_DarkMatterTech</defName>
+    <label>dark matter propagation</label>
+    <description>The technique for putting the second-ranked esper's substance to use: how to keep a fragment of the brain that makes it alive, and how to persuade what it makes to multiply.</description>
+    <tab>Main</tab>
+    <baseCost>18000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+      <li>AdvancedFabrication</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <!-- Free slot immediately right of AdvancedFabrication (18, 3), which is its heaviest
+         prerequisite. Nothing in Core, Royalty, Ideology, Biotech, Anomaly or Odyssey sits here. -->
+    <researchViewX>19.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

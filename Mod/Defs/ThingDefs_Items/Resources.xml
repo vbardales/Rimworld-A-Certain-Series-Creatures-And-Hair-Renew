@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The three materials the two creatures leave behind: dark matter is the beetle's leather,
+     heavenly cloth the seraph's, and the angel core is what butchering a seraph yields. -->
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ACS_DarkMatter</defName>
+    <label>dark matter</label>
+    <description>A substance that does not exist, willed into being by Academy City's second-ranked esper. It weighs almost nothing, does not burn, does not rot, and turns aside anything thrown at it.</description>
+    <resourceReadoutPriority>First</resourceReadoutPriority>
+    <graphicData>
+      <!-- Graphic_StackCount reads a folder, not a file. The original pointed at Textures/Resource,
+           a name any mod is free to use: a second mod's PNG dropped in there would silently become
+           one of this item's stack variants. Moved under ACS/. -->
+      <texPath>ACS/Resource</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>ChunkRock_Drop</soundInteract>
+    <soundDrop>ChunkRock_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <Mass>0.5</Mass>
+      <StuffPower_Armor_Sharp>5</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>5</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>5</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>100</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>100</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>5</SharpDamageMultiplier>
+      <BluntDamageMultiplier>5</BluntDamageMultiplier>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <commonality>0</commonality>
+      <color>(233,233,233)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <!-- 1.0 called this soundImpactStuff. -->
+      <soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statOffsets>
+        <Beauty>0</Beauty>
+      </statOffsets>
+      <statFactors>
+        <DeteriorationRate>0.1</DeteriorationRate>
+        <WorkToMake>0.1</WorkToMake>
+        <WorkToBuild>0.1</WorkToBuild>
+        <MaxHitPoints>10</MaxHitPoints>
+        <Flammability>0</Flammability>
+        <MeleeWeapon_CooldownMultiplier>0.5</MeleeWeapon_CooldownMultiplier>
+        <BedRestEffectiveness>5</BedRestEffectiveness>
+        <Beauty>0</Beauty>
+        <DoorOpenSpeed>5</DoorOpenSpeed>
+        <SurgerySuccessChanceFactor>5</SurgerySuccessChanceFactor>
+        <ImmunityGainSpeedFactor>5</ImmunityGainSpeedFactor>
+      </statFactors>
+      <!-- 1.0 had a <smeltable> flag here; 1.6 moved smeltability onto the ThingDef of the item
+           itself, so a stuff no longer decides it. Nothing in this mod is made of dark matter, so
+           the flag had nothing left to govern and is not carried over. -->
+    </stuffProps>
+    <!-- The original also carried thingSetMakerTag RewardSpecial. No 1.6 thing set maker asks for
+         that tag any more, so it selected nothing; dropped rather than remapped onto a live tag,
+         which would have put dark matter into quest reward pools it was never in. -->
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ACS_HeavenCloth</defName>
+    <label>heavenly cloth</label>
+    <description>The cloth from heaven that an angel's skin is made of. It does not burn, does not wear, and keeps out any cold or heat this world can produce.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Cloth</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(233,233,233)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <MarketValue>1000</MarketValue>
+      <Mass>0.001</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <StuffPower_Armor_Sharp>5</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>5</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>5</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>1000</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>1000</StuffPower_Insulation_Heat>
+      <Beauty>100</Beauty>
+    </statBases>
+    <stackLimit>100</stackLimit>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0</commonality>
+      <color>(233,233,233)</color>
+      <statFactors>
+        <Flammability>0</Flammability>
+        <MaxHitPoints>100</MaxHitPoints>
+        <BedRestEffectiveness>5</BedRestEffectiveness>
+        <Beauty>100</Beauty>
+        <SurgerySuccessChanceFactor>10</SurgerySuccessChanceFactor>
+        <ImmunityGainSpeedFactor>10</ImmunityGainSpeedFactor>
+        <!-- The original had a ToxicSensitivity factor of -1 here. The stat is gone in 1.6, and a
+             negative multiplier never meant anything anyway; not carried over. -->
+        <DeteriorationRate>0</DeteriorationRate>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ACS_AngelCore</defName>
+    <label>angel core</label>
+    <description>The mysterious object at the heart of an angel. It is the only part of a seraph that survives butchering, and it is worth more than most colonies will ever hold.</description>
+    <graphicData>
+      <texPath>ACS/Items/AngelCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>10000</MarketValue>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Mass>0</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>1000</Beauty>
+    </statBases>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>AnimalPart</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+</Defs>

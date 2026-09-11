@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The seraph's shot blooms twice on impact. The original mod also shipped Gungnir and HolyRight,
+     effecters for weapons that are not part of this extraction; they are not carried over. -->
+<Defs>
+
+  <EffecterDef>
+    <defName>ACS_Sweep</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_GiantExplosion</moteDef>
+        <scale>
+          <min>5</min>
+          <max>5</max>
+        </scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_GiantExplosionInner</moteDef>
+        <scale>
+          <min>10</min>
+          <max>10</max>
+        </scale>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

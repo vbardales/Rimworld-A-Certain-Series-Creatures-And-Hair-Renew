@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The two creatures' innate shots. Neither is a weapon: they exist only as the defaultProjectile
+     of an animal's own verb, and without them the verbs dangle. -->
+<Defs>
+
+  <ThingDef>
+    <defName>ACS_Projectile_Beetle</defName>
+    <label>beetle cannon</label>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <neverMultiSelect>true</neverMultiSelect>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>TransparentPostLight</shaderType>
+      <texPath>ACS/Projectile/Beetle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <speed>100</speed>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <explosionRadius>1</explosionRadius>
+      <stoppingPower>1</stoppingPower>
+      <!-- The 1.0 sound FlameThrower is gone from 1.6. -->
+      <soundExplode>Explosion_Flame</soundExplode>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>ACS_Projectile_Sweep</defName>
+    <label>sweep</label>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <neverMultiSelect>true</neverMultiSelect>
+    <!-- The original asked for AnimalRangeAttack.Projectile_Explode, a class from a mod it neither
+         shipped nor declared as a dependency. The whole def failed to resolve, and with it the
+         seraph's ranged verb. Vanilla Projectile_Explosive does the same job: it reads
+         explosionEffect from the projectile properties below. -->
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>TransparentPostLight</shaderType>
+      <texPath>ACS/Projectile/isso</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>10</drawSize>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <speed>100</speed>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <explosionRadius>5</explosionRadius>
+      <stoppingPower>5</stoppingPower>
+      <soundExplode>Explosion_Flame</soundExplode>
+      <explosionEffect>ACS_Sweep</explosionEffect>
+    </projectile>
+  </ThingDef>
+
+</Defs>

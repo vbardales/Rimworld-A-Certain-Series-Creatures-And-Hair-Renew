@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BodyDef>
+    <defName>ACS_Seraphim</defName>
+    <label>archangel</label>
+    <corePart>
+      <def>ACS_AngelTorso</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>ACS_AngelNeck</def>
+          <coverage>0.05</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>ACS_AngelHead</def>
+              <coverage>0.75</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_AngelCore</def>
+                  <coverage>0.30</coverage>
+                  <depth>Inside</depth>
+                  <groups>
+                    <li>ACS_AngelCore</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>ACS_AngelEye</def>
+                  <customLabel>left eye</customLabel>
+                  <coverage>0.07</coverage>
+                </li>
+                <li>
+                  <def>ACS_AngelEye</def>
+                  <customLabel>right eye</customLabel>
+                  <coverage>0.07</coverage>
+                </li>
+                <li>
+                  <def>ACS_AngelEar</def>
+                  <customLabel>left ear</customLabel>
+                  <coverage>0.07</coverage>
+                </li>
+                <li>
+                  <def>ACS_AngelEar</def>
+                  <customLabel>right ear</customLabel>
+                  <coverage>0.07</coverage>
+                </li>
+                <li>
+                  <def>ACS_AngelNose</def>
+                  <coverage>0.10</coverage>
+                </li>
+                <li>
+                  <def>ACS_AngelMouth</def>
+                  <coverage>0.15</coverage>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>ACS_AngelWaist</def>
+          <coverage>0</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Waist</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelLegs</def>
+          <customLabel>left leg</customLabel>
+          <coverage>0.14</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>ACS_AngelLeftLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>ACS_AngelFeet</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>ACS_AngelLeftFoot</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>ACS_AngelLegs</def>
+          <customLabel>right leg</customLabel>
+          <coverage>0.14</coverage>
+          <height>Bottom</height>
+          <!-- The original put the right leg in the AngelLeftLeg group too, leaving AngelRightLeg
+               defined and unused. Corrected. -->
+          <groups>
+            <li>ACS_AngelRightLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>ACS_AngelFeet</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>ACS_AngelRightFoot</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>ACS_AngelShoulders</def>
+          <customLabel>left shoulder</customLabel>
+          <coverage>0.12</coverage>
+          <groups>
+            <li>ACS_AngelLeftShoulder</li>
+          </groups>
+          <parts>
+            <li>
+              <def>ACS_AngelArms</def>
+              <customLabel>left arm</customLabel>
+              <coverage>0.77</coverage>
+              <groups>
+                <li>ACS_AngelLeftArm</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_AngelHands</def>
+                  <customLabel>left hand</customLabel>
+                  <coverage>0.14</coverage>
+                  <height>Bottom</height>
+                  <groups>
+                    <li>ACS_AngelLeftHand</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>ACS_AngelShoulders</def>
+          <customLabel>right shoulder</customLabel>
+          <coverage>0.12</coverage>
+          <groups>
+            <li>ACS_AngelRightShoulder</li>
+          </groups>
+          <parts>
+            <li>
+              <def>ACS_AngelArms</def>
+              <customLabel>right arm</customLabel>
+              <coverage>0.77</coverage>
+              <groups>
+                <li>ACS_AngelRightArm</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>ACS_AngelHands</def>
+                  <customLabel>right hand</customLabel>
+                  <coverage>0.14</coverage>
+                  <height>Bottom</height>
+                  <groups>
+                    <li>ACS_AngelRightHand</li>
+                  </groups>
+                </li>
+                <li>
+                  <def>ACS_AngelSword</def>
+                  <customLabel>sword</customLabel>
+                  <coverage>0.5</coverage>
+                  <height>Bottom</height>
+                  <groups>
+                    <li>ACS_AngelSword</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>first wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_FirstWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>second wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_SecondWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>third wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_ThirdWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>fourth wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_FourthWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>fifth wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_FifthWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>sixth wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_SixthWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>seventh wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_SeventhWing</li>
+          </groups>
+        </li>
+        <li>
+          <def>ACS_AngelWing</def>
+          <customLabel>eighth wing</customLabel>
+          <coverage>0.05</coverage>
+          <height>Middle</height>
+          <groups>
+            <li>ACS_EighthWing</li>
+          </groups>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

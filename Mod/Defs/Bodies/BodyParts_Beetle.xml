@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Body parts of the white rhinoceros beetle. Every defName carries the ACS_ prefix: the
+     original called one of them simply "Core", which any mechanoid or insect mod is free to
+     define as well, and the loser of that collision disappears without a word. -->
+<Defs>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleFirstRing</defName>
+    <label>first segment</label>
+    <hitPoints>100</hitPoints>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <solid>true</solid>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleSecondRing</defName>
+    <label>thorax segment</label>
+    <hitPoints>50</hitPoints>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <solid>true</solid>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleThirdRing</defName>
+    <label>abdomen segment</label>
+    <hitPoints>100</hitPoints>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <solid>true</solid>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_DarkMatterCore</defName>
+    <label>dark matter core</label>
+    <hitPoints>50</hitPoints>
+    <bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BloodPumpingSource</li>
+      <li>BloodFiltrationSource</li>
+      <li>MetabolismSource</li>
+      <li>BreathingSource</li>
+      <li>ConsciousnessSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleMouth</defName>
+    <label>mouthparts</label>
+    <hitPoints>30</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <bleedRate>0</bleedRate>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>EatingSource</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleElytra</defName>
+    <label>elytron</label>
+    <hitPoints>100</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>MovingLimbDigit</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleHorn</defName>
+    <label>horn cannon</label>
+    <hitPoints>200</hitPoints>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <alive>false</alive>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleLeg</defName>
+    <label>leg</label>
+    <hitPoints>50</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <bleedRate>0</bleedRate>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ACS_BeetleClaw</defName>
+    <label>claw</label>
+    <hitPoints>20</hitPoints>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
+    <tags>
+      <li>MovingLimbDigit</li>
+      <li>ManipulationLimbDigit</li>
+    </tags>
+  </BodyPartDef>
+
+</Defs>

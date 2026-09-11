@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: copy dark matter -->
+  <ACS_Make_DarkMatter.label>复制未元物质</ACS_Make_DarkMatter.label>
+  <ACS_Make_DarkMatter.description>复制未元物质</ACS_Make_DarkMatter.description>
+  <ACS_Make_DarkMatter.jobString>复制未元物质</ACS_Make_DarkMatter.jobString>
+
+  <!-- EN: grow a brain fragment -->
+  <ACS_Make_KakineTeitokuBrain.label>培育垣根帝督的大脑碎块</ACS_Make_KakineTeitokuBrain.label>
+  <ACS_Make_KakineTeitokuBrain.description>培育垣根帝督的大脑碎块</ACS_Make_KakineTeitokuBrain.description>
+  <ACS_Make_KakineTeitokuBrain.jobString>培育垣根帝督的大脑碎块</ACS_Make_KakineTeitokuBrain.jobString>
+
+  <!-- EN: produce dark matter from a brain fragment -->
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.label>用垣根帝督的大脑碎块生产未元物质</ACS_Make_DarkMatterByKakineTeitokuBrain.label>
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.description>用垣根帝督的大脑碎块生产未元物质</ACS_Make_DarkMatterByKakineTeitokuBrain.description>
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.jobString>生产未元物质</ACS_Make_DarkMatterByKakineTeitokuBrain.jobString>
+
+  <!-- EN: make a dark matter volleyball -->
+  <ACS_Make_Volleyball.label>制造未元物质排球</ACS_Make_Volleyball.label>
+  <ACS_Make_Volleyball.description>将未元物质浓缩成白色的球形物体</ACS_Make_Volleyball.description>
+  <ACS_Make_Volleyball.jobString>浓缩未元物质</ACS_Make_Volleyball.jobString>
+
+  <!-- EN: grow a rhinoceros beetle egg -->
+  <ACS_Make_EggBeetle.label>培育独角仙的卵</ACS_Make_EggBeetle.label>
+  <ACS_Make_EggBeetle.description>使未元物质重获生命</ACS_Make_EggBeetle.description>
+  <ACS_Make_EggBeetle.jobString>培育独角仙的卵</ACS_Make_EggBeetle.jobString>
+
+</LanguageData>

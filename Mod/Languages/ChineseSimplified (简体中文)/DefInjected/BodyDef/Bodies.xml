@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: white rhinoceros beetle -->
+  <ACS_DarkMatterBeetle.label>白色独角仙</ACS_DarkMatterBeetle.label>
+  <!-- The original left the eyes and antennae labelled in English; the terms below are the ones
+       vanilla RimWorld uses for the same insect parts. -->
+  <!-- EN: left eye -->
+  <ACS_DarkMatterBeetle.corePart.parts.left_eye.customLabel>左眼</ACS_DarkMatterBeetle.corePart.parts.left_eye.customLabel>
+  <!-- EN: right eye -->
+  <ACS_DarkMatterBeetle.corePart.parts.right_eye.customLabel>右眼</ACS_DarkMatterBeetle.corePart.parts.right_eye.customLabel>
+  <!-- EN: left antenna -->
+  <ACS_DarkMatterBeetle.corePart.parts.left_antenna.customLabel>左触角</ACS_DarkMatterBeetle.corePart.parts.left_antenna.customLabel>
+  <!-- EN: right antenna -->
+  <ACS_DarkMatterBeetle.corePart.parts.right_antenna.customLabel>右触角</ACS_DarkMatterBeetle.corePart.parts.right_antenna.customLabel>
+  <!-- EN: left elytron -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.left_elytron.customLabel>左鞘翅</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.left_elytron.customLabel>
+  <!-- EN: right elytron -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.right_elytron.customLabel>右鞘翅</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.right_elytron.customLabel>
+  <!-- EN: front left leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.customLabel>左前腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.customLabel>
+  <!-- EN: front right leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.customLabel>右前腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.customLabel>
+  <!-- EN: middle left leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.customLabel>左中腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.customLabel>
+  <!-- EN: middle right leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.customLabel>右中腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.customLabel>
+  <!-- EN: rear left leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.customLabel>左后腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.customLabel>
+  <!-- EN: rear right leg -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.customLabel>右后腿</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.customLabel>
+  <!-- EN: front left claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.parts.front_left_claw.customLabel>左前爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.parts.front_left_claw.customLabel>
+  <!-- EN: front right claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.parts.front_right_claw.customLabel>右前爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.parts.front_right_claw.customLabel>
+  <!-- EN: middle left claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.parts.middle_left_claw.customLabel>左中爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.parts.middle_left_claw.customLabel>
+  <!-- EN: middle right claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.parts.middle_right_claw.customLabel>右中爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.parts.middle_right_claw.customLabel>
+  <!-- EN: rear left claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.parts.rear_left_claw.customLabel>左后爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.parts.rear_left_claw.customLabel>
+  <!-- EN: rear right claw -->
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.parts.rear_right_claw.customLabel>右后爪</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.parts.rear_right_claw.customLabel>
+
+  <!-- EN: archangel -->
+  <ACS_Seraphim.label>大天使</ACS_Seraphim.label>
+  <!-- EN: left eye -->
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_eye.customLabel>左眼</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_eye.customLabel>
+  <!-- EN: right eye -->
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_eye.customLabel>右眼</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_eye.customLabel>
+  <!-- EN: left ear -->
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_ear.customLabel>左耳</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_ear.customLabel>
+  <!-- EN: right ear -->
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_ear.customLabel>右耳</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_ear.customLabel>
+  <!-- EN: left leg -->
+  <ACS_Seraphim.corePart.parts.left_leg.customLabel>左腿</ACS_Seraphim.corePart.parts.left_leg.customLabel>
+  <!-- EN: left foot -->
+  <ACS_Seraphim.corePart.parts.left_leg.parts.left_foot.customLabel>左足</ACS_Seraphim.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <ACS_Seraphim.corePart.parts.right_leg.customLabel>右腿</ACS_Seraphim.corePart.parts.right_leg.customLabel>
+  <!-- EN: right foot -->
+  <ACS_Seraphim.corePart.parts.right_leg.parts.right_foot.customLabel>右足</ACS_Seraphim.corePart.parts.right_leg.parts.right_foot.customLabel>
+  <!-- EN: left shoulder -->
+  <ACS_Seraphim.corePart.parts.left_shoulder.customLabel>左肩</ACS_Seraphim.corePart.parts.left_shoulder.customLabel>
+  <!-- EN: left arm -->
+  <ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.customLabel>左臂</ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  <!-- EN: left hand -->
+  <ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>左手</ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  <!-- EN: right shoulder -->
+  <ACS_Seraphim.corePart.parts.right_shoulder.customLabel>右肩</ACS_Seraphim.corePart.parts.right_shoulder.customLabel>
+  <!-- EN: right arm -->
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.customLabel>右臂</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  <!-- EN: right hand -->
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>右手</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  <!-- EN: sword -->
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>剑</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>
+  <!-- The eight wings all read 天使之翼 in the original; only their order tells them apart. -->
+  <!-- EN: first wing -->
+  <ACS_Seraphim.corePart.parts.first_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.first_wing.customLabel>
+  <!-- EN: second wing -->
+  <ACS_Seraphim.corePart.parts.second_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.second_wing.customLabel>
+  <!-- EN: third wing -->
+  <ACS_Seraphim.corePart.parts.third_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.third_wing.customLabel>
+  <!-- EN: fourth wing -->
+  <ACS_Seraphim.corePart.parts.fourth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.fourth_wing.customLabel>
+  <!-- EN: fifth wing -->
+  <ACS_Seraphim.corePart.parts.fifth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.fifth_wing.customLabel>
+  <!-- EN: sixth wing -->
+  <ACS_Seraphim.corePart.parts.sixth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.sixth_wing.customLabel>
+  <!-- EN: seventh wing -->
+  <ACS_Seraphim.corePart.parts.seventh_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.seventh_wing.customLabel>
+  <!-- EN: eighth wing -->
+  <ACS_Seraphim.corePart.parts.eighth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.eighth_wing.customLabel>
+
+</LanguageData>

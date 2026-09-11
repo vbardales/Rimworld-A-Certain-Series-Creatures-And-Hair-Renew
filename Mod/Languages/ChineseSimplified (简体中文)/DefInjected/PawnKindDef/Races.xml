@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: white rhinoceros beetle -->
+  <ACS_DarkMatterBeetle.label>白色独角仙</ACS_DarkMatterBeetle.label>
+  <ACS_DarkMatterBeetle.labelMale>白色独角仙</ACS_DarkMatterBeetle.labelMale>
+  <ACS_DarkMatterBeetle.labelFemale>白色独角仙</ACS_DarkMatterBeetle.labelFemale>
+
+  <!-- EN: God's Power -->
+  <ACS_Gabriel.label>神之力</ACS_Gabriel.label>
+  <ACS_Gabriel.labelMale>神之力</ACS_Gabriel.labelMale>
+  <ACS_Gabriel.labelFemale>神之力</ACS_Gabriel.labelFemale>
+
+</LanguageData>

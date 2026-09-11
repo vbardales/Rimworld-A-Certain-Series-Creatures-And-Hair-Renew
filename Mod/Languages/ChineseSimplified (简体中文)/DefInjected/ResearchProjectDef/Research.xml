@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One project here where the original had two; the label and description are those of
+     未元物质扩展技术, the second of the pair, which is the one that unlocked the propagator. -->
+<LanguageData>
+
+  <!-- EN: dark matter propagation -->
+  <ACS_DarkMatterTech.label>未元物质扩展技术</ACS_DarkMatterTech.label>
+  <ACS_DarkMatterTech.description>将第二名超能力者制造的物质加以利用的技术</ACS_DarkMatterTech.description>
+
+</LanguageData>

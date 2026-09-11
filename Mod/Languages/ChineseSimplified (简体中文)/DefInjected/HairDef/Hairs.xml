@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 41 hairstyles named after characters of the series. Where the original named a power
+     rather than a person - Railgun, Dark Matter, Mental Out - the English label follows it. -->
+<LanguageData>
+
+  <!-- EN: Suzushina Yuriko -->
+  <ACS_yuriko.label>铃科百合子</ACS_yuriko.label>
+  <!-- EN: Index -->
+  <ACS_index.label>index</ACS_index.label>
+  <!-- EN: Railgun -->
+  <ACS_misaka.label>超电磁炮</ACS_misaka.label>
+  <!-- EN: Last Order -->
+  <ACS_LO.label>最后之作</ACS_LO.label>
+  <!-- EN: Meltdowner -->
+  <ACS_4.label>原子崩坏</ACS_4.label>
+  <!-- EN: Mental Out -->
+  <ACS_5.label>心理掌控</ACS_5.label>
+  <!-- EN: Kanzaki Kaori -->
+  <ACS_Salvare000.label>神裂火织</ACS_Salvare000.label>
+  <!-- EN: Shirai Kuroko -->
+  <ACS_Kuruko.label>白井黑子</ACS_Kuruko.label>
+  <!-- EN: Lessar -->
+  <ACS_Lessar.label>蕾莎</ACS_Lessar.label>
+  <!-- EN: Musujime Awaki -->
+  <ACS_MovePoint.label>结标淡析</ACS_MovePoint.label>
+  <!-- EN: Kinuhata Saiai -->
+  <ACS_Saiai.label>绢旗最爱</ACS_Saiai.label>
+  <!-- EN: Takitsubo Rikou -->
+  <ACS_Takitsubo.label>泷壶理后</ACS_Takitsubo.label>
+  <!-- EN: Othinus -->
+  <ACS_Othinus.label>欧提努斯</ACS_Othinus.label>
+  <!-- EN: Laura Stuart -->
+  <ACS_Laura.label>萝拉</ACS_Laura.label>
+  <!-- EN: Hokaze Junko -->
+  <ACS_Yunko.label>帆风润子</ACS_Yunko.label>
+  <!-- EN: Vento of the Front -->
+  <ACS_Vento.label>前方之风</ACS_Vento.label>
+  <!-- EN: Carissa -->
+  <ACS_Carissa.label>凯莉沙</ACS_Carissa.label>
+  <!-- EN: Leivinia Birdway -->
+  <ACS_Birdway.label>柏德薇</ACS_Birdway.label>
+  <!-- EN: Kazakiri Hyouka -->
+  <ACS_Kazakiri.label>风斩冰华</ACS_Kazakiri.label>
+  <!-- EN: Itsuwa -->
+  <ACS_Itsuwa.label>五和</ACS_Itsuwa.label>
+  <!-- EN: Orsola Aquinas -->
+  <ACS_Orsola.label>奥索拉</ACS_Orsola.label>
+  <!-- EN: Uiharu Kazari -->
+  <ACS_Uiharu.label>初春饰利</ACS_Uiharu.label>
+  <!-- EN: Saten Ruiko -->
+  <ACS_Ruiko.label>佐天泪子</ACS_Ruiko.label>
+  <!-- EN: Kamijou Touma -->
+  <ACS_kamijo.label>上条当麻</ACS_kamijo.label>
+  <!-- EN: Accelerator -->
+  <ACS_Accelerator.label>一方通行</ACS_Accelerator.label>
+  <!-- EN: Hamazura Shiage -->
+  <ACS_hamazura.label>滨面仕上</ACS_hamazura.label>
+  <!-- EN: Dark Matter -->
+  <ACS_2.label>未元物质</ACS_2.label>
+  <!-- EN: Attack Crash -->
+  <ACS_7.label>念动炮弹</ACS_7.label>
+  <!-- EN: Tsuchimikado Motoharu -->
+  <ACS_Tsuchimikado.label>土御门元春</ACS_Tsuchimikado.label>
+  <!-- EN: Stiyl Magnus -->
+  <ACS_Fortis931.label>史提尔</ACS_Fortis931.label>
+  <!-- EN: Acqua of the Back -->
+  <ACS_aqua.label>后方之水</ACS_aqua.label>
+  <!-- EN: Blue Hair Piercing -->
+  <ACS_blue.label>蓝发耳环</ACS_blue.label>
+  <!-- EN: Etzali -->
+  <ACS_Etzali.label>艾扎力</ACS_Etzali.label>
+  <!-- EN: Fiamma of the Right -->
+  <ACS_fiamma.label>右方之火</ACS_fiamma.label>
+  <!-- EN: Kamisato Kakeru -->
+  <ACS_Kakeru.label>上里翔流</ACS_Kakeru.label>
+  <!-- EN: Knight Leader -->
+  <ACS_Knight.label>骑士团长</ACS_Knight.label>
+  <!-- EN: Ollerus -->
+  <ACS_Ollerus.label>欧雷尔斯</ACS_Ollerus.label>
+  <!-- EN: Aleister Crowley -->
+  <ACS_Aleister.label>亚雷斯塔</ACS_Aleister.label>
+  <!-- EN: Thor -->
+  <ACS_Thor.label>索尔</ACS_Thor.label>
+  <!-- EN: Terra of the Left -->
+  <ACS_Terra.label>左方之地</ACS_Terra.label>
+  <!-- EN: Heaven Canceller -->
+  <ACS_Doctor.label>冥土追魂</ACS_Doctor.label>
+
+</LanguageData>

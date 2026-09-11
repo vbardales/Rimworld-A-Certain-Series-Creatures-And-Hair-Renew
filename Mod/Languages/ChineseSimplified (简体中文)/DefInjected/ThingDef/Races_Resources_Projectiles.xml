@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The original text of 某系列MOD by 混沌の味方. English is the def-side language now, so the
+     Chinese the mod was written in lives here. -->
+<LanguageData>
+
+  <!-- EN: white rhinoceros beetle -->
+  <ACS_DarkMatterBeetle.label>白色独角仙</ACS_DarkMatterBeetle.label>
+  <ACS_DarkMatterBeetle.description>从未元物质中孕育出的独角仙</ACS_DarkMatterBeetle.description>
+  <!-- EN: horn -->
+  <ACS_DarkMatterBeetle.tools.horn.label>尖角重击</ACS_DarkMatterBeetle.tools.horn.label>
+  <!-- EN: left claw -->
+  <ACS_DarkMatterBeetle.tools.left_claw.label>左爪</ACS_DarkMatterBeetle.tools.left_claw.label>
+  <!-- EN: right claw -->
+  <ACS_DarkMatterBeetle.tools.right_claw.label>右爪</ACS_DarkMatterBeetle.tools.right_claw.label>
+  <!-- EN: mandibles -->
+  <ACS_DarkMatterBeetle.tools.mandibles.label>颚</ACS_DarkMatterBeetle.tools.mandibles.label>
+
+  <!-- EN: God's Power -->
+  <ACS_Gabriel.label>神之力</ACS_Gabriel.label>
+  <ACS_Gabriel.description>具有庞大力量的炽天使</ACS_Gabriel.description>
+  <!-- EN: crystal sword -->
+  <ACS_Gabriel.tools.crystal_sword.label>结晶之剑</ACS_Gabriel.tools.crystal_sword.label>
+  <!-- The eight wing tools share one label. RimWorld does not give up on a duplicate handle: it
+       suffixes it with its rank among the duplicates, counted from zero and independent of the
+       position in the list - exactly as Core writes Rhinoceros.tools.horn-0 and horn-1 for a
+       rhino's two horns. -->
+  <ACS_Gabriel.tools.water_wing_blade-0.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-0.label>
+  <ACS_Gabriel.tools.water_wing_blade-1.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-1.label>
+  <ACS_Gabriel.tools.water_wing_blade-2.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-2.label>
+  <ACS_Gabriel.tools.water_wing_blade-3.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-3.label>
+  <ACS_Gabriel.tools.water_wing_blade-4.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-4.label>
+  <ACS_Gabriel.tools.water_wing_blade-5.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-5.label>
+  <ACS_Gabriel.tools.water_wing_blade-6.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-6.label>
+  <ACS_Gabriel.tools.water_wing_blade-7.label>水翼之刃</ACS_Gabriel.tools.water_wing_blade-7.label>
+
+  <!-- EN: dark matter -->
+  <ACS_DarkMatter.label>未元物质</ACS_DarkMatter.label>
+  <ACS_DarkMatter.description>学园都市第二位超能力者创造出的不存在的物质</ACS_DarkMatter.description>
+
+  <!-- EN: heavenly cloth -->
+  <ACS_HeavenCloth.label>天界之布</ACS_HeavenCloth.label>
+  <ACS_HeavenCloth.description>构成天使皮肤的来自天界的布料</ACS_HeavenCloth.description>
+
+  <!-- EN: angel core -->
+  <ACS_AngelCore.label>天使之核</ACS_AngelCore.label>
+  <ACS_AngelCore.description>构成天使核心的神秘物体</ACS_AngelCore.description>
+
+  <!-- EN: beetle cannon -->
+  <ACS_Projectile_Beetle.label>独角仙大炮</ACS_Projectile_Beetle.label>
+  <!-- EN: sweep -->
+  <ACS_Projectile_Sweep.label>一扫</ACS_Projectile_Sweep.label>
+
+</LanguageData>
