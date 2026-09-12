@@ -1,22 +1,22 @@
 ---
-mod:         A Certain Series - Creatures and Hair Renew
-packageId:   nelim.acertainseriescreaturesandhairrenew
-repo:        Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
-visibility:  public
-detached:    yes
-stage:       done
-licence:     silent
-licence_at:  three places, the mod itself, its About.xml, and the absence of a linked repository
+mod:          A Certain Series - Creatures and Hair Renew
+packageId:    nelim.acertainseriescreaturesandhairrenew
+repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
+visibility:   public
+detached:     yes
+stage:        done
+licence:      silent
+licence_at:   three places, the mod itself, its About.xml, and the absence of a linked repository
 dependencies: none
-showcase:    complete
+showcase:     complete
 tested_on:
 workshop:
 remaining:
   - unverified: never seen running in game, and five of the six repairs can only be read in part
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
-session:     local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:     2026-09-12, kept by the session that holds this mod
+session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
+updated:      2026-09-12, kept by the session that holds this mod
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -47,5 +47,12 @@ The fields above are kept by the session that holds this mod. What they say toda
 `remaining` vocabulary: `feature` for something missing from the first cut, `defect` for a known
 defect left unfixed, `unverified` for what could not be checked.
 
-`licence` vocabulary: `open` an explicit licence, `silent` no licence and a dead source, `alive`
-no licence but a living source, `forbidden` a written refusal, `original` nothing reused.
+`licence` vocabulary: `open` an explicit licence, `silent` no licence and a dead source,
+`alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing
+to anyone — not a name, not an idea traceable to one mod, not a value derived from its assets.
+
+- **`dependencies`** — `declared` when every mod this one needs is named in the About's
+  `modDependencies`, `to check` when a non-vanilla `loadAfter` suggests a dependency that is not
+  declared, `none` when the mod needs nothing. An undeclared dependency is not cosmetic: on
+  2026-09-11 Reequilibrage animaux took 47 vanilla animals down with it, Muffalo included, because
+  the class it injects belongs to a mod that was not declared and not loaded.
