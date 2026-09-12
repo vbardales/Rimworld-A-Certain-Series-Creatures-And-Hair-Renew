@@ -6,7 +6,7 @@ visibility:   public
 detached:     yes
 stage:        done
 licence:      silent
-licence_at:   three places, the mod itself, its About.xml, and the absence of a linked repository
+licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 dependencies: none
 showcase:     complete
 tested_on:
@@ -26,10 +26,20 @@ lives at the root, never in `Mod/`, so Steam never receives it.
 
 The fields above are kept by the session that holds this mod. What they say today:
 
-- **`stage: done`** — the content is finished and verified cold. 123 defs, no C#, and the
-  monorepo's four checkers replayed on 2026-09-11 without a line between them: XML fields valid
-  by reflection against the 1.6 assembly, every def reference resolved, no unguarded third-party
-  type, 200 translation keys good.
+- **`stage: done`** — content complete, with offline validation; this does not mean tested
+  in game. All 28 XML files parsed, covering 123 concrete defs and no C# assembly.
+  Six shared validators passed during the 2026-09-12 audit:
+  `../scripts/Check-XmlFields.ps1`, `Check-DefRefs.ps1`, `Check-XmlClasses.ps1`,
+  `Check-TypeRefs.ps1`, `Check-ConfigErrors.ps1` and `Check-DefInjected.ps1`.
+  Fields, def references, parents and referenced classes resolved; no unguarded third-party
+  type or covered configuration error was reported, and all 200 translation keys passed.
+  The standalone `Tests/Test-Mod.ps1` suite was rerun on 2026-09-12: **9 groups passed,
+  0 failed**. It covers metadata, XML/local references, textures, combat and anatomy
+  regressions, production access, egg hatching and hairstyles. Run instructions and
+  limits are in [`TESTING.md`](TESTING.md).
+  `.github/workflows/tests.yml` runs this suite on pushes, pull requests and manual
+  dispatch. The workflow is committed and pushed; its remote run status has not been
+  checked here. Static checks do not replace the pending in-game scenarios.
 - **`showcase: complete`** — `Preview.png` at 896x504 with the title engraved, `ModIcon.png` at
   128x128, both full-size renders kept under `Art/`.
   Preview overlay recomposed on 2026-09-12 against `../STYLE_RIMWORLD.md`:
@@ -57,7 +67,8 @@ The fields above are kept by the session that holds this mod. What they say toda
   badge digits against the opaque accent 8.51:1. No shadow credit is used.
   Visually checked `Mod/About/Preview.png` (896x504, 569528 bytes) and
   `Art/preview-268.png` (268px wide): no overlap or clipping, title and version
-  identifiable, reduced title words readable and divider visible. Nothing published.
+  identifiable, reduced title words readable and divider visible. Preview and composition
+  sources pushed to GitHub in commit `47be439`; nothing uploaded to the Workshop.
 - **`tested_on`, empty** — the mod has never been launched. That is the one real remainder, and
   not one a session can clear on its own: see [`TESTING.md`](TESTING.md), which lays out the run
   in order, the seven strings to search `Player.log` for, and the two questions that have no
@@ -65,10 +76,22 @@ The fields above are kept by the session that holds this mod. What they say toda
 - **`workshop`, empty** — never uploaded, and no `PublishedFileId.txt` in `Mod/`. The Steam
   description is sent only when the item is created and never reprinted: read it once more
   before clicking.
-- **`licence: silent`** — the original author, 混沌の味方, declared no licence anywhere, and the
-  mod died in 1.0. Checked in the three places that decide it, set out in
-  [`ATTRIBUTION.md`](ATTRIBUTION.md). Redistributed under the usual practice: explicit credit, a
-  link to the original, and removal on request.
+- **`licence: silent`** — no explicit modification or redistribution permission found
+  for the original mod in the 2026-09-12 recheck. The installed original contains no
+  licence file or permission notice, and its About.xml URL is empty. The
+  [Steam description and all 14 comments](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729#comments)
+  contain no general permission to continue or redistribute it. The author's
+  [public profile](https://steamcommunity.com/profiles/76561198253882434) has an empty
+  summary; no original source repository was linked or identified by the search.
+  This records what was found, not proof that no repository exists.
+  The Steam description also asks users not to download this version and to remove it
+  if installed; the author explains wanting to remake it. A February 2020 comment
+  repeats that possibility. This warning is recorded separately from the absence of a
+  licence; it is not an authorization to reuse the mod. The February 2019 thanks for
+  help with the English description grants no general permission either.
+  The classification remains `silent`, with the `(unofficial)` suffix. The local MIT
+  licence covers only the extraction's additions, not the original artwork or content;
+  see [`LICENSE`](LICENSE) and [`ATTRIBUTION.md`](ATTRIBUTION.md).
 
 `remaining` vocabulary: `feature` for something missing from the first cut, `defect` for a known
 defect left unfixed, `unverified` for what could not be checked.
