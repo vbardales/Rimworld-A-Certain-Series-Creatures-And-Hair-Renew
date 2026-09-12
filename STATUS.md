@@ -1,22 +1,22 @@
 ---
-mod:        A Certain Series - Creatures and Hair Renew
-packageId:  nelim.acertainseriescreaturesandhairrenew
-repo:       Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
-visibility: public
-detached:   yes
-stage:      done
-licence:    silent
-licence_at: three places, the mod itself, its About.xml, and the absence of a linked repository
+mod:         A Certain Series - Creatures and Hair Renew
+packageId:   nelim.acertainseriescreaturesandhairrenew
+repo:        Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
+visibility:  public
+detached:    yes
+stage:       done
+licence:     silent
+licence_at:  three places, the mod itself, its About.xml, and the absence of a linked repository
 dependencies: none
-showcase:   complete
+showcase:    complete
 tested_on:
 workshop:
 remaining:
   - unverified: never seen running in game, and five of the six repairs can only be read in part
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
-session:    local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:    2026-09-12, kept by the session that holds this mod
+session:     local_62b40a02-9527-4bdd-a977-f6bbd6de409d
+updated:     2026-09-12, kept by the session that holds this mod
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
