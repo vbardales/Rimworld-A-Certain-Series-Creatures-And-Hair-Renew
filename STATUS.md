@@ -32,6 +32,32 @@ The fields above are kept by the session that holds this mod. What they say toda
   type, 200 translation keys good.
 - **`showcase: complete`** — `Preview.png` at 896x504 with the title engraved, `ModIcon.png` at
   128x128, both full-size renders kept under `Art/`.
+  Preview overlay recomposed on 2026-09-12 against `../STYLE_RIMWORLD.md`:
+  `Art/Preview.png` is the text-free illustration copied from the preserved
+  `Art/Preview-source.png`; no illustration replacement or regeneration was needed.
+  `Art/Preview-text.html` holds the layout and reads its only colour palette from
+  `Art/preview-palette.json`. `Art/render-preview.cjs` renders and measures it with
+  Playwright and sharp (Node.js; set NODE_PATH if packages are not installed locally).
+  The veil follows the broad brown stone floor. The ochre tag follows the dominant
+  warm stone/earth hue family, lightened for contrast, not a pixel average.
+  Under the revised palette rule, the accent now comes from the seraph's blue water
+  wings, with increased saturation and lightness. This cool blue is clearly distinct
+  from the warm ochre tag and dominant earth colours at both reviewed image sizes.
+  Chrome reports actual Segoe UI Semibold for the title, Segoe UI for tag and summary,
+  and SegoeUI-Bold for version digits; capture waits for document.fonts.ready.
+  Strong title words, the connector and summary share the same primary ink.
+  Direct title spans reduce `and` and `Renew` to 0.65em (29.9px), still weight 600;
+  `Renew` uses secondary ink. `A Certain Series` retains full size as the series name.
+  The ochre secondary ink was lightened further to pass contrast behind `Renew`.
+  The separate unofficial
+  tag is 24px/400; the 80px corner badge reads the highest stable supportedVersion, 1.6.
+  `Art/preview-qa.json` records minimum contrasts over every background pixel in each
+  text bounding box with text hidden: primary title 6.09:1, connector 10.87:1,
+  Renew 4.68:1, summary 5.36:1, tag 9.01:1;
+  badge digits against the opaque accent 8.51:1. No shadow credit is used.
+  Visually checked `Mod/About/Preview.png` (896x504, 569528 bytes) and
+  `Art/preview-268.png` (268px wide): no overlap or clipping, title and version
+  identifiable, reduced title words readable and divider visible. Nothing published.
 - **`tested_on`, empty** — the mod has never been launched. That is the one real remainder, and
   not one a session can clear on its own: see [`TESTING.md`](TESTING.md), which lays out the run
   in order, the seven strings to search `Player.log` for, and the two questions that have no

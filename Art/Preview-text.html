@@ -1,34 +1,27 @@
-<!doctype html>
-<meta charset="utf-8">
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Preview</title>
 <style>
-  html,body { margin:0; padding:0; }
-  .frame {
-    position:relative; width:896px; height:504px; overflow:hidden;
-    background-image:url('file:///C:/Users/nelim/Documents/rimworld/ACertainSeriesCreaturesAndHairRenew/Art/Preview-source.png');
-    background-repeat:no-repeat;
-    background-size:896px auto;
-    background-position:0px -50px;
-  }
-  .shade {
-    position:absolute; inset:0;
-    background:radial-gradient(circle at 0% 0%, rgba(6,5,4,.86) 0%, rgba(6,5,4,0) 74%);
-  }
-  .text { position:absolute; left:52px; top:46px; font-family:"Segoe UI",sans-serif; }
-  h1 {
-    margin:0; font-size:46px; font-weight:700; line-height:1.14;
-    color:#F3E7D3; letter-spacing:.2px; text-shadow:0 2px 10px rgba(0,0,0,.55);
-  }
-  .rule { width:58px; height:3px; background:#D68F2C; margin:22px 0 20px 2px; }
-  p {
-    margin:0; width:430px; font-size:21px; line-height:1.5;
-    color:rgba(242,236,226,.93); text-shadow:0 1px 8px rgba(0,0,0,.6);
-  }
-</style>
-<div class="frame">
-  <div class="shade"></div>
-  <div class="text">
-    <h1>A Certain Series<br>Creatures and Hair Renew</h1>
-    <div class="rule"></div>
-    <p>Two creatures and forty-one hairstyles, out of a fan mod left behind in RimWorld 1.0.</p>
-  </div>
-</div>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:896px;height:504px;overflow:hidden}body{font-family:"Segoe UI",system-ui,sans-serif}
+.frame{position:relative;width:896px;height:504px;overflow:hidden;background:url('Preview.png') 0 -50px / 896px auto no-repeat}
+.shade{position:absolute;inset:0;background:radial-gradient(ellipse 950px 640px at top left,rgba(var(--veilRGB),.94) 0%,rgba(var(--veilRGB),.90) 48%,rgba(var(--veilRGB),0) 100%)}
+.text{position:absolute;left:50px;top:54px;text-shadow:0 3px 10px rgba(0,0,0,.75)}
+h1{font-size:46px;font-weight:600;line-height:1.1;letter-spacing:0;color:var(--inkPrimary)}
+.connector,.suffix{font-size:.65em;font-weight:600}.suffix{color:var(--inkSecondary)}
+.tag{width:fit-content;margin-top:8px;font-size:24px;font-weight:400;line-height:1.1;letter-spacing:.2px;color:var(--inkSecondary)}
+.rule{width:58px;height:3px;background:var(--accent);margin:20px 0 16px}
+p{width:430px;font-size:21px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--inkPrimary)}
+.badge{position:absolute;right:0;top:0;width:80px;height:80px;background:var(--accent);clip-path:polygon(0 0,100% 0,100% 100%)}
+.version{position:absolute;left:869px;top:27px;transform:translate(-50%,-50%) rotate(45deg);color:var(--badgeInk);font-size:26px;font-weight:700;line-height:1}
+</style><div class="frame"><div class="shade"></div><div class="text"><h1>A Certain Series<br>Creatures <span class="connector">and</span> Hair <span class="suffix">Renew</span></h1><div class="tag"></div><div class="rule"></div><p>Two creatures and forty-one hairstyles, out of a fan mod left behind in RimWorld 1.0.</p></div><div class="badge"></div><div class="version"></div></div>
+<script>
+window.previewReady=(async()=>{
+const palette=await(await fetch('preview-palette.json')).json();
+for(const [k,v] of Object.entries(palette))document.documentElement.style.setProperty('--'+k,v);
+document.documentElement.style.setProperty('--veilRGB',palette.veil.match(/\w\w/g).map(x=>parseInt(x,16)).join(','));
+const xml=new DOMParser().parseFromString(await(await fetch('../Mod/About/About.xml')).text(),'text/xml');
+const tag=xml.querySelector('name').textContent.match(/\((unofficial|prohibited)\)$/)?.[0];
+if(tag)document.querySelector('.tag').textContent=tag;else document.querySelector('.tag').remove();
+const versions=[...xml.querySelectorAll('supportedVersions > li')].map(n=>n.textContent.trim()).filter(v=>/^\d+\.\d+(\.\d+)?$/.test(v)).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+if(!versions.length)throw Error('No stable version');document.querySelector('.version').textContent=versions.at(-1);
+await document.fonts.ready;const image=new Image();image.src='Preview.png';await image.decode();
+})();
+</script></html>

@@ -1,0 +1,105 @@
+{
+  "h1": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 40
+      }
+    ],
+    "rect": {
+      "x": 50,
+      "y": 54,
+      "width": 463.546875,
+      "height": 101.1875
+    },
+    "minimumContrast": 6.0877173359279775
+  },
+  ".connector": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 3
+      }
+    ],
+    "rect": {
+      "x": 260.640625,
+      "y": 116.59375,
+      "width": 51.078125,
+      "height": 40
+    },
+    "minimumContrast": 10.873586172364124
+  },
+  ".suffix": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI Semibold",
+        "postScriptName": "SegoeUI-Semibold",
+        "isCustomFont": false,
+        "glyphCount": 5
+      }
+    ],
+    "rect": {
+      "x": 423.890625,
+      "y": 116.59375,
+      "width": 89.65625,
+      "height": 40
+    },
+    "minimumContrast": 4.6786600776928235
+  },
+  ".tag": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 12
+      }
+    ],
+    "rect": {
+      "x": 50,
+      "y": 163.1875,
+      "width": 113.875,
+      "height": 26.390625
+    },
+    "minimumContrast": 9.007789720271647
+  },
+  "p": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 84
+      }
+    ],
+    "rect": {
+      "x": 50,
+      "y": 228.578125,
+      "width": 430,
+      "height": 60.875
+    },
+    "minimumContrast": 5.359947083056558
+  },
+  ".version": {
+    "fonts": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI-Bold",
+        "isCustomFont": false,
+        "glyphCount": 3
+      }
+    ],
+    "rect": {
+      "x": 846.7371826171875,
+      "y": 4.737185001373291,
+      "width": 44.525634765625,
+      "height": 44.52562856674194
+    },
+    "minimumContrast": 8.511119916288061
+  },
+  "bytes": 569528
+}
