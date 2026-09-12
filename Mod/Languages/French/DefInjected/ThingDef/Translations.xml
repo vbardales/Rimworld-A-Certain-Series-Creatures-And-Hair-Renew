@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ACS_DarkMatterProduction.label>multiplicateur de matière noire</ACS_DarkMatterProduction.label>
+  <ACS_DarkMatterProduction.description>Un appareil en forme de réfrigérateur qui multiplie la matière noire. Il fonctionne grâce à un fragment préservé du cerveau de l'esper classé au deuxième rang, qui continue à produire cette substance bien après que l'homme auquel il appartenait a cessé de le faire.</ACS_DarkMatterProduction.description>
+  <ACS_KakineTeitokuBrain.label>fragment du cerveau de Kakine Teitoku</ACS_KakineTeitokuBrain.label>
+  <ACS_KakineTeitokuBrain.description>Un fragment préservé du cerveau de Kakine Teitoku, encore capable de produire de la matière noire. La construction d'un multiplicateur en consomme un, et seul un multiplicateur peut en cultiver un autre : le premier doit donc être acheté.</ACS_KakineTeitokuBrain.description>
+  <ACS_Volleyball.label>ballon de volley en matière noire</ACS_Volleyball.label>
+  <ACS_Volleyball.description>Une sphère blanche formée en condensant de la matière noire. C'est la dernière étape avant de redonner vie à cette substance.</ACS_Volleyball.description>
+  <ACS_EggBeetle.label>œuf de scarabée rhinocéros</ACS_EggBeetle.label>
+  <ACS_EggBeetle.description>Un œuf qui donne naissance à un scarabée rhinocéros blanc. Comme pour tout œuf qui n'a pas été pondu dans la colonie, l'animal éclot à l'état sauvage. Toutefois, sa sauvagerie est nulle : une seule tentative suffit à l'apprivoiser.</ACS_EggBeetle.description>
+  <ACS_DarkMatter.label>matière noire</ACS_DarkMatter.label>
+  <ACS_DarkMatter.description>Une substance qui n'existe pas, créée par la volonté de l'esper classé au deuxième rang de la Cité académique. Elle ne pèse presque rien, ne brûle pas, ne pourrit pas et repousse tout ce qui la frappe.</ACS_DarkMatter.description>
+  <ACS_HeavenCloth.label>étoffe céleste</ACS_HeavenCloth.label>
+  <ACS_HeavenCloth.description>L'étoffe céleste dont est faite la peau d'un ange. Elle ne brûle pas, ne s'use pas et protège de tous les froids et de toutes les chaleurs de ce monde.</ACS_HeavenCloth.description>
+  <ACS_AngelCore.label>noyau angélique</ACS_AngelCore.label>
+  <ACS_AngelCore.description>L'objet mystérieux au cœur d'un ange. C'est la seule partie d'un séraphin qui subsiste après le dépeçage, et sa valeur dépasse les richesses que la plupart des colonies amasseront jamais.</ACS_AngelCore.description>
+  <ACS_Projectile_Beetle.label>canon du scarabée</ACS_Projectile_Beetle.label>
+  <ACS_Projectile_Sweep.label>balayage</ACS_Projectile_Sweep.label>
+  <ACS_DarkMatterBeetle.label>scarabée rhinocéros blanc</ACS_DarkMatterBeetle.label>
+  <ACS_DarkMatterBeetle.description>Un scarabée rhinocéros issu de matière noire, entièrement blanc, de la corne à l'abdomen. Il ne mange pas et ne vieillit pas comme un être vivant ordinaire. La corne sur sa tête est un canon.</ACS_DarkMatterBeetle.description>
+  <ACS_DarkMatterBeetle.tools.horn.label>corne</ACS_DarkMatterBeetle.tools.horn.label>
+  <ACS_DarkMatterBeetle.tools.left_claw.label>griffe gauche</ACS_DarkMatterBeetle.tools.left_claw.label>
+  <ACS_DarkMatterBeetle.tools.right_claw.label>griffe droite</ACS_DarkMatterBeetle.tools.right_claw.label>
+  <ACS_DarkMatterBeetle.tools.mandibles.label>mandibules</ACS_DarkMatterBeetle.tools.mandibles.label>
+  <ACS_Gabriel.label>Puissance de Dieu</ACS_Gabriel.label>
+  <ACS_Gabriel.description>Un séraphin d'une puissance immense, doté de huit ailes d'eau et d'une épée de cristal. Il ne mange pas, ne vieillit pas, et rien en ce monde n'a été conçu pour le dompter.</ACS_Gabriel.description>
+  <ACS_Gabriel.tools.crystal_sword.label>épée de cristal</ACS_Gabriel.tools.crystal_sword.label>
+  <ACS_Gabriel.tools.water_wing_blade-0.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-0.label>
+  <ACS_Gabriel.tools.water_wing_blade-1.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-1.label>
+  <ACS_Gabriel.tools.water_wing_blade-2.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-2.label>
+  <ACS_Gabriel.tools.water_wing_blade-3.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-3.label>
+  <ACS_Gabriel.tools.water_wing_blade-4.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-4.label>
+  <ACS_Gabriel.tools.water_wing_blade-5.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-5.label>
+  <ACS_Gabriel.tools.water_wing_blade-6.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-6.label>
+  <ACS_Gabriel.tools.water_wing_blade-7.label>lame d'aile aqueuse</ACS_Gabriel.tools.water_wing_blade-7.label>
+</LanguageData>

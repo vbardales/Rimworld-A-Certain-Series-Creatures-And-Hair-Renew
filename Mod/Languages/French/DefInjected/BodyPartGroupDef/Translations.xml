@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ACS_BeetleMouth.label>mandibules</ACS_BeetleMouth.label>
+  <ACS_BeetleHornAttackTool.label>corne-canon</ACS_BeetleHornAttackTool.label>
+  <ACS_BeetleFrontLeftLeg.label>patte avant gauche</ACS_BeetleFrontLeftLeg.label>
+  <ACS_BeetleFrontRightLeg.label>patte avant droite</ACS_BeetleFrontRightLeg.label>
+  <ACS_BeetleMiddleLeftLeg.label>patte médiane gauche</ACS_BeetleMiddleLeftLeg.label>
+  <ACS_BeetleMiddleRightLeg.label>patte médiane droite</ACS_BeetleMiddleRightLeg.label>
+  <ACS_BeetleRearLeftLeg.label>patte arrière gauche</ACS_BeetleRearLeftLeg.label>
+  <ACS_BeetleRearRightLeg.label>patte arrière droite</ACS_BeetleRearRightLeg.label>
+  <ACS_BeetleFrontLeftClaw.label>griffe avant gauche</ACS_BeetleFrontLeftClaw.label>
+  <ACS_BeetleFrontRightClaw.label>griffe avant droite</ACS_BeetleFrontRightClaw.label>
+  <ACS_BeetleMiddleLeftClaw.label>griffe médiane gauche</ACS_BeetleMiddleLeftClaw.label>
+  <ACS_BeetleMiddleRightClaw.label>griffe médiane droite</ACS_BeetleMiddleRightClaw.label>
+  <ACS_BeetleRearLeftClaw.label>griffe arrière gauche</ACS_BeetleRearLeftClaw.label>
+  <ACS_BeetleRearRightClaw.label>griffe arrière droite</ACS_BeetleRearRightClaw.label>
+  <ACS_AngelCore.label>noyau angélique</ACS_AngelCore.label>
+  <ACS_AngelSword.label>épée</ACS_AngelSword.label>
+  <ACS_FirstWing.label>première aile</ACS_FirstWing.label>
+  <ACS_SecondWing.label>deuxième aile</ACS_SecondWing.label>
+  <ACS_ThirdWing.label>troisième aile</ACS_ThirdWing.label>
+  <ACS_FourthWing.label>quatrième aile</ACS_FourthWing.label>
+  <ACS_FifthWing.label>cinquième aile</ACS_FifthWing.label>
+  <ACS_SixthWing.label>sixième aile</ACS_SixthWing.label>
+  <ACS_SeventhWing.label>septième aile</ACS_SeventhWing.label>
+  <ACS_EighthWing.label>huitième aile</ACS_EighthWing.label>
+  <ACS_AngelLeftLeg.label>jambe gauche</ACS_AngelLeftLeg.label>
+  <ACS_AngelRightLeg.label>jambe droite</ACS_AngelRightLeg.label>
+  <ACS_AngelLeftFoot.label>pied gauche</ACS_AngelLeftFoot.label>
+  <ACS_AngelRightFoot.label>pied droit</ACS_AngelRightFoot.label>
+  <ACS_AngelLeftShoulder.label>épaule gauche</ACS_AngelLeftShoulder.label>
+  <ACS_AngelRightShoulder.label>épaule droite</ACS_AngelRightShoulder.label>
+  <ACS_AngelLeftArm.label>bras gauche</ACS_AngelLeftArm.label>
+  <ACS_AngelRightArm.label>bras droit</ACS_AngelRightArm.label>
+  <ACS_AngelLeftHand.label>main gauche</ACS_AngelLeftHand.label>
+  <ACS_AngelRightHand.label>main droite</ACS_AngelRightHand.label>
+</LanguageData>

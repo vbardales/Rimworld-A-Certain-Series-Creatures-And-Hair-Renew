@@ -59,7 +59,7 @@ ACertainSeriesCreaturesAndHairRenew/
   Mod/          published — this is what the NTFS junction into RimWorld/Mods points at
     About/
     Defs/       123 defs, no C#
-    Languages/  the original Chinese
+    Languages/  French and the original Chinese; English source text lives in Defs
     Textures/   everything under an ACS/ root
     LICENSE, ATTRIBUTION.md — copies of the two at the root, so they travel with the download
   Art/          preview sources, never published

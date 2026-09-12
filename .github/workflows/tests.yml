@@ -10,3 +10,6 @@ jobs:
       - name: Check XML and gameplay contracts
         shell: powershell
         run: ./Tests/Test-Mod.ps1
+      - name: Check English and French text coverage
+        shell: powershell
+        run: ./Tests/Test-Translations.ps1

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ACS_Make_DarkMatter.label>dupliquer la matière noire</ACS_Make_DarkMatter.label>
+  <ACS_Make_DarkMatter.description>Multiplier la matière noire : une unité consommée, cinq produites.</ACS_Make_DarkMatter.description>
+  <ACS_Make_DarkMatter.jobString>Duplique de la matière noire.</ACS_Make_DarkMatter.jobString>
+  <ACS_Make_KakineTeitokuBrain.label>cultiver un fragment de cerveau</ACS_Make_KakineTeitokuBrain.label>
+  <ACS_Make_KakineTeitokuBrain.description>Cultiver un second fragment du cerveau de Kakine Teitoku afin de construire un autre multiplicateur.</ACS_Make_KakineTeitokuBrain.description>
+  <ACS_Make_KakineTeitokuBrain.jobString>Cultive un fragment de cerveau.</ACS_Make_KakineTeitokuBrain.jobString>
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.label>produire de la matière noire à partir d'un fragment de cerveau</ACS_Make_DarkMatterByKakineTeitokuBrain.label>
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.description>Consommer un fragment de cerveau pour en extraire deux cents unités de matière noire en une seule fois.</ACS_Make_DarkMatterByKakineTeitokuBrain.description>
+  <ACS_Make_DarkMatterByKakineTeitokuBrain.jobString>Produit de la matière noire.</ACS_Make_DarkMatterByKakineTeitokuBrain.jobString>
+  <ACS_Make_Volleyball.label>fabriquer un ballon de volley en matière noire</ACS_Make_Volleyball.label>
+  <ACS_Make_Volleyball.description>Condenser de la matière noire en une sphère blanche.</ACS_Make_Volleyball.description>
+  <ACS_Make_Volleyball.jobString>Condense de la matière noire.</ACS_Make_Volleyball.jobString>
+  <ACS_Make_EggBeetle.label>cultiver un œuf de scarabée rhinocéros</ACS_Make_EggBeetle.label>
+  <ACS_Make_EggBeetle.description>Redonner vie à la matière noire. L'œuf éclot en un jour.</ACS_Make_EggBeetle.description>
+  <ACS_Make_EggBeetle.jobString>Cultive un œuf de scarabée.</ACS_Make_EggBeetle.jobString>
+</LanguageData>

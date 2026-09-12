@@ -28,6 +28,35 @@ version migrations. The in-game scenarios below remain necessary.
 
 ## Manual validation
 
+### Translation gate and language checks
+
+Before a game run, execute the source-based coverage check:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Translations.ps1
+```
+
+It checks owned English Def text against French resources, including nested labels
+and the inherited recipe job string. Re-audit the inventory's field list when adding
+new Def types, patches, UI code or grammar resources. Also run the shared
+`../scripts/Check-DefInjected.ps1 -TransMod ./Mod` to validate engine injection paths.
+CI runs the standalone coverage test; the shared validator requires the game.
+
+In **each of English and French**, perform the following checks during the scenarios
+below. These checks have not yet been performed:
+
+- [ ] Inspect both creatures, all health-tab body parts, left/right claws, eight
+      distinct wings, and melee/ranged attack labels.
+- [ ] Inspect materials, brain fragment, volleyball, egg, workbench and research
+      labels/descriptions, including generated corpse and minified-item labels.
+- [ ] Open all five bills, start each job and inspect its activity text; inspect
+      work priorities and the work giver's generated activity text.
+- [ ] Check egg hatching/temperature/rotting text and material-based item names.
+- [ ] Browse all 41 hairstyles at the styling station.
+- [ ] Check for raw keys, unintended English fallback in French, broken grammar,
+      missing accents, malformed formatting and clipped text. Record actual results
+      in `STATUS.md`; proper character names and power nicknames may be identical.
+
 This mod has never been loaded by RimWorld. Everything below is what the first run has to settle.
 
 **A clean log would not be an answer.** 123 defs, no assembly, no patch operations, no

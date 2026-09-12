@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ACS_DarkMatterBeetle.label>scarabée rhinocéros blanc</ACS_DarkMatterBeetle.label>
+  <ACS_DarkMatterBeetle.corePart.parts.left_eye.customLabel>œil gauche</ACS_DarkMatterBeetle.corePart.parts.left_eye.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.right_eye.customLabel>œil droit</ACS_DarkMatterBeetle.corePart.parts.right_eye.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.left_antenna.customLabel>antenne gauche</ACS_DarkMatterBeetle.corePart.parts.left_antenna.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.right_antenna.customLabel>antenne droite</ACS_DarkMatterBeetle.corePart.parts.right_antenna.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.left_elytron.customLabel>élytre gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.left_elytron.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.right_elytron.customLabel>élytre droit</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.right_elytron.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.customLabel>patte avant gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.parts.front_left_claw.customLabel>griffe avant gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_left_leg.parts.front_left_claw.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.customLabel>patte avant droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.parts.front_right_claw.customLabel>griffe avant droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.front_right_leg.parts.front_right_claw.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.customLabel>patte médiane gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.parts.middle_left_claw.customLabel>griffe médiane gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_left_leg.parts.middle_left_claw.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.customLabel>patte médiane droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.parts.middle_right_claw.customLabel>griffe médiane droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.middle_right_leg.parts.middle_right_claw.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.customLabel>patte arrière gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.parts.rear_left_claw.customLabel>griffe arrière gauche</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_left_leg.parts.rear_left_claw.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.customLabel>patte arrière droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.customLabel>
+  <ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.parts.rear_right_claw.customLabel>griffe arrière droite</ACS_DarkMatterBeetle.corePart.parts.ACS_BeetleSecondRing.parts.rear_right_leg.parts.rear_right_claw.customLabel>
+  <ACS_Seraphim.label>archange</ACS_Seraphim.label>
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_eye.customLabel>œil gauche</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_eye.customLabel>
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_eye.customLabel>œil droit</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_eye.customLabel>
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_ear.customLabel>oreille gauche</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.left_ear.customLabel>
+  <ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_ear.customLabel>oreille droite</ACS_Seraphim.corePart.parts.ACS_AngelNeck.parts.ACS_AngelHead.parts.right_ear.customLabel>
+  <ACS_Seraphim.corePart.parts.left_leg.customLabel>jambe gauche</ACS_Seraphim.corePart.parts.left_leg.customLabel>
+  <ACS_Seraphim.corePart.parts.left_leg.parts.left_foot.customLabel>pied gauche</ACS_Seraphim.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <ACS_Seraphim.corePart.parts.right_leg.customLabel>jambe droite</ACS_Seraphim.corePart.parts.right_leg.customLabel>
+  <ACS_Seraphim.corePart.parts.right_leg.parts.right_foot.customLabel>pied droit</ACS_Seraphim.corePart.parts.right_leg.parts.right_foot.customLabel>
+  <ACS_Seraphim.corePart.parts.left_shoulder.customLabel>épaule gauche</ACS_Seraphim.corePart.parts.left_shoulder.customLabel>
+  <ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.customLabel>bras gauche</ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  <ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>main gauche</ACS_Seraphim.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  <ACS_Seraphim.corePart.parts.right_shoulder.customLabel>épaule droite</ACS_Seraphim.corePart.parts.right_shoulder.customLabel>
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.customLabel>bras droit</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.customLabel>
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>main droite</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>épée</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>
+  <ACS_Seraphim.corePart.parts.first_wing.customLabel>première aile</ACS_Seraphim.corePart.parts.first_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.second_wing.customLabel>deuxième aile</ACS_Seraphim.corePart.parts.second_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.third_wing.customLabel>troisième aile</ACS_Seraphim.corePart.parts.third_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.fourth_wing.customLabel>quatrième aile</ACS_Seraphim.corePart.parts.fourth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.fifth_wing.customLabel>cinquième aile</ACS_Seraphim.corePart.parts.fifth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.sixth_wing.customLabel>sixième aile</ACS_Seraphim.corePart.parts.sixth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.seventh_wing.customLabel>septième aile</ACS_Seraphim.corePart.parts.seventh_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.eighth_wing.customLabel>huitième aile</ACS_Seraphim.corePart.parts.eighth_wing.customLabel>
+</LanguageData>

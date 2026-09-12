@@ -1,4 +1,7 @@
 ---
+localization: complete
+translation_en: complete
+translation_fr: complete
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhairrenew
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
@@ -12,11 +15,12 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
+  - unverified: inspect all translated content in English and French in game, including generated labels, work activity text and clipping
   - unverified: never seen running in game, and five of the six repairs can only be read in part
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-12, kept by the session that holds this mod
+updated:      2026-09-13, translation gate audited locally
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -69,7 +73,7 @@ The fields above are kept by the session that holds this mod. What they say toda
   `Art/preview-268.png` (268px wide): no overlap or clipping, title and version
   identifiable, reduced title words readable and divider visible. Preview and composition
   sources pushed to GitHub in commit `47be439`; nothing uploaded to the Workshop.
-- **`tested_on`, empty** — the mod has never been launched. That is the one real remainder, and
+- **`tested_on`, empty** — the mod has never been launched. In-game validation remains pending, and
   not one a session can clear on its own: see [`TESTING.md`](TESTING.md), which lays out the run
   in order, the seven strings to search `Player.log` for, and the two questions that have no
   expected answer.
@@ -95,6 +99,47 @@ The fields above are kept by the session that holds this mod. What they say toda
 
 `remaining` vocabulary: `feature` for something missing from the first cut, `defect` for a known
 defect left unfixed, `unverified` for what could not be checked.
+
+## Translation audit
+
+Audited on 2026-09-13 against base revision `63c41c3` plus the local French resources
+and translation-check changes. The existing `stage: done` is historical; the three
+translation fields certify the offline gate in `../TRANSLATIONS.md`, not a game run.
+
+- Scope: all 17 XML files under `Mod/Defs`, 123 concrete defs and local abstract
+  parents. No assembly, source UI, patches, LoadFolders, optional integrations,
+  Keyed strings or custom grammar resources are shipped. All leaf field names were
+  reviewed; owned text uses native translatable Def fields.
+- The inventory contains 202 fields: BodyDef 43, BodyPartDef 25, BodyPartGroupDef 34,
+  HairDef 41, PawnKindDef 6, RecipeDef 15, ResearchProjectDef 2, ThingDef 33 and
+  WorkGiverDef 3. It includes nested body custom labels, all 13 attack tool labels,
+  gendered pawn labels, the inherited recipe job string, and work giver verb/gerund.
+- English is supplied by the Defs. French explicitly covers every inventoried field
+  in `Mod/Languages/French/DefInjected/`; no redundant English folder is needed.
+  Character names and power nicknames used as proper names may intentionally remain
+  identical. Descriptive epithets are translated; all eight wings remain distinct.
+  Chinese resources are preserved. No format parameters, grammar tokens or rich-text
+  tags occur in the owned source strings; the coverage test checks token parity.
+- Vanilla supplies inherited UI, recipe/work templates, hatching/rotting inspect
+  strings and generated corpse/minified-item labels through its language resources
+  and translated Def labels. No third-party keys or dependencies are reused.
+  IDs, class names, texture/sound paths, numeric data, tags and About metadata are
+  excluded from owned text; documentation follows the separate English-only rule.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Translations.ps1`:
+  **202 English texts / 202 French entries**, no missing, duplicate or unexpected
+  keys, empty values or mismatched formatting tokens. The inventory is derived from
+  Defs rather than the Chinese folder, which lacks the work giver verb and gerund.
+- `../scripts/Check-DefInjected.ps1 -TransMod ./Mod`: **402 keys checked, 0 errors**,
+  no ambiguous handles or unresolved targets. This checks French and Chinese against
+  installed RimWorld 1.6 types and Defs; it does not establish exhaustive coverage.
+- `powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Mod.ps1`:
+  **9 groups passed, 0 failed**. The hairstyle test now scopes Chinese labels to
+  their language folder. The new translation coverage check is also wired into CI;
+  remote execution has not been checked.
+- Runtime validation is **not performed**. Follow the English/French checklist in
+  `TESTING.md`; generated labels, grammar, raw keys, fallback and clipping remain
+  tracked as `unverified` above. Reset affected translation fields to `unchecked`
+  after changing texts, Defs, patches, interface code or language resources.
 
 `licence` vocabulary: `open` an explicit licence, `silent` no licence and a dead source,
 `alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing

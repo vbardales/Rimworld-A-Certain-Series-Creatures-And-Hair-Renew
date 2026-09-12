@@ -135,13 +135,17 @@ Test 'Egg hatches the beetle after one day' {
     $null = Def 'PawnKindDef' $hatcher.hatcherPawn
 }
 Test 'All 41 hairstyles retain their generation tags and Chinese labels' {
+    $chineseFolder = Get-ChildItem (Join-Path $ModPath 'Languages') -Directory | Where-Object Name -Like 'ChineseSimplified*'
+    $chineseDocuments = @(Get-ChildItem -LiteralPath $chineseFolder.FullName -Recurse -Filter *.xml | ForEach-Object {
+        [xml](Get-Content $_.FullName -Raw -Encoding UTF8)
+    })
     $hair = @($index.Values | Where-Object Name -eq 'HairDef')
     Assert ($hair.Count -eq 41) 'Expected 41 hairstyles'
     foreach ($h in $hair) {
         foreach ($tag in 'Urban','Rural','Punk') {
             Assert ($h.styleTags.li -contains $tag) "$($h.defName) missing $tag"
         }
-        $labels = @($documents | ForEach-Object { $_.SelectNodes("/LanguageData/$($h.defName).label") })
+        $labels = @($chineseDocuments | ForEach-Object { $_.SelectNodes("/LanguageData/$($h.defName).label") })
         Assert ($labels.Count -eq 1 -and -not [string]::IsNullOrWhiteSpace($labels[0].InnerText)) "Missing or duplicate Chinese label for $($h.defName)"
     }
 }

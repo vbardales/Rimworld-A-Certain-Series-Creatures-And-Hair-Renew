@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ACS_AngelNeck.label>cou</ACS_AngelNeck.label>
+  <ACS_AngelHead.label>tête</ACS_AngelHead.label>
+  <ACS_AngelMouth.label>bouche</ACS_AngelMouth.label>
+  <ACS_AngelEye.label>œil</ACS_AngelEye.label>
+  <ACS_AngelEar.label>oreille</ACS_AngelEar.label>
+  <ACS_AngelNose.label>nez</ACS_AngelNose.label>
+  <ACS_AngelTorso.label>torse</ACS_AngelTorso.label>
+  <ACS_AngelWaist.label>taille</ACS_AngelWaist.label>
+  <ACS_AngelCore.label>noyau angélique</ACS_AngelCore.label>
+  <ACS_AngelWing.label>aile angélique</ACS_AngelWing.label>
+  <ACS_AngelShoulders.label>épaule</ACS_AngelShoulders.label>
+  <ACS_AngelLegs.label>jambe</ACS_AngelLegs.label>
+  <ACS_AngelFeet.label>pied</ACS_AngelFeet.label>
+  <ACS_AngelArms.label>bras</ACS_AngelArms.label>
+  <ACS_AngelHands.label>main</ACS_AngelHands.label>
+  <ACS_AngelSword.label>épée</ACS_AngelSword.label>
+  <ACS_BeetleFirstRing.label>premier segment</ACS_BeetleFirstRing.label>
+  <ACS_BeetleSecondRing.label>segment thoracique</ACS_BeetleSecondRing.label>
+  <ACS_BeetleThirdRing.label>segment abdominal</ACS_BeetleThirdRing.label>
+  <ACS_DarkMatterCore.label>noyau de matière noire</ACS_DarkMatterCore.label>
+  <ACS_BeetleMouth.label>pièces buccales</ACS_BeetleMouth.label>
+  <ACS_BeetleElytra.label>élytre</ACS_BeetleElytra.label>
+  <ACS_BeetleHorn.label>corne-canon</ACS_BeetleHorn.label>
+  <ACS_BeetleLeg.label>patte</ACS_BeetleLeg.label>
+  <ACS_BeetleClaw.label>griffe</ACS_BeetleClaw.label>
+</LanguageData>
