@@ -1,5 +1,33 @@
 # Test scenarios
 
+## Automated regression tests
+
+From the repository root, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Mod.ps1
+```
+
+The standalone suite requires only PowerShell, reads the mod without changing it,
+and exits with code 1 on failure. GitHub Actions runs it on pushes and pull requests.
+Use `-ModPath <folder>` to check another copy of the published mod.
+
+Coverage: XML parsing, names scoped by def type, ACS references and local parents,
+GitHub metadata, custom texture files (including directional and stack graphics),
+explosive projectiles, manhunter exclusion, repaired anatomy, corpse graphics,
+workbench bill access, product references, trader bootstrap tags, egg hatching,
+and all 41 hairstyles with their Chinese labels.
+
+These are static regression checks, not RimWorld execution. They do not resolve
+vanilla references, replay full XML inheritance, validate C# fields against the game,
+or validate every translation handle. The shared parent repository's
+`scripts/Check-XmlFields.ps1`, `Check-DefRefs.ps1`, `Check-XmlClasses.ps1`,
+`Check-TypeRefs.ps1`, `Check-ConfigErrors.ps1` and `Check-DefInjected.ps1`
+provide additional checks using the installed game and must also be rerun for
+version migrations. The in-game scenarios below remain necessary.
+
+## Manual validation
+
 This mod has never been loaded by RimWorld. Everything below is what the first run has to settle.
 
 **A clean log would not be an answer.** 123 defs, no assembly, no patch operations, no

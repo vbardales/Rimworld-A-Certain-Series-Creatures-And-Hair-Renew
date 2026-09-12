@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>A Certain Series - Creatures and Hair Renew</name>
+  <name>A Certain Series - Creatures and Hair Renew (unofficial)</name>
   <author>混沌の味方 - 1.6 extraction: nelim</author>
   <packageId>nelim.acertainseriescreaturesandhairrenew</packageId>
   <url>https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <description>Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
+  <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+
+Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
 
 I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's - all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that 1.6 no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine. If the original author comes back to it, or asks me to take this down, I will.
 
 Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729
+
+GitHub: https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 
 WHAT IT ADDS
 

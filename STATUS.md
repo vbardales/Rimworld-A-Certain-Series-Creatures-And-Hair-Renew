@@ -1,5 +1,5 @@
 ---
-mod:          A Certain Series - Creatures and Hair Renew
+mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhairrenew
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public

@@ -1,4 +1,6 @@
-# A Certain Series — Creatures and Hair Renew
+# A Certain Series — Creatures and Hair Renew (unofficial)
+
+UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 Two creatures and forty-one hairstyles, taken out of [某系列MOD](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729)
 by 混沌の味方 — a RimWorld 1.0 fan mod for *A Certain Magical Index* — and brought forward to 1.6.
