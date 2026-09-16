@@ -8,6 +8,7 @@
     <label>dark matter propagator</label>
     <description>A refrigerator-shaped device that makes dark matter multiply. It runs on a preserved fragment of the second-ranked esper's brain, which goes on producing the substance it was built to produce long after the man it belonged to has stopped.</description>
     <thingClass>Building_WorkTable</thingClass>
+    <techLevel>Spacer</techLevel>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>80</pathCost>

@@ -5,6 +5,12 @@ All notable changes to this mod are recorded here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- The dark matter propagator now declares `Spacer` as its tech level. It had none, while
+  building it needs the spacer research ACS_DarkMatterTech and 50 spacer components, so a
+  world filtered by tech level kept it where it did not belong.
+
 ### Added
 
 - French translations for all 202 owned text fields, including body parts, attacks,
