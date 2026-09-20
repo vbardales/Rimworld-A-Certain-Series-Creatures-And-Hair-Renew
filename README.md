@@ -78,7 +78,7 @@ not be free after it. `ATTRIBUTION.md` says more.
 ## Credits
 
 - **混沌の味方** — the creatures, the hairstyles, every texture, and the Chinese text.
-- 1.6 extraction, English text and corrections: **nelim**. Made with the help of an AI assistant.
+- 1.6 extraction, English text and corrections: **Nelim**. Made with the help of an AI assistant.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this
 or any other of my mods, including publishing a continuation of it. All credit must be preserved.
