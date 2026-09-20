@@ -60,13 +60,14 @@ below. These checks have not yet been performed:
 This mod has never been loaded by RimWorld. Everything below is what the first run has to settle.
 
 **A clean log would not be an answer.** 123 defs, no assembly, no patch operations, no
-dependencies: there is no modlist interaction to enumerate, so one run covers the lot. But five
+required third-party dependencies. Test a new colony and existing-save reloads in both languages;
+optional DLC cases are recorded separately. Five
 of the six defects this extraction repairs **cannot be seen in a log**. Swapped left and right
 claws, eight wings sharing one label, a leg filed under the wrong side, a corpse graphic falling
 back: all of it loads without a word, and is read in the health tab of a living creature instead.
 
-The boxes below are in the order of a single dev-mode run, so nothing needs reloading. Copy the
-list into your answer and mark what failed.
+The content checks below share a dev-mode colony. The save-regression scenarios require
+separate reloads. Mark each scenario PASS, FAIL or NOT RUN and record actual observations.
 
 ---
 
@@ -75,7 +76,8 @@ list into your answer and mark what failed.
 - [ ] `nelim.acertainseriescreaturesandhairrenew` added to the mod list. No dependencies, no
       load-order constraint, no DLC required.
 - [ ] The previous `ModsConfig.xml` saved beside itself first.
-- [ ] `Player.log` emptied, so the run starts clean. It sits in
+- [ ] Archive the previous `Player.log` before starting; preserve a separate log for each run.
+      It sits in
       `%USERPROFILE%\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player.log`.
 - [ ] A colony started with development mode on.
 
@@ -137,7 +139,7 @@ Seven strings to search the log for. They are what the 1.6 assembly writes, read
       and what vanilla work givers never provide: without it nobody ever approaches the machine.
 - [ ] **The five bills run**: copy dark matter, grow a brain fragment, produce dark matter from
       a brain fragment, make a volleyball, grow a beetle egg.
-- [ ] **The egg hatches a beetle in one day**, and the beetle that comes out is tame.
+- [ ] Execute **H1: crafted egg hatching** below; expect a wild beetle, followed by taming.
 
 ## The forty-one hairstyles
 
@@ -153,17 +155,107 @@ Seven strings to search the log for. They are what the 1.6 assembly writes, read
 
 ---
 
-## Two questions, which are not tests
+## H1: crafted egg hatching
 
-They have no expected result. They need a judgement made while playing.
+**Preconditions:** RimWorld 1.6, a new test colony, this mod enabled, research unlocked,
+a powered propagator with an accessible interaction cell, a capable worker and the
+recipe ingredients. Keep the test area at 20 C. No mods that alter hatching or taming.
+Run in English and French. This is an expected contract, not a recorded game result.
 
-1. **Does an exotic goods trader actually carry the brain fragment?** Building the propagator
-   costs one, and only a propagator can grow another, so the first one has to be bought. Outlander
-   caravan, orbital trader or the Empire. If none ever carries one, the mod is unbuildable, and
-   that is a blocker rather than a detail.
-2. **Does the beetle's temper read as fair?** Any damage turns it manhunter, without exception.
-   That number is the original author's, kept as it was. If it plays badly it is a one-line
-   change now, and a change of behaviour after publication.
+**Actions:** Produce one ACS_EggBeetle through its bill (do not substitute a spawned pawn
+or an egg assigned a faction in dev tools). Record completion time; place the egg in the
+safe test area and let one in-game day elapse. Inspect the hatchling's species and faction.
+Order a handler with appropriate food to complete a taming attempt, then inspect faction
+and training again.
+
+**Expected:** One white rhinoceros beetle hatches after one day of uninterrupted incubation.
+It is initially wild, as stated in both shipped descriptions; it becomes a colony animal
+following the completed taming attempt (Wildness is zero), with advanced training available.
+No hatching error, missing texture or unresolved label appears. Failure to complete an
+attempt because of access, food or handler conditions is a setup issue, not a taming roll.
+A tame hatchling before any taming action is a contract mismatch to investigate, not a pass.
+
+**Result:** NOT RUN. Record egg creation/hatch times, initial/final faction and log path.
+
+## T1: obtain the first brain fragment through trade
+
+**Preconditions:** RimWorld 1.6, Core plus this mod, a new colony with no propagator and no
+ACS_KakineTeitokuBrain in storage. Have a friendly outlander faction, a negotiator, sufficient
+silver for the displayed price, and transport/storage access. For the orbital variant,
+provide a powered comms console and orbital trade beacon. Research may be unlocked and
+100 plasteel plus 50 advanced components supplied for the subsequent construction test;
+do not spawn the brain fragment or add it directly to trader stock.
+
+**Actions:** Use dev mode to generate independent Caravan_Outlander_Exotic traders and
+inspect their actual trade windows. Repeat for Orbital_Exotic. Record trader type, attempt
+number and whether a fragment is offered. Use at most 30 independent stocks per type as a
+bounded sampling session. When offered, buy one through the normal trade interface, haul
+it to storage, and have a construction-capable pawn (Construction 12+) build the propagator.
+Connect adequate power and queue a production bill with its required ingredients.
+
+**Expected:** Each documented Core trader route can offer a purchasable fragment; the
+purchase supplies the first propagator without an existing machine or spawned fragment.
+Construction consumes one fragment, and a worker can execute a bill at the powered machine.
+No trade, reference or production exception occurs. Availability is random: a single empty
+stock is not a failure. Thirty empty stocks leave that route INCONCLUSIVE, not PASS and
+not proof of impossibility; investigate generator eligibility or extend the recorded sample
+before deciding. A fragment that is offered but cannot be bought/used despite satisfied
+preconditions is FAIL. Record each route independently; one route does not prove the other.
+
+**Optional Royalty variant:** Repeat at a friendly Empire settlement with trading permission
+and Royalty enabled. Record the actual trader kind and DLC version. Without Royalty this
+variant is NOT APPLICABLE; the two Core routes remain required. Keep the subjective balance
+of price separate from whether the progression chain is accessible.
+
+**Result:** NOT RUN. Record stocks sampled per route, purchases, construction/bill outcomes
+and log paths. The automated trade-tag assertion proves eligibility data only, not stock
+appearance or successful progression.
+
+## S1: add the mod to an existing colony
+
+**Preconditions:** A backed-up RimWorld 1.6 Core colony saved before enabling this mod;
+record the save name, game version and mod list. Work only on a copy and keep the original
+save, ModsConfig.xml and previous logs. Run separate English and French variants.
+
+**Actions:** Enable the mod, load the copy and inspect existing pawns, buildings, inventory
+and research. Unlock the mod research for this test; obtain its resources and create a
+propagator, both creatures and a pawn wearing one of its hairstyles. Save to a new slot,
+quit the game, restart and reload that slot. Inspect the same objects and run a bill.
+
+**Expected:** Both loads complete; pre-existing colony objects remain intact. Added content
+has resolved labels and graphics; the new save retains it, research and bills after restart.
+No missing ACS defs, cross-reference failures or exceptions attributable to the mod occur.
+This tests adding the mod, not removing it; removal from a save containing its content is
+outside the claimed compatibility scope.
+
+**Result:** NOT RUN. Record original/copy/reloaded save names, mod lists and logs.
+
+## S2: reload a colony already containing mod content
+
+**Preconditions:** A backed-up 1.6 save containing both creatures, a styled pawn, materials,
+a powered propagator with bills/research and a crafted egg partway through incubation.
+S1 can supply this fixture for same-version persistence. For an upgrade test, also record
+and retain the actual previous mod revision used to create the fixture; do not call a
+same-version reload an upgrade test. Keep an unmodified backup and run in both languages.
+
+**Actions:** Record faction/health/training, hairstyle, resource counts, research, bill
+settings and egg incubation progress. Save, exit, restart with the delivered revision and
+reload. Compare the recorded values, resume a bill, and let the egg finish its remaining
+incubation time. Save and reload once more.
+
+**Expected:** Objects, factions, health, hairstyle, research, inventory and bill settings
+persist; incubation continues from saved progress rather than resetting or duplicating
+the egg. Production and hatching complete with the H1 outcome. No missing graphics, raw
+translation keys or mod-related load/save exceptions occur. If no prior-version fixture
+is available, mark the upgrade variant NOT RUN; same-version persistence remains required.
+
+**Result:** NOT RUN. Record source/target revisions, before/after values, save names and logs.
+
+## Subjective balance review
+
+Does the beetle's temper read as fair? Its manhunter-on-damage chance is 1 in the shipped
+definition. Record the gameplay assessment separately; it has no subjective pass/fail
+threshold and cannot substitute for the functional scenarios above.
 
 ## Sending the result back
 

@@ -2,6 +2,7 @@
 localization: complete
 translation_en: complete
 translation_fr: complete
+settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhairrenew
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
@@ -15,15 +16,210 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
+  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link
   - unverified: inspect all translated content in English and French in game, including generated labels, work activity text and clipping
   - unverified: never seen running in game, and five of the six repairs can only be read in part
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-13, translation gate audited locally
+updated:      2026-09-13, cumulative workflow audit at a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
+
+## Current cumulative workflow audit — 2026-09-13
+
+**Original stage: `done`; audited intermediate stage: `preTest`; current stage: `done`.**
+The user-requested test-plan corrections below resolve the remaining offline gate.
+The first eight gates pass, including the recorded user exceptions and method corrections.
+Game execution remains pending for done -> tested.
+The user-supplied nine transitions take precedence over older protocol stage wording.
+Read protocols: `../PUBLISHING.md`, `../STYLE_RIMWORLD.md`, `../MOD_SETTINGS.md`,
+`../TRANSLATIONS.md`, and inherited `../AGENTS.md`.
+
+Audited revision: `a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56`; working tree clean before
+the audit. The GitHub HEAD returned the same SHA. The initial audit changed only this status document; the subsequent authorized test-plan
+repair also changes TESTING.md. No development, image generation, publication or game/configuration changes
+were performed. Historical results below are preserved and do not override this section.
+
+### Ordered gate findings
+
+| Transition | Finding and evidence |
+| --- | --- |
+| dansMonoRepo -> horsMonoRepo | **User exception:** `git -c safe.directory=C:/Users/nelim/Documents/rimworld -C .. remote -v` contains no remote for this repository; the user explicitly accepts this for an extracted standalone mod. **Validated:** local independent `.git`; parent `ls-files ACertainSeriesCreaturesAndHairRenew` returns no tracked files; own `origin` points to the correct GitHub URL; `git ls-remote origin HEAD` matches the audited SHA; `gh repo view ... --json name,visibility,url` returns PUBLIC. Package ID, About name, folder and repository describe the same extraction; literal spelling identity is unnecessary. English README, attribution, changelog and scoped LICENSE exist. Root/distributed LICENSE hashes match, as do ATTRIBUTION hashes. **Historical evidence retained:** the dated permission audit is corroborated by current local source files and the accessible Steam description; its partial refresh limits are recorded below. |
+| horsMonoRepo -> ModIcon generated | **Not applicable, justified:** compilation and compiled-artifact freshness; the payload has XML and PNG content, no source project or assembly. **Validated:** icon is a readable PNG, 128x128, 46,248 bytes, with its original in Art. **Visual deviation explicitly accepted by the user:** many surrounding illustrated character heads/figures violate the one-or-two-object limit and no-second-character rule; peripheral rendering is much more detailed than the required flat outlined objects. Weight also exceeds the guide's 20-30 KB target, though that is not its hard Preview limit. **Not verified:** readability at 32px; covered by the user icon override, not claimed as a performed visual check. Content runtime correctness belongs to the later functional checks. |
+| ModIcon generated -> Preview generated | **Validated locally:** PNG, 896x504, 569,528 bytes, below both 900 KB and 1 MB; actual visual review of the delivered image and Art/preview-268.png. Source Art/Preview.png and archive Art/Preview-source.png exist. Scene subject and title are identifiable, no clipping or overlap observed. **Validated:** source palette measurement reports one vivid hue family. **Validated by direct inspection:** no concrete camera/style defect or unresolved visual doubt was found. A separate game-screenshot comparison was not performed; it is a review method, not an additional blocking criterion. The Preview gate passes. |
+| Preview generated -> preOptions | **Validated locally:** blue badge/divider clearly separate from warm ochre secondary text at both inspected sizes; English description; Renew and and use direct 65% spans, secondary and primary ink respectively; series name stays full size; unofficial tag and 1.6 badge agree with About.xml. Palette JSON is read by the composition HTML. **Defect found:** About.xml has a bare GitHub URL in the middle of the description, not the final Steam-formatted Source code on GitHub link required by PUBLISHING.md. The source-link defect is publication preparation work, not one of the user-defined criteria for this transition. **Gate validated:** palette separation, English description and naming conventions pass. Existing font/contrast evidence concerns unchanged artifacts; no redundant historical report or new measurement is required without a concrete concern. |
+| preOptions -> options | **Not applicable, justified:** the behavior inventory identifies no relevant settings need; source inspection finds no settings page, settings storage or MainButtonDef. Applicable automated checks passed on the unchanged revision. Under the user clarification, this validates the gate without game execution. |
+| options -> l10n | **Validated offline:** 202 English source fields and 202 French entries; 402 French/Chinese injection paths resolve, zero reported errors. French text reviewed, including body sides, eight wing labels, tools, proper names, recipes and work activity. No owned UI code, Keyed strings, grammar files, patches or LoadFolders found. **Gate finalized:** the settings prerequisite now passes, and localization plus both resource fields are complete. No content changed since the successful checks; FR/EN runtime display remains unverified for done -> tested. |
+| l10n -> preTest | **Validated within static scope:** About declares 1.6, no third-party requirements or load-order entries; no patches, LoadFolders, conditional integration or assembly shipped. Six shared checks below report no unresolved references, unknown fields or unguarded third-party types. The dependency gate passes on the source/reference audit. **Runtime limit:** no Core-only game launch was performed; shared validators index installed DLC as well as Core, so their success alone is not evidence of a DLC-free game run. Interactive confirmation belongs to done -> tested. |
+| preTest -> done | **Validated:** meaningful automated/XML regression suites exist and were executed successfully on the shipped revision. Functional scenarios have many actions and expected outcomes. **Defects found in the scenario document:** tame hatchling expectation contradicts the shipped wild-hatchling descriptions; existing-save coverage is absent without a justification; bootstrap trader access is called a question without an expected result despite being necessary for progression. These initially blocked the gate and are now resolved by TESTING.md scenarios H1, T1, S1 and S2; see the dated repair below. The gate now passes. |
+| done -> tested | **Not verified:** no game run, inspected Player.log, FR/EN UI execution, new-game or existing-save execution, or runtime settings/shortcut evidence in this audit. Existing unchecked scenarios do not demonstrate success. |
+
+### Settings audit
+
+RimWorld target: 1.6. No customization integration was run. Inventory covers the two
+creatures, their combat/temper/taming and trading values, five recipes and production
+costs, research, materials and 41 hair definitions. No existing settings storage, custom
+UI, MainButtonDef, source code, assembly, integration or documented XML-editing workflow
+is shipped. Production quantities and combat values implement the retained content;
+recipe selection and research already use native game UI. No specific requirement for
+global tuning or content toggles was found. This justifies the no-settings
+decision without exposing every balance constant as an option. The planned beetle
+aggression assessment does not establish a missing settings requirement; a concrete
+future requirement would trigger re-audit.
+
+Technical inventory observed no page or shortcut definition. The file inventory and
+search for MainButtonDef, ModSettings, SettingsCategory and DoSettingsWindowContents
+were checked again after the user's clarification: no matches in Mod/ or Tests/, no
+shipped code/assembly, and no relevant content changes since audited revision a066b66.
+The behavior inventory above supplies the rationale beyond mere absence of C#.
+The nine automated regression groups and six shared validators already passed on this
+revision; no redundant run or artificial settings test was added for this status-only edit.
+
+Under the user's explicit rule, source analysis and applicable automated tests validate
+preOptions -> options; interactive verification is not required here. Therefore
+`settings_audit: not_applicable`. Option effects, persistence, reset and shortcut reveal
+checks are not applicable because no settings or shortcut are provided. No game test
+is claimed; any relevant interactive UI/log verification belongs to done -> tested.
+
+### Executed checks and limits
+
+Commands run from this repository, using `powershell -NoProfile -ExecutionPolicy Bypass -File`:
+
+| Script and arguments | Observed result |
+| --- | --- |
+| Tests/Test-Mod.ps1 | 9 groups passed, 0 failed; actual payload has 37 XML files and 123 concrete typed defs. |
+| Tests/Test-Translations.ps1 | 202 English source texts / 202 French entries; no missing, duplicate or unexpected keys. |
+| ../scripts/Check-XmlFields.ps1 -ModPath ./Mod | 18 files checked; no unknown fields. |
+| ../scripts/Check-DefRefs.ps1 -ModPath ./Mod -Brief | No malformed XML, missing refs, wrong reference types or unresolved parents. Script reports 116 distinct def names and 3 parents; this differs from the 123 typed concrete defs because names can recur across types. |
+| ../scripts/Check-XmlClasses.ps1 -ModPath ./Mod -TypeLists ../rw16_types.txt | 19 referenced types resolved; uses the existing type-list snapshot. |
+| ../scripts/Check-TypeRefs.ps1 -ModPath ./Mod | 18 XML files; 77 field names scanned, 9 List-Type fields; 0 third-party type references. Three ambiguous field names excluded by the validator. |
+| ../scripts/Check-ConfigErrors.ps1 -ModPath ./Mod | 126/126 definitions including abstracts checked; 26 rules; no config error. Cross-def and computed-property rules remain outside its coverage. |
+| ../scripts/Check-DefInjected.ps1 -TransMod ./Mod | 11,702 defs indexed; 402 keys checked, 0 errors. This resolves paths, not exhaustive coverage or runtime display. |
+
+The shared scripts read installed RimWorld managed assemblies and Data. Their outputs
+are successful static checks, not execution of Unity, combat, trader stock, hatching or
+the UI. CI configuration invokes the two standalone suites; its remote run result was
+not checked. No existing historical report or QA image was overwritten.
+
+Freshness: the current mod/tests were rerun at the audited SHA. Art, composition and About
+last changed in `47be43952f92231d75fd15c3a92bcc8e571bb388`, which contains the saved QA
+report. Its minimum contrasts and font observations remain historical evidence, not
+measurements repeated today. The source renderer writes over delivered art and QA files,
+so it was not run during this preservation-only audit. Relevant future content changes
+invalidate affected checks; settings/UI changes also invalidate the localization inventory.
+
+Additional image check: source Art/Preview.png measured at native 1339x1174 using
+System.Drawing HSV hue and explicit HSV saturation/value calculations, matching the
+guide thresholds (S >= 0.55, V >= 0.25, 30-degree bins, >= 1% of pixels per family).
+Result: one qualifying family, hue bin 30 degrees, 6.35% of the image; passes the
+maximum-three-family criterion. Unlike Measure-Palette.sh, this check used native
+resolution instead of a 960px resample. No image was modified. No game screenshot
+was found in the standard Steam userdata/760/remote/294100/screenshots locations;
+a direct camera comparison was not performed. This does not invalidate the direct
+visual review, and no camera reservation is retained without a concrete concern.
+
+### Permission and external-access evidence
+
+The existing `silent` classification is retained as a documented absence of permission,
+not as a grant of rights. Public visibility and unofficial notices agree with the local
+publishing convention; LICENSE explicitly excludes original content from its MIT grant.
+The installed original at Steam/steamapps/workshop/content/294100/1667943729 has no
+LICENSE/COPYING/README found by recursive filename inspection; About.xml has no permission
+notice or source URL. Root and distributed notices are byte-identical.
+
+Firecrawl CLI was unavailable; the web reader fallback returned the
+[original Steam page](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729).
+Its description still asks users to remove the old version and mentions a possible remake.
+It provides no explicit redistribution permission. Only ten of fourteen comments were
+returned; the author profile request failed. The historical full-comment/profile/source
+search below is not represented as freshly reproduced. No relevant change to the rights evidence was identified since the dated audit, so this
+incomplete refresh does not itself invalidate that historical classification. The first
+gate accepts the documented decision with these limits; an inaccessible source is not
+proof of prohibition or authorization.
+Initial GitHub access failed in the sandbox; a permitted read-only retry succeeded.
+No remote, visibility, licence or publication setting was changed.
+
+### User exceptions — 2026-09-13
+
+- The user confirms that absence of a parent-monorepo remote is normal after extraction.
+  The standalone repository, actual public visibility and pushed revision remain verified.
+  No parent remote must be added for this audit to advance.
+- The user explicitly validates/overrides the ModIcon. Its observed style deviations and
+  unperformed 32px check are retained as evidence, but do not block advancement and do
+  not require image changes. This is user acceptance, not a technical style-test pass.
+
+### Audit-method correction — 2026-09-13
+
+The user clarified that mandatory passage criteria must be distinguished from suggested
+verification methods. A missing proof blocks only when it concerns a mandatory criterion
+that cannot be verified during the audit. Direct artifact inspection is sufficient when
+it verifies that criterion; a historical report is not required in addition. A suggested
+comparison with a game screenshot does not independently block the Preview gate.
+
+The earlier audit incorrectly retained `ModIcon générée` solely for that missing comparison.
+This was an audit-method error, not a visual defect or a request for another image override.
+That conclusion is superseded: the inspected Preview passes, showcase is complete (with
+the separately recorded ModIcon user acceptance), and the intermediate corrected stage was `preOptions`.
+No new test or image correction is claimed. The final source-link convention remains an
+actual publication-documentation defect, tracked separately from the explicit preOptions
+criteria. The later settings-method clarification below supersedes the initial runtime blocker.
+
+### Settings-method clarification — 2026-09-13
+
+The user explicitly defines preOptions -> options as source/Def analysis and applicable
+automated tests, without mandatory game execution. If no relevant settings exist,
+source verification of the absence of an empty page and shortcut justifies
+`settings_audit: not_applicable`. Interactive checks belong to done -> tested.
+This instruction supersedes the conflicting runtime requirement in the shared protocols
+for this audit. It is a workflow clarification, not a claim that game tests were executed.
+
+The unchanged source inventory and successful offline checks validate options and allow
+the already checked localization gate to be finalized. The dependency audit also passes;
+the resulting cumulative stage is preTest. Game execution is not used as a blocker for
+any earlier transition. The distinct test-plan defects below still block preTest -> done.
+
+### Test-plan repair — 2026-09-13
+
+Authorized by the user's request to fix the tests. Reviewed against revision
+`a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56` plus this local TESTING.md/STATUS.md edit.
+No shipped content or automated test implementation changed.
+
+- H1 now expects a crafted egg to hatch wild after one day, then become a colony animal
+  after taming. Preconditions, faction observations and a clear mismatch outcome are
+  specified. This matches the shipped English/French contract; runtime behavior remains
+  unverified rather than being inferred from the description.
+- T1 tests normal purchase of the first brain fragment and construction/production without
+  a pre-existing propagator. The actual Core trader definitions Caravan_Outlander_Exotic
+  and Orbital_Exotic were inspected for ExoticMisc stock generation. Each route is recorded
+  separately. A bounded random sample without an offer is INCONCLUSIVE, not proof of a
+  defect or a pass. Empire trading is an explicitly conditional Royalty variant.
+- S1 covers adding the mod to a backed-up existing colony and restarting/reloading it.
+  S2 covers persistence of creatures, hairstyles, materials, bills/research and incubation,
+  with a separately identified prior-revision upgrade variant. Both specify preconditions,
+  actions, expected outcomes and evidence to retain in English and French.
+- Removed the claim that one run needs no reloads, separated the subjective aggression
+  review from functional tests, and required preservation of previous logs/save files.
+- Re-executed Tests/Test-Mod.ps1: **9 groups passed, 0 failed**. Re-executed
+  Tests/Test-Translations.ps1: **202 English / 202 French entries**, no missing, duplicate
+  or unexpected keys. `git diff --check` passed. The six previously executed shared XML
+  validators remain valid because no payload or validator input changed.
+
+Every new interactive scenario explicitly remains NOT RUN. No artificial tests were
+added to check documentation wording. With the plan repaired and applicable offline
+checks passing, `stage: done` is justified; `tested_on` stays empty.
+
+### Exact next transition: done -> tested
+
+Execute the TESTING.md scenarios in RimWorld 1.6, including H1, T1, S1 and S2 and the
+existing content checks, with English/French UI and log review. Record actual results,
+revision, game/mod/DLC versions and save/log evidence; resolve failures and rerun affected
+regressions before marking tested. Settings effects/persistence and shortcut integration
+remain not applicable under the recorded source-based settings audit. The source-link
+format defect is still separately tracked for publication preparation.
+
+## Historical status and evidence (superseded where noted above)
 
 A status sheet, read by one sweep over every mod rather than by asking each session in turn. It
 lives at the root, never in `Mod/`, so Steam never receives it.
