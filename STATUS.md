@@ -16,7 +16,7 @@ showcase:     complete
 tested_on:
 workshop:     3806708754
 remaining:
-  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the creation upload probably sent it (no session has read the page), in which case fixing About.xml alone no longer changes the page and it is edited by hand
+  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link (a transition 10 requirement, so it does not affect `done`); the creation upload probably sent it (no session has read the page), in which case fixing About.xml alone no longer changes the page and it is edited by hand
   - resolved 2026-09-24 (preTest -> done): the Pickle suite is written in `Tests/Pickle/` (14 features, 17 local steps, a README that justifies the scope), and `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step. Written, not run: `done` does not ask for a run
   - unverified: none of the 14 Pickle features has run. The first run confirms or breaks the ten assumptions listed at the end of `Tests/Pickle/README.md`, and five of the six repairs can only be seen in a running game; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
   - unverified: the French and Chinese passes have not run, so no label or layout has been seen in either language; clipping is read on the `@review` captures of feature 03
@@ -25,11 +25,62 @@ remaining:
   - unverified: to reach tested, the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) must run green, the Empire scenario must be played and not skipped, no scenario may be `@wip`, and every `@review` capture must be opened (AUDIT.md transition 9). Nothing has run
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
   - unverified: the item's page still carries the earlier preview image; `Mod/About/Preview.png` was recomposed on 2026-09-24 and nothing has uploaded it
+  - unverified: the description says the seraph reaches a colony only through exotic goods traders; both creatures carry the `AnimalUncommon` tag and the two exotic traders sell it, but whether another trader does too is not checked. To settle at the description review (transition 10)
+  - resolved 2026-09-24 (audit of the preTest -> done transition): feature 02 of the Pickle suite restated values the leaf defs state themselves, which AUDIT.md says to prove offline. It was deleted and its assertions moved into `Test-Mod.ps1` (`ce5677f`)
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-24, Pickle suite written, stage back to done, preview recomposed, kept by the session that holds this mod
+updated:      2026-09-24, cumulative workflow audit at ce5677f19cb734f697ae6a594819846c08ad0f57: stage done confirmed, tested not reached
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
+
+## Cumulative workflow audit — 2026-09-24
+
+**Previous stage: `done`. Stage retained: `done`.** `tested` is not reached: nothing has run in a game.
+Audited against `../AUDIT.md` as it stood at 08:14 today, read in full for this audit, with
+`../MOD_SETTINGS.md` and `../TRANSLATIONS.md`, read in full. `../PUBLISHING.md` was read in part: its
+publishing-by-CI and evidence sections and its latest change (09:55 today), not every line. `../STYLE_RIMWORLD.md`
+was consulted for the preview only.
+
+Audited revision `ce5677f19cb734f697ae6a594819846c08ad0f57`, on `main`, identical to `origin/main` when the
+checks ran. Working tree clean when the audit began; the only change made since is this file. **One
+correction was made before the checks, in the audited revision itself** (`ce5677f`, see transition 8).
+Nothing was generated, published or launched: no RimWorld process was started, in Windows or in the WSL,
+and no Pickle ticket was taken.
+
+| Transition | Finding and evidence |
+| --- | --- |
+| 1. dansMonoRepo -> horsMonoRepo | **Validated.** The repository root is this folder; `origin` is the GitHub repository, public, and holds the audited commit. The parent monorepo tracks 0 files of it (the absence of a parent remote is normal here). Licence `silent`, with the `(unofficial)` tag, packageId, displayed name, repository and folder all say the same thing. English README, ATTRIBUTION, LICENSE and CHANGELOG exist, and the two copies in `Mod/` are byte-identical to their root originals. **Not re-verified today:** the external pages behind the `silent` classification (last read 2026-09-12). |
+| 2. -> ModIcon generated | **Validated as far as the rule allows.** No code or assembly ships, so there is nothing to build (`Mod/` holds no DLL). `Mod/About/ModIcon.png` exists, 128x128, 46,248 bytes. It is the owner's choice; its size and style deviations from the guide were accepted by her on 2026-09-13 and are unchanged. This audit did not generate, alter or request an icon, and did not measure its legibility at 32 px. |
+| 3. -> Preview generated | **Validated.** `Mod/About/Preview.png`, 896x504, 579,218 bytes, below both limits, opened and read. It was recomposed on 2026-09-24 at the owner's request (`a518192`): the text stays top-left and the scene sits 20 px lower, so the title no longer covers the beetle. Bottom-right was tried and rejected (it hides the propagator). Minimum contrast behind each text box, measured with the text hidden: title 6.03, connector 11.01, suffix 4.63, tag 9.04, summary 4.63, all above 4.5:1. Chrome was driven directly because Playwright is not installed here; the font check of the official script was not repeated. |
+| 4. -> preOptions | **Validated.** Accent `#45BCE8` (cool, from the seraph's wings) against secondary `#F0CC8D` (warm, from the stone and lamp): clearly separate. Description in English. `A Certain Series` at full size, `and` and `Renew` at 65%, `(unofficial)` as the tag, `1.6` in the badge, all agreeing with `About.xml`. |
+| 5. -> options | **Validated by source analysis** (the rule asks for nothing more). 0 matches for `MainButtonDef`, `ModSettings`, `SettingsCategory`, `DoSettingsWindowContents` or `Dialog_ModSettings` in `Mod/` and `Tests/`; no assembly is shipped. `settings_audit: not_applicable` stands: there is no page and no shortcut to be empty or visible. No option effect, persistence or shortcut was tested in a game, and none is claimed. |
+| 6. -> l10n | **Validated.** `Tests/Test-Translations.ps1`: 202 English source texts, 202 French entries, no missing, duplicate or unexpected key. `scripts/Check-DefInjected.ps1`: 402 keys, 0 errors. Since the translation audit of 2026-09-13 (`a066b66`) the only change to `Mod/Defs` is one line, `techLevel Spacer`, which is not player-facing text; `Mod/Languages` did not change. The three fields therefore stay `complete`. Runtime display in English, French and Chinese is **unverified**, as `../TRANSLATIONS.md` allows at this point. |
+| 7. -> preTest | **Validated.** `About.xml` declares no `modDependencies`, `loadAfter`, `loadBefore` or `incompatibleWith`, and ships no `LoadFolders` and no patch. `Check-TypeRefs`: 0 references to a third-party type. `Check-DefRefs` run against a copy of Core's defs alone resolves every reference and every parent, so the mod needs neither a DLC nor another mod. `supportedVersions` is 1.6. |
+| 8. -> done | **Validated, after one correction.** `Test-Mod.ps1`: 10 groups, 0 failed. `Test-Translations.ps1` as above. The six shared validators, run on `Mod/`: `Check-XmlFields` 18 files, no unknown field; `Check-DefRefs` 116 defs and 3 parents, nothing unresolved; `Check-XmlClasses` 19 types, all resolved; `Check-TypeRefs` clean; `Check-ConfigErrors` 126 of 126 defs, 26 rules, no error; `Check-DefInjected` as above. The functional scenarios (H1, T1, S1, S2) carry preconditions, actions and expected results in `TESTING.md`. The Pickle suite is written: 14 features, 17 local steps, and `Tests/Pickle/Check-Steps.ps1` resolves all 238 step lines to exactly one step. CI (`Mod regression tests`) is green on the audited commit. **Defect found and fixed:** feature 02 asserted values the leaf defs state themselves, which the protocol says to prove offline; it was deleted and its assertions moved into `Test-Mod.ps1`, where two deliberate mutations of a copy were detected. Its justification in the README had been wrong. |
+| 9. -> tested | **Not reached, and nothing in it is verified.** No scenario has run in a game. Outstanding: the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) played green; the Empire scenario played and not skipped; no `@wip` at the run (none is written); every `@review` capture opened; the logs read; the ten assumptions of `Tests/Pickle/README.md` confirmed or broken by the first run. |
+| 10, 11 | Not reached. The prepublication of 2026-09-23 is an act, not a state (see below). |
+
+### What this audit does not certify
+
+- Not one Pickle step was executed. The checker proves that a step's text exists, not what the step does.
+- The item's page has not been read by a session: its description, its preview and its file list are unknown.
+
+### Strictly necessary to reach `tested`
+
+Run the three passes through `scripts/Run-PickleWsl.ps1`, each behind its own ticket, watching the wait with
+`Monitor`; read `exitReason` before the counts; open the nine `@review` captures; fix what the first run
+breaks and replay the affected features; then record the runs in `docs/runs/`.
+
+### Reserves and recommendations, none of them blocking
+
+- The description says the seraph reaches a colony "only through exotic goods traders". Both creatures carry
+  the `AnimalUncommon` tag and the two exotic traders sell it; whether another trader does too is not
+  checked. Settle it at the description review of transition 10.
+- Transition 10 will also need, and none of it is written: the description in the required order
+  (`IF I GO QUIET`, `AI-GENERATED`, `THANKS`, the attribution line, then `Source code on GitHub`), a
+  `PUBLICATION.md`, the thanks messages, the adult-content answers, a publish workflow with its dry-run, and
+  the release notes. The description sent at creation cannot be changed from `About.xml`.
+- `ModIcon.png` is 46 KB against a guide of 20 to 30. Accepted by the owner; noted only.
 
 ## Prepublication 0.1.0 — 2026-09-24
 
