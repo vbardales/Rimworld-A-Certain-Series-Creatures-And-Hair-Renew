@@ -332,6 +332,23 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(project.IsFinished, $"{defName} is not finished");
         }
 
+        // ---- a label, read by def type --------------------------------------------------------------
+
+        /// <summary>
+        /// Pickle's <c>def "X" field "label" is "Y"</c> refuses a name that several def types share, and this
+        /// mod shares three (the creatures' race and kind, the angel core's item, part and group). This one says
+        /// which type, so each of the two translations of a creature is read on its own def.
+        /// </summary>
+        [Then("A Certain Series: the {word} {string} is labelled {string}")]
+        public void IsLabelled(PickleContext ctx, string typeName, string defName, string expected)
+        {
+            var type = GenTypes.GetTypeInAnyAssembly(typeName);
+            ctx.Assert(type != null && typeof(Def).IsAssignableFrom(type), $"{typeName} is not a def type");
+            var def = GenDefDatabase.GetDef(type, defName, false);
+            ctx.Assert(def != null, $"no {typeName} named {defName}");
+            ctx.Assert(def.label == expected, $"{typeName} {defName} is labelled \"{def.label}\", not \"{expected}\"");
+        }
+
         // ---- the recipes another mod gives a creature ---------------------------------------------
 
         /// <summary>

@@ -52,7 +52,7 @@ A check the game does not need to run, or that only tests the game, does not bel
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 19 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 20 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
@@ -65,6 +65,7 @@ every suite loaded. Each exists because no stock or shared step does it:
   and assert a hatchling has no faction;
 - **butcher a generated animal** and list what it yields;
 - **give and read a hairstyle**, and read whether a research is finished;
+- **read a label by def type**, because Pickle's own field step refuses a name several types share (three here);
 - **compare the recipes two races are offered** (`ThingDef.AllRecipes`), which shows what another mod's patches
   gave a creature without naming a recipe that is written nowhere this suite can read.
 
@@ -146,11 +147,15 @@ screenshots become JPEG (quality 80, at most 1280 px), and `report.html` and `me
 
 ## What the first run has to confirm
 
-None of this was seen running. These are the assumptions a green first run confirms and a red one names.
+These are the assumptions a green first run confirms and a red one names. Seen so far (English pass cut short and
+French pass, 2026-09-24): 1, 3, 5 and 7 held (creatures spawned by kind, the machine built and worked, the trader
+stocks offered the fragment); 2 and 9 broke (below); 4, 6, 8, 10, 11 and 12 are still to be seen.
 
 1. `I spawn a "<PawnKindDef>" pawn at (x, z)` takes a pawn kind defName, as Pickle's own DLC feature does.
-2. `def "<name>" field "label"` copes with a name shared by a ThingDef and a PawnKindDef. Both labels are
-   equal in every language, so either would do, but the step may refuse the ambiguity.
+2. ~~`def "<name>" field "label"` copes with a name shared by several def types.~~ **Broken by the French run of
+   2026-09-24:** it refuses (`'ACS_AngelCore' names more than one def (BodyPartDef, BodyPartGroupDef, ThingDef)`),
+   and Pickle has no typed variant. Features 12 to 14 now read the three shared names (the angel core, the beetle,
+   the seraph) with a local step that names the type, and check the race and the kind of each creature both.
 3. `a "ACS_DarkMatterProduction" is built at (x, z)` builds a 1x2 building instantly, without material.
 4. `I add bill "<recipe>" to the "<bench>"` refuses, or the bench refuses, a recipe it does not offer, so that
    the five bills of `06` prove availability and not only that a bill can be created.
