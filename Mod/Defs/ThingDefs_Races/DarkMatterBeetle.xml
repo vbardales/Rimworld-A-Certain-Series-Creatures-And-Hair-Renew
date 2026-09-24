@@ -141,8 +141,9 @@
       <min>0</min>
       <max>0</max>
     </wildGroupSize>
-    <minGenerationAge>0</minGenerationAge>
-    <maxGenerationAge>0</maxGenerationAge>
+    <!-- The original set minGenerationAge and maxGenerationAge to 0. In 1.6 a maximum of 0 leaves no age the
+         generator can draw for an animal: "Tried 300 times to generate age", one error per creature made.
+         Vanilla animals set neither. Dropped, so the game's own defaults apply. -->
     <labelMale>white rhinoceros beetle</labelMale>
     <labelFemale>white rhinoceros beetle</labelFemale>
     <lifeStages>

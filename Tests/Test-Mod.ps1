@@ -161,6 +161,15 @@ Test 'Creature, material and machine values match what the mod promises' {
     Assert ([int]$bench.costList.Plasteel -eq 100 -and [int]$bench.costList.ComponentSpacer -eq 50 -and [int]$bench.costList.ACS_KakineTeitokuBrain -eq 1) 'The propagator no longer costs 100 plasteel, 50 spacer components and one brain fragment'
     Assert ([double](Def 'ResearchProjectDef' 'ACS_DarkMatterTech').baseCost -eq 18000) 'The research no longer costs 18000'
 }
+Test 'No creature kind caps its generation age at zero, which the age generator cannot satisfy' {
+    # Seen in the first game run (2026-09-24): with maxGenerationAge 0 every generated beetle and seraph logged
+    # "Tried 300 times to generate age". Vanilla animal kinds set neither field, so the defaults apply.
+    $kinds = @($index.Values | Where-Object Name -eq 'PawnKindDef')
+    Assert ($kinds.Count -eq 2) "Expected the two creature kinds, found $($kinds.Count)"
+    foreach ($kind in $kinds) {
+        Assert ($null -eq $kind.SelectSingleNode('minGenerationAge') -and $null -eq $kind.SelectSingleNode('maxGenerationAge')) "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do"
+    }
+}
 Test 'Egg hatches the beetle after one day' {
     $egg = Def 'ThingDef' 'ACS_EggBeetle'
     $hatcher = $egg.SelectSingleNode("comps/li[@Class='CompProperties_Hatcher']")

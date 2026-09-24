@@ -193,8 +193,7 @@
     <canArriveManhunter>false</canArriveManhunter>
     <combatPower>10000</combatPower>
     <ecoSystemWeight>0</ecoSystemWeight>
-    <minGenerationAge>0</minGenerationAge>
-    <maxGenerationAge>0</maxGenerationAge>
+    <!-- The original set minGenerationAge and maxGenerationAge to 0: see the beetle's kind. Dropped. -->
     <labelMale>God's Power</labelMale>
     <labelFemale>God's Power</labelFemale>
     <lifeStages>
