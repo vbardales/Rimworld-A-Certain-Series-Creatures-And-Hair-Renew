@@ -96,10 +96,16 @@ The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Emp
 scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the
 default set already mounts.
 
-The machine is shared, so a run takes a ticket in the queue and waits for its turn. A Claude Code session
-watches its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`, which is
-what a heartbeat is under Codex (`../AUDIT.md`). Never a cron. A `Monitor` expires after 30 minutes at
-most, so a long queue means re-arming it.
+The machine is shared, so a run is a request to the TicketDispatcher (`Submit-PickleRun.ps1`), which holds the
+ticket, copies the report to the evidence folder and wakes the session by message. The session runs no watcher
+of its own: no `Monitor`, no heartbeat, no cron, no loop (`Rimworld-Ticket-Dispatcher/docs/WELCOME.md`).
+
+**Order of the tickets.** Three small tickets, not one large one, and of two kinds. A **fix or exploration
+ticket** plays the fewest scenarios that show the point: after a run leaves scenarios red, or after a step or a
+feature was rewritten, only the red features, one ticket each. A **complete pass**, initial or final, plays every
+scenario of its pass, and is queued **only once the fix tickets have made the red scenarios green**. The
+commands are in `Tests/Pickle/README.md`, "Which ticket, in which order". Neither kind stands in for the other,
+and `tested` needs the complete passes on the revision now in the repository.
 
 ## Evidence to keep
 

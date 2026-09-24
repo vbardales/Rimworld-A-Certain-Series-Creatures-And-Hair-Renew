@@ -26,7 +26,7 @@ remaining:
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
   - unverified: the item's page still carries the earlier preview image; `Mod/About/Preview.png` was recomposed on 2026-09-24 and nothing has uploaded it
   - unverified: the description says the seraph reaches a colony only through exotic goods traders; both creatures carry the `AnimalUncommon` tag and the two exotic traders sell it, but whether another trader does too is not checked. To settle at the description review (transition 10)
-  - first game run, 2026-09-24 21:04 (pass 1 English, request 20260924-164530-619-a69c, on 56ef72d; the dispatcher's worker died mid-run but the game finished alone, and I copied the four small text files to `Tests/Pickle/Evidence/2026-09-24-english` before deleting its 1.7 GB archive): `exitReason` `watchdog-timeout`, 15 of 20 scenarios played, **8 passed and 7 failed, 5 never played**. Passed: the load, the hairstyles, the research, the propagator's five bills, both production recipes, both exotic traders including the Empire variant (so assumptions 3, 5 and 7 of the README held, on that revision). All 7 failures carry one log error, `Tried 300 times to generate age`, from both creature kinds setting `maxGenerationAge` to 0, a defect inherited from 1.0: fixed in `a0fa40c` and not replayed. The 16th scenario, the egg (`10`), tripped the 120 s watchdog on `I wait for the egg ... to hatch`, which ended the game (exit 2): a whole day of incubation does not fit, so the scenario now starts the egg at 95 percent (new step, 19 in all) and the timeout tags are on the scenarios too; not replayed. The five never played include the egg itself and, after it, whatever else follows in feature order, the save round trip among them; the report does not list them. Fixed in the working tree (kinds no longer set either field, `Test-Mod.ps1` group added and mutation-tested); not replayed, so nothing here is confirmed until a pass runs on the fixed revision. The English pass must be redone whole
+  - first game run, 2026-09-24 21:04 (pass 1 English, request 20260924-164530-619-a69c, on 56ef72d; the dispatcher's worker died mid-run but the game finished alone, and I copied the four small text files to `Tests/Pickle/Evidence/2026-09-24-english` before deleting its 1.7 GB archive): `exitReason` `watchdog-timeout`, 15 of 20 scenarios played, **8 passed and 7 failed, 5 never played**. Passed: the load, the hairstyles, the research, the propagator's five bills, both production recipes, both exotic traders including the Empire variant (so assumptions 3, 5 and 7 of the README held, on that revision). All 7 failures carry one log error, `Tried 300 times to generate age`, from both creature kinds setting `maxGenerationAge` to 0, a defect inherited from 1.0: fixed in `a0fa40c` and not replayed. The 16th scenario, the egg (`10`), tripped the 120 s watchdog on `I wait for the egg ... to hatch`, which ended the game (exit 2): a whole day of incubation does not fit, so the scenario now starts the egg at 95 percent (new step, 19 in all) and the timeout tags are on the scenarios too; not replayed. The five never played include the egg itself and, after it, whatever else follows in feature order, the save round trip among them; the report does not list them. The age fix has a `Test-Mod.ps1` group, mutation-tested; nothing here is confirmed until the game runs it. **Submitted 2026-09-24 22:36, to the TicketDispatcher, in the order the owner wants: the French pass `7523` was already running (it plays `03` and `04`, so it checks the age fix as well), the pending Chinese pass `041d` was cancelled, and three small fix tickets were filed for what French does not play: `898c` (feature `02`, 3 scenarios), `ca7f` (`08`, the two shots, never played), `a7cc` (`10`, the egg). The complete English pass is redone only once those are green
   - unverified: the optional compatibility with A Dog Said... Animal Prosthetics 2 (2026-09-24) is proved offline only (`Test-Mod.ps1`, mutation-tested). Feature 15 and the fourth pass (`wsl-deps.avec-ads2.map`) are written and have not run; the other mod is not yet in the WSL install's Workshop cache. Whether the beetle's vanilla parts (eyes, antennae) have a surgery in that mod is not verified
   - defect to settle by hand: the About description now carries a compatibility note, but the Steam page was created earlier and keeps the old text; add the note to the page at the description review (transition 10)
   - resolved 2026-09-24 (audit of the preTest -> done transition): feature 02 of the Pickle suite restated values the leaf defs state themselves, which AUDIT.md says to prove offline. It was deleted and its assertions moved into `Test-Mod.ps1` (`ce5677f`)
@@ -94,9 +94,11 @@ and no Pickle ticket was taken.
 
 ### Strictly necessary to reach `tested`
 
-Run the three passes through `scripts/Run-PickleWsl.ps1`, each behind its own ticket, watching the wait with
-`Monitor`; read `exitReason` before the counts; open the nine `@review` captures; fix what the first run
-breaks and replay the affected features; then record the runs in `docs/runs/`.
+Fix what the first run broke, by **small fix tickets, one per red feature** (`Tests/Pickle/README.md`, "Which
+ticket, in which order"), submitted to the TicketDispatcher with `Submit-PickleRun.ps1`, no watcher of our own.
+Only when those are green, queue the complete passes (English, French, Chinese, and the fourth with Animal
+Prosthetics 2), one request each; read `exitReason` before the counts; open the nine `@review` captures; then
+record the runs in `docs/runs/`.
 
 ### Reserves and recommendations, none of them blocking
 
@@ -149,8 +151,8 @@ Newest entry; where it disagrees with the sections below, it wins.
   offset kept is -30. `Mod/About/Preview.png` is now 579,218
   bytes, replacing the 569,528 quoted in the audit sections below; minimum contrasts 6.03, 11.01,
   4.63, 9.04 and 4.63.
-- No Pickle ticket is held: no run has been asked for. When one is, the wait is watched with `Monitor`
-  on `scripts/Pickle-Status.ps1`, not with a cron.
+- No watcher is kept: the TicketDispatcher wakes the session. (When this paragraph was written, on 2026-09-24
+  morning, no run had been asked for; three fix tickets were submitted that evening, see the first-run item.)
 
 ## Current cumulative workflow audit — 2026-09-13
 

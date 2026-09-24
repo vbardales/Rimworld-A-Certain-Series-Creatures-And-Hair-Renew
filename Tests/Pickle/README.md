@@ -82,22 +82,43 @@ is one of the DLCs the default set already mounts, so the Empire scenario runs i
 
 Tags decide what runs where: `@en-only`, `@fr-only`, `@zh-only` follow the language of the labels they name,
 and `@slow` (production chain, shots, egg) is played once, in English, because none of it depends on the
-language. From the collection root, one at a time, each through the shared queue:
+language.
+
+### Which ticket, in which order
+
+Tickets go through the TicketDispatcher, never through `Run-PickleWsl.ps1` by hand and never with a watcher of
+ours: it wakes the session at `START`, `END` and `RUN_DONE` (`Rimworld-Ticket-Dispatcher/docs/WELCOME.md`). The
+owner prefers **three small tickets to one large one**, and two kinds:
+
+1. **A fix or exploration ticket: the fewest scenarios that show the point.** After a run leaves scenarios red,
+   or after a step or a feature was rewritten, submit **only the red features**, one small ticket each
+   (`-Filter '02-creatures-en'`, `'08-ranged-attacks'`, `'10-egg-hatching'`, or `'::<part of a scenario name>'`
+   for one scenario; a comma in a scenario name is a comma in the filter, so name a file instead). Name **no
+   mod** in a picking filter: the mod's display name picks the whole suite.
+2. **A complete pass, initial or final: every scenario of the pass, no `-Filter` beyond the language
+   exclusions below.** It is queued **only once the fix tickets have turned the red scenarios green**. A
+   complete pass over a suite that is still red spends the machine's time to learn what a fix ticket learns in a
+   minute, and a run that ends on the watchdog loses the scenarios after it.
+
+Neither kind is a certification of anything the other has not run: `tested` needs the complete passes, on the
+revision now in the repository, with the `@review` captures opened.
+
+The complete passes, one request each (`-Owner local_<session id>`, the id from `get_session` with `self`, also
+written in the label; `-EvidenceDir` relative to the collection root):
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-english
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-french
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@fr-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-chinese
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 1 English" -DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only' -RunTimeoutMinutes 90 -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-english
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 2 French" -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-french
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 3 Chinese" -DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@fr-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-chinese
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 4 with Animal Prosthetics 2" -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
 ```
 
 The fourth needs the other mod in the WSL install's Workshop cache first (item 3238353862), a download taken
 under the machine lock and not yet made. Its report must show feature 15 *played*.
 
-A session waits for its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`,
-which is what a heartbeat is under Codex (`../../../AUDIT.md`), never with a cron and never with a script
-launched in the background from a shell. Read `exitReason` before the counts, and compare the scenarios played
-with the scenarios discovered for the filter.
+Read `exitReason` before the counts, and compare the scenarios played with the scenarios discovered for the
+filter. **The 120 seconds of the watchdog bound a scenario, whatever its `@timeout` tag on the feature line**
+(seen on the first run): a scenario has to fit in them, or it ends the whole run.
 
 ## Before queuing
 
