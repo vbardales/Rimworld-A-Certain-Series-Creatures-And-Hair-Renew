@@ -14,7 +14,7 @@
       "width": 463.546875,
       "height": 101.1875
     },
-    "minimumContrast": 6.0877173359279775
+    "minimumContrast": 6.028903401946009
   },
   ".connector": {
     "fonts": [
@@ -31,7 +31,7 @@
       "width": 51.078125,
       "height": 40
     },
-    "minimumContrast": 10.873586172364124
+    "minimumContrast": 11.014546927366224
   },
   ".suffix": {
     "fonts": [
@@ -48,7 +48,7 @@
       "width": 89.65625,
       "height": 40
     },
-    "minimumContrast": 4.6786600776928235
+    "minimumContrast": 4.6334591608714195
   },
   ".tag": {
     "fonts": [
@@ -65,7 +65,7 @@
       "width": 113.875,
       "height": 26.390625
     },
-    "minimumContrast": 9.007789720271647
+    "minimumContrast": 9.037611205806794
   },
   "p": {
     "fonts": [
@@ -82,7 +82,7 @@
       "width": 430,
       "height": 60.875
     },
-    "minimumContrast": 5.359947083056558
+    "minimumContrast": 4.634492175271565
   },
   ".version": {
     "fonts": [
@@ -101,5 +101,5 @@
     },
     "minimumContrast": 8.511119916288061
   },
-  "bytes": 569528
+  "bytes": 579218
 }
