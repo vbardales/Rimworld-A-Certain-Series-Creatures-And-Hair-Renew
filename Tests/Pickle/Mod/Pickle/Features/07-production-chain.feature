@@ -22,6 +22,7 @@ Feature: A colonist works the propagator without being told to
     Then "Operator" can do "Crafting"
     When I set "Operator" priority "Crafting" to 1
 
+  @timeout:300
   Scenario: a brain fragment becomes dark matter
     Given I spawn a "ACS_KakineTeitokuBrain" at (144, 155)
     When I add bill "ACS_Make_DarkMatterByKakineTeitokuBrain" to the "ACS_DarkMatterProduction" at (146, 155)
@@ -30,6 +31,7 @@ Feature: A colonist works the propagator without being told to
     Then a "ACS_DarkMatter" exists
     And no errors were logged
 
+  @timeout:300
   Scenario: a volleyball becomes a beetle egg
     Given I spawn a "ACS_Volleyball" at (144, 155)
     When I add bill "ACS_Make_EggBeetle" to the "ACS_DarkMatterProduction" at (146, 155)

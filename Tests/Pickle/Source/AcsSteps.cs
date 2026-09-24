@@ -143,7 +143,7 @@ namespace ACertainSeries.PickleSteps
         /// speed lives a handful of ticks, and at a fast game speed several ticks pass between frames.
         /// The result is kept for the Then step that reads it.
         /// </summary>
-        [When("A Certain Series: the {string} fires at \\({int}, {int}\\) and its {string} projectiles are watched", TimeoutSeconds = 120f)]
+        [When("A Certain Series: the {string} fires at \\({int}, {int}\\) and its {string} projectiles are watched", TimeoutSeconds = 100f)]
         public async Task Fire(PickleContext ctx, string kindDefName, int x, int z, string projectileDefName)
         {
             var map = Map(ctx);
@@ -214,10 +214,11 @@ namespace ACertainSeries.PickleSteps
         // ---- the egg ------------------------------------------------------------------------------
 
         /// <summary>
-        /// One game day of incubation. Set the game speed first: at normal speed this is a real minute
-        /// count in the tens. The wait ends when the egg is gone and a beetle exists.
+        /// The end of the incubation (see SetIncubation for why not the whole day). Set the game speed first.
+        /// The wait ends when the egg is gone and a beetle exists. It must stay under the 120 s the watchdog
+        /// allows a scenario.
         /// </summary>
-        [When("A Certain Series: I wait for the egg at \\({int}, {int}\\) to hatch", TimeoutSeconds = 900f)]
+        [When("A Certain Series: I wait for the egg at \\({int}, {int}\\) to hatch", TimeoutSeconds = 100f)]
         public async Task WaitForHatch(PickleContext ctx, int x, int z)
         {
             var map = Map(ctx);
@@ -225,8 +226,8 @@ namespace ACertainSeries.PickleSteps
             var egg = cell.GetThingList(map).FirstOrDefault(t => t.def.defName == "ACS_EggBeetle");
             ctx.Assert(egg != null, $"no ACS_EggBeetle at ({x}, {z})");
             await ctx.WaitUntil(() => egg.Destroyed
-                && map.mapPawns.AllPawnsSpawned.Any(p => p.kindDef != null && p.kindDef.defName == "ACS_DarkMatterBeetle"), 890f);
-            ctx.Assert(egg.Destroyed, "the egg did not hatch in one game day: check the temperature at its cell");
+                && map.mapPawns.AllPawnsSpawned.Any(p => p.kindDef != null && p.kindDef.defName == "ACS_DarkMatterBeetle"), 95f);
+            ctx.Assert(egg.Destroyed, "the egg did not hatch: check the temperature at its cell");
         }
 
         [Then("A Certain Series: the {string} has no faction")]
@@ -245,15 +246,34 @@ namespace ACertainSeries.PickleSteps
         /// The hatcher keeps its progress in a private field, so this reads it by name. If the game renames
         /// it the step fails and says so, rather than reading nothing and passing.
         /// </summary>
-        private static float Incubation(PickleContext ctx, int x, int z)
+        private static void IncubationField(PickleContext ctx, int x, int z, out CompHatcher hatcher, out System.Reflection.FieldInfo field)
         {
             var egg = new IntVec3(x, 0, z).GetThingList(Map(ctx)).FirstOrDefault(t => t.def.defName == "ACS_EggBeetle");
             ctx.Assert(egg != null, $"no ACS_EggBeetle at ({x}, {z})");
-            var hatcher = egg.TryGetComp<CompHatcher>();
+            hatcher = egg.TryGetComp<CompHatcher>();
             ctx.Assert(hatcher != null, "the egg has no hatcher component");
-            var field = typeof(CompHatcher).GetField("gestateProgress", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            field = typeof(CompHatcher).GetField("gestateProgress", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             ctx.Require(field != null, "CompHatcher.gestateProgress no longer exists: the game renamed it, update this step");
+        }
+
+        private static float Incubation(PickleContext ctx, int x, int z)
+        {
+            IncubationField(ctx, x, z, out var hatcher, out var field);
             return (float)field.GetValue(hatcher);
+        }
+
+        /// <summary>
+        /// A whole game day of incubation is 60000 ticks, which the headless install plays at about 500 to 700
+        /// a second: too long for the watchdog, which ends a scenario after 120 real seconds. So the scenario
+        /// starts the egg near the end. That the hatcher takes one day is asserted offline (Test-Mod.ps1,
+        /// hatcherDaystoHatch); what only the game shows is the hatching and the faction rule.
+        /// </summary>
+        [Given("A Certain Series: the incubation of the egg at \\({int}, {int}\\) is set to {int} percent")]
+        public void SetIncubation(PickleContext ctx, int x, int z, int percent)
+        {
+            ctx.Assert(percent >= 0 && percent < 100, "the incubation must be set below 100 percent, or the egg hatches at once");
+            IncubationField(ctx, x, z, out var hatcher, out var field);
+            field.SetValue(hatcher, percent / 100f);
         }
 
         [When("A Certain Series: I note the incubation of the egg at \\({int}, {int}\\)")]

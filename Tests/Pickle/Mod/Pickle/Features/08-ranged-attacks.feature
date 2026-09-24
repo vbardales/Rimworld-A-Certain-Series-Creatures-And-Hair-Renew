@@ -12,12 +12,14 @@ Feature: The creatures' own shots leave and land
     Given the save "test-colony" is loaded
     And game speed is normal
 
+  @timeout:180
   Scenario: the beetle's horn fires its cannon
     Given I spawn a "ACS_DarkMatterBeetle" pawn at (140, 155)
     When A Certain Series: the "ACS_DarkMatterBeetle" fires at (152, 155) and its "ACS_Projectile_Beetle" projectiles are watched
     Then A Certain Series: at least 1 "ACS_Projectile_Beetle" projectiles were seen and none is left in flight
     And no errors were logged
 
+  @timeout:180
   Scenario: God's Power fires its sweep
     Given I spawn a "ACS_Gabriel" pawn at (140, 155)
     When A Certain Series: the "ACS_Gabriel" fires at (152, 155) and its "ACS_Projectile_Sweep" projectiles are watched

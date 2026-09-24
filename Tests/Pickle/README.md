@@ -25,7 +25,7 @@ exists because the game itself has to act on the defs.
 | `07-production-chain` (`@slow`) | A colonist walks to the machine unprompted and finishes a bill: brain fragment to dark matter, volleyball to egg | The defect that leaves no log line: a new workbench needs its own work giver |
 | `08-ranged-attacks` (`@slow`) | Each creature's own verb starts, its projectiles leave and every one lands | The original seraph shot never worked and logged nothing |
 | `09-exotic-traders` | Built the way the game builds them, the exotic traders' stocks hold the first brain fragment; Empire variant under `@requires:Royalty` | The propagator cannot be built without it, and only a trader brings the first |
-| `10-egg-hatching` (`@slow`) | An egg not laid in the colony hatches a wild beetle after one game day | Time, the hatcher comp and the faction rule |
+| `10-egg-hatching` (`@slow`) | An egg not laid in the colony, started at 95 percent of its incubation, hatches a wild beetle | The hatcher comp and the faction rule. Not a whole game day: 60000 ticks do not fit the 120 s the watchdog allows a scenario at 500 to 700 ticks a second (it tripped on the first run). That the hatcher takes one day is asserted offline |
 | `11-save-reload` | Creatures, the machine with its bill, finished research, a hairstyle and an egg's incubation survive a round trip; the fixture colony, saved without this mod, is the mod added to an existing colony | Scribe behaviour |
 | `15-animal-prosthetics` (`@requires:SamBucher.ADogSaidAnimalProsthetics2`) | With A Dog Said... Animal Prosthetics 2 mounted, the beetle is offered more recipes than the seraph, which is left out on purpose | The other mod copies its category lists into its surgery recipes in its own patch; this mod's name counts only if it was added before that copy, which is a matter of patch order and only the game shows it. Skipped, by design, in every pass that does not mount that mod |
 | `12`, `13`, `14` labels | The labels and the activity texts **on the loaded defs**, in English, French and the preserved Chinese | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
@@ -52,7 +52,7 @@ A check the game does not need to run, or that only tests the game, does not bel
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 18 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 19 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
@@ -134,9 +134,12 @@ None of this was seen running. These are the assumptions a green first run confi
 7. `StockGenerator_Tag.GenerateThings` called with the map's tile and any non-player faction builds a stock
    like the one the game builds when a trader arrives.
 8. The cells around x 140 to 152, z 153 to 155 of `test-colony` are open ground, as other suites' scenes suggest.
-9. The scenario deadlines (`@timeout:300`, `180`, `900`) and the step deadlines (`120 s` for a shot, `900 s`
-   for an egg) hold. The built-in `I wait for bill ... to finish` allows 120 real seconds; the two recipes run
-   need a few thousand ticks each, and the launcher measured 500 to 700 ticks a second.
+9. The scenario deadlines (`@timeout:300` and `180`, on the feature and now on each scenario) and the step
+   deadlines (100 s for a shot and for the egg) hold. **Seen on the first run:** the feature-level
+   `@timeout:900` did not stop the watchdog from ending the egg scenario after 120 s, so either that tag is not
+   read from the feature line or the watchdog ignores it; the egg no longer waits a whole day for that reason,
+   and whether the scenario-level tags of `07` and `08` are honoured is still to be seen. The built-in
+   `I wait for bill ... to finish` allows 120 real seconds; the two recipes run passed in 32 and 46 seconds.
 10. `-Language ChineseSimplified` resolves to the `ChineseSimplified (简体中文)` folder, as the launcher's
     ASCII-prefix rule says it should.
 11. `@requires:SamBucher.ADogSaidAnimalProsthetics2` matches that package whatever its case, and skips cleanly
