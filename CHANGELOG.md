@@ -3,25 +3,11 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [1.0.0] — unreleased
 
-### Fixed
+The tag and the GitHub release come with the publication, from the publishing CI, not by hand.
 
-- The dark matter propagator now declares `Spacer` as its tech level. It had none, while
-  building it needs the spacer research ACS_DarkMatterTech and 50 spacer components, so a
-  world filtered by tech level kept it where it did not belong.
-
-### Added
-
-- French translations for all 202 owned text fields, including body parts, attacks,
-  hairstyles, research, production recipes and work activity text.
-- A source-based English/French coverage check in CI. English remains in the Defs;
-  the original Chinese translation is preserved. In-game language checks are pending.
-
-## [1.0.0] — 2026-09-11
-
-First release. Not yet on the Steam Workshop: this tags the source, and the Workshop item follows
-once the mod has been tried in a running game.
+First version. RimWorld 1.6.
 
 ### Added
 
@@ -35,6 +21,10 @@ once the mod has been tried in a running game.
   - all 41 hairstyles.
 - English labels and descriptions on everything kept; the original Chinese preserved in
   `Languages/ChineseSimplified (简体中文)/DefInjected/`, 115 defs' worth.
+- French translations for all 202 owned text fields, including body parts, attacks,
+  hairstyles, research, production recipes and work activity text.
+- A source-based English/French coverage check in CI. English remains in the Defs;
+  the original Chinese translation is preserved. In-game language checks are pending.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.
 
@@ -67,6 +57,9 @@ once the mod has been tried in a running game.
 - The seraph's arrival as a manhunter pack. At `combatPower` 10000 it was still in the draw, while
   vanilla takes Thrumbo out of it at 500 and AlphaThrumbo at 800 — the highest any base-game animal
   reaches. `canArriveManhunter` is false now, as the original already had it on the beetle.
+- The dark matter propagator now declares `Spacer` as its tech level. It had none, while
+  building it needs the spacer research ACS_DarkMatterTech and 50 spacer components, so a
+  world filtered by tech level kept it where it did not belong.
 
 ### Removed
 
@@ -78,3 +71,24 @@ once the mod has been tried in a running game.
   generators. This mod now redefines nothing that belongs to the base game.
 - Dead 1.0 leftovers: the beetle's all-zero `wildBiomes` block, the `RewardSpecial` thing set
   maker tag, and a `ToxicSensitivity` stat factor of −1 on heavenly cloth.
+
+## [0.1.0] — 2026-09-23
+
+Creation of a publishIdFile. Prepublication: a first upload whose only purpose was to create the
+Workshop item, private as Steam creates every new item, and to obtain `Mod/About/PublishedFileId.txt`,
+which holds item `3806708754`. This entry does not say the mod is public or tested.
+
+### Added
+
+- `Mod/About/PublishedFileId.txt`, committed in `8437ae0`. Without it the next upload would create a
+  second item instead of updating this one.
+
+### Notes
+
+- The upload contained `Mod/` as it stood at `3db914f`. Nothing in `Mod/` has changed since, apart
+  from that file.
+- It was made from the working tree, which also held 141 `.dds` texture caches that the game had
+  written beside the PNGs a quarter of an hour earlier. They are not in git and the publishing CI
+  never ships them, so the private item probably carries them and the next upload replaces them.
+- The features listed under 1.0.0 are still to come as a release. The `tested` and `prepublished`
+  states have not been reached: see `STATUS.md`.
