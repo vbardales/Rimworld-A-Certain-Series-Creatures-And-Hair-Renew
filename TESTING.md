@@ -104,8 +104,10 @@ of its own: no `Monitor`, no heartbeat, no cron, no loop (`Rimworld-Ticket-Dispa
 ticket** plays the fewest scenarios that show the point: after a run leaves scenarios red, or after a step or a
 feature was rewritten, only the red features, one ticket each. A **complete pass**, initial or final, plays every
 scenario of its pass, and is queued **only once the fix tickets have made the red scenarios green**. The
-commands are in `Tests/Pickle/README.md`, "Which ticket, in which order". Neither kind stands in for the other,
-and `tested` needs the complete passes on the revision now in the repository.
+commands are in `Tests/Pickle/README.md`, "Which ticket, in which order". Neither kind stands in for the other:
+a fix ticket never moves a stage, and **the stage moves only after a complete pass that is entirely green**, which
+is also the non-regression check of the scenarios that were already green. `tested` needs those passes, on the
+revision now in the repository.
 
 ## Evidence to keep
 

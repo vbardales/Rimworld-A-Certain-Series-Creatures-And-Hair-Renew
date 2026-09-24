@@ -100,8 +100,12 @@ owner prefers **three small tickets to one large one**, and two kinds:
    complete pass over a suite that is still red spends the machine's time to learn what a fix ticket learns in a
    minute, and a run that ends on the watchdog loses the scenarios after it.
 
-Neither kind is a certification of anything the other has not run: `tested` needs the complete passes, on the
-revision now in the repository, with the `@review` captures opened.
+**The complete pass must come back entirely green before the stage moves.** It is also the non-regression check:
+a fix ticket shows that the red scenarios are now green, and says nothing about the scenarios that were already
+green, which a fix can break (the age fix and the egg step both touch what the production and shot scenarios
+use). A fix ticket therefore never moves a stage on its own, and a complete pass that ends red sends the session
+back to fix tickets, then to a new complete pass. `tested` needs the complete passes, green, on the revision now
+in the repository, with the `@review` captures opened.
 
 The complete passes, one request each (`-Owner local_<session id>`, the id from `get_session` with `self`, also
 written in the label; `-EvidenceDir` relative to the collection root):

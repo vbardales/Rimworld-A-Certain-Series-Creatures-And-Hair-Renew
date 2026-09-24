@@ -97,8 +97,9 @@ and no Pickle ticket was taken.
 Fix what the first run broke, by **small fix tickets, one per red feature** (`Tests/Pickle/README.md`, "Which
 ticket, in which order"), submitted to the TicketDispatcher with `Submit-PickleRun.ps1`, no watcher of our own.
 Only when those are green, queue the complete passes (English, French, Chinese, and the fourth with Animal
-Prosthetics 2), one request each; read `exitReason` before the counts; open the nine `@review` captures; then
-record the runs in `docs/runs/`.
+Prosthetics 2), one request each. **They must come back entirely green before the stage moves**: they are also
+the non-regression check of everything that was already green, which no fix ticket covers. Read `exitReason`
+before the counts; open the nine `@review` captures; then record the runs in `docs/runs/`.
 
 ### Reserves and recommendations, none of them blocking
 
