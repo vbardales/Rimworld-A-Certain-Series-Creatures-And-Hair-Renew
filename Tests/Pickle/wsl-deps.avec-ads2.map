@@ -1,0 +1,16 @@
+# Pass "avec-ads2": the minimal set, plus the one optional mod this mod is compatible with.
+#
+# sambucher.adogsaidanimalprosthetics2, Workshop 3238353862 - A Dog Said... Animal Prosthetics 2. About.xml
+# names it in loadBefore, and Mod/Patches/AnimalProsthetics2.xml lists the beetle in that mod's categories,
+# guarded by its name. Feature 15 asserts that the beetle ends up offered more recipes than the seraph, which
+# is what a working patch, applied before that mod's own copy of the category lists, produces.
+#
+# The two tools of the minimal set stay, so that the same features can be selected by filter; the language
+# pass features do not run here (see the command in README.md).
+#
+# The item has to be in the WSL install's Workshop cache before this pass can stage it. That is a download,
+# so it goes through Use-Wsl.ps1 like any other work on the machine (PickleTools/Headless/README.md, "The
+# lock is about the machine"). It has not been downloaded, and the pass has not run.
+nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
+nelim.pickletools.research      path:PickleTools/ResearchSteps/Mod
+sambucher.adogsaidanimalprosthetics2   3238353862

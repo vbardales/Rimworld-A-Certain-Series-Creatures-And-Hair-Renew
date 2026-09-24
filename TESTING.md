@@ -30,7 +30,7 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `tested` requires
 
 **`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 14 features and 17 local steps,
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 15 features and 18 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
 wrong feature and a deliberately invalid pattern before being trusted. **The scenarios have never been run.**
@@ -41,7 +41,7 @@ each is measured here against what exists.
 | Check | Where this mod stands |
 |---|---|
 | No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. It has to hold at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One conditional scenario: the Empire trader (`@requires:Royalty`, feature 09). The default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Two conditional scenarios. The Empire trader (`@requires:Royalty`, feature 09): the default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The Animal Prosthetics 2 listing (`@requires:SamBucher.ADogSaidAnimalProsthetics2`, feature 15): it is skipped in the three language passes by design and runs only in the fourth pass, `wsl-deps.avec-ads2.map`, whose report must show it *played*. The About declares no dependency and no `incompatibleWith`; its one `loadBefore` names that optional mod. |
 | No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. What stays for a person is reading the `@review` captures: the reading of an image a scenario has already proved to show the intended state, not one more manual test. **Met once the three passes have run green.** |
 
 ### Where each manual check went
@@ -76,15 +76,21 @@ each is measured here against what exists.
 
 ## Passes this mod needs
 
-A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs three,
-one mod set and one language each. The mod declares no dependency, no `loadAfter` and no `incompatibleWith`,
-so the only map is `Tests/Pickle/wsl-deps.sans-facultatifs.map`, and no optional or incompatibility pass
-applies.
+A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs four:
+three languages on the minimal set, and one with its optional mod. The mod declares no dependency, no
+`loadAfter` and no `incompatibleWith`, so the minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`, and
+no incompatibility pass applies. Its one optional integration, A Dog Said... Animal Prosthetics 2, has the
+fourth pass (below). In the three language passes that mod is absent, so its patch must stay inert: a green
+run with no error and no warning is what shows the guard holds.
 
 1. **English**: every feature except the French and Chinese ones, the slow ones included: the production
    chain, the shots and the egg do not depend on the language, so they are played once, here.
 2. **French**: the French features and the language-neutral fast ones (`@slow` excluded).
 3. **Chinese** (`ChineseSimplified`): the Chinese labels and the language-neutral fast ones.
+4. **With Animal Prosthetics 2** (`wsl-deps.avec-ads2.map`, English, `@slow` excluded): the minimal set plus that
+   optional mod, so feature 15 is played and the other fast features show the mod still loads beside it. The
+   item (Workshop 3238353862) must first be in the WSL install's Workshop cache, which is a download taken
+   under the machine lock; it has not been made. **Not run.**
 
 The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
 scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the

@@ -312,6 +312,23 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(project.IsFinished, $"{defName} is not finished");
         }
 
+        // ---- the recipes another mod gives a creature ---------------------------------------------
+
+        /// <summary>
+        /// What a race is offered, once every patch has run and the recipe users are resolved. Comparing
+        /// two races that inherit the same base recipes needs no recipe name: the other mod's surgeries are
+        /// created by its own patches, so their names are not written anywhere this suite can read.
+        /// </summary>
+        [Then("A Certain Series: the {string} is offered more recipes than the {string}")]
+        public void OfferedMoreRecipes(PickleContext ctx, string moreDefName, string fewerDefName)
+        {
+            var more = Def(ctx, moreDefName);
+            var fewer = Def(ctx, fewerDefName);
+            var moreCount = more.AllRecipes.Count;
+            var fewerCount = fewer.AllRecipes.Count;
+            ctx.Assert(moreCount > fewerCount, $"{moreDefName} is offered {moreCount} recipes and {fewerDefName} {fewerCount}: expected more for the first");
+        }
+
         // ---- the hairstyles -----------------------------------------------------------------------
 
         [When("A Certain Series: I give {string} the hairstyle {string}")]

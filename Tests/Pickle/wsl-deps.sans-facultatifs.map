@@ -1,4 +1,5 @@
 # The minimal set: Core, the DLCs, Pickle, and the two shared test tools this suite uses. The mod under
-# test declares no dependency and no optional mod, so this is the only pass, run once in each language.
+# test declares no dependency, so this is the pass for the three languages. Its one optional mod, Animal
+# Prosthetics 2, has a pass of its own (wsl-deps.avec-ads2.map); here its patch must stay inert.
 nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
 nelim.pickletools.research      path:PickleTools/ResearchSteps/Mod

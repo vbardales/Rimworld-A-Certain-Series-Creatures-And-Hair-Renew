@@ -26,12 +26,38 @@ remaining:
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
   - unverified: the item's page still carries the earlier preview image; `Mod/About/Preview.png` was recomposed on 2026-09-24 and nothing has uploaded it
   - unverified: the description says the seraph reaches a colony only through exotic goods traders; both creatures carry the `AnimalUncommon` tag and the two exotic traders sell it, but whether another trader does too is not checked. To settle at the description review (transition 10)
+  - unverified: the optional compatibility with A Dog Said... Animal Prosthetics 2 (2026-09-24) is proved offline only (`Test-Mod.ps1`, mutation-tested). Feature 15 and the fourth pass (`wsl-deps.avec-ads2.map`) are written and have not run; the other mod is not yet in the WSL install's Workshop cache. Whether the beetle's vanilla parts (eyes, antennae) have a surgery in that mod is not verified
+  - defect to settle by hand: the About description now carries a compatibility note, but the Steam page was created earlier and keeps the old text; add the note to the page at the description review (transition 10)
   - resolved 2026-09-24 (audit of the preTest -> done transition): feature 02 of the Pickle suite restated values the leaf defs state themselves, which AUDIT.md says to prove offline. It was deleted and its assertions moved into `Test-Mod.ps1` (`ce5677f`)
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-24, cumulative workflow audit at ce5677f19cb734f697ae6a594819846c08ad0f57: stage done confirmed, tested not reached
+updated:      2026-09-24, cumulative workflow audit at ce5677f19cb734f697ae6a594819846c08ad0f57: stage done confirmed, tested not reached; then the optional Animal Prosthetics 2 compatibility (see the addendum)
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
+
+## Addendum — Animal Prosthetics 2 compatibility, 2026-09-24 (after the audit below)
+
+Asked for by the owner, who pointed at Workshop item 3238353862. Stage stays `done`: the addition carries its
+own offline test and its own written scenario, and nothing in it asks for a run at `done`.
+
+- **What the other mod asks** (read on its Steam page and its GitHub repository, not from a local install): a
+  mod that adds animals lists them in the `recipeUsers` of its abstract recipes `ADS_Cat1`, `ADS_Cat2`,
+  `ADS_Cat3`, a category including the ones below it, and loads **before** it.
+- **What was done:** `Mod/Patches/AnimalProsthetics2.xml`, guarded by `PatchOperationFindMod` on the mod's
+  name, lists `ACS_DarkMatterBeetle` in all three (trainable pack animal, category 3); `About.xml` gains
+  `loadBefore` `SamBucher.ADogSaidAnimalProsthetics2` and a note in the description. No dependency is declared.
+- **The seraph is left out on purpose.** Every part of its body is this mod's own def, and that mod's
+  surgeries name vanilla parts, so listing it would add a name that is never offered anything. The beetle's
+  legs, claws, horn and elytra are in the same case; only its `Eye` and `Antenna` are vanilla. Adding the mod's
+  own parts to the other mod's recipes would mean patching them one by one and was not attempted.
+- **Offline:** `Test-Mod.ps1` has an eleventh group (11 passed, 0 failed); four deliberate mutations of a copy,
+  each caught by its own message: the `loadBefore` removed, the guard removed, the seraph added, the mod name
+  misspelled. `Test-Translations.ps1` unchanged (202 and 202). `Check-Steps.ps1`: 18 local patterns, 243 step
+  lines, all resolved.
+- **Pickle:** feature 15 (`@requires` on the other mod: skipped, by design, in the three language passes) and a
+  fourth pass map. Both written, never run. Two new assumptions, 11 and 12, in `Tests/Pickle/README.md`.
+- **Supersedes** the sentence of transition 7 below that says the About declares no `loadBefore` and ships no
+  patch: both now exist, and are optional.
 
 ## Cumulative workflow audit — 2026-09-24
 

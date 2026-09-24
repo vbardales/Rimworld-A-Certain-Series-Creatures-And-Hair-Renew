@@ -27,6 +27,7 @@ exists because the game itself has to act on the defs.
 | `09-exotic-traders` | Built the way the game builds them, the exotic traders' stocks hold the first brain fragment; Empire variant under `@requires:Royalty` | The propagator cannot be built without it, and only a trader brings the first |
 | `10-egg-hatching` (`@slow`) | An egg not laid in the colony hatches a wild beetle after one game day | Time, the hatcher comp and the faction rule |
 | `11-save-reload` | Creatures, the machine with its bill, finished research, a hairstyle and an egg's incubation survive a round trip; the fixture colony, saved without this mod, is the mod added to an existing colony | Scribe behaviour |
+| `15-animal-prosthetics` (`@requires:SamBucher.ADogSaidAnimalProsthetics2`) | With A Dog Said... Animal Prosthetics 2 mounted, the beetle is offered more recipes than the seraph, which is left out on purpose | The other mod copies its category lists into its surgery recipes in its own patch; this mod's name counts only if it was added before that copy, which is a matter of patch order and only the game shows it. Skipped, by design, in every pass that does not mount that mod |
 | `12`, `13`, `14` labels | The labels and the activity texts **on the loaded defs**, in English, French and the preserved Chinese | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
@@ -46,11 +47,12 @@ A check the game does not need to run, or that only tests the game, does not bel
 | Every hairstyle listed at the styling station | `Test-Mod.ps1` asserts gender and tags | The station filters on those; `05` shows the draw |
 | The beetle facing every direction | `Test-Mod.ps1` asserts the three texture files | A missing frame is a logged error, which `no errors were logged` catches; `02` shows one facing |
 | An upgrade from a previous revision | none | The only earlier upload, 0.1.0, held the same `Mod/`: there is no previous revision |
-| A pass with optional mods, an incompatibility pass | none | The mod declares neither |
+| An incompatibility pass | none | The mod declares no `incompatibleWith` |
+| The other mod's own surgeries, and whether they work on the beetle's legs | none | They name vanilla body parts; the legs, claws and horn are this mod's own defs, so no surgery names them. Nothing to test until a patch adds them to the other mod's recipes, which is not done |
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 17 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 18 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
@@ -62,7 +64,9 @@ every suite loaded. Each exists because no stock or shared step does it:
 - **wait for an egg**, read its incubation by reflection on a private field (failing loudly if it is renamed),
   and assert a hatchling has no faction;
 - **butcher a generated animal** and list what it yields;
-- **give and read a hairstyle**, and read whether a research is finished.
+- **give and read a hairstyle**, and read whether a research is finished;
+- **compare the recipes two races are offered** (`ThingDef.AllRecipes`), which shows what another mod's patches
+  gave a creature without naming a recipe that is written nowhere this suite can read.
 
 Build with `dotnet build Source/ACertainSeriesCreaturesAndHairRenew.PickleSteps.csproj -c Release`. The output
 is `Mod/Pickle/Assemblies/`, which is tracked, and the intermediates go to `.build/`, which is not. Rebuild
@@ -70,9 +74,11 @@ before every run: Pickle loads step DLLs when the game starts.
 
 ## Passes
 
-One mod set, three languages. The mod declares no dependency, no `loadAfter`, no `incompatibleWith`, so the
-only map is `wsl-deps.sans-facultatifs.map`, which stages the two shared tools the features use. Royalty is one
-of the DLCs the default set already mounts, so the Empire scenario runs inside every pass.
+Three languages on one mod set, and a fourth pass with the one optional mod. The mod declares no dependency, no
+`loadAfter`, no `incompatibleWith`, so the minimal map is `wsl-deps.sans-facultatifs.map`, which stages the two
+shared tools the features use. `wsl-deps.avec-ads2.map` adds A Dog Said... Animal Prosthetics 2 to it. Royalty
+is one of the DLCs the default set already mounts, so the Empire scenario runs inside every pass. Feature 15
+(`@requires` on that optional mod) is skipped in the first three, by design.
 
 Tags decide what runs where: `@en-only`, `@fr-only`, `@zh-only` follow the language of the labels they name,
 and `@slow` (production chain, shots, egg) is played once, in English, because none of it depends on the
@@ -82,7 +88,11 @@ language. From the collection root, one at a time, each through the shared queue
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-english
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-french
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@fr-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-chinese
+powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
 ```
+
+The fourth needs the other mod in the WSL install's Workshop cache first (item 3238353862), a download taken
+under the machine lock and not yet made. Its report must show feature 15 *played*.
 
 A session waits for its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`,
 which is what a heartbeat is under Codex (`../../../AUDIT.md`), never with a cron and never with a script
@@ -129,3 +139,9 @@ None of this was seen running. These are the assumptions a green first run confi
    need a few thousand ticks each, and the launcher measured 500 to 700 ticks a second.
 10. `-Language ChineseSimplified` resolves to the `ChineseSimplified (简体中文)` folder, as the launcher's
     ASCII-prefix rule says it should.
+11. `@requires:SamBucher.ADogSaidAnimalProsthetics2` matches that package whatever its case, and skips cleanly
+    when it is absent. `ThingDef.AllRecipes` includes a recipe whose abstract parent's `recipeUsers` was copied
+    from the category lists by that mod's own patch, and the beetle ends up with strictly more recipes than the
+    seraph. The map's package id is written in lower case, as the other maps write theirs.
+12. This mod's patch really is applied before that mod's own copy of the category lists, which `loadBefore`
+    is meant to guarantee. Only a game run can show it.

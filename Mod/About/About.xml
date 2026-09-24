@@ -7,6 +7,9 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
+  <loadBefore>
+    <li>SamBucher.ADogSaidAnimalProsthetics2</li>
+  </loadBefore>
   <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
@@ -41,6 +44,7 @@ NOTES
 
 - Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/. The original shipped hairstyles named "2", "index" and "Doctor", body parts named "Core" and "Sword", and its dark matter texture in a folder called simply "Resource" - all of them names another mod is free to use, and RimWorld gives such a collision to whichever mod loads last, silently.
 - The Chinese text of the original is kept, in Languages.
+- Compatible with A Dog Said... Animal Prosthetics 2 (Workshop 3238353862): when it is active, the beetle is listed in its category 3. Those surgeries name vanilla body parts, so they can only concern the beetle's vanilla parts, its eyes among them. Its legs, claws, horn and elytra, and every part of the seraph, are this mod's own, which they do not name: the seraph is left out of the list. This mod loads before it, as its author asks of mods that add animals.
 - Made with the help of an AI assistant.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>

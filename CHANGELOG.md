@@ -25,7 +25,13 @@ First version. RimWorld 1.6.
   hairstyles, research, production recipes and work activity text.
 - A source-based English/French coverage check in CI. English remains in the Defs;
   the original Chinese translation is preserved. In-game language checks are pending.
-- An in-game test suite for Pickle, under `Tests/Pickle/`: 14 features and 17 steps of its own, written
+- Compatibility with A Dog Said... Animal Prosthetics 2 (Workshop 3238353862), optional: when that mod is
+  active the beetle joins its category 3, so its surgeries can be offered on the beetle's vanilla body parts
+  (the eyes among them). The seraph is left out, since every one of its parts is this mod's own and none of
+  that mod's surgeries names them; the beetle's legs, claws, horn and elytra are in the same case. The mod
+  loads before it (`loadBefore`), as its author asks of mods that add animals, and nothing changes without it.
+  Not yet seen in a game.
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 15 features and 18 steps of its own, written
   but not yet run. Development only; none of it is in `Mod/`, so none of it reaches a player.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.

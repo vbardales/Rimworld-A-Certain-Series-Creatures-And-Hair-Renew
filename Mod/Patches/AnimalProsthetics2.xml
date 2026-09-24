@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A Dog Said... Animal Prosthetics 2 (Workshop 3238353862, packageId SamBucher.ADogSaidAnimalProsthetics2).
+
+  That mod sorts animals into three categories by listing them in the recipeUsers of three abstract
+  recipes, ADS_Cat1 (peg legs and the like), ADS_Cat2 (simple prosthetic limbs) and ADS_Cat3 (full
+  bionics). A category includes the ones below it, so an animal of category 3 is listed in all three.
+  Its own patch then copies those lists into the surgery recipes, which is why this mod loads BEFORE it
+  (About.xml, loadBefore): a name added after that copy is never offered any surgery.
+
+  Only applied when that mod is active; nothing here changes the game otherwise. PatchOperationFindMod
+  matches by mod name.
+
+  The beetle is a trainable pack animal: category 3.
+
+  The seraph is deliberately left out. Those surgeries name the vanilla body part defs, and every part
+  of the seraph is its own (ACS_AngelArms, ACS_AngelLegs...), so no surgery of that mod could apply to
+  it: listing it would add a name that is never offered anything. The beetle is in the same position
+  for its legs, claws, horn and elytra (ACS_BeetleLeg, ACS_BeetleClaw...); only its vanilla parts (Eye,
+  Antenna) can be concerned, and which of them the other mod has a surgery for is not verified here.
+  Adding the mod's own parts to those surgeries would mean patching the
+  other mod's recipes one by one, and is not done.
+-->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>A Dog Said... Animal Prosthetics 2</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[@Name="ADS_Cat1" or @Name="ADS_Cat2" or @Name="ADS_Cat3"]/recipeUsers</xpath>
+      <value>
+        <li>ACS_DarkMatterBeetle</li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

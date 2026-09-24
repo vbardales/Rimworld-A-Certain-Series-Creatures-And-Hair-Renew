@@ -183,5 +183,28 @@ Test 'All 41 hairstyles retain their generation tags and Chinese labels' {
         Assert ($labels.Count -eq 1 -and -not [string]::IsNullOrWhiteSpace($labels[0].InnerText)) "Missing or duplicate Chinese label for $($h.defName)"
     }
 }
+Test 'The Animal Prosthetics 2 patch lists the beetle, only when that mod is there, and the mod loads before it' {
+    $adsName = 'A Dog Said... Animal Prosthetics 2'
+    $adsId = 'SamBucher.ADogSaidAnimalProsthetics2'
+    [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
+    Assert ($about.ModMetaData.loadBefore.li -contains $adsId) "About.xml does not load before $adsId, whose own patch copies the category lists before a later mod could add to them"
+    Assert (-not ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies')) 'The compatibility is optional: no mod dependency may be declared'
+    [xml]$patch = Get-Content -LiteralPath (Join-Path $ModPath 'Patches/AnimalProsthetics2.xml') -Raw -Encoding UTF8
+    $op = $patch.SelectSingleNode('/Patch/Operation')
+    Assert ($op.GetAttribute('Class') -eq 'PatchOperationFindMod') 'The patch is not guarded by PatchOperationFindMod'
+    Assert (@($op.mods.li) -ceq $adsName) "The guard does not name the mod exactly as '$adsName'"
+    $add = $op.match
+    Assert ($add.GetAttribute('Class') -eq 'PatchOperationAdd') 'The guarded operation is not a PatchOperationAdd'
+    foreach ($cat in 'ADS_Cat1', 'ADS_Cat2', 'ADS_Cat3') {
+        Assert ($add.xpath.Contains("@Name=""$cat""")) "The beetle is not added to $cat, and a category includes the ones below it"
+    }
+    $listed = @($add.value.li)
+    Assert ($listed.Count -eq 1 -and $listed[0] -ceq 'ACS_DarkMatterBeetle') "Listed animals are not exactly the beetle: $($listed -join ', ')"
+    $null = Def 'ThingDef' $listed[0]
+    # The seraph is left out on purpose: none of its parts is a vanilla def, so no surgery names it.
+    $seraphBody = Def 'BodyDef' 'ACS_Seraphim'
+    $parts = @($seraphBody.SelectNodes('.//def') | ForEach-Object { $_.InnerText } | Sort-Object -Unique)
+    Assert (@($parts | Where-Object { -not $_.StartsWith('ACS_') }).Count -eq 0) 'The seraph gained a vanilla body part: reconsider listing it in the other mod'
+}
 Write-Output "$script:passed passed; $script:failures failed."
 if ($script:failures) { exit 1 }
