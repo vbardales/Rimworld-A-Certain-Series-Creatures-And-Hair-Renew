@@ -1,4 +1,4 @@
-# The French twin of 03. The clean-map capture is not repeated: what a creature looks like does not depend
+# The French twin of 02. The clean-map capture is not repeated: what a creature looks like does not depend
 # on the language. What does is the label each body part carries, which is how the steps find it, and how
 # the health tab lays the longer French labels out.
 @review @fr-only

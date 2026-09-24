@@ -17,10 +17,10 @@ tested_on:
 workshop:     3806708754
 remaining:
   - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the creation upload probably sent it (no session has read the page), in which case fixing About.xml alone no longer changes the page and it is edited by hand
-  - resolved 2026-09-24 (preTest -> done): the Pickle suite is written in `Tests/Pickle/` (15 features, 21 local steps, a README that justifies the scope), and `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step. Written, not run: `done` does not ask for a run
-  - unverified: none of the 15 Pickle features has run. The first run confirms or breaks the ten assumptions listed at the end of `Tests/Pickle/README.md`, and five of the six repairs can only be seen in a running game; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
-  - unverified: the French and Chinese passes have not run, so no label or layout has been seen in either language; clipping is read on the `@review` captures of feature 04
-  - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built. Feature 10 asks it of 200 generated stocks per trader; not run
+  - resolved 2026-09-24 (preTest -> done): the Pickle suite is written in `Tests/Pickle/` (14 features, 17 local steps, a README that justifies the scope), and `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step. Written, not run: `done` does not ask for a run
+  - unverified: none of the 14 Pickle features has run. The first run confirms or breaks the ten assumptions listed at the end of `Tests/Pickle/README.md`, and five of the six repairs can only be seen in a running game; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
+  - unverified: the French and Chinese passes have not run, so no label or layout has been seen in either language; clipping is read on the `@review` captures of feature 03
+  - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built. Feature 09 asks it of 200 generated stocks per trader; not run
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out. Subjective and not automated
   - unverified: to reach tested, the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) must run green, the Empire scenario must be played and not skipped, no scenario may be `@wip`, and every `@review` capture must be opened (AUDIT.md transition 9). Nothing has run
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
@@ -49,10 +49,10 @@ Newest entry; where it disagrees with the sections below, it wins.
 - **141 `.dds` files** sat untracked in `Mod/Textures/`, each beside a tracked PNG twin. The game wrote
   them on 2026-09-23 at 14:12. None was ever in git; `*.dds` is now ignored (`7a0d6ae`) and the files
   stay on disk. They were on disk during the upload, hence the last line of `remaining`.
-- **The Pickle suite is written, never run.** `Tests/Pickle/`: 15 features, a step assembly compiled
-  against the 1.6 game assemblies (21 steps, all prefixed `A Certain Series:`), a pass map staging two
+- **The Pickle suite is written, never run.** `Tests/Pickle/`: 14 features, a step assembly compiled
+  against the 1.6 game assemblies (17 steps, all prefixed `A Certain Series:`), a pass map staging two
   shared tools, and a README that says what is in Gherkin, what deliberately is not, and why. The
-  checker resolves all 259 step lines to exactly one step; it was tried against a deliberately wrong
+  checker resolves all 238 step lines to exactly one step; it was tried against a deliberately wrong
   feature and a deliberately invalid pattern, and failed on both, before being trusted. It proves a
   step's text exists, not that the step does what its scenario hopes.
 - **Evidence: there is none to sort.** No suite existed before today, so no report sits in

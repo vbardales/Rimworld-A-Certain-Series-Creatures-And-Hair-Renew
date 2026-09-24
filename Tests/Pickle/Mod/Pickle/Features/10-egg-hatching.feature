@@ -1,6 +1,6 @@
 # An egg hatches after one game day, and the description promises it hatches wild: like any egg not laid in
 # the colony, it has no faction, and the beetle's wildness stat of zero is what makes taming it certain.
-# Taming itself is vanilla arithmetic on that stat, asserted in 02, and is not replayed here.
+# Taming itself is vanilla arithmetic on that stat, asserted offline in Test-Mod.ps1, and is not replayed here.
 @slow @timeout:900
 Feature: The beetle egg hatches a wild beetle in one game day
 

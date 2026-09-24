@@ -302,48 +302,7 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(!products.Any(p => p.def.IsMeat), $"butchering {kindDefName} gave meat: [{names}]");
         }
 
-        // ---- the race, as loaded --------------------------------------------------------------------
-
-        /// <summary>
-        /// Values the game reads from the race and that no stat step reaches. They are asserted on the
-        /// loaded ThingDef, after inheritance, not on the XML text: a race and its pawn kind share a
-        /// defName here, so the generic def-field step could land on the wrong one.
-        /// </summary>
-        [Then("A Certain Series: the race {string} never gets hungry")]
-        public void NeverHungry(PickleContext ctx, string defName)
-        {
-            var def = Def(ctx, defName);
-            ctx.Assert(def.race != null && def.race.baseHungerRate == 0f, $"{defName} has a base hunger rate of {def.race?.baseHungerRate}, not 0");
-        }
-
-        [Then("A Certain Series: the race {string} is a pack animal")]
-        public void IsPackAnimal(PickleContext ctx, string defName)
-        {
-            var def = Def(ctx, defName);
-            ctx.Assert(def.race != null && def.race.packAnimal, $"{defName} is not a pack animal");
-        }
-
-        [Then("A Certain Series: the race {string} can be trained up to {string}")]
-        public void TrainableUpTo(PickleContext ctx, string defName, string trainability)
-        {
-            var def = Def(ctx, defName);
-            ctx.Assert(def.race != null && def.race.trainability != null && def.race.trainability.defName == trainability,
-                $"{defName} is trainable up to {def.race?.trainability?.defName}, not {trainability}");
-        }
-
-        /// <summary>
-        /// A material's factors live in stuffProps, not in its stat bases, so the def-stat step never reads
-        /// them. Read off the loaded def: it is what a thing made of the material is multiplied by.
-        /// </summary>
-        [Then("A Certain Series: the material {string} multiplies {string} by {float}")]
-        public void MaterialMultiplies(PickleContext ctx, string defName, string statName, float expected)
-        {
-            var def = Def(ctx, defName);
-            ctx.Assert(def.stuffProps != null, $"{defName} is not a material");
-            var factor = def.stuffProps.statFactors?.FirstOrDefault(m => m.stat != null && m.stat.defName == statName);
-            ctx.Assert(factor != null, $"{defName} has no factor for {statName}");
-            ctx.Assert(Math.Abs(factor.value - expected) < 0.0001f, $"{defName} multiplies {statName} by {factor.value}, not {expected}");
-        }
+        // ---- research -----------------------------------------------------------------------------
 
         [Then("A Certain Series: the research {string} is finished")]
         public void ResearchFinished(PickleContext ctx, string defName)

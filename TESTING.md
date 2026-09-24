@@ -16,7 +16,8 @@ Coverage: XML parsing, names scoped by def type, ACS references and local parent
 GitHub metadata, custom texture files (including directional and stack graphics),
 explosive projectiles, manhunter exclusion, repaired anatomy, corpse graphics,
 workbench bill access, product references, trader bootstrap tags, egg hatching,
-and all 41 hairstyles with their Chinese labels.
+the creatures', the material's and the machine's values (speed, wildness, meat, hunger, pack,
+training, temperature, factors, costs), and all 41 hairstyles with their Chinese labels.
 
 These are static regression checks, not RimWorld execution. They do not resolve
 vanilla references, replay full XML inheritance, validate C# fields against the game,
@@ -29,7 +30,7 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `tested` requires
 
 **`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 15 features and 21 local steps,
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 14 features and 17 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
 wrong feature and a deliberately invalid pattern before being trusted. **The scenarios have never been run.**
@@ -40,7 +41,7 @@ each is measured here against what exists.
 | Check | Where this mod stands |
 |---|---|
 | No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. It has to hold at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One conditional scenario: the Empire trader (`@requires:Royalty`, feature 10). The default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One conditional scenario: the Empire trader (`@requires:Royalty`, feature 09). The default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
 | No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. What stays for a person is reading the `@review` captures: the reading of an image a scenario has already proved to show the intended state, not one more manual test. **Met once the three passes have run green.** |
 
 ### Where each manual check went
@@ -48,29 +49,29 @@ each is measured here against what exists.
 | Manual check | Where it went |
 |---|---|
 | The mod loads; no red error; the seven log strings | `01`, and reading `Player.log` from startup: `no errors were logged` covers a scenario, not the launch |
-| The beetle draws, not a pink box | `03` capture; a missing texture is a logged error, which `no errors were logged` catches |
-| Front claws, each on its own side | `03` and `04`: found by label, exactly one part per label, health tab captured |
-| No hunger bar, certain taming, advanced training, speed, temperature, pack animal | `02`, on the loaded defs. Taming and caravans are vanilla code reading those values |
-| The horn fires | `09` |
-| Butchering the beetle: dark matter, no meat | `05` |
+| The beetle draws, not a pink box | `02` capture; a missing texture is a logged error, which `no errors were logged` catches |
+| Front claws, each on its own side | `02` and `03`: found by label, exactly one part per label, health tab captured |
+| No hunger bar, certain taming, advanced training, speed, temperature, pack animal | `Test-Mod.ps1`, on the leaf defs. Taming and caravans are vanilla code reading those values |
+| The horn fires | `08` |
+| Butchering the beetle: dark matter, no meat | `04` |
 | A corpse left to rot keeps drawing | not applicable, see the README |
-| The seraph draws; eight wings under eight labels; the right leg on the right | `03` and `04` |
-| The seraph's ranged attack | `09` |
-| No taming; butchering the seraph | `02` (wildness 1) and `05` |
+| The seraph draws; eight wings under eight labels; the right leg on the right | `02` and `03` |
+| The seraph's ranged attack | `08` |
+| No taming; butchering the seraph | `Test-Mod.ps1` (wildness 1) and `04` |
 | Manhunter packs never choose the seraph | not applicable: `Test-Mod.ps1` asserts the flag, the incident code is vanilla |
-| The research is where it should be, at its cost | `07` capture |
-| The propagator builds for one fragment | the cost in `02`; the machine is placed instantly in `07`, `08` and `12`, and construction is vanilla |
-| A pawn walks to it unprompted; the five bills run | `07` (five bills offered) and `08` (two recipes run to the end) |
-| The egg hatches in one day, wild; then taming | `11`; taming is not applicable, see the README |
-| H1: crafted egg hatching | `08` makes the egg through its bill, `11` hatches an egg and asserts it is wild |
-| T1: the first brain fragment from a trader | `10`, both Core routes and the Empire variant. The trade window itself is vanilla |
-| S1: adding the mod to an existing colony | every scenario (the fixture colony was saved without the mod) and `12` |
-| S2: reloading a colony that holds the mod's content | `12`. The upgrade variant is not applicable: there is no previous revision |
-| All forty-one hairstyles at the styling station, generated on pawns | `06` shows the draw; the tags are asserted offline, and the station only filters on them |
-| Names in English; the original Chinese comes back | `13` and `15` |
-| The French translation gate: labels, activity texts, keys | `14`, and `04` for layout; coverage stays in `Test-Translations.ps1` |
-| Raw keys, English fallback, clipped text | a raw key cannot sit in a label `13` to `15` assert; clipping is read on the `@review` captures |
-| Dark matter as a material: does not burn, barely wears, ten times the hit points | `02` |
+| The research is where it should be, at its cost | `06` capture |
+| The propagator builds for one fragment | the cost in `Test-Mod.ps1`; the machine is placed instantly in `06`, `07` and `11`, and construction is vanilla |
+| A pawn walks to it unprompted; the five bills run | `06` (five bills offered) and `07` (two recipes run to the end) |
+| The egg hatches in one day, wild; then taming | `10`; taming is not applicable, see the README |
+| H1: crafted egg hatching | `07` makes the egg through its bill, `10` hatches an egg and asserts it is wild |
+| T1: the first brain fragment from a trader | `09`, both Core routes and the Empire variant. The trade window itself is vanilla |
+| S1: adding the mod to an existing colony | every scenario (the fixture colony was saved without the mod) and `11` |
+| S2: reloading a colony that holds the mod's content | `11`. The upgrade variant is not applicable: there is no previous revision |
+| All forty-one hairstyles at the styling station, generated on pawns | `05` shows the draw; the tags are asserted offline, and the station only filters on them |
+| Names in English; the original Chinese comes back | `12` and `14` |
+| The French translation gate: labels, activity texts, keys | `13`, and `03` for layout; coverage stays in `Test-Translations.ps1` |
+| Raw keys, English fallback, clipped text | a raw key cannot sit in a label `12` to `14` assert; clipping is read on the `@review` captures |
+| Dark matter as a material: does not burn, barely wears, ten times the hit points | `Test-Mod.ps1` |
 | The beetle's temper | not automated: it has no pass or fail threshold, see "Subjective balance review" |
 
 ## Passes this mod needs
@@ -121,11 +122,11 @@ repoint it first.**
 
 The captures this mod's scenarios produce, and the only ones worth keeping:
 
-- `03`: both creatures on a clean map; the beetle's health tab with its front claws; the seraph's health
+- `02`: both creatures on a clean map; the beetle's health tab with its front claws; the seraph's health
   tab with its wings and right leg, in English;
-- `04`: the same two health tabs in French, where the labels are longer;
-- `06`: three hairstyles on three colonists;
-- `07`: the research window on the main tab.
+- `03`: the same two health tabs in French, where the labels are longer;
+- `05`: three hairstyles on three colonists;
+- `06`: the research window on the main tab.
 
 Nothing else takes a capture. The shots, the production chain, the egg, the save round trip and the labels
 are asserted, so their proof is the report and `Player.log`.

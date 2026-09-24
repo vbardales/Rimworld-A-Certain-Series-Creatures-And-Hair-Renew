@@ -1,4 +1,4 @@
-# The French twin of 13: the same defs, read in a game started in French. A label that is still English here
+# The French twin of 12: the same defs, read in a game started in French. A label that is still English here
 # is a translation the game did not apply, whatever the offline inventory says.
 @fr-only
 Feature: French text reaches the loaded definitions

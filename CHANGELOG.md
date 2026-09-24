@@ -25,7 +25,7 @@ First version. RimWorld 1.6.
   hairstyles, research, production recipes and work activity text.
 - A source-based English/French coverage check in CI. English remains in the Defs;
   the original Chinese translation is preserved. In-game language checks are pending.
-- An in-game test suite for Pickle, under `Tests/Pickle/`: 15 features and 21 steps of its own, written
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 14 features and 17 steps of its own, written
   but not yet run. Development only; none of it is in `Mod/`, so none of it reaches a player.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.

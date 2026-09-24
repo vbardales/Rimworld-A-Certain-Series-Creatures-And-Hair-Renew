@@ -127,6 +127,40 @@ Test 'All five production bills are reachable and have valid products' {
     $brain = Def 'ThingDef' 'ACS_KakineTeitokuBrain'
     Assert ($brain.tradeability -eq 'All' -and $brain.tradeTags.li -contains 'ExoticMisc') 'First brain fragment cannot enter exotic trade stock'
 }
+Test 'Creature, material and machine values match what the mod promises' {
+    # The leaf defs state these values themselves, so they are read from the XML text: nothing here needs
+    # the game's stat worker or an inherited value. What the game does with them (taming, caravans,
+    # hunger) is vanilla code reading the same numbers.
+    function StatBase($def, [string]$stat) {
+        $node = $def.SelectSingleNode("statBases/$stat")
+        Assert ($null -ne $node) "$($def.defName) states no $stat"
+        return [double]$node.InnerText
+    }
+    $beetle = Def 'ThingDef' 'ACS_DarkMatterBeetle'
+    Assert ((StatBase $beetle 'MoveSpeed') -eq 20) 'The beetle is no longer the fastest animal'
+    Assert ((StatBase $beetle 'Wildness') -eq 0) 'The beetle is no longer tame at a glance'
+    Assert ((StatBase $beetle 'MeatAmount') -eq 0) 'The beetle leaves meat'
+    Assert ((StatBase $beetle 'ComfyTemperatureMin') -eq -500 -and (StatBase $beetle 'ComfyTemperatureMax') -eq 500) 'The beetle is no longer comfortable at any temperature'
+    Assert ($beetle.race.baseHungerRate -eq '0') 'The beetle eats'
+    Assert ($beetle.race.packAnimal -eq 'true') 'The beetle is not a pack animal'
+    Assert ($beetle.race.trainability -eq 'Advanced') 'The beetle is not trainable to advanced'
+    $seraph = Def 'ThingDef' 'ACS_Gabriel'
+    Assert ((StatBase $seraph 'Wildness') -eq 1) 'The seraph can be tamed'
+    Assert ((StatBase $seraph 'MoveSpeed') -eq 80) 'The seraph lost its speed'
+    Assert ((StatBase $seraph 'MeatAmount') -eq 0) 'The seraph leaves meat'
+    Assert ($seraph.race.baseHungerRate -eq '0') 'The seraph eats'
+    $matter = Def 'ThingDef' 'ACS_DarkMatter'
+    Assert ((StatBase $matter 'DeteriorationRate') -eq 0) 'Dark matter wears'
+    Assert ((StatBase $matter 'SharpDamageMultiplier') -eq 5) 'Dark matter blades lost their edge'
+    Assert ((StatBase $matter 'StuffPower_Armor_Sharp') -eq 5) 'Dark matter armour lost its protection'
+    foreach ($factor in @{ Flammability = '0'; DeteriorationRate = '0.1'; MaxHitPoints = '10' }.GetEnumerator()) {
+        $node = $matter.SelectSingleNode("stuffProps/statFactors/$($factor.Key)")
+        Assert ($null -ne $node -and [double]$node.InnerText -eq [double]$factor.Value) "Dark matter no longer multiplies $($factor.Key) by $($factor.Value)"
+    }
+    $bench = Def 'ThingDef' 'ACS_DarkMatterProduction'
+    Assert ([int]$bench.costList.Plasteel -eq 100 -and [int]$bench.costList.ComponentSpacer -eq 50 -and [int]$bench.costList.ACS_KakineTeitokuBrain -eq 1) 'The propagator no longer costs 100 plasteel, 50 spacer components and one brain fragment'
+    Assert ([double](Def 'ResearchProjectDef' 'ACS_DarkMatterTech').baseCost -eq 18000) 'The research no longer costs 18000'
+}
 Test 'Egg hatches the beetle after one day' {
     $egg = Def 'ThingDef' 'ACS_EggBeetle'
     $hatcher = $egg.SelectSingleNode("comps/li[@Class='CompProperties_Hatcher']")

@@ -18,17 +18,16 @@ exists because the game itself has to act on the defs.
 | Feature | What it shows | Why it cannot be an offline test |
 |---|---|---|
 | `01-loads` | The mod loaded; the principal defs survived the real loader; no error, no warning from the mod | In 1.6 a def whose `Class=` does not resolve is lost whole, and only the loader knows |
-| `02-def-contracts` | Speed, wildness, meat, temperature, hunger, pack and training of the creatures, the propagator's cost, the research cost, **as loaded** | Inheritance and the stat worker decide the value, not the XML text |
-| `03`, `04` creatures (`@review`) | Both creatures draw; each body part is found **by the label the player reads**, exactly one per label; the health tab shows them | A label shared by two parts, or a claw on the wrong side, is invisible in XML that parses |
-| `05-butchering` | Beetle: dark matter, no meat. Seraph: heavenly cloth and an angel core, no meat | Meat, leather and body part meet in the game's own `ButcherProducts` |
-| `06-hairstyles` (`@review`) | Three of the forty-one hairstyles draw on a colonist | A missing texture is a pink square at most; the offline suite checks the files, not the draw |
-| `07-research-and-machine` | The research is on the main tab at 18000; the propagator offers its five bills once it is done | The research window and a bench's bill list are the game acting on the defs |
-| `08-production-chain` (`@slow`) | A colonist walks to the machine unprompted and finishes a bill: brain fragment to dark matter, volleyball to egg | The defect that leaves no log line: a new workbench needs its own work giver |
-| `09-ranged-attacks` (`@slow`) | Each creature's own verb starts, its projectiles leave and every one lands | The original seraph shot never worked and logged nothing |
-| `10-exotic-traders` | Built the way the game builds them, the exotic traders' stocks hold the first brain fragment; Empire variant under `@requires:Royalty` | The propagator cannot be built without it, and only a trader brings the first |
-| `11-egg-hatching` (`@slow`) | An egg not laid in the colony hatches a wild beetle after one game day | Time, the hatcher comp and the faction rule |
-| `12-save-reload` | Creatures, the machine with its bill, finished research, a hairstyle and an egg's incubation survive a round trip; the fixture colony, saved without this mod, is the mod added to an existing colony | Scribe behaviour |
-| `13`, `14`, `15` labels | The labels and the activity texts **on the loaded defs**, in English, French and the preserved Chinese | A language folder the game does not find is silent, above all on Linux and the Steam Deck |
+| `02`, `03` creatures (`@review`) | Both creatures draw; each body part is found **by the label the player reads**, exactly one per label; the health tab shows them | A label shared by two parts, or a claw on the wrong side, is invisible in XML that parses |
+| `04-butchering` | Beetle: dark matter, no meat. Seraph: heavenly cloth and an angel core, no meat | Meat, leather and body part meet in the game's own `ButcherProducts` |
+| `05-hairstyles` (`@review`) | Three of the forty-one hairstyles draw on a colonist | A missing texture is a pink square at most; the offline suite checks the files, not the draw |
+| `06-research-and-machine` | The research is on the main tab at 18000; the propagator offers its five bills once it is done | The research window and a bench's bill list are the game acting on the defs |
+| `07-production-chain` (`@slow`) | A colonist walks to the machine unprompted and finishes a bill: brain fragment to dark matter, volleyball to egg | The defect that leaves no log line: a new workbench needs its own work giver |
+| `08-ranged-attacks` (`@slow`) | Each creature's own verb starts, its projectiles leave and every one lands | The original seraph shot never worked and logged nothing |
+| `09-exotic-traders` | Built the way the game builds them, the exotic traders' stocks hold the first brain fragment; Empire variant under `@requires:Royalty` | The propagator cannot be built without it, and only a trader brings the first |
+| `10-egg-hatching` (`@slow`) | An egg not laid in the colony hatches a wild beetle after one game day | Time, the hatcher comp and the faction rule |
+| `11-save-reload` | Creatures, the machine with its bill, finished research, a hairstyle and an egg's incubation survive a round trip; the fixture colony, saved without this mod, is the mod added to an existing colony | Scribe behaviour |
+| `12`, `13`, `14` labels | The labels and the activity texts **on the loaded defs**, in English, French and the preserved Chinese | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
 
@@ -36,21 +35,22 @@ A check the game does not need to run, or that only tests the game, does not bel
 
 | Check | Where it went | Why |
 |---|---|---|
-| Taming the hatchling | `02` asserts the wildness stat | Taming is vanilla arithmetic on that stat; replaying it tests the game |
+| Speed, wildness, meat, hunger, pack, training and temperature of the creatures; the dark matter's factors; the propagator's and the research's cost | `Test-Mod.ps1` | Each is written in the leaf def, so it is read from the XML text. A first draft of this suite had a feature for them, removed as redundant: the game's stat worker adds nothing to a number the def states itself |
+| Taming the hatchling | `Test-Mod.ps1` asserts the wildness stat | Taming is vanilla arithmetic on that stat; replaying it tests the game |
 | Manhunter packs never choosing the seraph | `Test-Mod.ps1` asserts `canArriveManhunter` | The incident code that reads the flag is vanilla |
-| A caravan accepting the beetle, loading it | `02` asserts `packAnimal` | The caravan dialog is vanilla |
-| "Outruns everything", comfortable at any temperature | `02` asserts the stats | Comparing with other animals is a balance judgement, not a check |
+| A caravan accepting the beetle, loading it | `Test-Mod.ps1` asserts `packAnimal` | The caravan dialog is vanilla |
+| "Outruns everything", comfortable at any temperature | `Test-Mod.ps1` asserts the stats | Comparing with other animals is a balance judgement, not a check |
 | The beetle's temper (manhunter on any damage) | none | Subjective; it has no pass or fail threshold |
 | The corpse graphic falling back | `Test-Mod.ps1` asserts the entry is gone | The repair was removing a def entry; the fallback is vanilla, taken by any animal without one |
-| The trade window, buying the fragment | `10` asserts what the stock holds | The window is vanilla |
-| Every hairstyle listed at the styling station | `Test-Mod.ps1` asserts gender and tags | The station filters on those; `06` shows the draw |
-| The beetle facing every direction | `Test-Mod.ps1` asserts the three texture files | A missing frame is a logged error, which `no errors were logged` catches; `03` shows one facing |
+| The trade window, buying the fragment | `09` asserts what the stock holds | The window is vanilla |
+| Every hairstyle listed at the styling station | `Test-Mod.ps1` asserts gender and tags | The station filters on those; `05` shows the draw |
+| The beetle facing every direction | `Test-Mod.ps1` asserts the three texture files | A missing frame is a logged error, which `no errors were logged` catches; `02` shows one facing |
 | An upgrade from a previous revision | none | The only earlier upload, 0.1.0, held the same `Mod/`: there is no previous revision |
 | A pass with optional mods, an incompatibility pass | none | The mod declares neither |
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 20 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 17 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
@@ -62,7 +62,7 @@ every suite loaded. Each exists because no stock or shared step does it:
 - **wait for an egg**, read its incubation by reflection on a private field (failing loudly if it is renamed),
   and assert a hatchling has no faction;
 - **butcher a generated animal** and list what it yields;
-- **give and read a hairstyle**, and read a race's hunger, pack and training values, and a research's state.
+- **give and read a hairstyle**, and read whether a research is finished.
 
 Build with `dotnet build Source/ACertainSeriesCreaturesAndHairRenew.PickleSteps.csproj -c Release`. The output
 is `Mod/Pickle/Assemblies/`, which is tracked, and the intermediates go to `.build/`, which is not. Rebuild
@@ -118,7 +118,7 @@ None of this was seen running. These are the assumptions a green first run confi
    equal in every language, so either would do, but the step may refuse the ambiguity.
 3. `a "ACS_DarkMatterProduction" is built at (x, z)` builds a 1x2 building instantly, without material.
 4. `I add bill "<recipe>" to the "<bench>"` refuses, or the bench refuses, a recipe it does not offer, so that
-   the five bills of `07` prove availability and not only that a bill can be created.
+   the five bills of `06` prove availability and not only that a bill can be created.
 5. Nothing resets a powered bench's `PowerOn` before the bill finishes.
 6. A wild, unowned creature can start its own verb with `TryStartCastOn` and its AI does not cancel it.
 7. `StockGenerator_Tag.GenerateThings` called with the map's tile and any non-player faction builds a stock
