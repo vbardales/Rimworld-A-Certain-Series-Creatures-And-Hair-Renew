@@ -1,0 +1,4 @@
+# The minimal set: Core, the DLCs, Pickle, and the two shared test tools this suite uses. The mod under
+# test declares no dependency and no optional mod, so this is the only pass, run once in each language.
+nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
+nelim.pickletools.research      path:PickleTools/ResearchSteps/Mod

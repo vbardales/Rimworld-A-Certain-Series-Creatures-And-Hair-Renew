@@ -26,3 +26,6 @@ PROMPT_*.md
 # The durable record is one text line per run in docs/runs/ (see TESTING.md, "Evidence to keep").
 Tests/Pickle/Evidence/
 evidence/
+
+# The step assembly's intermediates, kept out of the test companion folder that staging copies verbatim.
+.build/
