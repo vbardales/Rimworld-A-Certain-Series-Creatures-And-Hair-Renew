@@ -28,77 +28,113 @@ version migrations. The in-game scenarios below remain necessary.
 
 ## What `tested` requires
 
-**A step comes first.** `../AUDIT.md`, transition 8 (preTest -> done), requires the Pickle
-scenarios to be *written*, with their scope justified: only what a running game alone can show stays
-in Gherkin, and running them is not asked for `done`. None is written, so this mod is at `preTest`,
-not `done`. The 2026-09-13 audit that recorded `done` predates the present `AUDIT.md`.
+**`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 15 features and 21 local steps,
+and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
+resolves every step line of every feature to exactly one step, and it was checked against a deliberately
+wrong feature and a deliberately invalid pattern before being trusted. **The scenarios have never been run.**
 
-Then `../AUDIT.md`, transition 9 (done -> tested). Three of its checks decide whether this file is
-finished, and each is measured here against what exists today.
+Then `../AUDIT.md`, transition 9 (done -> tested). Three checks decide whether this file is finished, and
+each is measured here against what exists.
 
 | Check | Where this mod stands |
 |---|---|
-| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | Nothing to check yet, and that is not a pass: no Gherkin scenario exists, so none can be shelved. It becomes a real check the day the suite is written. |
-| Every conditional scenario ran. Each `@requires:<packageId>` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Nothing tagged yet. Expect one condition, Royalty, for the Empire variant of T1; the default set already mounts it. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
-| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | **Not met.** Every box and every scenario below (H1, T1, S1, S2) is manual today. Turning them into scenarios is also what the step above asks for. |
+| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. It has to hold at the run, not only in the files. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One conditional scenario: the Empire trader (`@requires:Royalty`, feature 10). The default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
+| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. What stays for a person is reading the `@review` captures: the reading of an image a scenario has already proved to show the intended state, not one more manual test. **Met once the three passes have run green.** |
 
-In practice. `Tests/Test-Mod.ps1` already proves that the defs say what most boxes expect: claw
-sides, eight distinct wing labels, the corpse-graphic entry, the manhunter exclusion, bill access
-and the egg's parameters. What only a running game shows is the health tab drawing them, the shot
-leaving and exploding, a pawn walking to the workbench unprompted, a trader offering the fragment,
-the hatchling's faction, and the French and English labels on screen. Those are what a Pickle
-scenario is for, and nothing a static test can prove belongs in Gherkin. A box that no scenario can
-automate goes to a "not applicable" list with its reason; it cannot stay as an unticked box. The
-subjective balance review at the end is one of those: it has no pass or fail threshold.
+### Where each manual check went
+
+| Manual check | Where it went |
+|---|---|
+| The mod loads; no red error; the seven log strings | `01`, and reading `Player.log` from startup: `no errors were logged` covers a scenario, not the launch |
+| The beetle draws, not a pink box | `03` capture; a missing texture is a logged error, which `no errors were logged` catches |
+| Front claws, each on its own side | `03` and `04`: found by label, exactly one part per label, health tab captured |
+| No hunger bar, certain taming, advanced training, speed, temperature, pack animal | `02`, on the loaded defs. Taming and caravans are vanilla code reading those values |
+| The horn fires | `09` |
+| Butchering the beetle: dark matter, no meat | `05` |
+| A corpse left to rot keeps drawing | not applicable, see the README |
+| The seraph draws; eight wings under eight labels; the right leg on the right | `03` and `04` |
+| The seraph's ranged attack | `09` |
+| No taming; butchering the seraph | `02` (wildness 1) and `05` |
+| Manhunter packs never choose the seraph | not applicable: `Test-Mod.ps1` asserts the flag, the incident code is vanilla |
+| The research is where it should be, at its cost | `07` capture |
+| The propagator builds for one fragment | the cost in `02`; the machine is placed instantly in `07`, `08` and `12`, and construction is vanilla |
+| A pawn walks to it unprompted; the five bills run | `07` (five bills offered) and `08` (two recipes run to the end) |
+| The egg hatches in one day, wild; then taming | `11`; taming is not applicable, see the README |
+| H1: crafted egg hatching | `08` makes the egg through its bill, `11` hatches an egg and asserts it is wild |
+| T1: the first brain fragment from a trader | `10`, both Core routes and the Empire variant. The trade window itself is vanilla |
+| S1: adding the mod to an existing colony | every scenario (the fixture colony was saved without the mod) and `12` |
+| S2: reloading a colony that holds the mod's content | `12`. The upgrade variant is not applicable: there is no previous revision |
+| All forty-one hairstyles at the styling station, generated on pawns | `06` shows the draw; the tags are asserted offline, and the station only filters on them |
+| Names in English; the original Chinese comes back | `13` and `15` |
+| The French translation gate: labels, activity texts, keys | `14`, and `04` for layout; coverage stays in `Test-Translations.ps1` |
+| Raw keys, English fallback, clipped text | a raw key cannot sit in a label `13` to `15` assert; clipping is read on the `@review` captures |
+| Dark matter as a material: does not burn, barely wears, ten times the hit points | `02` |
+| The beetle's temper | not automated: it has no pass or fail threshold, see "Subjective balance review" |
 
 ## Passes this mod needs
 
-A mod whose TESTING.md does not say how many passes it needs is tried, not tested. For this one:
+A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs three,
+one mod set and one language each. The mod declares no dependency, no `loadAfter` and no `incompatibleWith`,
+so the only map is `Tests/Pickle/wsl-deps.sans-facultatifs.map`, and no optional or incompatibility pass
+applies.
 
-1. **English, no optional mod** (the launcher's default set: Core, the DLCs, Pickle and its own
-   dependencies): the content checks, H1, and the two Core routes of T1.
-2. **French, same set:** the translation checks and the labels pass 1 read.
-3. **Existing-save reload, English then French:** S1 and S2.
+1. **English**: every feature except the French and Chinese ones, the slow ones included: the production
+   chain, the shots and the egg do not depend on the language, so they are played once, here.
+2. **French**: the French features and the language-neutral fast ones (`@slow` excluded).
+3. **Chinese** (`ChineseSimplified`): the Chinese labels and the language-neutral fast ones.
 
-The Empire variant of T1 is a scenario tagged for Royalty inside these passes, not a pass of its own:
-Royalty is one of the DLCs the default set already mounts.
+The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
+scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the
+default set already mounts.
 
-Not needed: a pass with optional mods, since none is declared, and an incompatibility pass, since
-none is declared either.
-
-The machine is shared, so a run takes a ticket in the queue and waits for its turn. A Claude Code
-session watches its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`,
-which is what a heartbeat is under Codex (`../AUDIT.md`). Never a cron. A `Monitor` expires after
-30 minutes at most, so a long queue means re-arming it.
+The machine is shared, so a run takes a ticket in the queue and waits for its turn. A Claude Code session
+watches its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`, which is
+what a heartbeat is under Codex (`../AUDIT.md`). Never a cron. A `Monitor` expires after 30 minutes at
+most, so a long queue means re-arming it.
 
 ## Evidence to keep
 
-Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<run>/`, which `.gitignore` excludes:
-captures and `Player.log` grow without limit. Pass `-EvidenceDir` to the launcher so the report is
-copied there before the lock is released, then check `exitReason` and the played and discovered
-counts in each copy.
+Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<date>-<pass>/`, which `.gitignore` excludes:
+captures and `Player.log` grow without limit. Pass `-EvidenceDir` to the launcher so the report is copied
+there before the lock is released, then check `exitReason` and the played and discovered counts in each
+copy. The rules are the collection's (`../AGENTS.md`, "Test evidence"; `../PickleTools/TESTING.md`, "What to
+keep after a test, and what to delete").
 
-Keep, per scenario, the latest report for the revision now in the repository. Keep an older one only
-when it is the sole proof of a check the latest run did not repeat. Delete every other report as soon
-as a newer one replaces it, after listing what goes and what stays. Never delete a report that
-`STATUS.md` still points to: repoint it first. The history is one text line per run in `docs/runs/`,
-never a folder.
+| Keep, per pass | Why |
+|---|---|
+| `summary.json` and `summary.md` | The verdict: `exitReason`, counts, scenario names. Read `exitReason` first |
+| `junit.xml` and `messages.ndjson` | The per-step outcome and the failure messages |
+| `Player.log` | Startup, load order, dropped mods, errors outside the scenarios: only the newest one per pass |
+| `evidence-complete.txt` or `no-report.txt` | Says the copy is whole, or that the launcher left no report |
+| The `@review` captures, **minified to JPEG** | Human review outcome. `Tests/Pickle/Minify-Evidence.ps1 -Folder <copy>` re-encodes them (quality 80, at most 1280 px wide) and drops `report.html` and `messages.ndjson`. Keep the original of a capture that has to be measured, not read |
+| One line in `docs/runs/` | The history, one text line per run, never a folder. The folder does not exist yet |
 
-The proofs worth keeping for this mod, and only these:
+Delete a report that a newer one supersedes for the same scenario and the same revision, unless it is the
+only proof of a check the newer run did not repeat (a language, a pass). Delete the report of a failed or
+infrastructure-error attempt once its line is written and its cause recorded in `STATUS.md`. Delete any
+report on a superseded build: it proves nothing about the current one. Never keep a `screenshots/` folder
+copied whole from the shared report folder, which carries every other mod's captures. List what goes and
+what stays before deleting, and **never delete a report that `STATUS.md` or a tracked file points to:
+repoint it first.**
 
-- the beetle's health tab in English: front left claw on the left, front right claw on the right;
-- the seraph's health tab: eight wings under eight different labels, the right leg on the right;
-- one frame of each creature's shot, in flight or exploding;
-- the propagator with a bill in progress and a pawn working at it;
-- the styling station's hairstyle list, once in English and once in French;
-- the `Player.log` of each pass, already searched for the seven strings in "The load": only the
-  newest one per pass.
+The captures this mod's scenarios produce, and the only ones worth keeping:
 
-A capture is minified before it is kept: drop the ones the verdict does not rest on, crop to the
-panel that proves the point, and re-encode without loss. Never retouch one. The text reports
-(`summary.md`, `junit.xml`) are small and stay whole.
+- `03`: both creatures on a clean map; the beetle's health tab with its front claws; the seraph's health
+  tab with its wings and right leg, in English;
+- `04`: the same two health tabs in French, where the labels are longer;
+- `06`: three hairstyles on three colonists;
+- `07`: the research window on the main tab.
+
+Nothing else takes a capture. The shots, the production chain, the egg, the save round trip and the labels
+are asserted, so their proof is the report and `Player.log`.
 
 ## Manual validation
+
+**Superseded where the map above says so.** These checklists were the specification of what the scenarios
+now assert. They are not ticked by hand; a run's results are recorded in `STATUS.md` and in `docs/runs/`.
+What a person still does is read the `@review` captures.
 
 ### Translation gate and language checks
 

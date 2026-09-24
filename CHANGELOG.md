@@ -25,6 +25,8 @@ First version. RimWorld 1.6.
   hairstyles, research, production recipes and work activity text.
 - A source-based English/French coverage check in CI. English remains in the Defs;
   the original Chinese translation is preserved. In-game language checks are pending.
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 15 features and 21 steps of its own, written
+  but not yet run. Development only; none of it is in `Mod/`, so none of it reaches a player.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.
 
@@ -85,8 +87,9 @@ which holds item `3806708754`. This entry does not say the mod is public or test
 
 ### Notes
 
-- The upload contained `Mod/` as it stood at `3db914f`. Nothing in `Mod/` has changed since, apart
-  from that file.
+- The upload contained `Mod/` as it stood at `3db914f`. Since then `Mod/` has changed by that file and
+  by `About/Preview.png`, recomposed on 2026-09-24 so that the title no longer covers the beetle. The
+  item's page was created with the earlier image and still carries it.
 - It was made from the working tree, which also held 141 `.dds` texture caches that the game had
   written beside the PNGs a quarter of an hour earlier. They are not in git, so the private item
   probably carries them. This repository has no publish workflow yet: an upload from a git checkout

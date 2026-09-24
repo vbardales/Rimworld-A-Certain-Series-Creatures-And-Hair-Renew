@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhairrenew
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-stage:        preTest
+stage:        done
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 dependencies: none
@@ -17,15 +17,16 @@ tested_on:
 workshop:     3806708754
 remaining:
   - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the creation upload probably sent it (no session has read the page), in which case fixing About.xml alone no longer changes the page and it is edited by hand
-  - unverified: inspect all translated content in English and French in game, including generated labels, work activity text and clipping
-  - unverified: no scenario has been played in game, and five of the six repairs can only be read in part; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
-  - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
-  - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
-  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists
-  - unverified: to reach tested, every manual box and scenario of TESTING.md (H1, T1, S1, S2) must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md transition 9); none is automated yet
+  - resolved 2026-09-24 (preTest -> done): the Pickle suite is written in `Tests/Pickle/` (15 features, 21 local steps, a README that justifies the scope), and `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step. Written, not run: `done` does not ask for a run
+  - unverified: none of the 15 Pickle features has run. The first run confirms or breaks the ten assumptions listed at the end of `Tests/Pickle/README.md`, and five of the six repairs can only be seen in a running game; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
+  - unverified: the French and Chinese passes have not run, so no label or layout has been seen in either language; clipping is read on the `@review` captures of feature 04
+  - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built. Feature 10 asks it of 200 generated stocks per trader; not run
+  - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out. Subjective and not automated
+  - unverified: to reach tested, the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) must run green, the Empire scenario must be played and not skipped, no scenario may be `@wip`, and every `@review` capture must be opened (AUDIT.md transition 9). Nothing has run
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
+  - unverified: the item's page still carries the earlier preview image; `Mod/About/Preview.png` was recomposed on 2026-09-24 and nothing has uploaded it
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-24, stage corrected to preTest after review, kept by the session that holds this mod
+updated:      2026-09-24, Pickle suite written, stage back to done, preview recomposed, kept by the session that holds this mod
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -38,25 +39,40 @@ Newest entry; where it disagrees with the sections below, it wins.
   working tree. Steam creates every item private and RimWorld never changes that: nothing was made
   public. `Mod/About/PublishedFileId.txt` is committed in `8437ae0` and the remote copy holds the
   same number. The item's page has not been read by a session.
-- **The stage is `preTest`, corrected from `done` on 2026-09-24.** A prepublication is an act, not a
-  stage (`../AUDIT.md`, transition 11), so it moves nothing. But `done` needs the Pickle scenarios to
-  be written (transition 8) and none exists: the audit that recorded `done` on 2026-09-13 predates
-  the present `AUDIT.md`. Neither `tested` nor `prepublished` has been reached either.
+- **The stage is `done` again, after a day at `preTest`.** A prepublication is an act, not a stage
+  (`../AUDIT.md`, transition 11), so it moves nothing. But `done` needs the Pickle scenarios to be
+  written (transition 8), and none existed: the audit that recorded `done` on 2026-09-13 predates the
+  present `AUDIT.md`. The stage was corrected to `preTest` on 2026-09-24, then restored the same day
+  once the suite was written. Neither `tested` nor `prepublished` has been reached.
 - **`CHANGELOG.md` is initialised** (`fe82516`): `0.1.0` records the upload, which held `Mod/` as it
   stood at `3db914f`. `1.0.0` is back to unreleased above it, and absorbed the old `Unreleased`.
 - **141 `.dds` files** sat untracked in `Mod/Textures/`, each beside a tracked PNG twin. The game wrote
   them on 2026-09-23 at 14:12. None was ever in git; `*.dds` is now ignored (`7a0d6ae`) and the files
   stay on disk. They were on disk during the upload, hence the last line of `remaining`.
-- **Evidence: there is none to sort.** No Pickle suite exists for this mod, so no report sits in
+- **The Pickle suite is written, never run.** `Tests/Pickle/`: 15 features, a step assembly compiled
+  against the 1.6 game assemblies (21 steps, all prefixed `A Certain Series:`), a pass map staging two
+  shared tools, and a README that says what is in Gherkin, what deliberately is not, and why. The
+  checker resolves all 259 step lines to exactly one step; it was tried against a deliberately wrong
+  feature and a deliberately invalid pattern, and failed on both, before being trusted. It proves a
+  step's text exists, not that the step does what its scenario hopes.
+- **Evidence: there is none to sort.** No suite existed before today, so no report sits in
   `Tests/Pickle/Evidence/`, none in the shared report folders, and nothing under `docs/runs/`. The
-  folders are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTING.md`
-  ("Evidence to keep"). `Art/preview-qa.json`, `Art/preview-268.png` and `Art/preview-palette.json`
-  are showcase QA that this file points to below: tracked, small, kept.
-- **The gates, measured** (`TESTING.md`, "What `tested` requires"): the Pickle scenarios are not
-  written, which blocks `done`. Nothing can be checked yet for `@wip` or unrun conditional scenarios,
-  since no Gherkin exists, and that is not a pass. **Manual tests left to validate: all of them.**
-- No Pickle ticket is held, since there is nothing to queue. Once a suite exists, the wait is watched
-  with `Monitor` on `scripts/Pickle-Status.ps1`, not with a cron.
+  folders are ignored, `Minify-Evidence.ps1` is copied in, and the proofs worth keeping, nine captures
+  and the text reports, are listed in `TESTING.md` ("Evidence to keep"). `Art/preview-qa.json`,
+  `Art/preview-268.png` and `Art/preview-palette.json` are showcase QA that this file points to
+  below: tracked, small, kept.
+- **The gates, measured** (`TESTING.md`, "What `tested` requires"): no scenario is `@wip`; one is
+  conditional, the Empire trader, and must be seen played; every manual check is covered by a scenario
+  or listed not applicable, in a map. That third check is met once the three passes have run green.
+- **The preview was recomposed** (`a518192`). The text stays top-left; the picture sits 20 pixels lower,
+  so the title no longer covers the beetle's head and horn. Bottom-right was tried and is worse: it
+  hides the propagator and the veil dims the seraph. Going further is blocked by the contrast floor:
+  behind the summary the lit carapace gives 4.06:1 at offset 0 and first clears 4.5:1 at -26, and the
+  offset kept is -30. `Mod/About/Preview.png` is now 579,218
+  bytes, replacing the 569,528 quoted in the audit sections below; minimum contrasts 6.03, 11.01,
+  4.63, 9.04 and 4.63.
+- No Pickle ticket is held: no run has been asked for. When one is, the wait is watched with `Monitor`
+  on `scripts/Pickle-Status.ps1`, not with a cron.
 
 ## Current cumulative workflow audit — 2026-09-13
 
