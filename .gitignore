@@ -15,3 +15,14 @@
 # where they are written and where PUBLISHING.md expects them. This rule is a guard only, in case
 # a copy is ever made here: it is working notes in French, and this repository is public.
 PROMPT_*.md
+
+# DDS textures: not tracked. RimWorld writes one beside each PNG the first time it loads a mod
+# (141 of them, 3.8 MB, on 2026-09-23). The PNG is the source and is what git holds; the game
+# regenerates the rest. They stay on disk, and the publishing CI works from a git checkout, so
+# it never ships them.
+*.dds
+
+# Pickle evidence stays on disk, never in git: captures and Player.log grow without limit.
+# The durable record is one text line per run in docs/runs/ (see TESTING.md, "Evidence to keep").
+Tests/Pickle/Evidence/
+evidence/
