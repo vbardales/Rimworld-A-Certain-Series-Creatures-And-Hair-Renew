@@ -26,6 +26,71 @@ or validate every translation handle. The shared parent repository's
 provide additional checks using the installed game and must also be rerun for
 version migrations. The in-game scenarios below remain necessary.
 
+## What `tested` requires
+
+`../AUDIT.md`, stage 9 (done -> tested). Three of its checks decide whether this file is finished,
+and each is measured here against what exists today.
+
+| Check | Where this mod stands |
+|---|---|
+| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | Met vacuously: there is no Gherkin scenario yet, so none is shelved. It stops being vacuous the day the Pickle suite is written. |
+| Every conditional scenario ran. Each `@requires:<packageId>` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One condition only: Royalty, for the Empire variant of T1. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
+| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | **Not met, and this is the whole of the remaining work.** Every box and every scenario below (H1, T1, S1, S2) is manual today. |
+
+In practice. `Tests/Test-Mod.ps1` already proves that the defs say what most boxes expect: claw
+sides, eight distinct wing labels, the corpse-graphic entry, the manhunter exclusion, bill access
+and the egg's parameters. What only a running game shows is the health tab drawing them, the shot
+leaving and exploding, a pawn walking to the workbench unprompted, a trader offering the fragment,
+the hatchling's faction, and the French and English labels on screen. Those are what a Pickle
+scenario is for, and nothing a static test can prove belongs in Gherkin. A box that no scenario can
+automate goes to a "not applicable" list with its reason; it cannot stay as an unticked box. The
+subjective balance review at the end is one of those: it has no pass or fail threshold.
+
+## Passes this mod needs
+
+A mod whose TESTING.md does not say how many passes it needs is tried, not tested. For this one:
+
+1. **English, no optional mod** (the launcher's default set: Core, the DLCs, Pickle and its own
+   dependencies): the content checks, H1, and the two Core routes of T1.
+2. **French, same set:** the translation checks and the labels pass 1 read.
+3. **Existing-save reload, English then French:** S1 and S2.
+4. **Royalty, English:** the Empire variant of T1. The only conditional pass.
+
+Not needed: a pass with optional mods, since none is declared, and an incompatibility pass, since
+none is declared either.
+
+The machine is shared, so a run takes a ticket in the queue and waits for its turn. A Claude Code
+session watches its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`,
+which is what a heartbeat is under Codex (`../AUDIT.md`). Never a cron. A `Monitor` expires after
+30 minutes at most, so a long queue means re-arming it.
+
+## Evidence to keep
+
+Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<run>/`, which `.gitignore` excludes:
+captures and `Player.log` grow without limit. Pass `-EvidenceDir` to the launcher so the report is
+copied there before the lock is released, then check `exitReason` and the played and discovered
+counts in each copy.
+
+Keep, per scenario, the latest report for the revision now in the repository. Keep an older one only
+when it is the sole proof of a check the latest run did not repeat. Delete every other report as soon
+as a newer one replaces it, after listing what goes and what stays. Never delete a report that
+`STATUS.md` still points to: repoint it first. The history is one text line per run in `docs/runs/`,
+never a folder.
+
+The proofs worth keeping for this mod, and only these:
+
+- the beetle's health tab in English: front left claw on the left, front right claw on the right;
+- the seraph's health tab: eight wings under eight different labels, the right leg on the right;
+- one frame of each creature's shot, in flight or exploding;
+- the propagator with a bill in progress and a pawn working at it;
+- the styling station's hairstyle list, once in English and once in French;
+- the `Player.log` of each pass, already searched for the seven strings in "The load": only the
+  newest one per pass.
+
+A capture is minified before it is kept: drop the ones the verdict does not rest on, crop to the
+panel that proves the point, and re-encode without loss. Never retouch one. The text reports
+(`summary.md`, `junit.xml`) are small and stay whole.
+
 ## Manual validation
 
 ### Translation gate and language checks
@@ -57,7 +122,9 @@ below. These checks have not yet been performed:
       missing accents, malformed formatting and clipped text. Record actual results
       in `STATUS.md`; proper character names and power nicknames may be identical.
 
-This mod has never been loaded by RimWorld. Everything below is what the first run has to settle.
+No scenario below has been played. The game did load the mod at least once, on 2026-09-23, when
+it wrote 141 `.dds` texture caches beside the PNGs, but no log was read and nothing was checked, so
+that is not a test. Everything below is what the first run has to settle.
 
 **A clean log would not be an answer.** 123 defs, no assembly, no patch operations, no
 required third-party dependencies. Test a new colony and existing-save reloads in both languages;

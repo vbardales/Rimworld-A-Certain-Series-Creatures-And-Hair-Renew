@@ -14,18 +14,46 @@ licence_at:   original files and About.xml, Steam description and all 14 comment
 dependencies: none
 showcase:     complete
 tested_on:
-workshop:
+workshop:     3806708754
 remaining:
-  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link
+  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the item's page was created from it, so fixing About.xml alone no longer changes the page, which is edited by hand
   - unverified: inspect all translated content in English and French in game, including generated labels, work activity text and clipping
-  - unverified: never seen running in game, and five of the six repairs can only be read in part
+  - unverified: no scenario has been played in game, and five of the six repairs can only be read in part; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
+  - unverified: to reach tested, every manual box and scenario of TESTING.md (H1, T1, S1, S2) must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md stage 9); none is automated yet
+  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list, or let the next upload from git replace them
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-13, cumulative workflow audit at a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56
+updated:      2026-09-24, prepublication 0.1.0 recorded, kept by the session that holds this mod
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
+
+## Prepublication 0.1.0 — 2026-09-24
+
+Newest entry; where it disagrees with the sections below, it wins.
+
+- **Workshop item `3806708754`**, created on 2026-09-23 at 14:29 by a prepublication upload from this
+  working tree. Steam creates every item private and RimWorld never changes that: nothing was made
+  public. `Mod/About/PublishedFileId.txt` is committed in `8437ae0` and the remote copy holds the
+  same number. The item's page has not been read by a session.
+- **The stage stays `done`.** A prepublication is an act, not a stage (`../AUDIT.md`, transition 11):
+  neither `tested` nor `prepublished` has been reached.
+- **`CHANGELOG.md` is initialised** (`fe82516`): `0.1.0` records the upload, which held `Mod/` as it
+  stood at `3db914f`. `1.0.0` is back to unreleased above it, and absorbed the old `Unreleased`.
+- **141 `.dds` files** sat untracked in `Mod/Textures/`, each beside a tracked PNG twin. The game wrote
+  them on 2026-09-23 at 14:12. None was ever in git; `*.dds` is now ignored (`7a0d6ae`) and the files
+  stay on disk. They were on disk during the upload, hence the last line of `remaining`.
+- **Evidence: there is none to sort.** No Pickle suite exists for this mod, so no report sits in
+  `Tests/Pickle/Evidence/`, none in the shared report folders, and nothing under `docs/runs/`. The
+  folders are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTING.md`
+  ("Evidence to keep"). `Art/preview-qa.json`, `Art/preview-268.png` and `Art/preview-palette.json`
+  are showcase QA that this file points to below: tracked, small, kept.
+- **The `tested` gate, measured** (`TESTING.md`, "What `tested` requires"): no `@wip` scenario and no
+  unrun conditional scenario, both vacuous for want of any Gherkin; **manual tests left to validate:
+  all of them.** That is the work between `done` and `tested`.
+- No Pickle ticket is held, since there is nothing to queue. Once a suite exists, the wait is watched
+  with `Monitor` on `scripts/Pickle-Status.ps1`, not with a cron.
 
 ## Current cumulative workflow audit — 2026-09-13
 
@@ -269,13 +297,15 @@ The fields above are kept by the session that holds this mod. What they say toda
   `Art/preview-268.png` (268px wide): no overlap or clipping, title and version
   identifiable, reduced title words readable and divider visible. Preview and composition
   sources pushed to GitHub in commit `47be439`; nothing uploaded to the Workshop.
-- **`tested_on`, empty** — the mod has never been launched. In-game validation remains pending, and
+- **`tested_on`, empty** — no scenario has been played (the game loaded the mod once on
+  2026-09-23, see "Prepublication 0.1.0" above; that is not a test). In-game validation remains pending, and
   not one a session can clear on its own: see [`TESTING.md`](TESTING.md), which lays out the run
   in order, the seven strings to search `Player.log` for, and the two questions that have no
   expected answer.
-- **`workshop`, empty** — never uploaded, and no `PublishedFileId.txt` in `Mod/`. The Steam
-  description is sent only when the item is created and never reprinted: read it once more
-  before clicking.
+- **`workshop`** — superseded on 2026-09-24: item `3806708754` was created on 2026-09-23 and its
+  `PublishedFileId.txt` is committed (see "Prepublication 0.1.0" above). The Steam description is
+  sent only when the item is created and never reprinted, so what the creation upload sent is what
+  the page carries until someone edits it by hand.
 - **`licence: silent`** — no explicit modification or redistribution permission found
   for the original mod in the 2026-09-12 recheck. The installed original contains no
   licence file or permission notice, and its About.xml URL is empty. The
