@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhairrenew
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 dependencies: none
@@ -16,15 +16,16 @@ showcase:     complete
 tested_on:
 workshop:     3806708754
 remaining:
-  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the item's page was created from it, so fixing About.xml alone no longer changes the page, which is edited by hand
+  - defect: About description uses a bare GitHub URL instead of the required final Source code on GitHub Steam link; the creation upload probably sent it (no session has read the page), in which case fixing About.xml alone no longer changes the page and it is edited by hand
   - unverified: inspect all translated content in English and French in game, including generated labels, work activity text and clipping
   - unverified: no scenario has been played in game, and five of the six repairs can only be read in part; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
   - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built
   - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out
-  - unverified: to reach tested, every manual box and scenario of TESTING.md (H1, T1, S1, S2) must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md stage 9); none is automated yet
-  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list, or let the next upload from git replace them
+  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists
+  - unverified: to reach tested, every manual box and scenario of TESTING.md (H1, T1, S1, S2) must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md transition 9); none is automated yet
+  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-24, prepublication 0.1.0 recorded, kept by the session that holds this mod
+updated:      2026-09-24, stage corrected to preTest after review, kept by the session that holds this mod
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -37,8 +38,10 @@ Newest entry; where it disagrees with the sections below, it wins.
   working tree. Steam creates every item private and RimWorld never changes that: nothing was made
   public. `Mod/About/PublishedFileId.txt` is committed in `8437ae0` and the remote copy holds the
   same number. The item's page has not been read by a session.
-- **The stage stays `done`.** A prepublication is an act, not a stage (`../AUDIT.md`, transition 11):
-  neither `tested` nor `prepublished` has been reached.
+- **The stage is `preTest`, corrected from `done` on 2026-09-24.** A prepublication is an act, not a
+  stage (`../AUDIT.md`, transition 11), so it moves nothing. But `done` needs the Pickle scenarios to
+  be written (transition 8) and none exists: the audit that recorded `done` on 2026-09-13 predates
+  the present `AUDIT.md`. Neither `tested` nor `prepublished` has been reached either.
 - **`CHANGELOG.md` is initialised** (`fe82516`): `0.1.0` records the upload, which held `Mod/` as it
   stood at `3db914f`. `1.0.0` is back to unreleased above it, and absorbed the old `Unreleased`.
 - **141 `.dds` files** sat untracked in `Mod/Textures/`, each beside a tracked PNG twin. The game wrote
@@ -49,9 +52,9 @@ Newest entry; where it disagrees with the sections below, it wins.
   folders are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTING.md`
   ("Evidence to keep"). `Art/preview-qa.json`, `Art/preview-268.png` and `Art/preview-palette.json`
   are showcase QA that this file points to below: tracked, small, kept.
-- **The `tested` gate, measured** (`TESTING.md`, "What `tested` requires"): no `@wip` scenario and no
-  unrun conditional scenario, both vacuous for want of any Gherkin; **manual tests left to validate:
-  all of them.** That is the work between `done` and `tested`.
+- **The gates, measured** (`TESTING.md`, "What `tested` requires"): the Pickle scenarios are not
+  written, which blocks `done`. Nothing can be checked yet for `@wip` or unrun conditional scenarios,
+  since no Gherkin exists, and that is not a pass. **Manual tests left to validate: all of them.**
 - No Pickle ticket is held, since there is nothing to queue. Once a suite exists, the wait is watched
   with `Monitor` on `scripts/Pickle-Status.ps1`, not with a cron.
 
@@ -304,8 +307,8 @@ The fields above are kept by the session that holds this mod. What they say toda
   expected answer.
 - **`workshop`** — superseded on 2026-09-24: item `3806708754` was created on 2026-09-23 and its
   `PublishedFileId.txt` is committed (see "Prepublication 0.1.0" above). The Steam description is
-  sent only when the item is created and never reprinted, so what the creation upload sent is what
-  the page carries until someone edits it by hand.
+  sent only when the item is created and never reprinted, so what the creation upload sent, if it sent
+  a description, is what the page carries until someone edits it by hand.
 - **`licence: silent`** — no explicit modification or redistribution permission found
   for the original mod in the 2026-09-12 recheck. The installed original contains no
   licence file or permission notice, and its About.xml URL is empty. The

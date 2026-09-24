@@ -28,14 +28,19 @@ version migrations. The in-game scenarios below remain necessary.
 
 ## What `tested` requires
 
-`../AUDIT.md`, stage 9 (done -> tested). Three of its checks decide whether this file is finished,
-and each is measured here against what exists today.
+**A step comes first.** `../AUDIT.md`, transition 8 (preTest -> done), requires the Pickle
+scenarios to be *written*, with their scope justified: only what a running game alone can show stays
+in Gherkin, and running them is not asked for `done`. None is written, so this mod is at `preTest`,
+not `done`. The 2026-09-13 audit that recorded `done` predates the present `AUDIT.md`.
+
+Then `../AUDIT.md`, transition 9 (done -> tested). Three of its checks decide whether this file is
+finished, and each is measured here against what exists today.
 
 | Check | Where this mod stands |
 |---|---|
-| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | Met vacuously: there is no Gherkin scenario yet, so none is shelved. It stops being vacuous the day the Pickle suite is written. |
-| Every conditional scenario ran. Each `@requires:<packageId>` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | One condition only: Royalty, for the Empire variant of T1. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
-| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | **Not met, and this is the whole of the remaining work.** Every box and every scenario below (H1, T1, S1, S2) is manual today. |
+| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | Nothing to check yet, and that is not a pass: no Gherkin scenario exists, so none can be shelved. It becomes a real check the day the suite is written. |
+| Every conditional scenario ran. Each `@requires:<packageId>` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Nothing tagged yet. Expect one condition, Royalty, for the Empire variant of T1; the default set already mounts it. The About declares no `loadAfter`, no dependency and no `incompatibleWith`. |
+| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | **Not met.** Every box and every scenario below (H1, T1, S1, S2) is manual today. Turning them into scenarios is also what the step above asks for. |
 
 In practice. `Tests/Test-Mod.ps1` already proves that the defs say what most boxes expect: claw
 sides, eight distinct wing labels, the corpse-graphic entry, the manhunter exclusion, bill access
@@ -54,7 +59,9 @@ A mod whose TESTING.md does not say how many passes it needs is tried, not teste
    dependencies): the content checks, H1, and the two Core routes of T1.
 2. **French, same set:** the translation checks and the labels pass 1 read.
 3. **Existing-save reload, English then French:** S1 and S2.
-4. **Royalty, English:** the Empire variant of T1. The only conditional pass.
+
+The Empire variant of T1 is a scenario tagged for Royalty inside these passes, not a pass of its own:
+Royalty is one of the DLCs the default set already mounts.
 
 Not needed: a pass with optional mods, since none is declared, and an incompatibility pass, since
 none is declared either.

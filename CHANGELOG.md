@@ -88,7 +88,8 @@ which holds item `3806708754`. This entry does not say the mod is public or test
 - The upload contained `Mod/` as it stood at `3db914f`. Nothing in `Mod/` has changed since, apart
   from that file.
 - It was made from the working tree, which also held 141 `.dds` texture caches that the game had
-  written beside the PNGs a quarter of an hour earlier. They are not in git and the publishing CI
-  never ships them, so the private item probably carries them and the next upload replaces them.
+  written beside the PNGs a quarter of an hour earlier. They are not in git, so the private item
+  probably carries them. This repository has no publish workflow yet: an upload from a git checkout
+  drops them, one from the working tree sends them again.
 - The features listed under 1.0.0 are still to come as a release. The `tested` and `prepublished`
   states have not been reached: see `STATUS.md`.
