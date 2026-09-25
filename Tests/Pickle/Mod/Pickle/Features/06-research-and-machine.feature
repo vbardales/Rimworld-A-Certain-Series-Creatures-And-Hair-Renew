@@ -13,6 +13,9 @@ Feature: The research and the propagator it unlocks
     Then Nelim's Pickle Tools: the research window is on the tab "Main"
     And Nelim's Pickle Tools: the research window lists the project "ACS_DarkMatterTech" costing 18000
     When I take a screenshot "research dark matter propagation"
+    And A Certain Series: I scroll the research window to the project "ACS_DarkMatterTech"
+    And I wait 10 ticks
+    And I take a screenshot "research dark matter propagation in view"
     Then no errors were logged
 
   Scenario: the propagator offers all five of its bills once the research is done

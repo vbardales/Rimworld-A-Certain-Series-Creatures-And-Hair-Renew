@@ -2,8 +2,9 @@
 # tags, which Tests/Test-Mod.ps1 asserts. What only a game shows is that a hairstyle's textures resolve and
 # draw on a pawn's head: a missing texture is a pink square, and at most a logged error. Three of the forty-one
 # are enough to prove the path (the textures share one folder and one naming rule); the offline suite checks
-# that all forty-one files exist.
-@review @en-only
+# that all forty-one files exist. The wide views cannot tell one hairstyle from another, so the scenario ends on
+# the portrait of the character tab, where a head is drawn large.
+@review @en-only @requires:nelim.pickletools.inspecttabs
 Feature: Hairstyles from the series draw on colonists
 
   Background:
@@ -30,4 +31,8 @@ Feature: Hairstyles from the series draw on colonists
     And I wait 10 ticks
     And I take a screenshot "hairstyle index"
     And I stop following
+    And I select "Rina"
+    And Nelim's Pickle Tools: I open the "Character" inspect tab
+    And I wait 10 ticks
+    And I take a screenshot "hairstyle misaka on the character tab"
     Then no errors were logged

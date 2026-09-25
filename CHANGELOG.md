@@ -31,7 +31,7 @@ First version. RimWorld 1.6.
   that mod's surgeries names them; the beetle's legs, claws, horn and elytra are in the same case. The mod
   loads before it (`loadBefore`), as its author asks of mods that add animals, and nothing changes without it.
   Not yet seen in a game.
-- An in-game test suite for Pickle, under `Tests/Pickle/`: 15 features and 20 steps of its own, written
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 15 features and 21 steps of its own, written
   but not yet run. Development only; none of it is in `Mod/`, so none of it reaches a player.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.

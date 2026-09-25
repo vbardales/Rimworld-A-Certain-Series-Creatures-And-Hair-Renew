@@ -337,6 +337,30 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(project.IsFinished, $"{defName} is not finished");
         }
 
+        /// <summary>
+        /// The research window opens on the left of the tree and the mod's project sits at (19, 3), out of
+        /// view, so a screenshot of the window never showed it. The window has no public way to scroll: this
+        /// puts its private right-hand scroll position where the game itself places the project (PosX and
+        /// PosY, the very ones the view size is computed from), leaving some of the tree on each side.
+        /// </summary>
+        [When("A Certain Series: I scroll the research window to the project {string}")]
+        public void ScrollResearchTo(PickleContext ctx, string defName)
+        {
+            var project = DefDatabase<ResearchProjectDef>.GetNamedSilentFail(defName);
+            ctx.Assert(project != null, $"no ResearchProjectDef named {defName}");
+            var window = Find.WindowStack.WindowOfType<MainTabWindow_Research>();
+            ctx.Assert(window != null, "the research window is not open");
+            const System.Reflection.BindingFlags any = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;
+            var type = typeof(MainTabWindow_Research);
+            var posX = type.GetMethod("PosX", any);
+            var posY = type.GetMethod("PosY", any);
+            var scroll = type.GetField("rightScrollPosition", any);
+            ctx.Assert(posX != null && posY != null && scroll != null, "the research window no longer has PosX, PosY and rightScrollPosition");
+            float x = Convert.ToSingle(posX.Invoke(window, new object[] { project }));
+            float y = Convert.ToSingle(posY.Invoke(window, new object[] { project }));
+            scroll.SetValue(window, new UnityEngine.Vector2(Math.Max(0f, x - 400f), Math.Max(0f, y - 120f)));
+        }
+
         // ---- a label, read by def type --------------------------------------------------------------
 
         /// <summary>

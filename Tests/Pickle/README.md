@@ -20,8 +20,8 @@ exists because the game itself has to act on the defs.
 | `01-loads` | The mod loaded; the principal defs survived the real loader; no error, no warning from the mod | In 1.6 a def whose `Class=` does not resolve is lost whole, and only the loader knows |
 | `02`, `03` creatures (`@review`) | Both creatures draw; each body part is found **by the label the player reads**, exactly one per label; the health tab shows them | A label shared by two parts, or a claw on the wrong side, is invisible in XML that parses |
 | `04-butchering` | Beetle: dark matter, no meat. Seraph: heavenly cloth and an angel core, no meat | Meat, leather and body part meet in the game's own `ButcherProducts` |
-| `05-hairstyles` (`@review`) | Three of the forty-one hairstyles draw on a colonist | A missing texture is a pink square at most; the offline suite checks the files, not the draw |
-| `06-research-and-machine` | The research is on the main tab at 18000; the propagator offers its five bills once it is done | The research window and a bench's bill list are the game acting on the defs |
+| `05-hairstyles` (`@review`) | Three of the forty-one hairstyles draw on a colonist, and the first is shown large on the character tab | A missing texture is a pink square at most; the offline suite checks the files, not the draw |
+| `06-research-and-machine` (`@review`) | The research is on the main tab at 18000 and scrolled into view for its capture; the propagator offers its five bills once it is done | The research window and a bench's bill list are the game acting on the defs |
 | `07-production-chain` (`@slow`) | A colonist walks to the machine unprompted and finishes a bill: brain fragment to dark matter, volleyball to egg | The defect that leaves no log line: a new workbench needs its own work giver |
 | `08-ranged-attacks` (`@slow`) | Each creature's own verb starts, its projectiles leave and every one lands | The original seraph shot never worked and logged nothing |
 | `09-exotic-traders` | Built the way the game builds them, the exotic traders' stocks hold the first brain fragment; Empire variant under `@requires:Royalty` | The propagator cannot be built without it, and only a trader brings the first |
@@ -52,7 +52,7 @@ A check the game does not need to run, or that only tests the game, does not bel
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 20 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 21 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
