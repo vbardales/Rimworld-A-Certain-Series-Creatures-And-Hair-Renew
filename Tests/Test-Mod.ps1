@@ -236,5 +236,23 @@ Test 'The Animal Prosthetics 2 patch lists the beetle, only when that mod is the
     $parts = @($seraphBody.SelectNodes('.//def') | ForEach-Object { $_.InnerText } | Sort-Object -Unique)
     Assert (@($parts | Where-Object { -not $_.StartsWith('ACS_') }).Count -eq 0) 'The seraph gained a vanilla body part: reconsider listing it in the other mod'
 }
+Test 'The Nocturnal Animals patch makes the beetle nocturnal, only when that mod is there, and asks for nothing else' {
+    $naName = '[XND] Nocturnal Animals (Continued)'
+    [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
+    Assert (-not ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies')) 'The compatibility is optional: no mod dependency may be declared'
+    Assert (@($about.ModMetaData.loadBefore.li) -notcontains 'Mlie.XNDNocturnalAnimals') 'No load order is needed with Nocturnal Animals: it reads the extension at runtime'
+    [xml]$patch = Get-Content -LiteralPath (Join-Path $ModPath 'Patches/NocturnalAnimals.xml') -Raw -Encoding UTF8
+    $op = $patch.SelectSingleNode('/Patch/Operation')
+    Assert ($op.GetAttribute('Class') -eq 'PatchOperationFindMod') 'The patch is not guarded by PatchOperationFindMod'
+    Assert (@($op.mods.li) -ceq $naName) "The guard does not name the mod exactly as '$naName'"
+    $add = $op.match
+    Assert ($add.GetAttribute('Class') -eq 'PatchOperationAddModExtension') 'The guarded operation is not a PatchOperationAddModExtension'
+    Assert ($add.xpath -ceq '/Defs/ThingDef[defName="ACS_DarkMatterBeetle"]') "The patch does not target the beetle's ThingDef alone: $($add.xpath)"
+    $ext = @($add.value.li)
+    Assert ($ext.Count -eq 1 -and $ext[0].GetAttribute('Class') -ceq 'NocturnalAnimals.ExtendedRaceProperties') 'The value is not one NocturnalAnimals.ExtendedRaceProperties extension'
+    Assert ($ext[0].bodyClock -ceq 'Nocturnal') "The beetle's bodyClock is '$($ext[0].bodyClock)', not Nocturnal"
+    $null = Def 'ThingDef' 'ACS_DarkMatterBeetle'
+    Assert (-not ($script:index['ThingDef:ACS_Gabriel'].SelectSingleNode('modExtensions'))) 'The seraph carries a mod extension of its own: the patch leaves it diurnal on purpose'
+}
 Write-Output "$script:passed passed; $script:failures failed."
 if ($script:failures) { exit 1 }

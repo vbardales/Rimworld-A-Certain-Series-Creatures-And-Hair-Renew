@@ -1,0 +1,13 @@
+# Pass "avec-nocturnal": the minimal set, plus the one optional mod that gives the beetle a body clock.
+#
+# mlie.xndnocturnalanimals, Workshop 2269731409 - [XND] Nocturnal Animals (Continued). Mod/Patches/NocturnalAnimals.xml
+# adds its extension to the beetle, guarded by its name. Feature 16 asserts that the beetle carries
+# bodyClock Nocturnal and the seraph none. Its hard dependency, Harmony, is in every pass already.
+#
+# No load order is asked of this mod (the extension is read at runtime), so it can stay where the staging puts
+# it. It is in the Windows Workshop folder and in the WSL cache (found 2026-09-25).
+#
+# The two tools of the minimal set stay, so that the same features can be selected by filter.
+nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
+nelim.pickletools.research      path:PickleTools/ResearchSteps/Mod
+mlie.xndnocturnalanimals   2269731409

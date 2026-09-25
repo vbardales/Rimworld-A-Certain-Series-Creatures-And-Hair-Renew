@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  [XND] Nocturnal Animals (Continued) (Workshop 2269731409, packageId Mlie.XNDNocturnalAnimals).
+
+  That mod gives an animal a body clock by a mod extension on its race's ThingDef: bodyClock is Diurnal
+  (the vanilla behaviour, and what an animal without the extension gets), Nocturnal, Crepuscular or
+  Cathemeral. The format is the one its own patches use (Patches/Core/*.xml in that mod).
+
+  The beetle is Nocturnal: rhinoceros beetles are night animals. The seraph is left as it is, diurnal by
+  default: an angel that does not eat and does not age has no rhythm worth choosing.
+
+  Only applied when that mod is active; nothing here changes the game otherwise. PatchOperationFindMod
+  matches by mod name. No dependency and no load order is asked: the extension is read by the game at
+  runtime, not copied by another patch, so this mod may load before or after it.
+-->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[XND] Nocturnal Animals (Continued)</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="ACS_DarkMatterBeetle"]</xpath>
+      <value>
+        <li Class="NocturnalAnimals.ExtendedRaceProperties">
+          <bodyClock>Nocturnal</bodyClock>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

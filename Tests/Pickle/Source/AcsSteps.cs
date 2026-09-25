@@ -361,6 +361,37 @@ namespace ACertainSeries.PickleSteps
             scroll.SetValue(window, new UnityEngine.Vector2(Math.Max(0f, x - 400f), Math.Max(0f, y - 120f)));
         }
 
+        // ---- the body clock another mod gives a creature ------------------------------------------
+
+        /// <summary>
+        /// The body clock Nocturnal Animals reads from a race's mod extension, or null when the race has none.
+        /// Read by name and by reflection so that this assembly needs no reference to that mod, which is
+        /// absent from every pass but the one that mounts it.
+        /// </summary>
+        private static string BodyClockOf(ThingDef def)
+        {
+            var ext = def.modExtensions?.FirstOrDefault(e => e.GetType().FullName == "NocturnalAnimals.ExtendedRaceProperties");
+            return ext?.GetType().GetField("bodyClock")?.GetValue(ext)?.ToString();
+        }
+
+        [Then("A Certain Series: the {string} has the body clock {string}")]
+        public void HasBodyClock(PickleContext ctx, string defName, string expected)
+        {
+            var def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
+            ctx.Assert(def != null, $"no ThingDef named {defName}");
+            var clock = BodyClockOf(def);
+            ctx.Assert(clock == expected, $"{defName} has the body clock {clock ?? "none"}, not {expected}");
+        }
+
+        [Then("A Certain Series: the {string} has no body clock of its own")]
+        public void HasNoBodyClock(PickleContext ctx, string defName)
+        {
+            var def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
+            ctx.Assert(def != null, $"no ThingDef named {defName}");
+            var clock = BodyClockOf(def);
+            ctx.Assert(clock == null, $"{defName} has the body clock {clock}, and the seraph is left diurnal on purpose");
+        }
+
         // ---- a label, read by def type --------------------------------------------------------------
 
         /// <summary>

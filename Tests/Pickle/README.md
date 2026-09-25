@@ -28,6 +28,7 @@ exists because the game itself has to act on the defs.
 | `10-egg-hatching` (`@slow`) | An egg not laid in the colony, started at 95 percent of its incubation, hatches a wild beetle | The hatcher comp and the faction rule. Not a whole game day: 60000 ticks do not fit the 120 s the watchdog allows a scenario at 500 to 700 ticks a second (it tripped on the first run). That the hatcher takes one day is asserted offline |
 | `11-save-reload` | Creatures, the machine with its bill, finished research, a hairstyle and an egg's incubation survive a round trip; the fixture colony, saved without this mod, is the mod added to an existing colony | Scribe behaviour |
 | `15-animal-prosthetics` (`@requires:SamBucher.ADogSaidAnimalProsthetics2`) | With A Dog Said... Animal Prosthetics 2 mounted, the beetle is offered more recipes than the seraph, which is left out on purpose | The other mod copies its category lists into its surgery recipes in its own patch; this mod's name counts only if it was added before that copy, which is a matter of patch order and only the game shows it. Skipped, by design, in every pass that does not mount that mod |
+| `16-nocturnal-animals` (`@requires:Mlie.XNDNocturnalAnimals`) | With Nocturnal Animals mounted, the beetle carries the nocturnal body clock and the seraph none | The patch is applied to the right race and the other mod's own class accepted the value; what the beetle does at night is that mod's work |
 | `12`, `13`, `14` labels | The labels and the activity texts **on the loaded defs**, in English, French and the preserved Chinese | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
@@ -52,7 +53,7 @@ A check the game does not need to run, or that only tests the game, does not bel
 
 ## The local steps
 
-`Source/AcsSteps.cs`, 21 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
+`Source/AcsSteps.cs`, 23 steps, all prefixed `A Certain Series:` because Pickle matches on text alone across
 every suite loaded. Each exists because no stock or shared step does it:
 
 - **power a bench**: the propagator draws 5000 W and a pawn never walks to an unpowered bench. The step
@@ -75,11 +76,11 @@ before every run: Pickle loads step DLLs when the game starts.
 
 ## Passes
 
-Three languages on one mod set, and a fourth pass with the one optional mod. The mod declares no dependency, no
+Three languages on one mod set, and a fourth and a fifth pass with the two optional mods. The mod declares no dependency, no
 `loadAfter`, no `incompatibleWith`, so the minimal map is `wsl-deps.sans-facultatifs.map`, which stages the two
-shared tools the features use. `wsl-deps.avec-ads2.map` adds A Dog Said... Animal Prosthetics 2 to it. Royalty
+shared tools the features use. `wsl-deps.avec-ads2.map` adds A Dog Said... Animal Prosthetics 2 to it, `wsl-deps.avec-nocturnal.map` adds [XND] Nocturnal Animals (Continued). Royalty
 is one of the DLCs the default set already mounts, so the Empire scenario runs inside every pass. Feature 15
-(`@requires` on that optional mod) is skipped in the first three, by design.
+(`@requires` on that optional mod) and feature 16 are skipped in the first three, by design.
 
 Tags decide what runs where: `@en-only`, `@fr-only`, `@zh-only` follow the language of the labels they name,
 and `@slow` (production chain, shots, egg) is played once, in English, because none of it depends on the
@@ -116,6 +117,7 @@ powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 2 French" -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-french
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 3 Chinese" -DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@fr-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-chinese
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 4 with Animal Prosthetics 2" -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 5 with Nocturnal Animals" -DepMap wsl-deps.avec-nocturnal.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-nocturnal
 ```
 
 The fourth needs the other mod in the WSL install's Workshop cache or the Windows Workshop folder (item 3238353862): it is in both, found 2026-09-25, so

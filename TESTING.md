@@ -30,7 +30,7 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `tested` requires
 
 **`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 15 features and 21 local steps,
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 16 features and 23 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
 wrong feature and a deliberately invalid pattern before being trusted. **The scenarios have never been run.**
@@ -89,8 +89,12 @@ run with no error and no warning is what shows the guard holds.
 3. **Chinese** (`ChineseSimplified`): the Chinese labels and the language-neutral fast ones.
 4. **With Animal Prosthetics 2** (`wsl-deps.avec-ads2.map`, English, `@slow` excluded): the minimal set plus that
    optional mod, so feature 15 is played and the other fast features show the mod still loads beside it. The
-   item (Workshop 3238353862) must first be in the WSL install's Workshop cache, which is a download taken
-   under the machine lock; it has not been made. **Not run.**
+   item (Workshop 3238353862) is in the Windows Workshop folder and the WSL cache, no download is needed. **The map
+   must name this mod ahead of the optional one** (the staging loads the mod under test after every mod of the map):
+   the first run of this pass was red for that reason alone. Feature 15 alone has been played and passed
+   (2026-09-25, `b7f4`); the whole pass has not run.
+5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): the same, with
+   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played. **Not run.**
 
 The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
 scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the
