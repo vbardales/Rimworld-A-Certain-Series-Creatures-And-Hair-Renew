@@ -76,3 +76,14 @@ Harmony.
 
 Both captures were reworked on 2026-09-25 (`83232d1`): a local step scrolls the research window to the project, and
 the hairstyle scenario ends on the character tab's portrait. Ticket `421e` plays them.
+
+## Decisions of the owner, 2026-09-25
+
+- **Nocturnal Animals: the white rhinoceros beetle is Nocturnal, the seraph is left as it is.** To write once the two
+  tickets in the queue (`421e`, `3af4`) are done and the tree is free: `Mod/Patches/NocturnalAnimals.xml` (a
+  `PatchOperationFindMod` on "[XND] Nocturnal Animals (Continued)", `PatchOperationAddModExtension` of
+  `NocturnalAnimals.ExtendedRaceProperties` with `bodyClock` `Nocturnal` on `ACS_DarkMatterBeetle`; format read in that
+  mod's own 1.6 files, no `loadBefore`, no dependency), one offline group in `Test-Mod.ps1`, a `@requires` feature, a
+  pass map with `Mlie.XNDNocturnalAnimals` (2269731409) and Harmony. Since `Mod/` changes, the complete passes are filed
+  once, after it, not before; the Chinese pass `d6ae` is not filed again alone.
+- **Crossbreeding: nothing.** The beetle keeps coming from the propagator's egg, without genders; the egg stays as it is.
