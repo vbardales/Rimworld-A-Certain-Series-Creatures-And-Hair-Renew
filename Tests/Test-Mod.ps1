@@ -170,17 +170,25 @@ Test 'No creature kind caps its generation age at zero, which the age generator 
         Assert ($null -eq $kind.SelectSingleNode('minGenerationAge') -and $null -eq $kind.SelectSingleNode('maxGenerationAge')) "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do"
     }
 }
-Test 'No innate verb of a creature asks for a forced miss radius, which throws on every shot in 1.6' {
-    # Seen in the first game run of the shots (2026-09-25): with forcedMissRadius above 0.5, Verb_LaunchProjectile
-    # calls VerbProperties.GetForceMissFactorFor(EquipmentSource, caster), which reads equipment.def unguarded;
-    # an innate verb has no equipment, so every tick of the burst threw a NullReferenceException.
+Test 'The forced miss radius of an innate verb satisfies the config check of the game and does not throw on every shot' {
+    # Two rules of 1.6, both seen in the game runs of 2026-09-25.
+    # 1. Verb_LaunchProjectile.TryCastShot, with forcedMissRadius above 0.5, calls
+    #    VerbProperties.GetForceMissFactorFor(EquipmentSource, caster), which reads equipment.def unguarded; an innate
+    #    verb has no equipment, so every tick of the burst threw a NullReferenceException and nothing was fired.
+    # 2. VerbProperties.ConfigErrors logs "has incorrect forcedMiss settings" at load unless (forcedMissRadius > 0)
+    #    equals whether the projectile causes an explosion (explosionRadius above 0).
+    # So an explosive innate verb needs a radius in (0, 0.5], and a non-explosive one exactly 0.
     $verbs = @($index.Values | Where-Object { $_.Name -eq 'ThingDef' -and $_.SelectSingleNode('race') } | ForEach-Object { $_.SelectNodes('verbs/li') })
     Assert ($verbs.Count -eq 2) "Expected the two innate verbs, found $($verbs.Count)"
     foreach ($verb in $verbs) {
-        foreach ($field in 'forcedMissRadius', 'forcedMissRadiusClassicMortars') {
-            $node = $verb.SelectSingleNode($field)
-            Assert (($null -eq $node) -or ([double]$node.InnerText -le 0.5)) "A creature's innate verb sets $field to $($node.InnerText): above 0.5 it throws on every shot"
-        }
+        $projectile = Def 'ThingDef' $verb.defaultProjectile
+        $explosive = $null -ne $projectile.SelectSingleNode('projectile/explosionRadius') -and [double]$projectile.projectile.explosionRadius -gt 0
+        $node = $verb.SelectSingleNode('forcedMissRadius')
+        $radius = if ($node) { [double]$node.InnerText } else { 0 }
+        Assert ($radius -le 0.5) "The innate verb of $($verb.defaultProjectile) sets forcedMissRadius to ${radius}: above 0.5 it throws on every shot"
+        Assert (($radius -gt 0) -eq $explosive) "The innate verb of $($verb.defaultProjectile) is $(if ($explosive) {'explosive but has no'} else {'not explosive but has a'}) forcedMissRadius: the game logs a config error at load"
+        $classic = $verb.SelectSingleNode('forcedMissRadiusClassicMortars')
+        Assert ($null -eq $classic -or [double]$classic.InnerText -le 0.5) 'forcedMissRadiusClassicMortars above 0.5 has the same effect as forcedMissRadius'
     }
 }
 Test 'Egg hatches the beetle after one day' {

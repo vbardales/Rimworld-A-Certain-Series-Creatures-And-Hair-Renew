@@ -37,8 +37,10 @@
         <warmupTime>10</warmupTime>
         <range>80</range>
         <!-- The original set forcedMissRadius to 10, which scattered the eight explosions of a burst. In 1.6 a value
-             above 0.5 makes the shot throw on every tick (see the beetle's verb), so the sweep never fired. Dropped:
-             the eight explosions now open on the target, and the accuracy fields still make them miss at range. -->
+             above 0.5 makes the shot throw on every tick, while a value of 0 on an explosive projectile is a config
+             error at load (see the beetle's verb). 0.5 satisfies both: the eight explosions open on the target
+             instead of scattering, and the accuracy fields still make them miss at range. -->
+        <forcedMissRadius>0.5</forcedMissRadius>
         <burstShotCount>8</burstShotCount>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <minRange>5</minRange>

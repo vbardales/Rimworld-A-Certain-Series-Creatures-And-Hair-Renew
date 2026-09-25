@@ -160,9 +160,11 @@ stocks offered the fragment); 2 and 9 broke (below); 4, 6, 8, 10, 11 and 12 are 
 4. `I add bill "<recipe>" to the "<bench>"` refuses, or the bench refuses, a recipe it does not offer, so that
    the five bills of `06` prove availability and not only that a bill can be created.
 5. Nothing resets a powered bench's `PowerOn` before the bill finishes.
-6. A wild, unowned creature can start its own verb with `TryStartCastOn` and its AI does not cancel it. **Held in part
-   (ticket `ca7f`, 2026-09-25):** the creature accepted the cast, and then the game threw on every tick because of
-   the mod's `forcedMissRadius` (fixed, not replayed). Whether the burst then runs to its end is still to be seen.
+6. A wild, unowned creature can start its own verb with `TryStartCastOn` and its AI does not cancel it. **Held
+   (tickets `ca7f` and `4f41`, 2026-09-25):** the creature accepted the cast; the first time the game threw on
+   every tick because of the mod's `forcedMissRadius`, and once that was dropped both bursts ran, their
+   projectiles left and none was left in flight. The log of that second run also held four start-up config errors
+   the scenarios cannot see, which is why `forcedMissRadius` is now 0.5 (not replayed).
 7. `StockGenerator_Tag.GenerateThings` called with the map's tile and any non-player faction builds a stock
    like the one the game builds when a trader arrives.
 8. The cells around x 140 to 152, z 153 to 155 of `test-colony` are open ground, as other suites' scenes suggest.

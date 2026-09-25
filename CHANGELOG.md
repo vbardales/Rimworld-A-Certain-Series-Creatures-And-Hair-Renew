@@ -68,9 +68,11 @@ First version. RimWorld 1.6.
 - Neither creature's innate shot ever left. Both verbs set `forcedMissRadius` (beetle 5, seraph 10), as the 1.0
   original did, and in 1.6 a value above 0.5 makes `Verb_LaunchProjectile.TryCastShot` call
   `VerbProperties.GetForceMissFactorFor` with the verb's equipment, which an innate verb does not have: a
-  `NullReferenceException` on every tick of the burst. Found by the first game run of the shots. The field is
-  dropped from both. **A change of behaviour:** the seraph's eight explosions no longer scatter around the
-  target, they open on it; the accuracy fields still make both creatures miss at range.
+  `NullReferenceException` on every tick of the burst. Found by the first game run of the shots. A value of
+  0 is no answer either: the game logs a config error at load when an explosive projectile's `forcedMissRadius`
+  is not above 0 (seen on the second run). Both verbs now set 0.5, which satisfies that check and stays under
+  the 0.5 that runs the forced-miss code. **A change of behaviour:** the seraph's eight explosions no longer
+  scatter around the target, they open on it; the accuracy fields still make both creatures miss at range.
 - Every generated beetle and seraph logged `Tried 300 times to generate age`: both creature kinds set
   `minGenerationAge` and `maxGenerationAge` to 0, as the 1.0 original did, and in 1.6 a maximum of 0 leaves the
   age generator nothing to draw for an animal. Found by the first game run; the two fields are dropped, as

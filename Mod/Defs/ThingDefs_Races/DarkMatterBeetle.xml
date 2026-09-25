@@ -37,8 +37,11 @@
         <range>50</range>
         <!-- The original set forcedMissRadius to 5. In 1.6 a value above 0.5 makes Verb_LaunchProjectile.TryCastShot
              call VerbProperties.GetForceMissFactorFor with the verb's equipment, which an innate verb does not have:
-             a NullReferenceException on every tick of the burst, and the cannon never fires. Dropped; the accuracy
-             fields above still make it miss at range. -->
+             a NullReferenceException on every tick of the burst, and the cannon never fires. But the game also
+             logs a config error at load for an explosive projectile whose forcedMissRadius is not above 0. 0.5 is
+             the value that satisfies both: enabled for the check, not above the 0.5 that runs the forced-miss code,
+             so no scatter. The accuracy fields above still make it miss at range. -->
+        <forcedMissRadius>0.5</forcedMissRadius>
         <!-- The 1.0 sound FlameThrower is gone from 1.6; Shot_IncendiaryLauncher is its closest survivor. -->
         <soundCast>Shot_IncendiaryLauncher</soundCast>
         <muzzleFlashScale>0</muzzleFlashScale>
