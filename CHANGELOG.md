@@ -65,6 +65,12 @@ First version. RimWorld 1.6.
 - The seraph's arrival as a manhunter pack. At `combatPower` 10000 it was still in the draw, while
   vanilla takes Thrumbo out of it at 500 and AlphaThrumbo at 800 — the highest any base-game animal
   reaches. `canArriveManhunter` is false now, as the original already had it on the beetle.
+- Neither creature's innate shot ever left. Both verbs set `forcedMissRadius` (beetle 5, seraph 10), as the 1.0
+  original did, and in 1.6 a value above 0.5 makes `Verb_LaunchProjectile.TryCastShot` call
+  `VerbProperties.GetForceMissFactorFor` with the verb's equipment, which an innate verb does not have: a
+  `NullReferenceException` on every tick of the burst. Found by the first game run of the shots. The field is
+  dropped from both. **A change of behaviour:** the seraph's eight explosions no longer scatter around the
+  target, they open on it; the accuracy fields still make both creatures miss at range.
 - Every generated beetle and seraph logged `Tried 300 times to generate age`: both creature kinds set
   `minGenerationAge` and `maxGenerationAge` to 0, as the 1.0 original did, and in 1.6 a maximum of 0 leaves the
   age generator nothing to draw for an animal. Found by the first game run; the two fields are dropped, as

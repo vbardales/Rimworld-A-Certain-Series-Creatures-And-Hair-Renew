@@ -35,7 +35,10 @@
         <burstShotCount>5</burstShotCount>
         <ticksBetweenBurstShots>36</ticksBetweenBurstShots>
         <range>50</range>
-        <forcedMissRadius>5</forcedMissRadius>
+        <!-- The original set forcedMissRadius to 5. In 1.6 a value above 0.5 makes Verb_LaunchProjectile.TryCastShot
+             call VerbProperties.GetForceMissFactorFor with the verb's equipment, which an innate verb does not have:
+             a NullReferenceException on every tick of the burst, and the cannon never fires. Dropped; the accuracy
+             fields above still make it miss at range. -->
         <!-- The 1.0 sound FlameThrower is gone from 1.6; Shot_IncendiaryLauncher is its closest survivor. -->
         <soundCast>Shot_IncendiaryLauncher</soundCast>
         <muzzleFlashScale>0</muzzleFlashScale>

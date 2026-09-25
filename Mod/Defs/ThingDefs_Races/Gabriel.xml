@@ -36,7 +36,9 @@
         <defaultProjectile>ACS_Projectile_Sweep</defaultProjectile>
         <warmupTime>10</warmupTime>
         <range>80</range>
-        <forcedMissRadius>10</forcedMissRadius>
+        <!-- The original set forcedMissRadius to 10, which scattered the eight explosions of a burst. In 1.6 a value
+             above 0.5 makes the shot throw on every tick (see the beetle's verb), so the sweep never fired. Dropped:
+             the eight explosions now open on the target, and the accuracy fields still make them miss at range. -->
         <burstShotCount>8</burstShotCount>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <minRange>5</minRange>

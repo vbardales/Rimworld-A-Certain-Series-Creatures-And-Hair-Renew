@@ -161,6 +161,11 @@ namespace ACertainSeries.PickleSteps
             {
                 await ctx.WaitTicks(1);
                 foreach (var thing in map.listerThings.ThingsOfDef(projectile)) seen.Add(thing.thingIDNumber);
+                // The slowest warm-up here is ten seconds, 600 ticks. A verb that has produced nothing after
+                // 1500 ticks is not slow, it is throwing: the first run showed a NullReferenceException on every
+                // tick for the whole 100 seconds. Fail then, and name where to look.
+                ctx.Assert(tick < 1500 || seen.Count > 0,
+                    $"{kindDefName} started casting at ({x}, {z}) and no {projectileDefName} left in 1500 ticks: read Player.log for an exception thrown by Verb.TryCastNextBurstShot");
                 log.BurstFinished = verb.state == VerbState.Idle;
                 log.LeftInFlight = map.listerThings.ThingsOfDef(projectile).Count;
                 if (log.BurstFinished && seen.Count > 0 && log.LeftInFlight == 0) break;

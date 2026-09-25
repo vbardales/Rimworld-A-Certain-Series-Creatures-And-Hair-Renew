@@ -170,6 +170,19 @@ Test 'No creature kind caps its generation age at zero, which the age generator 
         Assert ($null -eq $kind.SelectSingleNode('minGenerationAge') -and $null -eq $kind.SelectSingleNode('maxGenerationAge')) "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do"
     }
 }
+Test 'No innate verb of a creature asks for a forced miss radius, which throws on every shot in 1.6' {
+    # Seen in the first game run of the shots (2026-09-25): with forcedMissRadius above 0.5, Verb_LaunchProjectile
+    # calls VerbProperties.GetForceMissFactorFor(EquipmentSource, caster), which reads equipment.def unguarded;
+    # an innate verb has no equipment, so every tick of the burst threw a NullReferenceException.
+    $verbs = @($index.Values | Where-Object { $_.Name -eq 'ThingDef' -and $_.SelectSingleNode('race') } | ForEach-Object { $_.SelectNodes('verbs/li') })
+    Assert ($verbs.Count -eq 2) "Expected the two innate verbs, found $($verbs.Count)"
+    foreach ($verb in $verbs) {
+        foreach ($field in 'forcedMissRadius', 'forcedMissRadiusClassicMortars') {
+            $node = $verb.SelectSingleNode($field)
+            Assert (($null -eq $node) -or ([double]$node.InnerText -le 0.5)) "A creature's innate verb sets $field to $($node.InnerText): above 0.5 it throws on every shot"
+        }
+    }
+}
 Test 'Egg hatches the beetle after one day' {
     $egg = Def 'ThingDef' 'ACS_EggBeetle'
     $hatcher = $egg.SelectSingleNode("comps/li[@Class='CompProperties_Hatcher']")
