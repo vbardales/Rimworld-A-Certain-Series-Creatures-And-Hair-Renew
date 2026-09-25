@@ -361,6 +361,36 @@ namespace ACertainSeries.PickleSteps
             scroll.SetValue(window, new UnityEngine.Vector2(Math.Max(0f, x - 400f), Math.Max(0f, y - 120f)));
         }
 
+        // ---- a camera close enough for a gallery picture ---------------------------------------------
+
+        /// <summary>
+        /// A gallery picture of a hairstyle needs the head to fill most of the screen, and the game's camera
+        /// stops at about fifty pixels for a colonist at 1080p. This lowers the lower bound of the map's zoom
+        /// range (the map's own config object, put back after the scenario) and puts the camera on the pawn
+        /// at the given root size, which is half the height of the view in cells, so 2 shows about four cells.
+        /// Whether the game accepts a size below its own bound is what the first capture shows.
+        /// </summary>
+        private static FloatRange? savedSizeRange;
+
+        [When("A Certain Series: I bring the camera to {int} cells' height on {string}")]
+        public void CameraClose(PickleContext ctx, int rootSize, string colonistName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            var driver = Find.CameraDriver;
+            var config = driver.config;
+            if (!savedSizeRange.HasValue) savedSizeRange = config.sizeRange;
+            config.sizeRange = new FloatRange(Math.Min(config.sizeRange.min, rootSize), config.sizeRange.max);
+            driver.SetRootPosAndSize(pawn.DrawPos, rootSize);
+        }
+
+        [AfterScenario]
+        public void RestoreCameraRange()
+        {
+            if (savedSizeRange.HasValue && Find.CameraDriver != null)
+                Find.CameraDriver.config.sizeRange = savedSizeRange.Value;
+            savedSizeRange = null;
+        }
+
         // ---- the body clock another mod gives a creature ------------------------------------------
 
         /// <summary>

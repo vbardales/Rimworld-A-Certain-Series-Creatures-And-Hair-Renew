@@ -1,0 +1,5 @@
+# Pass "galerie": the zen meadow studio of PickleTools, for the pictures of feature 17 (Workshop gallery). It is
+# a presentation set, staged only here so that no other pass carries it. The fixture save it loads,
+# nelim-zen-meadow-studio, is written by PickleTools' own suite into the WSL Saves folder.
+nelim.pickletools.screenshotstudio   path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.clearscreen   path:PickleTools/ClearScreen/Mod
