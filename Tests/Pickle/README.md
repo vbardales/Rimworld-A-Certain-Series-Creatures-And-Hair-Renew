@@ -118,8 +118,8 @@ powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 4 with Animal Prosthetics 2" -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
 ```
 
-The fourth needs the other mod in the WSL install's Workshop cache first (item 3238353862), a download taken
-under the machine lock and not yet made. Its report must show feature 15 *played*.
+The fourth needs the other mod in the WSL install's Workshop cache or the Windows Workshop folder (item 3238353862): it is in both, found 2026-09-25, so
+no download is needed. Its report must show feature 15 *played*.
 
 Read `exitReason` before the counts, and compare the scenarios played with the scenarios discovered for the
 filter. **The 120 seconds of the watchdog bound a scenario, whatever its `@timeout` tag on the feature line**

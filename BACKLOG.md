@@ -51,3 +51,28 @@ part of the seraph are this mod's own defs. Covering them means patching that mo
 The research capture is scrolled to the left of the tree and misses the mod's project at (19, 3); the three hairstyle
 captures are wide views where no hairstyle can be told (`docs/runs/history.md`, complete English pass). Both scenarios pass
 on their assertions. Fixing the pictures changes a feature, so it costs new complete passes.
+
+## Proposals for items 1 and 2 (2026-09-25, to be chosen by the owner; nothing is done)
+
+**Nocturnal Animals.** Proposed: the white rhinoceros beetle **Nocturnal** (rhinoceros beetles are), the seraph
+**left as it is** (diurnal by default; an angel that "does not eat and does not age" has no rhythm worth patching).
+One patch, `Mod/Patches/NocturnalAnimals.xml`, a `PatchOperationFindMod` on the mod's name adding the
+`NocturnalAnimals.ExtendedRaceProperties` extension with `bodyClock` `Nocturnal` to `ACS_DarkMatterBeetle`. To check
+before writing it: that the beetle has a rest need at all (a creature without one has no clock to shift), and the exact
+extension class and field names, read from the mod's own files once it is in the Windows Workshop folder (it is not now).
+Cost: the patch, one offline group in `Test-Mod.ps1`, a `@requires` feature, and a fifth pass that mounts the mod and
+Harmony.
+
+**Crossbreeding.** Three options, in the order proposed:
+1. **Nothing (proposed).** The beetle has no genders and a gestation of 0, it is made from an egg in the propagator; the
+   seraph is unique by design. Neither has a natural partner, so a crossing would be an invention, not a port.
+2. **Only refuse.** Say in the description that neither creature crosses, and add nothing.
+3. **A designed pair.** Give the beetle genders and a gestation, and let it cross with a named partner from another
+   mod, each side patched (`canCrossBreedWith` on both), the offspring chosen through "Better Crossbreeding" (a
+   dependency of the patch, never of the mod). This needs a partner species chosen by the owner and a game test of
+   whether a beetle with genders still hatches from the propagator's egg the same way.
+
+## Item 4, status
+
+Both captures were reworked on 2026-09-25 (`83232d1`): a local step scrolls the research window to the project, and
+the hairstyle scenario ends on the character tab's portrait. Ticket `421e` plays them.
