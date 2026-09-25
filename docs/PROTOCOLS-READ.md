@@ -79,3 +79,14 @@ None of it is done: the tree of the mod is frozen while a request waits (`WELCOM
    tags were noise, as the first English run showed.
 7. **Pass four** (with Animal Prosthetics 2) is what `tested` still needs beyond the three languages, since feature 15 is a
    `@requires`; it needs the item in the WSL Workshop cache first, under the machine lock.
+
+## Message received 2026-09-25 (session "CI/CD setup"), for transition 10, no action now
+
+One source for the Workshop description, decided that day (`Rimworld-Release-Admin` `f196148`, `docs/OPERATIONS.md`,
+"Changing where the Steam description comes from"; `PUBLISHING.md` in the protocols repository `16f3c59`, newer than the
+`0743ff9` read above, so `docs/Check-ProtocolsRead.ps1` will report it as changed): the description is written once, in
+Markdown, in a fenced block under `## Steam description` of `PUBLICATION.md`, with no code fence inside and a last line
+`[Source code on GitHub](URL)`. The CI converts it to BBCode and generates the `<description>` of `Mod/About/About.xml`;
+every dry-run and publish stops if the two differ. To adopt at the first publication, when `PUBLICATION.md` is written;
+the change note's first line must carry the version (`[b]1.0.0[/b]`); `.github/` is never edited by hand. Read
+`PUBLISHING.md` and `OPERATIONS.md` again at that point.
