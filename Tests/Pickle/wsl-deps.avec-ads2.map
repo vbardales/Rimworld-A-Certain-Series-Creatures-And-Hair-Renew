@@ -5,12 +5,18 @@
 # guarded by its name. Feature 15 asserts that the beetle ends up offered more recipes than the seraph, which
 # is what a working patch, applied before that mod's own copy of the category lists, produces.
 #
+# The item is in the Windows Workshop folder and in the WSL cache (found 2026-09-25), no download needed.
+#
+# THE ORDER OF THE LINES IS THE LOAD ORDER. The staging activates the mod under test after every mod of the
+# map, and it does not sort by loadBefore. The first run of this pass (request 3af4, 2026-09-25) therefore
+# loaded Animal Prosthetics 2 BEFORE this mod: that mod copies its category lists into its surgeries with its
+# own patch, ran first, and the beetle was offered the same 26 recipes as the seraph. The pass has to say what
+# About.xml says, so this mod is named here, from its folder, ahead of the other one. The staging then sees it
+# is already active and does not add it a second time (stage-pickle-wsl.sh, "overlay replaces").
+#
 # The two tools of the minimal set stay, so that the same features can be selected by filter; the language
 # pass features do not run here (see the command in README.md).
-#
-# The item has to be in the WSL install's Workshop cache before this pass can stage it. That is a download,
-# so it goes through Use-Wsl.ps1 like any other work on the machine (PickleTools/Headless/README.md, "The
-# lock is about the machine"). It has not been downloaded, and the pass has not run.
 nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
 nelim.pickletools.research      path:PickleTools/ResearchSteps/Mod
+nelim.acertainseriescreaturesandhairrenew   path:ACertainSeriesCreaturesAndHairRenew/Mod
 sambucher.adogsaidanimalprosthetics2   3238353862
