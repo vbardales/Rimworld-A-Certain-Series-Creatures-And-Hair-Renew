@@ -30,10 +30,12 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `tested` requires
 
 **`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 16 features and 23 local steps,
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 17 features and 24 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
-wrong feature and a deliberately invalid pattern before being trusted. **The scenarios have never been run.**
+wrong feature and a deliberately invalid pattern before being trusted. **They have run in full once, on an earlier
+revision** (`0aa961c`: English and French complete passes green, 2026-09-25). **No complete pass exists on the current
+`Mod/`** (the Nocturnal Animals patch was added since), so all of them are to be played again.
 
 Then `../AUDIT.md`, transition 9 (done -> tested). Three checks decide whether this file is finished, and
 each is measured here against what exists.
@@ -41,7 +43,7 @@ each is measured here against what exists.
 | Check | Where this mod stands |
 |---|---|
 | No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. It has to hold at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Two conditional scenarios. The Empire trader (`@requires:Royalty`, feature 09): the default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The Animal Prosthetics 2 listing (`@requires:SamBucher.ADogSaidAnimalProsthetics2`, feature 15): it is skipped in the three language passes by design and runs only in the fourth pass, `wsl-deps.avec-ads2.map`, whose report must show it *played*. The About declares no dependency and no `incompatibleWith`; its one `loadBefore` names that optional mod. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Four conditional scenarios. The Nocturnal Animals body clock (`@requires:Mlie.XNDNocturnalAnimals`, feature 16): played and passed alone (2026-09-26, `51fc`), and to be played again in the fifth pass. The gallery hairstyles (`@requires:nelim.pickletools.screenshotstudio`, feature 17): a sixth pass, `wsl-deps.galerie.map`, whose captures are opened. The Empire trader (`@requires:Royalty`, feature 09): the default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The Animal Prosthetics 2 listing (`@requires:SamBucher.ADogSaidAnimalProsthetics2`, feature 15): it is skipped in the three language passes by design and runs only in the fourth pass, `wsl-deps.avec-ads2.map`, whose report must show it *played*. The About declares no dependency and no `incompatibleWith`; its one `loadBefore` names that optional mod. |
 | No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. What stays for a person is reading the `@review` captures: the reading of an image a scenario has already proved to show the intended state, not one more manual test. **Met once the three passes have run green.** |
 
 ### Where each manual check went
@@ -76,11 +78,11 @@ each is measured here against what exists.
 
 ## Passes this mod needs
 
-A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs four:
-three languages on the minimal set, and one with its optional mod. The mod declares no dependency, no
-`loadAfter` and no `incompatibleWith`, so the minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`, and
-no incompatibility pass applies. Its one optional integration, A Dog Said... Animal Prosthetics 2, has the
-fourth pass (below). In the three language passes that mod is absent, so its patch must stay inert: a green
+A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs six:
+three languages on the minimal set, one for each of its two optional mods, and the gallery. The mod declares no
+dependency, no `loadAfter` and no `incompatibleWith`, so the minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`,
+and no incompatibility pass applies. Its optional integrations, A Dog Said... Animal Prosthetics 2 and Nocturnal
+Animals, have the fourth and fifth passes (below). In the three language passes that mod is absent, so its patch must stay inert: a green
 run with no error and no warning is what shows the guard holds.
 
 1. **English**: every feature except the French and Chinese ones, the slow ones included: the production
@@ -94,7 +96,10 @@ run with no error and no warning is what shows the guard holds.
    the first run of this pass was red for that reason alone. Feature 15 alone has been played and passed
    (2026-09-25, `b7f4`); the whole pass has not run.
 5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): the same, with
-   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played. **Not run.**
+   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played. Feature 16 alone has been played
+   and passed (2026-09-26, `51fc`); the whole pass has not run.
+6. **Gallery** (`wsl-deps.galerie.map`, English, feature 17 alone): the three hairstyles at one cell's height in the
+   zen studio, `@review`. Played once at 3 cells (`a90d`, passed, pawn too small), replayed at 1 cell (`e4c3`).
 
 The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
 scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the

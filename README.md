@@ -52,6 +52,16 @@ Two things worth knowing before you install it:
   one of them concerned the propagator, so the two that led to it are folded into **a single
   project on the main tab**, at their combined cost. **No new research tab.**
 
+## Optional compatibility
+
+Neither is required, and each patch does nothing when the other mod is absent.
+
+- [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862): the beetle
+  is added to its category 3 of surgeries. The seraph is left out, since every part of its body is this mod's own.
+  This mod loads before it (`loadBefore`).
+- [[XND] Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): the beetle
+  is nocturnal. The seraph keeps the default, diurnal.
+
 ## Layout
 
 ```
@@ -60,6 +70,7 @@ ACertainSeriesCreaturesAndHairRenew/
     About/
     Defs/       123 defs, no C#
     Languages/  French and the original Chinese; English source text lives in Defs
+    Patches/    the two optional-mod patches above
     Textures/   everything under an ACS/ root
     LICENSE, ATTRIBUTION.md — copies of the two at the root, so they travel with the download
   Art/          preview sources, never published
@@ -78,7 +89,9 @@ not be free after it. `ATTRIBUTION.md` says more.
 ## Credits
 
 - **混沌の味方** — the creatures, the hairstyles, every texture, and the Chinese text.
-- 1.6 adapted by **Nelim**, with the English text and corrections. Made with the help of an AI assistant.
+- **SamBucher**, for Animal Prosthetics 2, and **XeoNovaDan** and **Mlie**, for Nocturnal Animals and its continuation.
+- 1.6 adapted by **Nelim**, with the English text and corrections. Made with the help of Claude Code (Anthropic).
+- Tested in the game with Pickle, PickleTools and RimLogging: development tools only, never dependencies.
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this
 or any other of my mods, including publishing a continuation of it. All credit must be preserved.

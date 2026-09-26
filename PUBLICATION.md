@@ -103,6 +103,35 @@ patched), that it has in-game settings for every animal, and comments report tha
 beetle diurnal through that mod's own settings: not a defect of this patch, worth a line in the FAQ if it is asked. The
 original mod carries no licence: `ATTRIBUTION.md` says so, and the description says "unofficial" first.
 
+## Thanks comments to post, after the item is public
+
+State of the three recipients of this mod: `WORKSHOP_COMMENTS.md` (added 2026-09-26, all `drafted`). The registry decides
+whether a send is still needed; method, cadence (three a day at most, not in a row) and the removal rule are in its
+"Writing a comment". Animal Prosthetics 2 (SamBucher) has its row, drafted from `DalmatiansRenew/PUBLICATION.md`: one
+comment per page, so this mod adds nothing there. Pickle and RimLogging are `posted`, and this mod is added to their
+`Covers`. Harmony is not named here (the mod does not use it).
+
+The drafts are mine, in English, to be read and rewritten in her own voice before any sending: they are drafts, not text
+she wrote. Each holds one link to this mod behind BBCode and says nothing about compatibility the authors did not declare.
+
+**1667943729, 某系列MOD (混沌の味方).** Read the page's last comments first (Chinese; is the author still there?).
+
+```
+Hi! I took the white rhinoceros beetle, the seraph and the 41 hairstyles out of your mod and brought them to 1.6, as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url]. Everything is credited to you, and if you'd rather I take it down, tell me and I will :)
+```
+
+**2269731409, Nocturnal Animals (Continued), Mlie.**
+
+```
+Thanks for keeping Nocturnal Animals going! One thing on my side: the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] now keeps night hours through your extension, and my patch does nothing when your mod isn't there xD
+```
+
+**2004368312, Nocturnal Animals, XeoNovaDan (the original).** Only if the page still takes comments.
+
+```
+Thanks for the idea behind Nocturnal Animals. Mlie carries it now, and it is what gives the beetle of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] its night hours. No answer needed :)
+```
+
 ## Change notes (Steam), one block per version
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
