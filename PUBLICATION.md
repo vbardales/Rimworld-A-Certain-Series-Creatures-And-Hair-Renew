@@ -97,8 +97,11 @@ What was taken, what was left and what was changed is listed in ATTRIBUTION.md, 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew)
 ```
 
-Check before it is used: the author of Nocturnal Animals (Continued) is credited as XeoNovaDan (original) and Mlie
-(continuation) from the mod's `packageId` and memory, not from its page; read its Workshop page once before publishing. The
+Checked on the Workshop page of Nocturnal Animals (Continued) on 2026-09-26: it is Mlie's update of XeoNovaDan's mod, so the
+two credits in THANKS are right. Its page says a mod-added animal that is not patched stays diurnal (which is why the beetle is
+patched), that it has in-game settings for every animal, and comments report that on some setups every animal shows as
+"diurnal" and Reset does not restore the default (load-order dependent, with Vanilla Expanded mods). So a player may see the
+beetle diurnal through that mod's own settings: not a defect of this patch, worth a line in the FAQ if it is asked. The
 original mod carries no licence: `ATTRIBUTION.md` says so, and the description says "unofficial" first.
 
 ## Change notes (Steam), one block per version
