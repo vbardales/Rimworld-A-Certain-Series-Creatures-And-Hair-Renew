@@ -86,11 +86,10 @@ This update was made with Claude Code (Anthropic), under human direction, review
 
 ## THANKS
 
-- 混沌の味方, for the two creatures and the forty-one hairstyles.
-- SamBucher, for A Dog Said... Animal Prosthetics 2.
-- XeoNovaDan and Mlie, for Nocturnal Animals.
-- The RimWorld modding community, whose habit of crediting abandoned work by name is the only reason a mod like this can be brought forward at all.
-- Pickle (RimWorks), used for the in-game tests: a development tool, never a dependency of the mod.
+- 混沌の味方, for [某系列MOD](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729): the beetle, the seraph, the propagator and the forty-one hairstyles are all theirs. This is their work, carried forward.
+- SamBucher, for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose surgeries the beetle can now receive.
+- XeoNovaDan, for the idea of [Nocturnal Animals](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312), and Mlie, for keeping it alive as [Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): it is what lets the beetle keep a night owl's hours.
+- Pickle (RimWorks) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), used to test this mod in the game: development tools only, never a dependency of the mod. RimLogging too, for the same reason.
 
 What was taken, what was left and what was changed is listed in ATTRIBUTION.md, in the repository linked below.
 
