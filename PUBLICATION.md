@@ -25,7 +25,7 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
 - **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
   `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
   text is read by hand.
-- **Payload.** `Mod/` as committed. It carries no assembly: XML, textures and languages only. `Mod/ATTRIBUTION.md` must be
+- **Payload.** `Mod/` as committed. It carries no assembly: XML, textures and languages only. `Mod/ATTRIBUTION.md` is
   the copy of the root `ATTRIBUTION.md` (to update, see "Still to do" below).
 
 ## Steam description
@@ -140,7 +140,7 @@ Rule of the owner: what is not interface must be zoomed enough to be seen; a paw
 
 ## Still to do before `prepublished`
 
-- Update `ATTRIBUTION.md` (root: done 2026-09-26, the two optional patches)
-  and copy it to `Mod/ATTRIBUTION.md`. Touches `Mod/`: only when no ticket is waiting.
+- Update `ATTRIBUTION.md` (done 2026-09-26, root and `Mod/`: a Markdown file, the game and the tests do not read it)
+  and its copy in `Mod/`.
 - The registry of Workshop comments (`WORKSHOP_COMMENTS.md`), the thanks to post once the item is public, the dry-run.
 - The Steam page description is hand-edited by the owner or replaced by `update_description`.

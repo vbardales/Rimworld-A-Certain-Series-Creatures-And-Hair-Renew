@@ -202,6 +202,19 @@ reward pools it was never in.
   highest `combatPower` any base-game animal has. The original set the flag on the *beetle*, at
   100, and left it off the seraph. Set false here.
 
+### Two optional patches, added by this mod
+
+Neither exists in the original, and neither needs the other mod: each is guarded by that mod's name and does nothing
+without it.
+
+- **A Dog Said... Animal Prosthetics 2** (SamBucher, Workshop 3238353862), `Patches/AnimalProsthetics2.xml`: the white
+  rhinoceros beetle is added to that mod's category 3 of surgeries. Its surgeries name vanilla body parts, so they can
+  only concern the beetle's vanilla parts; the seraph is left out. This mod loads before it (`loadBefore`), because it
+  copies its category lists into its surgeries when it loads.
+- **[XND] Nocturnal Animals (Continued)** (XeoNovaDan, continued by Mlie, Workshop 2269731409),
+  `Patches/NocturnalAnimals.xml`: the beetle gets that mod's `ExtendedRaceProperties` with body clock `Nocturnal`. The
+  seraph keeps the default, diurnal. Nothing is asked of the load order.
+
 ## Translation
 
 224 of the original's 248 defs were labelled in Chinese. Everything kept is now labelled in
