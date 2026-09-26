@@ -31,8 +31,8 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
      --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description`;
   2. `Mod/About/About.xml` differs from the plain text of the description above (it is the old hand-written one):
      `node .github/scripts/sync-about-description.mjs --write` rewrites it (about 5.7 KB, under Steam's 8,000 bytes), and
-     the diff is committed **before** the dry-run, which stops otherwise. It changes text only, but it is a change under
-     `Mod/`: do it when no ticket waits;
+     the diff is committed **before** the dry-run, which stops otherwise. **Done 2026-09-26** (`e3a805e`, the text produced by the
+     generator's own script on a copy); the check is to be run once the workflow exists, and again after any edit of the description block;
   3. the GitHub environment `steam-production` does not exist and has no secrets (`gh api .../environments` returns none):
      `configure-environments.sh` for the environment and its required reviewer, and Virginie runs `set-steam-secrets.sh`;
   4. `Art/Workshop/` does not exist: the gallery is a numbered folder of images (see "Gallery"), and the dry-run only
