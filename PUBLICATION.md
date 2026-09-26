@@ -138,18 +138,22 @@ The CI reads the block under `### <version>` and sends it as written (BBCode); i
 
 ### 1.0.0
 
-> [b]1.0.0[/b]
-> First public release. Adds the white rhinoceros beetle and the seraph, the dark matter propagator with its production
-> chain and its research project, and forty-one hairstyles, brought forward from 某系列MOD to RimWorld 1.6. New since the
-> private 0.1.0: the beetle is offered Animal Prosthetics 2's surgeries and is nocturnal with Nocturnal Animals (both
-> optional), and the mod is tested in English, French and Chinese. English and Simplified Chinese.
+```
+[b]1.0.0[/b]
+First public release. Adds the white rhinoceros beetle and the seraph, the dark matter propagator with its production
+chain and its research project, and forty-one hairstyles, brought forward from 某系列MOD to RimWorld 1.6. New since the
+private 0.1.0: the beetle is offered Animal Prosthetics 2's surgeries and is nocturnal with Nocturnal Animals (both
+optional), and the mod is tested in English, French and Chinese. English and Simplified Chinese.
+```
 
 Confirm the sentence against the passes that were actually green before sending: it says what a person was shown.
 
 ### 0.1.0 (prepublished by hand on 2026-09-23, kept for the record)
 
-> [b]0.1.0[/b]
-> First private upload.
+```
+[b]0.1.0[/b]
+First private upload.
+```
 
 ## Dependencies and DLC
 
