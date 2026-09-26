@@ -383,6 +383,12 @@ namespace ACertainSeries.PickleSteps
             driver.SetRootPosAndSize(pawn.DrawPos, rootSize);
         }
 
+        [When("A Certain Series: {string} faces the camera")]
+        public void FacesTheCamera(PickleContext ctx, string colonistName)
+        {
+            Colonist(ctx, colonistName).Rotation = Rot4.South;
+        }
+
         [AfterScenario]
         public void RestoreCameraRange()
         {

@@ -19,10 +19,13 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Toma" wears the hairstyle "ACS_Accelerator"
     And A Certain Series: "Sena" wears the hairstyle "ACS_index"
     When Nelim's Pickle Tools: studio presentation mode is enabled
+    And A Certain Series: "Rina" faces the camera
     And A Certain Series: I bring the camera to 1 cells' height on "Rina"
     And I take a screenshot "gallery hairstyle misaka"
+    And A Certain Series: "Toma" faces the camera
     And A Certain Series: I bring the camera to 1 cells' height on "Toma"
     And I take a screenshot "gallery hairstyle accelerator"
+    And A Certain Series: "Sena" faces the camera
     And A Certain Series: I bring the camera to 1 cells' height on "Sena"
     And I take a screenshot "gallery hairstyle index"
     Then no errors were logged

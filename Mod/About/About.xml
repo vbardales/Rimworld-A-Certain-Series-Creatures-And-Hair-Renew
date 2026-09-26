@@ -14,39 +14,54 @@
 
 Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
 
-I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's - all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that 1.6 no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine. If the original author comes back to it, or asks me to take this down, I will.
+I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's: all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that 1.6 no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine.
 
-Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729
+Original mod: 某系列MOD (https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729)
 
-GitHub: https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
+What it adds
 
-WHAT IT ADDS
-
-- The white rhinoceros beetle. A pack animal grown out of dark matter: it never eats, it feels no cold and no heat, it moves faster than anything else on the map, and the horn on its head is an explosive cannon with a fifty-tile reach. Trainable to advanced, tame at a glance, and it butchers into no meat at all - only dark matter, a metallic stuff that barely wears, does not burn, and makes armour and blades out of all proportion to their weight.
-
+- The white rhinoceros beetle. A pack animal grown out of dark matter: it never eats, it feels no cold and no heat, it moves faster than anything else on the map, and the horn on its head is an explosive cannon with a fifty-tile reach. Trainable to advanced, tame at a glance, and it butchers into no meat at all, only dark matter, a metallic stuff that barely wears, does not burn, and makes armour and blades out of all proportion to their weight.
 - God's Power, a seraph. Eight wings of water, a crystal sword grown out of its right arm, and a shot that opens a five-tile explosion eight times a burst. It lives ten thousand years, feels no pain worth the name, and no one has ever tamed one. Butchering it yields heavenly cloth and a single angel core.
-
 - The dark matter propagator, a refrigerator-shaped worktable that makes dark matter multiply, and the chain that runs through it: a preserved fragment of the second-ranked esper's brain, dark matter, a condensed white sphere, and finally an egg that hatches a beetle in a day. One research project unlocks the whole of it.
-
 - Forty-one hairstyles from the series, twenty-three female and eighteen male, tagged so that any pawn can be generated with any of them and all of them are available at the styling station.
 
-Neither creature spawns in the wild. The seraph reaches a colony only through exotic goods traders, caravan or orbital. The beetle can be bought the same way, or bred at the propagator.
+Neither creature spawns in the wild. The seraph reaches a colony only through exotic goods traders, caravan or orbital. The beetle can be bought the same way, or bred at the propagator. The propagator costs one brain fragment to build, and only a propagator can grow another, so the first fragment has to be bought, from an outlander or orbital exotic trader or from the Empire. That bootstrap is the original author's design, kept as it was.
 
-The propagator costs one brain fragment to build, and only a propagator can grow another - so the first fragment has to be bought, from an outlander or orbital exotic trader or from the Empire. That bootstrap is the original author's design, kept as it was.
-
-WHAT IT LEAVES BEHIND
+What it leaves behind
 
 The original mod also carried Academy City powered armour and weapons, a set of power buildings that redefined vanilla's own, five human traits, and a line of dark matter prosthetics with their surgery. None of that is here. In particular, this mod redefines nothing that belongs to the base game, so it does not compete with any other mod over vanilla defs.
 
-The original gated all of it behind a research tab of its own carrying eight projects. Only one of them concerned the propagator, so the two that led to it are folded into a single project on the main research tab, at their combined cost. No new research tab.
+The original gated all of it behind a research tab of its own carrying eight projects. Only two of them concerned the propagator, so they are folded into a single project on the main research tab, at their combined cost. No new research tab.
 
-NOTES
+Notes
 
-- Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/. The original shipped hairstyles named "2", "index" and "Doctor", body parts named "Core" and "Sword", and its dark matter texture in a folder called simply "Resource" - all of them names another mod is free to use, and RimWorld gives such a collision to whichever mod loads last, silently.
-- The Chinese text of the original is kept, in Languages.
-- Compatible with A Dog Said... Animal Prosthetics 2 (Workshop 3238353862): when it is active, the beetle is listed in its category 3. Those surgeries name vanilla body parts, so they can only concern the beetle's vanilla parts, its eyes among them. Its legs, claws, horn and elytra, and every part of the seraph, are this mod's own, which they do not name: the seraph is left out of the list. This mod loads before it, as its author asks of mods that add animals.
-- Compatible with [XND] Nocturnal Animals (Continued) (Workshop 2269731409): when it is active, the white rhinoceros beetle is nocturnal, like a real rhinoceros beetle. The seraph is left diurnal, the default. Nothing is asked of the load order.
-- Made with the help of an AI assistant.
+- Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/, so nothing collides with another mod.
+- Six defects of the original are corrected (the seraph's ranged attack, the beetle's corpse graphic, swapped claw labels, two left legs, identical wing labels, manhunter packs); ATTRIBUTION.md lists them.
+- The Chinese text of the original is kept, in Languages. English and Simplified Chinese.
 
-If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+Compatible with
+
+- A Dog Said... Animal Prosthetics 2 (https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862): when it is active, the beetle is listed in its category 3. Those surgeries name vanilla body parts, so they can only concern the beetle's vanilla parts, its eyes among them. Its legs, claws, horn and elytra, and every part of the seraph, are this mod's own; the seraph is left out. This mod loads before it, as its author asks of mods that add animals.
+- [[XND] Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): when it is active, the beetle is nocturnal, like a real rhinoceros beetle. The seraph is left diurnal, the default. Nothing is asked of the load order.
+
+Neither is required.
+
+IF I GO QUIET
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+AI-GENERATED
+
+This update was made with Claude Code (Anthropic), under human direction, review and testing.
+
+THANKS
+
+- 混沌の味方, for 某系列MOD (https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729): the beetle, the seraph, the propagator and the forty-one hairstyles are all theirs. This is their work, carried forward.
+- SamBucher, for A Dog Said... Animal Prosthetics 2 (https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose surgeries the beetle can now receive.
+- XeoNovaDan, for the idea of Nocturnal Animals (https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312), and Mlie, for keeping it alive as Nocturnal Animals (Continued) (https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): it is what lets the beetle keep a night owl's hours.
+- Pickle (RimWorks) and PickleTools (https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), used to test this mod in the game: development tools only, never a dependency of the mod. RimLogging too, for the same reason.
+
+What was taken, what was left and what was changed is listed in ATTRIBUTION.md, in the repository linked below.
+
+Source code on GitHub (https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew)</description>
 </ModMetaData>
