@@ -375,12 +375,49 @@ namespace ACertainSeries.PickleSteps
         [When("A Certain Series: I bring the camera to {int} cells' height on {string}")]
         public void CameraClose(PickleContext ctx, int rootSize, string colonistName)
         {
-            var pawn = Colonist(ctx, colonistName);
+            CloseOn(Colonist(ctx, colonistName).DrawPos, rootSize);
+        }
+
+        [When("A Certain Series: I bring the camera to {int} cells' height {int} cells east of {string}")]
+        public void CameraCloseEast(PickleContext ctx, int rootSize, int cells, string colonistName)
+        {
+            var at = Colonist(ctx, colonistName).DrawPos;
+            CloseOn(new UnityEngine.Vector3(at.x + cells, at.y, at.z), rootSize);
+        }
+
+        private static void CloseOn(UnityEngine.Vector3 position, int rootSize)
+        {
             var driver = Find.CameraDriver;
             var config = driver.config;
             if (!savedSizeRange.HasValue) savedSizeRange = config.sizeRange;
             config.sizeRange = new FloatRange(Math.Min(config.sizeRange.min, rootSize), config.sizeRange.max);
-            driver.SetRootPosAndSize(pawn.DrawPos, rootSize);
+            driver.SetRootPosAndSize(position, rootSize);
+        }
+
+        /// <summary>The nearest standable cell to a point some cells east of a colonist: the studio's free ground is not known here.</summary>
+        private static IntVec3 CellEastOf(PickleContext ctx, string colonistName, int cells)
+        {
+            var map = Map(ctx);
+            var wanted = Colonist(ctx, colonistName).Position + new IntVec3(cells, 0, 0);
+            return CellFinder.StandableCellNear(wanted, map, 6f);
+        }
+
+        [When("A Certain Series: I spawn a {string} pawn {int} cells east of {string}")]
+        public void SpawnPawnEast(PickleContext ctx, string kindDefName, int cells, string colonistName)
+        {
+            var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindDefName);
+            ctx.Assert(kind != null, $"no PawnKindDef named {kindDefName}");
+            var pawn = PawnGenerator.GeneratePawn(kind);
+            GenSpawn.Spawn(pawn, CellEastOf(ctx, colonistName, cells), Map(ctx), Rot4.South);
+        }
+
+        [When("A Certain Series: I place a {string} {int} cells east of {string}")]
+        public void PlaceBuildingEast(PickleContext ctx, string defName, int cells, string colonistName)
+        {
+            var def = Def(ctx, defName);
+            var thing = ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
+            if (def.CanHaveFaction) thing.SetFaction(Faction.OfPlayer);
+            GenSpawn.Spawn(thing, CellEastOf(ctx, colonistName, cells), Map(ctx), Rot4.South);
         }
 
         [When("A Certain Series: {string} faces the camera")]

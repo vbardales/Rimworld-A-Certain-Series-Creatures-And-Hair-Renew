@@ -35,7 +35,7 @@ First version. RimWorld 1.6.
   the white rhinoceros beetle is Nocturnal (rhinoceros beetles are night animals). The seraph is left diurnal, the
   default. No load order and no dependency; nothing changes without it. Seen working in a game on 2026-09-26
   (one scenario: the beetle carries the Nocturnal body clock, the seraph none).
-- An in-game test suite for Pickle, under `Tests/Pickle/`: 17 features and 24 steps of its own, run in full
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 18 features and 28 steps of its own, run in full
   once on an earlier revision and in part since. Development only; none of it is in `Mod/`, so none of it reaches a player.
 - `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.

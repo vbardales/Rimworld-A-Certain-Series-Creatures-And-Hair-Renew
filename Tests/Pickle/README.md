@@ -76,7 +76,7 @@ before every run: Pickle loads step DLLs when the game starts.
 
 ## Passes
 
-Three languages on one mod set, a fourth and a fifth pass with the two optional mods, and a sixth for the gallery (`wsl-deps.galerie.map`, feature 17 alone). The mod declares no dependency, no
+Three languages on one mod set, a fourth and a fifth pass with the two optional mods, and a sixth for the gallery (`wsl-deps.galerie.map`, features 17 and 18). The mod declares no dependency, no
 `loadAfter`, no `incompatibleWith`, so the minimal map is `wsl-deps.sans-facultatifs.map`, which stages the two
 shared tools the features use. `wsl-deps.avec-ads2.map` adds A Dog Said... Animal Prosthetics 2 to it, `wsl-deps.avec-nocturnal.map` adds [XND] Nocturnal Animals (Continued). Royalty
 is one of the DLCs the default set already mounts, so the Empire scenario runs inside every pass. Feature 15
@@ -118,7 +118,7 @@ powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 3 Chinese" -DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@en-only,!@fr-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-chinese
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 4 with Animal Prosthetics 2" -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-ads2
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 5 with Nocturnal Animals" -DepMap wsl-deps.avec-nocturnal.map -Language English -Filter 'A Certain Series - Creatures and Hair Renew - Pickle tests,!@fr-only,!@zh-only,!@slow' -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-nocturnal
-powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 6 gallery" -DepMap wsl-deps.galerie.map -Language English -Filter '17-gallery-hairstyles' -RunTimeoutMinutes 20 -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-gallery
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -Owner local_<id> -Label "ACertainSeries local_<id> pass 6 gallery" -DepMap wsl-deps.galerie.map -Language English -Filter '17-gallery-hairstyles,18-gallery-creatures' -RunTimeoutMinutes 20 -EvidenceDir ACertainSeriesCreaturesAndHairRenew/Tests/Pickle/Evidence/<date>-gallery
 ```
 
 The fourth needs the other mod in the WSL install's Workshop cache or the Windows Workshop folder (item 3238353862): it is in both, found 2026-09-25, so

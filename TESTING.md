@@ -30,7 +30,7 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `tested` requires
 
 **`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 17 features and 24 local steps,
+scope justified; running them is left to `tested`. `Tests/Pickle/` holds 18 features and 28 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
 wrong feature and a deliberately invalid pattern before being trusted. **They have run in full once, on an earlier
@@ -98,7 +98,7 @@ run with no error and no warning is what shows the guard holds.
 5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): the same, with
    [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played. Feature 16 alone has been played
    and passed (2026-09-26, `51fc`); the whole pass has not run.
-6. **Gallery** (`wsl-deps.galerie.map`, English, feature 17 alone): the three hairstyles at one cell's height in the
+6. **Gallery** (`wsl-deps.galerie.map`, English, features 17 and 18): feature 18 shows the beetle, the seraph and the propagator close up; feature 17 the three hairstyles at one cell's height in the
    zen studio, `@review`. Played once at 3 cells (`a90d`, passed, pawn too small), replayed at 1 cell (`e4c3`).
 
 The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
