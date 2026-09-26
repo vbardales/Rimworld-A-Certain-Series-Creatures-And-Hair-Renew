@@ -87,3 +87,7 @@ the hairstyle scenario ends on the character tab's portrait. Ticket `421e` plays
   pass map with `Mlie.XNDNocturnalAnimals` (2269731409) and Harmony. Since `Mod/` changes, the complete passes are filed
   once, after it, not before; the Chinese pass `d6ae` is not filed again alone.
 - **Crossbreeding: nothing.** The beetle keeps coming from the propagator's egg, without genders; the egg stays as it is.
+
+## Gallery: clean background for the hairstyle pictures (owner, 2026-09-26: "ok, to fix in the future")
+
+The three captures of feature 17 are accepted as they are (zoom and front view approved). Their backgrounds are wherever the colonists were generated (wall and floor, a field between two rooms, grass). Later: a step that moves each colonist onto a clear stretch of the studio meadow (as feature 18 does for the creatures, with the nearest standable cell), then replay feature 17. Not needed for `tested`.
