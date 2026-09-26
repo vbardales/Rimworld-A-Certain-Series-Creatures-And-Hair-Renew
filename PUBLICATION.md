@@ -22,6 +22,26 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
   `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`). Never edit `.github/` by hand. Then a dry-run of the exact
   commit (run id and SHA noted in `STATUS.md`), then `dispatch-publish.sh <owner/repo> <workflow.yml> <full SHA> 1.0.0`. Only
   the owner approves `steam-production`. The CI creates the tag and the GitHub release after a successful upload: not by hand.
+- **What is missing for the dry-run, checked 2026-09-26** (the generator was run on a copy of the repository, with the options
+  below: it accepts them, and the change note and the `About.xml` check were run against this file):
+  1. the publish workflow does not exist (`.github/` holds `tests.yml`); the CI/CD session generates it with
+     `generate-publish-workflow.sh <repo> --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhairrenew
+     --release-title "A Certain Series - Creatures and Hair Renew {version}" --require Defs --require Patches
+     --require About/About.xml --require Textures --forbid Assemblies --gallery-dir Art/Workshop
+     --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description`;
+  2. `Mod/About/About.xml` differs from the plain text of the description above (it is the old hand-written one):
+     `node .github/scripts/sync-about-description.mjs --write` rewrites it (about 5.7 KB, under Steam's 8,000 bytes), and
+     the diff is committed **before** the dry-run, which stops otherwise. It changes text only, but it is a change under
+     `Mod/`: do it when no ticket waits;
+  3. the GitHub environment `steam-production` does not exist and has no secrets (`gh api .../environments` returns none):
+     `configure-environments.sh` for the environment and its required reviewer, and Virginie runs `set-steam-secrets.sh`;
+  4. `Art/Workshop/` does not exist: the gallery is a numbered folder of images (see "Gallery"), and the dry-run only
+     lists it as a reminder;
+  5. `CHANGELOG.md` heads its section `## [1.0.0] — unreleased`: it must be dated on the day, and the release notes are read
+     from it;
+  6. no tag exists (the `0.1.0` upload was by hand), so the rollback target is a decision to write down: the first CI
+     release is `1.0.0`, and a failed publish deletes the tag and the release it created, not the Steam item;
+  7. the dry-run must name the exact commit of the passes that were green, so `Mod/` must not move after them.
 - **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
   `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
   text is read by hand.
