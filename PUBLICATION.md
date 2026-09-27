@@ -229,9 +229,11 @@ before because the earlier read only asked whether the hairstyle or the creature
   at the right; `06-propagator.jpg` shows a seraph wingtip at the top-left corner. None hides what the image is meant to
   show, but a reader who has not read this file may wonder what the fragment is. `05-hairstyle-index.jpg` also carries a
   faint darker vertical band on each side (a vignette from that camera position, not a texture defect): visible on close
-  reading, mild at gallery size. Fixing either needs the objects placed further apart in feature 18, or narrower zooms,
-  and a new gallery ticket; not done. Kept as is for now — none of it is disqualifying, and the owner may prefer to
-  recapture once a decision is made rather than patch one image at a time.
+  reading, mild at gallery size. **For 1.0.0, kept as is (owner, 2026-09-27: "pour une 1.0.0 c'est ok")** — none of it is disqualifying. **Fixed in
+  Tests/Pickle/ for whatever version comes after**: feature 18 now spaces the three 10/25/40 cells apart instead of
+  5/12/19, clearing every neighbour's frame; ticket  is filed to see it in a game, and may land before this
+  publication, in which case its captures replace ,  and  here. The vignette of  is the pre-existing
+  gallery-background reserve of  (moving each colonist onto clear ground), not new.
 
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
 hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
