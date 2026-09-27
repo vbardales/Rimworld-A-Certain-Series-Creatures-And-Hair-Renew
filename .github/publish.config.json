@@ -1,0 +1,23 @@
+{
+  "templateStamp": "a8ca11cdd9a3",
+  "workshopId": "3806708754",
+  "packageId": "nelim.acertainseriescreaturesandhairrenew",
+  "releaseTitle": "A Certain Series - Creatures and Hair Renew {version}",
+  "requirePaths": [
+    "Defs",
+    "Patches",
+    "About/About.xml",
+    "Textures"
+  ],
+  "forbidPaths": [
+    "Assemblies"
+  ],
+  "previewFile": "About/Preview.png",
+  "galleryDir": "Art/Workshop",
+  "aboutFromDescription": true,
+  "description": {
+    "file": "PUBLICATION.md",
+    "format": "markdown",
+    "heading": "^## Steam description$"
+  }
+}

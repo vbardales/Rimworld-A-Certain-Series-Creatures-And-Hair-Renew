@@ -17,31 +17,33 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
   may go once no red is open and the regression pass runs afterwards, but never skips a red scenario replayed green on a
   build with its fix, the gallery, the dry-run of the exact commit, the approval of `steam-production` by the owner, and a
   rollback target chosen beforehand.
-- **Publication goes through the CI, not the in-game button.** `.github/workflows/` holds only `tests.yml` today, so the
-  publish workflow is still to generate (it is an update of an existing item: the manual workflow of
-  `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`). Never edit `.github/` by hand. Then a dry-run of the exact
-  commit (run id and SHA noted in `STATUS.md`), then `dispatch-publish.sh <owner/repo> <workflow.yml> <full SHA> 1.0.0`. Only
-  the owner approves `steam-production`. The CI creates the tag and the GitHub release after a successful upload: not by hand.
-- **What is missing for the dry-run, checked 2026-09-26** (the generator was run on a copy of the repository, with the options
-  below: it accepts them, and the change note and the `About.xml` check were run against this file):
-  1. the publish workflow does not exist (`.github/` holds `tests.yml`); the CI/CD session generates it with
-     `generate-publish-workflow.sh <repo> --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhairrenew
+- **Publication goes through the CI, not the in-game button.** The manual publish workflow is generated (2026-09-27:
+  `.github/workflows/publish-tag.yml`, `script-tests.yml`, `.github/publish.config.json`, `.github/scripts/`,
+  `.github/tests/`, from `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`, template stamp `a8ca11cdd9a3`).
+  Never edit `.github/` by hand: regenerate with the script instead. Then a dry-run of the exact commit (run id and SHA to
+  note in `STATUS.md`), then `dispatch-publish.sh <owner/repo> publish-tag.yml <full SHA> 1.0.0`. Only the owner approves
+  `steam-production`. The CI creates the tag and the GitHub release after a successful upload: not by hand.
+- **What is missing for the dry-run, checked 2026-09-27:**
+  1. the publish workflow: **done**, generated in this repository (not only a copy) with
+     `generate-publish-workflow.sh . --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhairrenew
      --release-title "A Certain Series - Creatures and Hair Renew {version}" --require Defs --require Patches
      --require About/About.xml --require Textures --forbid Assemblies --gallery-dir Art/Workshop
      --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description`;
-  2. `Mod/About/About.xml` differs from the plain text of the description above (it is the old hand-written one):
-     `node .github/scripts/sync-about-description.mjs --write` rewrites it (about 5.7 KB, under Steam's 8,000 bytes), and
-     the diff is committed **before** the dry-run, which stops otherwise. **Done 2026-09-26** (`e3a805e`, the text produced by the
-     generator's own script on a copy); the check is to be run once the workflow exists, and again after any edit of the description block;
+  2. `Mod/About/About.xml` matching the plain text of the description above: **done** (`e3a805e`, confirmed again
+     2026-09-27 against the real, non-scratchpad workflow's own script — "the description is already the plain text of
+     PUBLICATION.md");
   3. the GitHub environment `steam-production` does not exist and has no secrets (`gh api .../environments` returns none):
-     `configure-environments.sh` for the environment and its required reviewer, and Virginie runs `set-steam-secrets.sh`;
-  4. `Art/Workshop/` does not exist: the gallery is a numbered folder of images (see "Gallery"), and the dry-run only
-     lists it as a reminder;
-  5. `CHANGELOG.md` heads its section `## [1.0.0] — unreleased`: it must be dated on the day, and the release notes are read
-     from it;
+     **not done, Virginie's alone** — `configure-environments.sh` creates it with her as required reviewer (it reads
+     the authenticated `gh` user), and she runs `set-steam-secrets.sh` to copy the two Steam secrets in; a session may
+     create the secret-free `release-dry-run` environment the dry-run itself needs, but not touch `steam-production`;
+  4. `Art/Workshop/` does not exist: **done**, six images built 2026-09-27 (see "Gallery" below);
+  5. `CHANGELOG.md` heads its section `## [1.0.0] — unreleased`: left as is until the actual release (the date the CI
+     stamps on the GitHub release, not a date chosen ahead of it); `changelog-section.sh` reads the body, not the heading,
+     so this does not block a dry-run;
   6. no tag exists (the `0.1.0` upload was by hand), so the rollback target is a decision to write down: the first CI
      release is `1.0.0`, and a failed publish deletes the tag and the release it created, not the Steam item;
-  7. the dry-run must name the exact commit of the passes that were green, so `Mod/` must not move after them.
+  7. the dry-run must name the exact commit of the passes that were green (the tree of `eb2bbf4`, or later if only
+     Markdown moved since — a `.md` file does not change a test, `STATUS.md` and `PUBLICATION.md` themselves included).
 - **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
   `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
   text is read by hand.
@@ -182,20 +184,34 @@ because its patch copies the category lists into its surgeries when it loads. No
 
 ## Gallery (manual: no tool of the chain can send it)
 
-Not settled. A folder holding only the images to upload, numbered `01-`, `02-` in page order, no old version, no raw capture
-(`PUBLISHING.md`, Images). Candidates, in the order to try; every image is opened and looked at before it is listed:
+**Built 2026-09-27, `Art/Workshop/`** (the workflow's `--gallery-dir`), from the gallery tickets' captures, each opened and
+read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version, no raw capture path kept alongside them.
 
-| Order | What it should show | Source |
+| File | What it shows | Source |
 |---|---|---|
-| 1 | The three hairstyles, one pawn each, filling the screen, in the zen studio | Feature 17 (`@review`), pending its replay at one cell |
-| 2 | The propagator and its research project in view | Feature 06 capture "research dark matter propagation in view" |
-| 3 | The beetle and the seraph | To take in the studio (`ScreenshotStudio`) |
+| `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `4f72` |
+| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `567e` |
+| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `567e` |
+| `04-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `4f72` |
+| `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `4f72` |
+| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `567e` |
 
-Rule of the owner: what is not interface must be zoomed enough to be seen; a pawn (clothes, hair) nearly fills the screen.
+**Reserve:** these are `Minify-Evidence.ps1`'s re-encoded copies (JPEG, quality 80, at most 1280 px on the long side), made
+to keep test evidence small, not shot for the Workshop page. They read clearly, but a page reviewer may prefer a fresh,
+full-resolution capture of the same scenes for the actual upload; not done, since it would mean a seventh pass for images
+alone. Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn
+(clothes, hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the
+first, too-distant hairstyle captures (`a90d`) were not used.
 
 ## Still to do before `prepublished`
 
 - Update `ATTRIBUTION.md` (done 2026-09-26, root and `Mod/`: a Markdown file, the game and the tests do not read it)
-  and its copy in `Mod/`.
-- The registry of Workshop comments (`WORKSHOP_COMMENTS.md`), the thanks to post once the item is public, the dry-run.
-- The Steam page description is hand-edited by the owner or replaced by `update_description`.
+  and its copy in `Mod/`. Done.
+- The registry of Workshop comments (`WORKSHOP_COMMENTS.md`): three rows added 2026-09-26, `drafted`; the thanks to post
+  once the item is public.
+- The publish workflow: generated 2026-09-27 (`.github/workflows/publish-tag.yml`, `script-tests.yml`,
+  `.github/publish.config.json`, `.github/scripts/`, `.github/tests/`), `About.xml` confirmed in sync. **Not yet done:**
+  a dry-run of the exact commit (needs the `release-dry-run` GitHub environment, created without her approval since it
+  holds no secret); the `steam-production` environment with Virginie as its required reviewer, and her two Steam secrets
+  copied by `set-steam-secrets.sh` — both are hers to run or approve, never a session's.
+- The Steam page description is hand-edited by the owner or replaced by `update_description` on the eventual publish.
