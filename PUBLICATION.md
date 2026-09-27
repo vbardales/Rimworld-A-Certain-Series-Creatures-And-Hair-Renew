@@ -40,8 +40,12 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
   5. `CHANGELOG.md` heads its section `## [1.0.0] — unreleased`: left as is until the actual release (the date the CI
      stamps on the GitHub release, not a date chosen ahead of it); `changelog-section.sh` reads the body, not the heading,
      so this does not block a dry-run;
-  6. no tag exists (the `0.1.0` upload was by hand), so the rollback target is a decision to write down: the first CI
-     release is `1.0.0`, and a failed publish deletes the tag and the release it created, not the Steam item;
+  6. **rollback target, decided by the owner, 2026-09-27: on the way out of public, back to private.** If a problem is
+     found after this mod goes public, the item is set back to private by hand on its Steam page — Steam's own
+     `SetItemVisibility`, which neither the game nor this CI ever calls (`AUDIT.md`, prepublication note). That is
+     separate from the CI's own rollback: a `publish` that fails after creating the tag and the GitHub release deletes
+     only those two (never the Steam item), so a failed upload never leaves a false release behind. No tag exists yet
+     (the `0.1.0` upload was by hand); the first CI release is `1.0.0`;
   7. the dry-run must name the exact commit of the passes that were green (the tree of `eb2bbf4`, or later if only
      Markdown moved since — a `.md` file does not change a test, `STATUS.md` and `PUBLICATION.md` themselves included).
 
@@ -212,12 +216,26 @@ read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version
 | `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `4f72` |
 | `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `567e` |
 
-**Reserve:** these are `Minify-Evidence.ps1`'s re-encoded copies (JPEG, quality 80, at most 1280 px on the long side), made
-to keep test evidence small, not shot for the Workshop page. They read clearly, but a page reviewer may prefer a fresh,
-full-resolution capture of the same scenes for the actual upload; not done, since it would mean a seventh pass for images
-alone. Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn
-(clothes, hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the
-first, too-distant hairstyle captures (`a90d`) were not used.
+**Checked image by image, 2026-09-27, after the owner asked to verify the gallery.** Two kinds of reserve, neither caught
+before because the earlier read only asked whether the hairstyle or the creature was clear, not what else the frame held:
+
+- **Resolution.** All six are `Minify-Evidence.ps1`'s re-encoded copies (JPEG, quality 80, 1280x720), made to keep test
+  evidence small, not shot for the Workshop page. They read clearly at that size, but a fresh, full-resolution capture
+  of the same scenes would look better as a page's hero image; not done, since it would mean a seventh pass for images
+  alone.
+- **Neighbours bleeding into frame, from feature 18's own layout** (the beetle, the seraph and the propagator are placed
+  7 cells apart on one line, so a wide enough shot of one catches a sliver of the next): `02-beetle.jpg` shows Rina's
+  portrait at the left edge; `03-seraph.jpg` shows the beetle's horn at the left edge and the propagator's icon, cropped,
+  at the right; `06-propagator.jpg` shows a seraph wingtip at the top-left corner. None hides what the image is meant to
+  show, but a reader who has not read this file may wonder what the fragment is. `05-hairstyle-index.jpg` also carries a
+  faint darker vertical band on each side (a vignette from that camera position, not a texture defect): visible on close
+  reading, mild at gallery size. Fixing either needs the objects placed further apart in feature 18, or narrower zooms,
+  and a new gallery ticket; not done. Kept as is for now — none of it is disqualifying, and the owner may prefer to
+  recapture once a decision is made rather than patch one image at a time.
+
+Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
+hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
+too-distant hairstyle captures (`a90d`) were not used.
 
 ## Still to do before `prepublished`
 
