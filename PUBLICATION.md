@@ -210,11 +210,11 @@ read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version
 | File | What it shows | Source |
 |---|---|---|
 | `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `4f72` |
-| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `567e` |
-| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `567e` |
+| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `9bf6` |
+| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `9bf6` |
 | `04-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `4f72` |
 | `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `4f72` |
-| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `567e` |
+| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `9bf6` |
 
 **Checked image by image, 2026-09-27, after the owner asked to verify the gallery.** Two kinds of reserve, neither caught
 before because the earlier read only asked whether the hairstyle or the creature was clear, not what else the frame held:
@@ -223,18 +223,15 @@ before because the earlier read only asked whether the hairstyle or the creature
   evidence small, not shot for the Workshop page. They read clearly at that size, but a fresh, full-resolution capture
   of the same scenes would look better as a page's hero image; not done, since it would mean a seventh pass for images
   alone.
-- **Neighbours bleeding into frame, from feature 18's own layout** (the beetle, the seraph and the propagator are placed
-  7 cells apart on one line, so a wide enough shot of one catches a sliver of the next): `02-beetle.jpg` shows Rina's
-  portrait at the left edge; `03-seraph.jpg` shows the beetle's horn at the left edge and the propagator's icon, cropped,
-  at the right; `06-propagator.jpg` shows a seraph wingtip at the top-left corner. None hides what the image is meant to
-  show, but a reader who has not read this file may wonder what the fragment is. `05-hairstyle-index.jpg` also carries a
-  faint darker vertical band on each side (a vignette from that camera position, not a texture defect): visible on close
-  reading, mild at gallery size. **For 1.0.0, kept as is (owner, 2026-09-27: "pour une 1.0.0 c'est ok")** — none of it is
-  disqualifying. **Fixed in Tests/Pickle/ for whatever version comes after**: feature 18 now spaces the three 10/25/40
-  cells apart instead of 5/12/19, clearing every neighbour's frame; ticket `9bf6` is filed to see it in a game, and may
-  land before this publication, in which case its captures replace `02-beetle.jpg`, `03-seraph.jpg` and
-  `06-propagator.jpg` here. The vignette of `05-hairstyle-index.jpg` is the pre-existing
-  gallery-background reserve of `BACKLOG.md` (moving each colonist onto clear ground), not new.
+- **Neighbours bleeding into frame, from feature 18's original layout** (the beetle, the seraph and the propagator placed
+  7 cells apart on one line, so a wide enough shot of one caught a sliver of the next): fixed 2026-09-27, before this
+  publication — feature 18 now spaces them 10/25/40 cells apart, clearing every neighbour's frame; seen clean in a
+  game, ticket `9bf6`, and `02-beetle.jpg`, `03-seraph.jpg`, `06-propagator.jpg` above are its captures, not the earlier,
+  bleeding ones.
+- `05-hairstyle-index.jpg` carries a faint darker vertical band on each side (a vignette from that camera position, not
+  a texture defect): visible on close reading, mild at gallery size, and the pre-existing gallery-background reserve of
+  `BACKLOG.md` (moving each colonist onto clear ground). Not fixed; kept for 1.0.0 (owner, 2026-09-27: "pour une 1.0.0
+  c'est ok").
 
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
 hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
