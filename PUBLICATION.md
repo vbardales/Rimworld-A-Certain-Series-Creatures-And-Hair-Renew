@@ -71,6 +71,9 @@ is safe for tests, not assumed safe here without checking — the workflow reads
   text is read by hand.
 - **Payload.** `Mod/` as committed. It carries no assembly: XML, textures and languages only. `Mod/ATTRIBUTION.md` is
   the copy of the root `ATTRIBUTION.md` (to update, see "Still to do" below).
+  **Check `git status` for a stray `desktop.ini` or `.ico` before any commit that touches `Mod/`** (found and removed
+  2026-09-27, relayed to TicketDispatcher for the other mods: Steam sends `Mod/` exactly as committed, no filtering,
+  so a Windows Explorer folder-icon file left there by `git add -A` would ship to players).
 
 ## Steam description
 
