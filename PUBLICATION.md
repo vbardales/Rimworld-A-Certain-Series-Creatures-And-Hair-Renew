@@ -221,9 +221,10 @@ read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version
 before because the earlier read only asked whether the hairstyle or the creature was clear, not what else the frame held:
 
 - **Resolution.** All six are `Minify-Evidence.ps1`'s re-encoded copies (JPEG, quality 80, 1280x720), made to keep test
-  evidence small, not shot for the Workshop page. They read clearly at that size, but a fresh, full-resolution capture
-  of the same scenes would look better as a page's hero image; not done, since it would mean a seventh pass for images
-  alone.
+  evidence small, not shot for the Workshop page. **Being redone 2026-09-27** (owner's go-ahead): tickets `a6f3`
+  (creatures) and the hairstyle fix's own capture will be copied to `Art/Workshop/` from the raw, unminified screenshot
+  before the evidence folder is minified, so the gallery keeps the game's native capture size instead of the
+  1280-pixel test copy. Awaiting their `RUN_DONE`.
 - **Neighbours bleeding into frame, from feature 18's original layout** (the beetle, the seraph and the propagator placed
   7 cells apart on one line, so a wide enough shot of one caught a sliver of the next): fixed 2026-09-27, before this
   publication — feature 18 now spaces them 10/25/40 cells apart, clearing every neighbour's frame; seen clean in a
