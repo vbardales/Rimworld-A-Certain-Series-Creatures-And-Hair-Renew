@@ -33,18 +33,16 @@ version migrations. The in-game scenarios below remain necessary.
 scope justified; running them is left to `tested`. `Tests/Pickle/` holds 18 features and 28 local steps,
 and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
-wrong feature and a deliberately invalid pattern before being trusted. **They have run in full once, on an earlier
-revision** (`0aa961c`: English and French complete passes green, 2026-09-25). **No complete pass exists on the current
-`Mod/`** (the Nocturnal Animals patch was added since), so all of them are to be played again.
+wrong feature and a deliberately invalid pattern before being trusted.
 
-Then `../AUDIT.md`, transition 9 (done -> tested). Three checks decide whether this file is finished, and
-each is measured here against what exists.
+**`tested` is now met (2026-09-27).** `../AUDIT.md`, transition 9 (done -> tested), asks three checks; each is
+measured here against what ran.
 
 | Check | Where this mod stands |
 |---|---|
-| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. It has to hold at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Four conditional scenarios. The Nocturnal Animals body clock (`@requires:Mlie.XNDNocturnalAnimals`, feature 16): played and passed alone (2026-09-26, `51fc`), and to be played again in the fifth pass. The gallery hairstyles (`@requires:nelim.pickletools.screenshotstudio`, feature 17): a sixth pass, `wsl-deps.galerie.map`, whose captures are opened. The Empire trader (`@requires:Royalty`, feature 09): the default set mounts Royalty, so it runs in every pass, and the report must show it *played*, not skipped. The Animal Prosthetics 2 listing (`@requires:SamBucher.ADogSaidAnimalProsthetics2`, feature 15): it is skipped in the three language passes by design and runs only in the fourth pass, `wsl-deps.avec-ads2.map`, whose report must show it *played*. The About declares no dependency and no `incompatibleWith`; its one `loadBefore` names that optional mod. |
-| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. What stays for a person is reading the `@review` captures: the reading of an image a scenario has already proved to show the intended state, not one more manual test. **Met once the three passes have run green.** |
+| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. Confirmed at the run, not only in the files. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Five conditional scenarios, all played. The Empire trader (`@requires:Royalty`, feature 09): every pass mounts Royalty, played in all six. Animal Prosthetics 2 (feature 15): played and passed in pass 4 (`5b9d`). Nocturnal Animals' body clock (feature 16): played and passed alone (`51fc`) and in pass 5 (`e028`). The gallery (features 17, 18, `@requires` on ScreenshotStudio): played and passed, gallery tickets `4f72` and `567e`. |
+| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. Every `@review` capture has been opened, across all six passes (`docs/runs/history.md`, 2026-09-27). |
 
 ### Where each manual check went
 
@@ -76,9 +74,12 @@ each is measured here against what exists.
 | Dark matter as a material: does not burn, barely wears, ten times the hit points | `Test-Mod.ps1` |
 | The beetle's temper | not automated: it has no pass or fail threshold, see "Subjective balance review" |
 
-## Passes this mod needs
+## Passes this mod needed
 
-A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needs six:
+**All six ran green on the tree of `eb2bbf4`, 2026-09-27** (`STATUS.md`, `docs/runs/history.md`): English `95f8`,
+French `ccbd`, Chinese `af3e`, Animal Prosthetics 2 `5b9d`, Nocturnal Animals `e028`, gallery `4f72`/`567e`.
+
+A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needed six:
 three languages on the minimal set, one for each of its two optional mods, and the gallery. The mod declares no
 dependency, no `loadAfter` and no `incompatibleWith`, so the minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`,
 and no incompatibility pass applies. Its optional integrations, A Dog Said... Animal Prosthetics 2 and Nocturnal
