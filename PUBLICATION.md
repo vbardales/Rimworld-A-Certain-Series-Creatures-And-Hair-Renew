@@ -44,6 +44,15 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
      release is `1.0.0`, and a failed publish deletes the tag and the release it created, not the Steam item;
   7. the dry-run must name the exact commit of the passes that were green (the tree of `eb2bbf4`, or later if only
      Markdown moved since — a `.md` file does not change a test, `STATUS.md` and `PUBLICATION.md` themselves included).
+
+**Dry-run done, 2026-09-27.** [Run 36306773478](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36306773478),
+commit `d6da6d5cba9238274842f319f0b293ea2c8efc02`, version `1.0.0`, green. `release-dry-run` (no secret, no reviewer) was
+created for it; `steam-production` was not touched. Staged 185 files, 1.36 MB, no `Assemblies/` (the forbidden path is
+absent, correctly). The change note printed with its `[b]1.0.0[/b]` heading intact, the six gallery files listed with
+their sizes (the workflow never sends the gallery), and `About.xml` confirmed in sync. Options all `false`: nothing but
+the payload was checked. **Read before it counts as evidence for a real publish: it ran on `d6da6d5`, and any commit
+after it, `.md`-only or not, needs its own green dry-run** (a `.md` change is safe for tests, not assumed safe here
+without checking — the workflow reads `PUBLICATION.md` and `CHANGELOG.md` at the commit it runs).
 - **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
   `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
   text is read by hand.
@@ -181,6 +190,13 @@ First private upload.
 
 **No DLC and no mod is required.** `supportedVersions` declares 1.6 only. `loadBefore` names Animal Prosthetics 2 only,
 because its patch copies the category lists into its surgeries when it loads. Nocturnal Animals asks for no order.
+
+## Content boxes (adult content, violence)
+
+Checked against the mod's own images (`Art/Workshop/`, `Mod/About/Preview.png`) and content: **no adult content box.**
+Nothing nude or sexual anywhere in the mod. **Violence: arguable, not ticked.** The seraph's sweep opens explosions and
+the beetle's horn fires a cannon (feature 08), same register as vanilla RimWorld combat; neither image in the gallery
+shows a wound or a corpse. Left unticked as for vanilla-level combat; revisit if the owner reads it differently.
 
 ## Gallery (manual: no tool of the chain can send it)
 
