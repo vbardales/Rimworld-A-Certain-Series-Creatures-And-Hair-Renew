@@ -29,3 +29,8 @@ evidence/
 
 # The step assembly's intermediates, kept out of the test companion folder that staging copies verbatim.
 .build/
+
+# Windows Explorer folder customization: a per-folder icon setting some File Explorer action wrote
+# to this checkout, never meant to be tracked or published (Mod/'s copy would ship inside the mod).
+desktop.ini
+*.ico
