@@ -402,6 +402,14 @@ namespace ACertainSeries.PickleSteps
             return CellFinder.StandableCellNear(wanted, map, 6f);
         }
 
+        [When("A Certain Series: I move {string} to {int} cells east of {string}")]
+        public void MoveColonistEast(PickleContext ctx, string colonistName, int cells, string anchorName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            pawn.Position = CellEastOf(ctx, anchorName, cells);
+            pawn.Notify_Teleported();
+        }
+
         [When("A Certain Series: I spawn a {string} pawn {int} cells east of {string}")]
         public void SpawnPawnEast(PickleContext ctx, string kindDefName, int cells, string colonistName)
         {
