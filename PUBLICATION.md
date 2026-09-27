@@ -205,35 +205,30 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat; revisit if
 
 ## Gallery (manual: no tool of the chain can send it)
 
-**Built 2026-09-27, `Art/Workshop/`** (the workflow's `--gallery-dir`), from the gallery tickets' captures, each opened and
-read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version, no raw capture path kept alongside them.
+**Rebuilt 2026-09-27, `Art/Workshop/`** (the workflow's `--gallery-dir`), from the gallery tickets' captures, each opened
+and read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version, no raw capture path kept alongside
+them. Every colonist and creature stands on open ground, no interface, no neighbour in frame.
 
 | File | What it shows | Source |
 |---|---|---|
-| `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `4f72` |
-| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `9bf6` |
-| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `9bf6` |
-| `04-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `4f72` |
-| `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `4f72` |
-| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `9bf6` |
+| `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
+| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
+| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |
+| `04-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `cdfc` |
+| `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `cdfc` |
+| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `a6f3` |
 
-**Checked image by image, 2026-09-27, after the owner asked to verify the gallery.** Two kinds of reserve, neither caught
-before because the earlier read only asked whether the hairstyle or the creature was clear, not what else the frame held:
+**Two reserves found 2026-09-27, both fixed before this publication, owner's go-ahead:**
 
-- **Resolution.** All six are `Minify-Evidence.ps1`'s re-encoded copies (JPEG, quality 80, 1280x720), made to keep test
-  evidence small, not shot for the Workshop page. **Being redone 2026-09-27** (owner's go-ahead): tickets `a6f3`
-  (creatures) and the hairstyle fix's own capture will be copied to `Art/Workshop/` from the raw, unminified screenshot
-  before the evidence folder is minified, so the gallery keeps the game's native capture size instead of the
-  1280-pixel test copy. Awaiting their `RUN_DONE`.
-- **Neighbours bleeding into frame, from feature 18's original layout** (the beetle, the seraph and the propagator placed
-  7 cells apart on one line, so a wide enough shot of one caught a sliver of the next): fixed 2026-09-27, before this
-  publication — feature 18 now spaces them 10/25/40 cells apart, clearing every neighbour's frame; seen clean in a
-  game, ticket `9bf6`, and `02-beetle.jpg`, `03-seraph.jpg`, `06-propagator.jpg` above are its captures, not the earlier,
-  bleeding ones.
-- `05-hairstyle-index.jpg` carries a faint darker vertical band on each side (a vignette from that camera position, not
-  a texture defect): visible on close reading, mild at gallery size, and the pre-existing gallery-background reserve of
-  `BACKLOG.md` (moving each colonist onto clear ground). Not fixed; kept for 1.0.0 (owner, 2026-09-27: "pour une 1.0.0
-  c'est ok").
+- **Neighbours bleeding into frame**, from feature 18's original layout (the beetle, the seraph and the propagator
+  placed only 7 cells apart, so a wide enough shot of one caught a sliver of the next). Fixed: spaced 10/25/40 cells
+  apart, ticket `9bf6` first saw it clean.
+- **Backgrounds that were not the studio's meadow** (a colonist's own spawn spot: a doorway, a room, a lit-window edge
+  causing the vignette on the old `05`) and **1280-pixel resolution** (`Minify-Evidence.ps1`'s test-evidence copies,
+  not shot for the page). Fixed together: feature 17 now moves each colonist onto the same clear ground feature 18
+  uses (ticket `cdfc`), and both galleries' raw 1920x1080 captures (tickets `cdfc`, `a6f3`) were copied to
+  `Art/Workshop/` before their evidence folders were minified, then re-encoded once more with `ffmpeg -q:v 3` (native
+  resolution kept, file size brought from 18 MB total to 2 MB — reasonable for the repository, still visibly sharp).
 
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
 hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
