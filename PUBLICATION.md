@@ -49,15 +49,23 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
   7. the dry-run must name the exact commit of the passes that were green (the tree of `eb2bbf4`, or later if only
      Markdown moved since — a `.md` file does not change a test, `STATUS.md` and `PUBLICATION.md` themselves included).
 
-**Dry-run done, 2026-09-27** (replayed after the gallery's respaced captures replaced the bleeding ones).
-[Run 36311927022](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36311927022),
-commit `4c2096321ece4d6c506ff7bdf00ab5659cf5b00e`, version `1.0.0`, green. The first dry-run
-([36306773478](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36306773478),
-`d6da6d5`) is superseded by this one, kept in the record: `release-dry-run` (no secret, no reviewer) was created for
-it; `steam-production` was not touched, either time. Options all `false`: nothing but the payload was checked. **Read
-before it counts as evidence for a real publish: it ran on `4c20963`, and any commit after it, `.md`-only or not, needs
-its own green dry-run** (a `.md` change is safe for tests, not assumed safe here without checking — the workflow reads
-`PUBLICATION.md` and `CHANGELOG.md` at the commit it runs).
+**Dry-run done, 2026-09-27** (third replay, after the gallery was rebuilt with clear backgrounds and full resolution).
+[Run 36350989013](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36350989013),
+commit `7301a2bcd73426ffaf2611d4261ad476c78cf307`, version `1.0.0`, green. Staged 185 files, 1.36 MB (the gallery is not
+part of `Mod/`, so its new file sizes do not change this). **A run in between this one and the previous
+([36350895622](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36350895622),
+commit `89370d0`) failed** — `About.xml`'s description had drifted from `PUBLICATION.md`'s: a nested-bracket markdown
+link (`[[XND] Nocturnal Animals (Continued)](url)`) had been converted with a stray leading `[` by an older copy of
+the conversion script; `sync-about-description.mjs --write` fixed it (`7301a2b`), and this run confirms it. Earlier
+dry-runs, all superseded, kept in the record:
+[36306773478](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36306773478)
+(`d6da6d5`),
+[36311927022](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36311927022)
+(`4c20963`). `release-dry-run` (no secret, no reviewer) was created once for the first of them; `steam-production` was
+never touched. Options all `false`: nothing but the payload was checked. **Read before it counts as evidence for a real
+publish: it ran on `7301a2b`, and any commit after it, `.md`-only or not, needs its own green dry-run** (a `.md` change
+is safe for tests, not assumed safe here without checking — the workflow reads `PUBLICATION.md`, `CHANGELOG.md` and
+`About.xml` at the commit it runs, and one of those three drifting from another is exactly what just failed a run).
 - **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
   `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
   text is read by hand.
