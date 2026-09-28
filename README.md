@@ -49,7 +49,7 @@ Two things worth knowing before you install it:
 - Because none of the power buildings came across, **this mod redefines nothing that belongs to
   the base game**. It does not compete with any other mod over a vanilla def.
 - The original gated everything behind a research tab of its own carrying eight projects. Only
-  one of them concerned the propagator, so the two that led to it are folded into **a single
+  two of them concerned the propagator, so they are folded into **a single
   project on the main tab**, at their combined cost. **No new research tab.**
 
 ## Optional compatibility

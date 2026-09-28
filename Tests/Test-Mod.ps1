@@ -245,6 +245,12 @@ Test 'The Nocturnal Animals patch makes the beetle nocturnal, only when that mod
     $op = $patch.SelectSingleNode('/Patch/Operation')
     Assert ($op.GetAttribute('Class') -eq 'PatchOperationFindMod') 'The patch is not guarded by PatchOperationFindMod'
     Assert (@($op.mods.li) -ceq $naName) "The guard does not name the mod exactly as '$naName'"
+    # The guard matches by display name: if the installed copy of that mod is here, its name must still be the one guarded.
+    $installedAbout = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2269731409\About\About.xml'
+    if (Test-Path -LiteralPath $installedAbout) {
+        [xml]$na = Get-Content -LiteralPath $installedAbout -Raw -Encoding UTF8
+        Assert ($na.ModMetaData.name -ceq $naName) "Nocturnal Animals is now called '$($na.ModMetaData.name)': the patch guard no longer matches it"
+    }
     $add = $op.match
     Assert ($add.GetAttribute('Class') -eq 'PatchOperationAddModExtension') 'The guarded operation is not a PatchOperationAddModExtension'
     Assert ($add.xpath -ceq '/Defs/ThingDef[defName="ACS_DarkMatterBeetle"]') "The patch does not target the beetle's ThingDef alone: $($add.xpath)"
