@@ -152,7 +152,8 @@ original mod carries no licence: `ATTRIBUTION.md` says so, and the description s
 
 ## Thanks comments to post, after the item is public
 
-State of the three recipients of this mod: `WORKSHOP_COMMENTS.md` (added 2026-09-26, all `drafted`). The registry decides
+State of the recipients of this mod: `WORKSHOP_COMMENTS.md` (added 2026-09-26, `drafted`; the original Nocturnal Animals
+page `2004368312` is now `not_applicable`, credited inside the Mlie message). The registry decides
 whether a send is still needed; method, cadence (three a day at most, not in a row) and the removal rule are in its
 "Writing a comment". Animal Prosthetics 2 (SamBucher) has its row, drafted from `DalmatiansRenew/PUBLICATION.md`: one
 comment per page, so this mod adds nothing there. Pickle and RimLogging are `posted`, and this mod is added to their
@@ -171,16 +172,12 @@ not text she wrote: read and reword before sending.
 Took the beetle, the seraph and the hairstyles out of your mod and moved them to 1.6, as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url]. The propagator's brain-fragment bootstrap is kept exactly as you built it. All credit is yours, and it comes down if you ask :)
 ```
 
-**2269731409, Nocturnal Animals (Continued), Mlie.**
+**2269731409, Nocturnal Animals (Continued): one single message, crediting Mlie and XeoNovaDan together** (owner,
+2026-09-28: on a "Continued" mod the original author is credited in the same message, not in a second one on the
+original's page; the earlier draft for `2004368312` is dropped).
 
 ```
-Thanks for keeping Nocturnal Animals going. One patch on my side gives the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] your bodyClock Nocturnal, and it does nothing at all when your mod isn't loaded xD
-```
-
-**2004368312, Nocturnal Animals, XeoNovaDan (the original).** Only if the page still takes comments.
-
-```
-Thanks for the idea behind Nocturnal Animals. It's why the beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] keeps night hours. Mlie carries it now, so no need to answer, I just wanted it said.
+Thanks Mlie for keeping Nocturnal Animals going, and XeoNovaDan for the idea behind it. One patch on my side gives the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] the Nocturnal bodyClock, and it does nothing at all when the mod isn't loaded xD
 ```
 
 ## Change notes (Steam), one block per version
