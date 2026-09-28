@@ -38,7 +38,7 @@ First version. RimWorld 1.6.
 - An in-game test suite for Pickle, under `Tests/Pickle/`: 18 features and 28 steps of its own. All six passes it
   needs (English, French, Chinese, with each optional mod, and the gallery) ran green on 2026-09-27. Development
   only; none of it is in `Mod/`, so none of it reaches a player.
-- `packageId` `nelim.acertainseriescreaturesandhairrenew`. The original had none — RimWorld 1.0 did not require one —
+- `packageId` `nelim.acertainseriescreaturesandhair`. The original had none — RimWorld 1.0 did not require one —
   and a 1.6 mod without one never loads.
 
 ### Changed

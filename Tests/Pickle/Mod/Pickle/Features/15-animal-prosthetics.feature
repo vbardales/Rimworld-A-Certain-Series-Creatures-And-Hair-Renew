@@ -8,7 +8,7 @@ Feature: The beetle is offered the surgeries of A Dog Said... Animal Prosthetics
 
   Scenario: the beetle gets its category's surgeries and the seraph, left out on purpose, gets none
     Given mod "sambucher.adogsaidanimalprosthetics2" is loaded
-    And mod "nelim.acertainseriescreaturesandhairrenew" is loaded
+    And mod "nelim.acertainseriescreaturesandhair" is loaded
     Then A Certain Series: the "ACS_DarkMatterBeetle" is offered more recipes than the "ACS_Gabriel"
     And no warnings from mod "A Certain Series - Creatures and Hair Renew (unofficial)"
     And no errors were logged

@@ -208,7 +208,7 @@ separate reloads. Mark each scenario PASS, FAIL or NOT RUN and record actual obs
 
 ## Before starting
 
-- [ ] `nelim.acertainseriescreaturesandhairrenew` added to the mod list. No dependencies, no
+- [ ] `nelim.acertainseriescreaturesandhair` added to the mod list. No dependencies, no
       load-order constraint, no DLC required.
 - [ ] The previous `ModsConfig.xml` saved beside itself first.
 - [ ] Archive the previous `Player.log` before starting; preserve a separate log for each run.

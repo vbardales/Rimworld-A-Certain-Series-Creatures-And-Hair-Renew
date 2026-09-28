@@ -28,6 +28,17 @@ test('words with underscores or asterisks are left alone, and blank lines are co
   assert.equal(markdownToPlainText('line one  ' + NL + 'line two\r\nline three'), 'line one' + NL + 'line two' + NL + 'line three');
 });
 
+test('a link whose visible text itself contains brackets still converts', () => {
+  assert.equal(
+    markdownToPlainText('[[XND] Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409)'),
+    '[XND] Nocturnal Animals (Continued) (https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409)',
+  );
+  assert.equal(
+    markdownToPlainText('![[alt]](https://x.test/i.png)'),
+    '[alt] (https://x.test/i.png)',
+  );
+});
+
 const about = (description, extra = '') => `<?xml version="1.0" encoding="utf-8"?>${NL}<ModMetaData>${NL}  <name>T</name>${NL}${extra}  <description>${description}</description>${NL}  <url>https://example.com</url>${NL}</ModMetaData>${NL}`;
 
 test('the description of About.xml is read decoded, from CDATA too, and never from a comment', () => {

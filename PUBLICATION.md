@@ -25,7 +25,7 @@ Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (pr
   `steam-production`. The CI creates the tag and the GitHub release after a successful upload: not by hand.
 - **What is missing for the dry-run, checked 2026-09-27:**
   1. the publish workflow: **done**, generated in this repository (not only a copy) with
-     `generate-publish-workflow.sh . --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhairrenew
+     `generate-publish-workflow.sh . --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhair
      --release-title "A Certain Series - Creatures and Hair Renew {version}" --require Defs --require Patches
      --require About/About.xml --require Textures --forbid Assemblies --gallery-dir Art/Workshop
      --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description`;

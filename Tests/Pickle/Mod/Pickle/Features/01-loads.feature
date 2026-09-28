@@ -4,7 +4,7 @@
 Feature: A Certain Series loads in the minimal set
 
   Scenario: the mod and its principal content load without an error
-    Then mod "nelim.acertainseriescreaturesandhairrenew" is loaded
+    Then mod "nelim.acertainseriescreaturesandhair" is loaded
     And def "ACS_DarkMatterBeetle" of type "PawnKindDef" exists
     And def "ACS_Gabriel" of type "PawnKindDef" exists
     And def "ACS_DarkMatterProduction" of type "ThingDef" exists

@@ -38,7 +38,7 @@ Test 'XML parses; definitions have unique names within their type' {
 Test 'Metadata includes the repository in the description' {
     [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
     $meta = $about.ModMetaData
-    Assert ($meta.packageId -ceq 'nelim.acertainseriescreaturesandhairrenew') 'Package identity changed'
+    Assert ($meta.packageId -ceq 'nelim.acertainseriescreaturesandhair') 'Package identity changed'
     Assert ($meta.supportedVersions.li -contains '1.6') 'Missing 1.6 support'
     Assert ($meta.url -match '^https://github.com/[^/]+/[^/]+$') 'Missing GitHub repository URL'
     Assert ($meta.description.Contains($meta.url)) 'Repository URL missing from description'

@@ -9,7 +9,7 @@ Feature: The beetle is nocturnal with Nocturnal Animals
 
   Scenario: the beetle has the nocturnal body clock and the seraph, left diurnal on purpose, has none
     Given mod "mlie.xndnocturnalanimals" is loaded
-    And mod "nelim.acertainseriescreaturesandhairrenew" is loaded
+    And mod "nelim.acertainseriescreaturesandhair" is loaded
     Then A Certain Series: the "ACS_DarkMatterBeetle" has the body clock "Nocturnal"
     And A Certain Series: the "ACS_Gabriel" has no body clock of its own
     And no warnings from mod "A Certain Series - Creatures and Hair Renew (unofficial)"

@@ -2,12 +2,12 @@
 <ModMetaData>
   <name>A Certain Series - Creatures and Hair Renew - Pickle tests</name>
   <author>Nelim</author>
-  <packageId>nelim.acertainseriescreaturesandhairrenew.pickletests</packageId>
+  <packageId>nelim.acertainseriescreaturesandhair.pickletests</packageId>
   <supportedVersions><li>1.6</li></supportedVersions>
   <description>In-game validation scenarios for A Certain Series - Creatures and Hair Renew. Development only; never published.</description>
   <modDependencies>
-    <li><packageId>nelim.acertainseriescreaturesandhairrenew</packageId><displayName>A Certain Series - Creatures and Hair Renew (unofficial)</displayName></li>
+    <li><packageId>nelim.acertainseriescreaturesandhair</packageId><displayName>A Certain Series - Creatures and Hair Renew (unofficial)</displayName></li>
     <li><packageId>rimworks.pickle</packageId><displayName>Pickle</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl></li>
   </modDependencies>
-  <loadAfter><li>nelim.acertainseriescreaturesandhairrenew</li><li>rimworks.pickle</li></loadAfter>
+  <loadAfter><li>nelim.acertainseriescreaturesandhair</li><li>rimworks.pickle</li></loadAfter>
 </ModMetaData>
