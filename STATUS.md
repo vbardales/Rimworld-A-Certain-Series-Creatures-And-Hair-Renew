@@ -13,488 +13,59 @@ licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 dependencies: none
 showcase:     complete
-tested_on:    English (`95f8`), French (`ccbd`), Chinese (`af3e`), with Animal Prosthetics 2 (`5b9d`), with Nocturnal Animals (`e028`), gallery (`4f72`, `567e`) — all on the tree of `eb2bbf4`, 2026-09-27
+tested_on:    the five complete passes and the gallery on the tree of `eb2bbf4` (2026-09-27); after the packageId change and before/after publication, on `f678f05`: English `a013`, `5558` (Animal Prosthetics 2), `d901` (Nocturnal Animals), French `45e1`, all green (2026-09-28); Chinese `6ad3` pending
 workshop:     3806708754
 remaining:
-  - **2026-09-28: PUBLIC. The owner flipped the item to public after uploading the gallery and pasting the description by hand (BBCode, from the same converter as the CI); the public page is readable and shows the new description (checked 2026-09-28).** Under the fail-fast policy the five regression passes (`a013`, `20b8`, `3402`, `5558`, `d901`) still run after the publication; a red one is a defect of the published version, said as such (AUDIT.md). Thanks comments: one single message per page; on a "Continued" mod the original author is credited in the same message (owner, 2026-09-28), so the original Nocturnal Animals page is `not_applicable`; **posted by the owner on 2026-09-28, all three: Nocturnal Animals (Continued) (Mlie and XeoNovaDan in one message), 某系列MOD, Animal Prosthetics 2 (one short message covering the other mods that name it); registry `WORKSHOP_COMMENTS.md` updated. Pickle and RimLogging were already posted.**
-  - **2026-09-28, packageId shortened on the owner's word: `nelim.acertainseriescreaturesandhairrenew` -> `nelim.acertainseriescreaturesandhair`** ("retire renew de ton packageId"). Safe now because the Workshop item is still private (nobody has it active; after publication it would disable the mod for every subscriber). Changed in `Mod/About/About.xml`, both `ATTRIBUTION.md`, `Tests/Test-Mod.ps1`, the Pickle suite (its own `.pickletests` id and load order, features 01/15/16, `wsl-deps.avec-ads2.map`), the docs, and `.github/` regenerated with `--package-id` (never by hand). Folder, repository, assembly and display names keep "Renew". **This changes `Mod/`: the six green passes of 2026-09-27 no longer describe the current revision; the five complete passes are refiled (see below) and `tested` is provisional until they are green again; the dry-run has to be replayed too.** Dry-run replayed green on the new id: run `36390660190`, commit `6f4cf93`. **Superseded 2026-09-28 by the fail-fast check: the CHANGELOG section must be dated before the send (AUDIT.md), so it was dated and the dry-run replayed: run `36392137035`, commit `f678f051bcea3ed5fa13eaa6026ece9016f295f8`, version 1.0.0, green. That is the SHA to publish, not `6f4cf93` and never `7301a2b` (old packageId).** **Rollback target, confirmed by the owner in chat on 2026-09-28, before the publish as fail-fast requires: back to private** (by hand on the Steam page; no earlier commit is a valid target, they all carry the old packageId; `v1.0.0` becomes the target of the next version). **PUBLISHED 2026-09-28 (upload to Steam confirmed, the item is still PRIVATE until the owner flips it): run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`, version 1.0.0, no option, approved by the owner (dry-run evidence `36392137035`). Steam log: "Success" then "uploaded to Workshop item 3806708754"; the CI created tag `v1.0.0` and the GitHub release. Change note sent as written; description, preview, title and tags NOT sent (all options false), so the page still carries the 0.1.0 text and the gallery is still to upload by hand. To do: verify the page, upload the six `Art/Workshop/` images, tick the violence box, flip to public, then post the thanks comments.** The five passes `a013`, `20b8`, `3402`, `5558`, `d901` are the regression the policy lets run after the publication.
-  - resolved 2026-09-27: About description's bare GitHub URL is fixed by the `sync-about-description.mjs` regeneration from `PUBLICATION.md` (`e3a805e`); it now ends `Source code on GitHub (https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew)`. The live Steam page still carries the `0.1.0` text; it is replaced only with `update_description` on a publish, or by hand (transition 10)
-  - **2026-09-27, toward `prepublished` (transition 10):** publish workflow generated in the repository (`d6da6d5`, template `a8ca11cdd9a3`); `release-dry-run` GitHub environment created (no secret, no reviewer); Workshop gallery built in `Art/Workshop/` (6 files, chosen from the gallery tickets' captures, each opened); `PUBLICATION.md` gained a Content boxes section (no adult content, violence left unticked) and its dry-run checklist. **Dry-run green: run `36306773478`, commit `d6da6d5`, version `1.0.0`** — staged 185 files, 1.36 MB, no `Assemblies/`, change note and gallery listing read correctly, `About.xml` confirmed in sync, nothing sent to Steam. Still open, Virginie's alone: the `steam-production` environment (her as required reviewer) and its two Steam secrets (`configure-environments.sh`, `set-steam-secrets.sh`); the rollback target is decided — public back to private is by hand on the Steam page, the CI's own rollback only touches its tag/release, never the Steam item (owner, 2026-09-27); `CHANGELOG.md`'s `## [1.0.0]` heading is left `— unreleased` until the actual publish, since the notes are read from the body, not the heading
-  - **2026-09-27, gallery checked, then fixed twice more, owner's go-ahead both times:** owner asked to verify `Art/Workshop/`; three images bled a neighbour into frame (feature 18's beetle/seraph/propagator only 7 cells apart). Fixed at once (ticket `9bf6`, respaced 10/25/40 cells), came back clean; dry-run replayed green (`36311927022`, `4c20963`). Owner then asked for the other two reserves as well ("1 oui 2 oui"): the hairstyles' backgrounds (a colonist's own spawn spot — a doorway, a room, a vignette-causing window edge) and the gallery's resolution (`Minify-Evidence.ps1`'s 1280px test copies). Both fixed together: feature 17 now moves each colonist onto the same clear meadow feature 18 uses (new step, `Colonist.Position` + `Notify_Teleported`), tickets `cdfc` (hairstyles) and `a6f3` (creatures, full-resolution replay of `9bf6`) both green and clean; the six raw 1920x1080 captures replaced the whole gallery, re-encoded with `ffmpeg -q:v 3` for a reasonable repository size (2 MB total, from 18 MB as raw PNG). **Housekeeping found in the same pass: `git add -A` had picked up `desktop.ini` and two `.ico` files a Windows Explorer action left in the checkout — removed, gitignored (`d26a4af`), never meant to be tracked.** The next dry-run (`89370d0`) then **failed for real**: `About.xml`'s description had drifted (a nested-bracket markdown link, the Nocturnal Animals one, converted with a stray leading `[` by an older copy of `about-description.mjs`); `sync-about-description.mjs --write` fixed it (`7301a2b`), and the dry-run replayed green on it (run `36350989013`). A commit after `7301a2b` needs its own dry-run before it can be published
-  - resolved 2026-09-24 (preTest -> done): the Pickle suite is written in `Tests/Pickle/` (14 features, 17 local steps, a README that justifies the scope), and `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step. Written, not run: `done` does not ask for a run
-  - unverified: none of the 14 Pickle features has run. The first run confirms or breaks the ten assumptions listed at the end of `Tests/Pickle/README.md`, and five of the six repairs can only be seen in a running game; the game did load the mod once, on 2026-09-23 (141 .dds caches written at 14:12), with no log read
-  - unverified: the French and Chinese passes have not run, so no label or layout has been seen in either language; clipping is read on the `@review` captures of feature 03
-  - unverified: does an exotic goods trader carry the brain fragment, without which the machine cannot be built. Feature 09 asks it of 200 generated stocks per trader; not run
-  - unverified: the beetle's aggression, which turns it manhunter on every hit it takes, does it play out. Subjective and not automated
-  - unverified: to reach tested, the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) must run green, the Empire scenario must be played and not skipped, no scenario may be `@wip`, and every `@review` capture must be opened (AUDIT.md transition 9). Nothing has run
-  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries 141 .dds caches that git never held; check its file list. An upload from a git checkout drops them, one from the working tree sends them again, and this repository has no publish workflow yet
-  - unverified: the item's page still carries the earlier preview image; `Mod/About/Preview.png` was recomposed on 2026-09-24 and nothing has uploaded it
-  - unverified: the description says the seraph reaches a colony only through exotic goods traders; both creatures carry the `AnimalUncommon` tag and the two exotic traders sell it, but whether another trader does too is not checked. To settle at the description review (transition 10)
-  - first game run, 2026-09-24 21:04 (pass 1 English, request 20260924-164530-619-a69c, on 56ef72d; the dispatcher's worker died mid-run but the game finished alone, and I copied the four small text files to `Tests/Pickle/Evidence/2026-09-24-english` before deleting its 1.7 GB archive): `exitReason` `watchdog-timeout`, 15 of 20 scenarios played, **8 passed and 7 failed, 5 never played**. Passed: the load, the hairstyles, the research, the propagator's five bills, both production recipes, both exotic traders including the Empire variant (so assumptions 3, 5 and 7 of the README held, on that revision). All 7 failures carry one log error, `Tried 300 times to generate age`, from both creature kinds setting `maxGenerationAge` to 0, a defect inherited from 1.0: fixed in `a0fa40c` and not replayed. The 16th scenario, the egg (`10`), tripped the 120 s watchdog on `I wait for the egg ... to hatch`, which ended the game (exit 2): a whole day of incubation does not fit, so the scenario now starts the egg at 95 percent (new step, 19 in all) and the timeout tags are on the scenarios too; not replayed. The five never played include the egg itself and, after it, whatever else follows in feature order, the save round trip among them; the report does not list them. The age fix has a `Test-Mod.ps1` group, mutation-tested; nothing here is confirmed until the game runs it. **Submitted 2026-09-24 22:36, to the TicketDispatcher, in the order the owner wants: the French pass `7523` was already running (it plays `03` and `04`, so it checks the age fix as well), the pending Chinese pass `041d` was cancelled, and three small fix tickets were filed for what French does not play: `898c` (feature `02`, 3 scenarios), `ca7f` (`08`, the two shots, never played), `a7cc` (`10`, the egg). The complete English pass is redone only once those are green
-  - second game run, 2026-09-24 22:32 (pass 2 French, request `7523`, on the tree of `a354f06`), `exitReason` `failed`, 13 of 13 played: **11 passed, 1 failed, 1 skipped by requirement** (feature 15). The age fix is seen working in French (both creatures spawn; claws, wings, both butcherings and the save round trip with an egg mid-incubation pass). The one failure is the suite's own: `13` "the labels a player reads" (Pickle refuses `def "ACS_AngelCore" field "label"`, a name three def types share; assumption 2 broke). Features 12 to 14 now use a typed local step (20 in all), checked to compile and resolve, not replayed. Captures opened: the health tab in French shows "Griffe avant gauche" and "Griffe avant droite" as separate lines, eight distinct wing labels (Première, Troisième, Cinquième, Septième aile shown) and "Jambe droite", and the ages are sane (1 and 1187); the research capture shows only the left of the tree, so it does not show the mod's project (the English text run listed it at (19, 3), Spacer). Not yet green: nothing is certified until the complete passes come back green
-  - fix ticket `898c` (feature `02`, English, tree of `79d5fad`), 2026-09-25: **3 of 3 passed**, `exitReason` `passed`, 0 flaky. The age fix is now seen working in English too, and the English health-tab labels read right in the captures (opened): "Front left claw" and "Front right claw" on separate lines, eight distinct wing labels, "Right leg"; ages 4 and 4558. No game error in the log. Five fix tickets remain (`ca7f`, `a7cc`, `1a1e`, `22a0`, `f8a6`); this proves nothing about scenarios it did not play, and the complete passes are still to come
-  - fix ticket `ca7f` (feature `08`, both shots, English, tree of `79d5fad`), 2026-09-25: **2 of 2 failed**, `exitReason` `failed`. A real defect of the mod, and, like the age one, inherited from 1.0 and invisible offline: **neither creature's innate shot ever leaves.** Both verbs set `forcedMissRadius` (beetle 5, seraph 10); in this build `Verb_LaunchProjectile.TryCastShot` then calls `VerbProperties.GetForceMissFactorFor(EquipmentSource, caster)`, which reads `equipment.def` with no null check, and an innate verb has no equipment: a `NullReferenceException` on every tick of the burst (read from the game's own IL). The fix is to drop `forcedMissRadius` from both verbs, which also drops the scatter of the seraph's eight explosions, a change of behaviour to say in the CHANGELOG. **Not applied yet: the tree is frozen until the last of the four tickets still waiting (`a7cc`, `1a1e`, `22a0`, `f8a6`) is done.** Then: fix, an offline check in `Test-Mod.ps1` (no innate verb of the mod sets a forced miss radius above 0.5), and a new fix ticket for `08`
-  - fix ticket `1a1e` (feature `12`, English labels, tree of `79d5fad`), 2026-09-25: **2 of 2 passed**, `exitReason` `passed`, 0 flaky, no game error in the log. The typed local step reads the three shared names correctly. Three fix tickets remain (`a7cc` egg, `22a0` French labels, `f8a6` Chinese labels)
-  - fix ticket `22a0` (feature `13`, French labels, tree of `79d5fad`), 2026-09-25: **2 of 2 passed**, `exitReason` `passed`, 0 flaky, no game error. The scenario that was red in the French pass is green: the ambiguity is gone and every French label of the loaded defs reads as written. Two fix tickets remain (`a7cc` egg, `f8a6` Chinese labels)
-  - fix tickets `a7cc` (feature `10`, the egg at 95 percent) and `f8a6` (feature `14`, the Chinese labels the original author wrote), tree of `79d5fad`, 2026-09-25: **both passed** (1 of 1 each, `exitReason` `passed`, 0 flaky, no game error in either log). The egg starts at 95 percent, hatches in 55 s and the hatchling has no faction; the preserved Chinese labels read as written, so the language folder is found. Five of the six fix tickets are green (`02`, `10`, `12`, `13`, `14`); only `08` was red
-  - fix ticket `4f41` (feature `08` again, English, tree of `735f67c`, `forcedMissRadius` dropped), 2026-09-25: **2 of 2 passed** (the beetle's horn 28 s, the seraph's sweep 34 s), `exitReason` `passed`, 0 flaky. Both creatures' shots now leave and land, which is the first time they are seen to. **But its log carries four start-up game errors that the scenarios cannot see** (`Config error in ACS_DarkMatterBeetle` and `ACS_Gabriel`, twice each: "verb 0: has incorrect forcedMiss settings; explosive projectiles and only explosive projectiles should have forced miss enabled"). The game wants `forcedMissRadius` above 0 on an explosive projectile (read from its IL: `(radius > 0) == CausesExplosion`), and 0.5 is the one value that also stays under the 0.5 that runs the throwing code. Both verbs now set 0.5, `Test-Mod.ps1` checks both rules (the 13th group, rewritten, mutation-tested on both sides), not replayed. Lesson recorded: a green ticket says nothing about start-up errors; the log of each ticket has to be read for `[ERROR]` lines beyond the three "did not load any content" ones. `Check-ConfigErrors.ps1`, the collection's offline validator, lacks this rule
-  - fix ticket `34d1` (feature `08`, English, tree of `0aa961c`, `forcedMissRadius` 0.5), 2026-09-25: **2 of 2 passed**, `exitReason` `passed`, 0 flaky. The log holds only the three usual "did not load any content" lines: no `NullReferenceException`, no `Config error`. **Every scenario that was red or unplayed after the first two runs has now been seen green in a game** (`02` three scenarios, `04` two in the French pass, `08` two, `10`, `12`, `13`, `14`), but on three slightly different revisions (`79d5fad` for most, `0aa961c` for `08`). This is a set of fix tickets, so it certifies nothing beyond them and nothing about non-regression: the complete passes come next, on this one revision, and the stage moves only after they are green
-  - protocols read 2026-09-25: `docs/PROTOCOLS-READ.md` says which documents were read, in which version, which were of no use now, and `docs/Check-ProtocolsRead.ps1` lists the ones that moved. Found by that reading, **done 2026-09-26** (Markdown files are not frozen, they do not change a test): `ATTRIBUTION.md` and its copy in `Mod/` name the two optional patches; `PUBLICATION.md` exists (single Markdown description with `THANKS` naming both mods' authors, Pickle, PickleTools, RimLogging and Claude Code; change note `1.0.0`; three thanks drafts); `WORKSHOP_COMMENTS.md` has the three new rows. Still open for `prepublished`: the dry-run, the gallery, the publish workflow (`.github/` holds `tests.yml` only), the Steam page text
-  - backlog, not started: `BACKLOG.md` (2026-09-25) holds the ideas asked for since the passes began, Nocturnal Animals and Crossbreeding first, with what is known and what has to be decided; none of it is in `Mod/`
-  - **2026-09-25 evening, tree of `83232d1` (Mod/ unchanged since `0aa961c`), both tickets done:** `11fd` (features 05 and 06, replay of `421e`, which the game crashed at start-up with 139): 3 of 3 passed; the research capture now shows the mod's project, the hairstyle capture still does not show the style (the character tab has no portrait; see `docs/runs/history.md`). `b7f4` (feature 15 with Animal Prosthetics 2, replay of `3af4`): passed; the red of `3af4` was the pass's load order (the staging loads the mod under test after every mod of the map, without sorting by `loadBefore`), fixed in `wsl-deps.avec-ads2.map`. The Chinese complete pass `d6ae` was ABANDONED by the dispatcher (restart of the Claude application); it is to be filed with `-RunTimeoutMinutes 120` after the Nocturnal patch, since `Mod/` changes then. Tree free again.
-  - **complete pass 2 French, request `5ff2`, 2026-09-25, tree of `0aa961c`: GREEN.** `exitReason` `passed`, 13 of 13 scenarios played (12 passed, 0 failed, 1 skipped by requirement: feature 15), 0 flaky, log clean as in English. The French health-tab captures (opened) show every label on its own line with nothing clipped; the research capture again does not reach the mod's project. Only the Chinese pass (`cb37`) and the fourth pass with Animal Prosthetics 2 remain
-  - **complete pass 1 English, request `3a98`, 2026-09-25, tree of `0aa961c`: GREEN.** `exitReason` `passed`, 20 of 20 scenarios played (19 passed, 0 failed, 1 skipped by requirement: feature 15, by design), 0 flaky; the log has only the three usual start-up lines, no `NullReferenceException`, no `Config error`. First time the whole suite has run and passed in English. **Still to come before `tested`:** the French and Chinese complete passes (`5ff2`, `cb37`, queued), the fourth pass with Animal Prosthetics 2 (ticket `3af4`, item already in the cache), and the reading of their captures. **A reserve on two English captures, opened 2026-09-25:** the research capture does not show the mod's project (the window is scrolled to the left of the tree, the project sits at (19, 3)), and the three hairstyle captures are wide views in which no hairstyle can be told. Both scenarios pass on their assertions, so the pictures only fall short of what `@review` is for; improving them would change a feature, hence a new complete pass
-  - **shots first fixed 2026-09-25 by dropping the field, then corrected to 0.5 the same day (item above)** (after the ticket `ca7f` finding above): `forcedMissRadius` is dropped from both innate verbs; `Test-Mod.ps1` has a 13th group that refuses a forced miss radius above 0.5 on a creature's innate verb (mutation-tested: it fails when the field is put back on a copy); the watch step now fails after 1500 ticks with no projectile instead of running its 100 s, and names `Player.log`. The seraph's eight explosions lose their scatter (CHANGELOG). Ticket `08` is to be filed again; the complete passes come after it is green
-  - **tree was frozen while six tickets waited, released 2026-09-25 when the last was done** (this paragraph is the record of the freeze) (`Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, point 4: a request carries no SHA, the mod is staged from the working tree when its ticket is played): six fix tickets are pending since 2026-09-24 22:36 to 22:46 (`898c` feature 02, `ca7f` 08, `a7cc` 10, `1a1e` 12, `22a0` 13, `f8a6` 14). They will play the tree of `79d5fad`, pushed, which is the revision to test. Nothing under `Mod/` or `Tests/Pickle/Mod` and no step source is to change until their `RUN_DONE`; their labels do not carry the SHA, so this line is where it is recorded
-  - unverified: the optional compatibility with A Dog Said... Animal Prosthetics 2 (2026-09-24) is proved offline only (`Test-Mod.ps1`, mutation-tested). Feature 15 has now been played with the other mod mounted (`b7f4`, passed, 2026-09-25) once the pass named this mod ahead of it; a complete pass with that mod mounted has not run. Whether the beetle's vanilla parts (eyes, antennae) have a surgery in that mod is not verified
-  - defect to settle by hand: the About description now carries a compatibility note, but the Steam page was created earlier and keeps the old text; add the note to the page at the description review (transition 10)
-  - **2026-09-26, Nocturnal Animals and the gallery:** ticket `51fc` (feature 16 alone, pass five map, tree of `7914634`): passed, 1 of 1, log clean (three usual lines), so the Nocturnal patch is seen working; the whole pass five has not run. Ticket `a90d` (feature 17, `wsl-deps.galerie.map`, tree of `b1384ea`): passed, 1 of 1; the zoom step works and the background is the zen meadow, but at 3 cells' height the pawn fills a quarter of the screen and is seen from behind, so the capture does not yet show a hairstyle. Set to 1 cell and refiled as `e4c3`, which the launcher refused (`-Language en`, my mistake: no run played); refiled as `4f72` (evidence `2026-09-26-gallery-2`) with a new step that turns each colonist to face the camera, on the tree of `e3a805e`; not read yet. **No complete pass exists on the current `Mod/`** (the Nocturnal patch changed it after `0aa961c`): English (with `-RunTimeoutMinutes 120`), French, Chinese, then passes four, five and the gallery are all to be filed once `e4c3` is read and the disk has room (the queue stopped for a while on 2026-09-26 under 2 GB free). The character-tab capture of feature 05 was useless (no portrait) and was removed in `e3a805e`
-  - **2026-09-27: ALL FIVE COMPLETE PASSES AND BOTH GALLERY TICKETS CAME BACK GREEN, on the tree of `eb2bbf4`.** `95f8` pass 1 English (19/23 passed, 4 skipped by requirement), `ccbd` pass 2 French (12/14, 2 skipped), `af3e` pass 3 Chinese (9/11, 2 skipped; reserve: the research window's Chinese labels do not render in the capture, every project affected, not this mod's translation — see `docs/runs/history.md`), `5b9d` pass 4 with Animal Prosthetics 2 (15/18, 3 skipped; feature 15 played and passed), `e028` pass 5 with Nocturnal Animals (15/18, 3 skipped; feature 16 played and passed). `4f72` (feature 17, gallery hairstyles, captures right at 1 cell facing the camera) and `567e` (feature 18, gallery creatures, propagator shows the vanilla no-power icon, kept by the owner's call). Every `@wip` check: none. Every `@requires` played in a pass that mounts it: yes (06 and 09 in every pass, 15 in pass 4, 16 in pass 5 and alone, 17/18 in the gallery). No manual test left unautomated. Every `@review` capture opened. **The three checks of AUDIT.md transition 9 (done -> tested) are all met: stage moves to `tested`.**
-  - **2026-09-26 evening: the complete passes were filed, tree of `eb2bbf4`** (Mod/, Tests/Pickle/Mod and the step sources were FROZEN until all were done; this line is their record, the labels carry the SHA): `95f8` pass 1 English, `ccbd` pass 2 French, `af3e` pass 3 Chinese, `5b9d` pass 4 (Animal Prosthetics 2), `e028` pass 5 (Nocturnal Animals), all with `-RunTimeoutMinutes 120`, evidence `Tests/Pickle/Evidence/2026-09-26-<pass>`. The gallery tickets `4f72` (feature 17) and `567e` (feature 18) waited too and played the same tree
-  - resolved 2026-09-24 (audit of the preTest -> done transition): feature 02 of the Pickle suite restated values the leaf defs state themselves, which AUDIT.md says to prove offline. It was deleted and its assertions moved into `Test-Mod.ps1` (`ce5677f`)
+  - **pending: ticket `6ad3`, Chinese replay of the pass** (evidence `Tests/Pickle/Evidence/2026-09-28-chinese-2`). Green: every red of the day was machine load. Red again: a real non-English defect of the published version, said as such (fail-fast policy, AUDIT.md); rollback target is back to private, by hand on the Steam page. Record it in `docs/runs/history.md` either way
+  - defect: the change note of `1.0.0` (sent as written) says "English and Simplified Chinese"; French is shipped too. Say all three in the note of the next version
+  - unverified: the item's Steam tags (`Mod`, `1.6`) were not sent by the `1.0.0` publish (`update_tags` off); check them on the page
+  - decision for the owner: the "violence" content box, left unticked (`PUBLICATION.md`, Content boxes)
+  - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
+  - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
+  - housekeeping: `.github/` carries template stamp `289c71f74e3b` and the current template is `828f845586bc`; regenerate with the script (never by hand) and replay a dry-run before the next publish
+  - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
+  - ideas not started: `BACKLOG.md`
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-24, cumulative workflow audit at ce5677f19cb734f697ae6a594819846c08ad0f57: stage done confirmed, tested not reached; then the optional Animal Prosthetics 2 compatibility (see the addendum)
+updated:      2026-09-28, description completed (Pickle and RimLogging links, languages, requirements, bug line); docs cleaned
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
 
-## Addendum — Animal Prosthetics 2 compatibility, 2026-09-24 (after the audit below)
+Fields above are read by the sweep over every mod; this body is the short record. Dated detail lives in
+`git log`, `CHANGELOG.md`, `PUBLICATION.md` and `docs/runs/history.md` (one line per run).
 
-Asked for by the owner, who pointed at Workshop item 3238353862. Stage stays `done`: the addition carries its
-own offline test and its own written scenario, and nothing in it asks for a run at `done`.
+## Where it stands
 
-- **What the other mod asks** (read on its Steam page and its GitHub repository, not from a local install): a
-  mod that adds animals lists them in the `recipeUsers` of its abstract recipes `ADS_Cat1`, `ADS_Cat2`,
-  `ADS_Cat3`, a category including the ones below it, and loads **before** it.
-- **What was done:** `Mod/Patches/AnimalProsthetics2.xml`, guarded by `PatchOperationFindMod` on the mod's
-  name, lists `ACS_DarkMatterBeetle` in all three (trainable pack animal, category 3); `About.xml` gains
-  `loadBefore` `SamBucher.ADogSaidAnimalProsthetics2` and a note in the description. No dependency is declared.
-- **The seraph is left out on purpose.** Every part of its body is this mod's own def, and that mod's
-  surgeries name vanilla parts, so listing it would add a name that is never offered anything. The beetle's
-  legs, claws, horn and elytra are in the same case; only its `Eye` and `Antenna` are vanilla. Adding the mod's
-  own parts to the other mod's recipes would mean patching them one by one and was not attempted.
-- **Offline:** `Test-Mod.ps1` has an eleventh group (11 passed, 0 failed); four deliberate mutations of a copy,
-  each caught by its own message: the `loadBefore` removed, the guard removed, the seraph added, the mod name
-  misspelled. `Test-Translations.ps1` unchanged (202 and 202). `Check-Steps.ps1`: 18 local patterns, 243 step
-  lines, all resolved.
-- **Pickle:** feature 15 (`@requires` on the other mod: skipped, by design, in the three language passes) and a
-  fourth pass map. Both written, never run. Two new assumptions, 11 and 12, in `Tests/Pickle/README.md`.
-- **Supersedes** the sentence of transition 7 below that says the About declares no `loadBefore` and ships no
-  patch: both now exist, and are optional.
+- **Published 1.0.0 on 2026-09-28**, public. Publish run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`
+  (dry-run evidence `36392137035`), approved by the owner; the CI created tag `v1.0.0` and the release. Only the change
+  note was sent: gallery (six images from `Art/Workshop/`) and description (BBCode from `PUBLICATION.md`) were set by
+  hand by the owner. `About.xml`'s description is regenerated from `PUBLICATION.md`
+  (`node .github/scripts/sync-about-description.mjs --write`) and later commits only touch it and Markdown files.
+- **packageId** shortened on 2026-09-28 (owner: "retire renew") to `nelim.acertainseriescreaturesandhair`, while the
+  item was still private. Folder, repository, assembly and display names keep "Renew". No earlier commit is a valid
+  rollback target (they carry the old id); `v1.0.0` is the target of the next version.
+- **Tests:** 14 Pickle features (`Tests/Pickle/`), five complete passes (English, French, Chinese, with Animal
+  Prosthetics 2, with Nocturnal Animals) plus two gallery features; `Tests/Test-Mod.ps1` (14 groups),
+  `Tests/Test-Translations.ps1` (202 English, 202 French). Post-publication regression: see `tested_on` and
+  `docs/runs/history.md`. Two English reds of 2026-09-28 (`20b8`, `3402`, Chinese) were not reproduced in three
+  green replays; TicketDispatcher found orphan `find /` processes exhausting the Windows paged pool, and Pickle Core was
+  the same version both days.
+- **Thanks:** the description's THANKS section is complete; comments posted by the owner on 2026-09-28 (Nocturnal
+  Animals Continued with Mlie and XeoNovaDan in one message, 某系列MOD, Animal Prosthetics 2); Pickle and RimLogging
+  were already posted. Registry: `../WORKSHOP_COMMENTS.md`.
+- **Licence `silent`:** no permission found for the original mod (recheck 2026-09-12: no licence file, empty About URL,
+  no permission in the Steam description or its 14 comments, empty author profile, no source repository found). The
+  description asks users not to download the old version and mentions a remake; recorded apart, not a permission.
+  The mod is `(unofficial)`, the MIT notice covers only the additions: see `LICENSE` and `ATTRIBUTION.md`.
+- **Settings:** none, no page and no shortcut (source search of `Mod/` and `Tests/`, 2026-09-13, unchanged: no code, no
+  assembly).
+- **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its
+  category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose.
 
-## Cumulative workflow audit — 2026-09-24
+## Vocabulary
 
-**Previous stage: `done`. Stage retained: `done`.** `tested` is not reached: nothing has run in a game.
-Audited against `../AUDIT.md` as it stood at 08:14 today, read in full for this audit, with
-`../MOD_SETTINGS.md` and `../TRANSLATIONS.md`, read in full. `../PUBLISHING.md` was read in part: its
-publishing-by-CI and evidence sections and its latest change (09:55 today), not every line. `../STYLE_RIMWORLD.md`
-was consulted for the preview only.
-
-Audited revision `ce5677f19cb734f697ae6a594819846c08ad0f57`, on `main`, identical to `origin/main` when the
-checks ran. Working tree clean when the audit began; the only change made since is this file. **One
-correction was made before the checks, in the audited revision itself** (`ce5677f`, see transition 8).
-Nothing was generated, published or launched: no RimWorld process was started, in Windows or in the WSL,
-and no Pickle ticket was taken.
-
-| Transition | Finding and evidence |
-| --- | --- |
-| 1. dansMonoRepo -> horsMonoRepo | **Validated.** The repository root is this folder; `origin` is the GitHub repository, public, and holds the audited commit. The parent monorepo tracks 0 files of it (the absence of a parent remote is normal here). Licence `silent`, with the `(unofficial)` tag, packageId, displayed name, repository and folder all say the same thing. English README, ATTRIBUTION, LICENSE and CHANGELOG exist, and the two copies in `Mod/` are byte-identical to their root originals. **Not re-verified today:** the external pages behind the `silent` classification (last read 2026-09-12). |
-| 2. -> ModIcon generated | **Validated as far as the rule allows.** No code or assembly ships, so there is nothing to build (`Mod/` holds no DLL). `Mod/About/ModIcon.png` exists, 128x128, 46,248 bytes. It is the owner's choice; its size and style deviations from the guide were accepted by her on 2026-09-13 and are unchanged. This audit did not generate, alter or request an icon, and did not measure its legibility at 32 px. |
-| 3. -> Preview generated | **Validated.** `Mod/About/Preview.png`, 896x504, 579,218 bytes, below both limits, opened and read. It was recomposed on 2026-09-24 at the owner's request (`a518192`): the text stays top-left and the scene sits 20 px lower, so the title no longer covers the beetle. Bottom-right was tried and rejected (it hides the propagator). Minimum contrast behind each text box, measured with the text hidden: title 6.03, connector 11.01, suffix 4.63, tag 9.04, summary 4.63, all above 4.5:1. Chrome was driven directly because Playwright is not installed here; the font check of the official script was not repeated. |
-| 4. -> preOptions | **Validated.** Accent `#45BCE8` (cool, from the seraph's wings) against secondary `#F0CC8D` (warm, from the stone and lamp): clearly separate. Description in English. `A Certain Series` at full size, `and` and `Renew` at 65%, `(unofficial)` as the tag, `1.6` in the badge, all agreeing with `About.xml`. |
-| 5. -> options | **Validated by source analysis** (the rule asks for nothing more). 0 matches for `MainButtonDef`, `ModSettings`, `SettingsCategory`, `DoSettingsWindowContents` or `Dialog_ModSettings` in `Mod/` and `Tests/`; no assembly is shipped. `settings_audit: not_applicable` stands: there is no page and no shortcut to be empty or visible. No option effect, persistence or shortcut was tested in a game, and none is claimed. |
-| 6. -> l10n | **Validated.** `Tests/Test-Translations.ps1`: 202 English source texts, 202 French entries, no missing, duplicate or unexpected key. `scripts/Check-DefInjected.ps1`: 402 keys, 0 errors. Since the translation audit of 2026-09-13 (`a066b66`) the only change to `Mod/Defs` is one line, `techLevel Spacer`, which is not player-facing text; `Mod/Languages` did not change. The three fields therefore stay `complete`. Runtime display in English, French and Chinese is **unverified**, as `../TRANSLATIONS.md` allows at this point. |
-| 7. -> preTest | **Validated.** `About.xml` declares no `modDependencies`, `loadAfter`, `loadBefore` or `incompatibleWith`, and ships no `LoadFolders` and no patch. `Check-TypeRefs`: 0 references to a third-party type. `Check-DefRefs` run against a copy of Core's defs alone resolves every reference and every parent, so the mod needs neither a DLC nor another mod. `supportedVersions` is 1.6. |
-| 8. -> done | **Validated, after one correction.** `Test-Mod.ps1`: 10 groups, 0 failed. `Test-Translations.ps1` as above. The six shared validators, run on `Mod/`: `Check-XmlFields` 18 files, no unknown field; `Check-DefRefs` 116 defs and 3 parents, nothing unresolved; `Check-XmlClasses` 19 types, all resolved; `Check-TypeRefs` clean; `Check-ConfigErrors` 126 of 126 defs, 26 rules, no error; `Check-DefInjected` as above. The functional scenarios (H1, T1, S1, S2) carry preconditions, actions and expected results in `TESTING.md`. The Pickle suite is written: 14 features, 17 local steps, and `Tests/Pickle/Check-Steps.ps1` resolves all 238 step lines to exactly one step. CI (`Mod regression tests`) is green on the audited commit. **Defect found and fixed:** feature 02 asserted values the leaf defs state themselves, which the protocol says to prove offline; it was deleted and its assertions moved into `Test-Mod.ps1`, where two deliberate mutations of a copy were detected. Its justification in the README had been wrong. |
-| 9. -> tested | **Not reached, and nothing in it is verified.** No scenario has run in a game. Outstanding: the three passes (English, French, Chinese; commands in `Tests/Pickle/README.md`) played green; the Empire scenario played and not skipped; no `@wip` at the run (none is written); every `@review` capture opened; the logs read; the ten assumptions of `Tests/Pickle/README.md` confirmed or broken by the first run. |
-| 10, 11 | Not reached. The prepublication of 2026-09-23 is an act, not a state (see below). |
-
-### What this audit does not certify
-
-- Not one Pickle step was executed. The checker proves that a step's text exists, not what the step does.
-- The item's page has not been read by a session: its description, its preview and its file list are unknown.
-
-### Strictly necessary to reach `tested`
-
-Fix what the first run broke, by **small fix tickets, one per red feature** (`Tests/Pickle/README.md`, "Which
-ticket, in which order"), submitted to the TicketDispatcher with `Submit-PickleRun.ps1`, no watcher of our own.
-Only when those are green, queue the complete passes (English, French, Chinese, and the fourth with Animal
-Prosthetics 2), one request each. **They must come back entirely green before the stage moves**: they are also
-the non-regression check of everything that was already green, which no fix ticket covers. Read `exitReason`
-before the counts; open the nine `@review` captures; then record the runs in `docs/runs/`.
-
-### Reserves and recommendations, none of them blocking
-
-- The description says the seraph reaches a colony "only through exotic goods traders". Both creatures carry
-  the `AnimalUncommon` tag and the two exotic traders sell it; whether another trader does too is not
-  checked. Settle it at the description review of transition 10.
-- Transition 10 will also need, and none of it is written: the description in the required order
-  (`IF I GO QUIET`, `AI-GENERATED`, `THANKS`, the attribution line, then `Source code on GitHub`), a
-  `PUBLICATION.md`, the thanks messages, the adult-content answers, a publish workflow with its dry-run, and
-  the release notes. The description sent at creation cannot be changed from `About.xml`.
-- `ModIcon.png` is 46 KB against a guide of 20 to 30. Accepted by the owner; noted only.
-
-## Prepublication 0.1.0 — 2026-09-24
-
-Newest entry; where it disagrees with the sections below, it wins.
-
-- **Workshop item `3806708754`**, created on 2026-09-23 at 14:29 by a prepublication upload from this
-  working tree. Steam creates every item private and RimWorld never changes that: nothing was made
-  public. `Mod/About/PublishedFileId.txt` is committed in `8437ae0` and the remote copy holds the
-  same number. The item's page has not been read by a session.
-- **The stage is `done` again, after a day at `preTest`.** A prepublication is an act, not a stage
-  (`../AUDIT.md`, transition 11), so it moves nothing. But `done` needs the Pickle scenarios to be
-  written (transition 8), and none existed: the audit that recorded `done` on 2026-09-13 predates the
-  present `AUDIT.md`. The stage was corrected to `preTest` on 2026-09-24, then restored the same day
-  once the suite was written. Neither `tested` nor `prepublished` has been reached.
-- **`CHANGELOG.md` is initialised** (`fe82516`): `0.1.0` records the upload, which held `Mod/` as it
-  stood at `3db914f`. `1.0.0` is back to unreleased above it, and absorbed the old `Unreleased`.
-- **141 `.dds` files** sat untracked in `Mod/Textures/`, each beside a tracked PNG twin. The game wrote
-  them on 2026-09-23 at 14:12. None was ever in git; `*.dds` is now ignored (`7a0d6ae`) and the files
-  stay on disk. They were on disk during the upload, hence the last line of `remaining`.
-- **The Pickle suite is written, never run.** `Tests/Pickle/`: 14 features, a step assembly compiled
-  against the 1.6 game assemblies (17 steps, all prefixed `A Certain Series:`), a pass map staging two
-  shared tools, and a README that says what is in Gherkin, what deliberately is not, and why. The
-  checker resolves all 238 step lines to exactly one step; it was tried against a deliberately wrong
-  feature and a deliberately invalid pattern, and failed on both, before being trusted. It proves a
-  step's text exists, not that the step does what its scenario hopes.
-- **Evidence: there is none to sort.** No suite existed before today, so no report sits in
-  `Tests/Pickle/Evidence/`, none in the shared report folders, and nothing under `docs/runs/`. The
-  folders are ignored, `Minify-Evidence.ps1` is copied in, and the proofs worth keeping, nine captures
-  and the text reports, are listed in `TESTING.md` ("Evidence to keep"). `Art/preview-qa.json`,
-  `Art/preview-268.png` and `Art/preview-palette.json` are showcase QA that this file points to
-  below: tracked, small, kept.
-- **The gates, measured** (`TESTING.md`, "What `tested` requires"): no scenario is `@wip`; one is
-  conditional, the Empire trader, and must be seen played; every manual check is covered by a scenario
-  or listed not applicable, in a map. That third check is met once the three passes have run green.
-- **The preview was recomposed** (`a518192`). The text stays top-left; the picture sits 20 pixels lower,
-  so the title no longer covers the beetle's head and horn. Bottom-right was tried and is worse: it
-  hides the propagator and the veil dims the seraph. Going further is blocked by the contrast floor:
-  behind the summary the lit carapace gives 4.06:1 at offset 0 and first clears 4.5:1 at -26, and the
-  offset kept is -30. `Mod/About/Preview.png` is now 579,218
-  bytes, replacing the 569,528 quoted in the audit sections below; minimum contrasts 6.03, 11.01,
-  4.63, 9.04 and 4.63.
-- No watcher is kept: the TicketDispatcher wakes the session. (When this paragraph was written, on 2026-09-24
-  morning, no run had been asked for; three fix tickets were submitted that evening, see the first-run item.)
-
-## Current cumulative workflow audit — 2026-09-13
-
-**Original stage: `done`; audited intermediate stage: `preTest`; current stage: `done`.**
-The user-requested test-plan corrections below resolve the remaining offline gate.
-The first eight gates pass, including the recorded user exceptions and method corrections.
-Game execution remains pending for done -> tested.
-The user-supplied nine transitions take precedence over older protocol stage wording.
-Read protocols: `../PUBLISHING.md`, `../STYLE_RIMWORLD.md`, `../MOD_SETTINGS.md`,
-`../TRANSLATIONS.md`, and inherited `../AGENTS.md`.
-
-Audited revision: `a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56`; working tree clean before
-the audit. The GitHub HEAD returned the same SHA. The initial audit changed only this status document; the subsequent authorized test-plan
-repair also changes TESTING.md. No development, image generation, publication or game/configuration changes
-were performed. Historical results below are preserved and do not override this section.
-
-### Ordered gate findings
-
-| Transition | Finding and evidence |
-| --- | --- |
-| dansMonoRepo -> horsMonoRepo | **User exception:** `git -c safe.directory=C:/Users/nelim/Documents/rimworld -C .. remote -v` contains no remote for this repository; the user explicitly accepts this for an extracted standalone mod. **Validated:** local independent `.git`; parent `ls-files ACertainSeriesCreaturesAndHairRenew` returns no tracked files; own `origin` points to the correct GitHub URL; `git ls-remote origin HEAD` matches the audited SHA; `gh repo view ... --json name,visibility,url` returns PUBLIC. Package ID, About name, folder and repository describe the same extraction; literal spelling identity is unnecessary. English README, attribution, changelog and scoped LICENSE exist. Root/distributed LICENSE hashes match, as do ATTRIBUTION hashes. **Historical evidence retained:** the dated permission audit is corroborated by current local source files and the accessible Steam description; its partial refresh limits are recorded below. |
-| horsMonoRepo -> ModIcon generated | **Not applicable, justified:** compilation and compiled-artifact freshness; the payload has XML and PNG content, no source project or assembly. **Validated:** icon is a readable PNG, 128x128, 46,248 bytes, with its original in Art. **Visual deviation explicitly accepted by the user:** many surrounding illustrated character heads/figures violate the one-or-two-object limit and no-second-character rule; peripheral rendering is much more detailed than the required flat outlined objects. Weight also exceeds the guide's 20-30 KB target, though that is not its hard Preview limit. **Not verified:** readability at 32px; covered by the user icon override, not claimed as a performed visual check. Content runtime correctness belongs to the later functional checks. |
-| ModIcon generated -> Preview generated | **Validated locally:** PNG, 896x504, 569,528 bytes, below both 900 KB and 1 MB; actual visual review of the delivered image and Art/preview-268.png. Source Art/Preview.png and archive Art/Preview-source.png exist. Scene subject and title are identifiable, no clipping or overlap observed. **Validated:** source palette measurement reports one vivid hue family. **Validated by direct inspection:** no concrete camera/style defect or unresolved visual doubt was found. A separate game-screenshot comparison was not performed; it is a review method, not an additional blocking criterion. The Preview gate passes. |
-| Preview generated -> preOptions | **Validated locally:** blue badge/divider clearly separate from warm ochre secondary text at both inspected sizes; English description; Renew and and use direct 65% spans, secondary and primary ink respectively; series name stays full size; unofficial tag and 1.6 badge agree with About.xml. Palette JSON is read by the composition HTML. **Defect found:** About.xml has a bare GitHub URL in the middle of the description, not the final Steam-formatted Source code on GitHub link required by PUBLISHING.md. The source-link defect is publication preparation work, not one of the user-defined criteria for this transition. **Gate validated:** palette separation, English description and naming conventions pass. Existing font/contrast evidence concerns unchanged artifacts; no redundant historical report or new measurement is required without a concrete concern. |
-| preOptions -> options | **Not applicable, justified:** the behavior inventory identifies no relevant settings need; source inspection finds no settings page, settings storage or MainButtonDef. Applicable automated checks passed on the unchanged revision. Under the user clarification, this validates the gate without game execution. |
-| options -> l10n | **Validated offline:** 202 English source fields and 202 French entries; 402 French/Chinese injection paths resolve, zero reported errors. French text reviewed, including body sides, eight wing labels, tools, proper names, recipes and work activity. No owned UI code, Keyed strings, grammar files, patches or LoadFolders found. **Gate finalized:** the settings prerequisite now passes, and localization plus both resource fields are complete. No content changed since the successful checks; FR/EN runtime display remains unverified for done -> tested. |
-| l10n -> preTest | **Validated within static scope:** About declares 1.6, no third-party requirements or load-order entries; no patches, LoadFolders, conditional integration or assembly shipped. Six shared checks below report no unresolved references, unknown fields or unguarded third-party types. The dependency gate passes on the source/reference audit. **Runtime limit:** no Core-only game launch was performed; shared validators index installed DLC as well as Core, so their success alone is not evidence of a DLC-free game run. Interactive confirmation belongs to done -> tested. |
-| preTest -> done | **Validated:** meaningful automated/XML regression suites exist and were executed successfully on the shipped revision. Functional scenarios have many actions and expected outcomes. **Defects found in the scenario document:** tame hatchling expectation contradicts the shipped wild-hatchling descriptions; existing-save coverage is absent without a justification; bootstrap trader access is called a question without an expected result despite being necessary for progression. These initially blocked the gate and are now resolved by TESTING.md scenarios H1, T1, S1 and S2; see the dated repair below. The gate now passes. |
-| done -> tested | **Not verified:** no game run, inspected Player.log, FR/EN UI execution, new-game or existing-save execution, or runtime settings/shortcut evidence in this audit. Existing unchecked scenarios do not demonstrate success. |
-
-### Settings audit
-
-RimWorld target: 1.6. No customization integration was run. Inventory covers the two
-creatures, their combat/temper/taming and trading values, five recipes and production
-costs, research, materials and 41 hair definitions. No existing settings storage, custom
-UI, MainButtonDef, source code, assembly, integration or documented XML-editing workflow
-is shipped. Production quantities and combat values implement the retained content;
-recipe selection and research already use native game UI. No specific requirement for
-global tuning or content toggles was found. This justifies the no-settings
-decision without exposing every balance constant as an option. The planned beetle
-aggression assessment does not establish a missing settings requirement; a concrete
-future requirement would trigger re-audit.
-
-Technical inventory observed no page or shortcut definition. The file inventory and
-search for MainButtonDef, ModSettings, SettingsCategory and DoSettingsWindowContents
-were checked again after the user's clarification: no matches in Mod/ or Tests/, no
-shipped code/assembly, and no relevant content changes since audited revision a066b66.
-The behavior inventory above supplies the rationale beyond mere absence of C#.
-The nine automated regression groups and six shared validators already passed on this
-revision; no redundant run or artificial settings test was added for this status-only edit.
-
-Under the user's explicit rule, source analysis and applicable automated tests validate
-preOptions -> options; interactive verification is not required here. Therefore
-`settings_audit: not_applicable`. Option effects, persistence, reset and shortcut reveal
-checks are not applicable because no settings or shortcut are provided. No game test
-is claimed; any relevant interactive UI/log verification belongs to done -> tested.
-
-### Executed checks and limits
-
-Commands run from this repository, using `powershell -NoProfile -ExecutionPolicy Bypass -File`:
-
-| Script and arguments | Observed result |
-| --- | --- |
-| Tests/Test-Mod.ps1 | 9 groups passed, 0 failed; actual payload has 37 XML files and 123 concrete typed defs. |
-| Tests/Test-Translations.ps1 | 202 English source texts / 202 French entries; no missing, duplicate or unexpected keys. |
-| ../scripts/Check-XmlFields.ps1 -ModPath ./Mod | 18 files checked; no unknown fields. |
-| ../scripts/Check-DefRefs.ps1 -ModPath ./Mod -Brief | No malformed XML, missing refs, wrong reference types or unresolved parents. Script reports 116 distinct def names and 3 parents; this differs from the 123 typed concrete defs because names can recur across types. |
-| ../scripts/Check-XmlClasses.ps1 -ModPath ./Mod -TypeLists ../rw16_types.txt | 19 referenced types resolved; uses the existing type-list snapshot. |
-| ../scripts/Check-TypeRefs.ps1 -ModPath ./Mod | 18 XML files; 77 field names scanned, 9 List-Type fields; 0 third-party type references. Three ambiguous field names excluded by the validator. |
-| ../scripts/Check-ConfigErrors.ps1 -ModPath ./Mod | 126/126 definitions including abstracts checked; 26 rules; no config error. Cross-def and computed-property rules remain outside its coverage. |
-| ../scripts/Check-DefInjected.ps1 -TransMod ./Mod | 11,702 defs indexed; 402 keys checked, 0 errors. This resolves paths, not exhaustive coverage or runtime display. |
-
-The shared scripts read installed RimWorld managed assemblies and Data. Their outputs
-are successful static checks, not execution of Unity, combat, trader stock, hatching or
-the UI. CI configuration invokes the two standalone suites; its remote run result was
-not checked. No existing historical report or QA image was overwritten.
-
-Freshness: the current mod/tests were rerun at the audited SHA. Art, composition and About
-last changed in `47be43952f92231d75fd15c3a92bcc8e571bb388`, which contains the saved QA
-report. Its minimum contrasts and font observations remain historical evidence, not
-measurements repeated today. The source renderer writes over delivered art and QA files,
-so it was not run during this preservation-only audit. Relevant future content changes
-invalidate affected checks; settings/UI changes also invalidate the localization inventory.
-
-Additional image check: source Art/Preview.png measured at native 1339x1174 using
-System.Drawing HSV hue and explicit HSV saturation/value calculations, matching the
-guide thresholds (S >= 0.55, V >= 0.25, 30-degree bins, >= 1% of pixels per family).
-Result: one qualifying family, hue bin 30 degrees, 6.35% of the image; passes the
-maximum-three-family criterion. Unlike Measure-Palette.sh, this check used native
-resolution instead of a 960px resample. No image was modified. No game screenshot
-was found in the standard Steam userdata/760/remote/294100/screenshots locations;
-a direct camera comparison was not performed. This does not invalidate the direct
-visual review, and no camera reservation is retained without a concrete concern.
-
-### Permission and external-access evidence
-
-The existing `silent` classification is retained as a documented absence of permission,
-not as a grant of rights. Public visibility and unofficial notices agree with the local
-publishing convention; LICENSE explicitly excludes original content from its MIT grant.
-The installed original at Steam/steamapps/workshop/content/294100/1667943729 has no
-LICENSE/COPYING/README found by recursive filename inspection; About.xml has no permission
-notice or source URL. Root and distributed notices are byte-identical.
-
-Firecrawl CLI was unavailable; the web reader fallback returned the
-[original Steam page](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729).
-Its description still asks users to remove the old version and mentions a possible remake.
-It provides no explicit redistribution permission. Only ten of fourteen comments were
-returned; the author profile request failed. The historical full-comment/profile/source
-search below is not represented as freshly reproduced. No relevant change to the rights evidence was identified since the dated audit, so this
-incomplete refresh does not itself invalidate that historical classification. The first
-gate accepts the documented decision with these limits; an inaccessible source is not
-proof of prohibition or authorization.
-Initial GitHub access failed in the sandbox; a permitted read-only retry succeeded.
-No remote, visibility, licence or publication setting was changed.
-
-### User exceptions — 2026-09-13
-
-- The user confirms that absence of a parent-monorepo remote is normal after extraction.
-  The standalone repository, actual public visibility and pushed revision remain verified.
-  No parent remote must be added for this audit to advance.
-- The user explicitly validates/overrides the ModIcon. Its observed style deviations and
-  unperformed 32px check are retained as evidence, but do not block advancement and do
-  not require image changes. This is user acceptance, not a technical style-test pass.
-
-### Audit-method correction — 2026-09-13
-
-The user clarified that mandatory passage criteria must be distinguished from suggested
-verification methods. A missing proof blocks only when it concerns a mandatory criterion
-that cannot be verified during the audit. Direct artifact inspection is sufficient when
-it verifies that criterion; a historical report is not required in addition. A suggested
-comparison with a game screenshot does not independently block the Preview gate.
-
-The earlier audit incorrectly retained `ModIcon générée` solely for that missing comparison.
-This was an audit-method error, not a visual defect or a request for another image override.
-That conclusion is superseded: the inspected Preview passes, showcase is complete (with
-the separately recorded ModIcon user acceptance), and the intermediate corrected stage was `preOptions`.
-No new test or image correction is claimed. The final source-link convention remains an
-actual publication-documentation defect, tracked separately from the explicit preOptions
-criteria. The later settings-method clarification below supersedes the initial runtime blocker.
-
-### Settings-method clarification — 2026-09-13
-
-The user explicitly defines preOptions -> options as source/Def analysis and applicable
-automated tests, without mandatory game execution. If no relevant settings exist,
-source verification of the absence of an empty page and shortcut justifies
-`settings_audit: not_applicable`. Interactive checks belong to done -> tested.
-This instruction supersedes the conflicting runtime requirement in the shared protocols
-for this audit. It is a workflow clarification, not a claim that game tests were executed.
-
-The unchanged source inventory and successful offline checks validate options and allow
-the already checked localization gate to be finalized. The dependency audit also passes;
-the resulting cumulative stage is preTest. Game execution is not used as a blocker for
-any earlier transition. The distinct test-plan defects below still block preTest -> done.
-
-### Test-plan repair — 2026-09-13
-
-Authorized by the user's request to fix the tests. Reviewed against revision
-`a066b66400dfc1bdcb41c0f83c1fbcd574c3fb56` plus this local TESTING.md/STATUS.md edit.
-No shipped content or automated test implementation changed.
-
-- H1 now expects a crafted egg to hatch wild after one day, then become a colony animal
-  after taming. Preconditions, faction observations and a clear mismatch outcome are
-  specified. This matches the shipped English/French contract; runtime behavior remains
-  unverified rather than being inferred from the description.
-- T1 tests normal purchase of the first brain fragment and construction/production without
-  a pre-existing propagator. The actual Core trader definitions Caravan_Outlander_Exotic
-  and Orbital_Exotic were inspected for ExoticMisc stock generation. Each route is recorded
-  separately. A bounded random sample without an offer is INCONCLUSIVE, not proof of a
-  defect or a pass. Empire trading is an explicitly conditional Royalty variant.
-- S1 covers adding the mod to a backed-up existing colony and restarting/reloading it.
-  S2 covers persistence of creatures, hairstyles, materials, bills/research and incubation,
-  with a separately identified prior-revision upgrade variant. Both specify preconditions,
-  actions, expected outcomes and evidence to retain in English and French.
-- Removed the claim that one run needs no reloads, separated the subjective aggression
-  review from functional tests, and required preservation of previous logs/save files.
-- Re-executed Tests/Test-Mod.ps1: **9 groups passed, 0 failed**. Re-executed
-  Tests/Test-Translations.ps1: **202 English / 202 French entries**, no missing, duplicate
-  or unexpected keys. `git diff --check` passed. The six previously executed shared XML
-  validators remain valid because no payload or validator input changed.
-
-Every new interactive scenario explicitly remains NOT RUN. No artificial tests were
-added to check documentation wording. With the plan repaired and applicable offline
-checks passing, `stage: done` is justified; `tested_on` stays empty.
-
-### Exact next transition: done -> tested
-
-Execute the TESTING.md scenarios in RimWorld 1.6, including H1, T1, S1 and S2 and the
-existing content checks, with English/French UI and log review. Record actual results,
-revision, game/mod/DLC versions and save/log evidence; resolve failures and rerun affected
-regressions before marking tested. Settings effects/persistence and shortcut integration
-remain not applicable under the recorded source-based settings audit. The source-link
-format defect is still separately tracked for publication preparation.
-
-## Historical status and evidence (superseded where noted above)
-
-A status sheet, read by one sweep over every mod rather than by asking each session in turn. It
-lives at the root, never in `Mod/`, so Steam never receives it.
-
-The fields above are kept by the session that holds this mod. What they say today:
-
-- **`stage: done`** — content complete, with offline validation; this does not mean tested
-  in game. All 28 XML files parsed, covering 123 concrete defs and no C# assembly.
-  Six shared validators passed during the 2026-09-12 audit:
-  `../scripts/Check-XmlFields.ps1`, `Check-DefRefs.ps1`, `Check-XmlClasses.ps1`,
-  `Check-TypeRefs.ps1`, `Check-ConfigErrors.ps1` and `Check-DefInjected.ps1`.
-  Fields, def references, parents and referenced classes resolved; no unguarded third-party
-  type or covered configuration error was reported, and all 200 translation keys passed.
-  The standalone `Tests/Test-Mod.ps1` suite was rerun on 2026-09-12: **9 groups passed,
-  0 failed**. It covers metadata, XML/local references, textures, combat and anatomy
-  regressions, production access, egg hatching and hairstyles. Run instructions and
-  limits are in [`TESTING.md`](TESTING.md).
-  `.github/workflows/tests.yml` runs this suite on pushes, pull requests and manual
-  dispatch. The workflow is committed and pushed; its remote run status has not been
-  checked here. Static checks do not replace the pending in-game scenarios.
-- **`showcase: complete`** — `Preview.png` at 896x504 with the title engraved, `ModIcon.png` at
-  128x128, both full-size renders kept under `Art/`.
-  Preview overlay recomposed on 2026-09-12 against `../STYLE_RIMWORLD.md`:
-  `Art/Preview.png` is the text-free illustration copied from the preserved
-  `Art/Preview-source.png`; no illustration replacement or regeneration was needed.
-  `Art/Preview-text.html` holds the layout and reads its only colour palette from
-  `Art/preview-palette.json`. `Art/render-preview.cjs` renders and measures it with
-  Playwright and sharp (Node.js; set NODE_PATH if packages are not installed locally).
-  The veil follows the broad brown stone floor. The ochre tag follows the dominant
-  warm stone/earth hue family, lightened for contrast, not a pixel average.
-  Under the revised palette rule, the accent now comes from the seraph's blue water
-  wings, with increased saturation and lightness. This cool blue is clearly distinct
-  from the warm ochre tag and dominant earth colours at both reviewed image sizes.
-  Chrome reports actual Segoe UI Semibold for the title, Segoe UI for tag and summary,
-  and SegoeUI-Bold for version digits; capture waits for document.fonts.ready.
-  Strong title words, the connector and summary share the same primary ink.
-  Direct title spans reduce `and` and `Renew` to 0.65em (29.9px), still weight 600;
-  `Renew` uses secondary ink. `A Certain Series` retains full size as the series name.
-  The ochre secondary ink was lightened further to pass contrast behind `Renew`.
-  The separate unofficial
-  tag is 24px/400; the 80px corner badge reads the highest stable supportedVersion, 1.6.
-  `Art/preview-qa.json` records minimum contrasts over every background pixel in each
-  text bounding box with text hidden: primary title 6.09:1, connector 10.87:1,
-  Renew 4.68:1, summary 5.36:1, tag 9.01:1;
-  badge digits against the opaque accent 8.51:1. No shadow credit is used.
-  Visually checked `Mod/About/Preview.png` (896x504, 569528 bytes) and
-  `Art/preview-268.png` (268px wide): no overlap or clipping, title and version
-  identifiable, reduced title words readable and divider visible. Preview and composition
-  sources pushed to GitHub in commit `47be439`; nothing uploaded to the Workshop.
-- **`tested_on`, empty** — no scenario has been played (the game loaded the mod once on
-  2026-09-23, see "Prepublication 0.1.0" above; that is not a test). In-game validation remains pending, and
-  not one a session can clear on its own: see [`TESTING.md`](TESTING.md), which lays out the run
-  in order, the seven strings to search `Player.log` for, and the two questions that have no
-  expected answer.
-- **`workshop`** — superseded on 2026-09-24: item `3806708754` was created on 2026-09-23 and its
-  `PublishedFileId.txt` is committed (see "Prepublication 0.1.0" above). The Steam description is
-  sent only when the item is created and never reprinted, so what the creation upload sent, if it sent
-  a description, is what the page carries until someone edits it by hand.
-- **`licence: silent`** — no explicit modification or redistribution permission found
-  for the original mod in the 2026-09-12 recheck. The installed original contains no
-  licence file or permission notice, and its About.xml URL is empty. The
-  [Steam description and all 14 comments](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729#comments)
-  contain no general permission to continue or redistribute it. The author's
-  [public profile](https://steamcommunity.com/profiles/76561198253882434) has an empty
-  summary; no original source repository was linked or identified by the search.
-  This records what was found, not proof that no repository exists.
-  The Steam description also asks users not to download this version and to remove it
-  if installed; the author explains wanting to remake it. A February 2020 comment
-  repeats that possibility. This warning is recorded separately from the absence of a
-  licence; it is not an authorization to reuse the mod. The February 2019 thanks for
-  help with the English description grants no general permission either.
-  The classification remains `silent`, with the `(unofficial)` suffix. The local MIT
-  licence covers only the extraction's additions, not the original artwork or content;
-  see [`LICENSE`](LICENSE) and [`ATTRIBUTION.md`](ATTRIBUTION.md).
-
-`remaining` vocabulary: `feature` for something missing from the first cut, `defect` for a known
-defect left unfixed, `unverified` for what could not be checked.
-
-## Translation audit
-
-Audited on 2026-09-13 against base revision `63c41c3` plus the local French resources
-and translation-check changes. The existing `stage: done` is historical; the three
-translation fields certify the offline gate in `../TRANSLATIONS.md`, not a game run.
-
-- Scope: all 17 XML files under `Mod/Defs`, 123 concrete defs and local abstract
-  parents. No assembly, source UI, patches, LoadFolders, optional integrations,
-  Keyed strings or custom grammar resources are shipped. All leaf field names were
-  reviewed; owned text uses native translatable Def fields.
-- The inventory contains 202 fields: BodyDef 43, BodyPartDef 25, BodyPartGroupDef 34,
-  HairDef 41, PawnKindDef 6, RecipeDef 15, ResearchProjectDef 2, ThingDef 33 and
-  WorkGiverDef 3. It includes nested body custom labels, all 13 attack tool labels,
-  gendered pawn labels, the inherited recipe job string, and work giver verb/gerund.
-- English is supplied by the Defs. French explicitly covers every inventoried field
-  in `Mod/Languages/French/DefInjected/`; no redundant English folder is needed.
-  Character names and power nicknames used as proper names may intentionally remain
-  identical. Descriptive epithets are translated; all eight wings remain distinct.
-  Chinese resources are preserved. No format parameters, grammar tokens or rich-text
-  tags occur in the owned source strings; the coverage test checks token parity.
-- Vanilla supplies inherited UI, recipe/work templates, hatching/rotting inspect
-  strings and generated corpse/minified-item labels through its language resources
-  and translated Def labels. No third-party keys or dependencies are reused.
-  IDs, class names, texture/sound paths, numeric data, tags and About metadata are
-  excluded from owned text; documentation follows the separate English-only rule.
-- `powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Translations.ps1`:
-  **202 English texts / 202 French entries**, no missing, duplicate or unexpected
-  keys, empty values or mismatched formatting tokens. The inventory is derived from
-  Defs rather than the Chinese folder, which lacks the work giver verb and gerund.
-- `../scripts/Check-DefInjected.ps1 -TransMod ./Mod`: **402 keys checked, 0 errors**,
-  no ambiguous handles or unresolved targets. This checks French and Chinese against
-  installed RimWorld 1.6 types and Defs; it does not establish exhaustive coverage.
-- `powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Mod.ps1`:
-  **9 groups passed, 0 failed**. The hairstyle test now scopes Chinese labels to
-  their language folder. The new translation coverage check is also wired into CI;
-  remote execution has not been checked.
-- Runtime validation is **not performed**. Follow the English/French checklist in
-  `TESTING.md`; generated labels, grammar, raw keys, fallback and clipping remain
-  tracked as `unverified` above. Reset affected translation fields to `unchecked`
-  after changing texts, Defs, patches, interface code or language resources.
-
-`licence` vocabulary: `open` an explicit licence, `silent` no licence and a dead source,
-`alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing
-to anyone — not a name, not an idea traceable to one mod, not a value derived from its assets.
-
-- **`dependencies`** — `declared` when every mod this one needs is named in the About's
-  `modDependencies`, `to check` when a non-vanilla `loadAfter` suggests a dependency that is not
-  declared, `none` when the mod needs nothing. An undeclared dependency is not cosmetic: on
-  2026-09-11 Reequilibrage animaux took 47 vanilla animals down with it, Muffalo included, because
-  the class it injects belongs to a mod that was not declared and not loaded.
+`remaining`: `feature` missing from the first cut, `defect` known and unfixed, `unverified` not checked.
+`licence`: `open` explicit licence, `silent` none and a dead source, `alive` none but a living source, `forbidden` a
+written refusal, `original` owing nothing to anyone. `dependencies`: `declared` every needed mod is in
+`modDependencies`, `to check` a non-vanilla `loadAfter` suggests an undeclared one, `none` the mod needs nothing (an
+undeclared dependency is not cosmetic: it took 47 vanilla animals down with another mod on 2026-09-11).

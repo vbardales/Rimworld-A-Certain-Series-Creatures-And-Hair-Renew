@@ -1,79 +1,37 @@
 # Publication sheet
 
-**Drafted 2026-09-26. The mod is at `done`.** The Workshop item `3806708754` exists, private, created by the `0.1.0`
-prepublication of 2026-09-23; `Mod/About/PublishedFileId.txt` is committed. Ahead: `tested`, the `1.0.0` publication
-through the CI, the switch to public (by the owner), the thanks to post. Nothing below has been posted or pasted anywhere.
-This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the next update
-and for whoever takes the mod over.
+**Version 1.0.0 is published and public (2026-09-28).** Workshop item `3806708754`; `Mod/About/PublishedFileId.txt` is
+committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
+next update and for whoever takes the mod over.
 
-Rules that apply, and where they are written: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read versions in
-`docs/PROTOCOLS-READ.md`), `Rimworld-Release-Admin/docs/OPERATIONS.md` for the CI.
+Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read versions in `docs/PROTOCOLS-READ.md`),
+`Rimworld-Release-Admin/docs/OPERATIONS.md` for the CI.
 
-## Before publishing
+## Publishing a version
 
-- **Stage.** `tested` first: a complete Pickle pass, entirely green, on the final `Mod/` in English, French and Chinese, plus
-  the passes that mount the optional mods (four: Animal Prosthetics 2, five: Nocturnal Animals), every `@review` capture
-  opened by a person, the logs read (`STATUS.md`, `TESTING.md`). Fail-fast policy of the owner (2026-09-25): the publication
-  may go once no red is open and the regression pass runs afterwards, but never skips a red scenario replayed green on a
-  build with its fix, the gallery, the dry-run of the exact commit, the approval of `steam-production` by the owner, and a
-  rollback target chosen beforehand.
-- **Publication goes through the CI, not the in-game button.** The manual publish workflow is generated (2026-09-27:
-  `.github/workflows/publish-tag.yml`, `script-tests.yml`, `.github/publish.config.json`, `.github/scripts/`,
-  `.github/tests/`, from `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`, template stamp `a8ca11cdd9a3`).
-  Never edit `.github/` by hand: regenerate with the script instead. Then a dry-run of the exact commit (run id and SHA to
-  note in `STATUS.md`), then `dispatch-publish.sh <owner/repo> publish-tag.yml <full SHA> 1.0.0`. Only the owner approves
-  `steam-production`. The CI creates the tag and the GitHub release after a successful upload: not by hand.
-- **What is missing for the dry-run, checked 2026-09-27:**
-  1. the publish workflow: **done**, generated in this repository (not only a copy) with
-     `generate-publish-workflow.sh . --workshop-id 3806708754 --package-id nelim.acertainseriescreaturesandhair
-     --release-title "A Certain Series - Creatures and Hair Renew {version}" --require Defs --require Patches
-     --require About/About.xml --require Textures --forbid Assemblies --gallery-dir Art/Workshop
-     --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description`;
-  2. `Mod/About/About.xml` matching the plain text of the description above: **done** (`e3a805e`, confirmed again
-     2026-09-27 against the real, non-scratchpad workflow's own script — "the description is already the plain text of
-     PUBLICATION.md");
-  3. the GitHub environment `steam-production` does not exist and has no secrets (`gh api .../environments` returns none):
-     **not done, Virginie's alone** — `configure-environments.sh` creates it with her as required reviewer (it reads
-     the authenticated `gh` user), and she runs `set-steam-secrets.sh` to copy the two Steam secrets in; a session may
-     create the secret-free `release-dry-run` environment the dry-run itself needs, but not touch `steam-production`;
-  4. `Art/Workshop/` does not exist: **done**, six images built 2026-09-27 (see "Gallery" below);
-  5. `CHANGELOG.md` heads its section `## [1.0.0] — unreleased`: left as is until the actual release (the date the CI
-     stamps on the GitHub release, not a date chosen ahead of it); `changelog-section.sh` reads the body, not the heading,
-     so this does not block a dry-run;
-  6. **rollback target, decided by the owner, 2026-09-27: on the way out of public, back to private.** If a problem is
-     found after this mod goes public, the item is set back to private by hand on its Steam page — Steam's own
-     `SetItemVisibility`, which neither the game nor this CI ever calls (`AUDIT.md`, prepublication note). That is
-     separate from the CI's own rollback: a `publish` that fails after creating the tag and the GitHub release deletes
-     only those two (never the Steam item), so a failed upload never leaves a false release behind. No tag exists yet
-     (the `0.1.0` upload was by hand); the first CI release is `1.0.0`;
-  7. the dry-run must name the exact commit of the passes that were green (the tree of `eb2bbf4`, or later if only
-     Markdown moved since — a `.md` file does not change a test, `STATUS.md` and `PUBLICATION.md` themselves included).
-
-**Dry-run done, 2026-09-27** (third replay, after the gallery was rebuilt with clear backgrounds and full resolution).
-[Run 36350989013](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36350989013),
-commit `7301a2bcd73426ffaf2611d4261ad476c78cf307`, version `1.0.0`, green. Staged 185 files, 1.36 MB (the gallery is not
-part of `Mod/`, so its new file sizes do not change this). **A run in between this one and the previous
-([36350895622](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36350895622),
-commit `89370d0`) failed** — `About.xml`'s description had drifted from `PUBLICATION.md`'s: a nested-bracket markdown
-link (`[[XND] Nocturnal Animals (Continued)](url)`) had been converted with a stray leading `[` by an older copy of
-the conversion script; `sync-about-description.mjs --write` fixed it (`7301a2b`), and this run confirms it. Earlier
-dry-runs, all superseded, kept in the record:
-[36306773478](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36306773478)
-(`d6da6d5`),
-[36311927022](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew/actions/runs/36311927022)
-(`4c20963`). `release-dry-run` (no secret, no reviewer) was created once for the first of them; `steam-production` was
-never touched. Options all `false`: nothing but the payload was checked. **Read before it counts as evidence for a real
-publish: it ran on `7301a2b`, and any commit after it, `.md`-only or not, needs its own green dry-run** (a `.md` change
-is safe for tests, not assumed safe here without checking — the workflow reads `PUBLICATION.md`, `CHANGELOG.md` and
-`About.xml` at the commit it runs, and one of those three drifting from another is exactly what just failed a run).
-- **The page still carries the `0.1.0` description.** `SetItemDescription` ran once, at creation. It is replaced only with
-  `update_description` on for a publish; the item is private, so the dry-run cannot diff against the page and its printed
-  text is read by hand.
-- **Payload.** `Mod/` as committed. It carries no assembly: XML, textures and languages only. `Mod/ATTRIBUTION.md` is
-  the copy of the root `ATTRIBUTION.md` (to update, see "Still to do" below).
-  **Check `git status` for a stray `desktop.ini` or `.ico` before any commit that touches `Mod/`** (found and removed
-  2026-09-27, relayed to TicketDispatcher for the other mods: Steam sends `Mod/` exactly as committed, no filtering,
-  so a Windows Explorer folder-icon file left there by `git add -A` would ship to players).
+- **Through the CI, not the in-game button.** Workflows and scripts live in `.github/` (generated by
+  `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`, never edited by hand; config in
+  `.github/publish.config.json`; regenerate with the script, the arguments are in `git log` of `.github/`).
+  Template stamp is `289c71f74e3b`, the current template is `828f845586bc`: regenerate before the next publish.
+- **Order:** the stage is `tested` (complete Pickle passes green on the final `Mod/`: English, French, Chinese, and the
+  two that mount the optional mods; every `@review` capture opened; logs read). Then a green dry-run of the exact commit
+  (`gh workflow run publish-tag.yml -f mode=dry-run -f ref=<SHA> -f version=<x.y.z>`), then
+  `dispatch-publish.sh <owner/repo> publish-tag.yml <full 40-character SHA> <x.y.z>`. Only the owner approves
+  `steam-production`. The CI creates the tag and the GitHub release: not by hand. The section of `CHANGELOG.md` must be
+  dated and the block under `### <version>` below must exist, or the run stops.
+- **Fail-fast policy of the owner (2026-09-25):** publish once no red is open and run the regression pass afterwards, but
+  never skip a red scenario replayed green on a build with its fix, the gallery, the dry-run of the exact commit, the
+  approval of `steam-production`, and a rollback target chosen beforehand. **Rollback target: back to private**, by hand
+  on the Steam page (the CI's own rollback deletes only its tag and release, never the Steam item).
+- **Options** `update_preview`, `update_description`, `update_title`, `update_tags`: all off for `1.0.0` (description and
+  gallery were set by hand). With `update_tags` the CI sends `Mod` and one tag per `supportedVersions` entry (`1.6`).
+- **Description and `About.xml`:** one source, the block under "Steam description" below. Edit it, then
+  `node .github/scripts/sync-about-description.mjs --write` and commit both files; the dry-run and the publish stop if
+  they differ. A commit after the dry-run needs its own green dry-run.
+- **Payload:** `Mod/` as committed, no filtering, no assembly. Check `git status` for a stray `desktop.ini` or `.ico`
+  before any commit that touches `Mod/` (both are gitignored now). `Mod/ATTRIBUTION.md` is a copy of the root one.
+- **Record of 1.0.0:** run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`, dry-run `36392137035` on the same
+  SHA, green, 185 files staged, 1.36 MB.
 
 ## Steam description
 
@@ -153,35 +111,12 @@ patched), that it has in-game settings for every animal, and comments report tha
 beetle diurnal through that mod's own settings: not a defect of this patch, worth a line in the FAQ if it is asked. The
 original mod carries no licence: `ATTRIBUTION.md` says so, and the description says "unofficial" first.
 
-## Thanks comments (posted by the owner on 2026-09-28, after the item went public)
+## Thanks comments (posted by the owner on 2026-09-28)
 
-State of the recipients of this mod: `WORKSHOP_COMMENTS.md` (added 2026-09-26, `drafted`; the original Nocturnal Animals
-page `2004368312` is now `not_applicable`, credited inside the Mlie message). The registry decides
-whether a send is still needed; method, cadence (three a day at most, not in a row) and the removal rule are in its
-"Writing a comment". Animal Prosthetics 2 (SamBucher) has its row, drafted from `DalmatiansRenew/PUBLICATION.md`: one
-comment per page, so this mod adds nothing there. Pickle and RimLogging are `posted`, and this mod is added to their
-`Covers`. Harmony is not named here (the mod does not use it).
-
-The drafts are mine, in English, redone 2026-09-28 against `WORKSHOP_COMMENTS.md`, "Writing a comment" (the owner asked
-whether the tone had been read: it had, and misapplied). Voice: her public replies on the Adaptive Storage Neolithic
-Renew page, short and dry. Each opens on one true, concrete thing about the recipient's mod (the bootstrap kept as
-designed; the `bodyClock Nocturnal` extension; the idea), then one plain thanks, one link hidden behind BBCode, a
-different ending each (`:)`, `xD`, none), nothing said about compatibility the authors did not declare. Still drafts,
-not text she wrote: read and reword before sending.
-
-**1667943729, 某系列MOD (混沌の味方).** Read the page's last comments first (Chinese; is the author still there?).
-
-```
-Took the beetle, the seraph and the hairstyles out of your mod and moved them to 1.6, as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url]. The propagator's brain-fragment bootstrap is kept exactly as you built it. All credit is yours, and it comes down if you ask :)
-```
-
-**2269731409, Nocturnal Animals (Continued): one single message, crediting Mlie and XeoNovaDan together** (owner,
-2026-09-28: on a "Continued" mod the original author is credited in the same message, not in a second one on the
-original's page; the earlier draft for `2004368312` is dropped).
-
-```
-Thanks Mlie for keeping Nocturnal Animals going, and XeoNovaDan for the idea behind it. One patch on my side gives the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] the Nocturnal bodyClock, and it does nothing at all when the mod isn't loaded xD
-```
+All three posted: 某系列MOD, Nocturnal Animals (Continued) (Mlie and XeoNovaDan in one message: on a "Continued" mod the
+original author is credited in the same message), Animal Prosthetics 2 (one message covering the other mods that name it).
+Pickle and RimLogging were already posted. State and method: `../WORKSHOP_COMMENTS.md`. Harmony is not named (the mod does
+not use it). Texts as posted are not kept here.
 
 ## Change notes (Steam), one block per version
 
@@ -248,16 +183,3 @@ them. Every colonist and creature stands on open ground, no interface, no neighb
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
 hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
 too-distant hairstyle captures (`a90d`) were not used.
-
-## Still to do before `prepublished`
-
-- Update `ATTRIBUTION.md` (done 2026-09-26, root and `Mod/`: a Markdown file, the game and the tests do not read it)
-  and its copy in `Mod/`. Done.
-- The registry of Workshop comments (`WORKSHOP_COMMENTS.md`): three rows added 2026-09-26, `drafted`; the thanks to post
-  once the item is public.
-- The publish workflow: generated 2026-09-27 (`.github/workflows/publish-tag.yml`, `script-tests.yml`,
-  `.github/publish.config.json`, `.github/scripts/`, `.github/tests/`), `About.xml` confirmed in sync. **Not yet done:**
-  a dry-run of the exact commit (needs the `release-dry-run` GitHub environment, created without her approval since it
-  holds no secret); the `steam-production` environment with Virginie as its required reviewer, and her two Steam secrets
-  copied by `set-steam-secrets.sh` — both are hers to run or approve, never a session's.
-- The Steam page description is hand-edited by the owner or replaced by `update_description` on the eventual publish.
