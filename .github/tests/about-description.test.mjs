@@ -80,3 +80,12 @@ test('a source that is not Markdown, or is empty, cannot generate About.xml', as
   await assert.rejects(aboutProblem(await repo({ description: 'x', block: '---' }), config), /the description is empty/);
   await assert.rejects(aboutProblem(await repo({ description: 'x' }), { description: { ...config.description, heading: '^## Nowhere$' } }), /no "\^## Nowhere\$" section found/);
 });
+
+test('a link whose URL holds balanced parentheses is not cut short', () => {
+  assert.equal(
+    markdownToPlainText('[Foo](https://en.wikipedia.org/wiki/Foo_(bar))'),
+    'Foo (https://en.wikipedia.org/wiki/Foo_(bar))',
+  );
+  assert.equal(markdownToPlainText('See [a](https://x.test/a) and [b](https://x.test/b_(c)) now'), 'See a (https://x.test/a) and b (https://x.test/b_(c)) now');
+  assert.equal(markdownToPlainText('![i](https://x.test/i_(2).png)'), 'i (https://x.test/i_(2).png)');
+});
