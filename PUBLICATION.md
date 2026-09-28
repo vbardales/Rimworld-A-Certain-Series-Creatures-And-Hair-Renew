@@ -150,7 +150,7 @@ patched), that it has in-game settings for every animal, and comments report tha
 beetle diurnal through that mod's own settings: not a defect of this patch, worth a line in the FAQ if it is asked. The
 original mod carries no licence: `ATTRIBUTION.md` says so, and the description says "unofficial" first.
 
-## Thanks comments to post, after the item is public
+## Thanks comments (posted by the owner on 2026-09-28, after the item went public)
 
 State of the recipients of this mod: `WORKSHOP_COMMENTS.md` (added 2026-09-26, `drafted`; the original Nocturnal Animals
 page `2004368312` is now `not_applicable`, credited inside the Mlie message). The registry decides
