@@ -114,7 +114,8 @@ The original gated all of it behind a research tab of its own carrying eight pro
 
 - Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/, so nothing collides with another mod.
 - Six defects of the original are corrected (the seraph's ranged attack, the beetle's corpse graphic, swapped claw labels, two left legs, identical wing labels, manhunter packs); ATTRIBUTION.md lists them.
-- The Chinese text of the original is kept, in Languages. English and Simplified Chinese.
+- Languages: English, French and Simplified Chinese. The Chinese text of the original is kept.
+- For RimWorld 1.6. No DLC and no other mod is required.
 
 ## Compatible with
 
@@ -139,6 +140,8 @@ This update was made with Claude Code (Anthropic), under human direction, review
 - [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678) (RimWorks) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), used to test this mod in the game: development tools only, never a dependency of the mod. [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) too, for the same reason.
 
 What was taken, what was left and what was changed is listed in ATTRIBUTION.md, in the repository linked below.
+
+Found a bug? Comment here, or open an issue on GitHub.
 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew)
 ```
