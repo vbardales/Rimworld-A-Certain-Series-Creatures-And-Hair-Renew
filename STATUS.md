@@ -11,6 +11,7 @@ detached:     yes
 stage:        published
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
+upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:    the five complete passes and the gallery on the tree of `eb2bbf4` (2026-09-27); after the packageId change and before/after publication, on `f678f05`: English `a013`, `5558` (Animal Prosthetics 2), `d901` (Nocturnal Animals), French `45e1`, all green (2026-09-28); Chinese `6ad3` pending
