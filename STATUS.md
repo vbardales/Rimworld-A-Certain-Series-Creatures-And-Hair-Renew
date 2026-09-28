@@ -14,10 +14,10 @@ licence_at:   original files and About.xml, Steam description and all 14 comment
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
-tested_on:    the five complete passes and the gallery on the tree of `eb2bbf4` (2026-09-27); after the packageId change and before/after publication, on `f678f05`: English `a013`, `5558` (Animal Prosthetics 2), `d901` (Nocturnal Animals), French `45e1`, all green (2026-09-28); Chinese `6ad3` pending
+tested_on:    the five complete passes and the gallery on the tree of `eb2bbf4` (2026-09-27); after the packageId change and after publication, on `f678f05`: English `a013`, `5558` (Animal Prosthetics 2), `d901` (Nocturnal Animals), French `45e1`, Chinese `6ad3`, all green (2026-09-28). Post-publication regression complete, all passes green.
 workshop:     3806708754
 remaining:
-  - **pending: ticket `6ad3`, Chinese replay of the pass** (evidence `Tests/Pickle/Evidence/2026-09-28-chinese-2`). Green: every red of the day was machine load. Red again: a real non-English defect of the published version, said as such (fail-fast policy, AUDIT.md); rollback target is back to private, by hand on the Steam page. Record it in `docs/runs/history.md` either way
+  - resolved 2026-09-28: ticket `6ad3` (Chinese replay) came back green, 9/11 passed, 0 failed, 2 skipped by requirement. **Post-publication regression is complete, every pass green** (English, French, Chinese, both optional mods); the reds of the day (`20b8`, `3402`) were machine load (TicketDispatcher: orphan `find /` processes exhausting the Windows paged pool), not a defect. Fail-fast policy closed; no rollback needed
   - defect: the change note of `1.0.0` (sent as written) says "English and Simplified Chinese"; French is shipped too. Say all three in the note of the next version
   - unverified: the item's Steam tags (`Mod`, `1.6`) were not sent by the `1.0.0` publish (`update_tags` off); check them on the page
   - decision for the owner: the "violence" content box, left unticked (`PUBLICATION.md`, Content boxes)
