@@ -161,7 +161,7 @@ them. Every colonist and creature stands on open ground, no interface, no neighb
 
 | File | What it shows | Source |
 |---|---|---|
-| `00-preview.jpg` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted +15° bottom-left | `Art/compose-preview.cjs`, no recrop |
+| `00-preview.jpg` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | `Art/compose-preview.cjs`, no recrop |
 | `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
 | `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
 | `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |

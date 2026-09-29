@@ -8,14 +8,14 @@ const root = path.resolve(__dirname, '..');
 const iconSource = path.join(root, 'Art/ModIcon-source.png');
 const previewPath = path.join(root, 'Mod/About/Preview.png');
 
-// This mod's text block sits top-left (Art/Preview-text.html, .text{left:50px;top:54px}), ending at
-// about y=289 (Art/preview-qa.json, the summary paragraph's rect); the version badge sits top-right,
-// (816,0)-(896,80). The bottom-left corner is free: icon there, rotated +15° (STYLE_RIMWORLD.md,
-// "Le ModIcon détouré sur la vitrine" — left corner +15°, right corner -15°).
-const CORNER = 'bottom-left';
-const ROTATION = 15;
+// This mod's illustration fills the right half (fairy figure + version badge top-right); the bottom-right
+// corner is the free one, not bottom-left (the beetle occupies the bottom-left floor). Icon there,
+// rotated -15° (STYLE_RIMWORLD.md, "Le ModIcon détouré sur la vitrine" — left corner +15°, right corner -15°).
+const CORNER = 'bottom-right';
+const ROTATION = -15;
 const SIDE_BEFORE_ROTATION = 150; // px, square, before rotation grows the canvas
-const MARGIN = 24; // px from both edges of the 896x504 frame
+const MARGIN_BOTTOM = 0; // px from the bottom edge — icon bleeds to the frame edge
+const MARGIN_SIDE = 0; // px from the right edge — icon bleeds to the frame edge ("comme si le modIcon sortait du coin")
 
 async function cutOut(buffer) {
   const { data, info } = await sharp(buffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
@@ -34,14 +34,15 @@ async function cutOut(buffer) {
 (async () => {
   const cut = await cutOut(await sharp(iconSource).toBuffer());
   const square = await sharp(cut).resize(SIDE_BEFORE_ROTATION, SIDE_BEFORE_ROTATION, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
-  const rotated = await sharp(square).rotate(ROTATION, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
+  const rotatedRaw = await sharp(square).rotate(ROTATION, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
+  const rotated = await sharp(rotatedRaw).trim().toBuffer(); // rotation adds transparent corners; trim so the visible icon reaches the frame edge, not its alpha padding
   const rotatedMeta = await sharp(rotated).metadata();
 
   const preview = sharp(previewPath);
   const { width: pw, height: ph } = await preview.metadata();
-  const left = MARGIN;
-  const top = ph - MARGIN - rotatedMeta.height;
-  if (CORNER !== 'bottom-left') throw new Error(`compose-preview.cjs is written for this mod's layout (bottom-left); update it before reusing for another corner`);
+  const left = pw - MARGIN_SIDE - rotatedMeta.width;
+  const top = ph - MARGIN_BOTTOM - rotatedMeta.height;
+  if (CORNER !== 'bottom-right') throw new Error(`compose-preview.cjs is written for this mod's layout (bottom-right); update it before reusing for another corner`);
   if (left < 0 || top < 0 || left + rotatedMeta.width > pw || top + rotatedMeta.height > ph) throw new Error('the rotated icon does not fit inside the frame at this margin');
 
   await preview.composite([{ input: rotated, left, top }]).png({ compressionLevel: 9 }).toFile(previewPath + '.tmp');
