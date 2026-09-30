@@ -73,17 +73,21 @@ ACertainSeriesCreaturesAndHairRenew/
     Patches/    the two optional-mod patches above
     Textures/   everything under an ACS/ root
     LICENSE, ATTRIBUTION.md — copies of the two at the root, so they travel with the download
-  Art/          preview sources, never published
+  Art/          preview sources and the Workshop gallery, never published
+    Gallery/    the gallery images, numbered in page order; 0-preview.png is a byte copy of Mod/About/Preview.png
 ```
 
 There is no assembly: the whole mod is XML and PNG.
 
 ### Preview build
 
-The preview uses the shared `../scripts/Render-Preview.cjs` renderer and its local settings in
-`Art/preview-copy.json`. Its title needs a third line for `Renew (unofficial)`, so this mod sets
-`panelHeight` to `70` instead of the renderer's default `65`; this is only a build/layout setting
-and does not belong in `Mod/About/About.xml`.
+`Mod/About/Preview.png` is rendered by the shared `../scripts/Render-Preview.cjs`:
+
+```
+node ../scripts/Render-Preview.cjs --copy=Art/preview-copy.json --palette=Art/preview-palette.json
+```
+
+Inputs, all in `Art/`: `Preview.png` (the text-free background photo), `preview-copy.json` (title, copy and layout; this mod sets `panelHeight` to `70` instead of the default `65` because its title needs a third line for `Renew (unofficial)`), `preview-palette.json`, `echo.png` (the beetle line art behind the title) and `ModIcon-badge.png` (the cut-out icon in the bottom-right corner). `ModIcon-source.png` and `preview-echo-lineart-ink-source.png` are the untouched sources of the last two. The renderer also writes `preview-qa.json` and, git-ignored, `Preview-layout.html` and `Preview-background-qa.png`. After a render, copy `Mod/About/Preview.png` byte for byte to `Art/Gallery/0-preview.png`. These are build settings and do not belong in `Mod/About/About.xml`.
 
 ## Naming
 
