@@ -18,7 +18,7 @@ showcase:     complete
 tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `cdfc`, `a6f3` (2026-09-27). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them
 workshop:     3806708754
 remaining:
-  - unverified: the item's Steam tags (`Mod`, `1.6`): `update_tags` was off for `1.0.0` and `1.0.1`; check them on the page
+  - unverified: the item's Steam tags (`Mod`, `1.6`): `update_tags` was off for `1.0.0`, `1.0.1` and `1.0.2`; check them on the page
   - decision for the owner: the "violence" content box, left unticked (`PUBLICATION.md`, Content boxes)
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
