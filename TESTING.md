@@ -35,13 +35,13 @@ and its README says what is in Gherkin, what deliberately is not, and why. `Test
 resolves every step line of every feature to exactly one step, and it was checked against a deliberately
 wrong feature and a deliberately invalid pattern before being trusted.
 
-**`tested` is now met (2026-09-27).** `../AUDIT.md`, transition 9 (done -> tested), asks three checks; each is
+**`tested` was met on 2026-09-27 and holds on the published tree (re-read 2026-09-30).** `../AUDIT.md`, transition 9 (done -> tested), asks three checks; each is
 measured here against what ran.
 
 | Check | Where this mod stands |
 |---|---|
 | No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. Confirmed at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Five conditional scenarios, all played. The Empire trader (`@requires:Royalty`, feature 09): every pass mounts Royalty, played in all six. Animal Prosthetics 2 (feature 15): played and passed in pass 4 (`5b9d`). Nocturnal Animals' body clock (feature 16): played and passed alone (`51fc`) and in pass 5 (`e028`). The gallery (features 17, 18, `@requires` on ScreenshotStudio): played and passed, gallery tickets `4f72` and `567e`. |
+| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Five conditional scenarios, all played. The Empire trader (`@requires:Royalty`, feature 09): every pass mounts Royalty, played in all six. Animal Prosthetics 2 (feature 15): played and passed in pass 4 (`5558`). Nocturnal Animals' body clock (feature 16): played and passed in pass 5 (`d901`). The gallery (features 17, 18, `@requires` on ScreenshotStudio): played and passed, gallery tickets `cdfc` and `a6f3`. |
 | No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. Every `@review` capture has been opened, across all six passes (`docs/runs/history.md`, 2026-09-27). |
 
 ### Where each manual check went
@@ -76,8 +76,7 @@ measured here against what ran.
 
 ## Passes this mod needed
 
-**All six ran green on the tree of `eb2bbf4`, 2026-09-27** (`STATUS.md`, `docs/runs/history.md`): English `95f8`,
-French `ccbd`, Chinese `af3e`, Animal Prosthetics 2 `5b9d`, Nocturnal Animals `e028`, gallery `4f72`/`567e`.
+**Current state of the six passes** (`STATUS.md`, `docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, the About description and the Preview: no scenario reads them, so no pass was replayed.
 
 A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needed six:
 three languages on the minimal set, one for each of its two optional mods, and the gallery. The mod declares no
@@ -94,13 +93,11 @@ run with no error and no warning is what shows the guard holds.
    optional mod, so feature 15 is played and the other fast features show the mod still loads beside it. The
    item (Workshop 3238353862) is in the Windows Workshop folder and the WSL cache, no download is needed. **The map
    must name this mod ahead of the optional one** (the staging loads the mod under test after every mod of the map):
-   the first run of this pass was red for that reason alone. Feature 15 alone has been played and passed
-   (2026-09-25, `b7f4`); the whole pass has not run.
+   the first run of this pass was red for that reason alone.
 5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): the same, with
-   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played. Feature 16 alone has been played
-   and passed (2026-09-26, `51fc`); the whole pass has not run.
+   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played.
 6. **Gallery** (`wsl-deps.galerie.map`, English, features 17 and 18): feature 18 shows the beetle, the seraph and the propagator close up; feature 17 the three hairstyles at one cell's height in the
-   zen studio, `@review`. Played once at 3 cells (`a90d`, passed, pawn too small), replayed at 1 cell (`e4c3`).
+   zen studio, `@review`.
 
 The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
 scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the
@@ -134,7 +131,7 @@ keep after a test, and what to delete").
 | `Player.log` | Startup, load order, dropped mods, errors outside the scenarios: only the newest one per pass |
 | `evidence-complete.txt` or `no-report.txt` | Says the copy is whole, or that the launcher left no report |
 | The `@review` captures, **minified to JPEG** | Human review outcome. `Tests/Pickle/Minify-Evidence.ps1 -Folder <copy>` re-encodes them (quality 80, at most 1280 px wide) and drops `report.html` and `messages.ndjson`. Keep the original of a capture that has to be measured, not read |
-| One line in `docs/runs/` | The history, one text line per run, never a folder. The folder does not exist yet |
+| One line in `docs/runs/` | The history, one text line per run, never a folder |
 
 Delete a report that a newer one supersedes for the same scenario and the same revision, unless it is the
 only proof of a check the newer run did not repeat (a language, a pass). Delete the report of a failed or
