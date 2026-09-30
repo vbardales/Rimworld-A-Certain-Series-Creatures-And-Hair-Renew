@@ -18,14 +18,13 @@ showcase:     complete
 tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `cdfc`, `a6f3` (2026-09-27). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them
 workshop:     3806708754
 remaining:
-  - decision for the owner: the "violence" content box, left unticked (`PUBLICATION.md`, Content boxes)
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-01, Steam page checked by the owner: up to date
+updated:      2026-10-01, violence box left unticked by the owner
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -42,6 +41,8 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Licence `silent`:** no permission found for the original mod (recheck 2026-09-12: no licence file, empty About URL, no permission in the Steam description or its 14 comments, empty author profile, no source repository). The mod is `(unofficial)`, the MIT notice covers only the additions: see `LICENSE` and `ATTRIBUTION.md`. No git repository exists for the original (searched again 2026-09-30): no pull request possible.
 - **Settings:** none, no page and no shortcut. Inventory: no `Source/`, no assembly, no `Keyed` folder, no `ModSettings` class, no MainButtons def in `Mod/` or `Tests/`.
 - **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`).
+
+- **Content boxes:** adult content and violence both unticked, decided by the owner on 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
 ## Translation audit
 

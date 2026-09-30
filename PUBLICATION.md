@@ -144,7 +144,7 @@ because its patch copies the category lists into its surgeries when it loads. No
 Checked against the mod's own images (`Art/Gallery/`, `Mod/About/Preview.png`) and content: **no adult content box.**
 Nothing nude or sexual anywhere in the mod. **Violence: arguable, not ticked.** The seraph's sweep opens explosions and
 the beetle's horn fires a cannon (feature 08), same register as vanilla RimWorld combat; neither image in the gallery
-shows a wound or a corpse. Left unticked as for vanilla-level combat; revisit if the owner reads it differently.
+shows a wound or a corpse. Left unticked as for vanilla-level combat: decided by the owner on 2026-10-01.
 
 ## Gallery (manual: no tool of the chain can send it)
 
