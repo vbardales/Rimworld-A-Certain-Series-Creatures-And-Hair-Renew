@@ -9,9 +9,10 @@ repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
 stage:        published
+workflow_stage: published
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
-upstream_mod_remotes: N/A
+upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
 dependencies: none
 showcase:     complete
 tested_on:    the five complete passes and the gallery on the tree of `eb2bbf4` (2026-09-27); after the packageId change and after publication, on `f678f05`: English `a013`, `5558` (Animal Prosthetics 2), `d901` (Nocturnal Animals), French `45e1`, Chinese `6ad3`, all green (2026-09-28). Post-publication regression complete, all passes green.
@@ -32,7 +33,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-30, French DefInjected read by hand, no gender switch needed; FRENCH_REVIEW.md generated for Virginie's review, translation_fr set to partial
+updated:      2026-09-30, AUDIT.md reapplied: stage published confirmed, docs read again (docs/PROTOCOLS-READ.md), upstream recheck
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -90,3 +91,20 @@ but only Virginie's own reading counts as the review.
 written refusal, `original` owing nothing to anyone. `dependencies`: `declared` every needed mod is in
 `modDependencies`, `to check` a non-vanilla `loadAfter` suggests an undeclared one, `none` the mod needs nothing (an
 undeclared dependency is not cosmetic: it took 47 vanilla animals down with another mod on 2026-09-11).
+
+## Audit 2026-09-30 (revision `e44aa47`, tree clean)
+
+`AUDIT.md` reapplied to a published mod; retained state **published** (was `published`), no step lost.
+
+- `tested` criteria, read against the files: no `@wip` in `Tests/Pickle/` (grep); every `@requires` played in a pass that
+  mounts it (`TESTING.md`, table under "tested is now met"); no manual check left (`TESTING.md`, "Where each manual check went").
+  The three-item list was already in `TESTING.md` before this audit.
+- `.dds`: 0 tracked (`git ls-files`), `*.dds` ignored (`.gitignore`). Evidence: `Tests/Pickle/Evidence/` is ignored,
+  5.5 MB, one minified report per pass of 2026-09-28 plus the two gallery reports of 2026-09-27, nothing superseded
+  (`Minify-Evidence.ps1`). Keep: `summary.json`, `junit.xml`, `summary.md`, `Player.log`, re-encoded `@review` captures.
+- Settings (`settings_audit: not_applicable`): inventory is empty, no `Source/`, no assembly, no `Keyed` folder, no
+  `ModSettings`/`Mod` class, no MainButtons def anywhere in `Mod/`; so no options page and no shortcut exist.
+- Upstream: the original (某系列MOD, 1667943729) has no git repository found (rechecked 2026-09-30); no PR possible, provenance
+  stays in `ATTRIBUTION.md`. `Mod/ATTRIBUTION.md` and the root copy are byte-identical (same SHA-256).
+- Not verified (needs the game or the owner): French review by Virginie (`remaining`); Steam tags, gallery and Preview upload.
+- Crossbreeding decision: see `BACKLOG.md`, section 2.
