@@ -138,9 +138,14 @@ $out = New-Object System.Text.StringBuilder
 [void]$out.AppendLine("Original: the shipped Chinese DefInjected text (`` Languages/ChineseSimplified (简体中文) ``,")
 [void]$out.AppendLine("ATTRIBUTION.md, Translation). Two groups have no Chinese entry and fall back to English:")
 [void]$out.AppendLine("the beetle's eyes and antennae (labelled in English in the original) and the hairstyle")
-[void]$out.AppendLine("character names (the original never localized names). Those rows say *(same as English)*.")
+[void]$out.AppendLine("character names (the original never localized them: its text is the English label). Those rows say *(same as English)*.")
+[void]$out.AppendLine("The French folder does localize some of those names and keeps others in English: every HairDef row marked ``?`` is a franchise")
+[void]$out.AppendLine("name or epithet for Virginie to decide (one canonical French source per name, or the original name everywhere).")
 [void]$out.AppendLine()
-[void]$out.AppendLine("Generated $(Get-Date -Format 'yyyy-MM-dd'), revision: working tree, no gender-agreement rewrites")
+$rev = (git -C $PSScriptRoot rev-parse HEAD).Trim()
+$dirty = @(git -C $PSScriptRoot status --porcelain).Count
+$rev = if ($dirty -eq 0) { "$rev, tree clean" } else { "$rev, plus $dirty uncommitted path(s) at generation" }
+[void]$out.AppendLine("Generated $(Get-Date -Format 'yyyy-MM-dd'), revision: $rev, no gender-agreement rewrites")
 [void]$out.AppendLine("needed (no player-facing text in this mod agrees with a pawn's gender: every label,")
 [void]$out.AppendLine("description and tool name refers to a creature, an object or a hairstyle's namesake, never")
 [void]$out.AppendLine("to the colonist wearing or receiving it).")
@@ -150,6 +155,8 @@ $out = New-Object System.Text.StringBuilder
 [void]$out.AppendLine("`` RecipeDef ``'s `` .jobString `` (also generated, never a literal field).")
 [void]$out.AppendLine()
 
+# HairDef epithets the French keeps in English: a franchise name or epithet, not a person's name.
+$keepEnglishEpithets = @('ACS_misaka', 'ACS_LO', 'ACS_4', 'ACS_5', 'ACS_7', 'ACS_Doctor', 'ACS_Accelerator', 'ACS_index')
 Get-ChildItem $frenchRoot -Directory | Sort-Object Name | ForEach-Object {
     $type = $_.Name
     Get-ChildItem $_.FullName -Filter *.xml | Sort-Object Name | ForEach-Object {
@@ -169,7 +176,8 @@ Get-ChildItem $frenchRoot -Directory | Sort-Object Name | ForEach-Object {
             if ($chineseByType.ContainsKey($type) -and $chineseByType[$type].Contains($key)) { $zh = $chineseByType[$type][$key] }
             $orig = if ($null -ne $zh) { $zh } elseif ($null -ne $en) { "$en *(same as English)*" } else { '*(not found — check by hand)*' }
             if ($null -eq $en) { $en = '*(not found — check by hand)*' }
-            $flag = if ($fr -match '\{PAWN_gender') { ' | ?' } else { '' }
+            $hairName = ($type -eq 'HairDef') -and (($fr -ne $en) -or ($keepEnglishEpithets -contains ($key -replace '\.label$', '')))
+            $flag = if (($fr -match '\{PAWN_gender') -or $hairName) { ' | ?' } else { '' }
             $origCell = ($orig -replace '\|', '\|') -replace "`n", ' '
             $enCell = ($en -replace '\|', '\|') -replace "`n", ' '
             $frCell = ($fr -replace '\|', '\|') -replace "`n", ' '
