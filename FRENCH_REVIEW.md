@@ -7,7 +7,7 @@ the beetle's eyes and antennae (labelled in English in the original) and the hai
 character names (the original never localized them: its text is the English label). Those rows say *(same as English)*.
 Decided 2026-09-30 (fr.wikipedia, fandom franchise reference): the hairstyle names and franchise epithets stay in the original form in French, so those rows carry no `?`; `Blue Hair Piercing` is the character `Aogami Pierce`.
 
-Generated 2026-09-30, revision: 107d861b4980fcc43f3318bb7228a8d1f1f499ac, plus 1 uncommitted path(s) at generation, no gender-agreement rewrites
+Generated 2026-09-30, revision: d3983505273d88b9c3b0484beeba0b2844e30f49, tree clean, no gender-agreement rewrites
 needed (no player-facing text in this mod agrees with a pawn's gender: every label,
 description and tool name refers to a creature, an object or a hairstyle's namesake, never
 to the colonist wearing or receiving it).
