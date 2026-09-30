@@ -78,6 +78,13 @@ ACertainSeriesCreaturesAndHairRenew/
 
 There is no assembly: the whole mod is XML and PNG.
 
+### Preview build
+
+The preview uses the shared `../scripts/Render-Preview.cjs` renderer and its local settings in
+`Art/preview-copy.json`. Its title needs a third line for `Renew (unofficial)`, so this mod sets
+`panelHeight` to `70` instead of the renderer's default `65`; this is only a build/layout setting
+and does not belong in `Mod/About/About.xml`.
+
 ## Naming
 
 Every def name begins with `ACS_` and every texture path with `ACS/`. The original used bare

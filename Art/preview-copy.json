@@ -1,0 +1,22 @@
+{
+  "title": "A Certain Series - Creatures and Hair Renew (unofficial)",
+  "titleParts": [
+    { "text": "A Certain Series", "scale": 0.62 },
+    { "break": true },
+    { "text": "Creatures ", "scale": 0.50 },
+    { "text": "and ", "scale": 0.27 },
+    { "text": "Hair ", "scale": 0.45 },
+    { "break": true },
+    { "text": "Renew ", "scale": 0.42, "font": "ui", "color": "secondary" },
+    { "text": "(unofficial)", "scale": 0.28, "font": "ui", "color": "secondary" }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": ["Two creatures and forty-one hairstyles, revived for RimWorld 1.6."],
+  "layout": "panel",
+  "panelHeight": 70,
+  "backgroundPosition": "0 -30px",
+  "backgroundSize": "896px auto",
+  "echo": { "file": "echo.png", "mode": "luminance", "preSized": true, "color": "var(--accent)", "width": 300, "height": 260, "opacity": 1, "veil": false, "fadeLeft": true, "fadeEnd": 65 },
+  "iconBadge": { "file": "ModIcon-badge.png", "corner": "bottom-right", "width": 220, "outline": false, "veil": "radial", "veilSize": 275, "veilRight": -55, "veilBottom": -61 }
+}

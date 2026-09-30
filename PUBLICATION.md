@@ -148,26 +148,26 @@ because its patch copies the category lists into its surgeries when it loads. No
 
 ## Content boxes (adult content, violence)
 
-Checked against the mod's own images (`Art/Workshop/`, `Mod/About/Preview.png`) and content: **no adult content box.**
+Checked against the mod's own images (`Art/Gallery/`, `Mod/About/Preview.png`) and content: **no adult content box.**
 Nothing nude or sexual anywhere in the mod. **Violence: arguable, not ticked.** The seraph's sweep opens explosions and
 the beetle's horn fires a cannon (feature 08), same register as vanilla RimWorld combat; neither image in the gallery
 shows a wound or a corpse. Left unticked as for vanilla-level combat; revisit if the owner reads it differently.
 
 ## Gallery (manual: no tool of the chain can send it)
 
-**Rebuilt 2026-09-27, `Art/Workshop/`** (the workflow's `--gallery-dir`), from the gallery tickets' captures, each opened
+**Rebuilt 2026-09-27, `Art/Gallery/`** (the workflow's `--gallery-dir`), from the gallery tickets' captures, each opened
 and read before being chosen (`docs/runs/history.md`, 2026-09-26/27). No old version, no raw capture path kept alongside
 them. Every colonist and creature stands on open ground, no interface, no neighbour in frame.
 
 | File | What it shows | Source |
 |---|---|---|
-| `00-preview.jpg` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | `Art/compose-preview.cjs`, no recrop |
-| `01-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
-| `02-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
-| `03-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |
-| `04-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `cdfc` |
-| `05-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `cdfc` |
-| `06-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `a6f3` |
+| `0-preview.png` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | `Art/compose-preview.cjs`, no recrop |
+| `1-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
+| `2-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
+| `3-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |
+| `4-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `cdfc` |
+| `5-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `cdfc` |
+| `6-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `a6f3` |
 
 **Two reserves found 2026-09-27, both fixed before this publication, owner's go-ahead:**
 
@@ -178,7 +178,7 @@ them. Every colonist and creature stands on open ground, no interface, no neighb
   causing the vignette on the old `05`) and **1280-pixel resolution** (`Minify-Evidence.ps1`'s test-evidence copies,
   not shot for the page). Fixed together: feature 17 now moves each colonist onto the same clear ground feature 18
   uses (ticket `cdfc`), and both galleries' raw 1920x1080 captures (tickets `cdfc`, `a6f3`) were copied to
-  `Art/Workshop/` before their evidence folders were minified, then re-encoded once more with `ffmpeg -q:v 3` (native
+  `Art/Gallery/` before their evidence folders were minified, then re-encoded once more with `ffmpeg -q:v 3` (native
   resolution kept, file size brought from 18 MB total to 2 MB — reasonable for the repository, still visibly sharp).
 
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
