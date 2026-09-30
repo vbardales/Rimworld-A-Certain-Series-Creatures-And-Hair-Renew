@@ -3,6 +3,12 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+
+- French hairstyle labels `Vento of the Front`, `Acqua of the Back`, `Fiamma of the Right`, `Terra of the Left`, `Dark Matter` and `Aogami Pierce` now follow the source (fr.wikipedia keeps these in English); they were partly translated.
+
 ## [1.0.0] — 2026-09-28
 
 The tag and the GitHub release come with the publication, from the publishing CI, not by hand.
