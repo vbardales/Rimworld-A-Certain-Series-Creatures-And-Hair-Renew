@@ -9,7 +9,7 @@ Preview image only. RimWorld 1.6.
 
 ### Changed
 
-- `Mod/About/Preview.png`: the beetle line-art echo behind the title is redrawn; the header image of the Workshop page is sent with this version (`update_preview`), the `1.0.1` publish did not send it.
+- `Mod/About/Preview.png`: the beetle line-art echo behind the title is no longer faded at its left edge; the header image of the Workshop page is sent with this version (`update_preview`), the `1.0.1` publish did not send it.
 
 ## [1.0.1] — 2026-09-30
 

@@ -122,7 +122,7 @@ The CI reads the block under `### <version>` and sends it as written (BBCode); i
 
 ```
 [b]1.0.2[/b]
-New header image for the page: the beetle line art behind the title is redrawn. No change to the mod itself.
+New header image for the page: the beetle line art behind the title is no longer faded at its left edge. No change to the mod itself.
 ```
 
 ### 1.0.1
