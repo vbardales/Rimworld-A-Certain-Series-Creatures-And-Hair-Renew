@@ -139,7 +139,7 @@ $out = New-Object System.Text.StringBuilder
 [void]$out.AppendLine("ATTRIBUTION.md, Translation). Two groups have no Chinese entry and fall back to English:")
 [void]$out.AppendLine("the beetle's eyes and antennae (labelled in English in the original) and the hairstyle")
 [void]$out.AppendLine("character names (the original never localized them: its text is the English label). Those rows say *(same as English)*.")
-[void]$out.AppendLine("Decided 2026-09-30 (fr.wikipedia, fandom franchise reference): the hairstyle names and franchise epithets stay in the original form in French, so those rows carry no `?`; `Blue Hair Piercing` is the character `Aogami Pierce`.")
+[void]$out.AppendLine("Decided 2026-09-30 (fr.wikipedia, fandom franchise reference): the hairstyle names and franchise epithets stay in the original form in French, so those rows carry no ``?``; ``Blue Hair Piercing`` is the character ``Aogami Pierce``.")
 [void]$out.AppendLine()
 $rev = (git -C $PSScriptRoot rev-parse HEAD).Trim()
 $dirty = @(git -C $PSScriptRoot status --porcelain).Count
