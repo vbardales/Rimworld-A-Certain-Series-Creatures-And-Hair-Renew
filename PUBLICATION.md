@@ -152,7 +152,7 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat; revisit if
 
 | File | What it shows | Source |
 |---|---|---|
-| `0-preview.png` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | `Art/compose-preview.cjs`, no recrop |
+| `0-preview.png` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | the shared renderer (`../scripts/Render-Preview.cjs`, `Art/preview-copy.json`), no recrop |
 | `1-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
 | `2-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
 | `3-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |
