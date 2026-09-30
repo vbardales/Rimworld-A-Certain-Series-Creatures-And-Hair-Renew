@@ -17,6 +17,6 @@
   "panelHeight": 70,
   "backgroundPosition": "0 -30px",
   "backgroundSize": "896px auto",
-  "echo": { "file": "echo.png", "mode": "luminance", "preSized": true, "color": "var(--accent)", "width": 300, "height": 260, "opacity": 1, "veil": false, "fadeLeft": true, "fadeEnd": 65 },
+  "echo": { "file": "echo.png", "mode": "luminance", "preSized": true, "color": "var(--accent)", "width": 300, "height": 260, "opacity": 1, "veil": false },
   "iconBadge": { "file": "ModIcon-badge.png", "corner": "bottom-right", "width": 220, "outline": false, "veil": "radial", "veilSize": 275, "veilRight": -55, "veilBottom": -61 }
 }

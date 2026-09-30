@@ -3,6 +3,14 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.2] — 2026-09-30
+
+Preview image only. RimWorld 1.6.
+
+### Changed
+
+- `Mod/About/Preview.png`: the beetle line-art echo behind the title is redrawn; the header image of the Workshop page is sent with this version (`update_preview`), the `1.0.1` publish did not send it.
+
 ## [1.0.1] — 2026-09-30
 
 Hairstyle names in French, the About description and the Preview image. RimWorld 1.6.
