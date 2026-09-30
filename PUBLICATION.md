@@ -122,6 +122,13 @@ not use it). Texts as posted are not kept here.
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
 
+### 1.0.1
+
+```
+[b]1.0.1[/b]
+French hairstyle names now follow the source: the God's Right Seat titles, Dark Matter, Knight Leader and Aogami Pierce are kept in their original form instead of being half translated. New Preview image. The mod ships English, French and Simplified Chinese (the 1.0.0 note named only two).
+```
+
 ### 1.0.0
 
 ```

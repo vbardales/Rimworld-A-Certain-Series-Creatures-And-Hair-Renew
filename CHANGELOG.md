@@ -3,11 +3,15 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [1.0.1] — 2026-09-30
+
+Hairstyle names in French, the About description and the Preview image. RimWorld 1.6.
 
 ### Changed
 
-- French hairstyle labels `Vento of the Front`, `Acqua of the Back`, `Fiamma of the Right`, `Terra of the Left`, `Dark Matter` and `Aogami Pierce` now follow the source (fr.wikipedia keeps these in English); they were partly translated.
+- French hairstyle labels `Vento of the Front`, `Acqua of the Back`, `Fiamma of the Right`, `Terra of the Left`, `Dark Matter`, `Knight Leader` and `Aogami Pierce` now follow the source (fr.wikipedia keeps these names in English); they were partly translated.
+- `Mod/About/About.xml`: the description lists English, French and Simplified Chinese (the `1.0.0` note named only two), states that no DLC and no other mod is required, links Pickle and RimLogging in the thanks, and points to GitHub for bug reports.
+- `Mod/About/Preview.png`: rebuilt with the cut-out `ModIcon` badge at the bottom-right.
 
 ## [1.0.0] — 2026-09-28
 
