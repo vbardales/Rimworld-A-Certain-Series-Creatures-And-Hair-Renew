@@ -5,10 +5,9 @@ Original: the shipped Chinese DefInjected text (` Languages/ChineseSimplified (�
 ATTRIBUTION.md, Translation). Two groups have no Chinese entry and fall back to English:
 the beetle's eyes and antennae (labelled in English in the original) and the hairstyle
 character names (the original never localized them: its text is the English label). Those rows say *(same as English)*.
-The French folder does localize some of those names and keeps others in English: every HairDef row marked `?` is a franchise
-name or epithet for Virginie to decide (one canonical French source per name, or the original name everywhere).
+Decided 2026-09-30 (fr.wikipedia, fandom franchise reference): the hairstyle names and franchise epithets stay in the original form in French, so those rows carry no `?`; `Blue Hair Piercing` is the character `Aogami Pierce`.
 
-Generated 2026-09-30, revision: a05cd24f0cd7c9388a60489cedb60c31babb8eee, tree clean, no gender-agreement rewrites
+Generated 2026-09-30, revision: 107d861b4980fcc43f3318bb7228a8d1f1f499ac, plus 1 uncommitted path(s) at generation, no gender-agreement rewrites
 needed (no player-facing text in this mod agrees with a pawn's gender: every label,
 description and tool name refers to a creature, an object or a hairstyle's namesake, never
 to the colonist wearing or receiving it).
@@ -139,11 +138,11 @@ English *(not found — check by hand)* is expected, not a gap, on ` .labelMale 
 | Key or path | Original | English | French |
 |---|---|---|---|
 | ACS_yuriko.label | 铃科百合子 | Suzushina Yuriko | Suzushina Yuriko |
-| ACS_index.label | index | Index | Index | ? |
-| ACS_misaka.label | 超电磁炮 | Railgun | Railgun | ? |
-| ACS_LO.label | 最后之作 | Last Order | Last Order | ? |
-| ACS_4.label | 原子崩坏 | Meltdowner | Meltdowner | ? |
-| ACS_5.label | 心理掌控 | Mental Out | Mental Out | ? |
+| ACS_index.label | index | Index | Index |
+| ACS_misaka.label | 超电磁炮 | Railgun | Railgun |
+| ACS_LO.label | 最后之作 | Last Order | Last Order |
+| ACS_4.label | 原子崩坏 | Meltdowner | Meltdowner |
+| ACS_5.label | 心理掌控 | Mental Out | Mental Out |
 | ACS_Salvare000.label | 神裂火织 | Kanzaki Kaori | Kanzaki Kaori |
 | ACS_Kuruko.label | 白井黑子 | Shirai Kuroko | Shirai Kuroko |
 | ACS_Lessar.label | 蕾莎 | Lessar | Lessar |
@@ -162,23 +161,23 @@ English *(not found — check by hand)* is expected, not a gap, on ` .labelMale 
 | ACS_Uiharu.label | 初春饰利 | Uiharu Kazari | Uiharu Kazari |
 | ACS_Ruiko.label | 佐天泪子 | Saten Ruiko | Saten Ruiko |
 | ACS_kamijo.label | 上条当麻 | Kamijou Touma | Kamijou Touma |
-| ACS_Accelerator.label | 一方通行 | Accelerator | Accelerator | ? |
+| ACS_Accelerator.label | 一方通行 | Accelerator | Accelerator |
 | ACS_hamazura.label | 滨面仕上 | Hamazura Shiage | Hamazura Shiage |
 | ACS_2.label | 未元物质 | Dark Matter | Dark Matter |
-| ACS_7.label | 念动炮弹 | Attack Crash | Attack Crash | ? |
+| ACS_7.label | 念动炮弹 | Attack Crash | Attack Crash |
 | ACS_Tsuchimikado.label | 土御门元春 | Tsuchimikado Motoharu | Tsuchimikado Motoharu |
 | ACS_Fortis931.label | 史提尔 | Stiyl Magnus | Stiyl Magnus |
 | ACS_aqua.label | 后方之水 | Acqua of the Back | Acqua of the Back |
-| ACS_blue.label | 蓝发耳环 | Blue Hair Piercing | Aogami Pierce | ? |
+| ACS_blue.label | 蓝发耳环 | Blue Hair Piercing | Aogami Pierce |
 | ACS_Etzali.label | 艾扎力 | Etzali | Etzali |
 | ACS_fiamma.label | 右方之火 | Fiamma of the Right | Fiamma of the Right |
 | ACS_Kakeru.label | 上里翔流 | Kamisato Kakeru | Kamisato Kakeru |
-| ACS_Knight.label | 骑士团长 | Knight Leader | Chef des chevaliers | ? |
+| ACS_Knight.label | 骑士团长 | Knight Leader | Knight Leader |
 | ACS_Ollerus.label | 欧雷尔斯 | Ollerus | Ollerus |
 | ACS_Aleister.label | 亚雷斯塔 | Aleister Crowley | Aleister Crowley |
 | ACS_Thor.label | 索尔 | Thor | Thor |
 | ACS_Terra.label | 左方之地 | Terra of the Left | Terra of the Left |
-| ACS_Doctor.label | 冥土追魂 | Heaven Canceller | Heaven Canceller | ? |
+| ACS_Doctor.label | 冥土追魂 | Heaven Canceller | Heaven Canceller |
 
 ## DefInjected/PawnKindDef/Translations.xml
 
