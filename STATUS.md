@@ -30,7 +30,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_62b40a02-9527-4bdd-a977-f6bbd6de409d
-updated:      2026-09-30, French review validated by Virginie, translation_fr complete; HairDef names settled
+updated:      2026-09-30, 1.0.1 published (run 36777976468), tag v1.0.1
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -40,6 +40,7 @@ Fields above are read by the sweep over every mod; this body is the short record
 
 ## Where it stands
 
+- **Published 1.0.1 on 2026-09-30**, update of the public item. Publish run `36777976468`, SHA `2234e57eabd079127d1e825f90dff5c3f5eb2fca` (dry-run `36777795874` on the same SHA, green, 185 files, 1.37 MB), approved by the owner; the CI created tag `v1.0.1` and the release. Options `update_preview`, `update_description`, `update_title`, `update_tags` all off: the Preview and the gallery (`Art/Gallery/`) were uploaded by hand by the owner beforehand. Carries the French hairstyle names settled on 2026-09-30, the About description (three languages) and the new Preview. Not confirmed from here: the public page (change note, images) and the item's Steam tags.
 - **Published 1.0.0 on 2026-09-28**, public. Publish run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`
   (dry-run evidence `36392137035`), approved by the owner; the CI created tag `v1.0.0` and the release. Only the change
   note was sent: gallery (six images from `Art/Gallery/`) and description (BBCode from `PUBLICATION.md`) were set by
