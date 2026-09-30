@@ -18,16 +18,14 @@ showcase:     complete
 tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `cdfc`, `a6f3` (2026-09-27). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them
 workshop:     3806708754
 remaining:
-  - unverified: the item's Steam tags (`Mod`, `1.6`): `update_tags` was off for `1.0.0`, `1.0.1` and `1.0.2`; check them on the page
   - decision for the owner: the "violence" content box, left unticked (`PUBLICATION.md`, Content boxes)
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
-  - unverified: the header image on the public page after `1.0.2` (sent by the CI, not read back from Steam)
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-01, 1.0.2 published (run 36783796843): header image sent
+updated:      2026-10-01, Steam page checked by the owner: up to date
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -37,7 +35,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 
 ## Where it stands
 
-- **Published versions:** `1.0.2` (2026-09-30, run `36783796843`, SHA `890c8743a46b930632a4da7ebf0bfb21ddeb8067`, dry-run `36782547484`, `update_preview` on: sent the header image, `Mod/About/Preview.png`), `1.0.1` (2026-09-30, run `36777976468`, SHA `2234e57eabd079127d1e825f90dff5c3f5eb2fca`, dry-run `36777795874`) and `1.0.0` (2026-09-28, run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`). Item `3806708754`, public; the CI created tags `v1.0.0`, `v1.0.1`, `v1.0.2` and the releases. `1.0.1` ran with every `update_*` option off (the owner uploaded the gallery by hand); `1.0.2` sent the header image. Tags, description and title were never sent. The description is regenerated from `PUBLICATION.md` (`node .github/scripts/sync-about-description.mjs --write`). Rollback target: `v1.0.0` (the earlier commits carry the old packageId).
+- **Published versions:** `1.0.2` (2026-09-30, run `36783796843`, SHA `890c8743a46b930632a4da7ebf0bfb21ddeb8067`, dry-run `36782547484`, `update_preview` on: sent the header image, `Mod/About/Preview.png`), `1.0.1` (2026-09-30, run `36777976468`, SHA `2234e57eabd079127d1e825f90dff5c3f5eb2fca`, dry-run `36777795874`) and `1.0.0` (2026-09-28, run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`). Item `3806708754`, public; the CI created tags `v1.0.0`, `v1.0.1`, `v1.0.2` and the releases. `1.0.1` ran with every `update_*` option off (the owner uploaded the gallery by hand); `1.0.2` sent the header image. Tags, description and title were never sent by the CI; the owner checked the public page on 2026-10-01 (header image, change note, tags): up to date. The description is regenerated from `PUBLICATION.md` (`node .github/scripts/sync-about-description.mjs --write`). Rollback target: `v1.0.0` (the earlier commits carry the old packageId).
 - **packageId** `nelim.acertainseriescreaturesandhair` (shortened on 2026-09-28, owner: "retire renew"). Folder, repository, assembly and display names keep "Renew".
 - **Tests:** 14 Pickle features (`Tests/Pickle/`), five complete passes plus two gallery features (`tested_on`); `Tests/Test-Mod.ps1` (14 groups) and `Tests/Test-Translations.ps1` (202 English, 202 French) green on `HEAD`. No `@wip`, every `@requires` played, no manual check left (`TESTING.md`). Evidence: `Tests/Pickle/Evidence/`, ignored, one minified report per pass (see `TESTING.md`, "Evidence to keep").
 - **Thanks:** the description's THANKS section is complete and the comments are posted (`../WORKSHOP_COMMENTS.md`).
