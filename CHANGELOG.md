@@ -18,8 +18,11 @@ Hairstyle names in French, the About description and the Preview image. RimWorld
 ### Changed
 
 - French hairstyle labels `Vento of the Front`, `Acqua of the Back`, `Fiamma of the Right`, `Terra of the Left`, `Dark Matter`, `Knight Leader` and `Aogami Pierce` now follow the source (fr.wikipedia keeps these names in English); they were partly translated.
-- `Mod/About/About.xml`: the description lists English, French and Simplified Chinese (the `1.0.0` note named only two), states that no DLC and no other mod is required, links Pickle and RimLogging in the thanks, and points to GitHub for bug reports.
 - `Mod/About/Preview.png`: rebuilt with the cut-out `ModIcon` badge at the bottom-right.
+
+### Fixed
+
+- `Mod/About/About.xml`: the description listed English and Simplified Chinese and left French out although it ships (the `1.0.0` change note said the same). It now lists English, French and Simplified Chinese, states that no DLC and no other mod is required, links Pickle and RimLogging in the thanks, and points to GitHub for bug reports.
 
 ## [1.0.0] — 2026-09-28
 
