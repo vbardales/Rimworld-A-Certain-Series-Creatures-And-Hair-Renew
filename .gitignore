@@ -33,7 +33,6 @@ evidence/
 # Windows Explorer folder customization: a per-folder icon setting some File Explorer action wrote
 # to this checkout, never meant to be tracked or published (Mod/'s copy would ship inside the mod).
 desktop.ini
-*.ico
 
 # Shared renderer outputs (scripts/Render-Preview.cjs), regenerated on every run; the delivered image is Mod/About/Preview.png.
 Art/Preview-layout.html
