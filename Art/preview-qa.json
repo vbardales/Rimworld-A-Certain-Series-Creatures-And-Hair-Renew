@@ -7,9 +7,9 @@
     ".title-main": {
       "bounds": {
         "x": 48,
-        "y": 63,
+        "y": 56,
         "width": 300.390625,
-        "height": 157.1875
+        "height": 124.171875
       },
       "fonts": [
         {
@@ -27,27 +27,17 @@
       ]
     },
     ".suffix": {
-      "bounds": {
-        "x": 48,
-        "y": 56,
-        "width": 0,
-        "height": 0
-      },
+      "bounds": null,
       "fonts": []
     },
     ".tag": {
-      "bounds": {
-        "x": 48,
-        "y": 230.78125,
-        "width": 430,
-        "height": 0
-      },
+      "bounds": null,
       "fonts": []
     },
     "p": {
       "bounds": {
         "x": 48,
-        "y": 273.78125,
+        "y": 216.765625,
         "width": 362.25,
         "height": 60.875
       },
