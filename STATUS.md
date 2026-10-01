@@ -24,7 +24,7 @@ remaining:
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-01, violence box left unticked by the owner
+updated:      2026-10-01, new PUBLISHING rules read (animal integrations: Dogs mate and Better Crossbreeding decided as not applicable), icons rebuilt
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -40,7 +40,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Thanks:** the description's THANKS section is complete and the comments are posted (`../WORKSHOP_COMMENTS.md`).
 - **Licence `silent`:** no permission found for the original mod (recheck 2026-09-12: no licence file, empty About URL, no permission in the Steam description or its 14 comments, empty author profile, no source repository). The mod is `(unofficial)`, the MIT notice covers only the additions: see `LICENSE` and `ATTRIBUTION.md`. No git repository exists for the original (searched again 2026-09-30): no pull request possible.
 - **Settings:** none, no page and no shortcut. Inventory: no `Source/`, no assembly, no `Keyed` folder, no `ModSettings` class, no MainButtons def in `Mod/` or `Tests/`.
-- **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`).
+- **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`). **Dogs mate (Continued) and Better Crossbreeding** (`PUBLISHING.md`, four integrations for animal mods; the owner's rule of 2026-10-01 asks for a recorded decision): neither patch applies, by the owner's decision of 2026-09-25 (no crossbreeding). The beetle has no genders and a gestation of 0 and is made from an egg in the propagator, so it cannot mate; the seraph is unique by design. Nothing to add to `pawnKinds` of a Dogs mate group, no `canCrossBreedWith`, no Better Crossbreeding extension. Reopen only if the owner designs a pair (`BACKLOG.md`, item 1).
 
 - **Content boxes:** adult content and violence both unticked, decided by the owner on 2026-10-01 (`PUBLICATION.md`, Content boxes).
 

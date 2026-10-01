@@ -12,18 +12,18 @@ Not useful for a published, settings-free, code-free mod: `SEARCHING.md`, `steps
 | `AGENTS.md` | 7fd7475 2026-09-29 | `7a236f03ca15` | yes |
 | `AUDIT.md` | protocols repo | `0fb60fdf8c87` | yes, every time |
 | `MOD_SETTINGS.md` | b83933b 2026-09-23 | `404916bc99a7` | yes |
-| `PUBLISHING.md` | e0411cc 2026-09-29 | `12d1667f797c` | yes |
+| `PUBLISHING.md` | e0411cc 2026-09-29 | `ba43a4d26867` | yes |
 | `TRANSLATIONS.md` | ebadb99 2026-09-30 | `e5197820fda1` | yes |
-| `STYLE_RIMWORLD.md` | ef7e7a9 2026-09-29 | `d536a6addedd` | no (Preview done; ModIcon owner-only) |
+| `STYLE_RIMWORLD.md` | ef7e7a9 2026-09-29 | `b1f9b1be8601` | no (Preview done; ModIcon owner-only) |
 | `WORKSHOP_COMMENTS.md` | 7fd7475 2026-09-29 | `3fb37586f04b` | marginal |
 | `scripts/SEARCHING.md` | 50de695 2026-09-28 | `013075b06b89` | no |
-| `PickleTools/README.md` | ff20d89 2026-09-29 | `a18a07fd2365` | marginal |
+| `PickleTools/README.md` | ff20d89 2026-09-29 | `40e44a5d2c12` | marginal |
 | `PickleTools/Headless/README.md` | ed4e73a 2026-09-26 | `2310bb974f68` | yes |
-| `PickleTools/docs/steps.md` | da7c3b0 2026-09-28 | `df2b37a6aff2` | no |
+| `PickleTools/docs/steps.md` | da7c3b0 2026-09-28 | `6cb87154cdb9` | no |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | 3c03f51 2026-09-26 | `23fcf6423000` | yes |
 | `Rimworld-Ticket-Dispatcher/docs/WELCOME.md` | 77ca9d7 2026-09-27 | `08b440a03f74` | yes |
 | `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md` | d07b2b8 2026-09-26 | `eaca3969c7eb` | yes |
-| `ACertainSeriesCreaturesAndHairRenew/README.md` | own, repo HEAD | `d197735ba2fa` | read 2026-09-30 |
+| `ACertainSeriesCreaturesAndHairRenew/README.md` | own, repo HEAD | `edd33bd032c9` | read 2026-09-30 |
 | `ACertainSeriesCreaturesAndHairRenew/ATTRIBUTION.md` | own, repo HEAD | `217b8d80f9a1` | read 2026-09-30 |
 | `ACertainSeriesCreaturesAndHairRenew/Mod/ATTRIBUTION.md` | own, repo HEAD | `217b8d80f9a1` | read 2026-09-30 |
 | `ACertainSeriesCreaturesAndHairRenew/Mod/About/About.xml` | own, repo HEAD | `b8053c534d79` | read 2026-09-30 |
