@@ -519,6 +519,33 @@ namespace ACertainSeries.PickleSteps
             pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
 
+        /// <summary>
+        /// Makes a colonist a man with a given beard (a BeardDef name, for example "Full"), so a hairstyle shows against
+        /// a face and facial hair that do not blend with it. The gender and the body type are changed together: the beard
+        /// is drawn on a male head, and a female body under it would be a picture nobody wants on the page.
+        /// </summary>
+        [When("A Certain Series: I make {string} a bearded man with the beard {string}")]
+        public void MakeBeardedMan(PickleContext ctx, string colonistName, string beardDefName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            var beard = DefDatabase<BeardDef>.GetNamedSilentFail(beardDefName);
+            ctx.Assert(beard != null, $"no BeardDef named {beardDefName}");
+            ctx.Assert(pawn.style != null, $"{colonistName} has no style tracker, so no beard can be set");
+            pawn.gender = Gender.Male;
+            pawn.story.bodyType = BodyTypeDefOf.Male;
+            pawn.style.beardDef = beard;
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
+        [Then("A Certain Series: {string} has the beard {string}")]
+        public void HasBeard(PickleContext ctx, string colonistName, string beardDefName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            ctx.Assert(pawn.gender == Gender.Male, $"{colonistName} is {pawn.gender}, not male");
+            ctx.Assert(pawn.style != null && pawn.style.beardDef != null && pawn.style.beardDef.defName == beardDefName,
+                $"{colonistName} has the beard {pawn.style?.beardDef?.defName}, not {beardDefName}");
+        }
+
         [Then("A Certain Series: {string} wears the hairstyle {string}")]
         public void WearsHairstyle(PickleContext ctx, string colonistName, string hairDefName)
         {
