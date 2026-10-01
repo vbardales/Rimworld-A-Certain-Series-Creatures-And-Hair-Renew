@@ -83,8 +83,10 @@
           "glyphCount": 3
         }
       ]
-    },
-    ".panel": {
+    }
+  },
+  "layout": {
+    "panel": {
       "bounds": {
         "x": 0,
         "y": 0,
@@ -92,7 +94,7 @@
         "height": 280.46875
       }
     },
-    ".copy": {
+    "copy": {
       "bounds": {
         "x": 48,
         "y": 30,
