@@ -18,8 +18,3 @@ beetle with genders still hatches from the egg the same way.
 Only the beetle's vanilla parts (eyes, antennae) can take that mod's surgeries; the legs, claws, horn, elytra and every part
 of the seraph are this mod's own defs. Covering them means patching that mod's recipes one by one (see
 `Mod/Patches/AnimalProsthetics2.xml`). Not attempted.
-
-## 3. English spelling of one hairstyle label
-
-`ACS_Doctor` reads `Heaven Canceller`; fr.wikipedia writes `Heaven Canceler` (one `l`). Left as it is; decide whether the
-English Def label follows.
