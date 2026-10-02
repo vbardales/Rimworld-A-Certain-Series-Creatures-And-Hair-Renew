@@ -18,5 +18,12 @@
   "backgroundPosition": "0 -30px",
   "backgroundSize": "896px auto",
   "echo": { "file": "echo.png", "preSized": true, "color": "var(--accent)", "width": 230, "height": 238, "opacity": 1, "veil": false, "panelTop": 2, "panelRight": -1, "panelWidth": 44, "flipX": true },
-  "iconBadge": { "file": "ModIcon-badge.png", "corner": "bottom-right", "width": 220, "outline": false, "veil": "radial", "veilSize": 275, "veilRight": -55, "veilBottom": -61 }
+  "iconBadge": { "file": "ModIcon-source.png", "corner": "bottom-right", "width": 220, "outline": false, "veil": "radial", "veilSize": 275, "veilRight": -55, "veilBottom": -61 },
+  "palette": {
+    "veil": "#302B25",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#F0CC8D",
+    "accent": "#45BCE8",
+    "badgeInk": "#17120E"
+  }
 }

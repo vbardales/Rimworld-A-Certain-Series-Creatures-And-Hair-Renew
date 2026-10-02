@@ -84,10 +84,10 @@ There is no assembly: the whole mod is XML and PNG.
 `Mod/About/Preview.png` is rendered by the shared `../scripts/Render-Preview.cjs`:
 
 ```
-node ../scripts/Render-Preview.cjs --copy=Art/preview-copy.json --palette=Art/preview-palette.json
+node ../scripts/Render-Preview.cjs
 ```
 
-Inputs, all in `Art/`: `Preview.png` (the text-free background photo), `preview-copy.json` (title, copy and layout; this mod sets `panelHeight` to `70` instead of the default `65` because its title needs a third line for `Renew (unofficial)`), `preview-palette.json`, `echo.png` (the final pre-sized transparent beetle line art behind the title) and `ModIcon-badge.png` (the cut-out icon in the bottom-right corner). The echo is redrawn from the actual beetle visible in `Gallery/2-beetle.jpg`, then used unchanged by the renderer, tinted with the accent colour and flipped horizontally. `ModIcon-source.png` remains the untouched source of the badge; `ModIcon-badge.png` only normalizes its transparent padding. The renderer also writes `preview-qa.json` and, git-ignored, `Preview-layout.html` and `Preview-background-qa.png`. After a render, copy `Mod/About/Preview.png` byte for byte to `Art/Gallery/0-preview.png`. These are build settings and do not belong in `Mod/About/About.xml`.
+Inputs, all in `Art/`: `Preview.png` (the text-free background photo), `Preview.config.json` (title, copy, layout, palette, echo and badge settings), `echo.png` (the beetle line art behind the title, drawn by hand from `echo-original.png`) and `ModIcon-source.png` (the cut-out icon used as the bottom-right badge). After a render, copy `Mod/About/Preview.png` byte for byte to `Art/Gallery/0-preview.png`. These are build settings and do not belong in `Mod/About/About.xml`.
 
 ## Naming
 
