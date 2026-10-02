@@ -22,6 +22,7 @@ remaining:
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
+  - cleanup after the last Pickle ticket (`20261001-214408-884-02b9`): remove from the WSL install the mods this mod's sessions downloaded (Workshop cache of Animal Prosthetics 2 `3238353862`, Nocturnal Animals Continued `2269731409` and Harmony, if this mod's sessions put them there and no other mod's map needs them), under the machine lock, after listing what goes and what stays; then say here what was removed
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
 updated:      2026-10-01, new PUBLISHING rules read (animal integrations: Dogs mate and Better Crossbreeding decided as not applicable), icons rebuilt
