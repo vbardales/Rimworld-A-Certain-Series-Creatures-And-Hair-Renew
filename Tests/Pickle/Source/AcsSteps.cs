@@ -614,6 +614,22 @@ namespace ACertainSeries.PickleSteps
             _staged.Add(thing);
         }
 
+        [When("A Certain Series: I stage a {string} pawn on the noted ground")]
+        public void StagePawnOnNotedGround(PickleContext ctx, string kindDefName)
+        {
+            var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindDefName);
+            ctx.Assert(kind != null, $"no PawnKindDef named {kindDefName}");
+            var pawn = PawnGenerator.GeneratePawn(kind);
+            GenSpawn.Spawn(pawn, _notedGround, Map(ctx), Rot4.South);
+            _staged.Add(pawn);
+        }
+
+        [When("A Certain Series: I bring the camera to {int} cells' height on the noted ground")]
+        public void CameraOnNotedGround(PickleContext ctx, int rootSize)
+        {
+            CloseOn(_notedGround.ToVector3Shifted(), rootSize);
+        }
+
         [When("A Certain Series: I clear the staged set")]
         public void ClearStagedSet(PickleContext ctx)
         {

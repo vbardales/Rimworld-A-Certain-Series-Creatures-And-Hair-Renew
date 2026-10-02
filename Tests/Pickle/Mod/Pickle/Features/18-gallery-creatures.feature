@@ -1,31 +1,39 @@
 # Pictures for the Workshop gallery, not a test: the two creatures and the propagator drawn close, in the zen
 # meadow studio of PickleTools, without the interface. What the scenario asserts is only that they exist; the
-# pictures are the point and are read by eye (@review). Nothing is placed by coordinates, because the studio's
-# free ground is not known here: each one is put some cells east of a colonist, on the nearest standable cell.
-#
-# Spacing fixed 2026-09-27: the first three captures (5/12/19 cells apart) let each neighbour's edge bleed into
-# the next shot (a portrait, a horn, a wingtip, a power icon at a frame's corner) - a camera at N cells' height
-# frames roughly N*16/9 cells either side of its centre, so two things closer than the sum of their half-widths
-# share a frame. 10/25/40 clears the widest pair here (the seraph's 4-cell height, ~7.1 cells either side) with
-# room to spare. Accepted as they were for 1.0.0 (owner, 2026-09-27: "pour une 1.0.0 c'est ok"); this fixes it
-# for whatever version comes after, and the tickets are filed now in case they land before that publication.
-@review @en-only @requires:nelim.pickletools.screenshotstudio
+# pictures are the point and are read by eye (@review @en-only @requires:nelim.pickletools.screenshotstudio
 Feature: Gallery pictures of the creatures and the propagator
 
-  Scenario: the beetle, the seraph and the propagator, each close up in the studio
+  # Staged 2026-10-02 (owner: the gallery is promotional, nothing at generated defaults; PUBLISHING.md). The photographer's
+  # second roll, on the same patch of grass as the portraits: the specimens, one after the other, the set cleared between
+  # them. The beetle by lamplight with a pot of flowers and a stool, as a naturalist would find it; the seraph between two
+  # standing lamps with a small sculpture at its feet; the propagator in a workshop corner with a lamp and a bookcase.
+  Scenario: the beetle, the seraph and the propagator, each staged close up in the studio
     Given the save "nelim-zen-meadow-studio" is loaded
     And game speed is paused
     And a colonist "Rina" exists
-    When A Certain Series: I spawn a "ACS_DarkMatterBeetle" pawn 10 cells east of "Rina"
-    And A Certain Series: I spawn a "ACS_Gabriel" pawn 25 cells east of "Rina"
-    And A Certain Series: I place a "ACS_DarkMatterProduction" 40 cells east of "Rina"
+    When A Certain Series: I move "Rina" to 25 cells east of "Rina"
+    And A Certain Series: I note the ground of "Rina"
+    And A Certain Series: I park "Rina" 40 cells east of the noted ground
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And A Certain Series: I stage a "ACS_DarkMatterBeetle" pawn on the noted ground
+    And A Certain Series: I stage a "TorchLamp" -3 cells east and 0 cells north of the noted ground
+    And A Certain Series: I stage a "PlantPot" 3 cells east and 1 cells north of the noted ground
+    And A Certain Series: I stage a "Stool" 4 cells east and -1 cells north of the noted ground
     Then 1 "ACS_DarkMatterBeetle" exist
-    And 1 "ACS_Gabriel" exist
-    When Nelim's Pickle Tools: studio presentation mode is enabled
-    And A Certain Series: I bring the camera to 3 cells' height 10 cells east of "Rina"
+    When A Certain Series: I bring the camera to 3 cells' height on the noted ground
     And I take a screenshot "gallery white rhinoceros beetle"
-    And A Certain Series: I bring the camera to 4 cells' height 25 cells east of "Rina"
+    And A Certain Series: I clear the staged set
+    And A Certain Series: I stage a "ACS_Gabriel" pawn on the noted ground
+    And A Certain Series: I stage a "StandingLamp" -3 cells east and 0 cells north of the noted ground
+    And A Certain Series: I stage a "StandingLamp" 3 cells east and 0 cells north of the noted ground
+    And A Certain Series: I stage a "SculptureSmall" 0 cells east and -3 cells north of the noted ground
+    Then 1 "ACS_Gabriel" exist
+    When A Certain Series: I bring the camera to 4 cells' height on the noted ground
     And I take a screenshot "gallery seraph"
-    And A Certain Series: I bring the camera to 3 cells' height 40 cells east of "Rina"
+    And A Certain Series: I clear the staged set
+    And A Certain Series: I stage a "ACS_DarkMatterProduction" 0 cells east and 0 cells north of the noted ground
+    And A Certain Series: I stage a "StandingLamp" -4 cells east and 0 cells north of the noted ground
+    And A Certain Series: I stage a "Bookcase" 4 cells east and 2 cells north of the noted ground
+    And A Certain Series: I bring the camera to 3 cells' height on the noted ground
     And I take a screenshot "gallery propagator"
     Then no errors were logged
