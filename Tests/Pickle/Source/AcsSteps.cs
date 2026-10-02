@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using RimWorks.Pickle;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace ACertainSeries.PickleSteps
@@ -528,7 +529,7 @@ namespace ACertainSeries.PickleSteps
         public void ShowOwnColours(PickleContext ctx, string colonistName)
         {
             var pawn = Colonist(ctx, colonistName);
-            pawn.story.HairColor = UnityEngine.Color.white;
+            pawn.story.HairColor = Color.white;
             pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
 
@@ -537,6 +538,112 @@ namespace ACertainSeries.PickleSteps
         {
             var colour = Colonist(ctx, colonistName).story.HairColor;
             ctx.Assert(colour.r > 0.99f && colour.g > 0.99f && colour.b > 0.99f, $"{colonistName}'s hair colour is {colour}, not white");
+        }
+
+        /// <summary>
+        /// Dresses a colonist for a gallery picture: takes off everything they wear, then puts on each named apparel def in
+        /// the matching colour (hex, for example "#202028"), so the clothes can be matched to the hairstyle instead of the
+        /// colonist's random default outfit. Defs and colours come in two lists of the same length, separated by commas.
+        /// </summary>
+        [When("A Certain Series: I dress {string} in {string} coloured {string}")]
+        public void DressInColours(PickleContext ctx, string colonistName, string defNames, string colours)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            var defs = defNames.Split(',').Select(s => s.Trim()).ToList();
+            var hexes = colours.Split(',').Select(s => s.Trim()).ToList();
+            ctx.Assert(defs.Count == hexes.Count, $"{defs.Count} apparel defs but {hexes.Count} colours");
+            pawn.apparel.DestroyAll();
+            for (var i = 0; i < defs.Count; i++)
+            {
+                var def = DefDatabase<ThingDef>.GetNamedSilentFail(defs[i]);
+                ctx.Assert(def != null && def.IsApparel, $"no apparel ThingDef named {defs[i]}");
+                ctx.Assert(ColorUtility.TryParseHtmlString(hexes[i], out var colour), $"{hexes[i]} is not a hex colour");
+                var apparel = (Apparel)ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
+                apparel.SetColor(colour, false);
+                pawn.apparel.Wear(apparel, false);
+            }
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
+        [Then("A Certain Series: {string} wears the apparel {string}")]
+        public void WearsApparel(PickleContext ctx, string colonistName, string defName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            ctx.Assert(pawn.apparel.WornApparel.Any(a => a.def.defName == defName),
+                $"{colonistName} wears {string.Join(", ", pawn.apparel.WornApparel.Select(a => a.def.defName))}, not {defName}");
+        }
+
+        private static IntVec3 _notedGround;
+
+        [When("A Certain Series: I note the ground of {string}")]
+        public void NoteGround(PickleContext ctx, string colonistName)
+        {
+            _notedGround = Colonist(ctx, colonistName).Position;
+        }
+
+        [When("A Certain Series: I put {string} on the noted ground")]
+        public void PutOnNotedGround(PickleContext ctx, string colonistName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            pawn.Position = _notedGround;
+            pawn.Notify_Teleported();
+        }
+
+        [When("A Certain Series: I park {string} {int} cells east of the noted ground")]
+        public void ParkEastOfNotedGround(PickleContext ctx, string colonistName, int cells)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            pawn.Position = CellFinder.StandableCellNear(_notedGround + new IntVec3(cells, 0, 0), Map(ctx), 6f);
+            pawn.Notify_Teleported();
+        }
+
+        private static readonly List<Thing> _staged = new List<Thing>();
+
+        /// <summary>
+        /// Puts a piece of decor next to the noted ground, so a portrait has something around the subject. Offsets are in
+        /// cells from the noted ground, east and north (negative for west and south): a camera at one cell's height frames
+        /// about two cells either side and one above and below, so decor that is meant to show stays within that.
+        /// </summary>
+        [When("A Certain Series: I stage a {string} {int} cells east and {int} cells north of the noted ground")]
+        public void StageDecor(PickleContext ctx, string defName, int east, int north)
+        {
+            var def = Def(ctx, defName);
+            var thing = ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
+            if (def.CanHaveFaction) thing.SetFaction(Faction.OfPlayer);
+            GenSpawn.Spawn(thing, _notedGround + new IntVec3(east, 0, north), Map(ctx), Rot4.South, WipeMode.Vanish);
+            _staged.Add(thing);
+        }
+
+        [When("A Certain Series: I clear the staged set")]
+        public void ClearStagedSet(PickleContext ctx)
+        {
+            foreach (var thing in _staged.Where(t => !t.Destroyed)) thing.Destroy();
+            _staged.Clear();
+        }
+
+        [Then("A Certain Series: {int} staged things stand around the noted ground")]
+        public void StagedCount(PickleContext ctx, int expected)
+        {
+            var standing = _staged.Count(t => t.Spawned);
+            ctx.Assert(standing == expected, $"{standing} staged things stand, expected {expected}");
+        }
+
+        [When("A Certain Series: I tattoo {string} with the face tattoo {string}")]
+        public void TattooFace(PickleContext ctx, string colonistName, string tattooDefName)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            var tattoo = DefDatabase<TattooDef>.GetNamedSilentFail(tattooDefName);
+            ctx.Assert(tattoo != null, $"no TattooDef named {tattooDefName} (Ideology adds them)");
+            ctx.Assert(pawn.style != null, $"{colonistName} has no style tracker");
+            pawn.style.FaceTattoo = tattoo;
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
+        [Then("A Certain Series: {string} has the face tattoo {string}")]
+        public void HasFaceTattoo(PickleContext ctx, string colonistName, string tattooDefName)
+        {
+            var tattoo = Colonist(ctx, colonistName).style?.FaceTattoo;
+            ctx.Assert(tattoo != null && tattoo.defName == tattooDefName, $"{colonistName} has the face tattoo {tattoo?.defName}, not {tattooDefName}");
         }
 
         [Then("A Certain Series: {string} wears the hairstyle {string}")]

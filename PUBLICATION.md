@@ -161,6 +161,8 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat: decided by
 | `6-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `a6f3` |
 
 
+**Staged like a photograph (owner's rule of 2026-10-02, `../PUBLISHING.md`):** every gallery picture except a menu is set up, not left at generated defaults. Story of the series: the three hairstyle portraits are taken one after the other on the same ground in the zen meadow, each subject styled around its hairstyle (hair colour, clothes, body, tattoo and decor where they mean something), the previous set cleared before the next. The creature pictures follow the same rule.
+
 Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
 hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
 too-distant hairstyle captures (`a90d`) were not used.
