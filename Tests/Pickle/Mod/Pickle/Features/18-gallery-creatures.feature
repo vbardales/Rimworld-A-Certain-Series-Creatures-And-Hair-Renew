@@ -23,7 +23,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
     Then 1 "ACS_DarkMatterBeetle" exist
-    When A Certain Series: I bring the camera to 2 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And I take a screenshot "gallery white rhinoceros beetle"
     And A Certain Series: I clear the staged creatures
     And Nelim's Pickle Tools: the decor is removed
@@ -42,7 +42,8 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (197, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (200, 153)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (198, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
-    And A Certain Series: I bring the camera to 2 cells' height on the cell (197, 152)
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And I take a screenshot "gallery propagator"
     Then no errors were logged
