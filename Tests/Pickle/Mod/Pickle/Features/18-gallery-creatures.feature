@@ -32,6 +32,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
+    And I wait 60 ticks
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
     Then 1 "ACS_Gabriel" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
@@ -44,6 +45,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (200, 153)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (198, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
+    And I wait 60 ticks
     And A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And I take a screenshot "gallery propagator"
     Then no errors were logged
