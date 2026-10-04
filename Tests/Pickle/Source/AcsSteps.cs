@@ -619,6 +619,19 @@ namespace ACertainSeries.PickleSteps
             pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
 
+        /// <summary>
+        /// Gives a colonist a chosen skin colour (hex), so a gallery guest is not left with whatever tone the generator drew,
+        /// which can make the face read as something else under a pale hairstyle.
+        /// </summary>
+        [Given("A Certain Series: {string} has the skin colour {string}")]
+        public void SetSkinColour(PickleContext ctx, string colonistName, string hex)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            ctx.Assert(ColorUtility.TryParseHtmlString(hex, out var colour), $"{hex} is not a hex colour");
+            pawn.story.skinColorOverride = colour;
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
         [Then("A Certain Series: {string} wears the hairstyle {string}")]
         public void WearsHairstyle(PickleContext ctx, string colonistName, string hairDefName)
         {
