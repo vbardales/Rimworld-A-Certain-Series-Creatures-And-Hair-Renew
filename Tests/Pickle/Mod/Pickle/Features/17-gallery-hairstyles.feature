@@ -28,6 +28,9 @@ Feature: Gallery pictures of the hairstyles
     And a colonist "Rina" exists
     And a colonist "Toma" exists
     And a colonist "Sena" exists
+    And A Certain Series: "Rina" is a woman
+    And A Certain Series: "Toma" is a man
+    And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Female
     And Nelim's Pickle Tools: "Toma" body type is Male
     And Nelim's Pickle Tools: "Sena" body type is Female

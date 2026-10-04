@@ -662,6 +662,21 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(tattoo != null && tattoo.defName == tattooDefName, $"{colonistName} has the face tattoo {tattoo?.defName}, not {tattooDefName}");
         }
 
+        /// <summary>
+        /// Sets a colonist's gender before a body type is chosen: the generated colonists are male or female at random, and
+        /// the body-type step of PickleTools refuses a female body on a male pawn ("set its gender first").
+        /// </summary>
+        [Given("A Certain Series: {string} is a {word}")]
+        public void SetGender(PickleContext ctx, string colonistName, string gender)
+        {
+            var pawn = Colonist(ctx, colonistName);
+            var wanted = gender.Equals("woman", StringComparison.OrdinalIgnoreCase) || gender.Equals("female", StringComparison.OrdinalIgnoreCase) ? Gender.Female
+                : gender.Equals("man", StringComparison.OrdinalIgnoreCase) || gender.Equals("male", StringComparison.OrdinalIgnoreCase) ? Gender.Male : Gender.None;
+            ctx.Assert(wanted != Gender.None, $"'{gender}' is not man, woman, male or female");
+            pawn.gender = wanted;
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
         [Then("A Certain Series: {string} wears the hairstyle {string}")]
         public void WearsHairstyle(PickleContext ctx, string colonistName, string hairDefName)
         {
