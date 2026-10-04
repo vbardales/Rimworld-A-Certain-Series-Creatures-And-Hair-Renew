@@ -57,6 +57,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" stands at (197, 152) facing South
     And A Certain Series: I bring the camera to 1 cells' height on "Rina"
     And I take a screenshot "gallery hairstyle misaka"
+    And Nelim's Pickle Tools: "Rina" stands at (178, 150)
     And Nelim's Pickle Tools: the decor is removed
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
@@ -66,6 +67,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Toma" stands at (197, 152) facing South
     And A Certain Series: I bring the camera to 1 cells' height on "Toma"
     And I take a screenshot "gallery hairstyle accelerator"
+    And Nelim's Pickle Tools: "Toma" stands at (181, 150)
     And Nelim's Pickle Tools: the decor is removed
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
