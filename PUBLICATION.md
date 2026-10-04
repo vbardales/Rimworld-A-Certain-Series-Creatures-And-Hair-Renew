@@ -118,6 +118,13 @@ All posted (2026-09-28, `docs/runs/history.md`). State and method: `../WORKSHOP_
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
 
+### 1.0.3
+
+```
+[b]1.0.3[/b]
+New icon and new header image for the page. No change to the mod's content.
+```
+
 ### 1.0.2
 
 ```
