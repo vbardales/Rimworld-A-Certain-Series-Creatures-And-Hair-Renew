@@ -37,3 +37,6 @@ desktop.ini
 # Shared renderer outputs (scripts/Render-Preview.cjs), regenerated on every run; the delivered image is Mod/About/Preview.png.
 Art/Preview-layout.html
 Art/Preview-background-qa.png
+
+# Renderer working folder (shared Render-Preview.cjs outputs), regenerated on every run.
+Art/.render/
