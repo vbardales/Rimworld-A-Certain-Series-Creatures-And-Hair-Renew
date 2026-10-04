@@ -573,93 +573,35 @@ namespace ACertainSeries.PickleSteps
                 $"{colonistName} wears {string.Join(", ", pawn.apparel.WornApparel.Select(a => a.def.defName))}, not {defName}");
         }
 
-        private static IntVec3 _notedGround;
-
-        [When("A Certain Series: I note the ground of {string}")]
-        public void NoteGround(PickleContext ctx, string colonistName)
-        {
-            _notedGround = Colonist(ctx, colonistName).Position;
-        }
-
-        [When("A Certain Series: I put {string} on the noted ground")]
-        public void PutOnNotedGround(PickleContext ctx, string colonistName)
-        {
-            var pawn = Colonist(ctx, colonistName);
-            pawn.Position = _notedGround;
-            pawn.Notify_Teleported();
-        }
-
-        [When("A Certain Series: I park {string} {int} cells east of the noted ground")]
-        public void ParkEastOfNotedGround(PickleContext ctx, string colonistName, int cells)
-        {
-            var pawn = Colonist(ctx, colonistName);
-            pawn.Position = CellFinder.StandableCellNear(_notedGround + new IntVec3(cells, 0, 0), Map(ctx), 6f);
-            pawn.Notify_Teleported();
-        }
-
         private static readonly List<Thing> _staged = new List<Thing>();
 
         /// <summary>
-        /// Puts a piece of decor next to the noted ground, so a portrait has something around the subject. Offsets are in
-        /// cells from the noted ground, east and north (negative for west and south): a camera at one cell's height frames
-        /// about two cells either side and one above and below, so decor that is meant to show stays within that.
+        /// Spawns a creature on a cell for a gallery picture and remembers it, so the next picture of the series can clear it.
+        /// Decor, floors and cleared ground are Nelim's Pickle Tools' (StageDecor); only a spawned pawn is this mod's.
         /// </summary>
-        [When("A Certain Series: I stage a {string} {int} cells east and {int} cells north of the noted ground")]
-        public void StageDecor(PickleContext ctx, string defName, int east, int north)
-        {
-            var def = Def(ctx, defName);
-            var thing = ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
-            if (def.CanHaveFaction) thing.SetFaction(Faction.OfPlayer);
-            GenSpawn.Spawn(thing, _notedGround + new IntVec3(east, 0, north), Map(ctx), Rot4.South, WipeMode.Vanish);
-            _staged.Add(thing);
-        }
-
-        [When("A Certain Series: I stage a {string} pawn on the noted ground")]
-        public void StagePawnOnNotedGround(PickleContext ctx, string kindDefName)
+        [Given("A Certain Series: a {string} pawn stands at \\({int}, {int}\\)")]
+        public void SpawnPawnAt(PickleContext ctx, string kindDefName, int x, int z)
         {
             var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindDefName);
             ctx.Assert(kind != null, $"no PawnKindDef named {kindDefName}");
+            var cell = new IntVec3(x, 0, z);
+            ctx.Assert(cell.InBounds(Map(ctx)) && cell.Standable(Map(ctx)), $"cell ({x}, {z}) is not a standable cell of the map");
             var pawn = PawnGenerator.GeneratePawn(kind);
-            GenSpawn.Spawn(pawn, _notedGround, Map(ctx), Rot4.South);
+            GenSpawn.Spawn(pawn, cell, Map(ctx), Rot4.South);
             _staged.Add(pawn);
         }
 
-        [When("A Certain Series: I bring the camera to {int} cells' height on the noted ground")]
-        public void CameraOnNotedGround(PickleContext ctx, int rootSize)
-        {
-            CloseOn(_notedGround.ToVector3Shifted(), rootSize);
-        }
-
-        [When("A Certain Series: I clear the staged set")]
-        public void ClearStagedSet(PickleContext ctx)
+        [When("A Certain Series: I clear the staged creatures")]
+        public void ClearStagedCreatures(PickleContext ctx)
         {
             foreach (var thing in _staged.Where(t => !t.Destroyed)) thing.Destroy();
             _staged.Clear();
         }
 
-        [Then("A Certain Series: {int} staged things stand around the noted ground")]
-        public void StagedCount(PickleContext ctx, int expected)
+        [When("A Certain Series: I bring the camera to {int} cells' height on the cell \\({int}, {int}\\)")]
+        public void CameraOnCell(PickleContext ctx, int rootSize, int x, int z)
         {
-            var standing = _staged.Count(t => t.Spawned);
-            ctx.Assert(standing == expected, $"{standing} staged things stand, expected {expected}");
-        }
-
-        [When("A Certain Series: I tattoo {string} with the face tattoo {string}")]
-        public void TattooFace(PickleContext ctx, string colonistName, string tattooDefName)
-        {
-            var pawn = Colonist(ctx, colonistName);
-            var tattoo = DefDatabase<TattooDef>.GetNamedSilentFail(tattooDefName);
-            ctx.Assert(tattoo != null, $"no TattooDef named {tattooDefName} (Ideology adds them)");
-            ctx.Assert(pawn.style != null, $"{colonistName} has no style tracker");
-            pawn.style.FaceTattoo = tattoo;
-            pawn.Drawer.renderer.SetAllGraphicsDirty();
-        }
-
-        [Then("A Certain Series: {string} has the face tattoo {string}")]
-        public void HasFaceTattoo(PickleContext ctx, string colonistName, string tattooDefName)
-        {
-            var tattoo = Colonist(ctx, colonistName).style?.FaceTattoo;
-            ctx.Assert(tattoo != null && tattoo.defName == tattooDefName, $"{colonistName} has the face tattoo {tattoo?.defName}, not {tattooDefName}");
+            CloseOn(new IntVec3(x, 0, z).ToVector3Shifted(), rootSize);
         }
 
         /// <summary>
