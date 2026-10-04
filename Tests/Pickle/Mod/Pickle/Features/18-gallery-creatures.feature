@@ -15,7 +15,7 @@ Feature: Gallery pictures of the creatures and the propagator
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 15
-    And Nelim's Pickle Tools: the area from (193, 148) to (201, 156) is cleared
+    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
@@ -39,13 +39,12 @@ Feature: Gallery pictures of the creatures and the propagator
     And I take a screenshot "gallery seraph"
     And A Certain Series: I clear the staged creatures
     And Nelim's Pickle Tools: the decor is removed
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
-    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (197, 152)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
-    And Nelim's Pickle Tools: I place the decor "Bookcase" at (200, 153)
-    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (198, 152)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (199, 150) to (204, 154)
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
+    And Nelim's Pickle Tools: I place the decor "Bookcase" at (201, 154)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 151) is lit
     And I wait 60 ticks
-    And A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (203, 152)
     And I take a screenshot "gallery propagator"
     Then no errors were logged
