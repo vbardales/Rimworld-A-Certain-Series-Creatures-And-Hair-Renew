@@ -28,9 +28,9 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" body type is Female
     And Nelim's Pickle Tools: "Toma" body type is Male
     And Nelim's Pickle Tools: "Sena" body type is Female
-    And Nelim's Pickle Tools: "Rina" stands at (178, 150)
-    And Nelim's Pickle Tools: "Toma" stands at (181, 150)
-    And Nelim's Pickle Tools: "Sena" stands at (184, 150)
+    And Nelim's Pickle Tools: "Rina" stands at (108, 160)
+    And Nelim's Pickle Tools: "Toma" stands at (110, 160)
+    And Nelim's Pickle Tools: "Sena" stands at (112, 160)
     And Nelim's Pickle Tools: the area from (193, 148) to (201, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When A Certain Series: I give "Rina" the hairstyle "ACS_misaka"
@@ -57,7 +57,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" stands at (197, 152) facing South
     And A Certain Series: I bring the camera to 1 cells' height on "Rina"
     And I take a screenshot "gallery hairstyle misaka"
-    And Nelim's Pickle Tools: "Rina" stands at (178, 150)
+    And Nelim's Pickle Tools: "Rina" stands at (108, 160)
     And Nelim's Pickle Tools: the decor is removed
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
@@ -67,7 +67,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Toma" stands at (197, 152) facing South
     And A Certain Series: I bring the camera to 1 cells' height on "Toma"
     And I take a screenshot "gallery hairstyle accelerator"
-    And Nelim's Pickle Tools: "Toma" stands at (181, 150)
+    And Nelim's Pickle Tools: "Toma" stands at (110, 160)
     And Nelim's Pickle Tools: the decor is removed
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)

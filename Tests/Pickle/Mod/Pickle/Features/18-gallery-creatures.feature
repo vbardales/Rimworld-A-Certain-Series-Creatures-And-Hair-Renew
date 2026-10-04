@@ -3,8 +3,8 @@
 # the scenario asserts is only that they exist; the pictures are the point and are read by eye (@review).
 #
 # The photographer's second roll, staged like the portraits (owner, 2026-10-02/04: promotional, nothing at generated
-# defaults; PUBLISHING.md): square B of the Sanctuary (176-189, 147-160), bare earth, cleared and floored with a small wooden
-# podium; the specimens one after the other, the set cleared between them. Torch lamps rather than standing lamps (a
+# defaults; PUBLISHING.md): square A of the Sanctuary (191-204, 146-159), the same patch as the portraits (square B became the animal pen of the
+# Sanctuary's final save), bare earth, cleared and floored with a small wooden podium; the specimens one after the other, the set cleared between them. Torch lamps rather than standing lamps (a
 # powered lamp with no power shows the lightning icon on the picture), and no empty plant pot (it reads as a bucket).
 # The beetle by torchlight with a stool; the seraph between two torch lamps; the propagator in a workshop corner with a
 # torch and a bookcase.
@@ -15,34 +15,34 @@ Feature: Gallery pictures of the creatures and the propagator
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 15
-    And Nelim's Pickle Tools: the area from (178, 149) to (186, 157) is cleared
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (180, 151) to (184, 155)
+    And Nelim's Pickle Tools: the area from (193, 148) to (201, 156) is cleared
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (182, 153)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (180, 153)
-    And Nelim's Pickle Tools: I place the decor "Stool" at (184, 153)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (180, 153) is lit
+    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
+    And Nelim's Pickle Tools: I place the decor "Stool" at (199, 152)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
     Then 1 "ACS_DarkMatterBeetle" exist
-    When A Certain Series: I bring the camera to 2 cells' height on the cell (182, 153)
+    When A Certain Series: I bring the camera to 2 cells' height on the cell (197, 152)
     And I take a screenshot "gallery white rhinoceros beetle"
     And A Certain Series: I clear the staged creatures
     And Nelim's Pickle Tools: the decor is removed
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (180, 151) to (184, 155)
-    And A Certain Series: a "ACS_Gabriel" pawn stands at (182, 153)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (178, 153)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (186, 153)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (178, 153) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (186, 153) is lit
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
     Then 1 "ACS_Gabriel" exist
-    When A Certain Series: I bring the camera to 4 cells' height on the cell (182, 153)
+    When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
     And I take a screenshot "gallery seraph"
     And A Certain Series: I clear the staged creatures
     And Nelim's Pickle Tools: the decor is removed
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (180, 151) to (184, 155)
-    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (182, 153)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (178, 153)
-    And Nelim's Pickle Tools: I place the decor "Bookcase" at (186, 154)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (178, 153) is lit
-    And A Certain Series: I bring the camera to 3 cells' height on the cell (182, 153)
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (197, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
+    And Nelim's Pickle Tools: I place the decor "Bookcase" at (200, 153)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
+    And A Certain Series: I bring the camera to 2 cells' height on the cell (197, 152)
     And I take a screenshot "gallery propagator"
     Then no errors were logged
