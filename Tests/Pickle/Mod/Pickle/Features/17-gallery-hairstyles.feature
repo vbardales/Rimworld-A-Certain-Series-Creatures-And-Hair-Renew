@@ -1,7 +1,7 @@
 # Pictures for the Workshop gallery, not a test: the hairstyles of the mod drawn on a colonist who fills most of the screen,
 # in Nelim's Sanctuary (the owner's save "Nelim's tribe", loaded as "Nelims-tribe", PickleTools docs/SANCTUAIRE-LIEUX.md),
 # without the interface. What the scenario asserts is only that the hairstyle is worn; the pictures are the point and are
-# read by eye (@review). The game's camera stops at about fifty pixels for a colonist, so a local step lowers the bound of
+# read by eye (@review). The save was kept at 23h, in the dark: the hour is set to 15, the afternoon of the story. The game's camera stops at about fifty pixels for a colonist, so a local step lowers the bound of
 # the zoom range for the scenario.
 #
 # A photographer's afternoon, staged (owner, 2026-10-02/04: the gallery is promotional, nothing is left at the generated
@@ -18,6 +18,7 @@ Feature: Gallery pictures of the hairstyles
   Scenario: three hairstyles, one styled colonist each, close up in the Sanctuary
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
+    And I set the hour to 15
     And a colonist "Rina" exists
     And a colonist "Toma" exists
     And a colonist "Sena" exists
@@ -27,7 +28,9 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" body type is Female
     And Nelim's Pickle Tools: "Toma" body type is Male
     And Nelim's Pickle Tools: "Sena" body type is Female
-    And Nelim's Pickle Tools: the other colonists are out of frame
+    And Nelim's Pickle Tools: "Rina" stands at (178, 150)
+    And Nelim's Pickle Tools: "Toma" stands at (181, 150)
+    And Nelim's Pickle Tools: "Sena" stands at (184, 150)
     And Nelim's Pickle Tools: the area from (193, 148) to (201, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When A Certain Series: I give "Rina" the hairstyle "ACS_misaka"

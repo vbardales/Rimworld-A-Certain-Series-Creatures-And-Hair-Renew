@@ -14,7 +14,7 @@ Feature: Gallery pictures of the creatures and the propagator
   Scenario: the beetle, the seraph and the propagator, each staged close up in the Sanctuary
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And Nelim's Pickle Tools: the other colonists are out of frame
+    And I set the hour to 15
     And Nelim's Pickle Tools: the area from (178, 149) to (186, 157) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (180, 151) to (184, 155)
     When Nelim's Pickle Tools: studio presentation mode is enabled
