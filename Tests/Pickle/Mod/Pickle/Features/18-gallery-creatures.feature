@@ -44,7 +44,13 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (201, 154)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 151) is lit
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 152)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 154)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 154)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 156)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
+    And Nelim's Pickle Tools: the power network is refreshed
     And I wait 60 ticks
-    And A Certain Series: I bring the camera to 3 cells' height on the cell (203, 152)
+    And A Certain Series: I bring the camera to 4 cells' height on the cell (204, 153)
     And I take a screenshot "gallery propagator"
     Then no errors were logged
