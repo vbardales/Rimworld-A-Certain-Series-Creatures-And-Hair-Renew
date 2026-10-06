@@ -15,6 +15,8 @@ Feature: Gallery pictures of the creatures and the propagator
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 15
+    And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled

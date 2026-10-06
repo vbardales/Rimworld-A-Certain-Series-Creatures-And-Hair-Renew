@@ -11,11 +11,12 @@
 #   Rina, the student (Misaka): cream blouse and deep brown, at the pink rug of the sofa corner, a sofa on three sides.
 #   Toma, the loner (Accelerator): all black under a long coat, on the brick terrace beside the black piano, white spikes
 #     on the dark floor.
-#   Sena, the librarian (Index): a white robe and a gold sash, in the tea room, the little wooden hut by the water.
+#   Sena, the librarian (Index): a white robe and a gold sash, on a small wooden floor of the podium (square A, ringed by
+#     flowers; its painted green zone bared) with a bookcase and a torch; the tea room was tried and dropped: its blue lamps tinted her white cyan.
 #   Skin tones are chosen (a generated tone made one face read as a smiley under pale hair); the camera is two cells high.
 # The game tints a hairstyle by the colonist's hair colour: white lets each hairstyle show the colours its artist drew.
 # A beard on Misaka was tried and dropped (owner: it did not suit her).
-@review @en-only @requires:nelim.pickletools.screenshotstudio
+@review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: Gallery pictures of the hairstyles
 
   Scenario: three hairstyles, one styled colonist each, close up in the Sanctuary
@@ -59,12 +60,17 @@ Feature: Gallery pictures of the hairstyles
     And I take a screenshot "gallery hairstyle misaka"
     And Nelim's Pickle Tools: "Rina" stands at (108, 160)
     And Nelim's Pickle Tools: I am at the sanctuary "terrace"
-    And Nelim's Pickle Tools: "Toma" stands at (196, 121) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (198, 119) facing South
     And A Certain Series: I bring the camera to 2 cells' height on "Toma"
     And I take a screenshot "gallery hairstyle accelerator"
     And Nelim's Pickle Tools: "Toma" stands at (110, 160)
-    And Nelim's Pickle Tools: I am at the sanctuary "tea-room"
-    And Nelim's Pickle Tools: "Sena" stands at (141, 72) facing South
+    And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
+    And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And A Certain Series: I bring the camera to 2 cells' height on "Sena"
     And I take a screenshot "gallery hairstyle index"
     Then no errors were logged
