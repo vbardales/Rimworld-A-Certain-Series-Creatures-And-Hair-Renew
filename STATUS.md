@@ -23,9 +23,10 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
   - cleanup after the last Pickle ticket (`20261001-214408-884-02b9`): remove from the WSL install the mods this mod's sessions downloaded (Workshop cache of Animal Prosthetics 2 `3238353862`, Nocturnal Animals Continued `2269731409` and Harmony, if this mod's sessions put them there and no other mod's map needs them), under the machine lock, after listing what goes and what stays; then say here what was removed
+  - gallery: features 17 and 18 rewritten to the shooting plan of PUBLICATION.md (12:00 start, +5 min per picture, an animal in each, bared podium zone, powered propagator); to play once the owner resumes pawn runs, read every capture against its line of the plan, re-encode to JPEG (under 2 MB each, 8 MB in all), replace `Art/Gallery/1-` to `6-`; `1.0.3` waits for it
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-01, new PUBLISHING rules read (animal integrations: Dogs mate and Better Crossbreeding decided as not applicable), icons rebuilt
+updated:      2026-10-06, gallery rewritten as the series "Noon at the Sanctuary" (features 17 and 18, not yet played: pawn runs paused by the owner); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -47,7 +48,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 
 ## Translation audit
 
-French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine were read by hand (`TRANSLATIONS.md` section 3): none contains a `{PAWN_gender ? ...}` switch and none needs one, every text names a creature, a body part, an object or a hairstyle's namesake, never the colonist. `FRENCH_REVIEW.md` (`_tools/Generate-FrenchReview.ps1`, stamps the revision) was validated by the owner on 2026-09-30; `translation_fr: complete`. HairDef names follow fr.wikipedia: titles and Level 5 names stay in their original form. Any later French edit resets the field to `unchecked`. The French text shipped since `1.0.1` is the validated one.
+French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine were read by hand (`TRANSLATIONS.md` section 3): none contains a `{PAWN_gender ? ...}` switch and none needs one, every text names a creature, a body part, an object or a hairstyle's namesake, never the colonist. `FRENCH_REVIEW.md` (`scripts/Generate-FrenchReview.ps1`, stamps the revision) was validated by the owner on 2026-09-30; `translation_fr: complete`. HairDef names follow fr.wikipedia: titles and Level 5 names stay in their original form. Any later French edit resets the field to `unchecked`. The French text shipped since `1.0.1` is the validated one.
 
 ## Vocabulary
 

@@ -112,7 +112,35 @@ original mod carries no licence: `ATTRIBUTION.md` says so, and the description s
 
 ## Thanks comments
 
-All posted (2026-09-28, `docs/runs/history.md`). State and method: `../WORKSHOP_COMMENTS.md`. Harmony is not named (the mod does not use it).
+The registry that decides whether a send is still needed is `../WORKSHOP_COMMENTS.md` (key: the Workshop id of the
+recipient); this section keeps, for every external person, mod or tool thanked in THANKS that has a public page, its
+local state and the draft. All were posted by the owner on 2026-09-28 (`docs/runs/history.md`) unless stated. Drafts are
+English, with one link to this mod behind BBCode, and say nothing about compatibility the authors did not declare.
+
+| Recipient | Workshop id | State here | Registry row |
+|---|---|---|---|
+| 某系列MOD (混沌の味方), the original | 1667943729 | posted (2026-09-28, from this mod) | own row, `posted` |
+| [XND] Nocturnal Animals (Continued) (Mlie) **and** the original by XeoNovaDan | 2269731409 (2004368312) | posted: one message crediting both on the Continued page; none on the original (owner, 2026-09-28) | 2269731409 `posted`; 2004368312 `not_applicable` |
+| A Dog Said... Animal Prosthetics 2 (SamBucher) | 3238353862 | posted: one short message for every mod that names the page, drafted in `DalmatiansRenew/PUBLICATION.md`; nothing more from this mod | `posted` |
+| Pickle (RimWorks) | 3791648678 | covered: this mod is in the row's `Covers` | `posted` |
+| RimLogging | 3733484696 | covered: this mod is in the row's `Covers` | `posted` |
+| PickleTools | 3806142401 | not applicable: the owner's own private page, no comment to herself | not in the registry |
+| Harmony | 2009463077 | not applicable: this mod does not use it, so it is not named | covered by others |
+
+**1667943729, 某系列MOD (混沌の味方).** Draft (the page is in Chinese; the owner read its last comments first):
+
+```
+Hi! I took the white rhinoceros beetle, the seraph and the 41 hairstyles out of your mod and brought them to 1.6, as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url]. Everything is credited to you, and if you'd rather I take it down, tell me and I will :)
+```
+
+**2269731409, Nocturnal Animals (Continued), Mlie, crediting XeoNovaDan too.** Draft of the first version (the message actually posted names both authors; its text was not kept):
+
+```
+Thanks for keeping Nocturnal Animals going! One thing on my side: the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] now keeps night hours through your extension, and my patch does nothing when your mod isn't there xD
+```
+
+The texts of the Animal Prosthetics 2 message and of the final Nocturnal Animals message are not kept in this repository
+(`../WORKSHOP_COMMENTS.md` records that they were posted); nothing is left to send.
 
 ## Change notes (Steam), one block per version
 
@@ -155,21 +183,20 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat: decided by
 
 ## Gallery (manual: no tool of the chain can send it)
 
-**`Art/Gallery/`** (the workflow's `--gallery-dir`), one digit per image in the order of the page; the history of how it was built is in `docs/runs/history.md`. Every colonist and creature stands on open ground, no interface, no neighbour in frame.
+**`Art/Gallery/`** (the workflow's `--gallery-dir`), one digit per image in the order of the page; the folder holds only what is uploaded, under 8 MB in all and under 2 MB per image (`PUBLISHING.md`). The history of how it was built is in `docs/runs/history.md`.
 
-| File | What it shows | Source |
-|---|---|---|
-| `0-preview.png` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29, `STYLE_RIMWORLD.md`): the vitrine itself, ModIcon cut out and tilted -15° bottom-right, bled flush to the frame edges | the shared renderer (`../scripts/Render-Preview.cjs`, `Art/Preview.config.json`), no recrop |
-| `1-hairstyle-misaka.jpg` | Rina wearing ACS_misaka, facing the camera, filling most of the frame | Feature 17, ticket `cdfc` |
-| `2-beetle.jpg` | The white rhinoceros beetle, all six legs, horn and elytra visible | Feature 18, ticket `a6f3` |
-| `3-seraph.jpg` | God's Power, all eight wings and the sword | Feature 18, ticket `a6f3` |
-| `4-hairstyle-accelerator.jpg` | Toma wearing ACS_Accelerator | Feature 17, ticket `cdfc` |
-| `5-hairstyle-index.jpg` | Sena wearing ACS_index | Feature 17, ticket `cdfc` |
-| `6-propagator.jpg` | The dark matter propagator (shown unpowered, the vanilla no-power icon; owner's call, 2026-09-26: kept, realistic) | Feature 18, ticket `a6f3` |
+**The series: "Noon at the Sanctuary"** (the author of the series is the photographer, `../PUBLISHING.md`, rules of 2026-10-02 and 2026-10-06). One noon in Nelim's Sanctuary, the clock starting at 12:00 in each picture and moving 5 minutes of game time between pictures; something alive in every one. The shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says), is written in the header of each feature file; this table follows it.
 
+| File | Picture | Where and when | Source |
+|---|---|---|---|
+| `0-preview.png` | Copy of the delivered `Preview.png` (owner's rule, 2026-09-29): the vitrine itself, ModIcon cut out and tilted -15° bottom-right | the shared renderer (`../scripts/Render-Preview.cjs`, `Art/Preview.config.json`), no recrop | renderer |
+| `1-` | Rina with ACS_misaka, a house cat at her side | `sofa-corner`, 12:00 | Feature 17, scenario 1 |
+| `2-` | Toma with ACS_Accelerator, a peacock behind him | `terrace`, 12:05 | Feature 17, scenario 2 |
+| `3-` | Sena with ACS_index, bookcase, torch, a squirrel | the podium (`emerald-clearing`), 12:10 | Feature 17, scenario 3 |
+| `4-` | The white rhinoceros beetle, a hen at its feet | the podium, 12:15 | Feature 18, scenario 4 |
+| `5-` | God's Power, all eight wings, a peacock walking in | the podium, 12:20 | Feature 18, scenario 5 |
+| `6-` | The dark matter propagator switched on against its power cells, a cat | the podium, 12:25 | Feature 18, scenario 6 |
 
-**Staged like a photograph (owner's rule of 2026-10-02, `../PUBLISHING.md`):** every gallery picture except a menu is set up, not left at generated defaults. Story of the series: the three hairstyle portraits are taken one after the other on the same ground in the zen meadow, each subject styled around its hairstyle (hair colour, clothes, body, tattoo and decor where they mean something), the previous set cleared before the next. The creature pictures follow the same rule.
+State on 2026-10-06: the features are rewritten for this plan and have not been played (the owner paused every run that generates a pawn); the folder still holds the first series (`1-` to `6-`, zen meadow, 2026-09-27) until the new captures are opened, re-encoded to JPEG (under 2 MB each) and swapped in. Every capture is read against its line of the plan after the run; a green run validates nothing. An anomaly that comes from the scene or from a shared tool (a painted zone, stack counts, pawn names, tinted light, the lightning icon) is reported to PickleTools (via Ticket Manager if it is unreachable), never worked around here.
 
-Rule that guided the choice (owner, 2026-09-26): what is not interface must be zoomed enough to be seen; a pawn (clothes,
-hair) nearly fills the screen — which is why the wide "research dark matter propagation in view" capture and the first,
-too-distant hairstyle captures (`a90d`) were not used.
+**Choices already made** (owner and author): a beard on Misaka was tried and dropped; the tea room of the Sanctuary was tried and dropped (its blue lamps tinted the white robe cyan); the propagator is shown powered (six vanometric cells for its 5 000 W, then the network refresh step of PickleTools); the podium's painted green zone is bared for the run.

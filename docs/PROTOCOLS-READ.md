@@ -12,7 +12,7 @@ Not useful for a published, settings-free, code-free mod: `SEARCHING.md`, `steps
 | `AGENTS.md` | 7fd7475 2026-09-29 | `7a236f03ca15` | yes |
 | `AUDIT.md` | protocols repo | `0fb60fdf8c87` | yes, every time |
 | `MOD_SETTINGS.md` | b83933b 2026-09-23 | `404916bc99a7` | yes |
-| `PUBLISHING.md` | e0411cc 2026-09-29 | `ba43a4d26867` | yes |
+| `PUBLISHING.md` | 2ed02f0f 2026-10-06 | `cffd8d0f5688` | yes, read in full again on 2026-10-07 |
 | `TRANSLATIONS.md` | ebadb99 2026-09-30 | `e5197820fda1` | yes |
 | `STYLE_RIMWORLD.md` | ef7e7a9 2026-09-29 | `b1f9b1be8601` | no (Preview done; ModIcon owner-only) |
 | `WORKSHOP_COMMENTS.md` | 7fd7475 2026-09-29 | `3fb37586f04b` | marginal |

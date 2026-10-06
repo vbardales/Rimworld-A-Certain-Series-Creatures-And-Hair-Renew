@@ -1,20 +1,30 @@
-# Pictures for the Workshop gallery, not a test: the two creatures and the propagator drawn close, in Nelim's Sanctuary (the
-# owner's save "Nelim's tribe", loaded as "Nelims-tribe", PickleTools docs/SANCTUAIRE-LIEUX.md), without the interface. What
-# the scenario asserts is only that they exist; the pictures are the point and are read by eye (@review).
+# Pictures for the Workshop gallery, not a test: the creatures and the propagator, images 4 to 6 of the series "Noon at the
+# Sanctuary" (images 1 to 3 are the hairstyle portraits, feature 17), on the podium of Nelim's Sanctuary (the owner's save
+# "Nelim's tribe", loaded as "Nelims-tribe", PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md),
+# without the interface. What a scenario asserts is only that the thing exists; the pictures are read by eye (@review).
 #
-# The photographer's second roll, staged like the portraits (owner, 2026-10-02/04: promotional, nothing at generated
-# defaults; PUBLISHING.md): square A of the Sanctuary (191-204, 146-159), the same patch as the portraits (square B became the animal pen of the
-# Sanctuary's final save), bare earth, cleared and floored with a small wooden podium; the specimens one after the other, the set cleared between them. Torch lamps rather than standing lamps (a
-# powered lamp with no power shows the lightning icon on the picture), and no empty plant pot (it reads as a bucket).
-# The beetle by torchlight with a stool; the seraph between two torch lamps; the propagator in a workshop corner with a
-# torch and a bookcase.
+# The story continues the portraits (owner's rules of 2026-10-02/06, PUBLISHING.md): the same noon, the clock started at
+# 12:00 in each scenario and the picture taken 5 minutes of game time (about 208 ticks) later than the previous one, after
+# 60 ticks of set-up. The podium is the square A of the Sanctuary (x 191-204, z 146-159), its painted green zone bared, ringed
+# by flowers, with the permanent vanometric power cell of the fixture on its east edge (205, 152-153).
+#
+# Shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says):
+#   4. emerald-clearing, 12:15+, the white rhinoceros beetle, wide enough for its six legs, a torch on its left and a stool
+#      on its right on a small wooden floor, a hen at its feet: the pack animal arrives, calm, in daylight.
+#   5. emerald-clearing, 12:20+, the seraph (God's Power), framed high enough for the eight wings, a torch lamp on each
+#      side, a peacock that walks into the frame: the angel at noon, a bird that does not fear it.
+#   6. emerald-clearing, 12:25+, the dark matter propagator against the power cells, a bookcase behind, a torch, a cat on
+#      the wooden floor: the workshop of the series, switched on (the lightning icon is gone only when the network is
+#      refreshed and the building has its 5 000 W: six cells, 6 000 W).
+# Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
+# empty plant pot (it reads as a bucket). Diurnal animals only, the clock being at noon.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: Gallery pictures of the creatures and the propagator
 
-  Scenario: the beetle, the seraph and the propagator, each staged close up in the Sanctuary
+  Scenario: 4 - the white rhinoceros beetle arrives (the podium, 12:15)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And I set the hour to 15
+    And I set the hour to 12
     And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -24,23 +34,45 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
+    And I wait 60 ticks
+    And I wait 625 ticks
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 154)
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
-    And I take a screenshot "gallery white rhinoceros beetle"
-    And A Certain Series: I clear the staged creatures
-    And Nelim's Pickle Tools: the decor is removed
+    And I take a screenshot "gallery 4 beetle"
+    Then no errors were logged
+
+  Scenario: 5 - the seraph at noon (the podium, 12:20)
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 12
+    And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
+    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    When Nelim's Pickle Tools: studio presentation mode is enabled
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
-    And I wait 60 ticks
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
+    And I wait 60 ticks
+    And I wait 833 ticks
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (199, 155)
     Then 1 "ACS_Gabriel" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
-    And I take a screenshot "gallery seraph"
-    And A Certain Series: I clear the staged creatures
-    And Nelim's Pickle Tools: the decor is removed
+    And I take a screenshot "gallery 5 seraph"
+    Then no errors were logged
+
+  Scenario: 6 - the dark matter propagator, switched on (the podium, 12:25)
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 12
+    And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
+    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (199, 150) to (204, 154)
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
@@ -53,6 +85,8 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
     And Nelim's Pickle Tools: the power network is refreshed
     And I wait 60 ticks
-    And A Certain Series: I bring the camera to 4 cells' height on the cell (204, 153)
-    And I take a screenshot "gallery propagator"
+    And I wait 1042 ticks
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
+    When A Certain Series: I bring the camera to 4 cells' height on the cell (204, 153)
+    And I take a screenshot "gallery 6 propagator"
     Then no errors were logged

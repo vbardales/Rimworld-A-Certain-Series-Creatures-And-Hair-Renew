@@ -16,6 +16,7 @@
   "layout": "panel",
   "panelAnchor": "top-left",
   "backgroundPosition": "0 -30px",
+  "backgroundFile": "Preview-source.png",
   "backgroundSize": "896px auto",
   "echo": { "file": "echo.png", "preSized": true, "color": "var(--accent)", "width": 230, "height": 238, "opacity": 1, "veil": false, "panelTop": 2, "panelRight": -1, "panelWidth": 44, "flipX": true },
   "iconBadge": { "file": "ModIcon-source.png", "corner": "bottom-right", "width": 220, "outline": false, "veil": "radial", "veilSize": 275, "veilRight": -55, "veilBottom": -61 },
