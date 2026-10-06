@@ -60,7 +60,7 @@ Feature: Gallery pictures of the hairstyles
     And I take a screenshot "gallery hairstyle misaka"
     And Nelim's Pickle Tools: "Rina" stands at (108, 160)
     And Nelim's Pickle Tools: I am at the sanctuary "terrace"
-    And Nelim's Pickle Tools: "Toma" stands at (198, 119) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
     And A Certain Series: I bring the camera to 2 cells' height on "Toma"
     And I take a screenshot "gallery hairstyle accelerator"
     And Nelim's Pickle Tools: "Toma" stands at (110, 160)
