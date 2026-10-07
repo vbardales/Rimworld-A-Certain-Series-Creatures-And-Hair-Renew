@@ -97,7 +97,7 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And I wait 417 ticks
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (196, 150)
-    And A Certain Series: I bring the camera to 2 cells' height on "Sena"
+    And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (196, 151)
+    And Nelim's Pickle Tools: I frame the rectangle from (195, 151) to (198, 153)
     And I take a screenshot "gallery 3 index"
     Then no errors were logged
