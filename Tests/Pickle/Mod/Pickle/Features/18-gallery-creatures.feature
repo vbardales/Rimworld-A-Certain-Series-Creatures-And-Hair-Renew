@@ -38,7 +38,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 154)
     Then 1 "ACS_DarkMatterBeetle" exist
-    When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 2 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 4 beetle"
     Then no errors were logged
 
@@ -60,7 +60,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (199, 155)
     Then 1 "ACS_Gabriel" exist
-    When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 5 seraph"
     Then no errors were logged
 
@@ -87,6 +87,6 @@ Feature: Gallery pictures of the creatures and the propagator
     And I wait 60 ticks
     And I wait 1042 ticks
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
-    When A Certain Series: I bring the camera to 4 cells' height on the cell (204, 153)
+    When A Certain Series: I bring the camera to 3 cells' height on the cell (204, 153)
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged
