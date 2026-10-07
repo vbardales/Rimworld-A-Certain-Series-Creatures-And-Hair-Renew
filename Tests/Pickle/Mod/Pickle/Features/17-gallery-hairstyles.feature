@@ -66,9 +66,9 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Toma" wears the apparel "Apparel_Duster"
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I am at the sanctuary "terrace"
-    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
     And I wait 60 ticks
     And I wait 208 ticks
+    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (195, 120)
     And A Certain Series: I bring the camera to 2 cells' height on "Toma"
     And I take a screenshot "gallery 2 accelerator"
@@ -94,9 +94,9 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
-    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And I wait 60 ticks
     And I wait 417 ticks
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (196, 150)
     And A Certain Series: I bring the camera to 2 cells' height on "Sena"
     And I take a screenshot "gallery 3 index"

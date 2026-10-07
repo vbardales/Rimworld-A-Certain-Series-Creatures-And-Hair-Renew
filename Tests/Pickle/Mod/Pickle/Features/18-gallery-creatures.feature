@@ -30,12 +30,12 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
     And I wait 60 ticks
     And I wait 625 ticks
+    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 154)
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
@@ -51,13 +51,13 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
     And I wait 60 ticks
     And I wait 833 ticks
+    And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (199, 155)
     Then 1 "ACS_Gabriel" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)

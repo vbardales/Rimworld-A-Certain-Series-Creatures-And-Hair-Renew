@@ -228,7 +228,7 @@ English *(not found — check by hand)* is expected, not a gap, on ` .labelMale 
 | ACS_Volleyball.label | 排球 | dark matter volleyball | ballon de volley en matière noire |
 | ACS_Volleyball.description | 将未元物质浓缩起来形成的白色球形物体 | A white sphere formed by condensing dark matter. It is the last step before the substance is given life again. | Une sphère blanche formée en condensant de la matière noire. C'est la dernière étape avant de redonner vie à cette substance. |
 | ACS_EggBeetle.label | 独角仙的卵 | rhinoceros beetle egg | œuf de scarabée rhinocéros |
-| ACS_EggBeetle.description | 能孵化出白色独角仙的卵 | An egg that hatches into a white rhinoceros beetle. Like any egg not laid in the colony, it hatches wild - but the beetle's wildness is zero, so taming it takes one try. | Un œuf qui donne naissance à un scarabée rhinocéros blanc. Comme pour tout œuf qui n'a pas été pondu dans la colonie, l'animal éclot à l'état sauvage. Toutefois, sa sauvagerie est nulle : une seule tentative suffit à l'apprivoiser. |
+| ACS_EggBeetle.description | 能孵化出白色独角仙的卵 | An egg that hatches into a white rhinoceros beetle. Like any egg not laid in the colony, it hatches wild - but the beetle's wildness is zero, so taming it takes one try. | Un œuf qui donne naissance à un scarabée rhinocéros blanc. Comme pour tout œuf qui n'a pas été pondu dans la colonie, le scarabée naît à l'état sauvage. Toutefois, sa sauvagerie est nulle : une seule tentative suffit à l'apprivoiser. |
 | ACS_DarkMatter.label | 未元物质 | dark matter | matière noire |
 | ACS_DarkMatter.description | 学园都市第二位超能力者创造出的不存在的物质 | A substance that does not exist, willed into being by Academy City's second-ranked esper. It weighs almost nothing, does not burn, does not rot, and turns aside anything thrown at it. | Une substance qui n'existe pas, créée par la volonté de l'esper classé au deuxième rang de la Cité académique. Elle ne pèse presque rien, ne brûle pas, ne pourrit pas et repousse tout ce qui la frappe. |
 | ACS_HeavenCloth.label | 天界之布 | heavenly cloth | étoffe céleste |
@@ -261,5 +261,5 @@ English *(not found — check by hand)* is expected, not a gap, on ` .labelMale 
 |---|---|---|---|
 | ACS_DoBillsUseDarkMatterProduction.label | 使用未元物质生产器工作 | work at dark matter propagator | travailler au multiplicateur de matière noire |
 | ACS_DoBillsUseDarkMatterProduction.verb | craft *(same as English)* | craft | fabriquer |
-| ACS_DoBillsUseDarkMatterProduction.gerund | crafting at *(same as English)* | crafting at | fabrication sur |
+| ACS_DoBillsUseDarkMatterProduction.gerund | crafting at *(same as English)* | crafting at | fabrication au |
 
