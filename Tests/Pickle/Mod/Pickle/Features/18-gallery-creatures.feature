@@ -87,6 +87,6 @@ Feature: Gallery pictures of the creatures and the propagator
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 1042 ticks pass
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
-    When A Certain Series: I bring the camera to 3 cells' height on the cell (204, 153)
+    When Nelim's Pickle Tools: I frame the rectangle from (202, 150) to (207, 156)
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged
