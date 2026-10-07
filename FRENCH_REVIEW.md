@@ -234,7 +234,7 @@ English *(not found — check by hand)* is expected, not a gap, on ` .labelMale 
 | ACS_HeavenCloth.label | 天界之布 | heavenly cloth | étoffe céleste |
 | ACS_HeavenCloth.description | 构成天使皮肤的来自天界的布料 | The cloth from heaven that an angel's skin is made of. It does not burn, does not wear, and keeps out any cold or heat this world can produce. | L'étoffe céleste dont est faite la peau d'un ange. Elle ne brûle pas, ne s'use pas et protège de tous les froids et de toutes les chaleurs de ce monde. |
 | ACS_AngelCore.label | 天使之核 | angel core | noyau angélique |
-| ACS_AngelCore.description | 构成天使核心的神秘物体 | The mysterious object at the heart of an angel. It is the only part of a seraph that survives butchering, and it is worth more than most colonies will ever hold. | L'objet mystérieux au cœur d'un ange. C'est la seule partie d'un séraphin qui subsiste après le dépeçage, et sa valeur dépasse les richesses que la plupart des colonies amasseront jamais. |
+| ACS_AngelCore.description | 构成天使核心的神秘物体 | The mysterious object at the heart of an angel. It is the only part of a seraph that survives butchering, and it is worth more than most colonies will ever hold. | L'objet mystérieux au cœur d'un ange. C'est la seule partie d'un séraphin qui subsiste après le dépeçage, et sa valeur dépasse les richesses que la plupart des colonies n'amasseront jamais. |
 | ACS_Projectile_Beetle.label | 独角仙大炮 | beetle cannon | canon du scarabée |
 | ACS_Projectile_Sweep.label | 一扫 | sweep | balayage |
 | ACS_DarkMatterBeetle.label | 白色独角仙 | white rhinoceros beetle | scarabée rhinocéros blanc |
