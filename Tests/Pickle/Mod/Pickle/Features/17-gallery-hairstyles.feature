@@ -1,8 +1,11 @@
 # Pictures for the Workshop gallery, not a test: the three hairstyle portraits of the series "Noon at the Sanctuary"
 # (images 1 to 3 of 6; the creatures are images 4 to 6, feature 18), in Nelim's Sanctuary (the owner's save "Nelim's tribe",
-# loaded as "Nelims-tribe", PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the
+# loaded as "Nelims-tribe", SanctuaryBacklot docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the
 # interface. What a scenario asserts is only that the hairstyle is worn; the pictures are the point and are read by eye
 # (@review). The camera of the game stops at about fifty pixels for a colonist: a local step lowers the bound of its zoom.
+# Three families of steps, told apart by their prefix: `Nelim's Sanctuary:` = the Sanctuary Backlot (the named places);
+# `Nelim's Pickle Tools:` = PickleTools, the generic tools (decor, animals, floor, framing, waiting);
+# `A Certain Series:` = this mod's own steps.
 #
 # The story (owner's rules of 2026-10-02/06, PUBLISHING.md: the author is the photographer, one story, time passes,
 # something alive in every picture). A single noon in the Sanctuary, by Nelim's tribe: three visitors, each at home in a
@@ -42,7 +45,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: the hairstyle of "Rina" is drawn in its own colours
     And A Certain Series: "Rina" wears the apparel "Apparel_CollarShirt"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I am at the sanctuary "sofa-corner"
+    And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
     And Nelim's Pickle Tools: "Rina" stands at (187, 123) facing South
     And I wait 60 ticks
     And I wait 0 ticks
@@ -65,7 +68,7 @@ Feature: Gallery pictures of the hairstyles
     Then A Certain Series: "Toma" wears the hairstyle "ACS_Accelerator"
     And A Certain Series: "Toma" wears the apparel "Apparel_Duster"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I am at the sanctuary "terrace"
+    And Nelim's Sanctuary: I am at the sanctuary "terrace"
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 208 ticks pass
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
@@ -88,8 +91,8 @@ Feature: Gallery pictures of the hairstyles
     Then A Certain Series: "Sena" wears the hairstyle "ACS_index"
     And A Certain Series: "Sena" wears the apparel "Apparel_Robe"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: the floor of the sanctuary "emerald-clearing" is bared
-    And Nelim's Pickle Tools: I am at the sanctuary "emerald-clearing"
+    And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)

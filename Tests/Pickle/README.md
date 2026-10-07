@@ -76,7 +76,7 @@ before every run: Pickle loads step DLLs when the game starts.
 
 ## Passes
 
-Three languages on one mod set, a fourth and a fifth pass with the two optional mods, and a sixth for the gallery (`wsl-deps.galerie.map`, features 17 and 18). The mod declares no dependency, no
+Three languages on one mod set, a fourth and a fifth pass with the two optional mods, and a sixth for the gallery (`wsl-deps.galerie.map`, features 17 and 18: the map of the Sanctuary Backlot, which carries the fixture and the place steps `Nelim's Sanctuary: ...`, kept apart from PickleTools' `Nelim's Pickle Tools: ...` and from this mod's `A Certain Series: ...`; seeds in `config/galerie/`; `Check-Steps.ps1` reads the three families). The mod declares no dependency, no
 `loadAfter`, no `incompatibleWith`, so the minimal map is `wsl-deps.sans-facultatifs.map`, which stages the two
 shared tools the features use. `wsl-deps.avec-ads2.map` adds A Dog Said... Animal Prosthetics 2 to it, `wsl-deps.avec-nocturnal.map` adds [XND] Nocturnal Animals (Continued). Royalty
 is one of the DLCs the default set already mounts, so the Empire scenario runs inside every pass. Feature 15
