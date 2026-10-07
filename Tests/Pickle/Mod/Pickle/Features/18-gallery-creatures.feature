@@ -34,11 +34,11 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
     And I wait 60 ticks
-    And I wait 625 ticks
+    And Nelim's Pickle Tools: I let 625 ticks pass
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 154)
     Then 1 "ACS_DarkMatterBeetle" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (194, 151) to (200, 155)
+    When Nelim's Pickle Tools: I frame the rectangle from (195, 151) to (199, 154)
     And I take a screenshot "gallery 4 beetle"
     Then no errors were logged
 
@@ -56,11 +56,11 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
     And I wait 60 ticks
-    And I wait 833 ticks
+    And Nelim's Pickle Tools: I let 833 ticks pass
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
-    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (199, 155)
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (196, 155)
     Then 1 "ACS_Gabriel" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (192, 148) to (202, 156)
+    When Nelim's Pickle Tools: I frame the rectangle from (193, 149) to (199, 155)
     And I take a screenshot "gallery 5 seraph"
     Then no errors were logged
 
@@ -85,7 +85,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
     And Nelim's Pickle Tools: the power network is refreshed
     And I wait 60 ticks
-    And I wait 1042 ticks
+    And Nelim's Pickle Tools: I let 1042 ticks pass
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
     When A Certain Series: I bring the camera to 3 cells' height on the cell (204, 153)
     And I take a screenshot "gallery 6 propagator"
