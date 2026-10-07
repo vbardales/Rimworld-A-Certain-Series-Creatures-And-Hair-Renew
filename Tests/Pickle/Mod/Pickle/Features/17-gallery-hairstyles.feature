@@ -38,6 +38,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
     And A Certain Series: "Rina" has the skin colour "#F2D2B8"
+    And Nelim's Pickle Tools: "Rina" has the gene "Eyes_Brown"
     And A Certain Series: I give "Rina" the hairstyle "ACS_misaka"
     And A Certain Series: I let the hairstyle of "Rina" show its own colours
     And A Certain Series: I dress "Rina" in "Apparel_CollarShirt,Apparel_Pants" coloured "#F1E7D0,#5A3B28"
@@ -62,6 +63,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Toma" is a man
     And Nelim's Pickle Tools: "Toma" body type is Male
     And A Certain Series: "Toma" has the skin colour "#EBCBB0"
+    And Nelim's Pickle Tools: "Toma" has the gene "Eyes_Crimson"
     And A Certain Series: I give "Toma" the hairstyle "ACS_Accelerator"
     And A Certain Series: I let the hairstyle of "Toma" show its own colours
     And A Certain Series: I dress "Toma" in "Apparel_CollarShirt,Apparel_Pants,Apparel_Duster" coloured "#1C1C24,#2B2B35,#17171D"
@@ -72,6 +74,8 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 208 ticks pass
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
+    And I draft "Toma"
+    And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (195, 120)
     And A Certain Series: I bring the camera to 2 cells' height on "Toma"
     And I take a screenshot "gallery 2 accelerator"
@@ -85,6 +89,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
     And A Certain Series: "Sena" has the skin colour "#F5DCC6"
+    And Nelim's Pickle Tools: "Sena" has the gene "Eyes_Green"
     And A Certain Series: I give "Sena" the hairstyle "ACS_index"
     And A Certain Series: I let the hairstyle of "Sena" show its own colours
     And A Certain Series: I dress "Sena" in "Apparel_Robe,Apparel_Sash" coloured "#F7F3E8,#C9A227"
@@ -100,6 +105,7 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 417 ticks pass
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
+    And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (196, 151)
     And Nelim's Pickle Tools: I frame the rectangle from (195, 151) to (198, 153)
     And I take a screenshot "gallery 3 index"
