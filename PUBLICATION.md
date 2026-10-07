@@ -150,7 +150,7 @@ The CI reads the block under `### <version>` and sends it as written (BBCode); i
 
 ```
 [b]1.0.3[/b]
-New icon and new header image for the page. No change to the mod's content.
+New icon and new header image for the page. French: three texts reworded (the beetle egg and the seraph core descriptions, the work label of the dark matter production). No other change to the mod.
 ```
 
 ### 1.0.2
@@ -197,6 +197,6 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat: decided by
 | `5-` | God's Power, all eight wings, a peacock walking in | the podium, 12:20 | Feature 18, scenario 5 |
 | `6-` | The dark matter propagator switched on against its power cells, a cat | the podium, 12:25 | Feature 18, scenario 6 |
 
-State on 2026-10-06: the features are rewritten for this plan and have not been played (the owner paused every run that generates a pawn); the folder still holds the first series (`1-` to `6-`, zen meadow, 2026-09-27) until the new captures are opened, re-encoded to JPEG (under 2 MB each) and swapped in. Every capture is read against its line of the plan after the run; a green run validates nothing. An anomaly that comes from the scene or from a shared tool (a painted zone, stack counts, pawn names, tinted light, the lightning icon) is reported to PickleTools (via Ticket Manager if it is unreachable), never worked around here.
+State on 2026-10-07: the series is played and installed. `1-` to `3-` come from run `9b6e` (pass `wsl-deps.galerie-tmw.map`: the pawns wear the Venus Touch Waistlines bodies and garments, owner's choice over the version without it), `4-` and `5-` from the same run, `6-` from run `ba7b` (rectangle framing, the six cells whole); JPEG, 1.8 MB in all, none over 320 KB. Kept as proof and for comparison: `Tests/Pickle/Evidence/2026-10-07-gallery-final4` (1 to 5), `-prop2` (6), `-tmw-1` and `-v2`, `-v2-seraph` (the same pictures without the waistlines mod), `-new` (first run, subjects walked out of frame). The framing uses PickleTools' `I frame the rectangle from (x1, z1) to (x2, z2)` and the long waits its `I let N ticks pass`. Every capture is read against its line of the plan after the run; a green run validates nothing. An anomaly that comes from the scene or from a shared tool (a painted zone, stack counts, pawn names, tinted light, the lightning icon) is reported to PickleTools (via Ticket Manager if it is unreachable), never worked around here.
 
 **Choices already made** (owner and author): a beard on Misaka was tried and dropped; the tea room of the Sanctuary was tried and dropped (its blue lamps tinted the white robe cyan); the propagator is shown powered (six vanometric cells for its 5 000 W, then the network refresh step of PickleTools); the podium's painted green zone is bared for the run.

@@ -15,7 +15,7 @@ licence_at:   original files and About.xml, Steam description and all 14 comment
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
 dependencies: none
 showcase:     complete
-tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `cdfc`, `a6f3` (2026-09-27). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them
+tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them
 workshop:     3806708754
 remaining:
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
@@ -23,10 +23,10 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - unverified: a dry-run of the next commit before the next publish (the last one, `36782547484`, was on `890c874`)
   - cleanup after the last Pickle ticket (`20261001-214408-884-02b9`): remove from the WSL install the mods this mod's sessions downloaded (Workshop cache of Animal Prosthetics 2 `3238353862`, Nocturnal Animals Continued `2269731409` and Harmony, if this mod's sessions put them there and no other mod's map needs them), under the machine lock, after listing what goes and what stays; then say here what was removed
-  - gallery: features 17 and 18 rewritten to the shooting plan of PUBLICATION.md (12:00 start, +5 min per picture, an animal in each, bared podium zone, powered propagator); to play once the owner resumes pawn runs, read every capture against its line of the plan, re-encode to JPEG (under 2 MB each, 8 MB in all), replace `Art/Gallery/1-` to `6-`; `1.0.3` waits for it
+  - gallery: done 2026-10-07, the series "Noon at the Sanctuary" is installed in `Art/Gallery/` (runs `9b6e` and `ba7b`, with Venus Touch Waistlines, read one by one); only the `1.0.3` dispatch is left (dry-run of the exact SHA, owner approves `steam-production`), then the manual upload of the six images and the header on Steam
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-06, gallery rewritten as the series "Noon at the Sanctuary" (features 17 and 18, not yet played: pawn runs paused by the owner); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+updated:      2026-10-07, gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
