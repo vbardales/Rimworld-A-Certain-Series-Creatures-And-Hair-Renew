@@ -26,7 +26,7 @@ remaining:
   - gallery: done 2026-10-07, the series "Noon at the Sanctuary" is installed in `Art/Gallery/` (runs `9b6e` and `ba7b`, with Venus Touch Waistlines, read one by one); only the `1.0.3` dispatch is left (dry-run of the exact SHA, owner approves `steam-production`), then the manual upload of the six images and the header on Steam
   - ideas not started: `BACKLOG.md`
 session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-07, gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+updated:      2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
