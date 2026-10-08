@@ -18,21 +18,21 @@ and it butchers into no meat at all — only dark matter, a metallic stuff that 
 not burn, and makes armour and blades out of all proportion to their weight.
 
 **God's Power** (神之力), a seraph. Eight wings of water, a crystal sword grown out of its right
-arm, and a shot that opens a five-tile explosion eight times a burst. Ten thousand years of life,
+arm, and a shot that opens a five-tile explosion eight times per burst. Ten thousand years of life,
 no pain worth the name, and no one has ever tamed one. Butchering it yields heavenly cloth and a
 single angel core.
 
 **The dark matter propagator** (未元物质生产机), a refrigerator-shaped worktable that makes dark
-matter multiply, and the chain that runs through it: a preserved fragment of the second-ranked
-esper's brain, dark matter, a condensed white sphere, and an egg that hatches a beetle in a day.
+matter multiply, and the chain it enables: a preserved fragment of the second-ranked
+esper's brain, then dark matter, a condensed white sphere, and an egg that hatches a beetle in a day.
 One research project on the main tab unlocks the whole of it.
 
 **Forty-one hairstyles** from the series, twenty-three female and eighteen male, tagged Urban,
 Rural and Punk exactly as the original had them — so any pawn can be generated with any of them,
 and all of them are available at the styling station.
 
-Neither creature spawns in the wild. The seraph reaches a colony only through exotic goods
-traders, caravan or orbital. The beetle can be bought the same way, or bred at the propagator.
+Neither creature spawns in the wild. The seraph reaches a colony only through exotic-goods
+traders, caravans, or orbital traders. The beetle can be bought the same way, or bred at the propagator.
 
 The propagator costs one brain fragment to build, and only a propagator can grow another, so the
 first fragment has to be bought - from an outlander or orbital exotic trader, or from the Empire.
