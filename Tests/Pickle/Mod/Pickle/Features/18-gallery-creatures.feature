@@ -77,7 +77,7 @@ Feature: Gallery pictures of the creatures and the propagator
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (199, 150) to (204, 154)
     And Nelim's Pickle Tools: the building status icons are kept
-    And Nelim's Sanctuary: the animals are kept out of the sanctuary "emerald-clearing"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (196, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
@@ -91,7 +91,8 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: the power network is refreshed
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 1042 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (208, 153)
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 153)
     When Nelim's Pickle Tools: I frame the rectangle from (193, 149) to (209, 157)
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged
