@@ -91,7 +91,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: the power network is refreshed
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 1042 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 153)
-    When Nelim's Pickle Tools: I frame the rectangle from (193, 149) to (209, 156)
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (208, 153)
+    When Nelim's Pickle Tools: I frame the rectangle from (193, 149) to (209, 157)
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged
