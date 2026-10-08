@@ -3,12 +3,14 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.0.3] — 2026-10-04
+## [1.0.3] — 2026-10-08
 
-New icon and Preview image. RimWorld 1.6.
+New icon and Preview image, three French wordings, the page description. RimWorld 1.6.
 
 ### Changed
 
+- French: the beetle egg description (the beetle, not "the animal", is born wild), the angel core description (`n'amasseront jamais`) and the work label of the dark matter production (`fabrication au`).
+- `Mod/About/About.xml` (and the Workshop description): three wordings fixed (`exotic-goods traders, caravans, or orbital traders`, `eight times per burst`, `the chain it enables`). The description is sent with this version (`update_description`).
 - `Mod/About/ModIcon.png`: the new icon (the creatures around the smiling orange face), 128 px.
 - `Mod/About/Preview.png`: rebuilt with the new icon in the bottom-right corner, the title on two lines with `(unofficial)` inline, and the beetle line art redrawn. The header image of the Workshop page is sent with this version (`update_preview`).
 
