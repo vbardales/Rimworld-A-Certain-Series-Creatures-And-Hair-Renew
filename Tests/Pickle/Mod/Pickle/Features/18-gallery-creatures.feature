@@ -16,6 +16,8 @@
 #   6. emerald-clearing, 12:25+, the dark matter propagator against the power cells, a bookcase behind, a torch, a cat on
 #      the wooden floor: the workshop of the series, switched on (the lightning icon is gone only when the network is
 #      refreshed and the building has its 5 000 W: six cells, 6 000 W).
+#   7. emerald-clearing, 12:30+, the same propagator seen from farther, WITHOUT its power cells and without the network
+#      refresh: the lightning icon (no power) is the point of the picture, it names the building's need (owner, 2026-10-08).
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
 # empty plant pot (it reads as a bucket). Diurnal animals only, the clock being at noon.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
@@ -89,4 +91,25 @@ Feature: Gallery pictures of the creatures and the propagator
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
     When Nelim's Pickle Tools: I frame the rectangle from (202, 150) to (207, 156)
     And I take a screenshot "gallery 6 propagator"
+    Then no errors were logged
+
+  Scenario: 7 - the dark matter propagator, without power (the podium, 12:30)
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And I set the hour to 12
+    And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
+    And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
+    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    When Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (199, 150) to (204, 154)
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
+    And Nelim's Pickle Tools: I place the decor "Bookcase" at (201, 154)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 151) is lit
+    And I wait 60 ticks
+    And Nelim's Pickle Tools: I let 1250 ticks pass
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 152)
+    When Nelim's Pickle Tools: I frame the rectangle from (199, 149) to (209, 156)
+    And I take a screenshot "gallery 7 propagator unpowered"
     Then no errors were logged
