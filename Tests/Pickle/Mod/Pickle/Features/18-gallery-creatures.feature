@@ -58,7 +58,7 @@ Feature: Gallery pictures of the creatures and the propagator
     And I wait 60 ticks
     And Nelim's Pickle Tools: I let 833 ticks pass
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
-    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (196, 155)
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (197, 149)
     Then 1 "ACS_Gabriel" exist
     When Nelim's Pickle Tools: I frame the rectangle from (193, 149) to (199, 155)
     And I take a screenshot "gallery 5 seraph"
