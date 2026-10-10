@@ -4,7 +4,7 @@
 `3806708754`; `Mod/About/PublishedFileId.txt` is committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
 next update and for whoever takes the mod over.
 
-Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read versions in `docs/PROTOCOLS-READ.md`),
+Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read version in `STATUS.md`, `protocols_read_sha`),
 `Rimworld-Release-Admin/docs/OPERATIONS.md` for the CI.
 
 ## Publishing a version
@@ -13,8 +13,8 @@ Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read ver
   `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh`, never edited by hand; config in
   `.github/publish.config.json`; regenerate with the script, the arguments are in `git log` of `.github/`).
   Template stamp `82de20b8aa50` (up to date on 2026-09-30).
-- **Order:** the stage is `tested` (complete Pickle passes green on the final `Mod/`: English, French, Chinese, and the
-  two that mount the optional mods; every `@review` capture opened; logs read). Then a green dry-run of the exact commit
+- **Order:** the version under publication has its Pickle passes green on the final `Mod/` (English, French, Chinese, and the
+  two that mount the optional mods; every `@review` capture opened; logs read), the gallery accepted and the stage at `publish`. Then a green dry-run of the exact commit
   (`gh workflow run publish-tag.yml -f mode=dry-run -f ref=<SHA> -f version=<x.y.z>`), then
   `dispatch-publish.sh <owner/repo> publish-tag.yml <full 40-character SHA> <x.y.z>`. Only the owner approves
   `steam-production`. The CI creates the tag and the GitHub release: not by hand. The section of `CHANGELOG.md` must be
@@ -23,8 +23,8 @@ Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read ver
   never skip a red scenario replayed green on a build with its fix, the gallery, the dry-run of the exact commit, the
   approval of `steam-production`, and a rollback target chosen beforehand. **Rollback target: back to private**, by hand
   on the Steam page (the CI's own rollback deletes only its tag and release, never the Steam item).
-- **Options** `update_preview`, `update_description`, `update_title`, `update_tags`: all off for `1.0.0` (description and
-  gallery were set by hand). With `update_tags` the CI sends `Mod` and one tag per `supportedVersions` entry (`1.6`).
+- **Options** `update_preview`, `update_description`, `update_title`, `update_tags`: off unless the change touches the page. `1.0.3` sent the header image and the description (`--preview --description`); the gallery is always uploaded by hand.
+  With `update_tags` the CI sends `Mod` and one tag per `supportedVersions` entry (`1.6`).
 - **Description and `About.xml`:** one source, the block under "Steam description" below. Edit it, then
   `node .github/scripts/sync-about-description.mjs --write` and commit both files; the dry-run and the publish stop if
   they differ. A commit after the dry-run needs its own green dry-run.
@@ -133,14 +133,8 @@ English, with one link to this mod behind BBCode, and say nothing about compatib
 Hi! I took the white rhinoceros beetle, the seraph and the 41 hairstyles out of your mod and brought them to 1.6, as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url]. Everything is credited to you, and if you'd rather I take it down, tell me and I will :)
 ```
 
-**2269731409, Nocturnal Animals (Continued), Mlie, crediting XeoNovaDan too.** Draft of the first version (the message actually posted names both authors; its text was not kept):
-
-```
-Thanks for keeping Nocturnal Animals going! One thing on my side: the white rhinoceros beetle in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew[/url] now keeps night hours through your extension, and my patch does nothing when your mod isn't there xD
-```
-
-The texts of the Animal Prosthetics 2 message and of the final Nocturnal Animals message are not kept in this repository
-(`../WORKSHOP_COMMENTS.md` records that they were posted); nothing is left to send.
+The texts of the Animal Prosthetics 2 message and of the Nocturnal Animals message (one message crediting both authors)
+are not kept in this repository (`../WORKSHOP_COMMENTS.md` records that they were posted); nothing is left to send.
 
 ## Change notes (Steam), one block per version
 
@@ -153,21 +147,7 @@ The CI reads the block under `### <version>` and sends it as written (BBCode); i
 New icon and new header image for the page. The page description is reworded in three places, and three French texts are reworded (the beetle egg and the seraph core descriptions, the work label of the dark matter production). No other change to the mod.
 ```
 
-### 1.0.2
-
-```
-[b]1.0.2[/b]
-New header image for the page: the beetle line art behind the title is no longer faded at its left edge. No change to the mod itself.
-```
-
-### 1.0.1
-
-```
-[b]1.0.1[/b]
-French hairstyle names now follow the source: the God's Right Seat titles, Dark Matter, Knight Leader and Aogami Pierce are kept in their original form instead of being half translated. New Preview image. The mod ships English, French and Simplified Chinese (the 1.0.0 note named only two).
-```
-
-Older notes (`0.1.0`, `1.0.0`): `docs/runs/history.md`.
+Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`): `docs/runs/history.md`.
 
 ## Dependencies and DLC
 

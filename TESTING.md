@@ -27,22 +27,18 @@ or validate every translation handle. The shared parent repository's
 provide additional checks using the installed game and must also be rerun for
 version migrations. The in-game scenarios below remain necessary.
 
-## What `tested` requires
+## What `playTests` requires, and where this mod stands
 
-**`done` is met.** `../AUDIT.md`, transition 8, asks for the Pickle scenarios to be *written*, with their
-scope justified; running them is left to `tested`. `Tests/Pickle/` holds 18 features and 28 local steps,
-and its README says what is in Gherkin, what deliberately is not, and why. `Tests/Pickle/Check-Steps.ps1`
-resolves every step line of every feature to exactly one step, and it was checked against a deliberately
-wrong feature and a deliberately invalid pattern before being trusted.
-
-**`tested` was met on 2026-09-27 and holds on the published tree (re-read 2026-09-30).** `../AUDIT.md`, transition 9 (done -> tested), asks three checks; each is
-measured here against what ran.
+The Pickle scenarios are written and played (`Tests/Pickle/`: 18 features and 28 local steps; its README says what is in
+Gherkin, what deliberately is not, and why; `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step).
+The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`); `Mod/` has not changed since
+`1.0.3`. Earlier states of this section (the `tested` check of 2026-09-27) are in `git log`.
 
 | Check | Where this mod stands |
 |---|---|
-| No scenario left in `@wip`. A shelved scenario is repaired and replayed, or deleted with its reason. | None carries `@wip`, and `-IncludeWip` is never passed. Confirmed at the run, not only in the files. |
-| Every conditional scenario ran. Each `@requires` (optional mod, DLC, companion tool) had its own pass on a map that mounts it, and its report was read. A scenario skipped for a missing condition is not a pass. | Five conditional scenarios, all played. The Empire trader (`@requires:Royalty`, feature 09): every pass mounts Royalty, played in all six. Animal Prosthetics 2 (feature 15): played and passed in pass 4 (`5558`). Nocturnal Animals' body clock (feature 16): played and passed in pass 5 (`d901`). The gallery (features 17, 18, `@requires` on ScreenshotStudio): played and passed, gallery tickets `cdfc` and `a6f3`. |
-| No manual test left to validate. What is still ticked by hand is either automated and green, or listed as not applicable with its reason. | Every manual check is covered by a scenario or listed not applicable, in the map below and in `Tests/Pickle/README.md`. Every `@review` capture has been opened, across all six passes (`docs/runs/history.md`, 2026-09-27). |
+| No scenario left in `@wip`. | None carries `@wip`, and `-IncludeWip` is never passed. |
+| Every conditional scenario ran. | Each `@requires` has its own pass on a map that mounts it (Animal Prosthetics 2, Nocturnal Animals): passes 4 and 5 below. |
+| No manual test left to validate. | Every manual check is automated and green or listed as not applicable, with its reason, in the table below. |
 
 ### Where each manual check went
 
