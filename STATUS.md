@@ -26,7 +26,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-10, cleanup before dormancy (AUDIT.md 14.c): dated sections folded into `docs/runs/history.md`
+updated:      2026-10-11, full audit (AUDIT.md 16) on `2c96cce`: stage `dormant` confirmed, nothing changed in `Mod/`; earlier: 2026-10-10 cleanup before dormancy (14.c)
 protocols_read_sha: a9ca34dceecadae081444805bbce9c55e4e0469e
 ---
 
