@@ -8,8 +8,9 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-stage:        published
-workflow_stage: published
+workflow_stage: mountPreview[1.0.3]
+code_review_sha: 993753bd9ed66b194ac941a2eddf52dbc2f1fb7c
+echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
@@ -21,9 +22,12 @@ remaining:
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
+  - unverified: GitHub social preview (10.f): `social_preview_sha256` absent; the repository's og:image is a custom image, not compared with `Mod/About/Preview.png` of `1.0.3`; waiting for the owner's go to send it (browser)
+  - unverified: owner's review of `PUBLICATION.md` and `CHANGELOG.md` for the `1.0` line (11.j): `publication_changelog_review_sha` absent, not written without her confirmation in chat
   - ideas not started: `BACKLOG.md`
-session:      local_0370d2fc-d327-4091-bf8f-6481630fa3aa
-updated:      2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+session:      local_877516ce-7557-492f-9994-6bbb772df1e8
+updated:      2026-10-10, AUDIT.md reapplied (stage mountPreview[1.0.3], see Audit 2026-10-10), 2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+protocols_read_sha: 9e53ad19092521ae81c488e37d06716b159dd78b
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -44,6 +48,19 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`). **Dogs mate (Continued) and Better Crossbreeding** (`PUBLISHING.md`, four integrations for animal mods; the owner's rule of 2026-10-01 asks for a recorded decision): neither patch applies, by the owner's decision of 2026-09-25 (no crossbreeding). The beetle has no genders and a gestation of 0 and is made from an egg in the propagator, so it cannot mate; the seraph is unique by design. Nothing to add to `pawnKinds` of a Dogs mate group, no `canCrossBreedWith`, no Better Crossbreeding extension. Reopen only if the owner designs a pair (`BACKLOG.md`, item 1).
 
 - **Content boxes:** adult content and violence both unticked, decided by the owner on 2026-10-01 (`PUBLICATION.md`, Content boxes).
+
+## Audit 2026-10-10
+
+`AUDIT.md` reapplied on revision `85214a4` (tree clean, in sync with `origin/main`). Previous state `published` (old vocabulary, `stage` retired) becomes `mountPreview[1.0.3]`: the first criterion that fails is 10.f (social preview not recorded); 11.j (owner's review of the documents for the `1.0` line) follows. Everything before holds.
+
+- **Dependencies** (4, checked in `About.xml`, `Mod/Patches/` and `Tests/Pickle/wsl-deps.*.map`): none hard. Optional and guarded: Animal Prosthetics 2 (`loadBefore`), Nocturnal Animals Continued (by display name, fragile, see `remaining`). No DLC branch, no `LoadFolders.xml`. The four animal integrations are recorded above (Compatibility).
+- **Settings** (5): `not_applicable` holds, no `Source/`, no page, no shortcut.
+- **Translations** (6): `Tests/Test-Translations.ps1` 202 English, 202 French, green; `FRENCH_REVIEW.md` regenerated by `scripts/Make-FrenchReview.ps1` at `988eeed` (the old `Generate-FrenchReview.ps1` format carried the Chinese text in the Original column, the new script cannot: the previous file stays in git). French texts unchanged since the owner's review. `Check-DefInjected.ps1` not rerun (its parameters changed).
+- **Tests** (7): `Tests/Test-Mod.ps1` 14 of 14 green on `HEAD`; Pickle passes as in `tested_on`, none replayed (no `Mod/` change since `1.0.3`); the non-regression of `followUp` (14.a) is still to decide.
+- **Code review** (8.m): `Mod/` has no diff since `993753b` (last reviewed, no finding), recorded as `code_review_sha`.
+- **Gallery and Preview** (9, 10): six images plus `0-preview.png`, contiguous, `0-` byte identical to `Mod/About/Preview.png` (sha256 `62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe`, 604 KB). Echo kept: the beetle line art redrawn for `1.0.3`, and the gallery shows the beetle (image 4); recorded in `echo_review_sha`. The GitHub `og:image` is a custom image; whether it is the `1.0.3` Preview is not known.
+- **Local note:** `Mod/desktop.ini` exists on disk, untracked (gitignored); the CI publishes a clean checkout, so it never shipped.
+- **Needed for the next transition (`writeDocs`):** send the `1.0.3` Preview as GitHub social preview and record its sha256; then the owner's review of the documents.
 
 ## Translation audit
 
