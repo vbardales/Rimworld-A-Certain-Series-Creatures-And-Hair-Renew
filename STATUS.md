@@ -8,9 +8,10 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: mountPreview[1.0.3]
+workflow_stage: writeDocs[1.0.3]
 code_review_sha: 993753bd9ed66b194ac941a2eddf52dbc2f1fb7c
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
+social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
@@ -22,11 +23,10 @@ remaining:
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
-  - unverified: GitHub social preview (10.f): `social_preview_sha256` absent; the repository's og:image is a custom image, not compared with `Mod/About/Preview.png` of `1.0.3`; waiting for the owner's go to send it (browser)
   - unverified: owner's review of `PUBLICATION.md` and `CHANGELOG.md` for the `1.0` line (11.j): `publication_changelog_review_sha` absent, not written without her confirmation in chat
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-10, AUDIT.md reapplied (stage mountPreview[1.0.3], see Audit 2026-10-10), 2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+updated:      2026-10-10, AUDIT.md reapplied (stage writeDocs[1.0.3], see Audit 2026-10-10), 2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
 protocols_read_sha: 9e53ad19092521ae81c488e37d06716b159dd78b
 ---
 
@@ -60,7 +60,8 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Code review** (8.m): `Mod/` has no diff since `993753b` (last reviewed, no finding), recorded as `code_review_sha`.
 - **Gallery and Preview** (9, 10): six images plus `0-preview.png`, contiguous, `0-` byte identical to `Mod/About/Preview.png` (sha256 `62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe`, 604 KB). Echo kept: the beetle line art redrawn for `1.0.3`, and the gallery shows the beetle (image 4); recorded in `echo_review_sha`. The GitHub `og:image` is a custom image; whether it is the `1.0.3` Preview is not known.
 - **Local note:** `Mod/desktop.ini` exists on disk, untracked (gitignored); the CI publishes a clean checkout, so it never shipped.
-- **Needed for the next transition (`writeDocs`):** send the `1.0.3` Preview as GitHub social preview and record its sha256; then the owner's review of the documents.
+- **Social preview (10.f), 2026-10-10:** the owner sent the `1.0.3` `Mod/About/Preview.png` on GitHub; og:image moved to a new `repository-images` id; `social_preview_sha256` recorded (not downloaded: the uploaded bytes are taken as the local ones).
+- **Mount preview done, moved up to `writeDocs[1.0.3]`.** Left for `prepareRelease` (11.j): the owner's review of `PUBLICATION.md` and `CHANGELOG.md` for the `1.0` line.
 
 ## Translation audit
 
