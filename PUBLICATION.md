@@ -1,7 +1,7 @@
 # Publication sheet
 
-**Version 1.0.0 is published and public (2026-09-28).** Workshop item `3806708754`; `Mod/About/PublishedFileId.txt` is
-committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
+**Version 1.0.3 is published and public (2026-10-08); the first public release, 1.0.0, was on 2026-09-28.** Workshop item
+`3806708754`; `Mod/About/PublishedFileId.txt` is committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
 next update and for whoever takes the mod over.
 
 Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read versions in `docs/PROTOCOLS-READ.md`),
