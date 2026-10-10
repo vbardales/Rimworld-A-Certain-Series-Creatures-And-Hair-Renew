@@ -149,14 +149,6 @@ New icon and new header image for the page. The page description is reworded in 
 
 Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`): `docs/runs/history.md`.
 
-## Use This Instead comment
-
-State: drafted (2026-10-10). Where it goes: the comments of [Use This Instead](https://steamcommunity.com/sharedfiles/filedetails/?id=3396308787) (Mlie), posted by the owner under her own account; `../USE_THIS_INSTEAD.md` holds the row and its status (`drafted`, then `posted`).
-
-```
-Hi! [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806708754]A Certain Series - Creatures and Hair Renew (unofficial)[/url] (packageId nelim.acertainseriescreaturesandhair, RimWorld 1.6) continues [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729]Toaru Majutsu no Index Mod[/url] by 混沌の味方 (id 1667943729, RimWorld 1.0, no packageId). Could you add it as the replacement? It is an unofficial port: no licence or permission from the original's author was found, so the page says so up front. Thank you for Use This Instead!
-```
-
 ## Dependencies and DLC
 
 **No DLC and no mod is required.** `supportedVersions` declares 1.6 only. `loadBefore` names Animal Prosthetics 2 only,
