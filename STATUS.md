@@ -8,10 +8,11 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeDocs[1.0.3]
+workflow_stage: followUp[1.0.3]
 code_review_sha: 993753bd9ed66b194ac941a2eddf52dbc2f1fb7c
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
+publication_changelog_review_sha: 304df511285387f8e22725b8a00a2c624a3af518
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
@@ -23,11 +24,10 @@ remaining:
   - unverified: whether a trader other than the two exotic ones sells the creatures (the description says exotic goods traders only); whether the beetle's vanilla parts (eyes, antennae) have a surgery in Animal Prosthetics 2; the beetle's aggression (subjective, not automated)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
-  - unverified: owner's review of `PUBLICATION.md` and `CHANGELOG.md` for the `1.0` line (11.j): `publication_changelog_review_sha` absent, not written without her confirmation in chat
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-10, AUDIT.md reapplied (stage writeDocs[1.0.3], see Audit 2026-10-10), 2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
-protocols_read_sha: 9e53ad19092521ae81c488e37d06716b159dd78b
+updated:      2026-10-10, AUDIT.md reapplied (stage followUp[1.0.3], see Audit 2026-10-10), 2026-10-08, gallery migrated to the Backlot with eyes and faces (runs `209d`, `fc2b`; images 1 to 3 replaced), 2026-10-07 gallery played and installed as the series "Noon at the Sanctuary" (features 17 and 18, runs `9b6e` and `ba7b`, JPEG 1.8 MB), two French corrections from the owner's review (`fabrication au`, the beetle is born wild, `n'amasseront jamais`); `_tools/` moved to `scripts/`, `Art/Preview.png` renamed `Preview-source.png`, thanks drafts kept in PUBLICATION.md
+protocols_read_sha: 0a26b474351c17123636905372a620598b216884
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -61,7 +61,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Gallery and Preview** (9, 10): six images plus `0-preview.png`, contiguous, `0-` byte identical to `Mod/About/Preview.png` (sha256 `62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe`, 604 KB). Echo kept: the beetle line art redrawn for `1.0.3`, and the gallery shows the beetle (image 4); recorded in `echo_review_sha`. The GitHub `og:image` is a custom image; whether it is the `1.0.3` Preview is not known.
 - **Local note:** `Mod/desktop.ini` exists on disk, untracked (gitignored); the CI publishes a clean checkout, so it never shipped.
 - **Social preview (10.f), 2026-10-10:** the owner sent the `1.0.3` `Mod/About/Preview.png` on GitHub; og:image moved to a new `repository-images` id; `social_preview_sha256` recorded (not downloaded: the uploaded bytes are taken as the local ones).
-- **Mount preview done, moved up to `writeDocs[1.0.3]`.** Left for `prepareRelease` (11.j): the owner's review of `PUBLICATION.md` and `CHANGELOG.md` for the `1.0` line.
+- **Documents reviewed 2026-10-10:** the owner confirmed her review of `PUBLICATION.md` and `CHANGELOG.md` at `HEAD` (`304df51`); description synced with `About.xml`, structure and `ATTRIBUTION.md` copies checked; stage moved up to `followUp[1.0.3]`: `prepareRelease` and `publish` are confirmed by the 1.0.3 publication of 2026-10-08 (run `37827987746`, SHA `79a2d2e`, tag `v1.0.3`, `PublishedFileId.txt` committed, item public, `code_review_sha` current, lint clean, tree pushed). Left for `dormant` (14): decide the non-regression replay (14.a), clean-up (14.c); no branch other than `main` (14.d)./ A new version of this line would not reopen the review; a change of the Steam description would.
 
 ## Translation audit
 
