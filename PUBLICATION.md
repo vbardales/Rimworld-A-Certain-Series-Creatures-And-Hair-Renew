@@ -140,14 +140,14 @@ are not kept in this repository (`../WORKSHOP_COMMENTS.md` records that they wer
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
 
-### 1.0.3
+### 1.0.4
 
 ```
-[b]1.0.3[/b]
-New icon and new header image for the page. The page description is reworded in three places, and three French texts are reworded (the beetle egg and the seraph core descriptions, the work label of the dark matter production). No other change to the mod.
+[b]1.0.4[/b]
+The page description now says that the Empire's traders (Royalty) also sell the creatures, and the angel core description no longer claims to be the only part of a seraph that survives butchering (the seraph also yields heavenly cloth); the French text follows. No other change to the mod.
 ```
 
-Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`): `docs/runs/history.md`.
+Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`, `1.0.3`): `docs/runs/history.md`.
 
 ## Dependencies and DLC
 
