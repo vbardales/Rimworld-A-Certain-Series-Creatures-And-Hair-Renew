@@ -32,7 +32,7 @@ Rural and Punk exactly as the original had them — so any pawn can be generated
 and all of them are available at the styling station.
 
 Neither creature spawns in the wild. The seraph reaches a colony only through exotic-goods
-traders, caravans, or orbital traders. The beetle can be bought the same way, or bred at the propagator.
+traders, caravans, or orbital traders, and, with Royalty, the Empire's traders. The beetle can be bought the same way, or bred at the propagator.
 
 The propagator costs one brain fragment to build, and only a propagator can grow another, so the
 first fragment has to be bought - from an outlander or orbital exotic trader, or from the Empire.

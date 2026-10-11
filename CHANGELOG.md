@@ -3,6 +3,12 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+
+- `Mod/About/About.xml` (and the Workshop description, `README.md`): the Empire's traders (Royalty) are named among the sellers of the creatures. A run of 2026-10-11 found the beetle in the stock of `Base_Empire_Standard`, `Empire_Caravan_TraderGeneral` and `Orbital_Empire`.
+
 ## [1.0.3] — 2026-10-08
 
 New icon and Preview image, three French wordings, the page description. RimWorld 1.6.
