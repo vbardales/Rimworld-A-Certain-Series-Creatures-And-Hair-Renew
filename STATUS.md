@@ -1,18 +1,18 @@
 ---
 localization: complete
-translation_en: unchecked
-translation_fr: unchecked
+translation_en: complete
+translation_fr: complete
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeDocs[1.0.4]
+workflow_stage: prepareRelease[1.0.4]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
-publication_changelog_review_sha: 304df511285387f8e22725b8a00a2c624a3af518
+publication_changelog_review_sha: df9fba5c68833549464a7eadc2d85cdb1eb24ae4
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
@@ -26,8 +26,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-11, 1.0.4 opened (description: the Empire's traders), stage walked from code to playTests on offline evidence; Pickle features 19-21 waiting
-protocols_read_sha: addcacdd7484e06dea9d576e3bc9333968bf6b49
+updated:      2026-10-11, 1.0.4: angel core texts and PUBLICATION.md / CHANGELOG.md validated by the owner (11.j), stage prepareRelease[1.0.4]
+protocols_read_sha: d701d6a851fe68fbde21d37907063e2a4c373c2c
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -61,7 +61,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 
 ## Translation audit
 
-French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine were read by hand (`TRANSLATIONS.md` section 3): none contains a `{PAWN_gender ? ...}` switch and none needs one, every text names a creature, a body part, an object or a hairstyle's namesake, never the colonist. `FRENCH_REVIEW.md` (`scripts/Make-FrenchReview.ps1`, stamps the revision) was validated by the owner on 2026-09-30. **2026-10-11: `ACS_AngelCore.description` changed in English and French for 1.0.4 (`19f331e`); `translation_en` and `translation_fr` are `unchecked` until the owner rereads the two texts (see the regenerated `FRENCH_REVIEW.md`).** HairDef names follow fr.wikipedia: titles and Level 5 names stay in their original form. Any later French edit resets the field to `unchecked`. The French text shipped since `1.0.1` is the validated one.
+French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine were read by hand (`TRANSLATIONS.md` section 3): none contains a `{PAWN_gender ? ...}` switch and none needs one, every text names a creature, a body part, an object or a hairstyle's namesake, never the colonist. `FRENCH_REVIEW.md` (`scripts/Make-FrenchReview.ps1`, stamps the revision) was validated by the owner on 2026-09-30. 2026-10-11: `ACS_AngelCore.description` changed in English and French for 1.0.4 (`19f331e`); the owner (Virginie) reread the two texts and validated them on 2026-10-11 at revision `df9fba5c68833549464a7eadc2d85cdb1eb24ae4`, no correction; `translation_en` and `translation_fr` are `complete` again. HairDef names follow fr.wikipedia: titles and Level 5 names stay in their original form. Any later French edit resets the field to `unchecked`. The French text shipped since `1.0.1` is the validated one.
 
 ## Vocabulary
 
