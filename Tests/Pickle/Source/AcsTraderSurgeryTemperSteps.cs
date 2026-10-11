@@ -134,8 +134,8 @@ namespace ACertainSeries.PickleSteps
         public void ColonistUnhurt(PickleContext ctx, string colonistName)
         {
             var pawn = Colonist(ctx, colonistName);
-            var injuries = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList();
-            ctx.Assert(injuries.Count == 0, $"{colonistName} carries {injuries.Count} injuries: {string.Join(", ", injuries.Select(i => i.Label))}");
+            var injuries = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().Where(i => !i.IsPermanent()).ToList();
+            ctx.Assert(injuries.Count == 0, $"{colonistName} carries {injuries.Count} fresh injuries (old scars are ignored): {string.Join(", ", injuries.Select(i => i.Label))}");
         }
     }
 }
