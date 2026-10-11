@@ -13,7 +13,7 @@ Feature: The creatures leave a colonist alone until they are hurt
   @timeout:240
   Scenario: the wild beetle is calm, then turns on the colonist who hurts it
     When A Certain Series: I spawn a "ACS_DarkMatterBeetle" pawn 6 cells east of "Hunter"
-    And Nelim's Pickle Tools: I let 600 ticks pass
+    And I wait 600 ticks
     Then A Certain Series: the "ACS_DarkMatterBeetle" is in no mental state
     And A Certain Series: the colonist "Hunter" is unhurt
     When A Certain Series: the "ACS_DarkMatterBeetle" is hurt by the colonist "Hunter"
@@ -23,7 +23,7 @@ Feature: The creatures leave a colonist alone until they are hurt
   @timeout:240
   Scenario: the wild seraph is calm, then turns on the colonist who hurts it
     When A Certain Series: I spawn a "ACS_Gabriel" pawn 6 cells east of "Hunter"
-    And Nelim's Pickle Tools: I let 600 ticks pass
+    And I wait 600 ticks
     Then A Certain Series: the "ACS_Gabriel" is in no mental state
     And A Certain Series: the colonist "Hunter" is unhurt
     When A Certain Series: the "ACS_Gabriel" is hurt by the colonist "Hunter"
