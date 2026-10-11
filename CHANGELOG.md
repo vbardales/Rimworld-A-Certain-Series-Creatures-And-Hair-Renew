@@ -7,6 +7,7 @@ All notable changes to this mod are recorded here. The format follows
 
 ### Changed
 
+- French and English: the angel core description no longer says it is the only part of a seraph that survives butchering (the seraph also yields heavenly cloth): `It survives a seraph's butchering, and it is worth more than most colonies will ever hold.` / `Il subsiste après le dépeçage d'un séraphin, et sa valeur dépasse les richesses que la plupart des colonies n'amasseront jamais.`
 - `Mod/About/About.xml` (and the Workshop description, `README.md`): the Empire's traders (Royalty) are named among the sellers of the creatures. A run of 2026-10-11 found the beetle in the stock of `Base_Empire_Standard`, `Empire_Caravan_TraderGeneral` and `Orbital_Empire`.
 
 ## [1.0.3] — 2026-10-08

@@ -123,7 +123,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>ACS_AngelCore</defName>
     <label>angel core</label>
-    <description>The mysterious object at the heart of an angel. It is the only part of a seraph that survives butchering, and it is worth more than most colonies will ever hold.</description>
+    <description>The mysterious object at the heart of an angel. It survives a seraph's butchering, and it is worth more than most colonies will ever hold.</description>
     <graphicData>
       <texPath>ACS/Items/AngelCore</texPath>
       <graphicClass>Graphic_Single</graphicClass>
