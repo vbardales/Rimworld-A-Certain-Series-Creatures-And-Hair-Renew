@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: mountPreview[1.0.4]
+workflow_stage: writeDocs[1.0.4]
 code_review_sha: 267a4d850963c5e34f8a65ccb8af7e920b8f7417
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
