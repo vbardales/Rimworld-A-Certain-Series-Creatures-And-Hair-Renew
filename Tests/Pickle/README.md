@@ -5,7 +5,7 @@ It turns the manual checks of `../../TESTING.md` into scenarios that set a scene
 person to read only the `@review` captures.
 
 **Status: written, never run.** The suite compiles against the 1.6 game assemblies, and every step line
-resolves to exactly one step (`Check-Steps.ps1`). Whether each step does what its scenario hopes is what the
+resolves to exactly one step (`scripts/Check-Steps.ps1` of the protocols repository). Whether each step does what its scenario hopes is what the
 first run settles; the list at the end names the assumptions it will confirm or break. Running the suite is
 the work of `done -> tested`, not of `done`.
 
@@ -132,11 +132,11 @@ filter. **The 120 seconds of the watchdog bound a scenario, whatever its `@timeo
 
 ```powershell
 dotnet build Tests/Pickle/Source/ACertainSeriesCreaturesAndHairRenew.PickleSteps.csproj -c Release
-powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ../scripts/Check-Steps.ps1 -Mod ACertainSeriesCreaturesAndHairRenew
 powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Mod.ps1
 ```
 
-`Check-Steps.ps1` compiles every local pattern with Pickle's own expression engine, and matches every step
+`Check-Steps.ps1` (shared, protocols repository) compiles every local pattern with Pickle's own expression engine, and matches every step
 line of every feature against Pickle's vocabulary, the shared tools in the pass map and this suite's own.
 It fails on an undefined step, an ambiguous one, an invalid pattern (an unescaped `(` makes the **whole run**
 play zero scenarios) and a duplicate. It proves a step's text exists, not that it does what a scenario hopes.
@@ -145,7 +145,7 @@ It was checked against a deliberately wrong feature and a deliberately invalid p
 ## Evidence
 
 Raw reports go to `Evidence/` under this folder, which `.gitignore` excludes. What to keep and what to
-delete is in `../../TESTING.md`, "Evidence to keep". `Minify-Evidence.ps1` shrinks a copied report in place:
+delete is in `../../TESTING.md`, "Evidence to keep". `scripts/Minify-Evidence.ps1` (shared, protocols repository) shrinks a copied report in place:
 screenshots become JPEG (quality 80, at most 1280 px), and `report.html` and `messages.ndjson` go.
 
 ## What the first run has to confirm

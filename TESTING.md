@@ -30,7 +30,7 @@ version migrations. The in-game scenarios below remain necessary.
 ## What `playTests` requires, and where this mod stands
 
 The Pickle scenarios are written and played (`Tests/Pickle/`: 18 features and 28 local steps; its README says what is in
-Gherkin, what deliberately is not, and why; `Tests/Pickle/Check-Steps.ps1` resolves every step line to exactly one step).
+Gherkin, what deliberately is not, and why; `scripts/Check-Steps.ps1` of the protocols repository resolves every step line to exactly one step).
 The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`); `Mod/` has not changed since
 `1.0.3`. Earlier states of this section (the `tested` check of 2026-09-27) are in `git log`.
 
@@ -126,7 +126,7 @@ keep after a test, and what to delete").
 | `junit.xml` and `messages.ndjson` | The per-step outcome and the failure messages |
 | `Player.log` | Startup, load order, dropped mods, errors outside the scenarios: only the newest one per pass |
 | `evidence-complete.txt` or `no-report.txt` | Says the copy is whole, or that the launcher left no report |
-| The `@review` captures, **minified to JPEG** | Human review outcome. `Tests/Pickle/Minify-Evidence.ps1 -Folder <copy>` re-encodes them (quality 80, at most 1280 px wide) and drops `report.html` and `messages.ndjson`. Keep the original of a capture that has to be measured, not read |
+| The `@review` captures, **minified to JPEG** | Human review outcome. `scripts/Minify-Evidence.ps1 -Folder <copy>` of the protocols repository re-encodes them (quality 80, at most 1280 px wide) and drops `report.html` and `messages.ndjson`. Keep the original of a capture that has to be measured, not read |
 | One line in `docs/runs/` | The history, one text line per run, never a folder |
 
 Delete a report that a newer one supersedes for the same scenario and the same revision, unless it is the
