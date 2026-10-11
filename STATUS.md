@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: prepareRelease[1.0.4]
+workflow_stage: publish[1.0.4]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
@@ -27,7 +27,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
 updated:      2026-10-11, 1.0.4: angel core texts and PUBLICATION.md / CHANGELOG.md validated by the owner (11.j), stage prepareRelease[1.0.4]
-protocols_read_sha: d701d6a851fe68fbde21d37907063e2a4c373c2c
+protocols_read_sha: 36fa548f495847f0885c1150d2251b31364ca483
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
