@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.0.4]
+workflow_stage: shootGallery[1.0.4]
 code_review_sha: 267a4d850963c5e34f8a65ccb8af7e920b8f7417
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
@@ -27,7 +27,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
 updated:      2026-10-11, 1.0.4 opened (description: the Empire's traders), stage walked from code to playTests on offline evidence; Pickle features 19-21 waiting
-protocols_read_sha: 8d809b21328bae32738d36bacff98ad5a34ff459
+protocols_read_sha: addcacdd7484e06dea9d576e3bc9333968bf6b49
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -56,6 +56,8 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Settings (5.g):** `settings_audit: not_applicable`, unchanged (no code, no page, no shortcut).
 - **Translations (6):** no player text changed; `Test-Translations.ps1` 202/202 on `2297e8b`; `Make-FrenchReview.ps1` (shared) reproduces `FRENCH_REVIEW.md`; the local `Generate-FrenchReview.ps1` is deleted.
 - **Tests (7):** `Test-Mod.ps1` 14/14 and `Test-Translations.ps1` 202/202 replayed 2026-10-11. New Pickle features 19, 20, 21 (`Tests/Pickle/Mod/Pickle/Features/`) written for the findings above; run `20261011-010821-056-051f` red for two reasons of the tests themselves (an undefined step, and `Orbital_Empire` missing from the allowed list), both fixed in `613430f`; reruns `20261011-133628-194-82f6` (19 and 21) and `20261011-010821-692-9209` (20, Animal Prosthetics 2) filed and waiting.
+
+- **Gallery and Preview (9, 10), confirmed 2026-10-11:** 1.0.4 changes no gallery image, no `Preview.png`, no echo: indexes 0 to 6 contiguous, `0-preview.png` identical to `Mod/About/Preview.png`, `social_preview_sha256` and `echo_review_sha` unchanged and valid.
 
 ## Translation audit
 
