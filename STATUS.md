@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: code[1.0.4]
+workflow_stage: declareDependencies[1.0.4]
 code_review_sha: 993753bd9ed66b194ac941a2eddf52dbc2f1fb7c
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
@@ -26,8 +26,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-11, full audit (AUDIT.md 16) on `2c96cce`: stage `dormant` confirmed, nothing changed in `Mod/`; earlier: 2026-10-10 cleanup before dormancy (14.c)
-protocols_read_sha: 9228d01d4d929d64bbd9ebdb1a222b46853f5371
+updated:      2026-10-11, 1.0.4 opened (description: the Empire's traders), stage walked from code to playTests on offline evidence; Pickle features 19-21 waiting
+protocols_read_sha: 8d809b21328bae32738d36bacff98ad5a34ff459
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
