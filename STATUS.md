@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: dormant
+workflow_stage: code[1.0.4]
 code_review_sha: 993753bd9ed66b194ac941a2eddf52dbc2f1fb7c
 echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
@@ -27,7 +27,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
 updated:      2026-10-11, full audit (AUDIT.md 16) on `2c96cce`: stage `dormant` confirmed, nothing changed in `Mod/`; earlier: 2026-10-10 cleanup before dormancy (14.c)
-protocols_read_sha: a9ca34dceecadae081444805bbce9c55e4e0469e
+protocols_read_sha: 9228d01d4d929d64bbd9ebdb1a222b46853f5371
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -48,6 +48,14 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`). **Dogs mate (Continued) and Better Crossbreeding** (`PUBLISHING.md`, four integrations for animal mods; the owner's rule of 2026-10-01 asks for a recorded decision): neither patch applies, by the owner's decision of 2026-09-25 (no crossbreeding). The beetle has no genders and a gestation of 0 and is made from an egg in the propagator, so it cannot mate; the seraph is unique by design. Nothing to add to `pawnKinds` of a Dogs mate group, no `canCrossBreedWith`, no Better Crossbreeding extension. Reopen only if the owner designs a pair (`BACKLOG.md`, item 1).
 
 - **Content boxes:** adult content and violence both unticked, decided by the owner on 2026-10-01 (`PUBLICATION.md`, Content boxes).
+
+## 1.0.4 in preparation (opened 2026-10-11)
+
+- **Content:** description only. The Empire's traders (Royalty) are named among the sellers of the creatures: the first run of features 19 and 21 found the beetle in the stock of `Base_Empire_Standard`, `Empire_Caravan_TraderGeneral` and `Orbital_Empire` (evidence `Tests/Pickle/Evidence/2026-10-11-sellers-temper`). `CHANGELOG.md` `[Unreleased]`; `Mod/` changes only `About.xml`'s description.
+- **Dependencies and DLC (4.g), rechecked 2026-10-11 on `2297e8b`:** no `modDependencies`; `loadBefore` Animal Prosthetics 2 (`SamBucher.ADogSaidAnimalProsthetics2`, Workshop 3238353862, guarded patch); Nocturnal Animals Continued (Workshop 2269731409, guarded patch, nothing in `About.xml`); no DLC required (Royalty only adds traders that sell the creatures). `Test-Mod.ps1` group 13 and 14 green.
+- **Settings (5.g):** `settings_audit: not_applicable`, unchanged (no code, no page, no shortcut).
+- **Translations (6):** no player text changed; `Test-Translations.ps1` 202/202 on `2297e8b`; `Make-FrenchReview.ps1` (shared) reproduces `FRENCH_REVIEW.md`; the local `Generate-FrenchReview.ps1` is deleted.
+- **Tests (7):** `Test-Mod.ps1` 14/14 and `Test-Translations.ps1` 202/202 replayed 2026-10-11. New Pickle features 19, 20, 21 (`Tests/Pickle/Mod/Pickle/Features/`) written for the findings above; run `20261011-010821-056-051f` red for two reasons of the tests themselves (an undefined step, and `Orbital_Empire` missing from the allowed list), both fixed in `613430f`; reruns `20261011-133628-194-82f6` (19 and 21) and `20261011-010821-692-9209` (20, Animal Prosthetics 2) filed and waiting.
 
 ## Translation audit
 
