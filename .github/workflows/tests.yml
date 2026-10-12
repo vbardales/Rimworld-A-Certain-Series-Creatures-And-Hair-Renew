@@ -12,4 +12,4 @@ jobs:
         run: ./Tests/Test-Mod.ps1
       - name: Check English and French text coverage
         shell: powershell
-        run: ./Tests/Test-Translations.ps1
+        run: ./.github/scripts/Check-Translations.ps1 -ModRoot . -Language French -SourceLanguage English -RejectCjk -NoKeyed -Strict -RejectIdentical
