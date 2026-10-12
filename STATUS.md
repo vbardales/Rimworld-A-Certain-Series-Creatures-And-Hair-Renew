@@ -27,7 +27,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
 updated:      2026-10-12, 1.0.4 published (v1.0.4, d7c7d42); non-regression green; cleanup before dormancy
-protocols_read_sha: 843f1aacadc7192af7042a9fadd4ac614785700a
+protocols_read_sha: fbf1eee094142cfa4def5913c31f9384151fdaf8
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
