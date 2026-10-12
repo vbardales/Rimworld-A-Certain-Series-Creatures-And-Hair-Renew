@@ -8,9 +8,9 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: followUp[1.0.4]
+workflow_stage: dormant
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
-echo_review_sha: 85214a41aa411e03219ec970646b3e5ab2b5663c
+echo_review_sha: f58243c5df04b570c01e7fed535a0f70affb95fd
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
 publication_changelog_review_sha: df9fba5c68833549464a7eadc2d85cdb1eb24ae4
 licence:      silent
@@ -18,7 +18,7 @@ licence_at:   original files and About.xml, Steam description and all 14 comment
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
 dependencies: none
 showcase:     complete
-tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them. 2026-10-11 on `267a4d8` (Mod/ differs from the tested tree only by the description): features 19 (who sells the creatures, `2026-10-11-sellers-temper-2`), 20 (surgery with Animal Prosthetics 2, `2026-10-11-surgery-ads2`, pass `avec-ads2`) and 21 (temper when hurt, `2026-10-11-temper-3`) green
+tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them. 2026-10-11 on `267a4d8` (Mod/ differs from the tested tree only by the description): features 19 (who sells the creatures, `2026-10-11-sellers-temper-2`), 20 (surgery with Animal Prosthetics 2, `2026-10-11-surgery-ads2`, pass `avec-ads2`) and 21 (temper when hurt, `2026-10-11-temper-3`) green; 2026-10-12 on `d7c7d42` (1.0.4): English `2026-10-11-regression-en` and French `2026-10-11-regression-fr` plus `2026-10-12-regression-fr-2` (feature 13) green
 workshop:     3806708754
 remaining:
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
@@ -26,8 +26,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-11, 1.0.4 published (v1.0.4, d7c7d42); followUp: non-regression of the changed texts filed
-protocols_read_sha: 36fa548f495847f0885c1150d2251b31364ca483
+updated:      2026-10-12, 1.0.4 published (v1.0.4, d7c7d42); non-regression green; cleanup before dormancy
+protocols_read_sha: 843f1aacadc7192af7042a9fadd4ac614785700a
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -37,7 +37,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 
 ## Where it stands
 
-- **1.0.4 published (2026-10-11):** run `38165936811` (dry-run `38165648686`, `update_description` only), tag `v1.0.4` and release created by the CI, SHA `d7c7d4226df5af659874162e5deabf10d0965519`, Workshop item 3806708754. Content: the Empire's traders named among the sellers of the creatures (description), the angel core description corrected in English and French. Non-regression (14.a): Pickle replay of the scenarios that show the changed text (02, 03, 12, 13) filed after the deployment; rollback target `v1.0.3`.
+- **1.0.4 published (2026-10-11):** run `38165936811` (dry-run `38165648686`, `update_description` only), tag `v1.0.4` and release created by the CI, SHA `d7c7d4226df5af659874162e5deabf10d0965519`, Workshop item 3806708754. Content: the Empire's traders named among the sellers of the creatures (description), the angel core description corrected in English and French. Non-regression (14.a), 2026-10-12 on `d7c7d42`: English and French replays of the scenarios that show the changed text (02, 03, 12, 13) green (French feature 13 rerun after its stale expectation `fabrication sur` became `fabrication au`, `2026-10-12-regression-fr-2`); rollback target `v1.0.3`.
 - **1.0.3 published (2026-10-08):** run `37827987746`, tag `v1.0.3`, SHA `79a2d2e137d261b152f3247558c9464d0d5ce68c` (dry-run `37821935505`, `update_preview` and `update_description`), Workshop item 3806708754; the gallery of seven files uploaded by hand by the owner. Non-regression (14.a): not applicable, `Mod/` has not changed since this SHA (decided with the owner, 2026-10-10).
 - **Dates given by the owner (2026-10-08, local time):** `1.0.0` on 28 September, `1.0.1` on 30 September, `1.0.2` on 1 October (the CI run of `1.0.2` started at 22:08 UTC on 30 September, so after midnight in Paris). Her three production gestures of `1.0.0` (public, subscription to the comments, Watch all activity of the mod and the parent mods) are taken as made at that release, 28 September: tell me if they were made on another day.
 - **Published versions:** `1.0.2` (2026-09-30 UTC, run `36783796843`, SHA `890c8743a46b930632a4da7ebf0bfb21ddeb8067`, dry-run `36782547484`, `update_preview` on: sent the header image, `Mod/About/Preview.png`), `1.0.1` (2026-09-30, run `36777976468`, SHA `2234e57eabd079127d1e825f90dff5c3f5eb2fca`, dry-run `36777795874`) and `1.0.0` (2026-09-28, run `36393488106`, SHA `f678f051bcea3ed5fa13eaa6026ece9016f295f8`). Item `3806708754`, public; the CI created tags `v1.0.0`, `v1.0.1`, `v1.0.2` and the releases. `1.0.1` ran with every `update_*` option off (the owner uploaded the gallery by hand); `1.0.2` sent the header image. Tags, description and title were never sent by the CI; the owner checked the public page on 2026-10-01 (header image, change note, tags): up to date. The description is regenerated from `PUBLICATION.md` (`node .github/scripts/sync-about-description.mjs --write`). Rollback target: `v1.0.0` (the earlier commits carry the old packageId).
@@ -49,16 +49,6 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 - **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). The seraph is left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`). **Dogs mate (Continued) and Better Crossbreeding** (`PUBLISHING.md`, four integrations for animal mods; the owner's rule of 2026-10-01 asks for a recorded decision): neither patch applies, by the owner's decision of 2026-09-25 (no crossbreeding). The beetle has no genders and a gestation of 0 and is made from an egg in the propagator, so it cannot mate; the seraph is unique by design. Nothing to add to `pawnKinds` of a Dogs mate group, no `canCrossBreedWith`, no Better Crossbreeding extension. Reopen only if the owner designs a pair (`BACKLOG.md`, item 1).
 
 - **Content boxes:** adult content and violence both unticked, decided by the owner on 2026-10-01 (`PUBLICATION.md`, Content boxes).
-
-## 1.0.4 in preparation (opened 2026-10-11)
-
-- **Content:** description only. The Empire's traders (Royalty) are named among the sellers of the creatures: the first run of features 19 and 21 found the beetle in the stock of `Base_Empire_Standard`, `Empire_Caravan_TraderGeneral` and `Orbital_Empire` (evidence `Tests/Pickle/Evidence/2026-10-11-sellers-temper`). `CHANGELOG.md` `[Unreleased]`; `Mod/` changes only `About.xml`'s description.
-- **Dependencies and DLC (4.g), rechecked 2026-10-11 on `2297e8b`:** no `modDependencies`; `loadBefore` Animal Prosthetics 2 (`SamBucher.ADogSaidAnimalProsthetics2`, Workshop 3238353862, guarded patch); Nocturnal Animals Continued (Workshop 2269731409, guarded patch, nothing in `About.xml`); no DLC required (Royalty only adds traders that sell the creatures). `Test-Mod.ps1` group 13 and 14 green.
-- **Settings (5.g):** `settings_audit: not_applicable`, unchanged (no code, no page, no shortcut).
-- **Translations (6):** no player text changed; `Test-Translations.ps1` 202/202 on `2297e8b`; `Make-FrenchReview.ps1` (shared) reproduces `FRENCH_REVIEW.md`; the local `Generate-FrenchReview.ps1` is deleted.
-- **Tests (7):** `Test-Mod.ps1` 14/14 and `Test-Translations.ps1` 202/202 replayed 2026-10-11. New Pickle features 19, 20, 21 (`Tests/Pickle/Mod/Pickle/Features/`) written for the findings above; run `20261011-010821-056-051f` red for two reasons of the tests themselves (an undefined step, and `Orbital_Empire` missing from the allowed list), both fixed in `613430f`; reruns `20261011-133628-194-82f6` (19 and 21) and `20261011-010821-692-9209` (20, Animal Prosthetics 2) filed and waiting.
-
-- **Gallery and Preview (9, 10), confirmed 2026-10-11:** 1.0.4 changes no gallery image, no `Preview.png`, no echo: indexes 0 to 6 contiguous, `0-preview.png` identical to `Mod/About/Preview.png`, `social_preview_sha256` and `echo_review_sha` unchanged and valid.
 
 ## Translation audit
 
