@@ -75,37 +75,6 @@ namespace ACertainSeries.PickleSteps
             ctx.Assert(offeredBy.Count > 0, $"{thingDefName} was offered by no trader kind in {samples} stocks each");
         }
 
-        [Then("A Certain Series: the race {string} is not offered the recipe {string}")]
-        public void RaceNotOfferedRecipe(PickleContext ctx, string raceDefName, string recipeDefName)
-        {
-            var race = DefDatabase<ThingDef>.GetNamedSilentFail(raceDefName);
-            ctx.Assert(race != null, $"no ThingDef named {raceDefName}");
-            ctx.Assert(DefDatabase<RecipeDef>.GetNamedSilentFail(recipeDefName) != null, $"no RecipeDef named {recipeDefName}");
-            ctx.Assert(!race.AllRecipes.Any(r => r.defName == recipeDefName), $"{raceDefName} is offered {recipeDefName}");
-        }
-
-        /// <summary>
-        /// The recipe is offered AND the game finds a part of that def on a real pawn of the kind: being listed is
-        /// not being usable.
-        /// </summary>
-        [Then("A Certain Series: the recipe {string} can be applied on a {string} of a {string}")]
-        public void RecipeAppliesOnPart(PickleContext ctx, string recipeDefName, string partDefName, string kindDefName)
-        {
-            var recipe = DefDatabase<RecipeDef>.GetNamedSilentFail(recipeDefName);
-            ctx.Assert(recipe != null, $"no RecipeDef named {recipeDefName}");
-            var kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(kindDefName);
-            ctx.Assert(kind != null, $"no PawnKindDef named {kindDefName}");
-            var pawn = PawnGenerator.GeneratePawn(kind);
-            try
-            {
-                ctx.Assert(pawn.def.AllRecipes.Contains(recipe), $"{kindDefName} is not offered {recipeDefName}");
-                var parts = recipe.Worker.GetPartsToApplyOn(pawn, recipe).ToList();
-                ctx.Assert(parts.Any(p => p.def.defName == partDefName),
-                    $"{recipeDefName} finds no {partDefName} on a {kindDefName}: parts found are [{string.Join(", ", parts.Select(p => p.def.defName))}]");
-            }
-            finally { if (!pawn.Destroyed) pawn.Destroy(); }
-        }
-
         [When("A Certain Series: the {string} is hurt by the colonist {string}")]
         public void HurtBy(PickleContext ctx, string kindDefName, string colonistName)
         {

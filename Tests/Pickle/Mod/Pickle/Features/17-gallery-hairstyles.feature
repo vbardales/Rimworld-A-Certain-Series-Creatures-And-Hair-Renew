@@ -27,7 +27,7 @@
 # the colours its artist drew. Places: the empty photographs of every named place were read, not the names; the tea room
 # was tried and dropped (its blue lamps tinted the white robe cyan); the terrace cells come from SANCTUAIRE-CASES.md
 # (the shelf of materials is at (197, 118), the free cells of row 121 are x 195-200).
-@review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
+@review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
 Feature: Gallery pictures of the hairstyles
 
   Scenario: 1 - Rina, the student, comes home (Misaka, the sofa corner, 12:00)

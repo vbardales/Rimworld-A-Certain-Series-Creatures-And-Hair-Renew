@@ -5,7 +5,7 @@
 # Body parts are found by the label the player reads, in the language of the pass, and a label shared by
 # two parts fails the step. That is the check the original mod would have failed: its eight wings shared
 # one label, and its two front claws had swapped sides.
-@review @en-only
+@review @en-only @requires:nelim.pickletools.inspecttabs
 Feature: The two creatures, read in English
 
   Background:
