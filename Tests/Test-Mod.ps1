@@ -20,7 +20,7 @@ function Def([string]$type, [string]$name) {
 
 $script:index = @{}
 $documents = @()
-Test 'XML parses; definitions have unique names within their type' {
+Test 'Definitions are indexed and carry the ACS_ prefix (well-formed XML and unique names: Check-ModBasics.ps1)' {
     $files = @(Get-ChildItem -LiteralPath $ModPath -Recurse -Filter *.xml -File)
     Assert ($files.Count -gt 0) 'No XML found'
     foreach ($file in $files) {
@@ -28,7 +28,6 @@ Test 'XML parses; definitions have unique names within their type' {
         $script:documents += $doc
         foreach ($node in $doc.SelectNodes('/Defs/*[defName]')) {
             $key = "$($node.Name):$($node.defName)"
-            Assert (-not $script:index.ContainsKey($key)) "Duplicate $key"
             Assert ($node.defName.StartsWith('ACS_')) "Unprefixed $key"
             $script:index[$key] = $node
         }
