@@ -88,7 +88,7 @@ There is no assembly: the whole mod is XML and PNG.
 node ../scripts/Render-Preview.cjs
 ```
 
-Inputs, all in `Art/`: `Preview-source.png` (the text-free background photo; the shared renderer defaults to `Preview.png`, so `Preview.config.json` sets `backgroundFile`), `Preview.config.json` (title, copy, layout, palette, echo and badge settings), `echo-source.png` (the beetle line art behind the title, drawn by hand from `echo-original.png`) and `ModIcon-source.png` (the cut-out icon used as the bottom-right badge). After a render, copy `Mod/About/Preview.png` byte for byte to `Art/Gallery/0-preview.png`. These are build settings and do not belong in `Mod/About/About.xml`.
+Inputs, all in `Art/`: `Preview-source.png` (the text-free background photo; the shared renderer defaults to `Preview.png`, so `Preview.config.json` sets `backgroundFile`), `Preview.config.json` (title, copy, layout, palette, echo and badge settings), `echo-source.png` (the beetle line art behind the title, drawn by hand; its source photo is in git history) and `ModIcon-source.png` (the cut-out icon used as the bottom-right badge). After a render, copy `Mod/About/Preview.png` byte for byte to `Art/Gallery/0-preview.png`. These are build settings and do not belong in `Mod/About/About.xml`.
 
 ## Naming
 
