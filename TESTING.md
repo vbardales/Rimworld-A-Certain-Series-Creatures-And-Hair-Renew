@@ -65,7 +65,7 @@ The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/his
 | S2: reloading a colony that holds the mod's content | `11`. The upgrade variant is not applicable: there is no previous revision |
 | All forty-one hairstyles at the styling station, generated on pawns | `05` shows the draw; the tags are asserted offline, and the station only filters on them |
 | Names in English; the original Chinese comes back | `12` and `14` |
-| The French translation gate: labels, activity texts, keys | `13`, and `03` for layout; coverage stays in `Test-Translations.ps1` |
+| The French translation gate: labels, activity texts, keys | `13`, and `03` for layout; coverage stays in the shared `Check-Translations.ps1` |
 | Raw keys, English fallback, clipped text | a raw key cannot sit in a label `12` to `14` assert; clipping is read on the `@review` captures |
 | Dark matter as a material: does not burn, barely wears, ten times the hit points | `Test-Mod.ps1` |
 | The beetle's temper | not automated: it has no pass or fail threshold, see "Subjective balance review" |
@@ -159,7 +159,7 @@ What a person still does is read the `@review` captures.
 Before a game run, execute the source-based coverage check:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Translations.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .github/scripts/Check-Translations.ps1 -ModRoot . -Language French -SourceLanguage English -RejectCjk -NoKeyed -Strict -RejectIdentical
 ```
 
 It checks owned English Def text against French resources, including nested labels

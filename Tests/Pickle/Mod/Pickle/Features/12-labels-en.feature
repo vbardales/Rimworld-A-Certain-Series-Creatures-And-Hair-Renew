@@ -1,4 +1,4 @@
-# What the player reads, on the loaded defs, in the language of the pass. Tests/Test-Translations.ps1 proves
+# What the player reads, on the loaded defs, in the language of the pass. the shared Check-Translations.ps1 proves
 # every owned text has a French entry and Check-DefInjected that every key resolves against the 1.6 types.
 # Neither proves the game APPLIED them: a language folder whose name differs in case from the one the game
 # looks for is silent on Linux and on the Steam Deck, and shows the English text in a French game.

@@ -1,4 +1,4 @@
-# Runtime checks only. Tests/Test-Mod.ps1 owns the XML contracts and Tests/Test-Translations.ps1 the
+# Runtime checks only. Tests/Test-Mod.ps1 owns the XML contracts and the shared Check-Translations.ps1 the
 # translation inventory. What only a running game shows is that the game's own loader kept every
 # principal def: in 1.6 a def whose Class= does not resolve is lost whole, and nothing offline replays that.
 Feature: A Certain Series loads in the minimal set

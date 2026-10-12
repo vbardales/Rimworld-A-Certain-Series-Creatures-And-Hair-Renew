@@ -11,7 +11,7 @@ the work of `done -> tested`, not of `done`.
 
 ## What is in Gherkin, and why it needs a game
 
-`../Test-Mod.ps1` and `../Test-Translations.ps1` already prove what a file can prove: the XML text, the
+`../Test-Mod.ps1` and the shared `Check-Translations.ps1` already prove what a file can prove: the XML text, the
 references, the anatomy repairs as XML, the translation inventory. Nothing below repeats them. Each feature
 exists because the game itself has to act on the defs.
 
