@@ -24,7 +24,7 @@ Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read ver
   approval of `steam-production`, and a rollback target chosen beforehand. **Rollback target: back to private**, by hand
   on the Steam page (the CI's own rollback deletes only its tag and release, never the Steam item).
 - **Options** `update_preview`, `update_description`, `update_title`, `update_tags`: off unless the change touches the page. `1.0.3` sent the header image and the description (`--preview --description`); the gallery is always uploaded by hand.
-  With `update_tags` the CI sends `Mod` and one tag per `supportedVersions` entry (`1.6`).
+  With `update_tags` the CI sends `Mod` and one tag per `supportedVersions` entry (`1.6` and `1.7`).
 - **Description and `About.xml`:** one source, the block under "Steam description" below. Edit it, then
   `node .github/scripts/sync-about-description.mjs --write` and commit both files; the dry-run and the publish stop if
   they differ. A commit after the dry-run needs its own green dry-run.
@@ -46,9 +46,9 @@ optional mods linked, the AI tool named, Pickle named as a development tool. Ste
 ```markdown
 UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
+Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to the latest RimWorld version.
 
-I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's: all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that 1.6 no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine.
+I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's: all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that the latest RimWorld version no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine.
 
 Original mod: [某系列MOD](https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729)
 
@@ -72,7 +72,7 @@ The original gated all of it behind a research tab of its own carrying eight pro
 - Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/, so nothing collides with another mod.
 - Six defects of the original are corrected (the seraph's ranged attack, the beetle's corpse graphic, swapped claw labels, two left legs, identical wing labels, manhunter packs); ATTRIBUTION.md lists them.
 - Languages: English, French and Simplified Chinese. The Chinese text of the original is kept.
-- For RimWorld 1.6. No DLC and no other mod is required.
+- For the latest RimWorld version. No DLC and no other mod is required.
 
 ## Compatible with
 
@@ -140,18 +140,18 @@ are not kept in this repository (`../WORKSHOP_COMMENTS.md` records that they wer
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
 
-### 1.0.4
+### 1.1.0
 
 ```
-[b]1.0.4[/b]
-The page description now says that the Empire's traders (Royalty) also sell the creatures, and the angel core description no longer claims to be the only part of a seraph that survives butchering (the seraph also yields heavenly cloth); the French text follows. No other change to the mod.
+[b]1.1.0[/b]
+RimWorld 1.7 is now declared next to 1.6. The mod's load check ran green on 1.7 in English; the other checks and the French text were not replayed there. The page description no longer names a RimWorld version, and the header image carries the 1.7 badge. No change to the creatures, the hairstyles or the text.
 ```
 
-Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`, `1.0.3`): `docs/runs/history.md`.
+Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`, `1.0.3`, `1.0.4`): `docs/runs/history.md`.
 
 ## Dependencies and DLC
 
-**No DLC and no mod is required.** `supportedVersions` declares 1.6 only. `loadBefore` names Animal Prosthetics 2 only,
+**No DLC and no mod is required.** `supportedVersions` declares 1.6 and 1.7. `loadBefore` names Animal Prosthetics 2 only,
 because its patch copies the category lists into its surgeries when it loads. Nocturnal Animals asks for no order.
 
 ## Content boxes (adult content, violence)

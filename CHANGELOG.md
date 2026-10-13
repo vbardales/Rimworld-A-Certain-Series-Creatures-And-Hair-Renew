@@ -3,6 +3,19 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] — 2026-10-13
+
+RimWorld 1.7 declared next to 1.6.
+
+### Added
+
+- `Mod/About/About.xml`: `<li>1.7</li>` in `supportedVersions`, next to `1.6`. The scenario `01-loads` (the mod and its principal defs load, no warning from the mod, no error logged) ran green on RimWorld 1.7.4976 in English (ticket `72c6`). The other scenarios were not replayed on 1.7, and the French text was not run there: the 1.7 install ships English only.
+
+### Changed
+
+- `Mod/About/About.xml` (and the Workshop description): the description says "the latest RimWorld version" instead of naming 1.6; the number lives in `supportedVersions`. The description is sent with this version (`update_description`).
+- `Mod/About/Preview.png`: the corner badge reads `1.7` (the highest declared version) and the line under the title says "the latest RimWorld version". The header image of the Workshop page is sent with this version (`update_preview`).
+
 ## [1.0.4] — 2026-10-11
 
 ### Changed

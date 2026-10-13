@@ -6,15 +6,16 @@
   <url>https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew</url>
   <supportedVersions>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
   <loadBefore>
     <li>SamBucher.ADogSaidAnimalProsthetics2</li>
   </loadBefore>
   <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to RimWorld 1.6.
+Two creatures and forty-one hairstyles, taken out of 某系列MOD by 混沌の味方 and brought forward to the latest RimWorld version.
 
-I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's: all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that 1.6 no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine.
+I am not the author of this mod. The creatures, the textures and the original Chinese text are 混沌の味方's: all I did was pick out the part worth keeping, work out what RimWorld 1.0 wrote that the latest RimWorld version no longer understands, and put English on the labels. Credit goes to them; mistakes in the update are mine.
 
 Original mod: 某系列MOD (https://steamcommunity.com/sharedfiles/filedetails/?id=1667943729)
 
@@ -38,7 +39,7 @@ Notes
 - Every def name carries an ACS_ prefix and every texture sits under Textures/ACS/, so nothing collides with another mod.
 - Six defects of the original are corrected (the seraph's ranged attack, the beetle's corpse graphic, swapped claw labels, two left legs, identical wing labels, manhunter packs); ATTRIBUTION.md lists them.
 - Languages: English, French and Simplified Chinese. The Chinese text of the original is kept.
-- For RimWorld 1.6. No DLC and no other mod is required.
+- For the latest RimWorld version. No DLC and no other mod is required.
 
 Compatible with
 

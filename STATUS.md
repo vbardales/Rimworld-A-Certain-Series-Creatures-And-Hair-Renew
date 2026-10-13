@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: code[1.1.0]
+workflow_stage: prepareRelease[1.1.0]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
 echo_review_sha: f58243c5df04b570c01e7fed535a0f70affb95fd
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
@@ -27,8 +27,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, 1.7 pass: 01-loads green on RimWorld 1.7.4976 (tested_1_7 yes, ticket 72c6); supportedVersions stays 1.6 until Virginie confirms
-protocols_read_sha: 9e584010b5407b204bcfd1480a229e27dc7b4947
+updated:      2026-10-13, 1.1.0 prepared (1.7 declared, tested_1_7 yes on 01-loads in English, descriptions without a version, Preview badge 1.7, CHANGELOG and change note written); not published: awaits the owner review of PUBLICATION.md and CHANGELOG.md (1.1.x), the GitHub social preview upload, a green dry-run
+protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
