@@ -11,7 +11,7 @@ detached:     yes
 workflow_stage: prepareRelease[1.1.0]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
 echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
-social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
+social_preview_sha256: 383dbb11480a6d890ae846cea5ec203e9730ad26c78b4e86c760a6458c145f94
 publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; feature 13 French to replay on 1.6 (small ticket, Audit ruling) before publish; awaits the GitHub social preview upload, a green dry-run and her order to publish
+updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; feature 13 French to replay on 1.6 (small ticket, Audit ruling) before publish; GitHub social preview uploaded 2026-10-13 (served og:image has the same sha256 as Mod/About/Preview.png); awaits the green ticket 5f29, a green dry-run and her order to publish
 protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
 ---
 
