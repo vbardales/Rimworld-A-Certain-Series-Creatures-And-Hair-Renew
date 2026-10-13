@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: unchecked
+translation_fr: complete
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
@@ -12,7 +12,7 @@ workflow_stage: prepareRelease[1.1.0]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
 echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
-publication_changelog_review_sha: df9fba5c68833549464a7eadc2d85cdb1eb24ae4
+publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, 1.1.0 prepared, not published: French gerund now `fabrication avec le` (translation_fr unchecked until the owner rereads FRENCH_REVIEW.md; feature 13 French to replay on 1.6), 1.1.0 dated Unreleased, awaits the owner review of PUBLICATION.md and CHANGELOG.md, the GitHub social preview upload, a green dry-run
+updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; feature 13 French to replay on 1.6 (small ticket, Audit ruling) before publish; awaits the GitHub social preview upload, a green dry-run and her order to publish
 protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
 ---
 
