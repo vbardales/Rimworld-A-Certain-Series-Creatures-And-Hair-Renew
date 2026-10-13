@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; GitHub social preview uploaded 2026-10-13 (served og:image has the same sha256 as Mod/About/Preview.png); ticket 5f29 (feature 13 French on 1.6, `cd3f431`) green 2 passed 0 failed; awaits a green dry-run and her order to publish
+updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; GitHub social preview uploaded 2026-10-13 (served og:image has the same sha256 as Mod/About/Preview.png); ticket 5f29 (feature 13 French on 1.6, `cd3f431`) green 2 passed 0 failed; dry-run 38413192907 green on b104320; awaits her order to publish (same options, ref b104320, steam-production approval)
 protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
 ---
 
