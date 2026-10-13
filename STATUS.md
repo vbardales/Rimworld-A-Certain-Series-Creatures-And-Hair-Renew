@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 workflow_stage: prepareRelease[1.1.0]
 code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
-echo_review_sha: f58243c5df04b570c01e7fed535a0f70affb95fd
+echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
 social_preview_sha256: 62be45caaba2698c27dc6eea2dd4230f216a1f53a1270d5f65939a82f2db85fe
 publication_changelog_review_sha: df9fba5c68833549464a7eadc2d85cdb1eb24ae4
 licence:      silent
