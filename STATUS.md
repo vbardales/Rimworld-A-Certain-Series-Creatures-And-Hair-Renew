@@ -8,8 +8,8 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: prepareRelease[1.1.0]
-code_review_sha: 19f331e6e4b163678bd684d855a6d6ab763d45db
+workflow_stage: followUp[1.1.0]
+code_review_sha: b104320eec3f940a2635974207bb47c5326a094a
 echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
 social_preview_sha256: 383dbb11480a6d890ae846cea5ec203e9730ad26c78b4e86c760a6458c145f94
 publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
@@ -27,8 +27,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, 1.1.0 prepared, not published: the owner reread PUBLICATION.md, CHANGELOG.md and FRENCH_REVIEW.md (French gerund `fabrication avec le`, review at revision 1c3da69) and validated them; translation_fr complete; GitHub social preview uploaded 2026-10-13 (served og:image has the same sha256 as Mod/About/Preview.png); ticket 5f29 (feature 13 French on 1.6, `cd3f431`) green 2 passed 0 failed; dry-run 38413192907 green on b104320; awaits her order to publish (same options, ref b104320, steam-production approval)
-protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
+updated:      2026-10-13, 1.1.0 published (v1.1.0, b104320, RimWorld 1.7 declared); non-regression 02 and 03 (English and French) to run on the published SHA; Steam dropped the 1.7 tag (not in the game tag list yet)
+protocols_read_sha: 92cd25e11ff11424d3d28b4170ea845fa4f2e227
 ---
 
 # A Certain Series - Creatures and Hair Renew — status
@@ -38,6 +38,7 @@ lives in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`
 
 ## Where it stands
 
+- **1.1.0 published (2026-10-13):** run `38413725207` (dry-run `38413192907`, `update_preview`, `update_description` and `update_tags`), tag `v1.1.0` and release created by the CI, SHA `b104320eec3f940a2635974207bb47c5326a094a`, Workshop item 3806708754. Content: `<li>1.7</li>` next to `1.6` (`tested_1_7: yes`, English only: `01-loads` green on 1.7.4976, ticket `72c6`), descriptions say "the latest RimWorld version", Preview with the `1.7` badge (also the GitHub social preview, `social_preview_sha256` set), French dark matter work label `fabrication avec le` (ticket `5f29` green on 1.6, feature 13 French). **Steam kept the tags `Mod, 1.6` only**: the CI asked for `Mod, 1.6, 1.7` and the upload said `Success`, the public page (`GetPublishedFileDetails`) still shows two tags; probable cause, not proven: `1.7` is not in the game's Workshop tag list yet (Audit: keep the request, no republish; a post-upload tag check for the CI template was forwarded). Non-regression (14.a) on `b104320`: pending. Rollback target `v1.0.4`.
 - **1.0.4 published (2026-10-11):** run `38165936811` (dry-run `38165648686`, `update_description` only), tag `v1.0.4` and release created by the CI, SHA `d7c7d4226df5af659874162e5deabf10d0965519`, Workshop item 3806708754. Content: the Empire's traders named among the sellers of the creatures (description), the angel core description corrected in English and French. Non-regression (14.a), 2026-10-12 on `d7c7d42`: English and French replays of the scenarios that show the changed text (02, 03, 12, 13) green (French feature 13 rerun after its stale expectation `fabrication sur` became `fabrication au`, `2026-10-12-regression-fr-2`); rollback target `v1.0.3`.
 - **1.0.3 published (2026-10-08):** run `37827987746`, tag `v1.0.3`, SHA `79a2d2e137d261b152f3247558c9464d0d5ce68c` (dry-run `37821935505`, `update_preview` and `update_description`), Workshop item 3806708754; the gallery of seven files uploaded by hand by the owner. Non-regression (14.a): not applicable, `Mod/` has not changed since this SHA (decided with the owner, 2026-10-10).
 - **Dates given by the owner (2026-10-08, local time):** `1.0.0` on 28 September, `1.0.1` on 30 September, `1.0.2` on 1 October (the CI run of `1.0.2` started at 22:08 UTC on 30 September, so after midnight in Paris). Her three production gestures of `1.0.0` (public, subscription to the comments, Watch all activity of the mod and the parent mods) are taken as made at that release, 28 September: tell me if they were made on another day.
