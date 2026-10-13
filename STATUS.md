@@ -19,6 +19,7 @@ upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Wo
 dependencies: none
 showcase:     complete
 tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them. 2026-10-11 on `267a4d8` (Mod/ differs from the tested tree only by the description): features 19 (who sells the creatures, `2026-10-11-sellers-temper-2`), 20 (surgery with Animal Prosthetics 2, `2026-10-11-surgery-ads2`, pass `avec-ads2`) and 21 (temper when hurt, `2026-10-11-temper-3`) green; 2026-10-12 on `d7c7d42` (1.0.4): English `2026-10-11-regression-en` and French `2026-10-11-regression-fr` plus `2026-10-12-regression-fr-2` (feature 13) green
+tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
@@ -26,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_877516ce-7557-492f-9994-6bbb772df1e8
-updated:      2026-10-13, reopened at code[1.1.0] for the RimWorld 1.7 pass: ticket 72c6 (01-loads, map sans-facultatifs, p17-acs-01-loads) queued 4th; supportedVersions stays 1.6 until a green 1.7 run
+updated:      2026-10-13, 1.7 pass: 01-loads green on RimWorld 1.7.4976 (tested_1_7 yes, ticket 72c6); supportedVersions stays 1.6 until Virginie confirms
 protocols_read_sha: 9e584010b5407b204bcfd1480a229e27dc7b4947
 ---
 
