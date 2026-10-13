@@ -3,7 +3,7 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.1.0] — Unreleased
+## [1.1.0] — 2026-10-13
 
 RimWorld 1.7 declared next to 1.6.
 
