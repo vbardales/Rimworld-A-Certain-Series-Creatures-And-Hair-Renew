@@ -1,6 +1,6 @@
 # Publication sheet
 
-**Version 1.0.3 is published and public (2026-10-08); the first public release, 1.0.0, was on 2026-09-28.** Workshop item
+**Version 1.0.4 is published and public (2026-10-11); the first public release, 1.0.0, was on 2026-09-28. Version 1.1.0 (RimWorld 1.7 declared) is prepared, not published.** Workshop item
 `3806708754`; `Mod/About/PublishedFileId.txt` is committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
 next update and for whoever takes the mod over.
 
@@ -144,7 +144,7 @@ The CI reads the block under `### <version>` and sends it as written (BBCode); i
 
 ```
 [b]1.1.0[/b]
-RimWorld 1.7 is now declared next to 1.6. The mod's load check ran green on 1.7 in English; the other checks and the French text were not replayed there. The page description no longer names a RimWorld version, and the header image carries the 1.7 badge. No change to the creatures, the hairstyles or the text.
+RimWorld 1.7 is now declared next to 1.6. The mod's load check ran green on 1.7 in English; the other checks and the French text were not replayed there. The page description no longer names a RimWorld version, and the header image carries the 1.7 badge. One French wording changed (the dark matter work label). No change to the creatures or the hairstyles.
 ```
 
 Older notes (`0.1.0`, `1.0.0`, `1.0.1`, `1.0.2`, `1.0.3`, `1.0.4`): `docs/runs/history.md`.

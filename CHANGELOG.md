@@ -3,7 +3,7 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.1.0] — 2026-10-13
+## [1.1.0] — Unreleased
 
 RimWorld 1.7 declared next to 1.6.
 
@@ -13,6 +13,7 @@ RimWorld 1.7 declared next to 1.6.
 
 ### Changed
 
+- French: the work label of the dark matter production becomes `fabrication avec le` (was `fabrication au`), the owner's wording.
 - `Mod/About/About.xml` (and the Workshop description): the description says "the latest RimWorld version" instead of naming 1.6; the number lives in `supportedVersions`. The description is sent with this version (`update_description`).
 - `Mod/About/Preview.png`: the corner badge reads `1.7` (the highest declared version) and the line under the title says "the latest RimWorld version". The header image of the Workshop page is sent with this version (`update_preview`).
 

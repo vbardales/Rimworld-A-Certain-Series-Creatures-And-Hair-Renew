@@ -24,4 +24,4 @@ Feature: French text reaches the loaded definitions
     And def "ACS_Make_Volleyball" field "jobString" is "Condense de la matière noire."
     And def "ACS_Make_EggBeetle" field "jobString" is "Cultive un œuf de scarabée."
     And def "ACS_DoBillsUseDarkMatterProduction" field "verb" is "fabriquer"
-    And def "ACS_DoBillsUseDarkMatterProduction" field "gerund" is "fabrication au"
+    And def "ACS_DoBillsUseDarkMatterProduction" field "gerund" is "fabrication avec le"
