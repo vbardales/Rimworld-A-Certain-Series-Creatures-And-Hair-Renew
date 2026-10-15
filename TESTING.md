@@ -29,10 +29,9 @@ version migrations. The in-game scenarios below remain necessary.
 
 ## What `playTests` requires, and where this mod stands
 
-The Pickle scenarios are written and played (`Tests/Pickle/`: 18 features and 28 local steps; its README says what is in
+The Pickle scenarios are written and played (`Tests/Pickle/`: 21 features and 43 local steps; its README says what is in
 Gherkin, what deliberately is not, and why; `scripts/Check-Steps.ps1` of the protocols repository resolves every step line to exactly one step).
-The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`); `Mod/` has not changed since
-`1.0.3`. Earlier states of this section (the `tested` check of 2026-09-27) are in `git log`.
+The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 were added and played in `1.0.4`, and the non-regression of the changed texts (features 02 and 03) ran green on the published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) are in `git log`.
 
 | Check | Where this mod stands |
 |---|---|
