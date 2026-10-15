@@ -1,36 +1,38 @@
-# Pictures for the Workshop gallery, not a test: the three hairstyle portraits of the series "Noon at the Sanctuary"
-# (images 1 to 3 of 6; the creatures are images 4 to 6, feature 18), in Nelim's Sanctuary (the owner's save "Nelim's tribe",
-# loaded as "Nelims-tribe", SanctuaryBacklot docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the
-# interface. What a scenario asserts is only that the hairstyle is worn; the pictures are the point and are read by eye
-# (@review). The camera of the game stops at about fifty pixels for a colonist: a local step lowers the bound of its zoom.
+# Pictures for the Workshop gallery, not a test: the three hairstyle portraits of the series "Nelim hosts the series"
+# (images 1 to 3 of 7; the creatures and the evening are images 4 to 7, feature 18), in Nelim's Sanctuary (the owner's save
+# "Nelim's tribe", loaded as "Nelims-tribe", SanctuaryBacklot docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md),
+# without the interface. What a scenario asserts is only that the hairstyle is worn; the pictures are the point and are read by
+# eye (@review). The camera of the game stops at about fifty pixels for a colonist: a local step lowers the bound of its zoom.
 # Three families of steps, told apart by their prefix: `Nelim's Sanctuary:` = the Sanctuary Backlot (the named places);
 # `Nelim's Pickle Tools:` = PickleTools, the generic tools (decor, animals, floor, framing, waiting);
 # `A Certain Series:` = this mod's own steps.
 #
-# The story (owner's rules of 2026-10-02/06, PUBLISHING.md: the author is the photographer, one story, time passes,
-# something alive in every picture). A single noon in the Sanctuary, by Nelim's tribe: three visitors, each at home in a
-# corner of the house, then three creatures on the podium. The clock starts at 12:00 in each scenario (the save is
-# reloaded) and the picture is taken a little later each time, 5 minutes of game time (about 208 ticks) further than the
-# previous one, after 60 ticks of set-up; a picture of the series is a scenario. Rhythm chosen: 5 minutes.
+# The story (owner's rules of 2026-10-02/06/14, GALLERY.md): Nelim (the owner, the one colonist of the save) is the
+# protagonist and hosts the series. Rina, Toma and Sena are her guests, each wearing a hairstyle of the mod. The day moves on
+# one picture at a time: 12:00, 14:00, 16:00 (then 17:00 to 20:00 in feature 18). Nelim keeps the look of the fixture (her own
+# face, brown eyes, trousers and corset): no step dresses her. Each picture leaves the bottom of the frame empty: the English
+# subtitle of the scene is burnt there afterwards (PUBLICATION.md, "Gallery redo"), it is not part of the scenario.
+# Animals face the camera (South) on every picture of this feature.
 #
 # Shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says):
-#   1. sofa-corner (the rose rug between three sofas), 12:00+, Rina with Misaka, close and a little left of centre so the
-#      rug and the sofas frame her, a house cat on the floor to her right: a student at home who has just come in;
-#      cream blouse and deep brown to bring out the orange of the hair against the rose.
-#   2. terrace (brick, black piano), 12:05+, Toma with Accelerator, centred, the piano at the edge of the frame, a peacock
-#      walking past behind him: a loner who stays at the edge; all black under a long coat so only the white hair is bright.
-#   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 12:10+, Sena with
-#      Index, a bookcase on her right and a torch on her left, a squirrel on the floor: the librarian with her shelf;
-#      white robe and gold sash on warm wood.
-# Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. A beard on Misaka was tried and
-# dropped (owner: it did not suit her). The game tints a hairstyle by the hair colour: white lets each hairstyle show
-# the colours its artist drew. Places: the empty photographs of every named place were read, not the names; the tea room
-# was tried and dropped (its blue lamps tinted the white robe cyan); the terrace cells come from SANCTUAIRE-CASES.md
-# (the shelf of materials is at (197, 118), the free cells of row 121 are x 195-200).
+#   1. sofa-corner (the rose rug between three sofas), 12:00, Rina with Misaka and Nelim face to face on the rug (Rina
+#      faces East, Nelim West), the camera between them, the house cat in front of them looking at the camera: Nelim kept
+#      the good sofa for a student who has just come in; cream blouse and deep brown to bring out the orange of the hair.
+#   2. terrace (brick, black piano), 14:00, Toma with Accelerator by the piano, drafted for the angry face, Nelim some cells
+#      away facing him, a peacock facing the camera: a loner who stays at the edge of the room; all black under a long coat so
+#      only the white hair is bright.
+#   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 16:00, Sena with
+#      Index by the bookcase on her east side, Nelim beside her, a torch on the west side, a squirrel at her feet looking at the
+#      camera: the librarian and the one shelf worth reading; white robe and gold sash on warm wood.
+# Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
+# hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
+# (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
+# were read, not the names; the tea room was tried and dropped (its blue lamps tinted the white robe cyan); the cells come from
+# SANCTUAIRE-CASES.md (sofa-corner row 124 is free from x 183 to 189; terrace row 121 from x 195 to 200).
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
 Feature: Gallery pictures of the hairstyles
 
-  Scenario: 1 - Rina, the student, comes home (Misaka, the sofa corner, 12:00)
+  Scenario: 1 - Nelim welcomes Rina (Misaka, the sofa corner, 12:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 12
@@ -42,23 +44,26 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: I give "Rina" the hairstyle "ACS_misaka"
     And A Certain Series: I let the hairstyle of "Rina" show its own colours
     And A Certain Series: I dress "Rina" in "Apparel_CollarShirt,Apparel_Pants" coloured "#F1E7D0,#5A3B28"
+    And Nelim's Pickle Tools: "Rina" face kit is "smile"
     Then A Certain Series: "Rina" wears the hairstyle "ACS_misaka"
     And A Certain Series: the hairstyle of "Rina" is drawn in its own colours
     And A Certain Series: "Rina" wears the apparel "Apparel_CollarShirt"
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
-    And Nelim's Pickle Tools: "Rina" stands at (187, 123) facing South
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
+    And Nelim's Sanctuary: Nelim has her own face
     And I wait 60 ticks
-    And I wait 0 ticks
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (189, 122)
-    And A Certain Series: I bring the camera to 2 cells' height on the cell (188, 123)
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 123)
+    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 123) facing South
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 123)
     And I take a screenshot "gallery 1 misaka"
     Then no errors were logged
 
-  Scenario: 2 - Toma, the loner, at the edge of the terrace (Accelerator, 12:05)
+  Scenario: 2 - Toma keeps to the piano (Accelerator, the terrace, 14:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And I set the hour to 12
+    And I set the hour to 14
     And a colonist "Toma" exists
     And A Certain Series: "Toma" is a man
     And Nelim's Pickle Tools: "Toma" body type is Male
@@ -72,19 +77,21 @@ Feature: Gallery pictures of the hairstyles
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: I am at the sanctuary "terrace"
     And I wait 60 ticks
-    And Nelim's Pickle Tools: I let 208 ticks pass
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 121) facing East
+    And Nelim's Sanctuary: Nelim has her own face
     And I draft "Toma"
     And Nelim's Pickle Tools: I let 120 ticks pass
-    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (195, 120)
-    And A Certain Series: I bring the camera to 2 cells' height on "Toma"
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (196, 119)
+    And Nelim's Pickle Tools: the animal "Paon" stands at (196, 119) facing South
+    And Nelim's Pickle Tools: I frame the rectangle from (194, 118) to (200, 123)
     And I take a screenshot "gallery 2 accelerator"
     Then no errors were logged
 
-  Scenario: 3 - Sena, the librarian, by her shelf (Index, the podium, 12:10)
+  Scenario: 3 - Sena finds the one shelf worth reading (Index, the podium, 16:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And I set the hour to 12
+    And I set the hour to 16
     And a colonist "Sena" exists
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
@@ -100,13 +107,15 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
     And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 152)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 152) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 150)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 150) is lit
     And I wait 60 ticks
-    And Nelim's Pickle Tools: I let 417 ticks pass
-    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing East
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
-    And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (196, 151)
-    And Nelim's Pickle Tools: I frame the rectangle from (195, 151) to (198, 153)
+    And Nelim's Pickle Tools: "Nelim" stands at (196, 153) facing East
+    And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (197, 151)
+    And Nelim's Pickle Tools: the animal "Noisette" stands at (197, 151) facing South
+    And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 154)
     And I take a screenshot "gallery 3 index"
     Then no errors were logged
