@@ -180,16 +180,30 @@ State on 2026-10-08: the series is played, **all six images accepted by the owne
 
 Owner's go of 2026-10-15. The series above stays on the Workshop until the new images are accepted; then this table replaces it. The gallery is uploaded by hand by the owner: no version, no tag, no CI. Rules it follows (`../GALLERY.md`): Nelim (the owner) is the protagonist in her default look (own face, brown eyes, trousers); Rina, Toma and Sena are her guests; animals face the camera on at least three images; one time of day per image; third-party mods only if they are in the `galerie` pass map, never in `About.xml`.
 
-**Subtitles (owner's rule, 2026-10-15).** Every scene without an interface window carries one line of English, written at the bottom of the image like a film subtitle (white text on a translucent dark band, burnt into the picture after the capture; the line lives here and nowhere else). A scene that shows an interface window carries none. All seven scenes below are map scenes, so all seven have one.
+**Subtitles (owner's rule, 2026-10-15, `../GALLERY.md`, "Sous-titres").** Every scene without an interface window carries one line of English burnt at the bottom of the image; the lines are in the section "Gallery subtitles" below. The unsubtitled originals stay in `Art/Gallery-clean/`, `Art/Gallery/` holds only the subtitled images to upload. All seven scenes are map scenes, so all seven have a line.
 
-| File | Place and time | Scene | Subtitle (English, bottom of the image) |
-|---|---|---|---|
-| `1-` | `sofa-corner`, 12:00 | Nelim and Rina (Misaka) face to face on the rose rug, the house cat in front | Rina drops by at noon. Nelim kept the good sofa for her. |
-| `2-` | `terrace`, 14:00 | Toma (Accelerator) by the piano, Nelim at a distance, the peacock facing the camera | Toma never sits down. He keeps to the piano, and to the edge of the room. |
-| `3-` | the podium (`emerald-clearing`), 16:00 | Sena (Index) at the bookcase, Nelim handing her a book, the squirrel at her feet | Sena found the one shelf in the Sanctuary worth reading. |
-| `4-` | the podium, 17:00 | The white rhinoceros beetle brought in by Nelim, close to her for scale, the hen facing the camera | Nelim leads in the beetle. It never eats, and it never tires. |
-| `5-` | the podium, 18:00 | God's Power, the seraph, Nelim looking up at it, the three guests behind her | God's Power, eight wings of water. No one has ever tamed one. |
-| `6-` | the podium, 19:00 | Nelim at work between two propagators (one powered, one eight cells away with the lightning icon), the cat between them | One propagator is running. The other is still waiting for power. |
-| `7-` | the podium, 20:00 (optional) | Group picture at dusk with torches, everyone together | Evening at the Sanctuary. Nobody wanted to leave. |
+| File | Place and time | Scene |
+|---|---|---|
+| `1-` | `sofa-corner`, 12:00 | Nelim and Rina (Misaka) face to face on the rose rug, the house cat in front |
+| `2-` | `terrace`, 14:00 | Toma (Accelerator) by the piano, Nelim at a distance, the peacock facing the camera |
+| `3-` | the podium (`emerald-clearing`), 16:00 | Sena (Index) at the bookcase, Nelim handing her a book, the squirrel at her feet |
+| `4-` | the podium, 17:00 | The white rhinoceros beetle brought in by Nelim, close to her for scale, the hen facing the camera |
+| `5-` | the podium, 18:00 | God's Power, the seraph, Nelim looking up at it, the three guests behind her |
+| `6-` | the podium, 19:00 | Nelim at work between two propagators (one powered, one eight cells away with the lightning icon), the cat between them |
+| `7-` | the podium, 20:00 (optional) | Group picture at dusk with torches, everyone together |
 
 Expressions (Facial Animation): Rina smiling, Toma angry (drafted), Sena serene (`normal`), Nelim her own smirk (`blink`) with raised brow, focused or amazed where the scene asks. Status: plan only; scenarios of features 17 and 18, the mod search for the guests' outfits and the subtitle burn-in are still to be done.
+
+## Gallery subtitles
+
+One line per scene (`../GALLERY.md`, "Sous-titres"), burnt in with `../scripts/Add-Subtitle.ps1` after the images are accepted and reindexed. The file names are the planned ones: a reindex renames the clean and the subtitled file together. `0-preview.png` has none.
+
+| Index | File | Line |
+|---|---|---|
+| 1 | `1-hairstyle-misaka.jpg` | Rina drops by at noon. Nelim kept the good sofa for her. |
+| 2 | `2-hairstyle-accelerator.jpg` | Toma never sits down. He keeps to the piano, and to the edge of the room. |
+| 3 | `3-hairstyle-index.jpg` | Sena found the one shelf in the Sanctuary worth reading. |
+| 4 | `4-beetle.jpg` | Nelim leads in the beetle. It never eats, and it feels neither cold nor heat. |
+| 5 | `5-seraph.jpg` | God's Power, eight wings of water. No one has ever tamed one. |
+| 6 | `6-propagator.jpg` | One propagator is running. The other is still waiting for power. |
+| 7 | `7-evening.jpg` | Evening at the Sanctuary. Nobody wanted to leave. |
