@@ -2,173 +2,164 @@
 
 ## Automated regression tests
 
-From the repository root, run:
+From repository root, run:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Test-Mod.ps1
 ```
 
-The standalone suite requires only PowerShell, reads the mod without changing it,
-and exits with code 1 on failure. GitHub Actions runs it on pushes and pull requests.
-Use `-ModPath <folder>` to check another copy of the published mod.
+Standalone suite need only PowerShell, read mod without change, exit code 1 on failure. GitHub Actions run it on pushes and pull requests.
+Use `-ModPath <folder>` to check other copy of published mod.
 
 Coverage: XML parsing, names scoped by def type, ACS references and local parents,
-GitHub metadata, custom texture files (including directional and stack graphics),
+GitHub metadata, custom texture files (directional and stack graphics too),
 explosive projectiles, manhunter exclusion, repaired anatomy, corpse graphics,
 workbench bill access, product references, trader bootstrap tags, egg hatching,
-the creatures', the material's and the machine's values (speed, wildness, meat, hunger, pack,
-training, temperature, factors, costs), and all 41 hairstyles with their Chinese labels.
+creatures', material's and machine's values (speed, wildness, meat, hunger, pack,
+training, temperature, factors, costs), and all 41 hairstyles with Chinese labels.
 
-These are static regression checks, not RimWorld execution. They do not resolve
-vanilla references, replay full XML inheritance, validate C# fields against the game,
-or validate every translation handle. The shared parent repository's
+Static regression checks, not RimWorld execution. They do not resolve
+vanilla references, replay full XML inheritance, validate C# fields against game,
+or validate every translation handle. Shared parent repository's
 `scripts/Check-XmlFields.ps1`, `Check-DefRefs.ps1`, `Check-XmlClasses.ps1`,
 `Check-TypeRefs.ps1`, `Check-ConfigErrors.ps1` and `Check-DefInjected.ps1`
-provide additional checks using the installed game and must also be rerun for
-version migrations. The in-game scenarios below remain necessary.
+give extra checks using installed game and must be rerun for
+version migrations. In-game scenarios below still necessary.
 
 ## What `playTests` requires, and where this mod stands
 
-The Pickle scenarios are written and played (`Tests/Pickle/`: 21 features and 43 local steps; its README says what is in
-Gherkin, what deliberately is not, and why; `scripts/Check-Steps.ps1` of the protocols repository resolves every step line to exactly one step).
-The passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 were added and played in `1.0.4`, and the non-regression of the changed texts (features 02 and 03) ran green on the published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) are in `git log`.
+Pickle scenarios written and played (`Tests/Pickle/`: 21 features, 43 local steps; its README say what is in
+Gherkin, what deliberately not, and why; `scripts/Check-Steps.ps1` of protocols repository resolve every step line to exactly one step).
+Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 added and played in `1.0.4`, and non-regression of changed texts (features 02 and 03) ran green on published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) in `git log`.
 
 | Check | Where this mod stands |
 |---|---|
-| No scenario left in `@wip`. | None carries `@wip`, and `-IncludeWip` is never passed. |
-| Every conditional scenario ran. | Each `@requires` has its own pass on a map that mounts it (Animal Prosthetics 2, Nocturnal Animals): passes 4 and 5 below. |
-| No manual test left to validate. | Every manual check is automated and green or listed as not applicable, with its reason, in the table below. |
+| No scenario left in `@wip`. | None carry `@wip`, `-IncludeWip` never passed. |
+| Every conditional scenario ran. | Each `@requires` has own pass on map that mounts it (Animal Prosthetics 2, Nocturnal Animals): passes 4 and 5 below. |
+| No manual test left to validate. | Every manual check automated and green, or listed as not applicable with reason, in table below. |
 
 ### Where each manual check went
 
 | Manual check | Where it went |
 |---|---|
-| The mod loads; no red error; the seven log strings | `01`, and reading `Player.log` from startup: `no errors were logged` covers a scenario, not the launch |
-| The beetle draws, not a pink box | `02` capture; a missing texture is a logged error, which `no errors were logged` catches |
-| Front claws, each on its own side | `02` and `03`: found by label, exactly one part per label, health tab captured |
-| No hunger bar, certain taming, advanced training, speed, temperature, pack animal | `Test-Mod.ps1`, on the leaf defs. Taming and caravans are vanilla code reading those values |
-| The horn fires | `08` |
-| Butchering the beetle: dark matter, no meat | `04` |
-| A corpse left to rot keeps drawing | not applicable, see the README |
-| The seraph draws; eight wings under eight labels; the right leg on the right | `02` and `03` |
-| The seraph's ranged attack | `08` |
-| No taming; butchering the seraph | `Test-Mod.ps1` (wildness 1) and `04` |
-| Manhunter packs never choose the seraph | not applicable: `Test-Mod.ps1` asserts the flag, the incident code is vanilla |
-| The research is where it should be, at its cost | `06` capture |
-| The propagator builds for one fragment | the cost in `Test-Mod.ps1`; the machine is placed instantly in `06`, `07` and `11`, and construction is vanilla |
-| A pawn walks to it unprompted; the five bills run | `06` (five bills offered) and `07` (two recipes run to the end) |
-| The egg hatches in one day, wild; then taming | `10`; taming is not applicable, see the README |
-| H1: crafted egg hatching | `07` makes the egg through its bill, `10` hatches an egg and asserts it is wild |
-| T1: the first brain fragment from a trader | `09`, both Core routes and the Empire variant. The trade window itself is vanilla |
-| S1: adding the mod to an existing colony | every scenario (the fixture colony was saved without the mod) and `11` |
-| S2: reloading a colony that holds the mod's content | `11`. The upgrade variant is not applicable: there is no previous revision |
-| All forty-one hairstyles at the styling station, generated on pawns | `05` shows the draw; the tags are asserted offline, and the station only filters on them |
-| Names in English; the original Chinese comes back | `12` and `14` |
-| The French translation gate: labels, activity texts, keys | `13`, and `03` for layout; coverage stays in the shared `Check-Translations.ps1` |
-| Raw keys, English fallback, clipped text | a raw key cannot sit in a label `12` to `14` assert; clipping is read on the `@review` captures |
-| Dark matter as a material: does not burn, barely wears, ten times the hit points | `Test-Mod.ps1` |
-| The beetle's temper | not automated: it has no pass or fail threshold, see "Subjective balance review" |
+| Mod loads; no red error; seven log strings | `01`, and reading `Player.log` from startup: `no errors were logged` cover a scenario, not the launch |
+| Beetle draws, not pink box | `02` capture; missing texture is logged error, which `no errors were logged` catches |
+| Front claws, each on own side | `02` and `03`: found by label, exactly one part per label, health tab captured |
+| No hunger bar, certain taming, advanced training, speed, temperature, pack animal | `Test-Mod.ps1`, on leaf defs. Taming and caravans are vanilla code reading those values |
+| Horn fires | `08` |
+| Butchering beetle: dark matter, no meat | `04` |
+| Corpse left to rot keeps drawing | not applicable, see README |
+| Seraph draws; eight wings under eight labels; right leg on right | `02` and `03` |
+| Seraph's ranged attack | `08` |
+| No taming; butchering seraph | `Test-Mod.ps1` (wildness 1) and `04` |
+| Manhunter packs never choose seraph | not applicable: `Test-Mod.ps1` assert flag, incident code vanilla |
+| Research where it should be, at its cost | `06` capture |
+| Propagator builds for one fragment | cost in `Test-Mod.ps1`; machine placed instantly in `06`, `07` and `11`, construction vanilla |
+| Pawn walks to it unprompted; five bills run | `06` (five bills offered) and `07` (two recipes run to end) |
+| Egg hatches in one day, wild; then taming | `10`; taming not applicable, see README |
+| H1: crafted egg hatching | `07` make egg through its bill, `10` hatch egg and assert wild |
+| T1: first brain fragment from trader | `09`, both Core routes and Empire variant. Trade window itself vanilla |
+| S1: adding mod to existing colony | every scenario (fixture colony saved without mod) and `11` |
+| S2: reloading colony holding mod's content | `11`. Upgrade variant not applicable: no previous revision |
+| All forty-one hairstyles at styling station, generated on pawns | `05` show draw; tags asserted offline, station only filter on them |
+| Names in English; original Chinese come back | `12` and `14` |
+| French translation gate: labels, activity texts, keys | `13`, and `03` for layout; coverage stay in shared `Check-Translations.ps1` |
+| Raw keys, English fallback, clipped text | raw key cannot sit in label `12` to `14` assert; clipping read on `@review` captures |
+| Dark matter as material: no burn, barely wears, ten times hit points | `Test-Mod.ps1` |
+| Beetle's temper | not automated: no pass or fail threshold, see "Subjective balance review" |
 
 ## Passes this mod needed
 
-**Current state of the six passes** (`STATUS.md`, `docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, the About description and the Preview: no scenario reads them, so no pass was replayed.
+**Current state of six passes** (`STATUS.md`, `docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, About description and Preview: no scenario read them, so no pass replayed.
 
-A mod whose TESTING.md does not say how many passes it needs is tried, not tested. This one needed six:
-three languages on the minimal set, one for each of its two optional mods, and the gallery. The mod declares no
-dependency, no `loadAfter` and no `incompatibleWith`, so the minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`,
-and no incompatibility pass applies. Its optional integrations, A Dog Said... Animal Prosthetics 2 and Nocturnal
-Animals, have the fourth and fifth passes (below). In the three language passes that mod is absent, so its patch must stay inert: a green
-run with no error and no warning is what shows the guard holds.
+Mod whose TESTING.md not say how many passes needed is tried, not tested. This one needed six:
+three languages on minimal set, one for each of two optional mods, and gallery. Mod declare no
+dependency, no `loadAfter`, no `incompatibleWith`, so minimal set is `Tests/Pickle/wsl-deps.sans-facultatifs.map`,
+and no incompatibility pass apply. Optional integrations, A Dog Said... Animal Prosthetics 2 and Nocturnal
+Animals, have fourth and fifth passes (below). In three language passes that mod absent, so its patch must stay inert: green
+run with no error and no warning show guard holds.
 
-1. **English**: every feature except the French and Chinese ones, the slow ones included: the production
-   chain, the shots and the egg do not depend on the language, so they are played once, here.
-2. **French**: the French features and the language-neutral fast ones (`@slow` excluded).
-3. **Chinese** (`ChineseSimplified`): the Chinese labels and the language-neutral fast ones.
-4. **With Animal Prosthetics 2** (`wsl-deps.avec-ads2.map`, English, `@slow` excluded): the minimal set plus that
-   optional mod, so feature 15 is played and the other fast features show the mod still loads beside it. The
-   item (Workshop 3238353862) is in the Windows Workshop folder and the WSL cache, no download is needed. **The map
-   must name this mod ahead of the optional one** (the staging loads the mod under test after every mod of the map):
-   the first run of this pass was red for that reason alone.
-5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): the same, with
-   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 is played.
-6. **Gallery** (`wsl-deps.galerie.map`, English, features 17 and 18): feature 18 shows the beetle, the seraph and the propagator close up; feature 17 the three hairstyles at one cell's height in the
+1. **English**: every feature except French and Chinese ones, slow ones included: production
+   chain, shots and egg not depend on language, so played once, here.
+2. **French**: French features and language-neutral fast ones (`@slow` excluded).
+3. **Chinese** (`ChineseSimplified`): Chinese labels and language-neutral fast ones.
+4. **With Animal Prosthetics 2** (`wsl-deps.avec-ads2.map`, English, `@slow` excluded): minimal set plus that
+   optional mod, so feature 15 played and other fast features show mod still loads beside it. Item
+   (Workshop 3238353862) in Windows Workshop folder and WSL cache, no download needed. **Map
+   must name this mod ahead of optional one** (staging load mod under test after every mod of map):
+   first run of this pass red for that reason alone.
+5. **With Nocturnal Animals** (`wsl-deps.avec-nocturnal.map`, English, `@slow` excluded): same, with
+   [XND] Nocturnal Animals (Continued) (2269731409) mounted, so feature 16 played.
+6. **Gallery** (`wsl-deps.galerie.map`, English, features 17 and 18): feature 18 show beetle, seraph and propagator close up; feature 17 three hairstyles at one cell's height in
    zen studio, `@review`.
 
-The exact commands, with their filters, are in `Tests/Pickle/README.md`. The Empire variant of T1 is a
-scenario tagged for Royalty inside these passes, not a pass of its own: Royalty is one of the DLCs the
+Exact commands, with filters, in `Tests/Pickle/README.md`. Empire variant of T1 is
+scenario tagged for Royalty inside these passes, not own pass: Royalty is one of DLCs
 default set already mounts.
 
-The machine is shared, so a run is a request to the TicketDispatcher (`Submit-PickleRun.ps1`), which holds the
-ticket, copies the report to the evidence folder and wakes the session by message. The session runs no watcher
-of its own: no `Monitor`, no heartbeat, no cron, no loop (`Rimworld-Ticket-Dispatcher/docs/WELCOME.md`).
+Machine shared, so run is request to TicketDispatcher (`Submit-PickleRun.ps1`), which hold the
+ticket, copy report to evidence folder and wake session by message. Session run no watcher
+of own: no `Monitor`, no heartbeat, no cron, no loop (`Rimworld-Ticket-Dispatcher/docs/WELCOME.md`).
 
-**Order of the tickets.** Three small tickets, not one large one, and of two kinds. A **fix or exploration
-ticket** plays the fewest scenarios that show the point: after a run leaves scenarios red, or after a step or a
-feature was rewritten, only the red features, one ticket each. A **complete pass**, initial or final, plays every
-scenario of its pass, and is queued **only once the fix tickets have made the red scenarios green**. The
-commands are in `Tests/Pickle/README.md`, "Which ticket, in which order". Neither kind stands in for the other:
-a fix ticket never moves a stage, and **the stage moves only after a complete pass that is entirely green**, which
-is also the non-regression check of the scenarios that were already green. `tested` needs those passes, on the
-revision now in the repository.
+**Order of tickets.** Three small tickets, not one large, of two kinds. **Fix or exploration
+ticket** play fewest scenarios that show point: after run leaves scenarios red, or after step or
+feature rewritten, only red features, one ticket each. **Complete pass**, initial or final, play every
+scenario of its pass, queued **only once fix tickets made red scenarios green**. Commands in `Tests/Pickle/README.md`, "Which ticket, in which order". Neither kind stand in for other: fix ticket never move stage, and **stage move only after complete pass entirely green**, which
+is also non-regression check of scenarios already green. `tested` need those passes, on
+revision now in repository.
 
 ## Evidence to keep
 
-Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<date>-<pass>/`, which `.gitignore` excludes:
-captures and `Player.log` grow without limit. Pass `-EvidenceDir` to the launcher so the report is copied
-there before the lock is released, then check `exitReason` and the played and discovered counts in each
-copy. The rules are the collection's (`../AGENTS.md`, "Test evidence"; `../PickleTools/TESTING.md`, "What to
+Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<date>-<pass>/`, which `.gitignore` exclude:
+captures and `Player.log` grow without limit. Pass `-EvidenceDir` to launcher so report copied
+there before lock released, then check `exitReason` and played and discovered counts in each
+copy. Rules are collection's (`../AGENTS.md`, "Test evidence"; `../PickleTools/TESTING.md`, "What to
 keep after a test, and what to delete").
 
 | Keep, per pass | Why |
 |---|---|
-| `summary.json` and `summary.md` | The verdict: `exitReason`, counts, scenario names. Read `exitReason` first |
-| `junit.xml` and `messages.ndjson` | The per-step outcome and the failure messages |
-| `Player.log` | Startup, load order, dropped mods, errors outside the scenarios: only the newest one per pass |
-| `evidence-complete.txt` or `no-report.txt` | Says the copy is whole, or that the launcher left no report |
-| The `@review` captures, **minified to JPEG** | Human review outcome. `scripts/Minify-Evidence.ps1 -Folder <copy>` of the protocols repository re-encodes them (quality 80, at most 1280 px wide) and drops `report.html` and `messages.ndjson`. Keep the original of a capture that has to be measured, not read |
-| One line in `docs/runs/` | The history, one text line per run, never a folder |
+| `summary.json` and `summary.md` | Verdict: `exitReason`, counts, scenario names. Read `exitReason` first |
+| `junit.xml` and `messages.ndjson` | Per-step outcome and failure messages |
+| `Player.log` | Startup, load order, dropped mods, errors outside scenarios: only newest one per pass |
+| `evidence-complete.txt` or `no-report.txt` | Say copy whole, or launcher left no report |
+| `@review` captures, **minified to JPEG** | Human review outcome. `scripts/Minify-Evidence.ps1 -Folder <copy>` of protocols repository re-encode them (quality 80, max 1280 px wide) and drop `report.html` and `messages.ndjson`. Keep original of capture that must be measured, not read |
+| One line in `docs/runs/` | History, one text line per run, never a folder |
 
-Delete a report that a newer one supersedes for the same scenario and the same revision, unless it is the
-only proof of a check the newer run did not repeat (a language, a pass). Delete the report of a failed or
-infrastructure-error attempt once its line is written and its cause recorded in `STATUS.md`. Delete any
-report on a superseded build: it proves nothing about the current one. Never keep a `screenshots/` folder
-copied whole from the shared report folder, which carries every other mod's captures. List what goes and
-what stays before deleting, and **never delete a report that `STATUS.md` or a tracked file points to:
-repoint it first.**
+Delete report that newer one supersede for same scenario and same revision, unless only proof of check newer run did not repeat (a language, a pass). Delete report of failed or infrastructure-error attempt once its line written and cause recorded in `STATUS.md`. Delete any report on superseded build: prove nothing about current one. Never keep `screenshots/` folder copied whole from shared report folder, which carry every other mod's captures. List what goes and what stays before deleting, and **never delete report that `STATUS.md` or tracked file points to: repoint it first.**
 
-The captures this mod's scenarios produce, and the only ones worth keeping:
+Captures this mod's scenarios produce, only ones worth keeping:
 
-- `02`: both creatures on a clean map; the beetle's health tab with its front claws; the seraph's health
-  tab with its wings and right leg, in English;
-- `03`: the same two health tabs in French, where the labels are longer;
+- `02`: both creatures on clean map; beetle's health tab with front claws; seraph's health
+  tab with wings and right leg, in English;
+- `03`: same two health tabs in French, where labels longer;
 - `05`: three hairstyles on three colonists;
-- `06`: the research window on the main tab.
+- `06`: research window on main tab.
 
-Nothing else takes a capture. The shots, the production chain, the egg, the save round trip and the labels
-are asserted, so their proof is the report and `Player.log`.
+Nothing else take capture. Shots, production chain, egg, save round trip and labels
+asserted, so proof is report and `Player.log`.
 
 ## Manual validation
 
-**Superseded where the map above says so.** These checklists were the specification of what the scenarios
-now assert. They are not ticked by hand; a run's results are recorded in `STATUS.md` and in `docs/runs/`.
-What a person still does is read the `@review` captures.
+**Superseded where map above says so.** These checklists were specification of what scenarios
+now assert. Not ticked by hand; run results recorded in `STATUS.md` and `docs/runs/`.
+What person still do is read `@review` captures.
 
 ### Translation gate and language checks
 
-Before a game run, execute the source-based coverage check:
+Before game run, execute source-based coverage check:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .github/scripts/Check-Translations.ps1 -ModRoot . -Language French -SourceLanguage English -RejectCjk -NoKeyed -Strict -RejectIdentical
 ```
 
-It checks owned English Def text against French resources, including nested labels
-and the inherited recipe job string. Re-audit the inventory's field list when adding
-new Def types, patches, UI code or grammar resources. Also run the shared
+It check owned English Def text against French resources, including nested labels
+and inherited recipe job string. Re-audit inventory's field list when adding
+new Def types, patches, UI code or grammar resources. Also run shared
 `../scripts/Check-DefInjected.ps1 -TransMod ./Mod` to validate engine injection paths.
-CI runs the standalone coverage test; the shared validator requires the game.
+CI run standalone coverage test; shared validator need game.
 
-In **each of English and French**, perform the following checks during the scenarios
-below. These checks have not yet been performed:
+In **each of English and French**, do following checks during scenarios
+below. These checks not yet performed:
 
 - [ ] Inspect both creatures, all health-tab body parts, left/right claws, eight
       distinct wings, and melee/ranged attack labels.
@@ -177,214 +168,214 @@ below. These checks have not yet been performed:
 - [ ] Open all five bills, start each job and inspect its activity text; inspect
       work priorities and the work giver's generated activity text.
 - [ ] Check egg hatching/temperature/rotting text and material-based item names.
-- [ ] Browse all 41 hairstyles at the styling station.
+- [ ] Browse all 41 hairstyles at styling station.
 - [ ] Check for raw keys, unintended English fallback in French, broken grammar,
       missing accents, malformed formatting and clipped text. Record actual results
       in `STATUS.md`; proper character names and power nicknames may be identical.
 
-No scenario below has been played. The game did load the mod at least once, on 2026-09-23, when
-it wrote 141 `.dds` texture caches beside the PNGs, but no log was read and nothing was checked, so
-that is not a test. Everything below is what the first run has to settle.
+No scenario below played. Game did load mod at least once, on 2026-09-23, when
+it wrote 141 `.dds` texture caches beside PNGs, but no log read and nothing checked, so
+that not a test. Everything below is what first run must settle.
 
-**A clean log would not be an answer.** 123 defs, no assembly, no patch operations, no
-required third-party dependencies. Test a new colony and existing-save reloads in both languages;
-optional DLC cases are recorded separately. Five
-of the six defects this extraction repairs **cannot be seen in a log**. Swapped left and right
-claws, eight wings sharing one label, a leg filed under the wrong side, a corpse graphic falling
-back: all of it loads without a word, and is read in the health tab of a living creature instead.
+**Clean log not an answer.** 123 defs, no assembly, no patch operations, no
+required third-party dependencies. Test new colony and existing-save reloads in both languages;
+optional DLC cases recorded separately. Five
+of six defects this extraction repairs **cannot be seen in log**. Swapped left and right
+claws, eight wings sharing one label, leg filed under wrong side, corpse graphic falling
+back: all load without word, and read in health tab of living creature instead.
 
-The content checks below share a dev-mode colony. The save-regression scenarios require
+Content checks below share dev-mode colony. Save-regression scenarios need
 separate reloads. Mark each scenario PASS, FAIL or NOT RUN and record actual observations.
 
 ---
 
 ## Before starting
 
-- [ ] `nelim.acertainseriescreaturesandhair` added to the mod list. No dependencies, no
+- [ ] `nelim.acertainseriescreaturesandhair` added to mod list. No dependencies, no
       load-order constraint, no DLC required.
-- [ ] The previous `ModsConfig.xml` saved beside itself first.
-- [ ] Archive the previous `Player.log` before starting; preserve a separate log for each run.
+- [ ] Previous `ModsConfig.xml` saved beside itself first.
+- [ ] Archive previous `Player.log` before starting; keep separate log for each run.
       It sits in
       `%USERPROFILE%\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player.log`.
-- [ ] A colony started with development mode on.
+- [ ] Colony started with development mode on.
 
 ## The load
 
-- [ ] The game reaches the main menu with no red error naming `ACS_`.
+- [ ] Game reach main menu with no red error naming `ACS_`.
 
-Seven strings to search the log for. They are what the 1.6 assembly writes, read out of
-`Assembly-CSharp.dll` rather than remembered, and each means something different here.
+Seven strings to search log for. They are what 1.6 assembly writes, read out of
+`Assembly-CSharp.dll` not remembered, and each mean something different here.
 
 | String in the log | Written by | What it would mean for this mod |
 |---|---|---|
-| `Adding duplicate` | `DefDatabase.Add` | A `defName` collision. Every name here carries the `ACS_` prefix, so this would mean another mod chose the same prefix. |
-| `Could not resolve cross-reference` | `DirectXmlCrossRefLoader` | A `defName` pointing at nothing: a leather or butcher product, a projectile, a research prerequisite, a recipe user. |
-| `Error while resolving references for def` | `DefDatabase.ResolveAllReferences` | Same family, thrown during resolution, and it names the def. |
-| `Could not find type named` | the `Class=` resolver | A `Class="..."` that does not exist. Every one here is vanilla, and in 1.6 this loses the whole def rather than degrading it. |
-| `Could not find a type named` | `ParseHelper.ParseType` | A type named in element text rather than in `Class=`. Different message, different code path, same cause. |
-| `Failed to find any textures at` | the graphic loader | A `texPath` with nothing behind it. This is what the beetle's dried-out corpse entry produced in the original, which is why it was dropped. |
-| `Config error in` | `ThingDef.ConfigErrors` | The consistency rules the game applies only at load, which no offline checker replays. This is the line most likely to be the one that appears. |
+| `Adding duplicate` | `DefDatabase.Add` | `defName` collision. Every name here carry `ACS_` prefix, so would mean other mod chose same prefix. |
+| `Could not resolve cross-reference` | `DirectXmlCrossRefLoader` | `defName` pointing at nothing: leather or butcher product, projectile, research prerequisite, recipe user. |
+| `Error while resolving references for def` | `DefDatabase.ResolveAllReferences` | Same family, thrown during resolution, names the def. |
+| `Could not find type named` | `Class=` resolver | `Class="..."` that not exist. Every one here vanilla, and in 1.6 this lose whole def rather than degrade it. |
+| `Could not find a type named` | `ParseHelper.ParseType` | Type named in element text rather than `Class=`. Different message, different code path, same cause. |
+| `Failed to find any textures at` | graphic loader | `texPath` with nothing behind it. This is what beetle's dried-out corpse entry produced in original, why it dropped. |
+| `Config error in` | `ThingDef.ConfigErrors` | Consistency rules game apply only at load, which no offline checker replay. Line most likely to appear. |
 
-- [ ] None of those seven names an `ACS_` def. Lines naming other mods are not ours to fix, and
+- [ ] None of those seven name an `ACS_` def. Lines naming other mods not ours to fix, and
       are worth leaving in the paste anyway.
 
 ## The white rhinoceros beetle
 
-- [ ] **Spawn one.** It draws as a pearl-white beetle, not a pink box, from every direction.
-- [ ] **Health tab: the front claws.** A *front left claw* on the left, a *front right claw* on
+- [ ] **Spawn one.** Draw as pearl-white beetle, not pink box, from every direction.
+- [ ] **Health tab: front claws.** *front left claw* on left, *front right claw* on
       the right. The original had the pair swapped, and this is the whole of that repair.
-- [ ] **No hunger bar at all.** It never eats.
-- [ ] **Taming reads as certain**, and training goes to advanced.
-- [ ] **It outruns everything** on the map, and is comfortable in any temperature the map reaches.
-- [ ] **A caravan accepts it as a pack animal** and loads it.
-- [ ] **The horn fires.** Provoke it: the shot leaves, lands and explodes. Nothing about this
+- [ ] **No hunger bar at all.** Never eat.
+- [ ] **Taming read as certain**, training go to advanced.
+- [ ] **Outrun everything** on map, comfortable in any temperature map reach.
+- [ ] **Caravan accept it as pack animal** and load it.
+- [ ] **Horn fires.** Provoke it: shot leaves, lands, explodes. Nothing about this
       worked in the original, on either creature.
-- [ ] **Butchering gives dark matter and no meat at all.**
-- [ ] **A corpse left to rot past desiccation** goes on drawing the body, rotten. A pink box
+- [ ] **Butchering give dark matter and no meat at all.**
+- [ ] **Corpse left to rot past desiccation** go on drawing body, rotten. Pink box
       means the dropped graphic came back.
 
 ## God's Power, the seraph
 
-- [ ] **Spawn one.** It draws correctly, eight wings and the crystal arm.
-- [ ] **Health tab: eight wings, eight different labels.** A wounded wing must be findable. In
+- [ ] **Spawn one.** Draw correctly, eight wings and crystal arm.
+- [ ] **Health tab: eight wings, eight different labels.** Wounded wing must be findable. In
       the original all eight read the same.
-- [ ] **Health tab: the right leg on the right.** It was filed under the left leg's group.
-- [ ] **The ranged attack fires**: eight shots a burst, a five-tile explosion each, at long
+- [ ] **Health tab: right leg on right.** Was filed under left leg's group.
+- [ ] **Ranged attack fires**: eight shots a burst, five-tile explosion each, at long
       range. This is the attack that never worked: its projectile asked for a class from a mod
       that was never shipped, so the def failed and the verb dangled.
-- [ ] **Taming is impossible**, and butchering gives heavenly cloth and one angel core.
-- [ ] **Manhunter-pack incidents never choose it.** Run a few in dev mode. At `combatPower`
+- [ ] **Taming impossible**, butchering give heavenly cloth and one angel core.
+- [ ] **Manhunter-pack incidents never choose it.** Run few in dev mode. At `combatPower`
       10000 the original left it in the draw, where vanilla takes Thrumbo out at 500.
 
 ## The propagator, and the chain through it
 
-- [ ] **The research is where it should be**: *dark matter propagation*, main tab, immediately
+- [ ] **Research where it should be**: *dark matter propagation*, main tab, immediately
       right of advanced fabrication, 18000 points, wanting microelectronics, advanced
       fabrication and a multi-analyzer, researched at a hi-tech bench.
-- [ ] **The propagator builds** once a brain fragment is in store.
-- [ ] **A pawn walks to it on their own** with a bill queued. This is what a new workbench needs
+- [ ] **Propagator builds** once brain fragment in store.
+- [ ] **Pawn walks to it on own** with bill queued. This is what new workbench needs
       and what vanilla work givers never provide: without it nobody ever approaches the machine.
-- [ ] **The five bills run**: copy dark matter, grow a brain fragment, produce dark matter from
+- [ ] **Five bills run**: copy dark matter, grow brain fragment, produce dark matter from
       a brain fragment, make a volleyball, grow a beetle egg.
-- [ ] Execute **H1: crafted egg hatching** below; expect a wild beetle, followed by taming.
+- [ ] Execute **H1: crafted egg hatching** below; expect wild beetle, then taming.
 
 ## The forty-one hairstyles
 
-- [ ] **All of them appear at the styling station**, and pawns are generated wearing them.
+- [ ] **All appear at styling station**, pawns generated wearing them.
 - [ ] **Names read in English.**
-- [ ] **Switching the game to 简体中文 brings the original Chinese back.** 200 translation keys
+- [ ] **Switching game to 简体中文 bring original Chinese back.** 200 translation keys
       were checked offline; only the game proves the injection.
 
 ## Dark matter as a material
 
-- [ ] **Armour and blades made of it** are far better than their weight suggests, barely wear,
+- [ ] **Armour and blades made of it** far better than weight suggest, barely wear,
       and do not burn.
 
 ---
 
 ## H1: crafted egg hatching
 
-**Preconditions:** RimWorld 1.6, a new test colony, this mod enabled, research unlocked,
-a powered propagator with an accessible interaction cell, a capable worker and the
-recipe ingredients. Keep the test area at 20 C. No mods that alter hatching or taming.
-Run in English and French. This is an expected contract, not a recorded game result.
+**Preconditions:** RimWorld 1.6, new test colony, this mod enabled, research unlocked,
+powered propagator with accessible interaction cell, capable worker and
+recipe ingredients. Keep test area at 20 C. No mods altering hatching or taming.
+Run in English and French. Expected contract, not recorded game result.
 
-**Actions:** Produce one ACS_EggBeetle through its bill (do not substitute a spawned pawn
-or an egg assigned a faction in dev tools). Record completion time; place the egg in the
-safe test area and let one in-game day elapse. Inspect the hatchling's species and faction.
-Order a handler with appropriate food to complete a taming attempt, then inspect faction
+**Actions:** Produce one ACS_EggBeetle through its bill (do not substitute spawned pawn
+or egg assigned faction in dev tools). Record completion time; place egg in
+safe test area and let one in-game day pass. Inspect hatchling's species and faction.
+Order handler with appropriate food to complete taming attempt, then inspect faction
 and training again.
 
-**Expected:** One white rhinoceros beetle hatches after one day of uninterrupted incubation.
-It is initially wild, as stated in both shipped descriptions; it becomes a colony animal
-following the completed taming attempt (Wildness is zero), with advanced training available.
-No hatching error, missing texture or unresolved label appears. Failure to complete an
-attempt because of access, food or handler conditions is a setup issue, not a taming roll.
-A tame hatchling before any taming action is a contract mismatch to investigate, not a pass.
+**Expected:** One white rhinoceros beetle hatch after one day of uninterrupted incubation.
+Initially wild, as stated in both shipped descriptions; become colony animal
+after completed taming attempt (Wildness zero), advanced training available.
+No hatching error, missing texture or unresolved label appear. Failure to complete
+attempt because of access, food or handler conditions is setup issue, not taming roll.
+Tame hatchling before any taming action is contract mismatch to investigate, not pass.
 
 **Result:** NOT RUN. Record egg creation/hatch times, initial/final faction and log path.
 
 ## T1: obtain the first brain fragment through trade
 
-**Preconditions:** RimWorld 1.6, Core plus this mod, a new colony with no propagator and no
-ACS_KakineTeitokuBrain in storage. Have a friendly outlander faction, a negotiator, sufficient
-silver for the displayed price, and transport/storage access. For the orbital variant,
-provide a powered comms console and orbital trade beacon. Research may be unlocked and
-100 plasteel plus 50 advanced components supplied for the subsequent construction test;
-do not spawn the brain fragment or add it directly to trader stock.
+**Preconditions:** RimWorld 1.6, Core plus this mod, new colony with no propagator and no
+ACS_KakineTeitokuBrain in storage. Have friendly outlander faction, negotiator, enough
+silver for displayed price, and transport/storage access. For orbital variant,
+provide powered comms console and orbital trade beacon. Research may be unlocked and
+100 plasteel plus 50 advanced components supplied for later construction test;
+do not spawn brain fragment or add directly to trader stock.
 
 **Actions:** Use dev mode to generate independent Caravan_Outlander_Exotic traders and
-inspect their actual trade windows. Repeat for Orbital_Exotic. Record trader type, attempt
-number and whether a fragment is offered. Use at most 30 independent stocks per type as a
-bounded sampling session. When offered, buy one through the normal trade interface, haul
-it to storage, and have a construction-capable pawn (Construction 12+) build the propagator.
-Connect adequate power and queue a production bill with its required ingredients.
+inspect actual trade windows. Repeat for Orbital_Exotic. Record trader type, attempt
+number and whether fragment offered. Use at most 30 independent stocks per type as
+bounded sampling session. When offered, buy one through normal trade interface, haul
+to storage, and have construction-capable pawn (Construction 12+) build propagator.
+Connect adequate power and queue production bill with required ingredients.
 
-**Expected:** Each documented Core trader route can offer a purchasable fragment; the
-purchase supplies the first propagator without an existing machine or spawned fragment.
-Construction consumes one fragment, and a worker can execute a bill at the powered machine.
-No trade, reference or production exception occurs. Availability is random: a single empty
-stock is not a failure. Thirty empty stocks leave that route INCONCLUSIVE, not PASS and
-not proof of impossibility; investigate generator eligibility or extend the recorded sample
-before deciding. A fragment that is offered but cannot be bought/used despite satisfied
-preconditions is FAIL. Record each route independently; one route does not prove the other.
+**Expected:** Each documented Core trader route can offer purchasable fragment;
+purchase supply first propagator without existing machine or spawned fragment.
+Construction consume one fragment, and worker can execute bill at powered machine.
+No trade, reference or production exception. Availability random: single empty
+stock not failure. Thirty empty stocks leave that route INCONCLUSIVE, not PASS and
+not proof of impossibility; investigate generator eligibility or extend recorded sample
+before deciding. Fragment offered but cannot be bought/used despite satisfied
+preconditions is FAIL. Record each route independently; one route not prove other.
 
-**Optional Royalty variant:** Repeat at a friendly Empire settlement with trading permission
-and Royalty enabled. Record the actual trader kind and DLC version. Without Royalty this
-variant is NOT APPLICABLE; the two Core routes remain required. Keep the subjective balance
-of price separate from whether the progression chain is accessible.
+**Optional Royalty variant:** Repeat at friendly Empire settlement with trading permission
+and Royalty enabled. Record actual trader kind and DLC version. Without Royalty this
+variant NOT APPLICABLE; two Core routes remain required. Keep subjective balance
+of price separate from whether progression chain accessible.
 
 **Result:** NOT RUN. Record stocks sampled per route, purchases, construction/bill outcomes
-and log paths. The automated trade-tag assertion proves eligibility data only, not stock
+and log paths. Automated trade-tag assertion prove eligibility data only, not stock
 appearance or successful progression.
 
 ## S1: add the mod to an existing colony
 
-**Preconditions:** A backed-up RimWorld 1.6 Core colony saved before enabling this mod;
-record the save name, game version and mod list. Work only on a copy and keep the original
+**Preconditions:** Backed-up RimWorld 1.6 Core colony saved before enabling this mod;
+record save name, game version and mod list. Work only on copy and keep original
 save, ModsConfig.xml and previous logs. Run separate English and French variants.
 
-**Actions:** Enable the mod, load the copy and inspect existing pawns, buildings, inventory
-and research. Unlock the mod research for this test; obtain its resources and create a
-propagator, both creatures and a pawn wearing one of its hairstyles. Save to a new slot,
-quit the game, restart and reload that slot. Inspect the same objects and run a bill.
+**Actions:** Enable mod, load copy and inspect existing pawns, buildings, inventory
+and research. Unlock mod research for this test; obtain its resources and create
+propagator, both creatures and pawn wearing one of its hairstyles. Save to new slot,
+quit game, restart and reload that slot. Inspect same objects and run bill.
 
 **Expected:** Both loads complete; pre-existing colony objects remain intact. Added content
-has resolved labels and graphics; the new save retains it, research and bills after restart.
-No missing ACS defs, cross-reference failures or exceptions attributable to the mod occur.
-This tests adding the mod, not removing it; removal from a save containing its content is
-outside the claimed compatibility scope.
+has resolved labels and graphics; new save retain it, research and bills after restart.
+No missing ACS defs, cross-reference failures or exceptions attributable to mod.
+This test adding mod, not removing it; removal from save containing its content is
+outside claimed compatibility scope.
 
 **Result:** NOT RUN. Record original/copy/reloaded save names, mod lists and logs.
 
 ## S2: reload a colony already containing mod content
 
-**Preconditions:** A backed-up 1.6 save containing both creatures, a styled pawn, materials,
-a powered propagator with bills/research and a crafted egg partway through incubation.
-S1 can supply this fixture for same-version persistence. For an upgrade test, also record
-and retain the actual previous mod revision used to create the fixture; do not call a
-same-version reload an upgrade test. Keep an unmodified backup and run in both languages.
+**Preconditions:** Backed-up 1.6 save containing both creatures, styled pawn, materials,
+powered propagator with bills/research and crafted egg partway through incubation.
+S1 can supply this fixture for same-version persistence. For upgrade test, also record
+and retain actual previous mod revision used to create fixture; do not call
+same-version reload upgrade test. Keep unmodified backup and run in both languages.
 
 **Actions:** Record faction/health/training, hairstyle, resource counts, research, bill
-settings and egg incubation progress. Save, exit, restart with the delivered revision and
-reload. Compare the recorded values, resume a bill, and let the egg finish its remaining
+settings and egg incubation progress. Save, exit, restart with delivered revision and
+reload. Compare recorded values, resume bill, and let egg finish remaining
 incubation time. Save and reload once more.
 
 **Expected:** Objects, factions, health, hairstyle, research, inventory and bill settings
-persist; incubation continues from saved progress rather than resetting or duplicating
-the egg. Production and hatching complete with the H1 outcome. No missing graphics, raw
-translation keys or mod-related load/save exceptions occur. If no prior-version fixture
-is available, mark the upgrade variant NOT RUN; same-version persistence remains required.
+persist; incubation continue from saved progress rather than reset or duplicate
+egg. Production and hatching complete with H1 outcome. No missing graphics, raw
+translation keys or mod-related load/save exceptions. If no prior-version fixture
+available, mark upgrade variant NOT RUN; same-version persistence remain required.
 
 **Result:** NOT RUN. Record source/target revisions, before/after values, save names and logs.
 
 ## Subjective balance review
 
-Does the beetle's temper read as fair? Its manhunter-on-damage chance is 1 in the shipped
-definition. Record the gameplay assessment separately; it has no subjective pass/fail
-threshold and cannot substitute for the functional scenarios above.
+Does beetle's temper read as fair? Its manhunter-on-damage chance is 1 in shipped
+definition. Record gameplay assessment separately; it has no subjective pass/fail
+threshold and cannot substitute for functional scenarios above.
 
 ## Sending the result back
 
-Paste `Player.log` whole, and the list above with what failed. A clean log on its own tells us
-nothing: not one of the six repairs is visible from a log.
+Paste `Player.log` whole, and list above with what failed. Clean log on its own tell us
+nothing: not one of six repairs visible from log.
