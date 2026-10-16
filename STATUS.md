@@ -26,7 +26,7 @@ remaining:
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
-session:      local_877516ce-7557-492f-9994-6bbb772df1e8
+session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-15, 1.1.0 published (v1.1.0, b104320); non-regression green; cleanup before dormancy
 protocols_read_sha: 7db1e37ab197dac63501eb0554896a23a4ac9fed
 ---
