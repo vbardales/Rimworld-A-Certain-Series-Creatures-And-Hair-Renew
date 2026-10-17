@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: unchecked
+translation_fr: complete
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
