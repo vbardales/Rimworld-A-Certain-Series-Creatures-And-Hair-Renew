@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: unchecked
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-17, gallery redo reopened (owner go): run gallery-redo-1 read, 4 2 5 7 kept as candidates, 1 2 3 6 recomposed
-protocols_read_sha: 233f007e69f3660973329f2202d9115562d5ed8a
+protocols_read_sha: fdeda717e510098fb1f37e9f3b4ace9975dac9bc
 ---
 # A Certain Series - Creatures and Hair Renew — status
 

@@ -3,6 +3,12 @@
 All notable changes to this mod are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+
+- French: the eight wing blade labels of the seraph become `lame d'aile d'eau` (was `lame d'aile aqueuse`), after the ChatGPT review of the French texts; awaiting the owner's reread.
+
 ## [1.1.0] — 2026-10-13
 
 RimWorld 1.7 declared next to 1.6.
