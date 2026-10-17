@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.1.1]
 code_review_sha: b104320eec3f940a2635974207bb47c5326a094a
-echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
+echo_review_sha: 477b9e4bd80011340e0fb57bc8b0a8d2ee7a72df
 social_preview_sha256: 383dbb11480a6d890ae846cea5ec203e9730ad26c78b4e86c760a6458c145f94
 publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
 licence:      silent
