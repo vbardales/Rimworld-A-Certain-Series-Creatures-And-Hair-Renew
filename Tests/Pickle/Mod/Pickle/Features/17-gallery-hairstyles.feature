@@ -15,15 +15,18 @@
 # Animals face the camera (South) on every picture of this feature.
 #
 # Shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says):
-#   1. sofa-corner (the rose rug between three sofas), 12:00, Rina with Misaka and Nelim face to face on the rug (Rina
-#      faces East, Nelim West), the camera between them, the house cat in front of them looking at the camera: Nelim kept
-#      the good sofa for a student who has just come in; cream blouse and deep brown to bring out the orange of the hair.
+#   1. sofa-corner (the rose rug between three sofas), 12:00, Rina with Misaka and Nelim side by side on the rug, both
+#      facing the camera (South: from above an East or West profile hides the hairstyle behind the face), the house cat in
+#      front of them looking at the camera: Nelim kept the good sofa for a student who has just come in; cream blouse and
+#      deep brown to bring out the orange of the hair. Pawns are placed after the waits (they drift) and Nelim's face is
+#      the last step before the capture (sweat otherwise, run 2026-10-15-gallery-redo-1).
 #   2. terrace (brick, black piano), 14:00, Toma with Accelerator by the piano, drafted for the angry face, Nelim some cells
 #      away facing him, a peacock facing the camera: a loner who stays at the edge of the room; all black under a long coat so
 #      only the white hair is bright.
 #   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 16:00, Sena with
-#      Index by the bookcase on her east side, Nelim beside her, a torch on the west side, a squirrel at her feet looking at the
-#      camera: the librarian and the one shelf worth reading; white robe and gold sash on warm wood.
+#      Index facing the camera, Nelim beside her, a torch on the west side, a husky at her feet looking at the camera: a quiet
+#      corner and a visitor Nelim keeps company; white robe and gold sash on warm wood (the bookcase was dropped: on the
+#      podium it reads as a crate, run 2026-10-15-gallery-redo-1).
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
 # (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
@@ -50,13 +53,13 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: "Rina" wears the apparel "Apparel_CollarShirt"
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
-    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
-    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
-    And Nelim's Sanctuary: Nelim has her own face
     And I wait 60 ticks
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 123)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 123) facing South
-    And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 123)
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 126)
+    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 126) facing South
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 125)
+    And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 1 misaka"
     Then no errors were logged
 
@@ -77,14 +80,14 @@ Feature: Gallery pictures of the hairstyles
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: I am at the sanctuary "terrace"
     And I wait 60 ticks
-    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 121) facing East
-    And Nelim's Sanctuary: Nelim has her own face
     And I draft "Toma"
     And Nelim's Pickle Tools: I let 120 ticks pass
+    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (196, 119)
     And Nelim's Pickle Tools: the animal "Paon" stands at (196, 119) facing South
     And Nelim's Pickle Tools: I frame the rectangle from (194, 118) to (200, 123)
+    And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 2 accelerator"
     Then no errors were logged
 
@@ -106,16 +109,15 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
-    And Nelim's Pickle Tools: I place the decor "Bookcase" at (199, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 150)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 150) is lit
     And I wait 60 ticks
-    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing East
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
-    And Nelim's Pickle Tools: "Nelim" stands at (196, 153) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
+    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (197, 154)
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 154) facing South
+    And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 155)
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: an adult animal of kind "Squirrel" named "Noisette" is spawned at (197, 151)
-    And Nelim's Pickle Tools: the animal "Noisette" stands at (197, 151) facing South
-    And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 154)
     And I take a screenshot "gallery 3 index"
     Then no errors were logged

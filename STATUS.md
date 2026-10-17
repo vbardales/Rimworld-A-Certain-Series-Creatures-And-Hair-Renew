@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: dormant[1.1.0]
+workflow_stage: shootGallery[1.1.1]
 code_review_sha: b104320eec3f940a2635974207bb47c5326a094a
 echo_review_sha: 1c3da6940c5b8d25c868288e5cd6ba2784ba900f
 social_preview_sha256: 383dbb11480a6d890ae846cea5ec203e9730ad26c78b4e86c760a6458c145f94
@@ -27,8 +27,8 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-15, 1.1.0 published (v1.1.0, b104320); non-regression green; cleanup before dormancy
-protocols_read_sha: 7693bc9c57044ef5e155ba5216069f8320290a55
+updated:      2026-10-17, gallery redo reopened (owner go): run gallery-redo-1 read, 4 2 5 7 kept as candidates, 1 2 3 6 recomposed
+protocols_read_sha: 233f007e69f3660973329f2202d9115562d5ed8a
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
@@ -47,6 +47,8 @@ in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 - **Compatibility** (optional, offline test group and Pickle passes 4 and 5): Animal Prosthetics 2 (beetle in its category 3, `loadBefore`), Nocturnal Animals Continued (beetle nocturnal). Seraph left out of both on purpose. Crossbreeding: decided, nothing (`BACKLOG.md`). **Dogs mate (Continued) and Better Crossbreeding** (`PUBLISHING.md`, four integrations for animal mods; owner's rule 2026-10-01 asks for recorded decision): neither patch applies, owner's decision 2026-09-25 (no crossbreeding). Beetle has no genders, gestation 0, made from egg in propagator, so cannot mate; seraph unique by design. Nothing to add to `pawnKinds` of Dogs mate group, no `canCrossBreedWith`, no Better Crossbreeding extension. Reopen only if owner designs a pair (`BACKLOG.md`, item 1).
 
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
+
+- **Gallery redo (reopened 2026-10-17, owner go, `1.1.1` gallery only, no `Mod/` change):** states `code` to `playTests` of `1.1.1` touch nothing (no code, dependency, setting, text or test change). Run `2026-10-15-gallery-redo-1` read by the session: 4, 5, 7 strong; 1 (Rina in profile, Nelim sweating), 2 (Nelim out of frame), 3 (bookcase reads as a crate, squirrel as a worm), 6 (both propagators show the lightning icon) recomposed in features 17 and 18, replayed alone. Subtitle lines in `PUBLICATION.md`, "Gallery subtitles".
 
 ## Translation audit
 

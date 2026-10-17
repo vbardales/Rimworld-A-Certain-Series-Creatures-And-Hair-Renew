@@ -186,7 +186,7 @@ Owner's go of 2026-10-15. The series above stays on the Workshop until the new i
 |---|---|---|
 | `1-` | `sofa-corner`, 12:00 | Nelim and Rina (Misaka) face to face on the rose rug, the house cat in front |
 | `2-` | `terrace`, 14:00 | Toma (Accelerator) by the piano, Nelim at a distance, the peacock facing the camera |
-| `3-` | the podium (`emerald-clearing`), 16:00 | Sena (Index) at the bookcase, Nelim handing her a book, the squirrel at her feet |
+| `3-` | the podium (`emerald-clearing`), 16:00 | Sena (Index) facing the camera, Nelim beside her, a husky at her feet, a torch (the bookcase read as a crate: dropped) |
 | `4-` | the podium, 17:00 | The white rhinoceros beetle brought in by Nelim, close to her for scale, the hen facing the camera |
 | `5-` | the podium, 18:00 | God's Power, the seraph, Nelim looking up at it, the three guests behind her |
 | `6-` | the podium, 19:00 | Nelim at work between two propagators (one powered, one eight cells away with the lightning icon), the cat between them |
@@ -202,7 +202,7 @@ One line per scene (`../GALLERY.md`, "Sous-titres"), burnt in with `../scripts/A
 |---|---|---|
 | 1 | `1-hairstyle-misaka.jpg` | Rina drops by at noon. Nelim kept the good sofa for her. |
 | 2 | `2-hairstyle-accelerator.jpg` | Toma never sits down. He keeps to the piano, and to the edge of the room. |
-| 3 | `3-hairstyle-index.jpg` | Sena found the one shelf in the Sanctuary worth reading. |
+| 3 | `3-hairstyle-index.jpg` | Sena found a quiet corner of the Sanctuary. Nelim kept her company. |
 | 4 | `4-beetle.jpg` | Nelim leads in the beetle. It never eats, and it feels neither cold nor heat. |
 | 5 | `5-seraph.jpg` | God's Power, eight wings of water. No one has ever tamed one. |
 | 6 | `6-propagator.jpg` | One propagator is running. The other is still waiting for power. |
