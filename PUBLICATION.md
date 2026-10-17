@@ -1,6 +1,6 @@
 # Publication sheet
 
-**Version 1.0.4 is published and public (2026-10-11); the first public release, 1.0.0, was on 2026-09-28. Version 1.1.0 (RimWorld 1.7 declared) is prepared, not published.** Workshop item
+**Version 1.1.0 (RimWorld 1.7 declared) is published and public (2026-10-13, CI run `38413725207`); the first public release, 1.0.0, was on 2026-09-28. The "Options" line below describes what 1.1.0 sent.** Workshop item
 `3806708754`; `Mod/About/PublishedFileId.txt` is committed. This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that it serves at the
 next update and for whoever takes the mod over.
 
