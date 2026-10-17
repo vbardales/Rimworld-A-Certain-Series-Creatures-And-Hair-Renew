@@ -24,7 +24,7 @@
 #      away facing him, a peacock facing the camera: a loner who stays at the edge of the room; all black under a long coat so
 #      only the white hair is bright.
 #   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 16:00, Sena with
-#      Index facing the camera, Nelim beside her, a torch on the west side, a husky at her feet looking at the camera: a quiet
+#      Index facing the camera, Nelim beside her, two torches and three daylilies in the corners (added in redo-3 so the bare floor tells something), a husky at her feet looking at the camera: a quiet
 #      corner and a visitor Nelim keeps company; white robe and gold sash on warm wood (the bookcase was dropped: on the
 #      podium it reads as a crate, run 2026-10-15-gallery-redo-1).
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
@@ -111,6 +111,11 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 150)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 150)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 155) fully grown
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
