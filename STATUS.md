@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-17, gallery redo reopened (owner go): run gallery-redo-1 read, 4 2 5 7 kept as candidates, 1 2 3 6 recomposed
+updated:      2026-10-17, gallery redo-2 (ticket c094) done: scenes 1 2 3 6 passed, captures to review; feature 13 (@fr-only) ran in an English game and failed, harness artefact, cause not yet found
 protocols_read_sha: fdeda717e510098fb1f37e9f3b4ace9975dac9bc
 ---
 # A Certain Series - Creatures and Hair Renew — status
