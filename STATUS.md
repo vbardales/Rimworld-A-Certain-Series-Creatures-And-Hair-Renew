@@ -48,6 +48,7 @@ in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
+- **Gallery redo, ticket in queue:** `20261017-142852-551-c094` (scenes 1, 2, 3, 6, map `wsl-deps.galerie.map`, evidence `Tests/Pickle/Evidence/2026-10-17-gallery-redo-2`) wakes the session with `RUN_DONE`. Next: read `summary.json`, open the four captures, pick candidates (4, 5, 7 from `2026-10-15-gallery-redo-1`), reindex 1 to 7, `Add-Subtitle.ps1` from `Art/Gallery-clean/`, redo echo and Preview (closing pass 2, 4), owner reviews. Unmerged ideas: none.
 - **Gallery redo (reopened 2026-10-17, owner go, `1.1.1` gallery only, no `Mod/` change):** states `code` to `playTests` of `1.1.1` touch nothing (no code, dependency, setting, text or test change). Run `2026-10-15-gallery-redo-1` read by the session: 4, 5, 7 strong; 1 (Rina in profile, Nelim sweating), 2 (Nelim out of frame), 3 (bookcase reads as a crate, squirrel as a worm), 6 (both propagators show the lightning icon) recomposed in features 17 and 18, replayed alone. Subtitle lines in `PUBLICATION.md`, "Gallery subtitles".
 
 ## Translation audit
