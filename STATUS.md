@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-18, director review of all seven: 1 (empty wall, small pawns) and 6 (dark, bookcase read as crate) recomposed, ticket 6cab; 3 awaits d464; 2, 4, 5, 7 kept; owner review pending
-protocols_read_sha: 117fb9642df7e57bece2318904c644a9c39296df
+protocols_read_sha: e552fd9823504a685ddedd14953c3f62a699851b
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
