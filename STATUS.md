@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-17, gallery redo-2 (ticket c094) done: scenes 1 2 3 6 passed, captures to review; feature 13 (@fr-only) ran in an English game and failed, harness artefact, cause not yet found
-protocols_read_sha: fdeda717e510098fb1f37e9f3b4ace9975dac9bc
+protocols_read_sha: c283fedfcc80166d175245f9553ab4095716c1fa
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
