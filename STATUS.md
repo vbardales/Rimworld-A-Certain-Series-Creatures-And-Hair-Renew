@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-17, gallery redo-2 (ticket c094) done: scenes 1 2 3 6 passed, captures to review; feature 13 (@fr-only) ran in an English game and failed, harness artefact, cause not yet found
+updated:      2026-10-17, gallery redo-2 read, seven images subtitled and reindexed, owner review pending
 protocols_read_sha: c283fedfcc80166d175245f9553ab4095716c1fa
 ---
 # A Certain Series - Creatures and Hair Renew — status
@@ -48,7 +48,7 @@ in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
-- **Gallery redo, ticket in queue:** `20261017-142852-551-c094` (scenes 1, 2, 3, 6, map `wsl-deps.galerie.map`, evidence `Tests/Pickle/Evidence/2026-10-17-gallery-redo-2`) wakes the session with `RUN_DONE`. Next: read `summary.json`, open the four captures, pick candidates (4, 5, 7 from `2026-10-15-gallery-redo-1`), reindex 1 to 7, `Add-Subtitle.ps1` from `Art/Gallery-clean/`, redo echo and Preview (closing pass 2, 4), owner reviews. Unmerged ideas: none.
+- **Gallery redo-2 read (2026-10-17):** ticket `c094` (scenes 1, 2, 3, 6) read by the session, all four accepted: 1 faces front and the bookcase reads as books; 2 white hair against the black coat, piano and peacock; 3 hairstyle clear, the shelf of the scene name is not in frame but the subtitle (quiet corner) fits; 6 one propagator with the lightning icon, one running. 4, 5, 7 from `2026-10-15-gallery-redo-1`. Reindexed 1 to 7, clean originals in `Art/Gallery-clean/`, subtitled images in `Art/Gallery/` (`Add-Subtitle.ps1`, lines of `PUBLICATION.md`), 3.7 MB and 2.9 MB. Echo kept (same subjects as the gallery). Next: owner reviews the seven images, then Preview unchanged. Feature 13 (`@fr-only`) ran in an English game in `c094` and failed: harness artefact, cause not found, not a mod defect (no `Mod/` change).
 - **Gallery redo (reopened 2026-10-17, owner go, `1.1.1` gallery only, no `Mod/` change):** states `code` to `playTests` of `1.1.1` touch nothing (no code, dependency, setting, text or test change). Run `2026-10-15-gallery-redo-1` read by the session: 4, 5, 7 strong; 1 (Rina in profile, Nelim sweating), 2 (Nelim out of frame), 3 (bookcase reads as a crate, squirrel as a worm), 6 (both propagators show the lightning icon) recomposed in features 17 and 18, replayed alone. Subtitle lines in `PUBLICATION.md`, "Gallery subtitles".
 
 ## Translation audit
