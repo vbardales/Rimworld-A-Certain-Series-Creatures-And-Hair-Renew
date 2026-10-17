@@ -16,7 +16,8 @@
 #   5. emerald-clearing, 18:00, the seraph (God's Power), framed high enough for the eight wings, Nelim facing it, Rina, Toma
 #      and Sena a few cells behind, a torch lamp on each side, a peacock that walks into the frame facing the camera.
 #   6. emerald-clearing, 19:00, Nelim at work beside the dark matter propagator against the power cells, a second one eight
-#      cells away without power (the lightning icon names the need), a bookcase, a torch, a cat between them facing the camera.
+#      cells away without power (the lightning icon names the need), three lit torches (the bookcase of redo-1 read as a
+#      crate and the evening was too dark, redo-4; frame tightened to the machines), a cat between them facing the camera.
 #   7. emerald-clearing, 20:00 (optional), Rina, Nelim, Sena and Toma in a row at dusk under four torches, the beetle behind
 #      them, the hen in front: everybody stayed.
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
@@ -113,8 +114,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (196, 152)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 151)
-    And Nelim's Pickle Tools: I place the decor "Bookcase" at (201, 154)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 154)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 154)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 151) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 154) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 154) is lit
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 152)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 154)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 154)
@@ -126,7 +130,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 153)
     And Nelim's Pickle Tools: the animal "Miso" stands at (202, 153) facing South
-    When Nelim's Pickle Tools: I frame the rectangle from (193, 148) to (209, 157)
+    When Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (207, 157)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged

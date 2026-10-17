@@ -17,7 +17,8 @@
 # Shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says):
 #   1. sofa-corner (the rose rug between three sofas), 12:00, Rina with Misaka and Nelim side by side on the rug, both
 #      facing the camera (South: from above an East or West profile hides the hairstyle behind the face), the house cat in
-#      front of them looking at the camera: Nelim kept the good sofa for a student who has just come in; cream blouse and
+#      front of them looking at the camera (framed at 2 cells' height on the pawns, redo-4: at 3 the pawns were small under
+#      an empty wall and the hairstyle was a few pixels wide; the cat steps up to z 125 to stay in frame): Nelim kept the good sofa for a student who has just come in; cream blouse and
 #      deep brown to bring out the orange of the hair. Pawns are placed after the waits (they drift) and Nelim's face is
 #      the last step before the capture (sweat otherwise, run 2026-10-15-gallery-redo-1).
 #   2. terrace (brick, black piano), 14:00, Toma with Accelerator by the piano, drafted for the angry face, Nelim some cells
@@ -56,9 +57,9 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 126)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 126) facing South
-    And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 125)
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 125)
+    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 125) facing South
+    And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 1 misaka"
     Then no errors were logged
