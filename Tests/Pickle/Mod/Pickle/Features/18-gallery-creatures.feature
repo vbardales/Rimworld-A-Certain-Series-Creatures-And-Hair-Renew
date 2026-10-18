@@ -1,30 +1,50 @@
-# Pictures for the Workshop gallery, not a test: the creatures, the propagator and the evening, images 4 to 7 of the series
-# "Nelim hosts the series" (images 1 to 3 are the hairstyle portraits, feature 17), on the podium of Nelim's Sanctuary (the
-# owner's save "Nelim's tribe", loaded as "Nelims-tribe", PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and
-# SANCTUAIRE-CASES.md), without the interface. What a scenario asserts is only that the thing exists; the pictures are read by
-# eye (@review).
+# Pictures for the Workshop gallery, not a test: the creatures, the machine and the evening, images 4 to 7 of the series
+# "A day at Nelim's Sanctuary" (the story, the outfits and the rules are in the header of feature 17; images 1 to 3 are the
+# hairstyle portraits), on the podium of Nelim's Sanctuary (the owner's save "Nelim's tribe", loaded as "Nelims-tribe",
+# PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the interface. What a scenario asserts is
+# only that the thing exists; the pictures are read by eye (@review).
 #
-# The story continues the portraits (owner's rules of 2026-10-02/06/14, GALLERY.md): Nelim, the protagonist, shows her guests
-# what the mod brings, from 17:00 to 20:00. The podium is the square A of the Sanctuary (x 191-204, z 146-159), its painted
-# green zone bared, ringed by flowers, with the permanent vanometric power cell of the fixture on its east edge (205, 152-153).
-# Nelim keeps the look of the fixture and has her own face (the Sanctuary step). Each picture leaves the bottom of the frame
-# empty for the English subtitle burnt there afterwards (PUBLICATION.md, "Gallery redo"). Animals face the camera (South).
+# The story continues the portraits: Nelim, the host, shows her guests what the mod brings while the day goes down, 17:00 to
+# 20:00, Clear on every picture. The podium is the square A of the Sanctuary (x 191-204, z 146-159), its painted green zone
+# bared, ringed by flowers, with the permanent vanometric power cell of the fixture on its east edge (205, 152-153). Nelim
+# wears a different outfit on every picture and has her own face (the Sanctuary step, last before the capture). Each picture
+# leaves the bottom of the frame empty for the English subtitle. Animals face the camera (South). The decor is removed after
+# each picture.
 #
-# Shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says):
-#   4. emerald-clearing, 17:00, the white rhinoceros beetle, Nelim close beside it for the scale, a torch on its left and a
-#      stool on its right on a small wooden floor, a hen at its feet facing the camera: the pack animal Nelim leads in.
-#   5. emerald-clearing, 18:00, the seraph (God's Power), framed high enough for the eight wings, Nelim facing it, Rina, Toma
-#      and Sena a few cells behind, a torch lamp on each side, a peacock that walks into the frame facing the camera.
-#   6. emerald-clearing, 18:00 (was 19:00: too dark, redo-5), Nelim at work beside the dark matter propagator against the power cells, a second one eight
-#      cells away without power (the lightning icon names the need), three lit torches (the bookcase of redo-1 read as a
-#      crate and the evening was too dark, redo-4; frame tightened to the machines), a cat between them facing the camera.
-#   7. emerald-clearing, 20:00 (optional), Rina, Nelim, Sena and Toma in a row at dusk under four torches, the beetle behind
-#      them, the hen in front: everybody stayed.
-#   8. (planned, not written) the research window on the project "ACS_DarkMatterTech", an interface window taken on
-#      `window-backdrop-for-height` (English game), cropped 5 px either side of the window, no subtitle: what it takes to
-#      build the machine of picture 6. Needs `nelim.pickletools.research` in the DepMap (steps of feature 06: open the
-#      research tab, scroll the window to the project). Not part of the story's hours: the coda.
-# Weather: clear on every picture, on purpose (sunset light and torch light carry the series).
+# Shooting plan, one line per picture (place, hour, weather, time | subject | composition | living things, outfit, expression,
+# action | decor | risk and plan):
+#   4. emerald-clearing, 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | frame (194, 150)
+#      to (200, 155), beetle at (198, 153) fills the frame | Nelim: cream basic shirt (240, 228, 205), brown trousers (92, 60,
+#      40), rust jacket (168, 69, 42), her bun, her smirk, holds out hay (Hay) that the beetle ignores, at (195, 153) facing
+#      East; ACS_DarkMatterBeetle; Chicken at (197, 151) facing the camera | WoodPlankFloor, TorchLamp lit at (195, 150), Stool
+#      at (199, 151), Plant_Daylily at (199, 154) | RISK: the beetle crowds Nelim in the tight frame. PLAN: three cells between
+#      them; if they touch, the beetle goes to (199, 153) and the frame widens to (193, 150)-(201, 155).
+#   5. emerald-clearing, 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | frame (193, 148) to (201,
+#      157), high enough for the wings, guests staggered behind her and turned toward the seraph (no row facing the camera) |
+#      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her bun, her smirk, holds a bolt of heaven cloth
+#      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (194, 155) facing North, Toma (198, 156) facing West, Sena (200, 154)
+#      facing North; Peacock facing the camera | WoodPlankFloor, TorchLamp lit x2 at (193, 152) and (201, 152),
+#      Plant_YellowTallGrass at (193, 149) and (201, 149) | RISK: the wings are cut by the frame, or the guests' backs hide
+#      their hairstyles. PLAN: frame verified in run c094 (the wings were whole); the guests' hair is read from behind, the
+#      hairstyles were already shown in 1 to 3.
+#   6. emerald-clearing, 18:00 then 30 more game minutes (1250 ticks), Clear | the dark matter propagator, one running, one
+#      waiting for power (the lightning icon) | frame (195, 149) to (206, 156), tight on the machines | Nelim: grey basic
+#      shirt (212, 206, 196), near-black trousers (47, 47, 54), slate jacket (59, 63, 70), her bun, her smirk, carries a
+#      lump of dark matter (ACS_DarkMatter), facing West; Cat in front of her at (200, 151) facing the camera | WoodPlankFloor,
+#      ACS_DarkMatterProduction x2 at (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily at
+#      (196, 149) and (202, 149) | RISK: too dark (the run c094 capture was), and the right machine touching the cells does
+#      not read. PLAN: five torches and the hour 18 plus 30 minutes instead of 19:00; if it still reads dark, add a second
+#      row of torches or move the hour to 17:30.
+#   7. emerald-clearing, 20:00, Clear, 60 ticks plus 600 ticks of fire | the evening at the fire: everybody stayed | frame
+#      (192, 148) to (202, 157), a ring around the fire, not a row facing the camera | Nelim: cream basic shirt (234, 220,
+#      210), brown trousers (70, 55, 50), rose parka (176, 122, 122), her bun, her smirk, brings a log (WoodLog) at (195, 150)
+#      facing South; Rina (194, 153) facing East, smile; Toma (200, 153) facing West, smug; Sena (199, 151) facing South,
+#      calm; the beetle behind at (197, 155); Chicken at (197, 149) facing the camera | WoodPlankFloor, Campfire lit at (197,
+#      152), TorchLamp lit x2 at (193, 150) and (201, 150), Plant_YellowTallGrass x3 | RISK: the campfire hides a guest, faces
+#      in profile read small. PLAN: Nelim and Sena face the camera, the two others turn toward the fire; if the fire hides
+#      someone, it moves to (197, 153).
+#   8. (planned, interface, set aside from the rating by the owner's rule of 2026-10-18) the research window on
+#      "ACS_DarkMatterTech", taken on `window-backdrop-for-height`, cropped, no subtitle. Not written.
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
 # empty plant pot (it reads as a bucket). The guests of picture 7 are dressed as in feature 17.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
@@ -34,6 +54,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 17
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (240, 228, 205)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 60, 40)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (168, 69, 42)
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -44,20 +68,25 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 154) fully grown
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 150) is lit
     And I wait 60 ticks
-    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 153)
+    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
+    And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 151)
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 151) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 155)
     And I take a screenshot "gallery 4 beetle"
+    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
   Scenario: 5 - the seraph at six in the evening (the podium, 18:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 18
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (200, 184, 150)
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -91,24 +120,32 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 151) facing East
+    And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Rina" stands at (194, 155) facing South
-    And Nelim's Pickle Tools: "Toma" stands at (197, 156) facing South
-    And Nelim's Pickle Tools: "Sena" stands at (200, 155) facing South
+    And Nelim's Pickle Tools: "Rina" stands at (194, 155) facing North
+    And Nelim's Pickle Tools: "Toma" stands at (198, 156) facing West
+    And Nelim's Pickle Tools: "Sena" stands at (200, 154) facing North
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (197, 149)
     And Nelim's Pickle Tools: the animal "Paon" stands at (197, 149) facing South
     Then 1 "ACS_Gabriel" exist
     When Nelim's Pickle Tools: I frame the rectangle from (193, 148) to (201, 157)
     And I take a screenshot "gallery 5 seraph"
+    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
   Scenario: 6 - Nelim at the propagator, one running and one waiting for power (the podium, 19:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 18
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (212, 206, 196)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (47, 47, 54)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (59, 63, 70)
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -129,26 +166,34 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (203, 150)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (198, 150) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (203, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (196, 149) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (202, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 152)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 154)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 154)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 156)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
     And Nelim's Pickle Tools: the power network is refreshed
-    And Nelim's Pickle Tools: I let 180 ticks pass
+    And Nelim's Pickle Tools: I let 1250 ticks pass
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
+    And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 151)
     And Nelim's Pickle Tools: the animal "Miso" stands at (200, 151) facing South
     When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 6 propagator"
+    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
   Scenario: 7 - everybody stayed (the podium, 20:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 20
+    And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (234, 220, 210)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 55, 50)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Parka" dyed rgb (176, 122, 122)
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -180,22 +225,26 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 150)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 150)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 155)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 155)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 150) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 150) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 155) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 155) is lit
+    And Nelim's Pickle Tools: I place the decor "Campfire" at (197, 152)
+    And Nelim's Pickle Tools: the decor "Campfire" at (197, 152) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 155) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 155) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
+    And Nelim's Pickle Tools: I let 600 ticks pass
     And I wait 60 ticks
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 155)
-    And Nelim's Pickle Tools: "Rina" stands at (194, 152) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (196, 152) facing South
+    And Nelim's Pickle Tools: "Rina" stands at (194, 153) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing South
+    And Nelim's Pickle Tools: "Nelim" carries the item "WoodLog"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Sena" stands at (198, 152) facing South
-    And Nelim's Pickle Tools: "Toma" stands at (200, 152) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 150)
-    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: "Sena" stands at (199, 151) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (200, 153) facing West
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
+    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 149) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When Nelim's Pickle Tools: I frame the rectangle from (192, 148) to (202, 157)
     And I take a screenshot "gallery 7 evening"
+    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
