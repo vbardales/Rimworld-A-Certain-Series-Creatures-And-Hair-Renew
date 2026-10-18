@@ -121,8 +121,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
-    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (197, 154)
-    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 154) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (197, 150)
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing South
     And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 155)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 3 index"

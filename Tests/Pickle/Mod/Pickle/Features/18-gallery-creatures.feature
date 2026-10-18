@@ -35,16 +35,17 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 150)
-    And Nelim's Pickle Tools: I place the decor "Stool" at (199, 150)
+    And Nelim's Pickle Tools: I place the decor "Stool" at (199, 151)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 154) fully grown
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 150) is lit
     And I wait 60 ticks
-    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 152)
+    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 150)
-    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 151)
+    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 151) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (194, 148) to (200, 155)
+    When Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 155)
     And I take a screenshot "gallery 4 beetle"
     Then no errors were logged
 
@@ -119,6 +120,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 151) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 154) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 154) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (198, 150)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (203, 150)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (198, 150) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (203, 150) is lit
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 152)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 154)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 154)
@@ -128,9 +133,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I let 180 ticks pass
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (202, 153)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (202, 153) facing South
-    When Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (207, 157)
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 151)
+    And Nelim's Pickle Tools: the animal "Miso" stands at (200, 151) facing South
+    When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 6 propagator"
     Then no errors were logged
