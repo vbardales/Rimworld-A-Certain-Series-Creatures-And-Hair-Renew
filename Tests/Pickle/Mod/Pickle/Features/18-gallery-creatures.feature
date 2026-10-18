@@ -15,7 +15,7 @@
 #      stool on its right on a small wooden floor, a hen at its feet facing the camera: the pack animal Nelim leads in.
 #   5. emerald-clearing, 18:00, the seraph (God's Power), framed high enough for the eight wings, Nelim facing it, Rina, Toma
 #      and Sena a few cells behind, a torch lamp on each side, a peacock that walks into the frame facing the camera.
-#   6. emerald-clearing, 19:00, Nelim at work beside the dark matter propagator against the power cells, a second one eight
+#   6. emerald-clearing, 18:00 (was 19:00: too dark, redo-5), Nelim at work beside the dark matter propagator against the power cells, a second one eight
 #      cells away without power (the lightning icon names the need), three lit torches (the bookcase of redo-1 read as a
 #      crate and the evening was too dark, redo-4; frame tightened to the machines), a cat between them facing the camera.
 #   7. emerald-clearing, 20:00 (optional), Rina, Nelim, Sena and Toma in a row at dusk under four torches, the beetle behind
@@ -108,7 +108,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
   Scenario: 6 - Nelim at the propagator, one running and one waiting for power (the podium, 19:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
-    And I set the hour to 19
+    And I set the hour to 18
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
