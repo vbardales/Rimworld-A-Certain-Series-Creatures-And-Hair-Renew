@@ -20,6 +20,11 @@
 #      crate and the evening was too dark, redo-4; frame tightened to the machines), a cat between them facing the camera.
 #   7. emerald-clearing, 20:00 (optional), Rina, Nelim, Sena and Toma in a row at dusk under four torches, the beetle behind
 #      them, the hen in front: everybody stayed.
+#   8. (planned, not written) the research window on the project "ACS_DarkMatterTech", an interface window taken on
+#      `window-backdrop-for-height` (English game), cropped 5 px either side of the window, no subtitle: what it takes to
+#      build the machine of picture 6. Needs `nelim.pickletools.research` in the DepMap (steps of feature 06: open the
+#      research tab, scroll the window to the project). Not part of the story's hours: the coda.
+# Weather: clear on every picture, on purpose (sunset light and torch light carry the series).
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
 # empty plant pot (it reads as a bucket). The guests of picture 7 are dressed as in feature 17.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
