@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-18, shotlist reworked against criteria a to k (all seven scenes 4 on paper), features 17 and 18 rewritten, ticket 349b cancelled to be refiled; owner review pending
-protocols_read_sha: b7ed0bd92ef9c1a1a5c74fa52332110b024377dd
+protocols_read_sha: 0c0d0509f6b7a02d5cba3e93ce08922d41c7af04
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
