@@ -68,7 +68,7 @@ Full text, one line per picture with every field: the headers of `Tests/Pickle/M
 | 7 | podium, 20:00 + fire | the evening at the fire: everybody stayed | cream basic shirt (234, 220, 210), brown trousers (70, 55, 50), rose parka (176, 122, 122); brings a log (`WoodLog`) | Rina smile, Toma smug, Sena calm, in a ring around the fire | `WoodPlankFloor`, `Campfire` lit, `TorchLamp` lit x2, `Plant_YellowTallGrass` x3 | beetle behind; `Chicken` facing the camera | fire hides a guest, profiles read small; Nelim and Sena face the camera, fire moves to (197, 153) if it hides someone |
 | 8 | window-backdrop-for-height | research window on `ACS_DarkMatterTech` | none | none | none | none | interface window: set aside from the rating (owner, 2026-10-18); planned, not written |
 
-Ratings against a to k (2026-10-18, on paper, none of the new compositions seen yet): **1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4.** Lowest 4. Nothing played below 4; ticket `349b` cancelled until these were written, to be refiled. Weak points kept in view: the mod's hairstyles beyond three (the Preview and description carry the variety); ranged attack, butchering and traders live only in tests.
+Ratings against a to k (2026-10-18, on paper, none of the new compositions seen yet): **1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4.** Lowest 4. Nothing played below 4; ticket `349b` cancelled; refiled as `20261018-112902-473-f6af` (pictures 1 to 7, evidence `Tests/Pickle/Evidence/2026-10-18-gallery-redo-6`). Weak points kept in view: the mod's hairstyles beyond three (the Preview and description carry the variety); ranged attack, butchering and traders live only in tests.
 
 ## Translation audit
 
