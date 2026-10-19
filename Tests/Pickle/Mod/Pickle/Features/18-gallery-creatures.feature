@@ -30,7 +30,7 @@
 #   6. emerald-clearing, 18:00 then 30 more game minutes (1250 ticks), Clear | the dark matter propagator, one running, one
 #      waiting for power (the lightning icon) | frame (195, 149) to (206, 156), tight on the machines | Nelim: grey basic
 #      shirt (212, 206, 196), near-black trousers (47, 47, 54), slate jacket (59, 63, 70), her bun, her smirk, carries a
-#      lump of dark matter (ACS_DarkMatter), facing West; Cat in front of her at (200, 151) facing the camera | WoodPlankFloor,
+#      lump of dark matter (ACS_DarkMatter), facing West; Cat in front of her at (200, 152) facing the camera | WoodPlankFloor,
 #      ACS_DarkMatterProduction x2 at (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily at
 #      (196, 149) and (202, 149) | RISK: too dark (the run c094 capture was), and the right machine touching the cells does
 #      not read. PLAN: five torches and the hour 18 plus 30 minutes instead of 19:00; if it still reads dark, add a second
@@ -178,8 +178,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 151)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (200, 151) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 152)
+    And Nelim's Pickle Tools: the animal "Miso" stands at (200, 152) facing South
     When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 6 propagator"

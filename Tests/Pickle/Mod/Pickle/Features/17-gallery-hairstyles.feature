@@ -21,7 +21,7 @@
 # Shooting plan, one line per picture. Each line: place, hour, weather, time that passes | subject and what it says |
 # composition | living things (pawn, outfit with colours, expression, action) | decor (defNames) | risk AND plan.
 #   1. sofa-corner (the rose rug between three sofas), 12:00, Clear, 60 ticks | Misaka on Rina: she drops by at noon and
-#      Nelim kept the good sofa for her | camera at 2 cells' height on (187, 124), tight on the two pawns, both facing South,
+#      Nelim kept the good sofa for her | camera at 2 cells' height on (187, 124), tight on the two pawns, Rina facing South, Nelim facing West toward her (a plate held facing South covered her face in run redo-6),
 #      a cat in front at z 125 | Rina: cream blouse (241, 231, 208), deep brown trousers (90, 59, 40), smile kit, stands just
 #      in, Misaka drawn in its own colours (white hair); Nelim: teal collar shirt (47, 111, 115), charcoal trousers (52, 52,
 #      60), her bun, her smirk, carries a plate (MealSimple) held out to Rina; house cat Cat facing the camera | TorchLamp lit
@@ -42,7 +42,7 @@
 #      carries a bar of chocolate (Chocolate); Husky in front of Sena at z 150, facing the camera | WoodPlankFloor, TorchLamp
 #      lit x2 at (194, 150) and (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
 #      back in run c094). PLAN: it is spawned and placed last, in front of the pawns; if it still turns, ask NPT for a step that
-#      holds an animal's facing.
+#      holds an animal's facing. (Run redo-6: the husky showed its back after "facing South", so it is now asked to face North, to see which way the step turns it.)
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
 # (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
@@ -77,11 +77,12 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 125)
     And Nelim's Pickle Tools: the animal "Miso" stands at (187, 125) facing South
     And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
+    And Nelim's Pickle Tools: "Rina" facial expression is "normal"
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
@@ -157,7 +158,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
     And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (197, 150)
-    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing North
     And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 155)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 3 index"
