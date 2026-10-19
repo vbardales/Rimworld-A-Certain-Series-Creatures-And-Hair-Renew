@@ -40,3 +40,7 @@ Art/Preview-background-qa.png
 
 # Renderer working folder (shared Render-Preview.cjs outputs), regenerated on every run.
 Art/.render/
+
+# Pickle report reception and parking (on disk only, AGENTS.md "Test evidence")
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
