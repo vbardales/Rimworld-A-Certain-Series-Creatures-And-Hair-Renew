@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-19, evidence sorted (196 KB kept, RELEASE.md each, Inbox/Parked ignored); gallery redo-6 read: 2, 4, 5, 7 candidates, 1, 3, 6 replayed in ticket b1bb
+updated:      2026-10-19, evidence sorted (196 KB kept, RELEASE.md each, Inbox/Parked ignored); gallery redo-6 read: 2, 4, 5, 7 candidates, 1, 3, 6 replayed in ticket 9fbb
 protocols_read_sha: 0c0d0509f6b7a02d5cba3e93ce08922d41c7af04
 ---
 # A Certain Series - Creatures and Hair Renew — status
@@ -68,7 +68,7 @@ Full text, one line per picture with every field: the headers of `Tests/Pickle/M
 | 7 | podium, 20:00 + fire | the evening at the fire: everybody stayed | cream basic shirt (234, 220, 210), brown trousers (70, 55, 50), rose parka (176, 122, 122); brings a log (`WoodLog`) | Rina smile, Toma smug, Sena calm, in a ring around the fire | `WoodPlankFloor`, `Campfire` lit, `TorchLamp` lit x2, `Plant_YellowTallGrass` x3 | beetle behind; `Chicken` facing the camera | fire hides a guest, profiles read small; Nelim and Sena face the camera, fire moves to (197, 153) if it hides someone |
 | 8 | window-backdrop-for-height | research window on `ACS_DarkMatterTech` | none | none | none | none | interface window: set aside from the rating (owner, 2026-10-18); planned, not written |
 
-Ratings against a to k (2026-10-18, on paper, none of the new compositions seen yet): **1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4.** Lowest 4. Nothing played below 4; ticket `349b` cancelled; refiled as `20261018-112902-473-f6af` (pictures 1 to 7, read 2026-10-19: 2, 4, 5, 7 kept as candidates, 1, 3 and 6 replayed in ticket `20261019-163413-298-b1bb`, evidence in `Tests/Pickle/Inbox/2026-10-19-gallery-redo-7`; first run evidence minified in `Tests/Pickle/Evidence/2026-10-18-gallery-redo-6` (captures 2, 4, 5, 7 promoted to `Art/Gallery` as candidates)). Weak points kept in view: the mod's hairstyles beyond three (the Preview and description carry the variety); ranged attack, butchering and traders live only in tests.
+Ratings against a to k (2026-10-18, on paper, none of the new compositions seen yet): **1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4.** Lowest 4. Nothing played below 4; ticket `349b` cancelled; refiled as `20261018-112902-473-f6af` (pictures 1 to 7, read 2026-10-19: 2, 4, 5, 7 kept as candidates, 1, 3 and 6 replayed in ticket `20261019-224939-474-9fbb` (b1bb was abandoned), evidence in `Tests/Pickle/Inbox/2026-10-19-gallery-redo-7b`; first run evidence minified in `Tests/Pickle/Evidence/2026-10-18-gallery-redo-6` (captures 2, 4, 5, 7 promoted to `Art/Gallery` as candidates)). Weak points kept in view: the mod's hairstyles beyond three (the Preview and description carry the variety); ranged attack, butchering and traders live only in tests.
 
 ## Translation audit
 
