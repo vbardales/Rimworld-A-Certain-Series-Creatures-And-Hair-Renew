@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-19, evidence sorted (196 KB kept, RELEASE.md each, Inbox/Parked ignored); gallery redo-6 read: 2, 4, 5, 7 candidates, 1, 3, 6 replayed in ticket 9fbb
-protocols_read_sha: 0c0d0509f6b7a02d5cba3e93ce08922d41c7af04
+protocols_read_sha: 2442e211bd4516b10b1740009e11b7312c5e1c2b
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
