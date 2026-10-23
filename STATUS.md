@@ -29,7 +29,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_e82f0b57-e076-4f87-9764-2dc4383a6855
 updated:      2026-10-23, gallery shotlist v2 (owner validated, Opus director pass, one outfit all day, directions fixed on the grid) in features 17 and 18 at 65b80ce; tickets 8ac0 (shots 1 to 3) and 3aa4 (shots 4 to 7) pending, owner local_e82f0b57, tree frozen until RUN_DONE
-protocols_read_sha: 2be537a70be1b40fd555b6fe1d8bb1e0dd280524
+protocols_read_sha: 0a40a584e83bd432e59375dbe1be39822f7b10c3
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
