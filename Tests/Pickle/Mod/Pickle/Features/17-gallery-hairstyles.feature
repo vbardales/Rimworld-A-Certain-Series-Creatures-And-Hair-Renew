@@ -80,8 +80,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (187, 125)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (187, 125) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 125)
+    And Nelim's Pickle Tools: the animal "Tama" stands at (187, 125) facing South
     And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
     And Nelim's Pickle Tools: "Rina" facial expression is "normal"
     And Nelim's Sanctuary: Nelim has her own face
