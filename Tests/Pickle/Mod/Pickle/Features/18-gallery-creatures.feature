@@ -15,13 +15,13 @@
 # action | decor | risk and plan):
 #   4. emerald-clearing, 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | frame (194, 150)
 #      to (200, 155), beetle at (198, 153) fills the frame | Nelim: cream basic shirt (240, 228, 205), brown trousers (92, 60,
-#      40), rust jacket (168, 69, 42), her bun, her smirk, holds out hay (Hay) that the beetle ignores, at (195, 153) facing
+#      40), rust jacket (168, 69, 42), her high ponytail, her smirk, holds out hay (Hay) that the beetle ignores, at (195, 153) facing
 #      East; ACS_DarkMatterBeetle; Chicken at (197, 151) facing the camera | WoodPlankFloor, TorchLamp lit at (195, 150), Stool
 #      at (199, 151), Plant_Daylily at (199, 154) | RISK: the beetle crowds Nelim in the tight frame. PLAN: three cells between
 #      them; if they touch, the beetle goes to (199, 153) and the frame widens to (193, 150)-(201, 155).
 #   5. emerald-clearing, 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | frame (193, 148) to (201,
 #      157), high enough for the wings, guests staggered behind her and turned toward the seraph (no row facing the camera) |
-#      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her bun, her smirk, holds a bolt of heaven cloth
+#      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her high ponytail, her smirk, holds a bolt of heaven cloth
 #      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (194, 155) facing North, Toma (198, 156) facing West, Sena (200, 154)
 #      facing North; Peacock facing the camera | WoodPlankFloor, TorchLamp lit x2 at (193, 152) and (201, 152),
 #      Plant_YellowTallGrass at (193, 149) and (201, 149) | RISK: the wings are cut by the frame, or the guests' backs hide
@@ -29,7 +29,7 @@
 #      hairstyles were already shown in 1 to 3.
 #   6. emerald-clearing, 18:00 then 30 more game minutes (1250 ticks), Clear | the dark matter propagator, one running, one
 #      waiting for power (the lightning icon) | frame (195, 149) to (206, 156), tight on the machines | Nelim: grey basic
-#      shirt (212, 206, 196), near-black trousers (47, 47, 54), slate jacket (59, 63, 70), her bun, her smirk, carries a
+#      shirt (212, 206, 196), near-black trousers (47, 47, 54), slate jacket (59, 63, 70), her high ponytail, her smirk, carries a
 #      lump of dark matter (ACS_DarkMatter), facing West; Cat in front of her at (200, 152) facing the camera | WoodPlankFloor,
 #      ACS_DarkMatterProduction x2 at (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily at
 #      (196, 149) and (202, 149) | RISK: too dark (the run c094 capture was), and the right machine touching the cells does
@@ -37,7 +37,7 @@
 #      row of torches or move the hour to 17:30.
 #   7. emerald-clearing, 20:00, Clear, 60 ticks plus 600 ticks of fire | the evening at the fire: everybody stayed | frame
 #      (192, 148) to (202, 157), a ring around the fire, not a row facing the camera | Nelim: cream basic shirt (234, 220,
-#      210), brown trousers (70, 55, 50), rose parka (176, 122, 122), her bun, her smirk, brings a log (WoodLog) at (195, 150)
+#      210), brown trousers (70, 55, 50), rose parka (176, 122, 122), her high ponytail, her smirk, brings a log (WoodLog) at (195, 150)
 #      facing South; Rina (194, 153) facing East, smile; Toma (200, 153) facing West, smug; Sena (199, 151) facing South,
 #      calm; the beetle behind at (197, 155); Chicken at (197, 149) facing the camera | WoodPlankFloor, Campfire lit at (197,
 #      152), TorchLamp lit x2 at (193, 150) and (201, 150), Plant_YellowTallGrass x3 | RISK: the campfire hides a guest, faces

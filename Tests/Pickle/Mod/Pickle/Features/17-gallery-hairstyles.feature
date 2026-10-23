@@ -13,7 +13,7 @@
 # 17:00, 18:00, 18:30 and 20:00 (feature 18: the beetle, the seraph, the machine, the evening at the fire). Weather: Clear on
 # every picture, stated in every scenario. Time passes inside each scenario by waits (60 ticks to settle, 120 ticks for the
 # drafting of picture 2, 1250 ticks = 30 game minutes in picture 6, 600 ticks for the fire of picture 7). Nelim wears a
-# DIFFERENT outfit on every picture (colours below), keeps her own hairstyle (the fixture's bun) and her own face (brows,
+# DIFFERENT outfit on every picture (colours below), keeps her own hairstyle (the fixture's high ponytail, Roo_HD_Hair_Highpony) and her own face (brows,
 # smirk smile, `blink`, the Sanctuary step, last before the capture). Every picture leaves the bottom of the frame empty:
 # the English subtitle is burnt there afterwards (PUBLICATION.md). Animals face the camera (South). Decor belongs to one
 # picture and is removed after it (`the decor is removed`).
@@ -24,7 +24,7 @@
 #      Nelim kept the good sofa for her | camera at 2 cells' height on (187, 124), tight on the two pawns, Rina facing South, Nelim facing West toward her (a plate held facing South covered her face in run redo-6),
 #      a cat in front at z 125 | Rina: cream blouse (241, 231, 208), deep brown trousers (90, 59, 40), smile kit, stands just
 #      in, Misaka drawn in its own colours (white hair); Nelim: teal collar shirt (47, 111, 115), charcoal trousers (52, 52,
-#      60), her bun, her smirk, carries a plate (MealSimple) held out to Rina; house cat Cat facing the camera | TorchLamp lit
+#      60), her high ponytail, her smirk, carries a plate (MealSimple) held out to Rina; house cat Cat facing the camera | TorchLamp lit
 #      at (184, 124), Plant_Daylily at (189, 124), the fixture's sofas and rug | RISK: the hairstyle stays a few pixels wide
 #      and Nelim sweats (the fixture is hot). PLAN: 2 cells' height; pawns placed after the waits; Nelim's face is the last
 #      step before the capture; if the hair still reads small, frame to 1.5 cells.
@@ -32,13 +32,13 @@
 #      the room and refuses the bottle | frame (194, 118) to (200, 123), Toma off-centre by the piano, Nelim facing him a few
 #      cells away, a peacock in front | Toma: all black under a long duster (28, 28, 36 / 43, 43, 53 / 23, 23, 29), drafted
 #      for the angry face, stands; Nelim: cream basic shirt (237, 230, 214), olive trousers (91, 107, 58), burgundy jacket (122,
-#      46, 58), her bun, her smirk, carries a bottle (Beer) held out; Peacock facing the camera | Plant_Daylily at (195, 121) and
+#      46, 58), her high ponytail, her smirk, carries a bottle (Beer) held out; Peacock facing the camera | Plant_Daylily at (195, 121) and
 #      (200, 121), the fixture's piano | RISK: the black coat vanishes against the dark brick. PLAN: only the white hair has to
 #      be bright, Nelim's burgundy gives the colour; if the coat is lost, lighten the duster to (45, 45, 58).
 #   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 16:00, Clear, 60
 #      ticks | Index on Sena: she found a quiet corner and Nelim keeps her company | frame (194, 149) to (200, 155), warm wood
 #      floor, torches in the back corners | Sena: white robe (247, 243, 232) and gold sash (201, 162, 39), calm kit, stands,
-#      Index in its own colours; Nelim: sage collar shirt (143, 169, 138), denim trousers (63, 95, 138), her bun, her smirk,
+#      Index in its own colours; Nelim: sage collar shirt (143, 169, 138), denim trousers (63, 95, 138), her high ponytail, her smirk,
 #      carries a bar of chocolate (Chocolate); Husky in front of Sena at z 150, facing the camera | WoodPlankFloor, TorchLamp
 #      lit x2 at (194, 150) and (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
 #      back in run c094). PLAN: it is spawned and placed last, in front of the pawns; if it still turns, ask NPT for a step that
