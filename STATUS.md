@@ -27,7 +27,7 @@ remaining:
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-19, evidence sorted (196 KB kept, RELEASE.md each, Inbox/Parked ignored); gallery redo-6 read: 2, 4, 5, 7 candidates, 1, 3, 6 replayed in ticket 9fbb
+updated:      2026-10-23, gallery redo-8: Nelim wears Roo_HD_Hair_Highpony (asserted), Yuki from the save, cats named Tama and Kuru; 9fbb cancelled; all seven scenes refiled in tickets 8ac0 (1 to 3) and 3aa4 (4 to 7) on 45ce5b2, tree frozen until RUN_DONE
 protocols_read_sha: 738c318605b34260852f00ccf01ac5064364ed4a
 ---
 # A Certain Series - Creatures and Hair Renew — status
