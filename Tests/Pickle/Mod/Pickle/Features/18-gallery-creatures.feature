@@ -13,16 +13,16 @@
 #
 # Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent), continuing feature 17: the
 # same outfits, every picture a game paused mid-play. Pictures 4 to 7 are all on the podium (emerald-clearing).
-#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: the beetle has turned away from
-#      the hay Nelim offers and the chicken pecks at it. METHOD: beetle (198, 153), Nelim (195, 153) facing East carrying Hay, Chicken
-#      (197, 150) facing South (seen from the front, looking at the hay) | MEDIUM: camera 4 cells' height on (197, 152) | WoodPlankFloor,
-#      TorchLamp lit (195, 150), Stool (199, 151), Plant_Daylily (199, 154) | THUMBNAIL: the beetle's horn silhouette on the wood.
+#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay, the beetle
+#      stands unmoved before it and the chicken pecks at the hay at her feet. METHOD: beetle (198, 153) (the step gives no facing), Nelim
+#      (195, 153) facing East carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) | WoodPlankFloor,
+#      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (199, 154) and (195, 154) | THUMBNAIL: the beetle's horn silhouette on the wood.
 #      RISK: the beetle crowds Nelim. PLAN: three cells between them.
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
-#      guests turn toward it while Nelim arrives with the cloth. METHOD: ACS_Gabriel (197, 152); everybody 5 cells or more from it (its
-#      wings draw over anything within about 4.5): Rina (193, 157) North, Toma (197, 158) West, Sena (201, 156) North, Nelim (194, 147)
-#      East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 13 cells' height on (197, 152) | WoodPlankFloor,
-#      Brazier lit x2 (193, 152) and (201, 152), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
+#      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 152); everybody 5 cells or more from it (its
+#      wings draw over anything within about 4.5) and turned toward it: Rina (191, 155) East, Toma (197, 158) South, Sena (203, 155) West,
+#      Nelim (194, 147) East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 13 cells' height on (197, 152) | WoodPlankFloor,
+#      Brazier lit x2 (192, 152) and (202, 152), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
 #      toward the idle machine while Kuru watches the glow. METHOD: Nelim (198, 153) facing West carrying ACS_DarkMatter, Kuru (200, 152)
@@ -32,7 +32,7 @@
 #   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim brings the last log and the three
 #      guests stand round the fire holding what she gave them in pictures 1 to 3 (plate, Beer, chocolate), Toma now with his beer.
 #      METHOD: Campfire lit (197, 152); Rina (194, 153) East carrying MealSimple, Toma (200, 153) West carrying Beer, Sena (199, 151)
-#      West carrying Chocolate, Nelim (195, 150) South carrying WoodLog, beetle (197, 155), Chicken (197, 149) facing South | CLOSING
+#      West carrying Chocolate, Nelim (195, 150) East carrying WoodLog, beetle (197, 155), Chicken (197, 149) facing South | CLOSING
 #      IMAGE, wide: camera 8 cells' height on (197, 152) | WoodPlankFloor, TorchLamp lit x2 (193, 150) and (201, 150), Plant_YellowTallGrass
 #      x3 | THUMBNAIL: the warm pool of light. RISK: the fire hides a guest. PLAN: it moves to (197, 153).
 #   8. (planned, interface, set aside from the rating) the research window on "ACS_DarkMatterTech". Not written.
@@ -57,6 +57,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 151)
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 154) fully grown
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (199, 150)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (199, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (195, 154) fully grown
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
@@ -67,8 +70,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 150)
-    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (196, 152)
+    And Nelim's Pickle Tools: the animal "Poule" stands at (196, 152) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 4 beetle"
@@ -110,10 +113,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (193, 152)
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (201, 152)
-    And Nelim's Pickle Tools: the decor "Brazier" at (193, 152) is lit
-    And Nelim's Pickle Tools: the decor "Brazier" at (201, 152) is lit
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (192, 152)
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (202, 152)
+    And Nelim's Pickle Tools: the decor "Brazier" at (192, 152) is lit
+    And Nelim's Pickle Tools: the decor "Brazier" at (202, 152) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks
@@ -126,9 +129,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Rina" stands at (193, 157) facing North
-    And Nelim's Pickle Tools: "Toma" stands at (197, 158) facing West
-    And Nelim's Pickle Tools: "Sena" stands at (201, 156) facing North
+    And Nelim's Pickle Tools: "Rina" stands at (191, 155) facing East
+    And Nelim's Pickle Tools: "Toma" stands at (197, 158) facing South
+    And Nelim's Pickle Tools: "Sena" stands at (203, 155) facing West
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (200, 147)
     And Nelim's Pickle Tools: the animal "Paon" stands at (200, 147) facing South
     Then 1 "ACS_Gabriel" exist
@@ -241,7 +244,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 155)
     And Nelim's Pickle Tools: "Rina" stands at (194, 153) facing East
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "WoodLog"
     And Nelim's Pickle Tools: "Rina" carries the item "MealSimple"
     And Nelim's Pickle Tools: "Toma" carries the item "Beer"

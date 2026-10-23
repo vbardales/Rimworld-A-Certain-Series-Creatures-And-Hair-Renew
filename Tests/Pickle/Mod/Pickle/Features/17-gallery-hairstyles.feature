@@ -32,9 +32,9 @@
 #      carrying Beer, peacock (196, 119) facing East toward the piano | CLOSE: rectangle (195, 119) to (200, 123) | Plant_Daylily
 #      (195, 121) and (200, 121), the fixture's piano | THUMBNAIL: white hair against the black duster. RISK: the coat is lost on the
 #      dark brick. PLAN: lighten the duster to (45, 45, 58).
-#   3. podium (emerald-clearing), 16:00, Clear, 60 ticks | Index on Sena: a quiet corner | INSTANT: Yuki has just padded up to Sena
-#      and Nelim steps up with the chocolate. METHOD: Yuki (the save's husky) at (197, 150) facing South (toward Sena, and seen from the
-#      front), Sena (197, 152) facing North, Nelim (195, 152) facing East carrying Chocolate | CLOSE: rectangle (194, 149) to (200, 154) |
+#   3. podium (emerald-clearing), 16:00, Clear, 60 ticks | Index on Sena: a quiet corner | INSTANT: Yuki has just padded up beside Sena and Nelim steps up with the chocolate. METHOD (z grows to the north, so
+#      South faces the camera): Sena (197, 152) facing South, Yuki (the save's husky) at (199, 152) facing West toward her, in profile,
+#      Nelim (195, 152) facing East carrying Chocolate | CLOSE: rectangle (194, 149) to (200, 154) |
 #      WoodPlankFloor, TorchLamp lit (194, 150), Brazier lit (200, 150), Plant_Daylily x3 | THUMBNAIL: the white robe on the wood.
 #      RISK: Yuki turns away (she showed her back in runs c094 and redo-6). PLAN: placed last; read which way the step turns her.
 # NELIM keeps ONE outfit all day (owner's continuity rule 2026-10-23): cream basic shirt (237, 230, 214), olive trousers (91, 107, 58),
@@ -161,11 +161,11 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
-    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing North
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
-    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 154)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 3 index"
