@@ -56,6 +56,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 12
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (47, 111, 115)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (52, 52, 60)
     And a colonist "Rina" exists
@@ -93,6 +94,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 14
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
@@ -129,6 +131,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 16
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (143, 169, 138)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (63, 95, 138)
     And a colonist "Sena" exists
@@ -157,7 +160,6 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
-    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Yuki" is spawned at (197, 150)
     And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing North
     And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 155)
     And Nelim's Sanctuary: Nelim has her own face
