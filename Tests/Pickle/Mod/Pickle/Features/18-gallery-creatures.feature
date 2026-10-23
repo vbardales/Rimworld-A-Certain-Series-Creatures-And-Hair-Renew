@@ -55,6 +55,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And game speed is paused
     And I set the hour to 17
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (240, 228, 205)
@@ -87,6 +88,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (31, 58, 95)
@@ -147,6 +149,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (212, 206, 196)
@@ -197,6 +200,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And game speed is paused
     And I set the hour to 20
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (234, 220, 210)

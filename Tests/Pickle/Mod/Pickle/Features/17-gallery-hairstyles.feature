@@ -56,6 +56,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 12
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (47, 111, 115)
@@ -95,6 +96,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 14
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
@@ -133,6 +135,7 @@ Feature: Gallery pictures of the hairstyles
     And game speed is paused
     And I set the hour to 16
     And I set the weather to "Clear"
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (143, 169, 138)
