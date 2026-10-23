@@ -13,8 +13,8 @@
 #
 # Shooting plan, one line per picture (place, hour, weather, time | subject | composition | living things, outfit, expression,
 # action | decor | risk and plan):
-#   4. emerald-clearing, 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | frame (194, 150)
-#      to (200, 155), beetle at (198, 153) fills the frame | Nelim: cream basic shirt (240, 228, 205), brown trousers (92, 60,
+#   4. emerald-clearing, 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | camera 4 cells' height on (197, 152)
+#      with the beetle at (198, 153) fills the frame | Nelim: cream basic shirt (240, 228, 205), brown trousers (92, 60,
 #      40), rust jacket (168, 69, 42), her high ponytail, her smirk, holds out hay (Hay) that the beetle ignores, at (195, 153) facing
 #      East; ACS_DarkMatterBeetle; Chicken at (197, 151) facing the camera | WoodPlankFloor, TorchLamp lit at (195, 150), Stool
 #      at (199, 151), Plant_Daylily at (199, 154) | RISK: the beetle crowds Nelim in the tight frame. PLAN: three cells between
@@ -36,7 +36,7 @@
 #      not read. PLAN: five torches and the hour 18 plus 30 minutes instead of 19:00; if it still reads dark, add a second
 #      row of torches or move the hour to 17:30.
 #   7. emerald-clearing, 20:00, Clear, 60 ticks plus 600 ticks of fire | the evening at the fire: everybody stayed | frame
-#      (192, 148) to (202, 157), a ring around the fire, not a row facing the camera | Nelim: cream basic shirt (234, 220,
+#      camera 8 cells' height on (197, 152), a ring around the fire, not a row facing the camera | Nelim: cream basic shirt (234, 220,
 #      210), brown trousers (70, 55, 50), rose parka (176, 122, 122), her high ponytail, her smirk, brings a log (WoodLog) at (195, 150)
 #      facing South; Rina (194, 153) facing East, smile; Toma (200, 153) facing West, smug; Sena (199, 151) facing South,
 #      calm; the beetle behind at (197, 155); Chicken at (197, 149) facing the camera | WoodPlankFloor, Campfire lit at (197,
@@ -78,7 +78,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 151)
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 151) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 155)
+    When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 4 beetle"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
@@ -256,7 +256,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 149) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (192, 148) to (202, 157)
+    When A Certain Series: I bring the camera to 8 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 7 evening"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
