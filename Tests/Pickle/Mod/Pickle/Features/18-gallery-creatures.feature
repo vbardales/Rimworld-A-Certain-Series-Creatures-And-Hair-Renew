@@ -23,7 +23,7 @@
 #      157), high enough for the wings, guests staggered behind her and turned toward the seraph (no row facing the camera) |
 #      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her high ponytail, her smirk, holds a bolt of heaven cloth
 #      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (194, 155) facing North, Toma (198, 156) facing West, Sena (200, 154)
-#      facing North; Peacock facing the camera | WoodPlankFloor, TorchLamp lit x2 at (193, 152) and (201, 152),
+#      facing North; Peacock facing the camera | WoodPlankFloor, Brazier lit x2 at (193, 152) and (201, 152),
 #      Plant_YellowTallGrass at (193, 149) and (201, 149) | RISK: the wings are cut by the frame, or the guests' backs hide
 #      their hairstyles. PLAN: frame verified in run c094 (the wings were whole); the guests' hair is read from behind, the
 #      hairstyles were already shown in 1 to 3.
@@ -122,10 +122,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (193, 152)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (201, 152)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (193, 152) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (201, 152) is lit
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (193, 152)
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (201, 152)
+    And Nelim's Pickle Tools: the decor "Brazier" at (193, 152) is lit
+    And Nelim's Pickle Tools: the decor "Brazier" at (201, 152) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks

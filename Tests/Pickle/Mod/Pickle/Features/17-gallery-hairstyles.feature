@@ -22,7 +22,7 @@
 # composition | living things (pawn, outfit with colours, expression, action) | decor (defNames) | risk AND plan.
 #   1. sofa-corner (the rose rug between three sofas), 12:00, Clear, 60 ticks | Misaka on Rina: she drops by at noon and
 #      Nelim kept the good sofa for her | camera at 2 cells' height on (187, 124), tight on the two pawns, Rina facing South, Nelim facing West toward her (a plate held facing South covered her face in run redo-6),
-#      a cat in front at z 125 | Rina: cream blouse (241, 231, 208), deep brown trousers (90, 59, 40), smile kit, stands just
+#      a cat in front at z 123 | Rina: cream blouse (241, 231, 208), deep brown trousers (90, 59, 40), smile kit, stands just
 #      in, Misaka drawn in its own colours (white hair); Nelim: teal collar shirt (47, 111, 115), charcoal trousers (52, 52,
 #      60), her high ponytail, her smirk, carries a plate (MealSimple) held out to Rina; house cat Cat facing the camera | TorchLamp lit
 #      at (184, 124), Plant_Daylily at (189, 124), the fixture's sofas and rug | RISK: the hairstyle stays a few pixels wide
@@ -40,7 +40,7 @@
 #      floor, torches in the back corners | Sena: white robe (247, 243, 232) and gold sash (201, 162, 39), calm kit, stands,
 #      Index in its own colours; Nelim: sage collar shirt (143, 169, 138), denim trousers (63, 95, 138), her high ponytail, her smirk,
 #      carries a bar of chocolate (Chocolate); Husky in front of Sena at z 150, facing the camera | WoodPlankFloor, TorchLamp
-#      lit x2 at (194, 150) and (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
+#      lit at (194, 150) and Brazier lit at (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
 #      back in run c094). PLAN: it is spawned and placed last, in front of the pawns; if it still turns, ask NPT for a step that
 #      holds an animal's facing. (Run redo-6: the husky showed its back after "facing South", so it is now asked to face North, to see which way the step turns it.)
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
@@ -82,8 +82,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 125)
-    And Nelim's Pickle Tools: the animal "Tama" stands at (187, 125) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 123)
+    And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing South
     And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
     And Nelim's Pickle Tools: "Rina" facial expression is "normal"
     And Nelim's Sanctuary: Nelim has her own face
@@ -156,8 +156,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 150)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 150) is lit
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 150)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 150) is lit
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (200, 150)
+    And Nelim's Pickle Tools: the decor "Brazier" at (200, 150) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 154) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 154) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 155) fully grown
