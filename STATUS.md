@@ -25,9 +25,10 @@ remaining:
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
+  - gallery redo-8 (shootGallery): read summary.json of 8ac0 and 3aa4, open captures; check first that Nelim wears the base outfit and the Roo ponytail (redo-6 showed a yellow top, dressing after the waits is a lead), which way "facing" turns Yuki and the guests, shot 6 brightness, shot 5 nothing under the wings; then recompose the weak, rebuild Art/Gallery-clean and Art/Gallery, subtitles, owner accepts; forced jobs (NPT step, unplayed) deferred; Tama and Kuru are generic cats (coat cannot be forced); code_review_sha and echo_review_sha stay as set 2026-10-23
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
-updated:      2026-10-23, gallery redo-8: Nelim wears Roo_HD_Hair_Highpony (asserted), Yuki from the save, cats named Tama and Kuru; 9fbb cancelled; all seven scenes refiled in tickets 8ac0 (1 to 3) and 3aa4 (4 to 7) on 45ce5b2, tree frozen until RUN_DONE
+updated:      2026-10-23, gallery shotlist v2 (owner validated, Opus director pass, one outfit all day, directions fixed on the grid) in features 17 and 18 at 65b80ce; tickets 8ac0 (shots 1 to 3) and 3aa4 (shots 4 to 7) pending, owner local_e82f0b57, tree frozen until RUN_DONE
 protocols_read_sha: 2be537a70be1b40fd555b6fe1d8bb1e0dd280524
 ---
 # A Certain Series - Creatures and Hair Renew — status
