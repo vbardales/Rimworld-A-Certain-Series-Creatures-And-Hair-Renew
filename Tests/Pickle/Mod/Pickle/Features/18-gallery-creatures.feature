@@ -56,11 +56,6 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I set the hour to 17
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (240, 228, 205)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 60, 40)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (168, 69, 42)
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -71,6 +66,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 154) fully grown
     And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 150) is lit
     And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (240, 228, 205)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 60, 40)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (168, 69, 42)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
@@ -89,10 +89,6 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (31, 58, 95)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (200, 184, 150)
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -129,6 +125,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (200, 184, 150)
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
@@ -150,11 +150,6 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (212, 206, 196)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (47, 47, 54)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (59, 63, 70)
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -184,6 +179,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
     And Nelim's Pickle Tools: the power network is refreshed
     And Nelim's Pickle Tools: I let 1250 ticks pass
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (212, 206, 196)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (47, 47, 54)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (59, 63, 70)
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
@@ -201,11 +201,6 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I set the hour to 20
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (234, 220, 210)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 55, 50)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Parka" dyed rgb (176, 122, 122)
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -246,6 +241,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
     And Nelim's Pickle Tools: I let 600 ticks pass
     And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (234, 220, 210)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 55, 50)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Parka" dyed rgb (176, 122, 122)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 155)
     And Nelim's Pickle Tools: "Rina" stands at (194, 153) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing South

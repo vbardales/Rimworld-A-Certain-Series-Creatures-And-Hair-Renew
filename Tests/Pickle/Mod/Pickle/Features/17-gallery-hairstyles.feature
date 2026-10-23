@@ -43,6 +43,7 @@
 #      lit at (194, 150) and Brazier lit at (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
 #      back in run c094). PLAN: it is spawned and placed last, in front of the pawns; if it still turns, ask NPT for a step that
 #      holds an animal's facing. (Run redo-6: the husky showed its back after "facing South", so it is now asked to face North, to see which way the step turns it.)
+# NELIM'S OUTFIT AND HAIR are set AFTER the last wait of each scenario (2026-10-23): every capture of redo-6 showed her in the same yellow top, not the planned outfit, while PickleTools' own looks run (no waits) draws the dyed outfit and the Roo ponytail. Lead, not proven: during the waits the colonist's own AI re-dresses her. Guests dressed before the waits kept their clothes.
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
 # (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
@@ -57,10 +58,6 @@ Feature: Gallery pictures of the hairstyles
     And I set the hour to 12
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (47, 111, 115)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (52, 52, 60)
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -79,6 +76,10 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (189, 124) fully grown
     And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
     And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (47, 111, 115)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (52, 52, 60)
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
@@ -97,11 +98,6 @@ Feature: Gallery pictures of the hairstyles
     And I set the hour to 14
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And a colonist "Toma" exists
     And A Certain Series: "Toma" is a man
     And Nelim's Pickle Tools: "Toma" body type is Male
@@ -119,6 +115,11 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And I draft "Toma"
     And Nelim's Pickle Tools: I let 120 ticks pass
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Beer"
@@ -136,10 +137,6 @@ Feature: Gallery pictures of the hairstyles
     And I set the hour to 16
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
-    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (143, 169, 138)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (63, 95, 138)
     And a colonist "Sena" exists
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
@@ -162,6 +159,10 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 154) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 155) fully grown
     And I wait 60 ticks
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (143, 169, 138)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (63, 95, 138)
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
