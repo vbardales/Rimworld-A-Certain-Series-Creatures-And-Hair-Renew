@@ -19,10 +19,10 @@
 #      East; ACS_DarkMatterBeetle; Chicken at (197, 151) facing the camera | WoodPlankFloor, TorchLamp lit at (195, 150), Stool
 #      at (199, 151), Plant_Daylily at (199, 154) | RISK: the beetle crowds Nelim in the tight frame. PLAN: three cells between
 #      them; if they touch, the beetle goes to (199, 153) and the frame widens to (193, 150)-(201, 155).
-#   5. emerald-clearing, 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | frame (193, 148) to (201,
+#   5. emerald-clearing, 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | camera 13 cells' height on (197, 152), everything outside the wings (>= 5 cells from the seraph) (was frame (193, 148) to (201,
 #      157), high enough for the wings, guests staggered behind her and turned toward the seraph (no row facing the camera) |
 #      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her high ponytail, her smirk, holds a bolt of heaven cloth
-#      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (194, 155) facing North, Toma (198, 156) facing West, Sena (200, 154)
+#      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (193, 157) facing North, Toma (197, 158) facing West, Sena (201, 156)
 #      facing North; Peacock facing the camera | WoodPlankFloor, Brazier lit x2 at (193, 152) and (201, 152),
 #      Plant_YellowTallGrass at (193, 149) and (201, 149) | RISK: the wings are cut by the frame, or the guests' backs hide
 #      their hairstyles. PLAN: frame verified in run c094 (the wings were whole); the guests' hair is read from behind, the
@@ -130,16 +130,16 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 151) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Rina" stands at (194, 155) facing North
-    And Nelim's Pickle Tools: "Toma" stands at (198, 156) facing West
-    And Nelim's Pickle Tools: "Sena" stands at (200, 154) facing North
-    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (197, 149)
-    And Nelim's Pickle Tools: the animal "Paon" stands at (197, 149) facing South
+    And Nelim's Pickle Tools: "Rina" stands at (193, 157) facing North
+    And Nelim's Pickle Tools: "Toma" stands at (197, 158) facing West
+    And Nelim's Pickle Tools: "Sena" stands at (201, 156) facing North
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (200, 147)
+    And Nelim's Pickle Tools: the animal "Paon" stands at (200, 147) facing South
     Then 1 "ACS_Gabriel" exist
-    When Nelim's Pickle Tools: I frame the rectangle from (193, 148) to (201, 157)
+    When A Certain Series: I bring the camera to 13 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 5 seraph"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
