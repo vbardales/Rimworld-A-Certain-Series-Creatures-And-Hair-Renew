@@ -83,8 +83,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 123)
     And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing East
     And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 124)
-    And Nelim's Pickle Tools: "Rina" facial expression is "normal"
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
