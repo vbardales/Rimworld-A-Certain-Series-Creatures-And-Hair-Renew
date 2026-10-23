@@ -12,38 +12,34 @@
 # mod, and each gets a treat from her hands. The day moves on one picture at a time: 12:00, 14:00, 16:00 (portraits), then
 # 17:00, 18:00, 18:30 and 20:00 (feature 18: the beetle, the seraph, the machine, the evening at the fire). Weather: Clear on
 # every picture, stated in every scenario. Time passes inside each scenario by waits (60 ticks to settle, 120 ticks for the
-# drafting of picture 2, 1250 ticks = 30 game minutes in picture 6, 600 ticks for the fire of picture 7). Nelim wears a
-# DIFFERENT outfit on every picture (colours below), keeps her own hairstyle (the fixture's high ponytail, Roo_HD_Hair_Highpony) and her own face (brows,
+# drafting of picture 2, 1250 ticks = 30 game minutes in picture 6, 600 ticks for the fire of picture 7). Nelim wears ONE outfit all day (picture 1 and
+# the note below), keeps her own hairstyle (the fixture's high ponytail, Roo_HD_Hair_Highpony) and her own face (brows,
 # smirk smile, `blink`, the Sanctuary step, last before the capture). Every picture leaves the bottom of the frame empty:
 # the English subtitle is burnt there afterwards (PUBLICATION.md). Animals face the camera (South). Decor belongs to one
 # picture and is removed after it (`the decor is removed`).
 #
-# Shooting plan, one line per picture. Each line: place, hour, weather, time that passes | subject and what it says |
-# composition | living things (pawn, outfit with colours, expression, action) | decor (defNames) | risk AND plan.
-#   1. sofa-corner (the rose rug between three sofas), 12:00, Clear, 60 ticks | Misaka on Rina: she drops by at noon and
-#      Nelim kept the good sofa for her | camera at 2 cells' height on (187, 124), tight on the two pawns, Rina facing South, Nelim facing West toward her (a plate held facing South covered her face in run redo-6),
-#      a cat in front at z 123 | Rina: cream blouse (241, 231, 208), deep brown trousers (90, 59, 40), smile kit, stands just
-#      in, Misaka drawn in its own colours (white hair); Nelim: teal collar shirt (47, 111, 115), charcoal trousers (52, 52,
-#      60), her high ponytail, her smirk, carries a plate (MealSimple) held out to Rina; house cat Cat facing the camera | TorchLamp lit
-#      at (184, 124), Plant_Daylily at (189, 124), the fixture's sofas and rug | RISK: the hairstyle stays a few pixels wide
-#      and Nelim sweats (the fixture is hot). PLAN: 2 cells' height; pawns placed after the waits; Nelim's face is the last
-#      step before the capture; if the hair still reads small, frame to 1.5 cells.
-#   2. terrace (brick, black piano), 14:00, Clear, 60 + 120 ticks | Accelerator on Toma: a loner who keeps to the edge of
-#      the room and refuses the bottle | frame (194, 118) to (200, 123), Toma off-centre by the piano, Nelim facing him a few
-#      cells away, a peacock in front | Toma: all black under a long duster (28, 28, 36 / 43, 43, 53 / 23, 23, 29), drafted
-#      for the angry face, stands; Nelim: cream basic shirt (237, 230, 214), olive trousers (91, 107, 58), burgundy jacket (122,
-#      46, 58), her high ponytail, her smirk, carries a bottle (Beer) held out; Peacock facing the camera | Plant_Daylily at (195, 121) and
-#      (200, 121), the fixture's piano | RISK: the black coat vanishes against the dark brick. PLAN: only the white hair has to
-#      be bright, Nelim's burgundy gives the colour; if the coat is lost, lighten the duster to (45, 45, 58).
-#   3. emerald-clearing (the podium: a small wooden floor ringed by flowers, its painted green zone bared), 16:00, Clear, 60
-#      ticks | Index on Sena: she found a quiet corner and Nelim keeps her company | frame (194, 149) to (200, 155), warm wood
-#      floor, torches in the back corners | Sena: white robe (247, 243, 232) and gold sash (201, 162, 39), calm kit, stands,
-#      Index in its own colours; Nelim: sage collar shirt (143, 169, 138), denim trousers (63, 95, 138), her high ponytail, her smirk,
-#      carries a bar of chocolate (Chocolate); Husky in front of Sena at z 150, facing the camera | WoodPlankFloor, TorchLamp
-#      lit at (194, 150) and Brazier lit at (200, 150), Plant_Daylily x3 | RISK: the husky turns away from the camera again (it showed its
-#      back in run c094). PLAN: it is spawned and placed last, in front of the pawns; if it still turns, ask NPT for a step that
-#      holds an animal's facing. (Run redo-6: the husky showed its back after "facing South", so it is now asked to face North, to see which way the step turns it.)
-# NELIM'S OUTFIT AND HAIR are set AFTER the last wait of each scenario (2026-10-23): every capture of redo-6 showed her in the same yellow top, not the planned outfit, while PickleTools' own looks run (no waits) draws the dyed outfit and the Roo ponytail. Lead, not proven: during the waits the colonist's own AI re-dresses her. Guests dressed before the waits kept their clothes.
+# Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent). Each picture is a game
+# PAUSED MID-PLAY: every living thing acts toward something, nobody poses for the camera. Per picture: place, hour, weather, time
+# | subject | THE INSTANT and how it is obtained | composition | decor (defNames) | thumbnail (268 px) and risk with its plan.
+#   1. sofa-corner, 12:00, Clear, 60 ticks, map at 20 degrees | Misaka on Rina: she drops by at noon | INSTANT: Rina has just stepped
+#      onto the rug and Nelim turns to hand her the plate; Tama looks at it. METHOD: Rina (186, 124) facing East, Nelim (188, 124)
+#      facing West carrying MealSimple, Tama (187, 123) facing East, all without a job, game paused; Nelim dressed after the waits |
+#      OPENING IMAGE, medium: camera 3 cells' height on (187, 124), the sofas and rug in frame | TorchLamp lit (184, 124),
+#      Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's white hair against the rug. RISK: the hair is small
+#      at medium zoom. PLAN: a tighter camera (2 cells) if the replay shows it unreadable.
+#   2. terrace, 14:00, Clear, 60 + 120 ticks | Accelerator on Toma: a loner who refuses | INSTANT: Nelim has just offered the Beer
+#      and Toma turns his back, angry. METHOD: Toma drafted (angry face) at (198, 121) facing East, Nelim (196, 122) facing East
+#      carrying Beer, peacock (196, 119) facing East toward the piano | CLOSE: rectangle (195, 119) to (200, 123) | Plant_Daylily
+#      (195, 121) and (200, 121), the fixture's piano | THUMBNAIL: white hair against the black duster. RISK: the coat is lost on the
+#      dark brick. PLAN: lighten the duster to (45, 45, 58).
+#   3. podium (emerald-clearing), 16:00, Clear, 60 ticks | Index on Sena: a quiet corner | INSTANT: Yuki has just padded up to Sena
+#      and Nelim steps up with the chocolate. METHOD: Yuki (the save's husky) at (197, 150) facing South (toward Sena, and seen from the
+#      front), Sena (197, 152) facing North, Nelim (195, 152) facing East carrying Chocolate | CLOSE: rectangle (194, 149) to (200, 154) |
+#      WoodPlankFloor, TorchLamp lit (194, 150), Brazier lit (200, 150), Plant_Daylily x3 | THUMBNAIL: the white robe on the wood.
+#      RISK: Yuki turns away (she showed her back in runs c094 and redo-6). PLAN: placed last; read which way the step turns her.
+# NELIM keeps ONE outfit all day (owner's continuity rule 2026-10-23): cream basic shirt (237, 230, 214), olive trousers (91, 107, 58),
+# burgundy jacket (122, 46, 58), her high ponytail (Roo_HD_Hair_Highpony), her smirk; the guests keep theirs from picture to picture.
+# NELIM'S OUTFIT AND HAIR are set AFTER the last wait of each scenario (2026-10-23): every capture of redo-6 showed her in the same yellow top while PickleTools' looks run (no waits) draws the dyed outfit and the Roo ponytail. Lead, not proven: during the waits her own AI re-dresses her. Guests dressed before the waits kept their clothes.
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
 # (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
@@ -78,14 +74,15 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (47, 111, 115)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (52, 52, 60)
-    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 123)
-    And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing South
-    And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
+    And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing East
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 124)
     And Nelim's Pickle Tools: "Rina" facial expression is "normal"
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 1 misaka"
@@ -120,12 +117,12 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
-    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Beer"
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (196, 119)
-    And Nelim's Pickle Tools: the animal "Paon" stands at (196, 119) facing South
-    And Nelim's Pickle Tools: I frame the rectangle from (194, 118) to (200, 123)
+    And Nelim's Pickle Tools: the animal "Paon" stands at (196, 119) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (195, 119) to (200, 123)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 2 accelerator"
     And Nelim's Pickle Tools: the decor is removed
@@ -161,14 +158,15 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (143, 169, 138)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (63, 95, 138)
-    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing North
     And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
-    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing North
-    And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 155)
+    And Nelim's Pickle Tools: the animal "Yuki" stands at (197, 150) facing South
+    And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 154)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 3 index"
     And Nelim's Pickle Tools: the decor is removed

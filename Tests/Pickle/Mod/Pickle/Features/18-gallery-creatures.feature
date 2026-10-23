@@ -7,44 +7,36 @@
 # The story continues the portraits: Nelim, the host, shows her guests what the mod brings while the day goes down, 17:00 to
 # 20:00, Clear on every picture. The podium is the square A of the Sanctuary (x 191-204, z 146-159), its painted green zone
 # bared, ringed by flowers, with the permanent vanometric power cell of the fixture on its east edge (205, 152-153). Nelim
-# wears a different outfit on every picture and has her own face (the Sanctuary step, last before the capture). Each picture
+# keeps one outfit all day (feature 17) and has her own face (the Sanctuary step, last before the capture). Each picture
 # leaves the bottom of the frame empty for the English subtitle. Animals face the camera (South). The decor is removed after
 # each picture.
 #
-# Shooting plan, one line per picture (place, hour, weather, time | subject | composition | living things, outfit, expression,
-# action | decor | risk and plan):
-#   4. emerald-clearing, 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | camera 4 cells' height on (197, 152)
-#      with the beetle at (198, 153) fills the frame | Nelim: cream basic shirt (240, 228, 205), brown trousers (92, 60,
-#      40), rust jacket (168, 69, 42), her high ponytail, her smirk, holds out hay (Hay) that the beetle ignores, at (195, 153) facing
-#      East; ACS_DarkMatterBeetle; Chicken at (197, 151) facing the camera | WoodPlankFloor, TorchLamp lit at (195, 150), Stool
-#      at (199, 151), Plant_Daylily at (199, 154) | RISK: the beetle crowds Nelim in the tight frame. PLAN: three cells between
-#      them; if they touch, the beetle goes to (199, 153) and the frame widens to (193, 150)-(201, 155).
-#   5. emerald-clearing, 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | camera 13 cells' height on (197, 152), everything outside the wings (>= 5 cells from the seraph) (was frame (193, 148) to (201,
-#      157), high enough for the wings, guests staggered behind her and turned toward the seraph (no row facing the camera) |
-#      Nelim: navy collar shirt (31, 58, 95), sand trousers (200, 184, 150), her high ponytail, her smirk, holds a bolt of heaven cloth
-#      (ACS_HeavenCloth), facing East; ACS_Gabriel; Rina (193, 157) facing North, Toma (197, 158) facing West, Sena (201, 156)
-#      facing North; Peacock facing the camera | WoodPlankFloor, Brazier lit x2 at (193, 152) and (201, 152),
-#      Plant_YellowTallGrass at (193, 149) and (201, 149) | RISK: the wings are cut by the frame, or the guests' backs hide
-#      their hairstyles. PLAN: frame verified in run c094 (the wings were whole); the guests' hair is read from behind, the
-#      hairstyles were already shown in 1 to 3.
-#   6. emerald-clearing, 18:00 then 30 more game minutes (1250 ticks), Clear | the dark matter propagator, one running, one
-#      waiting for power (the lightning icon) | frame (195, 149) to (206, 156), tight on the machines | Nelim: grey basic
-#      shirt (212, 206, 196), near-black trousers (47, 47, 54), slate jacket (59, 63, 70), her high ponytail, her smirk, carries a
-#      lump of dark matter (ACS_DarkMatter), facing West; Cat in front of her at (200, 152) facing the camera | WoodPlankFloor,
-#      ACS_DarkMatterProduction x2 at (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily at
-#      (196, 149) and (202, 149) | RISK: too dark (the run c094 capture was), and the right machine touching the cells does
-#      not read. PLAN: five torches and the hour 18 plus 30 minutes instead of 19:00; if it still reads dark, add a second
-#      row of torches or move the hour to 17:30.
-#   7. emerald-clearing, 20:00, Clear, 60 ticks plus 600 ticks of fire | the evening at the fire: everybody stayed | frame
-#      camera 8 cells' height on (197, 152), a ring around the fire, not a row facing the camera | Nelim: cream basic shirt (234, 220,
-#      210), brown trousers (70, 55, 50), rose parka (176, 122, 122), her high ponytail, her smirk, brings a log (WoodLog) at (195, 150)
-#      facing South; Rina (194, 153) facing East, smile; Toma (200, 153) facing West, smug; Sena (199, 151) facing South,
-#      calm; the beetle behind at (197, 155); Chicken at (197, 149) facing the camera | WoodPlankFloor, Campfire lit at (197,
-#      152), TorchLamp lit x2 at (193, 150) and (201, 150), Plant_YellowTallGrass x3 | RISK: the campfire hides a guest, faces
-#      in profile read small. PLAN: Nelim and Sena face the camera, the two others turn toward the fire; if the fire hides
-#      someone, it moves to (197, 153).
-#   8. (planned, interface, set aside from the rating by the owner's rule of 2026-10-18) the research window on
-#      "ACS_DarkMatterTech", taken on `window-backdrop-for-height`, cropped, no subtitle. Not written.
+# Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent), continuing feature 17: the
+# same outfits, every picture a game paused mid-play. Pictures 4 to 7 are all on the podium (emerald-clearing).
+#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: the beetle has turned away from
+#      the hay Nelim offers and the chicken pecks at it. METHOD: beetle (198, 153), Nelim (195, 153) facing East carrying Hay, Chicken
+#      (197, 150) facing South (seen from the front, looking at the hay) | MEDIUM: camera 4 cells' height on (197, 152) | WoodPlankFloor,
+#      TorchLamp lit (195, 150), Stool (199, 151), Plant_Daylily (199, 154) | THUMBNAIL: the beetle's horn silhouette on the wood.
+#      RISK: the beetle crowds Nelim. PLAN: three cells between them.
+#   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
+#      guests turn toward it while Nelim arrives with the cloth. METHOD: ACS_Gabriel (197, 152); everybody 5 cells or more from it (its
+#      wings draw over anything within about 4.5): Rina (193, 157) North, Toma (197, 158) West, Sena (201, 156) North, Nelim (194, 147)
+#      East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 13 cells' height on (197, 152) | WoodPlankFloor,
+#      Brazier lit x2 (193, 152) and (201, 152), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
+#      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
+#   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
+#      toward the idle machine while Kuru watches the glow. METHOD: Nelim (198, 153) facing West carrying ACS_DarkMatter, Kuru (200, 152)
+#      facing East toward the running machine | MEDIUM: rectangle (195, 149) to (206, 156) | WoodPlankFloor, ACS_DarkMatterProduction
+#      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x2 | THUMBNAIL: green glow against the
+#      lightning icon. RISK: too dark. PLAN: five torches; a second row or 17:30 if still dark.
+#   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim brings the last log and the three
+#      guests stand round the fire holding what she gave them in pictures 1 to 3 (plate, Beer, chocolate), Toma now with his beer.
+#      METHOD: Campfire lit (197, 152); Rina (194, 153) East carrying MealSimple, Toma (200, 153) West carrying Beer, Sena (199, 151)
+#      West carrying Chocolate, Nelim (195, 150) South carrying WoodLog, beetle (197, 155), Chicken (197, 149) facing South | CLOSING
+#      IMAGE, wide: camera 8 cells' height on (197, 152) | WoodPlankFloor, TorchLamp lit x2 (193, 150) and (201, 150), Plant_YellowTallGrass
+#      x3 | THUMBNAIL: the warm pool of light. RISK: the fire hides a guest. PLAN: it moves to (197, 153).
+#   8. (planned, interface, set aside from the rating) the research window on "ACS_DarkMatterTech". Not written.
+# Forced jobs (a real mid-gesture, NPT step "X is forced into the job ..."): compiled, never played, kept as a later upgrade of 3, 4 and 6.
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
 # empty plant pot (it reads as a bucket). The guests of picture 7 are dressed as in feature 17.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
@@ -68,15 +60,15 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (240, 228, 205)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 60, 40)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (168, 69, 42)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 151)
-    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 151) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 150)
+    And Nelim's Pickle Tools: the animal "Poule" stands at (197, 150) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 4 beetle"
@@ -127,8 +119,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (31, 58, 95)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (200, 184, 150)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
@@ -181,14 +174,14 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I let 1250 ticks pass
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (212, 206, 196)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (47, 47, 54)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (59, 63, 70)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Miso" is spawned at (200, 152)
-    And Nelim's Pickle Tools: the animal "Miso" stands at (200, 152) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Kuru" is spawned at (200, 152)
+    And Nelim's Pickle Tools: the animal "Kuru" stands at (200, 152) facing East
     When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
     And I take a screenshot "gallery 6 propagator"
@@ -243,15 +236,18 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (234, 220, 210)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 55, 50)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Parka" dyed rgb (176, 122, 122)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 155)
     And Nelim's Pickle Tools: "Rina" stands at (194, 153) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing South
     And Nelim's Pickle Tools: "Nelim" carries the item "WoodLog"
+    And Nelim's Pickle Tools: "Rina" carries the item "MealSimple"
+    And Nelim's Pickle Tools: "Toma" carries the item "Beer"
+    And Nelim's Pickle Tools: "Sena" carries the item "Chocolate"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Sena" stands at (199, 151) facing South
+    And Nelim's Pickle Tools: "Sena" stands at (199, 151) facing West
     And Nelim's Pickle Tools: "Toma" stands at (200, 153) facing West
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 149) facing South
