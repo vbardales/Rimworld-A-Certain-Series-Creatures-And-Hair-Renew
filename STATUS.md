@@ -28,7 +28,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e
 updated:      2026-10-23, gallery redo-8: Nelim wears Roo_HD_Hair_Highpony (asserted), Yuki from the save, cats named Tama and Kuru; 9fbb cancelled; all seven scenes refiled in tickets 8ac0 (1 to 3) and 3aa4 (4 to 7) on 45ce5b2, tree frozen until RUN_DONE
-protocols_read_sha: 738c318605b34260852f00ccf01ac5064364ed4a
+protocols_read_sha: 2be537a70be1b40fd555b6fe1d8bb1e0dd280524
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
