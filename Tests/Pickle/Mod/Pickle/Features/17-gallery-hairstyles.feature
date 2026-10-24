@@ -22,7 +22,7 @@
 # PAUSED MID-PLAY: every living thing acts toward something, nobody poses for the camera. Per picture: place, hour, weather, time
 # | subject | THE INSTANT and how it is obtained | composition | decor (defNames) | thumbnail (268 px) and risk with its plan.
 #   1. sofa-corner, 12:00, Clear, 60 ticks, map at 20 degrees | Misaka on Rina: she drops by at noon | INSTANT: Rina has just stepped
-#      onto the rug and Nelim turns to hand her the plate; Tama looks at it. METHOD: Rina (186, 124) facing East, Nelim (188, 124)
+#      onto the rug and Nelim turns to hand her the plate; Tama looks at it. METHOD: Rina (186, 124) facing South (East hid her face under the Misaka fringe in redo-8 and redo-9), Nelim (188, 124)
 #      facing West carrying MealSimple, Tama (187, 123) facing East, all without a job, game paused; Nelim dressed after the waits |
 #      OPENING IMAGE, medium: camera 3 cells' height on (187, 124), the sofas and rug in frame | TorchLamp lit (184, 124),
 #      Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's white hair against the rug. RISK: the hair is small
@@ -77,14 +77,14 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
-    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
     And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Tama" is spawned at (187, 123)
     And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing East
     And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 124)
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing East
+    And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
