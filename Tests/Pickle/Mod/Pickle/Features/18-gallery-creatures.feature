@@ -183,7 +183,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
-    And Nelim's Pickle Tools: an adult animal of kind "Cat" named "Kuru" is spawned at (200, 152)
+    And Nelim's Pickle Tools: an adult animal of kind "akaNEKO_kuroneko" named "Kuru" is spawned at (200, 152)
     And Nelim's Pickle Tools: the animal "Kuru" stands at (200, 152) facing East
     When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
