@@ -99,7 +99,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And A Certain Series: I give "Toma" the hairstyle "ACS_Accelerator"
     And A Certain Series: I let the hairstyle of "Toma" show its own colours
     And A Certain Series: I dress "Toma" in "Apparel_CollarShirt,Apparel_Pants,Apparel_Duster" coloured "#1C1C24,#2B2B35,#17171D"
-    And Nelim's Pickle Tools: "Toma" face kit is "smug"
+    And Nelim's Pickle Tools: "Toma" face kit is "smile"
     And a colonist "Sena" exists
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
@@ -107,7 +107,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And A Certain Series: I give "Sena" the hairstyle "ACS_index"
     And A Certain Series: I let the hairstyle of "Sena" show its own colours
     And A Certain Series: I dress "Sena" in "Apparel_Robe,Apparel_Sash" coloured "#F7F3E8,#C9A227"
-    And Nelim's Pickle Tools: "Sena" face kit is "calm"
+    And Nelim's Pickle Tools: "Sena" face kit is "smile"
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -212,7 +212,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And A Certain Series: I give "Toma" the hairstyle "ACS_Accelerator"
     And A Certain Series: I let the hairstyle of "Toma" show its own colours
     And A Certain Series: I dress "Toma" in "Apparel_CollarShirt,Apparel_Pants,Apparel_Duster" coloured "#1C1C24,#2B2B35,#17171D"
-    And Nelim's Pickle Tools: "Toma" face kit is "smug"
+    And Nelim's Pickle Tools: "Toma" face kit is "smile"
     And a colonist "Sena" exists
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
@@ -220,7 +220,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And A Certain Series: I give "Sena" the hairstyle "ACS_index"
     And A Certain Series: I let the hairstyle of "Sena" show its own colours
     And A Certain Series: I dress "Sena" in "Apparel_Robe,Apparel_Sash" coloured "#F7F3E8,#C9A227"
-    And Nelim's Pickle Tools: "Sena" face kit is "calm"
+    And Nelim's Pickle Tools: "Sena" face kit is "smile"
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared

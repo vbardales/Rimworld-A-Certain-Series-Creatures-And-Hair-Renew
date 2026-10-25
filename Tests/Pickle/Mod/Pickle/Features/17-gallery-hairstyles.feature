@@ -42,7 +42,7 @@
 # NELIM'S OUTFIT AND HAIR are set AFTER the last wait of each scenario (2026-10-23): every capture of redo-6 showed her in the same yellow top while PickleTools' looks run (no waits) draws the dyed outfit and the Roo ponytail. Lead, not proven: during the waits her own AI re-dresses her. Guests dressed before the waits kept their clothes.
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
-# (angry), Sena is `normal`, Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
+# (angry), Sena smiles (face kit, owner 2026-10-25: colonists smile in the default scenes), Nelim has her own face (the Sanctuary step). Places: the empty photographs of every named place
 # were read, not the names; the tea room was tried and dropped (its blue lamps tinted the white robe cyan); the cells come from
 # SANCTUAIRE-CASES.md (sofa-corner row 124 is free from x 183 to 189; terrace row 121 from x 195 to 200).
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
@@ -142,6 +142,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: I give "Sena" the hairstyle "ACS_index"
     And A Certain Series: I let the hairstyle of "Sena" show its own colours
     And A Certain Series: I dress "Sena" in "Apparel_Robe,Apparel_Sash" coloured "#F7F3E8,#C9A227"
+    And Nelim's Pickle Tools: "Sena" face kit is "smile"
     Then A Certain Series: "Sena" wears the hairstyle "ACS_index"
     And A Certain Series: "Sena" wears the apparel "Apparel_Robe"
     When Nelim's Pickle Tools: studio presentation mode is enabled
@@ -162,7 +163,6 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
-    And Nelim's Pickle Tools: "Sena" facial expression is "normal"
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
