@@ -85,6 +85,7 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: I bring the camera to 3 cells' height on the cell (187, 124)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
+    And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
@@ -168,6 +169,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (194, 149) to (200, 154)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
     And I take a screenshot "gallery 3 index"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged

@@ -136,6 +136,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the animal "Paon" stands at (200, 147) facing South
     Then 1 "ACS_Gabriel" exist
     When A Certain Series: I bring the camera to 13 cells' height on the cell (197, 152)
+    And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
+    And Nelim's Pickle Tools: "Toma" mouth is "MouthLittleGrin"
+    And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
     And I take a screenshot "gallery 5 seraph"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
@@ -256,6 +259,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 149) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 8 cells' height on the cell (197, 152)
+    And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
+    And Nelim's Pickle Tools: "Toma" mouth is "MouthLittleGrin"
+    And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
     And I take a screenshot "gallery 7 evening"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
