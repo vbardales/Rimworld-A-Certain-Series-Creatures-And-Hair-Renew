@@ -23,7 +23,7 @@
 # | subject | THE INSTANT and how it is obtained | composition | decor (defNames) | thumbnail (268 px) and risk with its plan.
 #   1. sofa-corner, 12:00, Clear, 60 ticks, map at 20 degrees | Misaka on Rina: she drops by at noon | INSTANT: Rina has just stepped
 #      onto the rug and Nelim turns to hand her the plate; Tama looks at it. METHOD: Rina (186, 124) facing South (East hid her face under the Misaka fringe in redo-8 and redo-9), Nelim (188, 124)
-#      facing West carrying MealSimple, Tama (187, 123) facing East, all without a job, game paused; Nelim dressed after the waits |
+#      facing South (redo-11: West showed her profile, the plate hid her face) carrying MealSimple, Tama (187, 123) facing East, all without a job, game paused; Nelim dressed after the waits |
 #      OPENING IMAGE, medium: camera 3 cells' height on (187, 124), the sofas and rug in frame | TorchLamp lit (184, 124),
 #      Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's white hair against the rug. RISK: the hair is small
 #      at medium zoom. PLAN: a tighter camera (2 cells) if the replay shows it unreadable.
@@ -78,7 +78,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
-    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing West
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing South
     And Nelim's Pickle Tools: "Nelim" carries the item "MealSimple"
     And Nelim's Pickle Tools: an adult animal of kind "akaNEKO_N_Forest_Cat" named "Tama" is spawned at (187, 123)
     And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing East
