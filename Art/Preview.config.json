@@ -3,7 +3,8 @@
     "title": "A Certain Series - Creatures and Hair Renew (unofficial)",
     "titleSize": 40,
     "titleParts": [
-      { "text": "A Certain Series", "scale": 1 },
+      { "text": "A ", "scale": 0.65 },
+      { "text": "Certain Series", "scale": 1 },
       { "break": true },
       { "text": "Creatures ", "scale": 1 },
       { "text": "and ", "scale": 0.65 },
@@ -15,6 +16,8 @@
     "copyLines": ["Two creatures and forty-one hairstyles, revived for the latest RimWorld version."]
   },
   "backgroundFile": "Preview-source.png",
+  "backgroundSize": "cover",
+  "backgroundPosition": "top left",
   "echo": { "file": "echo-source.png" },
   "icon": { "file": "ModIcon-source.png" },
   "palette": {
