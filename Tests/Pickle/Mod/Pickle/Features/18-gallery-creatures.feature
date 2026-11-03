@@ -247,20 +247,20 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
-    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (197, 155)
-    And Nelim's Pickle Tools: "Rina" stands at (194, 153) facing East
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 150) facing East
+    And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (201, 151)
+    And Nelim's Pickle Tools: "Rina" stands at (194, 154) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (196, 150) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "WoodLog"
-    And Nelim's Pickle Tools: "Rina" carries the item "MealSimple"
+    And Nelim's Pickle Tools: "Rina" carries the item "Pemmican"
     And Nelim's Pickle Tools: "Toma" carries the item "Beer"
     And Nelim's Pickle Tools: "Sena" carries the item "Chocolate"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Sena" stands at (199, 151) facing West
-    And Nelim's Pickle Tools: "Toma" stands at (200, 153) facing West
+    And Nelim's Pickle Tools: "Sena" stands at (200, 154) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (197, 155) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
     And Nelim's Pickle Tools: the animal "Poule" stands at (197, 149) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
-    When A Certain Series: I bring the camera to 8 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 6 cells' height on the cell (197, 153)
     And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
     And Nelim's Pickle Tools: "Toma" mouth is "MouthLittleGrin"
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
