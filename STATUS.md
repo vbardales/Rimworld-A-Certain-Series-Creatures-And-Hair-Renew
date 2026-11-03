@@ -29,7 +29,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
 updated:      2026-10-23, gallery shotlist v2 (owner validated, Opus director pass, one outfit all day, directions fixed on the grid) in features 17 and 18 at 65b80ce; tickets 8ac0 (shots 1 to 3) and 3aa4 (shots 4 to 7) pending, owner local_e82f0b57, tree frozen until RUN_DONE
-protocols_read_sha: cc1f93006ee3756009054a0389731cff310d8784
+protocols_read_sha: 6dcadf897d29aca88ad460c2a3c1703f5c827c96
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
