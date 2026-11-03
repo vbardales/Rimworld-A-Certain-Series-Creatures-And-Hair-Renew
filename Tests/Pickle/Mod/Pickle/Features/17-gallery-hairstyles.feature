@@ -22,11 +22,12 @@
 # PAUSED MID-PLAY: every living thing acts toward something, nobody poses for the camera. Per picture: place, hour, weather, time
 # | subject | THE INSTANT and how it is obtained | composition | decor (defNames) | thumbnail (268 px) and risk with its plan.
 #   1. sofa-corner, 12:00, Clear, 60 ticks, map at 20 degrees | Misaka on Rina: she drops by at noon | INSTANT: Rina has just stepped
-#      onto the rug and Nelim turns to hand her the plate; Tama looks at it. METHOD: Rina (186, 124) facing South (East hid her face under the Misaka fringe in redo-8 and redo-9), Nelim (188, 124)
-#      facing South (redo-11: West showed her profile, the plate hid her face) carrying MealSimple, Tama (187, 123) facing East, all without a job, game paused; Nelim dressed after the waits |
-#      OPENING IMAGE, medium: camera 3 cells' height on (187, 124), the sofas and rug in frame | TorchLamp lit (184, 124),
-#      Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's white hair against the rug. RISK: the hair is small
-#      at medium zoom. PLAN: a tighter camera (2 cells) if the replay shows it unreadable.
+#      onto the rug and Nelim steps up with a small treat; Rina smiles at her, Tama looks at it. METHOD (replan 2026-11-03: in redo-11 the
+#      plate hid Nelim's mouth; a small item hides nothing): Rina (186, 124) facing South, smiling (face kit + MouthClassicSmile), Nelim (188, 124)
+#      facing South carrying Pemmican (small; plan B Chocolate if its sprite is as big as the plate), Tama (187, 123) facing East, all without a job,
+#      game paused; Nelim dressed after the waits, her own face last | OPENING IMAGE, medium-close: camera 2 cells' height on (187, 124), rug and
+#      the edge of the sofas in frame | TorchLamp lit (184, 124), Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's
+#      white hair against the rug, both faces readable. RISK: the sofas fall out of frame at 2 cells. PLAN: 2.5 cells, or 3 as in redo-11.
 #   2. terrace, 14:00, Clear, 60 + 120 ticks | Accelerator on Toma: a loner who refuses | INSTANT: Nelim has just offered the Beer
 #      and Toma turns his back, angry. METHOD: Toma drafted (angry face) at (198, 121) facing East, Nelim (196, 122) facing East
 #      carrying Beer, peacock (196, 119) facing East toward the piano | CLOSE: rectangle (195, 119) to (200, 123) | Plant_Daylily

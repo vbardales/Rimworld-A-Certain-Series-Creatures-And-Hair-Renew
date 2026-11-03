@@ -29,12 +29,14 @@
 #      facing East toward the running machine | MEDIUM: rectangle (195, 149) to (206, 156) | WoodPlankFloor, ACS_DarkMatterProduction
 #      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x2 | THUMBNAIL: green glow against the
 #      lightning icon. RISK: too dark. PLAN: five torches; a second row or 17:30 if still dark.
-#   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim brings the last log and the three
-#      guests stand round the fire holding what she gave them in pictures 1 to 3 (plate, Beer, chocolate), Toma now with his beer.
-#      METHOD: Campfire lit (197, 152); Rina (194, 153) East carrying MealSimple, Toma (200, 153) West carrying Beer, Sena (199, 151)
-#      West carrying Chocolate, Nelim (195, 150) East carrying WoodLog, beetle (197, 155), Chicken (197, 149) facing South | CLOSING
-#      IMAGE, wide: camera 8 cells' height on (197, 152) | WoodPlankFloor, TorchLamp lit x2 (193, 150) and (201, 150), Plant_YellowTallGrass
-#      x3 | THUMBNAIL: the warm pool of light. RISK: the fire hides a guest. PLAN: it moves to (197, 153).
+#   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim steps in from the south with the last log and the
+#      three guests on the north arc look up at her, each holding what she gave them (Pemmican, Beer, chocolate); Toma's little grin is
+#      written: he was angry in picture 2 only because he was drafted, by evening he stays. METHOD (replan 2026-11-03: in redo-10 the plate hid Rina's
+#      face and nobody's smile read at 8 cells): Campfire lit (197, 152); Rina (194, 154) South carrying Pemmican, MouthClassicSmile, Toma (197, 155)
+#      South carrying Beer, MouthLittleGrin, Sena (200, 154) South carrying Chocolate, MouthLipsSmallSmile, Nelim (196, 150) East carrying WoodLog,
+#      beetle (201, 151), Chicken (197, 149) facing South | CLOSING IMAGE, medium-wide: camera 6 cells' height on (197, 153) | WoodPlankFloor,
+#      TorchLamp lit x2 (193, 150) and (201, 150), Plant_YellowTallGrass x3 | THUMBNAIL: the warm pool of light with three white heads in an arc.
+#      RISK: the fire hides a guest or 6 cells crops the beetle. PLAN: guests are 2 to 3 cells north of the fire; 7 cells if cropped.
 #   8. (planned, interface, set aside from the rating) the research window on "ACS_DarkMatterTech". Not written.
 # Forced jobs (a real mid-gesture, NPT step "X is forced into the job ..."): compiled, never played, kept as a later upgrade of 3, 4 and 6.
 # Torch lamps rather than standing lamps (a powered lamp with no power shows the lightning icon on the picture) and no
