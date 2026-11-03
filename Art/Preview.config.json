@@ -15,7 +15,7 @@
     "copyLines": ["Two creatures and forty-one hairstyles, revived for the latest RimWorld version."]
   },
   "backgroundFile": "Preview-source.png",
-  "echo": { "file": "echo-source.png", "color": "var(--accent)" },
+  "echo": { "file": "echo-source.png" },
   "icon": { "file": "ModIcon-source.png" },
   "palette": {
     "veil": "#302B25",
