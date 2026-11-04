@@ -29,7 +29,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
 updated:      2026-11-03, Preview rebuilt (cover top left, article A at 0.65), gallery 1 to 7 promoted from redo-8, redo-10 and c576, evidence of gallery runs deleted
-protocols_read_sha: 6dcadf897d29aca88ad460c2a3c1703f5c827c96
+protocols_read_sha: 73087bad475cf8890bb4478e422ebe1c45fe89b6
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
