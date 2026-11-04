@@ -17,6 +17,13 @@ function Invoke-Shared([string]$Script, [string[]]$Arguments) {
     $out = @(& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $SharedDir $Script) @Arguments 2>&1 | ForEach-Object { "$_" })
     if ($LASTEXITCODE -ne 0) { $out | Where-Object { $_ -match '\S' } | Select-Object -Last 15 }
 }
+# Check-DefRefs and Check-PatchTargets need the game or the Workshop: CI/CD does not copy them to .github/scripts, so on the runner they SKIP, loudly.
+function Invoke-SharedOrSkip([string]$Script, [string[]]$Arguments) {
+    if (-not (Test-Path -LiteralPath (Join-Path $SharedDir $Script))) { Write-Host "WARNING $Script not in $SharedDir (needs the game or the Workshop): SKIPPED, not passed" -ForegroundColor Yellow; return 'skip' }
+    $problems = @(Invoke-Shared $Script $Arguments)
+    if ($problems.Count) { throw ($problems -join [Environment]::NewLine) }
+    return $true
+}
 function Def([string]$type, [string]$name) {
     $node = $script:index["${type}:$name"]
     if ($null -eq $node) { throw "Missing ${type}:$name" }
@@ -24,9 +31,9 @@ function Def([string]$type, [string]$name) {
 }
 
 It 'Shared: XML well formed, unique defNames, About.xml, Preview and icon (Check-ModBasics)' { Invoke-Shared 'Check-ModBasics.ps1' '-ModRoot', $ModRoot, '-Unofficial' }
-It 'Shared: every def reference and inheritance parent resolves (Check-DefRefs)' { Invoke-Shared 'Check-DefRefs.ps1' '-ModPath', $ModPath, '-Brief' }
+Test-That 'Shared: every def reference and inheritance parent resolves (Check-DefRefs)' { Invoke-SharedOrSkip 'Check-DefRefs.ps1' '-ModPath', $ModPath, '-Brief' }
 It 'Shared: every texture path resolves to a shipped file (Check-Textures)' { Invoke-Shared 'Check-Textures.ps1' '-ModRoot', $ModRoot }
-It 'Shared: every patch target still exists in the installed mod (Check-PatchTargets)' { Invoke-Shared 'Check-PatchTargets.ps1' '-ModRoot', $ModRoot }
+Test-That 'Shared: every patch target still exists in the installed mod (Check-PatchTargets)' { Invoke-SharedOrSkip 'Check-PatchTargets.ps1' '-ModRoot', $ModRoot }
 
 $script:index = @{}
 $documents = @()
