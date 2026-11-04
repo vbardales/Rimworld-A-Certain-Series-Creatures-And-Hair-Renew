@@ -1,113 +1,82 @@
 param([string]$ModPath = (Join-Path $PSScriptRoot '../Mod'))
 
-# Standalone, read-only regression checks. No game installation or Pester required.
+# Offline suite: the generic checks are the shared scripts of the protocols repository (the parent folder of this
+# mod), run first; what follows asserts this mod's own values. No game installation or Pester required for the
+# own tests. Needs the protocols checkout next to the mod (scripts/lib/TestRunner.ps1, scripts/Check-*.ps1).
 $ErrorActionPreference = 'Stop'
 $ModPath = (Resolve-Path -LiteralPath $ModPath).Path
-$script:failures = 0
-$script:passed = 0
-function Assert($condition, [string]$message) {
-    if (-not $condition) { throw $message }
-}
-function Test([string]$name, [scriptblock]$body) {
-    try { & $body; $script:passed++; Write-Output "PASS $name" }
-    catch { $script:failures++; Write-Output "FAIL ${name}: $_" }
+$ModRoot = Split-Path -Parent $ModPath
+$Protocols = (Resolve-Path -LiteralPath (Join-Path $ModRoot '..')).Path
+. (Join-Path $Protocols 'scripts/lib/TestRunner.ps1')
+
+# One shared check as one test: the exit code decides, its output is the detail of a failure.
+function Invoke-Shared([string]$Script, [string[]]$Arguments) {
+    $out = @(& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Protocols "scripts/$Script") @Arguments 2>&1 | ForEach-Object { "$_" })
+    if ($LASTEXITCODE -ne 0) { $out | Where-Object { $_ -match '\S' } | Select-Object -Last 15 }
 }
 function Def([string]$type, [string]$name) {
     $node = $script:index["${type}:$name"]
-    Assert ($null -ne $node) "Missing ${type}:$name"
+    if ($null -eq $node) { throw "Missing ${type}:$name" }
     return $node
 }
 
+It 'Shared: XML well formed, unique defNames, About.xml, Preview and icon (Check-ModBasics)' { Invoke-Shared 'Check-ModBasics.ps1' '-ModRoot', $ModRoot, '-Unofficial' }
+It 'Shared: every def reference and inheritance parent resolves (Check-DefRefs)' { Invoke-Shared 'Check-DefRefs.ps1' '-ModPath', $ModPath, '-Brief' }
+It 'Shared: every texture path resolves to a shipped file (Check-Textures)' { Invoke-Shared 'Check-Textures.ps1' '-ModRoot', $ModRoot }
+It 'Shared: every patch target still exists in the installed mod (Check-PatchTargets)' { Invoke-Shared 'Check-PatchTargets.ps1' '-ModRoot', $ModRoot }
+
 $script:index = @{}
 $documents = @()
-Test 'Definitions are indexed and carry the ACS_ prefix (well-formed XML and unique names: Check-ModBasics.ps1)' {
+It 'Definitions are indexed and carry the ACS_ prefix' {
     $files = @(Get-ChildItem -LiteralPath $ModPath -Recurse -Filter *.xml -File)
-    Assert ($files.Count -gt 0) 'No XML found'
+    if ($files.Count -eq 0) { 'No XML found' }
     foreach ($file in $files) {
-        [xml]$doc = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
+        [xml]$doc = Read-Text $file.FullName
         $script:documents += $doc
         foreach ($node in $doc.SelectNodes('/Defs/*[defName]')) {
             $key = "$($node.Name):$($node.defName)"
-            Assert ($node.defName.StartsWith('ACS_')) "Unprefixed $key"
+            if (-not $node.defName.StartsWith('ACS_')) { "Unprefixed $key" }
             $script:index[$key] = $node
         }
     }
-    Assert ($script:index.Count -gt 0) 'No definitions found'
+    if ($script:index.Count -eq 0) { 'No definitions found' }
 }
-Test 'Metadata includes the repository in the description' {
-    [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
+It 'Metadata includes the repository in the description' {
+    [xml]$about = Read-Text (Join-Path $ModPath 'About/About.xml')
     $meta = $about.ModMetaData
-    Assert ($meta.packageId -ceq 'nelim.acertainseriescreaturesandhair') 'Package identity changed'
-    Assert ($meta.supportedVersions.li -contains '1.6') 'Missing 1.6 support'
-    Assert ($meta.url -match '^https://github.com/[^/]+/[^/]+$') 'Missing GitHub repository URL'
-    Assert ($meta.description.Contains($meta.url)) 'Repository URL missing from description'
+    if ($meta.packageId -cne 'nelim.acertainseriescreaturesandhair') { 'Package identity changed' }
+    if ($meta.supportedVersions.li -notcontains '1.6') { 'Missing 1.6 support' }
+    if ($meta.url -notmatch '^https://github.com/[^/]+/[^/]+$') { 'Missing GitHub repository URL' }
+    elseif (-not $meta.description.Contains($meta.url)) { 'Repository URL missing from description' }
 }
-Test 'Local ACS references and inheritance parents resolve' {
-    $names = @{}
-    $parents = @{}
-    foreach ($doc in $documents) {
-        foreach ($n in $doc.SelectNodes('/Defs/*/defName')) { $names[$n.InnerText] = $true }
-        foreach ($n in $doc.SelectNodes('/Defs/*[@Name]')) { $parents[$n.GetAttribute('Name')] = $true }
-    }
-    foreach ($doc in $documents) {
-        foreach ($n in $doc.SelectNodes('/Defs//*')) {
-            if ($n.GetAttribute('ParentName').StartsWith('ACS_')) {
-                Assert ($parents.ContainsKey($n.GetAttribute('ParentName'))) "Unknown parent $($n.GetAttribute('ParentName'))"
-            }
-            if ($n.ChildNodes.Count -eq 1 -and $n.FirstChild.NodeType -eq 'Text' -and $n.InnerText -match '^ACS_\w+$') {
-                Assert ($names.ContainsKey($n.InnerText)) "Unknown local reference $($n.InnerText)"
-            }
-            if ($n.LocalName.StartsWith('ACS_')) {
-                Assert ($names.ContainsKey($n.LocalName)) "Unknown dictionary reference $($n.LocalName)"
-            }
-        }
-    }
-}
-Test 'Custom graphics have the required files or stack directory' {
-    foreach ($doc in $documents) {
-        foreach ($n in $doc.SelectNodes('//texPath[starts-with(text(), "ACS/")]')) {
-            $base = Join-Path $ModPath "Textures/$($n.InnerText)"
-            $graphic = $n.ParentNode.graphicClass
-            if ($graphic -eq 'Graphic_StackCount') {
-                Assert ((Test-Path -LiteralPath $base -PathType Container) -and @(Get-ChildItem -LiteralPath $base -Filter *.png).Count -gt 0) "Empty stack graphic $base"
-            } elseif ($graphic -eq 'Graphic_Single') {
-                Assert (Test-Path -LiteralPath "$base.png") "Missing $base.png"
-            } else {
-                foreach ($direction in 'north','east','south') {
-                    Assert (Test-Path -LiteralPath "${base}_$direction.png") "Missing ${base}_$direction.png"
-                }
-            }
-        }
-    }
-}
-Test 'Both ranged attacks resolve to vanilla explosive projectiles' {
-    foreach ($name in 'ACS_DarkMatterBeetle','ACS_Gabriel') {
+It 'Both ranged attacks resolve to vanilla explosive projectiles' {
+    foreach ($name in 'ACS_DarkMatterBeetle', 'ACS_Gabriel') {
         $animal = Def 'ThingDef' $name
         $shot = Def 'ThingDef' $animal.verbs.li.defaultProjectile
-        Assert ($animal.verbs.li.verbClass -eq 'Verb_Shoot') "$name cannot shoot"
-        Assert ($shot.thingClass -eq 'Projectile_Explosive') "$name requires a non-vanilla projectile"
-        Assert ([double]$shot.projectile.explosionRadius -gt 0) "$name has no explosion"
-        Assert ((Def 'PawnKindDef' $name).canArriveManhunter -eq 'false') "$name can arrive in manhunter packs"
+        if ($animal.verbs.li.verbClass -ne 'Verb_Shoot') { "$name cannot shoot" }
+        if ($shot.thingClass -ne 'Projectile_Explosive') { "$name requires a non-vanilla projectile" }
+        if ([double]$shot.projectile.explosionRadius -le 0) { "$name has no explosion" }
+        if ((Def 'PawnKindDef' $name).canArriveManhunter -ne 'false') { "$name can arrive in manhunter packs" }
     }
 }
-Test 'Anatomy repairs and corpse fallback stay intact' {
+It 'Anatomy repairs and corpse fallback stay intact' {
     $beetle = Def 'ThingDef' 'ACS_DarkMatterBeetle'
-    foreach ($side in 'left','right') {
+    foreach ($side in 'left', 'right') {
         $tool = $beetle.SelectSingleNode("tools/li[label='$side claw']")
-        Assert ($tool.linkedBodyPartsGroup -eq "ACS_BeetleFront${side}Claw") "Wrong $side claw group"
+        if ($tool.linkedBodyPartsGroup -ne "ACS_BeetleFront${side}Claw") { "Wrong $side claw group" }
     }
     $body = Def 'BodyDef' 'ACS_Seraphim'
-    Assert ($body.SelectSingleNode(".//li[customLabel='right leg']/groups/li").InnerText -eq 'ACS_AngelRightLeg') 'Right leg uses wrong group'
+    if ($body.SelectSingleNode(".//li[customLabel='right leg']/groups/li").InnerText -ne 'ACS_AngelRightLeg') { 'Right leg uses wrong group' }
     $wings = @($body.SelectNodes(".//li[def='ACS_AngelWing']/customLabel") | ForEach-Object InnerText)
-    Assert ($wings.Count -eq 8 -and @($wings | Select-Object -Unique).Count -eq 8) 'Eight distinct wing labels required'
-    Assert ($null -eq (Def 'PawnKindDef' 'ACS_DarkMatterBeetle').SelectSingleNode('.//dessicatedBodyGraphicData')) 'Broken desiccated graphic restored'
+    if ($wings.Count -ne 8 -or @($wings | Select-Object -Unique).Count -ne 8) { 'Eight distinct wing labels required' }
+    if ($null -ne (Def 'PawnKindDef' 'ACS_DarkMatterBeetle').SelectSingleNode('.//dessicatedBodyGraphicData')) { 'Broken desiccated graphic restored' }
 }
-Test 'All five production bills are reachable and have valid products' {
+It 'All five production bills are reachable and have valid products' {
     $bench = Def 'ThingDef' 'ACS_DarkMatterProduction'
     $giver = Def 'WorkGiverDef' 'ACS_DoBillsUseDarkMatterProduction'
-    Assert ($giver.giverClass -eq 'WorkGiver_DoBill' -and $giver.fixedBillGiverDefs.li -contains $bench.defName) 'Workbench has no bill work giver'
+    if ($giver.giverClass -ne 'WorkGiver_DoBill' -or $giver.fixedBillGiverDefs.li -notcontains $bench.defName) { 'Workbench has no bill work giver' }
     $recipes = @($index.Values | Where-Object Name -eq 'RecipeDef')
-    Assert ($recipes.Count -eq 5) 'Expected five production recipes'
+    if ($recipes.Count -ne 5) { 'Expected five production recipes' }
     foreach ($recipe in $recipes) {
         $users = @($recipe.recipeUsers.li)
         if ($recipe.ParentName) {
@@ -116,60 +85,61 @@ Test 'All five production bills are reachable and have valid products' {
                 if ($parent) { $users += @($parent.recipeUsers.li) }
             }
         }
-        Assert (($bench.recipes.li -contains $recipe.defName) -or ($users -contains $bench.defName)) "Unreachable bill $($recipe.defName)"
-        Assert ($recipe.products.ChildNodes.Count -gt 0) "No products for $($recipe.defName)"
+        if (($bench.recipes.li -notcontains $recipe.defName) -and ($users -notcontains $bench.defName)) { "Unreachable bill $($recipe.defName)" }
+        if ($recipe.products.ChildNodes.Count -eq 0) { "No products for $($recipe.defName)" }
         foreach ($product in $recipe.products.ChildNodes) {
             $null = Def 'ThingDef' $product.Name
-            Assert ([double]$product.InnerText -gt 0) "Invalid product count in $($recipe.defName)"
+            if ([double]$product.InnerText -le 0) { "Invalid product count in $($recipe.defName)" }
         }
     }
     $brain = Def 'ThingDef' 'ACS_KakineTeitokuBrain'
-    Assert ($brain.tradeability -eq 'All' -and $brain.tradeTags.li -contains 'ExoticMisc') 'First brain fragment cannot enter exotic trade stock'
+    if ($brain.tradeability -ne 'All' -or $brain.tradeTags.li -notcontains 'ExoticMisc') { 'First brain fragment cannot enter exotic trade stock' }
 }
-Test 'Creature, material and machine values match what the mod promises' {
+It 'Creature, material and machine values match what the mod promises' {
     # The leaf defs state these values themselves, so they are read from the XML text: nothing here needs
     # the game's stat worker or an inherited value. What the game does with them (taming, caravans,
     # hunger) is vanilla code reading the same numbers.
     function StatBase($def, [string]$stat) {
         $node = $def.SelectSingleNode("statBases/$stat")
-        Assert ($null -ne $node) "$($def.defName) states no $stat"
+        if ($null -eq $node) { throw "$($def.defName) states no $stat" }
         return [double]$node.InnerText
     }
     $beetle = Def 'ThingDef' 'ACS_DarkMatterBeetle'
-    Assert ((StatBase $beetle 'MoveSpeed') -eq 20) 'The beetle is no longer the fastest animal'
-    Assert ((StatBase $beetle 'Wildness') -eq 0) 'The beetle is no longer tame at a glance'
-    Assert ((StatBase $beetle 'MeatAmount') -eq 0) 'The beetle leaves meat'
-    Assert ((StatBase $beetle 'ComfyTemperatureMin') -eq -500 -and (StatBase $beetle 'ComfyTemperatureMax') -eq 500) 'The beetle is no longer comfortable at any temperature'
-    Assert ($beetle.race.baseHungerRate -eq '0') 'The beetle eats'
-    Assert ($beetle.race.packAnimal -eq 'true') 'The beetle is not a pack animal'
-    Assert ($beetle.race.trainability -eq 'Advanced') 'The beetle is not trainable to advanced'
+    if ((StatBase $beetle 'MoveSpeed') -ne 20) { 'The beetle is no longer the fastest animal' }
+    if ((StatBase $beetle 'Wildness') -ne 0) { 'The beetle is no longer tame at a glance' }
+    if ((StatBase $beetle 'MeatAmount') -ne 0) { 'The beetle leaves meat' }
+    if ((StatBase $beetle 'ComfyTemperatureMin') -ne -500 -or (StatBase $beetle 'ComfyTemperatureMax') -ne 500) { 'The beetle is no longer comfortable at any temperature' }
+    if ($beetle.race.baseHungerRate -ne '0') { 'The beetle eats' }
+    if ($beetle.race.packAnimal -ne 'true') { 'The beetle is not a pack animal' }
+    if ($beetle.race.trainability -ne 'Advanced') { 'The beetle is not trainable to advanced' }
     $seraph = Def 'ThingDef' 'ACS_Gabriel'
-    Assert ((StatBase $seraph 'Wildness') -eq 1) 'The seraph can be tamed'
-    Assert ((StatBase $seraph 'MoveSpeed') -eq 80) 'The seraph lost its speed'
-    Assert ((StatBase $seraph 'MeatAmount') -eq 0) 'The seraph leaves meat'
-    Assert ($seraph.race.baseHungerRate -eq '0') 'The seraph eats'
+    if ((StatBase $seraph 'Wildness') -ne 1) { 'The seraph can be tamed' }
+    if ((StatBase $seraph 'MoveSpeed') -ne 80) { 'The seraph lost its speed' }
+    if ((StatBase $seraph 'MeatAmount') -ne 0) { 'The seraph leaves meat' }
+    if ($seraph.race.baseHungerRate -ne '0') { 'The seraph eats' }
     $matter = Def 'ThingDef' 'ACS_DarkMatter'
-    Assert ((StatBase $matter 'DeteriorationRate') -eq 0) 'Dark matter wears'
-    Assert ((StatBase $matter 'SharpDamageMultiplier') -eq 5) 'Dark matter blades lost their edge'
-    Assert ((StatBase $matter 'StuffPower_Armor_Sharp') -eq 5) 'Dark matter armour lost its protection'
+    if ((StatBase $matter 'DeteriorationRate') -ne 0) { 'Dark matter wears' }
+    if ((StatBase $matter 'SharpDamageMultiplier') -ne 5) { 'Dark matter blades lost their edge' }
+    if ((StatBase $matter 'StuffPower_Armor_Sharp') -ne 5) { 'Dark matter armour lost its protection' }
     foreach ($factor in @{ Flammability = '0'; DeteriorationRate = '0.1'; MaxHitPoints = '10' }.GetEnumerator()) {
         $node = $matter.SelectSingleNode("stuffProps/statFactors/$($factor.Key)")
-        Assert ($null -ne $node -and [double]$node.InnerText -eq [double]$factor.Value) "Dark matter no longer multiplies $($factor.Key) by $($factor.Value)"
+        if ($null -eq $node -or [double]$node.InnerText -ne [double]$factor.Value) { "Dark matter no longer multiplies $($factor.Key) by $($factor.Value)" }
     }
     $bench = Def 'ThingDef' 'ACS_DarkMatterProduction'
-    Assert ([int]$bench.costList.Plasteel -eq 100 -and [int]$bench.costList.ComponentSpacer -eq 50 -and [int]$bench.costList.ACS_KakineTeitokuBrain -eq 1) 'The propagator no longer costs 100 plasteel, 50 spacer components and one brain fragment'
-    Assert ([double](Def 'ResearchProjectDef' 'ACS_DarkMatterTech').baseCost -eq 18000) 'The research no longer costs 18000'
+    if ([int]$bench.costList.Plasteel -ne 100 -or [int]$bench.costList.ComponentSpacer -ne 50 -or [int]$bench.costList.ACS_KakineTeitokuBrain -ne 1) { 'The propagator no longer costs 100 plasteel, 50 spacer components and one brain fragment' }
+    if ([double](Def 'ResearchProjectDef' 'ACS_DarkMatterTech').baseCost -ne 18000) { 'The research no longer costs 18000' }
 }
-Test 'No creature kind caps its generation age at zero, which the age generator cannot satisfy' {
+# The two rules below are not in a shared script yet (review of 2026-11-04 asks Check-ConfigErrors or Check-AnimalDefs to take them): kept here until then.
+It 'No creature kind caps its generation age at zero, which the age generator cannot satisfy' {
     # Seen in the first game run (2026-09-24): with maxGenerationAge 0 every generated beetle and seraph logged
     # "Tried 300 times to generate age". Vanilla animal kinds set neither field, so the defaults apply.
     $kinds = @($index.Values | Where-Object Name -eq 'PawnKindDef')
-    Assert ($kinds.Count -eq 2) "Expected the two creature kinds, found $($kinds.Count)"
+    if ($kinds.Count -ne 2) { "Expected the two creature kinds, found $($kinds.Count)" }
     foreach ($kind in $kinds) {
-        Assert ($null -eq $kind.SelectSingleNode('minGenerationAge') -and $null -eq $kind.SelectSingleNode('maxGenerationAge')) "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do"
+        if ($null -ne $kind.SelectSingleNode('minGenerationAge') -or $null -ne $kind.SelectSingleNode('maxGenerationAge')) { "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do" }
     }
 }
-Test 'The forced miss radius of an innate verb satisfies the config check of the game and does not throw on every shot' {
+It 'The forced miss radius of an innate verb satisfies the config check of the game and does not throw on every shot' {
     # Two rules of 1.6, both seen in the game runs of 2026-09-25.
     # 1. Verb_LaunchProjectile.TryCastShot, with forcedMissRadius above 0.5, calls
     #    VerbProperties.GetForceMissFactorFor(EquipmentSource, caster), which reads equipment.def unguarded; an innate
@@ -178,86 +148,78 @@ Test 'The forced miss radius of an innate verb satisfies the config check of the
     #    equals whether the projectile causes an explosion (explosionRadius above 0).
     # So an explosive innate verb needs a radius in (0, 0.5], and a non-explosive one exactly 0.
     $verbs = @($index.Values | Where-Object { $_.Name -eq 'ThingDef' -and $_.SelectSingleNode('race') } | ForEach-Object { $_.SelectNodes('verbs/li') })
-    Assert ($verbs.Count -eq 2) "Expected the two innate verbs, found $($verbs.Count)"
+    if ($verbs.Count -ne 2) { "Expected the two innate verbs, found $($verbs.Count)" }
     foreach ($verb in $verbs) {
         $projectile = Def 'ThingDef' $verb.defaultProjectile
         $explosive = $null -ne $projectile.SelectSingleNode('projectile/explosionRadius') -and [double]$projectile.projectile.explosionRadius -gt 0
         $node = $verb.SelectSingleNode('forcedMissRadius')
         $radius = if ($node) { [double]$node.InnerText } else { 0 }
-        Assert ($radius -le 0.5) "The innate verb of $($verb.defaultProjectile) sets forcedMissRadius to ${radius}: above 0.5 it throws on every shot"
-        Assert (($radius -gt 0) -eq $explosive) "The innate verb of $($verb.defaultProjectile) is $(if ($explosive) {'explosive but has no'} else {'not explosive but has a'}) forcedMissRadius: the game logs a config error at load"
+        if ($radius -gt 0.5) { "The innate verb of $($verb.defaultProjectile) sets forcedMissRadius to ${radius}: above 0.5 it throws on every shot" }
+        if (($radius -gt 0) -ne $explosive) { "The innate verb of $($verb.defaultProjectile) is $(if ($explosive) {'explosive but has no'} else {'not explosive but has a'}) forcedMissRadius: the game logs a config error at load" }
         $classic = $verb.SelectSingleNode('forcedMissRadiusClassicMortars')
-        Assert ($null -eq $classic -or [double]$classic.InnerText -le 0.5) 'forcedMissRadiusClassicMortars above 0.5 has the same effect as forcedMissRadius'
+        if ($null -ne $classic -and [double]$classic.InnerText -gt 0.5) { 'forcedMissRadiusClassicMortars above 0.5 has the same effect as forcedMissRadius' }
     }
 }
-Test 'Egg hatches the beetle after one day' {
+It 'Egg hatches the beetle after one day' {
     $egg = Def 'ThingDef' 'ACS_EggBeetle'
     $hatcher = $egg.SelectSingleNode("comps/li[@Class='CompProperties_Hatcher']")
-    Assert ($hatcher.hatcherDaystoHatch -eq '1') 'Wrong hatch duration'
-    Assert ($hatcher.hatcherPawn -eq 'ACS_DarkMatterBeetle') 'Wrong hatchling'
+    if ($hatcher.hatcherDaystoHatch -ne '1') { 'Wrong hatch duration' }
+    if ($hatcher.hatcherPawn -ne 'ACS_DarkMatterBeetle') { 'Wrong hatchling' }
     $null = Def 'PawnKindDef' $hatcher.hatcherPawn
 }
-Test 'All 41 hairstyles retain their generation tags and Chinese labels' {
+It 'All 41 hairstyles retain their generation tags and Chinese labels' {
     $chineseFolder = Get-ChildItem (Join-Path $ModPath 'Languages') -Directory | Where-Object Name -Like 'ChineseSimplified*'
-    $chineseDocuments = @(Get-ChildItem -LiteralPath $chineseFolder.FullName -Recurse -Filter *.xml | ForEach-Object {
-        [xml](Get-Content $_.FullName -Raw -Encoding UTF8)
-    })
+    $chineseDocuments = @(Get-ChildItem -LiteralPath $chineseFolder.FullName -Recurse -Filter *.xml | ForEach-Object { [xml](Read-Text $_.FullName) })
     $hair = @($index.Values | Where-Object Name -eq 'HairDef')
-    Assert ($hair.Count -eq 41) 'Expected 41 hairstyles'
+    if ($hair.Count -ne 41) { 'Expected 41 hairstyles' }
     foreach ($h in $hair) {
-        foreach ($tag in 'Urban','Rural','Punk') {
-            Assert ($h.styleTags.li -contains $tag) "$($h.defName) missing $tag"
+        foreach ($tag in 'Urban', 'Rural', 'Punk') {
+            if ($h.styleTags.li -notcontains $tag) { "$($h.defName) missing $tag" }
         }
         $labels = @($chineseDocuments | ForEach-Object { $_.SelectNodes("/LanguageData/$($h.defName).label") })
-        Assert ($labels.Count -eq 1 -and -not [string]::IsNullOrWhiteSpace($labels[0].InnerText)) "Missing or duplicate Chinese label for $($h.defName)"
+        if ($labels.Count -ne 1 -or [string]::IsNullOrWhiteSpace($labels[0].InnerText)) { "Missing or duplicate Chinese label for $($h.defName)" }
     }
 }
-Test 'The Animal Prosthetics 2 patch lists the beetle, only when that mod is there, and the mod loads before it' {
+It 'The Animal Prosthetics 2 patch lists the beetle, only when that mod is there, and the mod loads before it' {
     $adsName = 'A Dog Said... Animal Prosthetics 2'
     $adsId = 'SamBucher.ADogSaidAnimalProsthetics2'
-    [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
-    Assert ($about.ModMetaData.loadBefore.li -contains $adsId) "About.xml does not load before $adsId, whose own patch copies the category lists before a later mod could add to them"
-    Assert (-not ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies')) 'The compatibility is optional: no mod dependency may be declared'
-    [xml]$patch = Get-Content -LiteralPath (Join-Path $ModPath 'Patches/AnimalProsthetics2.xml') -Raw -Encoding UTF8
+    [xml]$about = Read-Text (Join-Path $ModPath 'About/About.xml')
+    if ($about.ModMetaData.loadBefore.li -notcontains $adsId) { "About.xml does not load before $adsId, whose own patch copies the category lists before a later mod could add to them" }
+    if ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies') { 'The compatibility is optional: no mod dependency may be declared' }
+    [xml]$patch = Read-Text (Join-Path $ModPath 'Patches/AnimalProsthetics2.xml')
     $op = $patch.SelectSingleNode('/Patch/Operation')
-    Assert ($op.GetAttribute('Class') -eq 'PatchOperationFindMod') 'The patch is not guarded by PatchOperationFindMod'
-    Assert (@($op.mods.li) -ceq $adsName) "The guard does not name the mod exactly as '$adsName'"
+    if ($op.GetAttribute('Class') -ne 'PatchOperationFindMod') { 'The patch is not guarded by PatchOperationFindMod' }
+    if (@($op.mods.li) -cne $adsName) { "The guard does not name the mod exactly as '$adsName'" }
     $add = $op.match
-    Assert ($add.GetAttribute('Class') -eq 'PatchOperationAdd') 'The guarded operation is not a PatchOperationAdd'
+    if ($add.GetAttribute('Class') -ne 'PatchOperationAdd') { 'The guarded operation is not a PatchOperationAdd' }
     foreach ($cat in 'ADS_Cat1', 'ADS_Cat2', 'ADS_Cat3') {
-        Assert ($add.xpath.Contains("@Name=""$cat""")) "The beetle is not added to $cat, and a category includes the ones below it"
+        if (-not $add.xpath.Contains("@Name=""$cat""")) { "The beetle is not added to $cat, and a category includes the ones below it" }
     }
     $listed = @($add.value.li)
-    Assert ($listed.Count -eq 1 -and $listed[0] -ceq 'ACS_DarkMatterBeetle') "Listed animals are not exactly the beetle: $($listed -join ', ')"
-    $null = Def 'ThingDef' $listed[0]
+    if ($listed.Count -ne 1 -or $listed[0] -cne 'ACS_DarkMatterBeetle') { "Listed animals are not exactly the beetle: $($listed -join ', ')" }
+    else { $null = Def 'ThingDef' $listed[0] }
     # The seraph is left out on purpose: none of its parts is a vanilla def, so no surgery names it.
     $seraphBody = Def 'BodyDef' 'ACS_Seraphim'
     $parts = @($seraphBody.SelectNodes('.//def') | ForEach-Object { $_.InnerText } | Sort-Object -Unique)
-    Assert (@($parts | Where-Object { -not $_.StartsWith('ACS_') }).Count -eq 0) 'The seraph gained a vanilla body part: reconsider listing it in the other mod'
+    if (@($parts | Where-Object { -not $_.StartsWith('ACS_') }).Count -ne 0) { 'The seraph gained a vanilla body part: reconsider listing it in the other mod' }
 }
-Test 'The Nocturnal Animals patch makes the beetle nocturnal, only when that mod is there, and asks for nothing else' {
+It 'The Nocturnal Animals patch makes the beetle nocturnal, only when that mod is there, and asks for nothing else' {
     $naName = '[XND] Nocturnal Animals (Continued)'
-    [xml]$about = Get-Content -LiteralPath (Join-Path $ModPath 'About/About.xml') -Raw -Encoding UTF8
-    Assert (-not ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies')) 'The compatibility is optional: no mod dependency may be declared'
-    Assert (@($about.ModMetaData.loadBefore.li) -notcontains 'Mlie.XNDNocturnalAnimals') 'No load order is needed with Nocturnal Animals: it reads the extension at runtime'
-    [xml]$patch = Get-Content -LiteralPath (Join-Path $ModPath 'Patches/NocturnalAnimals.xml') -Raw -Encoding UTF8
+    [xml]$about = Read-Text (Join-Path $ModPath 'About/About.xml')
+    if ($about.ModMetaData.PSObject.Properties.Name -contains 'modDependencies') { 'The compatibility is optional: no mod dependency may be declared' }
+    if (@($about.ModMetaData.loadBefore.li) -contains 'Mlie.XNDNocturnalAnimals') { 'No load order is needed with Nocturnal Animals: it reads the extension at runtime' }
+    [xml]$patch = Read-Text (Join-Path $ModPath 'Patches/NocturnalAnimals.xml')
     $op = $patch.SelectSingleNode('/Patch/Operation')
-    Assert ($op.GetAttribute('Class') -eq 'PatchOperationFindMod') 'The patch is not guarded by PatchOperationFindMod'
-    Assert (@($op.mods.li) -ceq $naName) "The guard does not name the mod exactly as '$naName'"
-    # The guard matches by display name: if the installed copy of that mod is here, its name must still be the one guarded.
-    $installedAbout = 'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2269731409\About\About.xml'
-    if (Test-Path -LiteralPath $installedAbout) {
-        [xml]$na = Get-Content -LiteralPath $installedAbout -Raw -Encoding UTF8
-        Assert ($na.ModMetaData.name -ceq $naName) "Nocturnal Animals is now called '$($na.ModMetaData.name)': the patch guard no longer matches it"
-    }
+    if ($op.GetAttribute('Class') -ne 'PatchOperationFindMod') { 'The patch is not guarded by PatchOperationFindMod' }
+    # The guard matches by display name; whether the installed copy still has that name is Check-PatchTargets.
+    if (@($op.mods.li) -cne $naName) { "The guard does not name the mod exactly as '$naName'" }
     $add = $op.match
-    Assert ($add.GetAttribute('Class') -eq 'PatchOperationAddModExtension') 'The guarded operation is not a PatchOperationAddModExtension'
-    Assert ($add.xpath -ceq '/Defs/ThingDef[defName="ACS_DarkMatterBeetle"]') "The patch does not target the beetle's ThingDef alone: $($add.xpath)"
+    if ($add.GetAttribute('Class') -ne 'PatchOperationAddModExtension') { 'The guarded operation is not a PatchOperationAddModExtension' }
+    if ($add.xpath -cne '/Defs/ThingDef[defName="ACS_DarkMatterBeetle"]') { "The patch does not target the beetle's ThingDef alone: $($add.xpath)" }
     $ext = @($add.value.li)
-    Assert ($ext.Count -eq 1 -and $ext[0].GetAttribute('Class') -ceq 'NocturnalAnimals.ExtendedRaceProperties') 'The value is not one NocturnalAnimals.ExtendedRaceProperties extension'
-    Assert ($ext[0].bodyClock -ceq 'Nocturnal') "The beetle's bodyClock is '$($ext[0].bodyClock)', not Nocturnal"
+    if ($ext.Count -ne 1 -or $ext[0].GetAttribute('Class') -cne 'NocturnalAnimals.ExtendedRaceProperties') { 'The value is not one NocturnalAnimals.ExtendedRaceProperties extension' }
+    elseif ($ext[0].bodyClock -cne 'Nocturnal') { "The beetle's bodyClock is '$($ext[0].bodyClock)', not Nocturnal" }
     $null = Def 'ThingDef' 'ACS_DarkMatterBeetle'
-    Assert (-not ($script:index['ThingDef:ACS_Gabriel'].SelectSingleNode('modExtensions'))) 'The seraph carries a mod extension of its own: the patch leaves it diurnal on purpose'
+    if ($script:index['ThingDef:ACS_Gabriel'].SelectSingleNode('modExtensions')) { 'The seraph carries a mod extension of its own: the patch leaves it diurnal on purpose' }
 }
-Write-Output "$script:passed passed; $script:failures failed."
-if ($script:failures) { exit 1 }
+Complete-Tests
