@@ -1,17 +1,20 @@
 param([string]$ModPath = (Join-Path $PSScriptRoot '../Mod'))
 
-# Offline suite: the generic checks are the shared scripts of the protocols repository (the parent folder of this
-# mod), run first; what follows asserts this mod's own values. No game installation or Pester required for the
-# own tests. Needs the protocols checkout next to the mod (scripts/lib/TestRunner.ps1, scripts/Check-*.ps1).
+# Offline suite: the generic checks are the shared scripts, run first; what follows asserts this mod's own values.
+# Shared scripts are read from ../../scripts (protocols checkout) then .github/scripts (copies made by CI/CD, docs/CICD.md,
+# option b); neither found is a failure, never a silent skip. No game installation or Pester required for the own tests.
 $ErrorActionPreference = 'Stop'
 $ModPath = (Resolve-Path -LiteralPath $ModPath).Path
 $ModRoot = Split-Path -Parent $ModPath
-$Protocols = (Resolve-Path -LiteralPath (Join-Path $ModRoot '..')).Path
-. (Join-Path $Protocols 'scripts/lib/TestRunner.ps1')
+$SharedDir = @((Join-Path $ModRoot '../scripts'), (Join-Path $ModRoot '.github/scripts')) | Where-Object { Test-Path -LiteralPath (Join-Path $_ 'lib/TestRunner.ps1') } | Select-Object -First 1
+if (-not $SharedDir) { Write-Host 'FAIL shared scripts not found (looked in ../scripts and .github/scripts of the mod): the generic checks did NOT run' -ForegroundColor Red; exit 1 }
+$SharedDir = (Resolve-Path -LiteralPath $SharedDir).Path
+. (Join-Path $SharedDir 'lib/TestRunner.ps1')
 
 # One shared check as one test: the exit code decides, its output is the detail of a failure.
 function Invoke-Shared([string]$Script, [string[]]$Arguments) {
-    $out = @(& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Protocols "scripts/$Script") @Arguments 2>&1 | ForEach-Object { "$_" })
+    if (-not (Test-Path -LiteralPath (Join-Path $SharedDir $Script))) { throw "$Script not found in $SharedDir" }
+    $out = @(& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $SharedDir $Script) @Arguments 2>&1 | ForEach-Object { "$_" })
     if ($LASTEXITCODE -ne 0) { $out | Where-Object { $_ -match '\S' } | Select-Object -Last 15 }
 }
 function Def([string]$type, [string]$name) {
