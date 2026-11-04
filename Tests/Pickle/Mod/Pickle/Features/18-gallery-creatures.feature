@@ -65,9 +65,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
@@ -124,9 +124,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
     And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
@@ -182,9 +182,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I let 1250 ticks pass
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: "Nelim" stands at (198, 153) facing West
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_DarkMatter"
@@ -244,9 +244,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (201, 151)
     And Nelim's Pickle Tools: "Rina" stands at (194, 154) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (196, 150) facing East

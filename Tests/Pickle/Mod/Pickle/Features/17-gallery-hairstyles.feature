@@ -38,8 +38,8 @@
 #      Nelim (195, 152) facing East carrying Chocolate | CLOSE: rectangle (194, 149) to (200, 154) |
 #      WoodPlankFloor, TorchLamp lit (194, 150), Brazier lit (200, 150), Plant_Daylily x3 | THUMBNAIL: the white robe on the wood.
 #      RISK: Yuki turns away (she showed her back in runs c094 and redo-6). PLAN: placed last; read which way the step turns her.
-# NELIM keeps ONE outfit all day (owner's continuity rule 2026-10-23): cream basic shirt (237, 230, 214), olive trousers (91, 107, 58),
-# burgundy jacket (122, 46, 58), her high ponytail (Roo_HD_Hair_Highpony), her smirk; the guests keep theirs from picture to picture.
+# NELIM keeps ONE outfit all day (owner's continuity rule 2026-10-23; outfit changed 2026-11-04 to her validated daily look): [LTS] tunic (31, 122, 92) emerald, [LTS] skirt (31, 58, 95) deep blue,
+# gold small earrings (212, 175, 55), her high ponytail (Roo_HD_Hair_Highpony), her smirk; the guests keep theirs from picture to picture.
 # NELIM'S OUTFIT AND HAIR are set AFTER the last wait of each scenario (2026-10-23): every capture of redo-6 showed her in the same yellow top while PickleTools' looks run (no waits) draws the dyed outfit and the Roo ponytail. Lead, not proven: during the waits her own AI re-dresses her. Guests dressed before the waits kept their clothes.
 # Skin tones are chosen: a generated tone made one face read as a smiley under pale hair. The game tints a hairstyle by the
 # hair colour: white lets each hairstyle show the colours its artist drew. Faces: Rina smiles (face kit), Toma is drafted
@@ -75,9 +75,9 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (188, 124) facing South
     And Nelim's Pickle Tools: "Nelim" carries the item "Pemmican"
@@ -116,9 +116,9 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Beer"
@@ -161,9 +161,9 @@ Feature: Gallery pictures of the hairstyles
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (237, 230, 214)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (91, 107, 58)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (122, 46, 58)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
+    And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
