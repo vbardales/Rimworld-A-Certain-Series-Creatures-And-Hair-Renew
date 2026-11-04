@@ -13,15 +13,15 @@
 #
 # Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent), continuing feature 17: the
 # same outfits, every picture a game paused mid-play. Pictures 4 to 7 are all on the podium (emerald-clearing).
-#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay, the beetle
-#      stands unmoved before it and the chicken pecks at the hay at her feet. METHOD: beetle (198, 153) (the step gives no facing), Nelim
-#      (195, 153) facing East carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) | WoodPlankFloor,
+#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay (redo-13: she faces South so the hay does not hide her face), the beetle
+#      stands unmoved before it and the chicken at her feet looks up at it (redo-13: pecking cannot be obtained). METHOD: beetle (198, 153) (the step gives no facing), Nelim
+#      (195, 153) facing South carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 3 cells' height on (197, 152) (was 4: too much empty ground) | WoodPlankFloor,
 #      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (199, 154) and (195, 154) | THUMBNAIL: the beetle's horn silhouette on the wood.
 #      RISK: the beetle crowds Nelim. PLAN: three cells between them.
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
 #      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 152); everybody 5 cells or more from it (its
-#      wings draw over anything within about 4.5) and turned toward it: Rina (191, 155) East, Toma (197, 158) South, Sena (203, 155) West,
-#      Nelim (194, 147) East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 13 cells' height on (197, 152) | WoodPlankFloor,
+#      wings draw over anything within about 4.5) and turned toward it: Rina (191, 155) East, Toma (197, 157) South, Sena (203, 155) West,
+#      Nelim (194, 147) East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 11 cells' height on (196, 152) (redo-13: was 13 on (197, 152), the map edge and wandering animals showed at the top right) | WoodPlankFloor,
 #      Brazier lit x2 (192, 152) and (202, 152), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
@@ -69,13 +69,13 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "LTS_Skirt" dyed rgb (31, 58, 95)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" dyed rgb (212, 175, 55)
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing South
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (196, 152)
     And Nelim's Pickle Tools: the animal "Poule" stands at (196, 152) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
-    When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And I take a screenshot "gallery 4 beetle"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
@@ -132,12 +132,12 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Rina" stands at (191, 155) facing East
-    And Nelim's Pickle Tools: "Toma" stands at (197, 158) facing South
+    And Nelim's Pickle Tools: "Toma" stands at (197, 157) facing South
     And Nelim's Pickle Tools: "Sena" stands at (203, 155) facing West
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (200, 147)
     And Nelim's Pickle Tools: the animal "Paon" stands at (200, 147) facing South
     Then 1 "ACS_Gabriel" exist
-    When A Certain Series: I bring the camera to 13 cells' height on the cell (197, 152)
+    When A Certain Series: I bring the camera to 11 cells' height on the cell (196, 152)
     And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
     And Nelim's Pickle Tools: "Toma" mouth is "MouthLittleGrin"
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
