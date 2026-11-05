@@ -11,6 +11,8 @@ nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
 nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
 tiagocc0.FemaleBodyVariants 3798082132
 tiagocc0.FemaleApparelVariants 3799726535
+# UnderWhere (owner 2026-11-05: Nelim wears the validated NSB underwear under the tunic), before WDI as NPT stages it.
+Malistaticy.UnderWhere 1870010563
 wdi.realistic.bodies 3527486510
 ab.vplrf 2986402536
 nelim.venustouch.waistlines path:VenusTouchWaistlines/Mod
@@ -24,6 +26,6 @@ astryl.FacialAnimationPerformancePatch 3790129900
 sd.fa.movingvanillaeyes 3753978140
 # Let's Have a Cat! Continued (owner 2026-10-24, SanctuaryBacklot docs/TAMA-PROFIL.md and KURU-PROFIL.md): Tama is akaNEKO_N_Forest_Cat, Kuru is akaNEKO_kuroneko.
 akairo.LetsHaveaCat 3682940618
-# Nelim's daily outfit (owner, 2026-11-04, "the outfit you want"): [LTS] Raiments tunic and skirt, Ponpeco Accessories earrings (same ids as SanctuaryBacklot wsl-deps.sanctuary-daily.map).
+# Nelim's daily outfit (owner, 2026-11-04, "the outfit you want"): [LTS] Raiments tunic (no skirt since 2026-11-05, NSB look), Ponpeco Accessories earrings (same ids as SanctuaryBacklot wsl-deps.sanctuary-daily.map).
 limetreesnake.raiments 3751997843
 ponpeco.PonpecoAccessories 3298397484
