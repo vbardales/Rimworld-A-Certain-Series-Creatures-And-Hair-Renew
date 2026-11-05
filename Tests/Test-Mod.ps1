@@ -34,6 +34,7 @@ It 'Shared: XML well formed, unique defNames, About.xml, Preview and icon (Check
 Test-That 'Shared: every def reference and inheritance parent resolves (Check-DefRefs)' { Invoke-SharedOrSkip 'Check-DefRefs.ps1' '-ModPath', $ModPath, '-Brief' }
 It 'Shared: every texture path resolves to a shipped file (Check-Textures)' { Invoke-Shared 'Check-Textures.ps1' '-ModRoot', $ModRoot }
 Test-That 'Shared: every patch target still exists in the installed mod (Check-PatchTargets)' { Invoke-SharedOrSkip 'Check-PatchTargets.ps1' '-ModRoot', $ModRoot }
+Test-That 'Shared: forced miss, innate verb limit and generation age satisfy the config check of the game (Check-ConfigErrors)' { Invoke-SharedOrSkip 'Check-ConfigErrors.ps1' '-ModPath', $ModPath }
 
 $script:index = @{}
 $documents = @()
@@ -138,37 +139,6 @@ It 'Creature, material and machine values match what the mod promises' {
     $bench = Def 'ThingDef' 'ACS_DarkMatterProduction'
     if ([int]$bench.costList.Plasteel -ne 100 -or [int]$bench.costList.ComponentSpacer -ne 50 -or [int]$bench.costList.ACS_KakineTeitokuBrain -ne 1) { 'The propagator no longer costs 100 plasteel, 50 spacer components and one brain fragment' }
     if ([double](Def 'ResearchProjectDef' 'ACS_DarkMatterTech').baseCost -ne 18000) { 'The research no longer costs 18000' }
-}
-# The two rules below are not in a shared script yet (review of 2026-11-04 asks Check-ConfigErrors or Check-AnimalDefs to take them): kept here until then.
-It 'No creature kind caps its generation age at zero, which the age generator cannot satisfy' {
-    # Seen in the first game run (2026-09-24): with maxGenerationAge 0 every generated beetle and seraph logged
-    # "Tried 300 times to generate age". Vanilla animal kinds set neither field, so the defaults apply.
-    $kinds = @($index.Values | Where-Object Name -eq 'PawnKindDef')
-    if ($kinds.Count -ne 2) { "Expected the two creature kinds, found $($kinds.Count)" }
-    foreach ($kind in $kinds) {
-        if ($null -ne $kind.SelectSingleNode('minGenerationAge') -or $null -ne $kind.SelectSingleNode('maxGenerationAge')) { "$($kind.defName) sets a generation age: leave it to the defaults, as vanilla animals do" }
-    }
-}
-It 'The forced miss radius of an innate verb satisfies the config check of the game and does not throw on every shot' {
-    # Two rules of 1.6, both seen in the game runs of 2026-09-25.
-    # 1. Verb_LaunchProjectile.TryCastShot, with forcedMissRadius above 0.5, calls
-    #    VerbProperties.GetForceMissFactorFor(EquipmentSource, caster), which reads equipment.def unguarded; an innate
-    #    verb has no equipment, so every tick of the burst threw a NullReferenceException and nothing was fired.
-    # 2. VerbProperties.ConfigErrors logs "has incorrect forcedMiss settings" at load unless (forcedMissRadius > 0)
-    #    equals whether the projectile causes an explosion (explosionRadius above 0).
-    # So an explosive innate verb needs a radius in (0, 0.5], and a non-explosive one exactly 0.
-    $verbs = @($index.Values | Where-Object { $_.Name -eq 'ThingDef' -and $_.SelectSingleNode('race') } | ForEach-Object { $_.SelectNodes('verbs/li') })
-    if ($verbs.Count -ne 2) { "Expected the two innate verbs, found $($verbs.Count)" }
-    foreach ($verb in $verbs) {
-        $projectile = Def 'ThingDef' $verb.defaultProjectile
-        $explosive = $null -ne $projectile.SelectSingleNode('projectile/explosionRadius') -and [double]$projectile.projectile.explosionRadius -gt 0
-        $node = $verb.SelectSingleNode('forcedMissRadius')
-        $radius = if ($node) { [double]$node.InnerText } else { 0 }
-        if ($radius -gt 0.5) { "The innate verb of $($verb.defaultProjectile) sets forcedMissRadius to ${radius}: above 0.5 it throws on every shot" }
-        if (($radius -gt 0) -ne $explosive) { "The innate verb of $($verb.defaultProjectile) is $(if ($explosive) {'explosive but has no'} else {'not explosive but has a'}) forcedMissRadius: the game logs a config error at load" }
-        $classic = $verb.SelectSingleNode('forcedMissRadiusClassicMortars')
-        if ($null -ne $classic -and [double]$classic.InnerText -gt 0.5) { 'forcedMissRadiusClassicMortars above 0.5 has the same effect as forcedMissRadius' }
-    }
 }
 It 'Egg hatches the beetle after one day' {
     $egg = Def 'ThingDef' 'ACS_EggBeetle'
