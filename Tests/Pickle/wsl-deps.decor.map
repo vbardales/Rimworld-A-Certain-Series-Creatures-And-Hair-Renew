@@ -1,0 +1,59 @@
+# Pass "decor" (2026-11-05): the validated modded Sanctuary (cloister, terrace/veranda, infirmary-pawns) staged as NPT does: save Nelims-tribe-decor-mods (DecorBase),
+# the 19 decor mods and their deps (kept as in PickleTools/Tests/Pickle/wsl-deps.sanctuary-decor-mods.map, REQUIRED), then this mod's own deps from wsl-deps.galerie.map. Container 7g, run ALONE (Audit).
+#   Submit-PickleRun.ps1 -Mod ACertainSeriesCreaturesAndHairRenew -DepMap wsl-deps.decor.map -Filter '<features>' -Owner <session id> -EvidenceDir <dir> -Extra '-pickle-scenario-timeout=600'
+nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
+nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
+nelim.pickletools.savesteps path:PickleTools/SaveSteps/Mod
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
+nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
+nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
+nelim.pickletools.decorbase path:PickleTools/Tests/Pickle/DecorBase/Mod
+# dependencies of the decorative mods
+brrainz.harmony 2009463077
+erdelf.HumanoidAlienRaces 839005762
+OskarPotocki.VanillaFactionsExpanded.Core 2023507013
+# the decorative mods (Workshop ids read from the Windows Workshop folder 2026-11-05)
+Caoyuanfei.YuranShrineJapaneseArchitecture 3671664434
+RooAndGloomy.YuranRaceMod 2844129100
+Erin.JapaneseFurniture 2354938860
+milple.KoreanStyleFurniture 3733695302
+erin.decorations 2463358089
+daylight.RimLifeExSTFMod 2289110791
+daylight.RimLifeExFurMod 2309537905
+kcb.pottingdeco 3575201181
+Mlie.SpidercampsDecorativePlants 2453107898
+Mlie.DecorativeTrees 2670019924
+hd.pashka.Mlie.DecorativeTrees 2729580051
+zal.wallvitalsmonitor 3283745385
+WallMounted.FunctionFurniture 3807382130
+mgatwood.housedecor 3535047810
+KindSeal.DecorativePainting 3587440566
+AKN.Decorations 2755025925
+mingtuwuxiang.FishingDecorative 2981211719
+draegon.FishingDecoRetex 3256420234
+# This mod's own deps (from wsl-deps.galerie.map, lines already above skipped)
+nelim.pickletools.coatsteps path:PickleTools/CoatSteps/Mod
+nelim.pickletools.clickdiagnostics path:PickleTools/ClickDiagnostics/Mod
+tiagocc0.FemaleBodyVariants 3798082132
+tiagocc0.FemaleApparelVariants 3799726535
+Malistaticy.UnderWhere 1870010563
+wdi.realistic.bodies 3527486510
+ab.vplrf 2986402536
+nelim.venustouch.waistlines path:VenusTouchWaistlines/Mod
+rooboid.hdhair.continued 3559870636
+Nals.FacialAnimation 1635901197
+nals.facialanimationexperimentals 2581693737
+VanillaExpanded.VTEXE.FacialAnims 2816938779
+Newton.AKNExtras.FacialAnimations 2889716301
+lucius.eyegenes3 3745223213
+astryl.FacialAnimationPerformancePatch 3790129900
+sd.fa.movingvanillaeyes 3753978140
+akairo.LetsHaveaCat 3682940618
+luved.animaltraits 3652630316
+nelim.animalcosmeticgenes path:AnimalCosmeticGenes/Mod
+Ingendum.AnimalApparelFramework 3513825850
+nelim.animalapparelcollarsandkit path:AnimalApparelCollarsAndKitRenew/Mod
+limetreesnake.raiments 3751997843
+ponpeco.PonpecoAccessories 3298397484
