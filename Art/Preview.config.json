@@ -8,7 +8,7 @@
       { "text": "Creatures" },
       { "text": "and", "scale": 0.65 },
       { "text": "Hair" },
-      { "text": "Renew (unofficial)", "tag": true }
+      { "text": "Renew (unofficial)", "suffix": true }
     ],
     "description": "Two creatures and forty-one hairstyles, revived for the latest RimWorld version."
   },
