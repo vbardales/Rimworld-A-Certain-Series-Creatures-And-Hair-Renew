@@ -11,7 +11,7 @@ detached:     yes
 workflow_stage: shootGallery[1.1.1]
 code_review_sha: f4cba2a3480c7b8be1b0a1387553fc6632899ccd
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
-social_preview_sha256: 77b65e80fdcad2e7b9defa6083ce91488a457b8f2f70ed709d6d05e7156d6266
+social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
 publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
 licence:      silent
 licence_at:   original files and About.xml, Steam description and all 14 comments, author profile, source repository search (2026-09-12)
