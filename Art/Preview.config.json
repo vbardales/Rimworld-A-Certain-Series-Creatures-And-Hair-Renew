@@ -2,12 +2,12 @@
   "panel": {
     "title": "A Certain Series - Creatures and Hair Renew (unofficial)",
     "titleParts": [
-      { "text": "A ", "scale": 0.65 },
+      { "text": "A", "scale": 0.65 },
       { "text": "Certain Series" },
       { "text": "-", "scale": 0.65 },
-      { "text": "Creatures " },
-      { "text": "and ", "scale": 0.65 },
-      { "text": "Hair " },
+      { "text": "Creatures" },
+      { "text": "and", "scale": 0.65 },
+      { "text": "Hair" },
       { "text": "Renew (unofficial)", "tag": true }
     ],
     "description": "Two creatures and forty-one hairstyles, revived for the latest RimWorld version."
