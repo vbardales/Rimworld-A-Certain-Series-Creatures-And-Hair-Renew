@@ -132,7 +132,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
-  Scenario: 3 - Sena finds the one shelf worth reading (Index, the podium, 16:00)
+  Scenario: 3 - Sena finds a quiet corner (Index, the podium, 16:00)
     Given the save "Nelims-tribe" is loaded
     And game speed is paused
     And I set the hour to 16
