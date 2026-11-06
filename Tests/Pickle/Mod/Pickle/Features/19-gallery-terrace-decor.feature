@@ -39,7 +39,7 @@ Feature: Gallery picture 2 in the modded terrace
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
-    And Nelim's Pickle Tools: I place the decor "Beer" at (197, 122)
+    And Nelim's Pickle Tools: 1 of the item "Beer" are spawned at (197, 122)
     And Nelim's Pickle Tools: the free standable cells of the area from (193, 118) to (200, 124) are listed
     And Nelim's Pickle Tools: the things within 8 cells of (196, 121) are listed
     And Nelim's Pickle Tools: the things "Campfire" within 1 cells of (194, 121) are hidden
