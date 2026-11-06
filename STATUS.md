@@ -90,7 +90,7 @@ Places read: 2026-11-05 (rows of `terrace`, `emerald-clearing`, `sofa-corner` in
 | Kuru (`akaNEKO_kuroneko`) | 6 | none; white chest patch trait `AnimalTrait_ChestPatch` (ACG) | 2026-11-05 | none |
 | Peacock "Paon" | 2, 5 | none | not in NSB | outside NSB, VALIDATED (owner, chat 2026-11-05: "avec paon") |
 | Chicken "Poule" | 4, 7 | none | not in NSB | outside NSB, VALIDATED (owner, chat 2026-11-05: "poule ok") |
-| `ACS_DarkMatterBeetle` | 4, 7 | none | mod creature | pack animal of this mod, not NSB; validation PENDING |
+| `ACS_DarkMatterBeetle` | 4, 7 | none | mod creature | pack animal of this mod, not NSB; VALIDATED (owner, chat 2026-11-06: "oui", to keep it in shots 4 and 7) |
 
 Gabriel (`ACS_Gabriel`, seraph) is a creature of the mod, not a pet or livestock: decor.
 
