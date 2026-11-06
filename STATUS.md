@@ -64,23 +64,23 @@ in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
 
-## NSB (sync-nsb, 2026-11-06)
+## NSB (sync-nsb, 2026-11-06, second run)
 
-Sync 2026-11-06: `git -C ../SanctuaryBacklot log --since=2026-11-05 -- Docs` empty, no NSB doc change since the 2026-11-05 sync; nothing re-read, every "Last read" date below keeps its old value; no file of the mod changed except this table (tickets 3d84 and 66a2 queued).
+Sync 2026-11-06 (second run): NSB `Docs/` is untracked (git log empty), so changes read by mtime. Re-read `VALIDE.md` (03:40) and `AVANCEMENT.md` (03:57) in full; `EMBELLISSEMENT-LIEUX.md` (2026-11-05 23:46) grepped only for the zone rule. Changes since the 2026-11-05 read: VALIDE gains two places (`hut` tea room, `ritual-hall`, 2026-11-06) and the validated save is now `sanctuary-hall-rework-2/Nelims-tribe-decor-mods.rws` (sha256 `be1f90ba...432aa9a3`, mods-k plus ritual hall; same 19-mod map, 7g, alone); Nelim outfits now almost all V (daily, underwear, nude, ceremony, party, formal, date, night, cold, heat, combat with trousers to redo, sport); informaticienne and bathing still waiting. Not changed: places for the gallery. `terrace` still V, `sofa-corner` ND ("laissés tels quels"), `emerald-clearing` listed as a shooting zone KEPT FREE of decor (EMBELLISSEMENT-LIEUX.md line 8, AVANCEMENT "—"), so the podium decor of shots 3 to 7 (plank floor, torches, braziers, machines) conflicts with NSB's own rule: ask NSB or the owner before any redo. Animals: Yuki, Tama, Kuru still ND/D, none validated. Nothing of the mod changed except this section; 9d2c was played on the previous save (terrace and cloister identical per NPT 2026-11-05, the hall rework touches only the ritual hall).
 
 Rules (owner, 2026-11-05): everything in NSB is free (places, colonists, domestic animals); a colonist or domestic animal outside NSB needs the owner's express validation before a scenario is played; any change to a colonist's properties too; every outfit is free. No NSB doc change since 2026-11-04 (`git log -- Docs`). Updated today: Nelim's outfit (NSB daily look), Kuru (kuroneko + chest patch by ACG, owner words 2026-11-05 "kuroneko + le plastron blanc mis par animal cosmetic genetics"), Yuki's collar (fuchsia, NSB YUKI-PROFIL). Left alone: ticket 3d84 plays the working tree. Doc conflict for NSB: `APPARENCES-CANON.md` says Kuru is `Cat` (Core), `KURU-PROFIL.md` and the owner say `akaNEKO_kuroneko`.
 
-Places read: 2026-11-05 (rows of `terrace`, `emerald-clearing`, `sofa-corner` in SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md headings, EMBELLISSEMENT-LIEUX.md zone rule). Tribe read: 2026-11-05 (APPARENCES-CANON.md animals table, HUMAINS-PROFILS.md, CATALOGUE-ANIMAUX.md, GALERIE-COLONS.md, LOOKS-VALIDATION.md head, NELIM, KURU, YUKI, TAMA profiles; NSB-ROSTER.md not opened).
+Places read: 2026-11-05 (rows of `terrace`, `emerald-clearing`, `sofa-corner` in SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md headings), VALIDE.md and AVANCEMENT.md places table 2026-11-06, EMBELLISSEMENT-LIEUX.md zone rule (grep) 2026-11-06. Tribe read: 2026-11-05 (APPARENCES-CANON.md animals table, HUMAINS-PROFILS.md, CATALOGUE-ANIMAUX.md, GALERIE-COLONS.md, LOOKS-VALIDATION.md head, NELIM, KURU, YUKI, TAMA profiles; NSB-ROSTER.md not opened), VALIDE.md and AVANCEMENT.md colonists, outfits and animals tables 2026-11-06.
 
 | Place | Shots | Changes for the gallery | Last read |
 |---|---|---|---|
 | `sofa-corner` | 1 (NOT validated: wait) | torch, daylily; cells 183-189 of row 124 free | 2026-11-05 |
 | `terrace` (veranda), VALIDATED 2026-11-05 (VALIDE.md) | 2 | daylilies x2; piano kept; played in the modded save (ticket 66a2, feature 19) | 2026-11-05 |
-| `emerald-clearing` (podium) | 3 to 7 (NOT validated in VALIDE.md 2026-11-05: wait) | plank floor, torches, braziers, plants, machines (removed after) | 2026-11-05 |
+| `emerald-clearing` (podium) | 3 to 7 (NOT validated in VALIDE.md 2026-11-06: wait; NSB keeps this shooting zone free of decor, so ask before decorating) | plank floor, torches, braziers, plants, machines (removed after) | 2026-11-06 (zone rule only) |
 
 | Colonist | Shots | Outfit per shot | Last read | Exceptions |
 |---|---|---|---|---|
-| Nelim | 1 to 7 | NSB daily look all day: LTS_Tunika emerald alone, UnderWhere bra and panties deep blue, gold small earrings (NELIM-PROFIL.md, continuity rule) | 2026-11-05 | none |
+| Nelim | 1 to 7 | NSB daily look all day: LTS_Tunika emerald alone, UnderWhere bra and panties deep blue, gold small earrings (NELIM-PROFIL.md, continuity rule); daily still V in VALIDE.md 2026-11-06 | 2026-11-05 (profile), 2026-11-06 (VALIDE) | none |
 | Rina | 1, 5, 7 | cream blouse, Misaka hairstyle | not in NSB | outside NSB, AUTHORISED (owner, chat 2026-11-05: "Rina, Toma et Sena sont autorisés dans la gallery") |
 | Toma | 2, 5, 7 | black duster, Accelerator hairstyle | not in NSB | outside NSB, AUTHORISED (owner, chat 2026-11-05, same words) |
 | Sena | 3, 5, 7 | white robe, gold sash, Index hairstyle | not in NSB | outside NSB, AUTHORISED (owner, chat 2026-11-05, same words) |
