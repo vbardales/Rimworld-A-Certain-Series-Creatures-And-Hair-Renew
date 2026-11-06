@@ -14,6 +14,7 @@ Feature: Gallery picture 2 in the modded terrace
     And I set the hour to 14
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And a colonist "Toma" exists
     And A Certain Series: "Toma" is a man
     And Nelim's Pickle Tools: "Toma" body type is Male
@@ -47,6 +48,8 @@ Feature: Gallery picture 2 in the modded terrace
     And Nelim's Pickle Tools: the animal "Paon" stands at (197, 120) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (195, 119) to (200, 123)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
+    And Nelim's Pickle Tools: the thermal state and thoughts of "Toma" are logged
     And I take a screenshot "gallery 2 accelerator decor"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
