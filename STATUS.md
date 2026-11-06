@@ -43,7 +43,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
 updated:      2026-11-06, resume: protocols read at 39b2d8b, ticket 66a2 red (see remaining)
-protocols_read_sha: 39b2d8ba6ba07c25a936409930a6640b70d58e07
+protocols_read_sha: b706c05a369b68c0f120ccd46809ac5f6dc2d0a5
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
