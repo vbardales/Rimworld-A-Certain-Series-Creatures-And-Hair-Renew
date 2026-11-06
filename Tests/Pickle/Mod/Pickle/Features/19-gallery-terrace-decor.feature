@@ -2,9 +2,9 @@
 # veranda, is validated). Same scene as feature 17 scenario 2 (Accelerator on Toma, the terrace, 14:00), loaded from the DecorBase fixture
 # "Nelims-tribe-decor-mods" (map wsl-deps.decor.map, container 7g, run ALONE). Not a test: the picture is read by eye (@review). Room x 193-200, z 118-124,
 # portrait cell (196, 121) kept free. Feature 17 keeps its own copy on the old save until the redecoration ends.
-# Replay 2026-11-06 (owner: "rejoue", ticket 9d2c: the Beer hid Nelim's mouth while she faced East): Nelim now faces South (toward the
-# camera, z grows to the north) with the Beer at her side, mouth readable; Toma still turns his back, facing East. INSTANT: she has just offered the
-# Beer and Toma turns away. Everything else unchanged.
+# Replay 2026-11-06 (owner: "rejoue", then "c'est toi qui vois"). Ticket 9d2c: the Beer hid Nelim's mouth facing East; ticket 5c46: facing South
+# it sat right over her mouth. Now she carries nothing: INSTANT: she has just set the Beer down on the stool (197, 122) and Toma, facing East at
+# (198, 121), turns his back on it. Nelim faces East, mouth readable. Everything else unchanged.
 @review @en-only @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.colonistrace
 Feature: Gallery picture 2 in the modded terrace
 
@@ -38,8 +38,8 @@ Feature: Gallery picture 2 in the modded terrace
     And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing East
-    And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing South
-    And Nelim's Pickle Tools: "Nelim" carries the item "Beer"
+    And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
+    And Nelim's Pickle Tools: I place the decor "Beer" at (197, 122)
     And Nelim's Pickle Tools: the free standable cells of the area from (193, 118) to (200, 124) are listed
     And Nelim's Pickle Tools: the things within 8 cells of (196, 121) are listed
     And Nelim's Pickle Tools: the things "Campfire" within 1 cells of (194, 121) are hidden
