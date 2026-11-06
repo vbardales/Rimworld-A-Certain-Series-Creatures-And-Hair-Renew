@@ -62,7 +62,9 @@ in `docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
 
-## NSB (sync-nsb, 2026-11-05)
+## NSB (sync-nsb, 2026-11-06)
+
+Sync 2026-11-06: `git -C ../SanctuaryBacklot log --since=2026-11-05 -- Docs` empty, no NSB doc change since the 2026-11-05 sync; nothing re-read, every "Last read" date below keeps its old value; no file of the mod changed except this table (tickets 3d84 and 66a2 queued).
 
 Rules (owner, 2026-11-05): everything in NSB is free (places, colonists, domestic animals); a colonist or domestic animal outside NSB needs the owner's express validation before a scenario is played; any change to a colonist's properties too; every outfit is free. No NSB doc change since 2026-11-04 (`git log -- Docs`). Updated today: Nelim's outfit (NSB daily look), Kuru (kuroneko + chest patch by ACG, owner words 2026-11-05 "kuroneko + le plastron blanc mis par animal cosmetic genetics"), Yuki's collar (fuchsia, NSB YUKI-PROFIL). Left alone: ticket 3d84 plays the working tree. Doc conflict for NSB: `APPARENCES-CANON.md` says Kuru is `Cat` (Core), `KURU-PROFIL.md` and the owner say `akaNEKO_kuroneko`.
 
@@ -91,6 +93,15 @@ Places read: 2026-11-05 (rows of `terrace`, `emerald-clearing`, `sofa-corner` in
 | `ACS_DarkMatterBeetle` | 4, 7 | none | mod creature | pack animal of this mod, not NSB; validation PENDING |
 
 Gabriel (`ACS_Gabriel`, seraph) is a creature of the mod, not a pet or livestock: decor.
+
+Included animals (rule 5, owner 2026-11-06; built from `Mod/Defs/ThingDefs_Races/`, the only two race defs; the mod adds no coat variant, no patched animal):
+
+| Animal | Shots that show it |
+|---|---|
+| `ACS_DarkMatterBeetle` | 4, 7 |
+| `ACS_Gabriel` | 5 |
+
+No row MISSING.
 
 ## Shotlist (write-shotlist, reworked 2026-10-18 against criteria a to k of `../GALLERY.md`, after the audit `../GALLERY-SHOTLIST-AUDIT.md`)
 
