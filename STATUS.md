@@ -42,9 +42,9 @@ remaining:
   - NPT 2026-11-05: fixture Nelims-tribe-decor-mods.rws updated to the final export (sha256 c09ed7b2...edff, infirmary wire fixed, ritual hall wires hidden); terrace and cloister identical, so ticket 66a2 (priority 500 since TM confirmation) stays valid. Re-read SanctuaryBacklot/docs/VALIDE.md before each shot: validated = cloister, terrace/veranda, infirmary-pawns; Nelim (appearance, daily look, underwear and most outfits; NOT yet: informaticienne, nue, baignade, sport). Not validated = every other colonist and animal (Soren, Shogun included). Peacock Paon of scene 2 (not an NSB animal): owner said "avec paon" 2026-11-05, kept.
   - gallery 1 to 7 promoted 2026-11-03 (clean originals in `Art/Gallery-clean`, subtitled in `Art/Gallery`, 2.7 MB; sources: 1 `c576` (Nelim South, plate still over her mouth, her eyes and bun show, Rina smiles, Misaka fringe reads: accepted as is), 2 and 4 `8ac0/3aa4` (redo-8), 3, 5, 6, 7 `90b9` (redo-10)); the gallery runs are deleted (captures live in Art). Weak points kept: j on 1, 3, 7; Nelim mouth hidden by the plate on 1 (owner may ask NPT for another carried-item placement). Next: owner accepts the seven images, mountPreview/prepareRelease, `social_preview_sha256` stale (Preview rebuilt 2026-11-03: renderer defaults, article A smaller, cover top left), republish GitHub social preview
   - ideas not started: `BACKLOG.md`
-session:      local_c33e3e19-adcf-41c2-9400-2c2ea35e1a9e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
+session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
 updated:      2026-11-06, resume: protocols read at 39b2d8b, ticket 66a2 red (see remaining)
-protocols_read_sha: b706c05a369b68c0f120ccd46809ac5f6dc2d0a5
+protocols_read_sha: 9662b905041ceede35e7ec24ffe47c171d32b8fb
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
