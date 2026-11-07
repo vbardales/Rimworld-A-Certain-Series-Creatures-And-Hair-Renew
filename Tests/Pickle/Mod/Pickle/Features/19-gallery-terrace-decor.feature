@@ -48,6 +48,7 @@ Feature: Gallery picture 2 in the modded terrace
     And Nelim's Pickle Tools: the animal "Paon" stands at (197, 120) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (195, 119) to (200, 123)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
     And Nelim's Pickle Tools: the thermal state and thoughts of "Toma" are logged
     And I take a screenshot "gallery 2 accelerator decor"
