@@ -170,7 +170,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Sena" stands at (197, 152) facing South
     And Nelim's Pickle Tools: "Nelim" stands at (195, 152) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Chocolate"
-    And Nelim's Pickle Tools: the animal "Yuki" is dressed in "Apparel_leatherdogcollar" dyed "#C21E78"
+    And Nelim's Pickle Tools: the animal "Yuki" is dressed in "Apparel_leatherdogcollar" dyed "#D1008F"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 153)
     And Nelim's Sanctuary: Nelim has her own face
