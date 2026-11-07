@@ -22,6 +22,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
+  - GALLERY.md rule 2026-11-07 (read): at shootGallery the order is sync-nsb, write-shotlist (rate-gallery on the plan to 5 per scene, then scenarios, then `scripts/Check-ShotlistVsScenario.ps1 -Mod`), review-gallery twice; criterion g now needs the story readable IN the image. Before any replay: run rate-gallery on the plan and Check-ShotlistVsScenario. Runner stays auto.
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
@@ -45,7 +46,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25); ticket 90b9 still lists local_e82f0b57 as Owner, TM routes START/END/RUN_DONE here
 updated:      2026-11-06, resume: protocols read at 39b2d8b, ticket 66a2 red (see remaining)
-protocols_read_sha: f7592aa80bf9af62b5743df4685935b6ff26d48c
+protocols_read_sha: 31e4f12c1a85531a1f695c4c918749915d73ff25
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
