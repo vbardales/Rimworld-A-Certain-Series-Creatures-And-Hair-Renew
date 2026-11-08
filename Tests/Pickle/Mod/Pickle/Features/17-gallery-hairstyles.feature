@@ -26,7 +26,7 @@
 #      plate hid Nelim's mouth; a small item hides nothing): Rina (186, 124) facing South, smiling (face kit + MouthClassicSmile), Nelim (188, 124)
 #      facing South carrying Pemmican (small; plan B Chocolate if its sprite is as big as the plate), Tama (187, 123) facing East, all without a job,
 #      game paused; Nelim dressed after the waits, her own face last | OPENING IMAGE, medium-close: camera 2 cells' height on (187, 124), rug and
-#      the edge of the sofas in frame | TorchLamp lit (184, 124), Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's
+#      the edge of the sofas in frame | TorchLamp lit (183, 124) (NPT: (184, 124) is now a lavender pot), Plant_Daylily (189, 124), the fixture's sofas and rug | THUMBNAIL: Rina's
 #      white hair against the rug, both faces readable. RISK: the sofas fall out of frame at 2 cells. PLAN: 2.5 cells, or 3 as in redo-11.
 #   2. terrace, 14:00, Clear, 60 + 120 ticks | Accelerator on Toma: a loner who refuses | INSTANT: Nelim has just offered the Beer
 #      and Toma turns his back, angry. METHOD: Toma drafted (angry face) at (198, 121) facing East, Nelim (196, 122) facing East
@@ -50,11 +50,12 @@
 Feature: Gallery pictures of the hairstyles
 
   Scenario: 1 - Nelim welcomes Rina (Misaka, the sofa corner, 12:00)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 12
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -68,8 +69,8 @@ Feature: Gallery pictures of the hairstyles
     And A Certain Series: the hairstyle of "Rina" is drawn in its own colours
     And A Certain Series: "Rina" wears the apparel "Apparel_CollarShirt"
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (184, 124)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (184, 124) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (183, 124)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (183, 124) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (189, 124) fully grown
     And Nelim's Sanctuary: I am at the sanctuary "sofa-corner"
     And I wait 60 ticks
@@ -86,8 +87,10 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: the animal "Tama" stands at (187, 123) facing East
     And A Certain Series: I bring the camera to 2 cells' height on the cell (187, 124)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
+    And Nelim's Pickle Tools: the things within 8 cells of (187, 124) are listed
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
@@ -133,11 +136,12 @@ Feature: Gallery pictures of the hairstyles
     Then no errors were logged
 
   Scenario: 3 - Sena finds a quiet corner (Index, the podium, 16:00)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 16
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And a colonist "Sena" exists
     And A Certain Series: "Sena" is a woman
     And Nelim's Pickle Tools: "Sena" body type is Thin
@@ -174,6 +178,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 153)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
     And I take a screenshot "gallery 3 index"
     And Nelim's Pickle Tools: the decor is removed

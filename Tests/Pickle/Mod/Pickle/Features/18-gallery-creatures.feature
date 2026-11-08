@@ -1,6 +1,6 @@
 # Pictures for the Workshop gallery, not a test: the creatures, the machine and the evening, images 4 to 7 of the series
 # "A day at Nelim's Sanctuary" (the story, the outfits and the rules are in the header of feature 17; images 1 to 3 are the
-# hairstyle portraits), on the podium of Nelim's Sanctuary (the owner's save "Nelim's tribe", loaded as "Nelims-tribe",
+# hairstyle portraits), on the podium of Nelim's Sanctuary (the modded save "Nelims-tribe-decor-mods-o" (NPT batch 5a: emerald-clearing without the vanometric pile, sofa-corner fixed; owner validations 2026-11-07),
 # PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the interface. What a scenario asserts is
 # only that the thing exists; the pictures are read by eye (@review).
 #
@@ -19,9 +19,9 @@
 #      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (199, 154) and (195, 154) | THUMBNAIL: the beetle's horn silhouette on the wood.
 #      RISK: the beetle crowds Nelim. PLAN: three cells between them.
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
-#      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 152); everybody 5 cells or more from it (its
-#      wings draw over anything within about 4.5) and turned toward it: Rina (191, 155) East, Toma (197, 157) South, Sena (203, 155) West,
-#      Nelim (194, 147) East carrying ACS_HeavenCloth, Peacock (200, 147) facing South | WIDE: camera 11 cells' height on (196, 152) (redo-13: was 13 on (197, 152), the map edge and wandering animals showed at the top right) | WoodPlankFloor,
+#      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 150); everybody 5 cells or more from it (its
+#      wings draw over anything within about 4.5) and turned toward it: Rina (191, 153) East, Toma (197, 155) South, Sena (203, 153) West,
+#      Nelim (192, 147) East carrying ACS_HeavenCloth, Peacock (201, 147) facing South | WIDE: camera 10 cells' height on (196, 151) (guests inside z 146-156, map edge out of frame; was 13 then 11 on (196, 152)) | WoodPlankFloor,
 #      Brazier lit x2 (192, 152) and (202, 152), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
@@ -45,11 +45,12 @@
 Feature: Gallery pictures of the creatures, the propagator and the evening
 
   Scenario: 4 - Nelim leads in the white rhinoceros beetle (the podium, 17:00)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 17
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -73,6 +74,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing South
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (196, 152)
     And Nelim's Pickle Tools: the animal "Poule" stands at (196, 152) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
@@ -82,11 +84,12 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Then no errors were logged
 
   Scenario: 5 - the seraph at six in the evening (the podium, 18:00)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -129,17 +132,18 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "UnderWhere_Panties" dyed rgb (31, 58, 95)
     And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
-    And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 152)
-    And Nelim's Pickle Tools: "Nelim" stands at (194, 147) facing East
+    And A Certain Series: a "ACS_Gabriel" pawn stands at (197, 150)
+    And Nelim's Pickle Tools: "Nelim" stands at (192, 147) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "ACS_HeavenCloth"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Rina" stands at (191, 155) facing East
-    And Nelim's Pickle Tools: "Toma" stands at (197, 157) facing South
-    And Nelim's Pickle Tools: "Sena" stands at (203, 155) facing West
-    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (200, 147)
-    And Nelim's Pickle Tools: the animal "Paon" stands at (200, 147) facing South
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
+    And Nelim's Pickle Tools: "Rina" stands at (191, 153) facing East
+    And Nelim's Pickle Tools: "Toma" stands at (197, 155) facing South
+    And Nelim's Pickle Tools: "Sena" stands at (203, 153) facing West
+    And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (201, 147)
+    And Nelim's Pickle Tools: the animal "Paon" stands at (201, 147) facing South
     Then 1 "ACS_Gabriel" exist
-    When A Certain Series: I bring the camera to 11 cells' height on the cell (196, 152)
+    When A Certain Series: I bring the camera to 10 cells' height on the cell (196, 151)
     And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
     And Nelim's Pickle Tools: "Toma" mouth is "MouthLittleGrin"
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
@@ -148,11 +152,13 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Then no errors were logged
 
   Scenario: 6 - Nelim at the propagator, one running and one waiting for power (the podium, 18:30)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: the light of the map is lifted to at least 0.65
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
@@ -196,16 +202,19 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the animal "Kuru" stands at (200, 152) facing East
     When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And I take a screenshot "gallery 6 propagator"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
   Scenario: 7 - everybody stayed (the podium, 20:00)
-    Given the save "Nelims-tribe" is loaded
+    Given the save "Nelims-tribe-decor-mods-o" is loaded
     And game speed is paused
     And I set the hour to 20
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: the light of the map is lifted to at least 0.5
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
     And a colonist "Rina" exists
     And A Certain Series: "Rina" is a woman
     And Nelim's Pickle Tools: "Rina" body type is Thin
@@ -260,6 +269,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Toma" carries the item "Beer"
     And Nelim's Pickle Tools: "Sena" carries the item "Chocolate"
     And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: "Sena" stands at (200, 154) facing South
     And Nelim's Pickle Tools: "Toma" stands at (197, 155) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
