@@ -26,8 +26,8 @@
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
 #      toward the idle machine while Kuru watches the glow. METHOD: Nelim (198, 153) facing West carrying ACS_DarkMatter, Kuru (200, 152)
-#      facing East toward the running machine | MEDIUM: rectangle (195, 149) to (206, 156) | WoodPlankFloor, ACS_DarkMatterProduction
-#      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x2 | THUMBNAIL: green glow against the
+#      facing East toward the running machine | MEDIUM: rectangle (195, 149) to (206, 156) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored: redo-14b showed bare dirt around the planks), ACS_DarkMatterProduction
+#      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x4 (196, 149), (199, 149), (202, 149), (205, 150) | THUMBNAIL: green glow against the
 #      lightning icon. RISK: too dark. PLAN: five torches; a second row or 17:30 if still dark.
 #   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim steps in from the south with the last log and the
 #      three guests on the north arc look up at her, each holding what she gave them (Pemmican, Beer, chocolate); Toma's little grin is
@@ -167,9 +167,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (195, 150) to (199, 154)
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 148) to (207, 157)
     When Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (199, 150) to (204, 154)
     And Nelim's Pickle Tools: the building status icons are kept
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (204, 152)
@@ -186,6 +185,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the decor "TorchLamp" at (203, 150) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (196, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (202, 149) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 149) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (205, 150) fully grown
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 152)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (206, 154)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 154)
