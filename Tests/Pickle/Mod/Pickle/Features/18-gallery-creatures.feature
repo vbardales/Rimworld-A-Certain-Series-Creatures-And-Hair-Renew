@@ -194,6 +194,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (205, 156)
     And Nelim's Pickle Tools: the power network is refreshed
     And Nelim's Pickle Tools: I let 1250 ticks pass
+    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (204, 152) is powered
+    And I wait 120 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "UnderWhere_Bra" dyed rgb (31, 58, 95)
