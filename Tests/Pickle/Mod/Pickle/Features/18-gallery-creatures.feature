@@ -123,7 +123,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Brazier" at (202, 152)
     And Nelim's Pickle Tools: the decor "Brazier" at (192, 152) is lit
     And Nelim's Pickle Tools: the decor "Brazier" at (202, 152) is lit
-And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 156)    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 156)    And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 156) is lit    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 156) is lit    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (191, 149) fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 156)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (200, 156)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 156) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (200, 156) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (191, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (193, 149) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (201, 149) fully grown
     And I wait 60 ticks
