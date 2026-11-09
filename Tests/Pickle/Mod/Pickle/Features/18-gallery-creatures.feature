@@ -13,10 +13,10 @@
 #
 # Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent), continuing feature 17: the
 # same outfits, every picture a game paused mid-play. Pictures 4 to 7 are all on the podium (emerald-clearing).
-#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay (redo-13: she faces South so the hay does not hide her face), the beetle
+#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay (redo-18: she faces East toward the beetle, South put the hay across her face), the beetle
 #      stands unmoved before it and the chicken at her feet looks up at it (redo-13: pecking cannot be obtained). METHOD: beetle (198, 153) (the step gives no facing), Nelim
-#      (195, 153) facing South carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) (every decor object inside the frame; at 3 cells the daylilies fell out and the decor read as sparse) | WoodPlankFloor (194, 149) to (200, 155),
-#      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (200, 151) and (194, 152) | THUMBNAIL: the beetle's horn silhouette on the wood.
+#      (195, 153) facing East carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) (every decor object inside the frame; at 3 cells the daylilies fell out and the decor read as sparse) | WoodPlankFloor (190, 148) to (204, 156) (redo-18: bare dirt showed around the old 194-200 floor),
+#      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (200, 151), (194, 152), (191, 154) and (203, 150) | THUMBNAIL: the beetle's horn silhouette on the wood.
 #      RISK: the beetle crowds Nelim. PLAN: three cells between them.
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
 #      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 150); everybody 5 cells or more from it (its
@@ -53,8 +53,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
-    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
-    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 149) to (200, 155)
+    And Nelim's Pickle Tools: the area from (189, 147) to (204, 157) is cleared
+    And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (190, 148) to (204, 156)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 150)
     And Nelim's Pickle Tools: I place the decor "Stool" at (199, 151)
@@ -63,6 +63,8 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (199, 150)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (199, 150) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (191, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (203, 150) fully grown
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
@@ -71,7 +73,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
-    And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
