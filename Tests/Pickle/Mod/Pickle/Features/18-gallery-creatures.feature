@@ -76,7 +76,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
     And Nelim's Pickle Tools: 1 of the item "Hay" are spawned at (199, 151)
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+blink" is held
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (196, 152)
     And Nelim's Pickle Tools: the animal "Poule" stands at (196, 152) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
@@ -279,7 +279,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Toma" carries the item "Beer"
     And Nelim's Pickle Tools: "Sena" carries the item "Chocolate"
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+blink" is held
     And Nelim's Pickle Tools: "Sena" stands at (200, 154) facing South
     And Nelim's Pickle Tools: "Toma" stands at (197, 155) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (197, 149)
