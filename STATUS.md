@@ -57,7 +57,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_e82f0b57-e076-4f87-9764-2dc4383a6855  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
 updated:      2026-11-09, resume 2 (1e81 read: 3 candidate, 4 and 6 REDO): protocols read at 493400ba, session id renewed; 4e5d read (shot 6 still no glow: both propagators pink-white, only left shows the lightning icon, right plain; Kuru, torches, daylilies readable; power cells cut at top right) = REDO, NPT not yet told
-protocols_read_sha: 87ba23529d46e79e0cab82fbb7e48efc09b1caf7
+protocols_read_sha: 239c919636c8198d41382e67de2b112138b844e7
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
