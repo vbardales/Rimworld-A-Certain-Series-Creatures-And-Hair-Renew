@@ -1,6 +1,6 @@
 # Pictures for the Workshop gallery, not a test: the creatures, the machine and the evening, images 4 to 7 of the series
 # "A day at Nelim's Sanctuary" (the story, the outfits and the rules are in the header of feature 17; images 1 to 3 are the
-# hairstyle portraits), on the podium of Nelim's Sanctuary (the modded save "Nelims-tribe-decor-mods-o" (NPT batch 5a: emerald-clearing without the vanometric pile, sofa-corner fixed; owner validations 2026-11-07),
+# hairstyle portraits), on the podium of Nelim's Sanctuary (the modded save "Nelims-tribe-decor-mods-z3" (NPT batch 5a: emerald-clearing without the vanometric pile, sofa-corner fixed; owner validations 2026-11-07),
 # PickleTools docs/GALERIE.md, SANCTUAIRE-LIEUX.md and SANCTUAIRE-CASES.md), without the interface. What a scenario asserts is
 # only that the thing exists; the pictures are read by eye (@review).
 #
@@ -26,9 +26,9 @@
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, one running and one waiting for power | INSTANT: Nelim brings dark matter
 #      toward the idle machine while Kuru watches the glow. METHOD: Nelim (198, 153) facing West carrying ACS_DarkMatter, Kuru (200, 152)
-#      facing East toward the running machine | MEDIUM: rectangle (195, 149) to (206, 156) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored: redo-14b showed bare dirt around the planks), ACS_DarkMatterProduction
-#      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x4 (196, 149), (199, 149), (202, 149), (205, 150) | THUMBNAIL: green glow against the
-#      lightning icon. RISK: too dark. PLAN: five torches; a second row or 17:30 if still dark.
+#      facing East toward the running machine | MEDIUM: rectangle (195, 150) to (206, 157) (redo-19: the power cells were cut at the top right) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored: redo-14b showed bare dirt around the planks), ACS_DarkMatterProduction
+#      (196, 152) and (204, 152), VanometricPowerCell x5, TorchLamp lit x5, Plant_Daylily x4 (196, 149), (199, 149), (202, 149), (205, 150) | THUMBNAIL: the lightning icon on the idle machine (PiT 2026-11-09: the machine has no glow comp, no green glow exists; redo-19 reads running vs waiting by the icon alone)
+#      RISK: too dark. PLAN: five torches; a second row or 17:30 if still dark.
 #   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim steps in from the south with the last log and the
 #      three guests on the north arc look up at her, each holding what she gave them (Pemmican, Beer, chocolate); Toma's little grin is
 #      written: he was angry in picture 2 only because he was drafted, by evening he stays. METHOD (replan 2026-11-03: in redo-10 the plate hid Rina's
@@ -45,7 +45,7 @@
 Feature: Gallery pictures of the creatures, the propagator and the evening
 
   Scenario: 4 - Nelim leads in the white rhinoceros beetle (the podium, 17:00)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 17
     And I set the weather to "Clear"
@@ -86,7 +86,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Then no errors were logged
 
   Scenario: 5 - the seraph at six in the evening (the podium, 18:00)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
@@ -159,7 +159,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Then no errors were logged
 
   Scenario: 6 - Nelim at the propagator, one running and one waiting for power (the podium, 18:30)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
@@ -210,7 +210,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: an adult animal of kind "akaNEKO_kuroneko" named "Kuru" is spawned at (200, 152)
     And Nelim's Pickle Tools: the animal "Kuru" has the hediff "AnimalTrait_ChestPatch"
     And Nelim's Pickle Tools: the animal "Kuru" stands at (200, 152) facing East
-    When Nelim's Pickle Tools: I frame the rectangle from (195, 149) to (206, 156)
+    When Nelim's Pickle Tools: I frame the rectangle from (195, 150) to (206, 157)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And I take a screenshot "gallery 6 propagator"
@@ -218,7 +218,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     Then no errors were logged
 
   Scenario: 7 - everybody stayed (the podium, 20:00)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 20
     And I set the weather to "Clear"

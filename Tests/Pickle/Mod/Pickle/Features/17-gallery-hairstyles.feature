@@ -50,7 +50,7 @@
 Feature: Gallery pictures of the hairstyles
 
   Scenario: 1 - Nelim welcomes Rina (Misaka, the sofa corner, 12:00)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 12
     And I set the weather to "Clear"
@@ -136,7 +136,7 @@ Feature: Gallery pictures of the hairstyles
     Then no errors were logged
 
   Scenario: 3 - Sena finds a quiet corner (Index, the podium, 16:00)
-    Given the save "Nelims-tribe-decor-mods-o" is loaded
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 16
     And I set the weather to "Clear"
