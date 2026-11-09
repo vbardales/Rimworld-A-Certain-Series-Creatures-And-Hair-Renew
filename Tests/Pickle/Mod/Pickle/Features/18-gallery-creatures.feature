@@ -13,9 +13,9 @@
 #
 # Shooting plan v2 (shotlist validated by the owner 2026-10-23; director's pass by an Opus sub-agent), continuing feature 17: the
 # same outfits, every picture a game paused mid-play. Pictures 4 to 7 are all on the podium (emerald-clearing).
-#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim holds out the hay (redo-18: she faces East toward the beetle, South put the hay across her face), the beetle
+#   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim has set the hay down on the stool before the beetle (redo-20: carried, the hay crossed her face facing South and East alike; gallery 2 solved the Beer the same way), the beetle
 #      stands unmoved before it and the chicken at her feet looks up at it (redo-13: pecking cannot be obtained). METHOD: beetle (198, 153) (the step gives no facing), Nelim
-#      (195, 153) facing East carrying Hay, Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) (every decor object inside the frame; at 3 cells the daylilies fell out and the decor read as sparse) | WoodPlankFloor (190, 148) to (204, 156) (redo-18: bare dirt showed around the old 194-200 floor),
+#      (195, 153) facing East carrying nothing, Hay on the Stool (199, 151), Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) (every decor object inside the frame; at 3 cells the daylilies fell out and the decor read as sparse) | WoodPlankFloor (190, 148) to (204, 156) (redo-18: bare dirt showed around the old 194-200 floor),
 #      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (200, 151), (194, 152), (191, 154) and (203, 150) | THUMBNAIL: the beetle's horn silhouette on the wood.
 #      RISK: the beetle crowds Nelim. PLAN: three cells between them.
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
@@ -74,7 +74,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
     And A Certain Series: a "ACS_DarkMatterBeetle" pawn stands at (198, 153)
     And Nelim's Pickle Tools: "Nelim" stands at (195, 153) facing East
-    And Nelim's Pickle Tools: "Nelim" carries the item "Hay"
+    And Nelim's Pickle Tools: 1 of the item "Hay" are spawned at (199, 151)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: an adult animal of kind "Chicken" named "Poule" is spawned at (196, 152)
