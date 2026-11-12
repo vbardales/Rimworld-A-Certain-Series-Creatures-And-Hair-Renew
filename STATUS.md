@@ -1,14 +1,14 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: localize[1.1.1]
+workflow_stage: writeTests[1.1.1]
 code_review_sha: f4cba2a3480c7b8be1b0a1387553fc6632899ccd
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
 social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
@@ -22,6 +22,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
+  - 6.g DONE 2026-11-12: Virginie validated ALL texts of TRANSLATION_REVIEW.md (every language, PUBLICATION.md, CHANGELOG.md, README.md) after the ChatGPT review rerun (no correction), revision 5eb306e, no correction of hers. Stage moved to writeTests[1.1.1] (6.i). NEXT: replay sections 7 and 8 of AUDIT.md (not read in the 2026-11-12 replay, ledger stops at 6) to find the true stage; shootGallery work (gallery 1 to 7 candidates, review of 3, 4, 7 awaited) is kept.
   - REVIEW-TRANSLATION rerun 2026-11-12 (source rule Docs/translation-review-sources.json, commit e666335): ChatGPT answer = no correction, 0 applied, 0 rejected, nothing to change in any language, PUBLICATION.md, CHANGELOG.md. NEXT: Virginie validates ALL the texts of TRANSLATION_REVIEW.md (6.g), then translation_fr complete, leave localize.
   - REVIEW-TRANSLATION 2026-11-12 DONE (1 of 1 page sent, text frozen at 5eb306e, no edit): French no defect; 14 Chinese suggestions and 2 technical remarks refused, listed in `Docs/review-refusals.md`. NEXT: Virginie French validation (6.g), then translation_fr complete and leave localize to writeTests. Generator header defect (Original column repeats English) told to Audit.
   - REPLAY 2026-11-12 (replay-audit, ledger .replays/ACertainSeriesCreaturesAndHairRenew-20261112.tsv, 47 rows, 36 done, 2 open): stage moved back from shootGallery[1.1.1] to localize[1.1.1] on sub-step 6.g (AUDIT 2026-11-11: /review-translation mandatory and any review run 2026-10-17 to 2026-11-11 had a wrong page header; ours was 2026-11-08, validation by Virginie 2026-10-11 predates it, no Docs/review-refusals.md). translation_fr set partial until re-validated. TO DO: apply ChatGPT fixes, regenerate TRANSLATION_REVIEW.md ONCE (Make-TranslationReview.ps1), commit, run review.ps1 pages 1..N on that frozen text (from mod root, background), refusals in Docs/review-refusals.md, then Virginie French validation (6.g), then back to writeTests, playTests, shootGallery. Gallery work done meanwhile is kept: 1 to 7 candidates, owner accepted 1, 2, 5, 6, review of 3, 4, 7 awaited.
@@ -61,8 +62,8 @@ remaining:
   - gallery 1 to 7 promoted 2026-11-03 (clean originals in `Art/Gallery-clean`, subtitled in `Art/Gallery`, 2.7 MB; sources: 1 `c576` (Nelim South, plate still over her mouth, her eyes and bun show, Rina smiles, Misaka fringe reads: accepted as is), 2 and 4 `8ac0/3aa4` (redo-8), 3, 5, 6, 7 `90b9` (redo-10)); the gallery runs are deleted (captures live in Art). Weak points kept: j on 1, 3, 7; Nelim mouth hidden by the plate on 1 (owner may ask NPT for another carried-item placement). Next: owner accepts the seven images, mountPreview/prepareRelease, `social_preview_sha256` stale (Preview rebuilt 2026-11-03: renderer defaults, article A smaller, cover top left), republish GitHub social preview
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
-updated:      2026-11-12, replay-audit: back to localize[1.1.1] (6.g), gallery 4 and 7 promoted
-protocols_read_sha: c8ff7749c7eef1779527a4f4fdf83ff37446fa9f
+updated:      2026-11-12, 6.g validated by Virginie (all texts), stage writeTests[1.1.1]
+protocols_read_sha: 7640e2ab38b86705789fcc01578eafd826f2dc0e
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
@@ -168,7 +169,7 @@ Ticket `20261103-160951-761-bf65` (redo-12, shots 1 and 7 only, tree frozen at f
 
 ## Translation audit
 
-French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine read by hand (`TRANSLATIONS.md` section 3): none contains `{PAWN_gender ? ...}` switch, none needs one, every text names creature, body part, object or hairstyle's namesake, never colonist. `FRENCH_REVIEW.md` (`scripts/Make-FrenchReview.ps1`, stamps revision) validated by owner 2026-09-30. 2026-10-11: `ACS_AngelCore.description` changed in English and French for 1.0.4 (`19f331e`); owner (Virginie) reread both texts, validated 2026-10-11 at revision `df9fba5c68833549464a7eadc2d85cdb1eb24ae4`, no correction; `translation_en` and `translation_fr` `complete` again. HairDef names follow fr.wikipedia: titles and Level 5 names stay in original form. Any later French edit resets field to `unchecked`. French text shipped since `1.0.1` is the validated one.
+French lives entirely in `Mod/Languages/French/DefInjected/` (no Keyed folder: nine files, one per def type). All nine read by hand (`TRANSLATIONS.md` section 3): none contains `{PAWN_gender ? ...}` switch, none needs one, every text names creature, body part, object or hairstyle's namesake, never colonist. `FRENCH_REVIEW.md` (`scripts/Make-FrenchReview.ps1`, stamps revision) validated by owner 2026-09-30. 2026-10-11: `ACS_AngelCore.description` changed in English and French for 1.0.4 (`19f331e`); owner (Virginie) reread both texts, validated 2026-10-11 at revision `df9fba5c68833549464a7eadc2d85cdb1eb24ae4`, no correction; `translation_en` and `translation_fr` `complete` again. HairDef names follow fr.wikipedia: titles and Level 5 names stay in original form. Any later French edit resets field to `unchecked`. French text shipped since `1.0.1` is the validated one. **2026-11-12: Virginie validated all the texts (every language, PUBLICATION.md, CHANGELOG.md, README.md) of `TRANSLATION_REVIEW.md` at revision `5eb306e`, after the ChatGPT review rerun (no correction); `translation_fr` `complete`.**
 
 ## Vocabulary
 
