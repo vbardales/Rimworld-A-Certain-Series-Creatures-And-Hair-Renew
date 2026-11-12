@@ -1,14 +1,15 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: partial
 settings_audit: not_applicable
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: shootGallery[1.1.1]
+workflow_stage: localize[1.1.1]
+french_review_pending: true
 code_review_sha: f4cba2a3480c7b8be1b0a1387553fc6632899ccd
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
 social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
@@ -22,6 +23,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
+  - REPLAY 2026-11-12 (replay-audit, ledger .replays/ACertainSeriesCreaturesAndHairRenew-20261112.tsv, 47 rows, 36 done, 2 open): stage moved back from shootGallery[1.1.1] to localize[1.1.1] on sub-step 6.g (AUDIT 2026-11-11: /review-translation mandatory and any review run 2026-10-17 to 2026-11-11 had a wrong page header; ours was 2026-11-08, validation by Virginie 2026-10-11 predates it, no Docs/review-refusals.md). translation_fr set partial until re-validated. TO DO: apply ChatGPT fixes, regenerate TRANSLATION_REVIEW.md ONCE (Make-TranslationReview.ps1), commit, run review.ps1 pages 1..N on that frozen text (from mod root, background), refusals in Docs/review-refusals.md, then Virginie French validation (6.g), then back to writeTests, playTests, shootGallery. Gallery work done meanwhile is kept: 1 to 7 candidates, owner accepted 1, 2, 5, 6, review of 3, 4, 7 awaited.
   - TICKET de73 GREEN (2 passed, relay from TM 2026-11-10) read 2026-11-12: 4 (Nelim profile East, lidded eye and small smile as in 2, Hay on the stool, Chicken, 2 torches, 4 daylilies) and 7 (Nelim lidded eye, log in her arms, guests Rina, Toma, Sena on the north arc, campfire, beetle, Chicken) PROMOTED candidates, clean `Art/Gallery-clean/4-beetle.jpg`, `7-evening.jpg`, subtitled `Art/Gallery/` (PUBLICATION.md lines). Gallery 1 to 7 complete again. NEXT: owner review of 3, 4, 7 (1, 2, 5, 6 accepted), then mountPreview/prepareRelease. Protocols read 2026-11-12 (Preview illustration step 2.d to 2.f removed: Preview made once at mountPreview). WARN: NSB and NPT changed 2026-11-12, run sync-nsb-npt before any replay.
   - 2026-11-09 TICKET 7253 GREEN (1 passed): gallery 3 PROMOTED (795cf46): Nelim lidded eye and small smile as in 2, Sena, Yuki fuchsia collar, Chocolate on the stool; clean + subtitled `3-hairstyle-index` ("Sena finds a quiet corner. Yuki keeps her company."). Inbox redo-21 deleted, Prune-Evidence dry run: nothing prunable. TICKET de73 filed (shots 4 and 7, `normal+blink` last in both scenarios, decor map, evidence `Tests/Pickle/Inbox/2026-11-09-gallery-redo-22`, tree frozen at 795cf46): on RUN_DONE read summary.json then both captures against shot 2 (lidded eye, smile); good: clean + subtitled, then owner review of 3, 4, 7. Keep Mod/ and Tests/ frozen until RUN_DONE.
   - TICKET bc51 GREEN 2026-11-09 (1 passed, 34 s) and gallery 4 PROMOTED: read capture: Nelim profile facing East (mouth side visible), carries nothing, Hay on the stool, beetle unmoved, chicken at her feet, 2 torches, 4 daylilies, floor fills the frame. Clean `Art/Gallery-clean/4-beetle.jpg`, subtitled `Art/Gallery/4-beetle.jpg` ("Nelim leads in the beetle. It never eats, and it feels neither cold nor heat."). Inbox runs redo-18 and redo-20 deleted. Gallery now complete: 1 to 7 all candidates. NEXT: owner review of all seven (rule 2026-11-08), then mountPreview/prepareRelease. Preview render checked 2026-11-09 (TM order): config reproduces committed Preview.png byte for byte, no change.
@@ -58,8 +60,8 @@ remaining:
   - gallery 1 to 7 promoted 2026-11-03 (clean originals in `Art/Gallery-clean`, subtitled in `Art/Gallery`, 2.7 MB; sources: 1 `c576` (Nelim South, plate still over her mouth, her eyes and bun show, Rina smiles, Misaka fringe reads: accepted as is), 2 and 4 `8ac0/3aa4` (redo-8), 3, 5, 6, 7 `90b9` (redo-10)); the gallery runs are deleted (captures live in Art). Weak points kept: j on 1, 3, 7; Nelim mouth hidden by the plate on 1 (owner may ask NPT for another carried-item placement). Next: owner accepts the seven images, mountPreview/prepareRelease, `social_preview_sha256` stale (Preview rebuilt 2026-11-03: renderer defaults, article A smaller, cover top left), republish GitHub social preview
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
-updated:      2026-11-12, resume: de73 read, gallery 4 and 7 promoted, protocols read at 696b9a5e
-protocols_read_sha: 696b9a5ec490650102fc9a15197571f3a537a624
+updated:      2026-11-12, replay-audit: back to localize[1.1.1] (6.g), gallery 4 and 7 promoted
+protocols_read_sha: c8ff7749c7eef1779527a4f4fdf83ff37446fa9f
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
