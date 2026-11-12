@@ -67,7 +67,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
 updated:      2026-11-12, review validated by Virginie; fixes eec447b (gallery 5, 6, probes, Docs paths)
-protocols_read_sha: 7640e2ab38b86705789fcc01578eafd826f2dc0e
+protocols_read_sha: d0db418f2c01d1aaf2226c5a4cf766752bf1416b
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
