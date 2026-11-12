@@ -74,22 +74,22 @@
   <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>右手</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.right_hand.customLabel>
   <!-- EN: sword -->
   <ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>剑</ACS_Seraphim.corePart.parts.right_shoulder.parts.right_arm.parts.sword.customLabel>
-  <!-- The eight wings all read 天使之翼 in the original; only their order tells them apart. -->
+  <!-- The eight wings all read 天使之翼 in the original; numbered 第一只 to 第八只 since 2026-11-12 (review). -->
   <!-- EN: first wing -->
-  <ACS_Seraphim.corePart.parts.first_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.first_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.first_wing.customLabel>第一只天使之翼</ACS_Seraphim.corePart.parts.first_wing.customLabel>
   <!-- EN: second wing -->
-  <ACS_Seraphim.corePart.parts.second_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.second_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.second_wing.customLabel>第二只天使之翼</ACS_Seraphim.corePart.parts.second_wing.customLabel>
   <!-- EN: third wing -->
-  <ACS_Seraphim.corePart.parts.third_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.third_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.third_wing.customLabel>第三只天使之翼</ACS_Seraphim.corePart.parts.third_wing.customLabel>
   <!-- EN: fourth wing -->
-  <ACS_Seraphim.corePart.parts.fourth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.fourth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.fourth_wing.customLabel>第四只天使之翼</ACS_Seraphim.corePart.parts.fourth_wing.customLabel>
   <!-- EN: fifth wing -->
-  <ACS_Seraphim.corePart.parts.fifth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.fifth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.fifth_wing.customLabel>第五只天使之翼</ACS_Seraphim.corePart.parts.fifth_wing.customLabel>
   <!-- EN: sixth wing -->
-  <ACS_Seraphim.corePart.parts.sixth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.sixth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.sixth_wing.customLabel>第六只天使之翼</ACS_Seraphim.corePart.parts.sixth_wing.customLabel>
   <!-- EN: seventh wing -->
-  <ACS_Seraphim.corePart.parts.seventh_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.seventh_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.seventh_wing.customLabel>第七只天使之翼</ACS_Seraphim.corePart.parts.seventh_wing.customLabel>
   <!-- EN: eighth wing -->
-  <ACS_Seraphim.corePart.parts.eighth_wing.customLabel>天使之翼</ACS_Seraphim.corePart.parts.eighth_wing.customLabel>
+  <ACS_Seraphim.corePart.parts.eighth_wing.customLabel>第八只天使之翼</ACS_Seraphim.corePart.parts.eighth_wing.customLabel>
 
 </LanguageData>
