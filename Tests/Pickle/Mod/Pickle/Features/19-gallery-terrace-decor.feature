@@ -41,16 +41,12 @@ Feature: Gallery picture 2 in the modded terrace
     And Nelim's Pickle Tools: "Toma" stands at (198, 121) facing East
     And Nelim's Pickle Tools: "Nelim" stands at (196, 122) facing East
     And Nelim's Pickle Tools: 1 of the item "Beer" are spawned at (197, 122)
-    And Nelim's Pickle Tools: the free standable cells of the area from (193, 118) to (200, 124) are listed
-    And Nelim's Pickle Tools: the things within 8 cells of (196, 121) are listed
     And Nelim's Pickle Tools: the things "Campfire" within 1 cells of (194, 121) are hidden
     And Nelim's Pickle Tools: an adult animal of kind "Peacock" named "Paon" is spawned at (197, 120)
     And Nelim's Pickle Tools: the animal "Paon" stands at (197, 120) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (195, 119) to (200, 123)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
-    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    And Nelim's Pickle Tools: the thermal state and thoughts of "Toma" are logged
     And I take a screenshot "gallery 2 accelerator decor"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged

@@ -3,7 +3,7 @@
 Newest last. The evidence itself is never kept as folders: only the latest report that still proves something stays
 on disk (`Tests/Pickle/Evidence/`, ignored by git). A run that needs more than a line gets a file next to this one.
 **Trimmed 2026-09-29 and again 2026-10-10 (`followUp`), now the mod is published:** development-era runs (2026-09-24 to 2026-09-27, the first run
-through the fix tickets) no longer prove anything about the current `Mod/`; `git log -- docs/runs/history.md` has
+through the fix tickets) no longer prove anything about the current `Mod/`; `git log -- Docs/runs/history.md` has
 - **`Art/Workshop/` built from `cdfc` and `a6f3`**, full 1920x1080 captures re-encoded to JPEG (ffmpeg `-q:v 3`):
   2 MB total for six images, no neighbour bleed, no indoor background, no vignette.
 - 2026-09-28, **post-publication regression on the published tree** (`f678f05`, after the packageId change):

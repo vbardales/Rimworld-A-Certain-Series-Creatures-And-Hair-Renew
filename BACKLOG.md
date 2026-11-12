@@ -1,6 +1,6 @@
 # Backlog
 
-Ideas, reserves not done, with what known about each. Nothing here commitment. Every item touching `Mod/` changes revision under test: needs own offline check and, before stage moves, new complete passes (`Tests/Pickle/README.md`, "Which ticket, in which order"). Done items in `docs/runs/history.md` and `git log`.
+Ideas, reserves not done, with what known about each. Nothing here commitment. Every item touching `Mod/` changes revision under test: needs own offline check and, before stage moves, new complete passes (`Tests/Pickle/README.md`, "Which ticket, in which order"). Done items in `Docs/runs/history.md` and `git log`.
 
 ## 1. Crossbreeding: decided, nothing
 

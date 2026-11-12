@@ -90,7 +90,6 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
     And Nelim's Pickle Tools: "Rina" stands at (186, 124) facing South
     And Nelim's Pickle Tools: "Rina" mouth is "MouthClassicSmile"
-    And Nelim's Pickle Tools: the things within 8 cells of (187, 124) are listed
     And I take a screenshot "gallery 1 misaka"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged

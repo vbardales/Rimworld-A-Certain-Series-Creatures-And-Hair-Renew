@@ -30,7 +30,7 @@ version migrations. In-game scenarios below still necessary.
 
 Pickle scenarios written and played (`Tests/Pickle/`: 21 features, 43 local steps; its README say what is in
 Gherkin, what deliberately not, and why; `scripts/Check-Steps.ps1` of protocols repository resolve every step line to exactly one step).
-Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 added and played in `1.0.4`, and non-regression of changed texts (features 02 and 03) ran green on published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) in `git log`.
+Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `Docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 added and played in `1.0.4`, and non-regression of changed texts (features 02 and 03) ran green on published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) in `git log`.
 
 | Check | Where this mod stands |
 |---|---|
@@ -70,7 +70,7 @@ Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `docs/runs/history
 
 ## Passes this mod needed
 
-**Current state of six passes** (`STATUS.md`, `docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, About description and Preview: no scenario read them, so no pass replayed.
+**Current state of six passes** (`STATUS.md`, `Docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, About description and Preview: no scenario read them, so no pass replayed.
 
 Mod whose TESTING.md not say how many passes needed is tried, not tested. This one needed six:
 three languages on minimal set, one for each of two optional mods, and gallery. Mod declare no
@@ -123,7 +123,7 @@ keep after a test, and what to delete").
 | `Player.log` | Startup, load order, dropped mods, errors outside scenarios: only newest one per pass |
 | `evidence-complete.txt` or `no-report.txt` | Say copy whole, or launcher left no report |
 | `@review` captures, **minified to JPEG** | Human review outcome. `scripts/Minify-Evidence.ps1 -Folder <copy>` of protocols repository re-encode them (quality 80, max 1280 px wide) and drop `report.html` and `messages.ndjson`. Keep original of capture that must be measured, not read |
-| One line in `docs/runs/` | History, one text line per run, never a folder |
+| One line in `Docs/runs/` | History, one text line per run, never a folder |
 
 Delete report that newer one supersede for same scenario and same revision, unless only proof of check newer run did not repeat (a language, a pass). Delete report of failed or infrastructure-error attempt once its line written and cause recorded in `STATUS.md`. Delete any report on superseded build: prove nothing about current one. Never keep `screenshots/` folder copied whole from shared report folder, which carry every other mod's captures. List what goes and what stays before deleting, and **never delete report that `STATUS.md` or tracked file points to: repoint it first.**
 
@@ -141,7 +141,7 @@ asserted, so proof is report and `Player.log`.
 ## Manual validation
 
 **Superseded where map above says so.** These checklists were specification of what scenarios
-now assert. Not ticked by hand; run results recorded in `STATUS.md` and `docs/runs/`.
+now assert. Not ticked by hand; run results recorded in `STATUS.md` and `Docs/runs/`.
 What person still do is read `@review` captures.
 
 ### Translation gate and language checks

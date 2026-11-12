@@ -118,7 +118,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Sena" face kit is "smile"
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
-    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
+    And Nelim's Pickle Tools: the area from (190, 146) to (204, 157) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (192, 147) to (202, 156)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: I place the decor "Brazier" at (192, 152)
@@ -168,7 +168,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
-    And Nelim's Pickle Tools: the area from (193, 148) to (204, 156) is cleared
+    And Nelim's Pickle Tools: the area from (193, 148) to (207, 157) is cleared
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 148) to (207, 157)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: the building status icons are kept

@@ -30,7 +30,7 @@ Rules that apply: `PUBLISHING.md` and `AUDIT.md` (protocols repository, read ver
   they differ. A commit after the dry-run needs its own green dry-run.
 - **Payload:** `Mod/` as committed, no filtering, no assembly. Check `git status` for a stray `desktop.ini` or `.ico`
   before any commit that touches `Mod/` (both are gitignored now). `Mod/ATTRIBUTION.md` is a copy of the root one.
-- **Records of published versions:** `docs/runs/history.md`; `STATUS.md` holds the latest run and SHA.
+- **Records of published versions:** `Docs/runs/history.md`; `STATUS.md` holds the latest run and SHA.
 
 ## Steam description
 
@@ -114,7 +114,7 @@ original mod carries no licence: `ATTRIBUTION.md` says so, and the description s
 
 The registry that decides whether a send is still needed is `../WORKSHOP_COMMENTS.md` (key: the Workshop id of the
 recipient); this section keeps, for every external person, mod or tool thanked in THANKS that has a public page, its
-local state and the draft. All were posted by the owner on 2026-09-28 (`docs/runs/history.md`) unless stated. Drafts are
+local state and the draft. All were posted by the owner on 2026-09-28 (`Docs/runs/history.md`) unless stated. Drafts are
 English, with one link to this mod behind BBCode, and say nothing about compatibility the authors did not declare.
 
 | Recipient | Workshop id | State here | Registry row |
@@ -140,9 +140,9 @@ are not kept in this repository (`../WORKSHOP_COMMENTS.md` records that they wer
 
 The CI reads the block under `### <version>` and sends it as written (BBCode); its first line must carry the version.
 
-No version in preparation. Write the block `### <x.y.z>` of the next version here (BBCode, first line `[b]<x.y.z>[/b]`) before its dry-run; once sent, the note moves to `docs/runs/history.md`.
+No version in preparation. Write the block `### <x.y.z>` of the next version here (BBCode, first line `[b]<x.y.z>[/b]`) before its dry-run; once sent, the note moves to `Docs/runs/history.md`.
 
-Older notes (`0.1.0`, `1.0.0` to `1.1.0`): `docs/runs/history.md`.
+Older notes (`0.1.0`, `1.0.0` to `1.1.0`): `Docs/runs/history.md`.
 
 ## Dependencies and DLC
 
@@ -158,7 +158,7 @@ shows a wound or a corpse. Left unticked as for vanilla-level combat: decided by
 
 ## Gallery (manual: no tool of the chain can send it)
 
-**`Art/Gallery/`** (the workflow's `--gallery-dir`), one digit per image in the order of the page; the folder holds only what is uploaded, under 8 MB in all and under 2 MB per image (`PUBLISHING.md`). The history of how it was built is in `docs/runs/history.md`.
+**`Art/Gallery/`** (the workflow's `--gallery-dir`), one digit per image in the order of the page; the folder holds only what is uploaded, under 8 MB in all and under 2 MB per image (`PUBLISHING.md`). The history of how it was built is in `Docs/runs/history.md`.
 
 **The series: "Noon at the Sanctuary"** (the author of the series is the photographer, `../PUBLISHING.md`, rules of 2026-10-02 and 2026-10-06). One noon in Nelim's Sanctuary, the clock starting at 12:00 in each picture and moving 5 minutes of game time between pictures; something alive in every one. The shooting plan, one line per picture (place, moment, subject, composition, what lives there, what it says), is written in the header of each feature file; this table follows it.
 
