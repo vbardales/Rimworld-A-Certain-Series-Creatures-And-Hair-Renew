@@ -63,7 +63,7 @@ Neither creature spawns in the wild. The seraph reaches a colony only through ex
 
 ## What it leaves behind
 
-The original mod also carried Academy City powered armour and weapons, a set of power buildings that redefined vanilla's own, five human traits, and a line of dark matter prosthetics with their surgery. None of that is here. In particular, this mod redefines nothing that belongs to the base game, so it does not compete with any other mod over vanilla defs.
+The original mod also carried Academy City-powered armour and weapons, a set of power buildings that redefined vanilla's own, five human traits, and a line of dark matter prosthetics with their surgery. None of that is here. In particular, this mod redefines nothing that belongs to the base game, so it does not compete with any other mod over vanilla defs.
 
 The original gated all of it behind a research tab of its own carrying eight projects. Only two of them concerned the propagator, so they are folded into a single project on the main research tab, at their combined cost. No new research tab.
 
