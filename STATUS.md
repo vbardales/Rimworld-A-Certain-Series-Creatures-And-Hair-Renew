@@ -8,7 +8,7 @@ packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.1.1]
+workflow_stage: shootGallery[1.1.1]
 code_review_sha: f4cba2a3480c7b8be1b0a1387553fc6632899ccd
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
 social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
@@ -18,13 +18,11 @@ licence_at:   original files and About.xml, Steam description and all 14 comment
 upstream_mod_remotes: N/A  # rechecked 2026-09-30: none found (GitHub search, Workshop page of 1667943729 links no repository)
 dependencies: none
 showcase:     complete
-tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them. 2026-10-11 on `267a4d8` (Mod/ differs from the tested tree only by the description): features 19 (who sells the creatures, `2026-10-11-sellers-temper-2`), 20 (surgery with Animal Prosthetics 2, pass `avec-ads2`, rerun on the promoted DefFieldSteps `2026-10-12-surgery-promoted`) and 21 (temper when hurt, `2026-10-11-temper-3`) green; 2026-10-14 and 15 on `b104320` (1.1.0, `Mod/` unchanged since): English feature 02 `2026-10-14-regression-en-3` and French feature 03 `2026-10-14-regression-fr-2` green
+tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): English `a013`, French `45e1`, Chinese `6ad3`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`; gallery `9b6e` and `ba7b` (2026-10-07, features 17 and 18 rewritten, with Venus Touch Waistlines). `1.0.1` (`2234e57`) changed only seven French hairstyle labels, the About description and the Preview: not replayed, no scenario reads them. 2026-10-11 on `267a4d8` (Mod/ differs from the tested tree only by the description): features 19 (who sells the creatures, `2026-10-11-sellers-temper-2`), 20 (surgery with Animal Prosthetics 2, pass `avec-ads2`, rerun on the promoted DefFieldSteps `2026-10-12-surgery-promoted`) and 21 (temper when hurt, `2026-10-11-temper-3`) green; 2026-10-14 and 15 on `b104320` (1.1.0, `Mod/` unchanged since): English feature 02 `2026-10-14-regression-en-3` and French feature 03 `2026-10-14-regression-fr-2` green; 2026-11-12 on tree `6b3d91c` (ticket 8668, set sans-facultatifs, 4 passed, 0 failed, peak 2120 MiB, evidence `2026-11-12-regression-fr`): French features 03 (creatures) and 13 (labels) green after the seraph wing labels change (8.a, 8.c, 8.j)
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
-  - resume 2026-11-12 DONE (protocols read at 8c9b2ec1, TM registered): sync-nsb-npt done (rename only), 8.0 Ecosystem section written (none found), journal moved to Docs/runs/history.md (STATUS 31 KB). Item 22 (upstream sync) not applicable (upstream_mod_remotes N/A). REVIEW-TRANSLATION 2026-11-12 (fourth run, page 1 of 1): 1 applied (hyphen in "Academy City-powered armour", PUBLICATION.md and About.xml, description only), 1 rejected (BeetleMouth 口器 already in place, `Docs/review-refusals.md`); proper nouns: Virginie to decide which forms to keep. Only ticket 8668 awaited (Inbox checked 2026-11-12: empty).
-  - TICKET 20261112-203945-593-8668 filed 2026-11-12 (French 03-creatures-fr and 13-labels-fr, map wsl-deps.sans-facultatifs.map, runner auto, evidence `Tests/Pickle/Inbox/2026-11-12-regression-fr`, tree frozen at 6b3d91c): on RUN_DONE read summary.json (expect 2 + 1 scenarios passed) then junit.xml; green: 8.a 8.c 8.j done, tested_on updated, back to shootGallery[1.1.1] (8.n). Keep Mod/ and Tests/ frozen until RUN_DONE.
-  - REPLAY 2 2026-11-12 (sections 7 and 8, ledger 70 rows, Check-Replay OK): stage playTests[1.1.1]. Open 8.a, 8.c, 8.j: French DefInjected changed at f1244d0 (2026-10-17, seraph wing blade labels) after the last green passes (b104320); French scenarios 03 and 13 never replayed (history.md line 62). TO DO: small Pickle ticket, filter 03 and 13, on the current tree, runner auto; then 8.n back to shootGallery[1.1.1]. 8.m ok: Mod diff since code_review_sha holds only ModIcon, OptionalCompat, Preview (exceptions). Gallery files kept, do not touch Art/Gallery at playTests (AGENTS rule); owner review of 3, 4, 7 waits for shootGallery.
+  - 2026-11-12 playTests CLOSED (8.a, 8.c, 8.j green by ticket 8668, 8.n back to shootGallery[1.1.1]); NEXT: owner review of gallery 3, 4, 7, then mountPreview/prepareRelease. Resume 2026-11-12 DONE (protocols read at 8c9b2ec1, TM registered): sync-nsb-npt done (rename only), 8.0 Ecosystem section written (none found), journal moved to Docs/runs/history.md (STATUS 31 KB). Item 22 (upstream sync) not applicable (upstream_mod_remotes N/A). REVIEW-TRANSLATION 2026-11-12 (fourth run, page 1 of 1): 1 applied (hyphen in "Academy City-powered armour", PUBLICATION.md and About.xml, description only), 1 rejected (BeetleMouth 口器 already in place, `Docs/review-refusals.md`); proper nouns: Virginie to decide which forms to keep. Only ticket 8668 awaited (Inbox checked 2026-11-12: empty).
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
   - asked of PickleTools, no reply: Chinese fonts missing in the research-window capture (every project affected); a `forcedMiss` rule for `Check-ConfigErrors.ps1`. A 4 GB core dump from a crashed run of 2026-09-28 has no known path
@@ -33,8 +31,8 @@ remaining:
   - owner 2026-11-05: Nelim in the NSB daily look (tunic alone, UnderWhere underwear, gold earrings, no pants) VALIDATED for the gallery; only a coverage or underwear-showing defect read on the captures reopens it.
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
-updated:      2026-11-12, review validated by Virginie; fixes eec447b (gallery 5, 6, probes, Docs paths)
-protocols_read_sha: 8c9b2ec13591c8960455db4aa2afae8a0ff606da
+updated:      2026-11-12, ticket 8668 green, playTests done, back to shootGallery[1.1.1]
+protocols_read_sha: 494ac5e73ab728bcc8e98b7d39291eaea1b42628
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
