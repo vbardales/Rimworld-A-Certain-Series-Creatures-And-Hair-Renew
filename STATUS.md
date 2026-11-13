@@ -34,7 +34,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09); TM routes START/END/RUN_DONE here
 updated:      2026-11-12, ticket 8668 green, playTests done, back to shootGallery[1.1.1]
-protocols_read_sha: f539baf62e1a770d7a9770971f79329356827fcb
+protocols_read_sha: 0ee69017f242dc5306be754ef91bc910700fb029
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
