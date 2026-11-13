@@ -53,9 +53,9 @@ in `Docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 - **Content boxes:** adult content and violence both unticked, owner decided 2026-10-01 (`PUBLICATION.md`, Content boxes).
 
 
-## Ecosystem (AUDIT 8.0, 2026-11-12)
+## Ecosystem (AUDIT 8.0, 2026-11-13)
 
-Source: `docs/inventory/ecosystem.tsv` (Audit pass, 340 lines). No row cites this mod (our_mod, packageId `nelim.acertainseriescreaturesandhair`, Workshop ids 3806708754 and original 1667943729: 0 hits). None found: no patch, retexture, link, translation or fork of it in the scanned corpus. No combined pass needed at 8.f, nothing to add to `CHANGELOG.md` or to `Check-OptionalCompat.ps1`.
+Source: `docs/inventory/ecosystem-steam/ACertainSeriesCreaturesAndHairRenew.md` (PiI, Steam search by Chrome plus corpus scan, 2026-11-13). No duplicate, no fork, no competing creature-and-hair pack of the series: 12 weak hits, 0 shared defName; the original is no longer listed on Steam. No study mod subscribed. The earlier local scan of `docs/inventory/ecosystem.tsv` (no row cites this mod) is superseded.
 
 ## NSB (sync-nsb-npt, 2026-11-12)
 
