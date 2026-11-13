@@ -75,7 +75,9 @@ Sync 2026-11-09 (sync-nsb-npt): NSB: every place is now validated (`left-bank`, 
 
 Sync 2026-11-12 (sync-nsb-npt, stage playTests: check only, nothing rewritten). NSB: the only docs commit since 2026-11-09 is `18abf53` (folder renamed `docs` to `Docs`, 0 content change): places, colonists, animals, outfits, fixture z3 unchanged. NPT: `docs/steps.md` also moved to `Docs/` (`9e497b1`, pure rename); new steps since 2026-11-09 (none played): decor burns (fuel and switch, no light), filth removed (whole map, radius, cell), Flooring Floors terrain catalogue, colonist builds a floor, pot with a grown plant, main tab bar and speed controls hidden, culture steps, thought label read. Nothing a played scenario calls was renamed. Possible use at shootGallery only (filth removal for bare-dirt shots, floors for the plank floor): decide there. No colonist or animal outside NSB added, no property changed, no new owner question. Included animals unchanged (beetle 4 and 7, Gabriel 5): no row MISSING.
 
-Places read: 2026-11-12 (diff: rename only). Tribe read: 2026-11-12 (diff: rename only; YUKI, TAMA, KURU profiles and CATALOGUE-ANIMAUX.md last opened 2026-11-07); NELIM-PROFIL.md read 2026-11-05. Steps read: 2026-11-12.
+Places read: 2026-11-12 (diff: rename only). Tribe read: 2026-11-12 (diff: rename only; YUKI, TAMA, KURU profiles and CATALOGUE-ANIMAUX.md last opened 2026-11-07); NELIM-PROFIL.md read 2026-11-05. Steps read: 2026-11-13.
+
+Sync 2026-11-13 (sync-nsb-npt, shootGallery, check only): NSB no docs commit since 2026-11-12. NPT `Docs/steps.md`: new steps 2026-11-13 (animals kept out of an area with 4 to 6 exceptions, render nodes hidden, fast-forward loop, memory thoughts cleared, garment dye on animals, assertion colonist at building, blueprint with materials), none played, none called by a played scenario, nothing renamed. Gallery 1 to 7 complete: no rewrite. No colonist or animal outside NSB added, no property changed, no included animal MISSING (beetle 4 and 7, Gabriel 5). Rules 1 to 5 of 2026-11-05 unchanged.
 
 | Place | Shots | Changes for the gallery | Last read |
 |---|---|---|---|
