@@ -180,6 +180,8 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal+blink" is held
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"
+    And Nelim's Pickle Tools: "Nelim" loses the hediff "Heatstroke"
+    And Nelim's Pickle Tools: "Nelim" does not hold the hediff "Heatstroke"
     And I take a screenshot "gallery 3 index"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
