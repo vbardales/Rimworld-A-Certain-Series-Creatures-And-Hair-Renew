@@ -81,6 +81,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the animal "Poule" stands at (196, 152) facing South
     Then 1 "ACS_DarkMatterBeetle" exist
     When A Certain Series: I bring the camera to 4 cells' height on the cell (197, 152)
+    And Nelim's Pickle Tools: the render nodes and layers of "Nelim" are logged
     And I take a screenshot "gallery 4 beetle"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
