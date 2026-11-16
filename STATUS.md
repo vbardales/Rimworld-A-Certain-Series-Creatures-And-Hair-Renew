@@ -39,7 +39,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_d23d8e90-72a5-4410-8268-4a0017dea470  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed 2026-11-16, old local_30b7ac1a gone); TM routes START/END/RUN_DONE here
 updated:      2026-11-16, replay-audit: 8.m code review stale (Mod/ changed since f4cba2a: OptionalCompat.xml, 3 Chinese and 1 French DefInjected files), back to playTests[1.1.1]
-protocols_read_sha: 19f1e1bee25f2764efa0d3a3fef1bf4377ebddc1
+protocols_read_sha: cba5f068095416d6c59e7b39f7f2a96530fcabc3
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
