@@ -3,5 +3,9 @@
 
   <!-- EN: work at dark matter propagator -->
   <ACS_DoBillsUseDarkMatterProduction.label>使用未元物质生产器工作</ACS_DoBillsUseDarkMatterProduction.label>
+  <!-- EN: craft -->
+  <ACS_DoBillsUseDarkMatterProduction.verb>制作</ACS_DoBillsUseDarkMatterProduction.verb>
+  <!-- EN: crafting at -->
+  <ACS_DoBillsUseDarkMatterProduction.gerund>制作于</ACS_DoBillsUseDarkMatterProduction.gerund>
 
 </LanguageData>
