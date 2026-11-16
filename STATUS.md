@@ -62,7 +62,7 @@ in `Docs/runs/history.md` (one line per run and per event), `CHANGELOG.md`, `PUB
 
 ## Ecosystem (AUDIT 8.0, 2026-11-13)
 
-Source: `docs/inventory/ecosystem-steam/ACertainSeriesCreaturesAndHairRenew.md` (PiI, Steam search by Chrome plus corpus scan, 2026-11-13). No duplicate, no fork, no competing creature-and-hair pack of the series: 12 weak hits, 0 shared defName; the original is no longer listed on Steam. No study mod subscribed. The earlier local scan of `docs/inventory/ecosystem.tsv` (no row cites this mod) is superseded.
+Source: `docs/inventory/ecosystem-steam/ACertainSeriesCreaturesAndHairRenew.md` (PiI, Steam search by Chrome plus corpus scan, 2026-11-13). No duplicate, no fork, no competing creature-and-hair pack of the series: 12 weak hits, 0 shared defName; the original is no longer listed on Steam. No study mod subscribed. The earlier local scan of `docs/inventory/ecosystem.tsv` (no row cites this mod) is superseded. Rerun 2026-11-16 (PiI, Virginie: parent A Certain Magical Index): parent = 1667943729 `Toaru Majutsu no Index Mod` (the 某系列MOD of ATTRIBUTION; Chinese only, 1.0, last update 2019-03-18, author says stop/remove, dead). Searched A Certain (Magical) Index, Toaru, とある, 某系列, 禁书目录, 超电磁炮 and character names: no fork, translation, patch, retexture or sibling on Steam. Nothing subscribed; no translation of the parent to integrate at localize; no patch row to answer. `ecosystem-links` block: parent only.
 
 ## NSB (sync-nsb-npt, 2026-11-12)
 
