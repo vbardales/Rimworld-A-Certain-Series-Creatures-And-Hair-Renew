@@ -17,7 +17,7 @@
   <ACS_Projectile_Beetle.label>canon du scarabée</ACS_Projectile_Beetle.label>
   <ACS_Projectile_Sweep.label>balayage</ACS_Projectile_Sweep.label>
   <ACS_DarkMatterBeetle.label>scarabée rhinocéros blanc</ACS_DarkMatterBeetle.label>
-  <ACS_DarkMatterBeetle.description>Un scarabée rhinocéros issu de matière noire, entièrement blanc, de la corne à l'abdomen. Il ne mange pas et ne vieillit pas comme un être vivant ordinaire. La corne sur sa tête est un canon.</ACS_DarkMatterBeetle.description>
+  <ACS_DarkMatterBeetle.description>Un scarabée rhinocéros issu de matière noire, entièrement blanc, de la corne à l'abdomen. Il ne mange pas et ne vieillit pas comme le ferait un être vivant. La corne sur sa tête est un canon.</ACS_DarkMatterBeetle.description>
   <ACS_DarkMatterBeetle.tools.horn.label>corne</ACS_DarkMatterBeetle.tools.horn.label>
   <ACS_DarkMatterBeetle.tools.left_claw.label>griffe gauche</ACS_DarkMatterBeetle.tools.left_claw.label>
   <ACS_DarkMatterBeetle.tools.right_claw.label>griffe droite</ACS_DarkMatterBeetle.tools.right_claw.label>
