@@ -10,7 +10,7 @@ remote:       https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-A
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.1.1]
-code_review_sha: f4cba2a3480c7b8be1b0a1387553fc6632899ccd
+code_review_sha: c39e91c61f319b6cd655232d00741768a46be383
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
 social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
 publication_changelog_review_sha: 71cc9df2e721d01d44c03984861472cdf29fb52c
@@ -23,6 +23,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
+  - 2026-11-16 8.m DONE: Opus review of Mod diff f4cba2a..c39e91c clean (3 Chinese + 1 French DefInjected files, About.xml link line; keys match real defs, Check-Translations PASS, Check-DefInjected 404 keys 0 errors); code_review_sha = c39e91c. 8.a/8.c/8.j: rerun French 03+13 and Chinese 14 on frozen tree (tickets filed 2026-11-16), then 8.n to writeShotlist, then shootGallery (gallery 3 verdict only back in shootGallery, owner 2026-11-16).
   - 2026-11-16 replay-audit: 8.m code review (Opus sub-agent, diff f4cba2a..HEAD of Mod/) then 8.n to writeShotlist; gallery 3 capture (ticket 7aa9 green, Inbox) still awaits Virginie verdict, shootGallery work resumes after 8.m; 9.0 bis plan not rated 5 on every scene; ModBasics WARN: About.xml description must end with a [url=...]Source code on GitHub[/url] link
   - 2026-11-12 playTests CLOSED (8.a, 8.c, 8.j green by ticket 8668, 8.n back to shootGallery[1.1.1]); NEXT: owner review of gallery 3, 4, 7, then mountPreview/prepareRelease. Resume 2026-11-12 DONE (protocols read at 8c9b2ec1, TM registered): sync-nsb-npt done (rename only), 8.0 Ecosystem section written (none found), journal moved to Docs/runs/history.md (STATUS 31 KB). Item 22 (upstream sync) not applicable (upstream_mod_remotes N/A). REVIEW-TRANSLATION 2026-11-12 (fourth run, page 1 of 1): 1 applied (hyphen in "Academy City-powered armour", PUBLICATION.md and About.xml, description only), 1 rejected (BeetleMouth 口器 already in place, `Docs/review-refusals.md`); proper nouns: Virginie to decide which forms to keep. Only ticket 8668 awaited (Inbox checked 2026-11-12: empty).
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
