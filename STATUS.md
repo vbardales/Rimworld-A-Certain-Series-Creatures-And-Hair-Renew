@@ -3,6 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
+ecosystem_line: 1.1  # search of 2026-11-13, rerun 2026-11-16 (section Ecosystem below)
 mod:          A Certain Series - Creatures and Hair Renew (unofficial)
 packageId:    nelim.acertainseriescreaturesandhair
 repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
@@ -23,7 +24,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
-  - 2026-11-19 SCENE 6 redo-27: redo-26 (ticket 5a4e, green) REDO: `I frame the rectangle` does not zoom below about 7 columns (140 px per cell, cells cropped at top); machine sprite is a flat slab (no glower, owner left the choice). Camera step of the mod now: 5 cells' height on (200,152), commit b400535. TICKET ba1f FILED (label gallery 6 redo-27 camera 5 cells, filter `18-gallery-creatures::6 - Nelim at the propagator`, map wsl-deps.galerie.map, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo27). Keep Mod/ and feature 18 frozen until RUN_DONE; then full-res PNG, 268 px, score-gallery. If j stays weak on the flat sprite: glower on the def (needs CHANGELOG and a test) or accept the scene as wired-cells.
+  - 2026-11-19 SCENE 6 redo-27: redo-26 (ticket 5a4e, green) REDO: `I frame the rectangle` does not zoom below about 7 columns (140 px per cell, cells cropped at top); machine sprite is a flat slab (no glower, owner left the choice). Camera step of the mod now: 5 cells' height on (200,152), commit b400535. TICKET ba1f FILED (label gallery 6 redo-27 camera 5 cells, filter `18-gallery-creatures::6 - Nelim at the propagator`, map wsl-deps.galerie.map, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo27). ba1f GREEN (RUN_DONE read 2026-11-19), capture opened and rated: camera 5 cells works (machine, 3 cells, Nelim, Kuru in frame) but at 268 px the pale slab reads as a bed or fridge, wire invisible, Kuru patch and dark matter on the table unreadable: j weak = REDO, capture and run folder deleted. Next: redo-28 recompose (camera 4 cells on (200,153), Kuru moved to (199,153), torches y 150 and 155 fall out of frame) or glower on the def. If j stays weak on the flat sprite: glower on the def (needs CHANGELOG and a test) or accept the scene as wired-cells.
   - protocols 2026-11-18 (GALLERY.md): Cat is now `local_a5550030-349c-4078-b577-48f83ce026d3` (CATALOG-REQUEST, kinds in Rimworld-Catalog SERVICE.md); visual mods (Show Me Your Hands, Yayo's Animations and the like) are installed by default for captures: the shotlist must say when one is left out and why (not yet said here: the galerie map holds none; decide before the final shotlist rewrite).
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
@@ -35,7 +36,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_d23d8e90-72a5-4410-8268-4a0017dea470  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed 2026-11-16, old local_30b7ac1a gone); TM routes START/END/RUN_DONE here
 updated:      2026-11-19, resume: ticket 8fd7 passed, scene 6 capture REDO, writeShotlist[1.1.1]
-protocols_read_sha: e09c9aa13725b637e0d5f59b643cc2c06a6f7fcb
+protocols_read_sha: 4ecc4435ac0fda5dcc8d57f3bbbc07a1690dd737
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
