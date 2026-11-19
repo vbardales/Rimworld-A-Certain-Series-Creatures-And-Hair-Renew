@@ -30,7 +30,7 @@ version migrations. In-game scenarios below still necessary.
 
 Pickle scenarios written and played (`Tests/Pickle/`: 21 features, 43 local steps; its README say what is in
 Gherkin, what deliberately not, and why; `scripts/Check-Steps.ps1` of protocols repository resolve every step line to exactly one step).
-Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `Docs/runs/history.md`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 added and played in `1.0.4`, and non-regression of changed texts (features 02 and 03) ran green on published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) in `git log`.
+Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `git log`). `Mod/` changed since in `1.0.4` and `1.1.0` (texts and `About.xml`, no content): features 19 to 21 added and played in `1.0.4`, and non-regression of changed texts (features 02 and 03) ran green on published `1.1.0` (`b104320`). Earlier states of this section (the `tested` check of 2026-09-27) in `git log`.
 
 | Check | Where this mod stands |
 |---|---|
@@ -70,7 +70,7 @@ Passes ran on `f678f05` (2026-09-28, `STATUS.md` `tested_on`, `Docs/runs/history
 
 ## Passes this mod needed
 
-**Current state of six passes** (`STATUS.md`, `Docs/runs/history.md`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, About description and Preview: no scenario read them, so no pass replayed.
+**Current state of six passes** (`STATUS.md`, `git log`): English `a013`, Animal Prosthetics 2 `5558`, Nocturnal Animals `d901`, French `45e1`, Chinese `6ad3` on `f678f05` (2026-09-28); gallery `cdfc` and `a6f3` on `eb2bbf4` (2026-09-27). `1.0.1` (`2234e57`) changed seven French hairstyle labels, About description and Preview: no scenario read them, so no pass replayed.
 
 Mod whose TESTING.md not say how many passes needed is tried, not tested. This one needed six:
 three languages on minimal set, one for each of two optional mods, and gallery. Mod declare no
