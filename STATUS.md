@@ -23,7 +23,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
-  - 2026-11-19 SCENE 6 redo-24 (PiT: `is powered by a battery` fails on a net with gain 0.0; plain `is powered` sets PowerOn directly): step swapped in feature 18 (commit 6c94749), Check-ShotlistVsScenario OK, Check-Steps OK. TICKET 8fd7 FILED on tree 6c94749 (label gallery 6 redo-24 plain powered, filter `18-gallery-creatures::6 - Nelim at the propagator`, map wsl-deps.galerie.map, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo24). Keep Mod/ and feature 18 frozen until RUN_DONE; then open full-res PNG, shrink to 268 px, score-gallery the four notes (icon gone, machine reads running; if only `is powered` is not enough, send PiT the screenshot and the def comps for a new step). Redo-23 evidence already deleted.
+  - 2026-11-19 SCENE 6 redo-24 RESULT (ticket 8fd7, tree 6c94749, 1 passed, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo24): REDO. Seen at 268 px: the propagator is a pale blank slab (no running look), three yellow cells read, DarkMatter on the end table not visible, Nelim eyes closed. Next: diagnose why the powered propagator renders pale (def comps, graphic), ask PiT if a step is missing, recompose; keep Mod/ and feature 18 frozen only until that. Delete the capture and its run folder with the redo.
   - protocols 2026-11-18 (GALLERY.md): Cat is now `local_a5550030-349c-4078-b577-48f83ce026d3` (CATALOG-REQUEST, kinds in Rimworld-Catalog SERVICE.md); visual mods (Show Me Your Hands, Yayo's Animations and the like) are installed by default for captures: the shotlist must say when one is left out and why (not yet said here: the galerie map holds none; decide before the final shotlist rewrite).
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
   - fragile: `Mod/Patches/NocturnalAnimals.xml` guards on the other mod's display name (`[XND] Nocturnal Animals (Continued)`); `Tests/Test-Mod.ps1` group 14 compares it with the installed copy when present
@@ -34,8 +34,8 @@ remaining:
   - owner 2026-11-05: Nelim in the NSB daily look (tunic alone, UnderWhere underwear, gold earrings, no pants) VALIDATED for the gallery; only a coverage or underwear-showing defect read on the captures reopens it.
   - ideas not started: `BACKLOG.md`
 session:      local_d23d8e90-72a5-4410-8268-4a0017dea470  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed 2026-11-16, old local_30b7ac1a gone); TM routes START/END/RUN_DONE here
-updated:      2026-11-17, resume: 13ed and 1fad green, 8.n done, writeShotlist[1.1.1]
-protocols_read_sha: 4778b712108a584d43f2593c33f20830fb1dd2d2
+updated:      2026-11-19, resume: ticket 8fd7 passed, scene 6 capture REDO, writeShotlist[1.1.1]
+protocols_read_sha: e45928eab90345ec0880688a0d9e3e5f40043a5e
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
