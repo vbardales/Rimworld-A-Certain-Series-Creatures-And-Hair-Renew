@@ -201,6 +201,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) is powered
     And Nelim's Pickle Tools: the light of the map is refreshed
     And I wait 120 ticks
+    And Nelim's Pickle Tools: the power links of the area from (192, 149) to (206, 156) are logged
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) glows
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (203, 153) does not glow
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
