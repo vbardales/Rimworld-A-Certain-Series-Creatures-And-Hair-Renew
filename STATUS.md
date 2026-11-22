@@ -35,7 +35,7 @@ remaining:
   - owner 2026-11-13: French validated by her, native speaker ("je valide le français"): no "completed with Claude, not checked by a native speaker" sentence needed in the `Languages` paragraph (`TRANSLATIONS.md`, "A language completed by AI"). Chinese is the original author's text.
   - owner 2026-11-05: Nelim in the NSB daily look (tunic alone, UnderWhere underwear, gold earrings, no pants) VALIDATED for the gallery; only a coverage or underwear-showing defect read on the captures reopens it.
   - ideas not started: `BACKLOG.md`
-session:      local_d23d8e90-72a5-4410-8268-4a0017dea470  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed 2026-11-16, old local_30b7ac1a gone); TM routes START/END/RUN_DONE here
+session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed back 2026-11-22, REGISTER sent to the TM); TM routes START/END/RUN_DONE here
 updated:      2026-11-20, replay: 8.l open (Docs/runs/pickle.md missing), back to playTests; scene 6 owner request (front and profile shots, power cells out of frame) pending
 protocols_read_sha: 9076dc7ed32ed99800d4f0026157da2053469dd4
 ---
@@ -68,7 +68,7 @@ Rules (owner, 2026-11-05): everything in NSB is free (places, colonists, domesti
 
 Sync 2026-11-19 (sync-nsb-npt, writeShotlist, check only): NSB no docs commit since 2026-11-18. NPT `Docs/steps.md` one commit since (0cd003f3, blueprint built standing at a chosen cell): none played, nothing a scenario calls renamed. No colonist or animal outside NSB added, no property changed, beetle 4 and 7, Gabriel 5, no row MISSING. Rules 1 to 5 of 2026-11-05 unchanged. Scenarios untouched.
 
-Places read: 2026-11-19 (diff: no NSB docs commit since 2026-11-18, no place change). Tribe read: 2026-11-18 (diff of docs commits: save plan only; YUKI, TAMA, KURU profiles and CATALOGUE-ANIMAUX.md last opened 2026-11-07); NELIM-PROFIL.md read 2026-11-05. Steps read: 2026-11-19.
+Places read: 2026-11-19 (diff: no NSB docs commit since 2026-11-18, no place change). Tribe read: 2026-11-18 (diff of docs commits: save plan only; YUKI, TAMA, KURU profiles and CATALOGUE-ANIMAUX.md last opened 2026-11-07); NELIM-PROFIL.md read 2026-11-05. Steps read: 2026-11-22 (NPT since 2026-11-19: steps `X turns toward Y` and `X faces the cell (x, z)`, CameraZoom floor 0.3 to 0.1 so `I frame the rectangle` may zoom closer than the redo-26 limit, StageDecor and ClickDiagnostics logging steps, tame-designation steps; none played, no step a scenario calls renamed). Places read: 2026-11-22 (NSB docs: one commit since, runs migration only, no place change).
 | Place | Shots | Changes for the gallery | Last read |
 |---|---|---|---|
 | `sofa-corner`, VALIDATED 2026-11-07 (fixture -o) | 1 | torch, daylily; cells 183-189 of row 124 were free: recheck against the new bookcase, pots and vase | 2026-11-08 |
