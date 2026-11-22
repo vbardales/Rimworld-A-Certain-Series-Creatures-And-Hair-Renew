@@ -27,7 +27,7 @@
 #   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, a lab corner: two machines that make dark matter multiply, one wired to its power cells and glowing, one standing alone and dark | INSTANT: Nelim has just set the dark matter on the end table between the two machines and turns toward the running one
 #      while Kuru watches (redo-29, 2026-11-22, owner answer "les deux": the glower is now on the def (f91759e) and the scene shows two machines, one wired and one not, one vertical (facing South, front view) and one horizontal (facing East, profile view, the east texture exists); the three-cell wiring shrinks to two cells beside the vertical machine; redo-28, 2026-11-19: redo-27 green but j weak at 268 px, the pale slab reads as a bed or a fridge, no glow) (earlier redos 22 to 28 in the git history of this header). METHOD:
 #      Nelim (201, 154) facing West carrying nothing, ACS_DarkMatter spawned on the EndTable (201, 152), Kuru (200, 155) facing West toward the running machine | CLOSE-MEDIUM: camera 3 cells' height on (201, 153) (redo-30: the power cells fell inside the frame at 5; 3 shows columns 197 to 205, rows 151 to 156; the vertical powered machine on the left third, the horizontal dark machine on the right third, Nelim and the table between, the bottom row left empty for the subtitle) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored),
-#      ACS_DarkMatterProduction (199, 152) facing south, running (powered, glowing blue), VanometricPowerCell x5 (195, 152), (195, 150), (194, 152), (194, 150), (193, 152), each 1x2 and 1000 W (the machine draws 5000 W), at the left edge of the view, out of frame, wired to it, ACS_DarkMatterProduction (203, 153) facing east, power connection cut (unpowered, no glow), lab props of PiT (all vanilla Core, no power comp): EndTable (201, 152) for the dark matter, Stool (200, 151), TorchLamp lit x4 (197, 151), (205, 151), (197, 155), (205, 155), Plant_Daylily x2 (198, 154) and (204, 155) fully grown, sun light dimmed to 0.35 with lamps kept (redo-30: the lift to 0.5 drowned the glow of the machine) | THUMBNAIL: two pale machines side by side, the left one upright with a blue glow and a wire running off the left edge toward cells kept out of frame, the right one lying down and dark, Nelim in green between them with the dark matter on the table; wired against idle read by the glow
+#      ACS_DarkMatterProduction (199, 152) facing south, running (powered, glowing blue), VanometricPowerCell x5 (195, 152), (195, 150), (194, 152), (194, 150), (193, 152), each 1x2 and 1000 W (the machine draws 5000 W), at the left edge of the view, out of frame, wired to it, ACS_DarkMatterProduction (203, 153) facing east, power connection cut (unpowered, no glow), lab props of PiT (all vanilla Core, no power comp): EndTable (201, 152) for the dark matter, Stool (200, 151), TorchLamp lit x2 (205, 151), (205, 155) (redo-31: the two torches next to the wired machine dropped), Plant_Daylily x2 (198, 154) and (204, 155) fully grown, sun light dimmed to 0.15 with lamps kept (redo-31: 0.35 left no halo; redo-30: the lift to 0.5 drowned the glow of the machine) | THUMBNAIL: two pale machines side by side, the left one upright with a blue glow and a wire running off the left edge toward cells kept out of frame, the right one lying down and dark, Nelim in green between them with the dark matter on the table; wired against idle read by the glow
 #      RISK: the glow may still read faint under four torches (drop a torch or lower the sun ceiling); the east texture may crop at 268 px; the frame is tight. PLAN: 3 cells' height, torches at the corners, a second take with 4 cells if the machines are cropped.
 #   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim steps in from the south with the last log and the
 #      three guests on the north arc look up at her, each holding what she gave them (Pemmican, Beer, chocolate); Toma's little grin is
@@ -168,7 +168,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: the sun light of the map is dimmed to at most 0.35, lamps kept
+    And Nelim's Pickle Tools: the sun light of the map is dimmed to at most 0.15, lamps kept
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
@@ -179,13 +179,9 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (199, 152) facing south
     And Nelim's Pickle Tools: I place the decor "EndTable" at (201, 152)
     And Nelim's Pickle Tools: I place the decor "Stool" at (200, 151)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (197, 151)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (205, 151)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (197, 155)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (205, 155)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (197, 151) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (205, 151) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (197, 155) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (205, 155) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 154) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
