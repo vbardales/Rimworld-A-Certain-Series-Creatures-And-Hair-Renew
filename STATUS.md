@@ -10,7 +10,7 @@ repo:         Rimworld-A-Certain-Series-Creatures-And-Hair-Renew
 remote:       https://github.com/vbardales/Rimworld-A-Certain-Series-Creatures-And-Hair-Renew.git
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.1.1]
+workflow_stage: writeShotlist[1.1.1]
 code_review_sha: c39e91c61f319b6cd655232d00741768a46be383
 echo_review_sha: 1e11535585755a0aaebecc274fd0c40d202b3f14
 social_preview_sha256: 4f629a9ec547fe3fa242e422c7c8e3ad3c6c4b4d482fd3612df02e4bf2d31fa9
@@ -24,7 +24,7 @@ tested_on:    six complete passes green on the tree of `f678f05` (2026-09-28): E
 tested_1_7:   yes  # 2026-10-13, ticket 72c6, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on e12a2f3; no supportedVersions change before Virginie confirms
 workshop:     3806708754
 remaining:
-  - 2026-11-20 REPLAY: 8.l OPEN, `Docs/runs/pickle.md` (one line per run, AGENTS.md) never created after migration 46107b7 (history.md deleted); write it from the run folders in Evidence (13) and tested_on, then replay: stage returns to writeShotlist, where 9.0 and 9.0 bis stay open (plans not rated 5; scene 6 to rewrite as front and profile shots with the VanometricPowerCell out of frame, owner request 2026-11-19, meaning of "deux fois non" asked).
+  - 2026-11-22 REPLAY (typed by the owner): 8.l closed (`Docs/runs/pickle.md` exists), first open 9.0: shotlist plans not rated 5 on every scene, scene 6 to rewrite as front and profile shots with the VanometricPowerCell out of frame (owner request 2026-11-19, meaning of "deux fois non" asked); 9.0 bis, 9.a to 9.f open behind it (Art/Gallery holds shots 1, 2, 4, 5, 7; 3 and 6 missing; `gallery_validated_sha` absent). Next: `write-shotlist`, with the NPT changes of 2026-11-20 (steps `X turns toward Y`, zoom floor 0.1).
   - 2026-11-19 SCENE 6 redo-27: redo-26 (ticket 5a4e, green) REDO: `I frame the rectangle` does not zoom below about 7 columns (140 px per cell, cells cropped at top); machine sprite is a flat slab (no glower, owner left the choice). Camera step of the mod now: 5 cells' height on (200,152), commit b400535. TICKET ba1f FILED (label gallery 6 redo-27 camera 5 cells, filter `18-gallery-creatures::6 - Nelim at the propagator`, map wsl-deps.galerie.map, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo27). ba1f GREEN (RUN_DONE read 2026-11-19), capture opened and rated: camera 5 cells works (machine, 3 cells, Nelim, Kuru in frame) but at 268 px the pale slab reads as a bed or fridge, wire invisible, Kuru patch and dark matter on the table unreadable: j weak = REDO, capture and run folder deleted. redo-28 WRITTEN (commit 67e1a6e: camera 4 cells on (200,153), Kuru at (199,153), torch row y 155 cut). TICKET 27e4 FILED (label `gallery 6 redo-28 camera 4 cells 67e1a6e`, filter `18-gallery-creatures::6 - Nelim at the propagator`, map wsl-deps.galerie.map, evidence Tests/Pickle/Inbox/2026-11-19-gallery6-redo28). 27e4 GREEN (RUN_DONE 2026-11-19, 1 passed), capture opened and shrunk to 268 px: camera 4 cells works (machine, Nelim, Kuru, torches, plants in frame) but the flat pale slab still reads as a fridge or a bed, no glower: j weak = REDO, capture and run folder deleted. DECISION OPEN for the owner: glower on the def (CHANGELOG and a test) or accept the scene as wired-cells. Keep Mod/ and feature 18 frozen until she answers.
   - protocols 2026-11-18 (GALLERY.md): Cat is now `local_a5550030-349c-4078-b577-48f83ce026d3` (CATALOG-REQUEST, kinds in Rimworld-Catalog SERVICE.md); visual mods (Show Me Your Hands, Yayo's Animations and the like) are installed by default for captures: the shotlist must say when one is left out and why (not yet said here: the galerie map holds none; decide before the final shotlist rewrite).
   - unverified: the sampled stocks show the beetle at four trader kinds and the seraph at two, not every seller of the possible list (the defs name four kinds with Royalty); how dangerous the beetle feels in a colony (balance, not automatable)
@@ -36,8 +36,8 @@ remaining:
   - owner 2026-11-05: Nelim in the NSB daily look (tunic alone, UnderWhere underwear, gold earrings, no pants) VALIDATED for the gallery; only a coverage or underwear-showing defect read on the captures reopens it.
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed back 2026-11-22, REGISTER sent to the TM); TM routes START/END/RUN_DONE here
-updated:      2026-11-20, replay: 8.l open (Docs/runs/pickle.md missing), back to playTests; scene 6 owner request (front and profile shots, power cells out of frame) pending
-protocols_read_sha: 9076dc7ed32ed99800d4f0026157da2053469dd4
+updated:      2026-11-22, replay: 8.l closed, first open 9.0, stage writeShotlist; scene 6 owner request (front and profile shots, power cells out of frame) pending
+protocols_read_sha: cb5ad34dfb02a5d86583b70671fb89193f18442b
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
