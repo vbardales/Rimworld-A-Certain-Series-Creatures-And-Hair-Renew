@@ -205,5 +205,5 @@ One line per scene (`../GALLERY.md`, "Sous-titres"), burnt in with `../scripts/A
 | 3 | `3-hairstyle-index.jpg` | Sena found a quiet corner of the Sanctuary. Nelim kept her company. |
 | 4 | `4-beetle.jpg` | Nelim leads in the beetle. It never eats, and it feels neither cold nor heat. |
 | 5 | `5-seraph.jpg` | God's Power, eight wings of water. No one has ever tamed one. |
-| 6 | `6-propagator.jpg` | One propagator is running. The other is still waiting for power. |
+| 6 | `6-propagator.jpg` | One propagator is wired and running. The other stands alone, with no power. |
 | 7 | `7-evening.jpg` | Evening at the Sanctuary. Nobody wanted to leave. |
