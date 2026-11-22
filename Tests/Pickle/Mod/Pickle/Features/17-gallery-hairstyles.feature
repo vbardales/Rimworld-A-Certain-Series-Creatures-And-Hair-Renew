@@ -35,8 +35,8 @@
 #      dark brick. PLAN: lighten the duster to (45, 45, 58).
 #   3. podium (emerald-clearing), 16:00, Clear, 60 ticks | Index on Sena: a quiet corner | INSTANT: Yuki has just padded up beside Sena and Nelim steps up with the chocolate. METHOD (z grows to the north, so
 #      South faces the camera): Sena (197, 152) facing South, Yuki (the save's husky) at (199, 152) facing West toward her, in profile,
-#      Nelim (195, 152) facing East carrying nothing, Chocolate set on the Stool (196, 151) (redo: the carried item hid her mouth and her face read unlike shot 2; owner 2026-11-09) | CLOSE: rectangle (194, 150) to (200, 153) (redo 2026-11-13: at 268 px the Index hairstyle of Sena was a white blob on the 9-cell frame; tighter on Sena, Nelim, Yuki, torch and braziers at the edges) (every decor object inside the frame, the ground floored: the old frame showed two objects on bare dirt) |
-#      WoodPlankFloor (193, 148) to (201, 155), TorchLamp lit (194, 150), Brazier lit (200, 150), Stool (196, 151), Plant_Daylily (194, 153), (200, 153) and (201, 151) | THUMBNAIL: the white robe on the wood.
+#      Nelim (195, 152) facing East carrying nothing, Chocolate set on the Stool (196, 151) (redo: the carried item hid her mouth and her face read unlike shot 2; owner 2026-11-09) | CLOSE: camera 3 cells' height on (197, 152) (redo 2026-11-22: the Index hair of Sena read about 15 px at 268 px and the floor was mostly bare; the camera step replaces the rectangle, which does not zoom below about 7 columns, and the decor is regrouped inside the frame) (earlier: rectangle (194, 150) to (200, 153), redo 2026-11-13: at 268 px the Index hairstyle of Sena was a white blob on the 9-cell frame; tighter on Sena, Nelim, Yuki, torch and braziers at the edges) (every decor object inside the frame, the ground floored: the old frame showed two objects on bare dirt) |
+#      WoodPlankFloor (193, 148) to (201, 155), TorchLamp lit (195, 153), Brazier lit (199, 153), Stool (196, 151), Plant_Daylily (198, 151), (197, 153) and (194, 151) | THUMBNAIL: the white robe on the wood.
 #      RISK: Yuki turns away (she showed her back in runs c094 and redo-6). PLAN: placed last; read which way the step turns her.
 # NELIM keeps ONE outfit all day (owner's continuity rule 2026-10-23; outfit aligned 2026-11-05 on the NSB daily look, NELIM-PROFIL.md): [LTS] tunic (31, 122, 92) emerald worn alone (no skirt), UnderWhere bra and panties (31, 58, 95) under it,
 # gold small earrings (made of Gold), her high ponytail (Roo_HD_Hair_Highpony), her smirk; the guests keep theirs from picture to picture.
@@ -156,13 +156,13 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (193, 148) to (201, 155)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (194, 150)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (194, 150) is lit
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (200, 150)
-    And Nelim's Pickle Tools: the decor "Brazier" at (200, 150) is lit
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 153) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 153) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (201, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (195, 153)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (195, 153) is lit
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (199, 153)
+    And Nelim's Pickle Tools: the decor "Brazier" at (199, 153) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (197, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 151) fully grown
     And Nelim's Pickle Tools: I place the decor "Stool" at (196, 151)
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
@@ -176,7 +176,7 @@ Feature: Gallery pictures of the hairstyles
     And Nelim's Pickle Tools: 1 of the item "Chocolate" are spawned at (196, 151)
     And Nelim's Pickle Tools: the animal "Yuki" is dressed in "Apparel_leatherdogcollar" dyed "#D1008F"
     And Nelim's Pickle Tools: the animal "Yuki" stands at (199, 152) facing West
-    And Nelim's Pickle Tools: I frame the rectangle from (194, 150) to (200, 153)
+    And A Certain Series: I bring the camera to 3 cells' height on the cell (197, 152)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal+blink" is held
     And Nelim's Pickle Tools: "Sena" mouth is "MouthLipsSmallSmile"

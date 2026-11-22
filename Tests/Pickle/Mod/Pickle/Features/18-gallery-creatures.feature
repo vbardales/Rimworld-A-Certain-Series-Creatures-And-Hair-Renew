@@ -16,8 +16,8 @@
 #   4. 17:00, Clear, 60 ticks | the white rhinoceros beetle, a pack animal that never eats | INSTANT: Nelim has set the hay down on the stool before the beetle (redo-20: carried, the hay crossed her face facing South and East alike; gallery 2 solved the Beer the same way), the beetle
 #      stands unmoved before it and the chicken at her feet looks up at it (redo-13: pecking cannot be obtained). METHOD: beetle (198, 153) (the step gives no facing), Nelim
 #      (195, 153) facing East carrying nothing, Hay on the Stool (199, 151), Chicken (196, 152) facing South (seen from the front) | MEDIUM: camera 4 cells' height on (197, 152) (every decor object inside the frame; at 3 cells the daylilies fell out and the decor read as sparse) | WoodPlankFloor (190, 148) to (204, 156) (redo-18: bare dirt showed around the old 194-200 floor),
-#      TorchLamp lit (195, 150) and (199, 150), Stool (199, 151), Plant_Daylily (200, 151), (194, 152), (191, 154) and (203, 150) | THUMBNAIL: the beetle's horn silhouette on the wood.
-#      RISK: the beetle crowds Nelim. PLAN: three cells between them.
+#      TorchLamp lit (195, 150) and (199, 150), Brazier lit (194, 151), Stool (199, 151), Plant_Daylily (200, 151), (194, 152), (191, 154) and (203, 150), Plant_YellowTallGrass (196, 154) and (200, 154) fully grown | THUMBNAIL: the beetle's horn silhouette on the wood.
+#      RISK: the beetle crowds Nelim. PLAN: three cells between them. (redo-21, 2026-11-22: the decor read as sparse, two torches and bare wood: a lit brazier and two tall grass tufts added inside the frame.)
 #   5. 18:00, Clear, 60 ticks | the seraph (God's Power), eight wings of water | INSTANT: the seraph has just opened its wings and the
 #      guests turn toward it while Nelim arrives with the cloth. METHOD (z grows to the north): ACS_Gabriel (197, 150); everybody 5 cells or more from it (its
 #      wings draw over anything within about 4.5) and turned toward it: Rina (191, 153) East, Toma (197, 155) South, Sena (203, 153) West,
@@ -65,6 +65,10 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (194, 152) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (191, 154) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (203, 155) fully grown
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (194, 151)
+    And Nelim's Pickle Tools: the decor "Brazier" at (194, 151) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (196, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (200, 154) fully grown
     And I wait 60 ticks
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
