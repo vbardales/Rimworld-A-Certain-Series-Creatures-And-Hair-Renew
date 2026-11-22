@@ -177,7 +177,6 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (199, 152) facing south
-    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (203, 153) facing east
     And Nelim's Pickle Tools: I place the decor "EndTable" at (201, 152)
     And Nelim's Pickle Tools: I place the decor "Stool" at (200, 151)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (197, 150)
@@ -196,7 +195,7 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (194, 150)
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (193, 152)
     And Nelim's Pickle Tools: the power network is refreshed
-    And Nelim's Pickle Tools: the power connections of the area from (202, 151) to (205, 154) are cut
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (203, 153) facing east
     And Nelim's Pickle Tools: I let 1250 ticks pass
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) is powered
     And Nelim's Pickle Tools: the light of the map is refreshed
