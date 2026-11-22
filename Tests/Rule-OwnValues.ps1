@@ -66,6 +66,11 @@ It 'Anatomy repairs and corpse fallback stay intact' {
     if ($wings.Count -ne 8 -or @($wings | Select-Object -Unique).Count -ne 8) { 'Eight distinct wing labels required' }
     if ($null -ne (Def 'PawnKindDef' 'ACS_DarkMatterBeetle').SelectSingleNode('.//dessicatedBodyGraphicData')) { 'Broken desiccated graphic restored' }
 }
+It 'The propagator glows when powered' {
+    $glower = (Def 'ThingDef' 'ACS_DarkMatterProduction').SelectSingleNode("comps/li[@Class='CompProperties_Glower']")
+    if ($null -eq $glower) { 'Propagator has no glower' }
+    elseif ([double]$glower.glowRadius -le 0) { 'Propagator glow radius must be positive' }
+}
 It 'All five production bills are reachable and have valid products' {
     $bench = Def 'ThingDef' 'ACS_DarkMatterProduction'
     $giver = Def 'WorkGiverDef' 'ACS_DoBillsUseDarkMatterProduction'

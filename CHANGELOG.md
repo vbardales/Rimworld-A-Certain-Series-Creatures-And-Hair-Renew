@@ -5,6 +5,10 @@ All notable changes to this mod are recorded here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- The dark matter propagator gives off a soft blue glow while it is powered and switched on, so a running machine is told apart from an idle one.
+
 ### Changed
 
 - French: the eight wing blade labels of the seraph become `lame d'aile d'eau` (was `lame d'aile aqueuse`), after the ChatGPT review of the French texts.
