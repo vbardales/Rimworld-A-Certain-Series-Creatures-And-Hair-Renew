@@ -196,11 +196,11 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (193, 152)
     And Nelim's Pickle Tools: the power network is refreshed
     And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (203, 153) facing east
+    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (203, 153) is switched off
     And Nelim's Pickle Tools: I let 1250 ticks pass
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) is powered
     And Nelim's Pickle Tools: the light of the map is refreshed
     And I wait 120 ticks
-    And Nelim's Pickle Tools: the power links of the area from (192, 149) to (206, 156) are logged
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) glows
     And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (203, 153) does not glow
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
