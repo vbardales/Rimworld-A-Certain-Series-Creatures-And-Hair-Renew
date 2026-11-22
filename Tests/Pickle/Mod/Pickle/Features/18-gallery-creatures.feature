@@ -24,11 +24,11 @@
 #      Nelim (192, 147) East carrying ACS_HeavenCloth, Peacock (201, 147) facing South | WIDE: camera 10 cells' height on (196, 151) (guests inside z 146-156, map edge out of frame; was 13 then 11 on (196, 152)) | WoodPlankFloor,
 #      Brazier lit x2 (192, 152) and (202, 152), TorchLamp lit (194, 156) and (200, 156), Plant_Daylily (191, 149), Plant_YellowTallGrass (193, 149) and (201, 149) | THUMBNAIL: dark wings on the wood.
 #      RISK: wings cut, pawns small at 13 cells. PLAN: widen or recompose after the replay.
-#   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, a lab corner: the machine that makes dark matter multiply, wired to its three power cells | INSTANT: Nelim has just set the dark matter on the end table beside the running machine and turns toward it
-#      while Kuru watches the machine (redo-28, 2026-11-19: redo-27 green but j weak at 268 px, the pale slab reads as a bed, Kuru and the dark matter are specks: camera 4 cells' height on (200, 153), Kuru moved to (199, 153), the torch row y 155 is cut by the frame, Mod/ unchanged) (redo-27, 2026-11-19: redo-26 proved `I frame the rectangle` does not zoom below about 7 columns (140 px per cell, cells cropped at the top); the camera step of this mod is used instead: 5 cells' height on (200, 152), about 216 px per cell) (redo-26, 2026-11-19: redo-25 frame (198,150)-(204,155) had the same size as before, only shifted, map edge on the right, machine still 120 px wide: frame (198,150)-(203,154), five rows, about 1.6 times larger; Nelim eyes now open) (redo-25, 2026-11-19, diagnosis: the propagator sprite is one flat grey slab with no powered look, so the picture cannot say "running" by the machine; it says "wired to the power cells" and the frame is tightened to (198, 150)-(203, 154); Mod/ unchanged) (redo-23, 2026-11-18, PiT: the yellow lightning of redo-22 was the no-power overlay, kept on purpose by `the building status icons are kept` and not cleared by `is powered`, which only flips PowerOn; redo-23 drops that line, so presentation mode hides the icon, and powers the machine with `is powered` (redo-24, 2026-11-19, PiT: the battery step failed on a net with gain 0.0, `is powered` sets PowerOn directly); unverified until the capture) (redo-22, 2026-11-18: at 268 px the two machines of redo-21 were two identical white panels, the idle icon was invisible and the idle versus running reading was lost, so the scene keeps ONE machine, large in frame, and says what it is: the propagator that makes dark matter multiply, powered by the cells). METHOD:
-#      Nelim (198, 154) facing East carrying nothing, ACS_DarkMatter spawned on the EndTable (198, 152), Kuru (199, 153) facing East toward the machine | CLOSE-MEDIUM: camera 4 cells' height on (200, 153) (redo-28) (one machine filling the right half, Nelim and the table on the left, the bottom row left empty for the subtitle) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored),
-#      ACS_DarkMatterProduction (200, 152) running (powered), VanometricPowerCell x3 (202, 152), (202, 154), (201, 154), lab props of PiT (all vanilla Core, no power comp): ToolCabinet (200, 155) as the tool wall, EndTable (198, 152) for the dark matter, Stool (197, 151), TorchLamp lit x4 (197, 150), (204, 150), (197, 155), (204, 155), Plant_Daylily x2 (198, 150) and (203, 155) fully grown | THUMBNAIL: the pale propagator wired to its three yellow cells, the biggest object of the frame, with Nelim in green and the dark matter on the table beside it; no icon needed
-#      RISK: too dark, the cabinet crowds the machine (it stays one cell south of it). PLAN: four torches in the corners; a second row or 17:30 if still dark.
+#   6. 18:00 + 1250 ticks (18:30), Clear | the propagator, a lab corner: two machines that make dark matter multiply, one wired to its power cells and glowing, one standing alone and dark | INSTANT: Nelim has just set the dark matter on the end table between the two machines and turns toward the running one
+#      while Kuru watches (redo-29, 2026-11-22, owner answer "les deux": the glower is now on the def (f91759e) and the scene shows two machines, one wired and one not, one vertical (facing South, front view) and one horizontal (facing East, profile view, the east texture exists); the three-cell wiring shrinks to two cells beside the vertical machine; redo-28, 2026-11-19: redo-27 green but j weak at 268 px, the pale slab reads as a bed or a fridge, no glow) (earlier redos 22 to 28 in the git history of this header). METHOD:
+#      Nelim (201, 154) facing West carrying nothing, ACS_DarkMatter spawned on the EndTable (201, 152), Kuru (200, 155) facing West toward the running machine | CLOSE-MEDIUM: camera 5 cells' height on (201, 153) (the vertical powered machine on the left third, the horizontal dark machine on the right third, Nelim and the table between, the bottom row left empty for the subtitle) | WoodPlankFloor (194, 148) to (207, 157) (the whole frame floored),
+#      ACS_DarkMatterProduction (199, 152) facing south, running (powered, glowing blue), VanometricPowerCell x2 (197, 152) and (197, 153) wired to it, ACS_DarkMatterProduction (203, 153) facing east, power connection cut (unpowered, no glow), lab props of PiT (all vanilla Core, no power comp): EndTable (201, 152) for the dark matter, Stool (200, 151), TorchLamp lit x4 (197, 150), (205, 150), (197, 155), (205, 155), Plant_Daylily x2 (199, 150) and (204, 155) fully grown | THUMBNAIL: two pale machines side by side, the left one upright with a blue glow and a wire to two yellow cells, the right one lying down and dark, Nelim in green between them with the dark matter on the table; wired against idle read by the glow
+#      RISK: the glow may read faint under four torches and light lifted to 0.5 (lower the lift or drop a torch); the east texture may crop at 268 px; two machines crowd the frame. PLAN: 5 cells' height, torches at the far corners only, a second take with 4 cells on the powered machine if needed.
 #   7. 20:00 + 600 ticks of fire, Clear | the evening at the fire: everybody stayed | INSTANT: Nelim steps in from the south with the last log and the
 #      three guests on the north arc look up at her, each holding what she gave them (Pemmican, Beer, chocolate); Toma's little grin is
 #      written: he was angry in picture 2 only because he was drafted, by evening he stays. METHOD (replan 2026-11-03: in redo-10 the plate hid Rina's
@@ -158,13 +158,13 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
-  Scenario: 6 - Nelim at the propagator, one running and one waiting for power (the podium, 18:30)
+  Scenario: 6 - Nelim at the propagators, one wired and glowing and one standing alone (the podium, 18:30)
     Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And I set the hour to 18
     And I set the weather to "Clear"
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: the light of the map is lifted to at least 0.65
+    And Nelim's Pickle Tools: the light of the map is lifted to at least 0.5
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     And Nelim's Sanctuary: the floor of the sanctuary "emerald-clearing" is bared
     And Nelim's Sanctuary: I am at the sanctuary "emerald-clearing"
@@ -172,27 +172,30 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: I lay the floor "WoodPlankFloor" from (194, 148) to (207, 157)
     When Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
-    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" at (200, 152)
-    And Nelim's Pickle Tools: I place the decor "ToolCabinet" at (200, 155)
-    And Nelim's Pickle Tools: I place the decor "EndTable" at (198, 152)
-    And Nelim's Pickle Tools: I place the decor "Stool" at (197, 151)
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (199, 152) facing south
+    And Nelim's Pickle Tools: I place the decor "ACS_DarkMatterProduction" owned by the colonists exactly at (203, 153) facing east
+    And Nelim's Pickle Tools: I place the decor "EndTable" at (201, 152)
+    And Nelim's Pickle Tools: I place the decor "Stool" at (200, 151)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (197, 150)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (204, 150)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (205, 150)
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (197, 155)
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (204, 155)
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (205, 155)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (197, 150) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (204, 150) is lit
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (205, 150) is lit
     And Nelim's Pickle Tools: the decor "TorchLamp" at (197, 155) is lit
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (204, 155) is lit
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 150) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (203, 155) fully grown
-    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (202, 152)
-    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (202, 154)
-    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (201, 154)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (205, 155) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 150) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (197, 152)
+    And Nelim's Pickle Tools: I place the decor "VanometricPowerCell" at (197, 153)
     And Nelim's Pickle Tools: the power network is refreshed
+    And Nelim's Pickle Tools: the power connections of the area from (202, 151) to (205, 154) are cut
     And Nelim's Pickle Tools: I let 1250 ticks pass
-    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (200, 152) is powered
+    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) is powered
+    And Nelim's Pickle Tools: the light of the map is refreshed
     And I wait 120 ticks
+    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (199, 152) glows
+    And Nelim's Pickle Tools: the building "ACS_DarkMatterProduction" at (203, 153) does not glow
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And A Certain Series: "Nelim" wears the hairstyle "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" wears "UnderWhere_Bra" dyed rgb (31, 58, 95)
@@ -200,15 +203,15 @@ Feature: Gallery pictures of the creatures, the propagator and the evening
     And Nelim's Pickle Tools: "Nelim" wears "LTS_Tunika" dyed rgb (31, 122, 92)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_PAESmallEarrings" made of "Gold"
     And Nelim's Sanctuary: the animals are removed from the sanctuary "emerald-clearing"
-    And Nelim's Pickle Tools: "Nelim" stands at (198, 154) facing East
-    And Nelim's Pickle Tools: 1 of the item "ACS_DarkMatter" are spawned at (198, 152)
-    And Nelim's Pickle Tools: an adult animal of kind "akaNEKO_kuroneko" named "Kuru" is spawned at (199, 153)
+    And Nelim's Pickle Tools: "Nelim" stands at (201, 154) facing West
+    And Nelim's Pickle Tools: 1 of the item "ACS_DarkMatter" are spawned at (201, 152)
+    And Nelim's Pickle Tools: an adult animal of kind "akaNEKO_kuroneko" named "Kuru" is spawned at (200, 155)
     And Nelim's Pickle Tools: the animal "Kuru" has the hediff "AnimalTrait_ChestPatch"
-    And Nelim's Pickle Tools: the animal "Kuru" stands at (199, 153) facing East
-    When A Certain Series: I bring the camera to 4 cells' height on the cell (200, 153)
+    And Nelim's Pickle Tools: the animal "Kuru" stands at (200, 155) facing West
+    When A Certain Series: I bring the camera to 5 cells' height on the cell (201, 153)
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" facial expression "normal" is held
-    And I take a screenshot "gallery 6 propagator"
+    And I take a screenshot "gallery 6 propagators"
     And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
