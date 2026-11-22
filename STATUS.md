@@ -41,7 +41,7 @@ remaining:
   - ideas not started: `BACKLOG.md`
 session:      local_30b7ac1a-4071-4f6e-8e96-b8195da6629e  # code aCSCaH (owner 2026-10-25, confirmed 2026-11-09; id changed back 2026-11-22, REGISTER sent to the TM); TM routes START/END/RUN_DONE here
 updated:      2026-11-22, range replay writeShotlist..: 9.0 and 9.0 bis done (plans 5 on all seven scenes), first open 9.a, stage shootGallery; scene 6 owner request (front and profile shots, power cells out of frame) pending
-protocols_read_sha: a3c2fe427bcaa8b9cf508853a29cdcd8de4df7d8
+protocols_read_sha: bf98fb75fbf9176ef5d4d97359edaf48c12cd8a1
 ---
 # A Certain Series - Creatures and Hair Renew — status
 
